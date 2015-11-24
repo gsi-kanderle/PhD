@@ -1,0 +1,21 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Irradiation of cardiac target volumes in porcine data}{3}
+\contentsline {section}{\numberline {1.1}Material and methods}{4}
+\contentsline {subsection}{\numberline {1.1.1}Treatment planning input data}{4}
+\contentsline {subsection}{\numberline {1.1.2}Treatment planning parameters}{5}
+\contentsline {subsection}{\numberline {1.1.3}Treatment planning studies}{6}
+\contentsline {subsection}{\numberline {1.1.4}Analysis}{6}
+\contentsline {section}{\numberline {1.2}Results}{7}
+\contentsline {subsection}{\numberline {1.2.1}Motion directions and magnitude}{7}
+\contentsline {subsection}{\numberline {1.2.2}Dose to organs at risk when irradiating the AV node}{15}
+\contentsline {subsection}{\numberline {1.2.3}Motion mitigation techniques for AV node irradition}{16}
+\contentsline {subsubsection}{Dose deposition}{16}
+\contentsline {subsubsection}{Irradiation time}{22}
+\contentsline {section}{\numberline {1.3}Discussion}{23}
+\contentsline {subsection}{\numberline {1.3.1}Movement of cardiac target volumes in cardiac cycle}{24}
+\contentsline {subsection}{\numberline {1.3.2}Dose to organs at risk for the irradiation of AV node}{25}
+\contentsline {subsection}{\numberline {1.3.3}Rescanning as motion mitigation technique for AV node irradiation}{26}
+\contentsline {section}{\numberline {1.4}Conclusion}{27}
+\contentsline {chapter}{\numberline {A}Appendix of chapter 4}{29}
+\contentsline {section}{\numberline {A.1}Motion of target volumes in constrast enhanced CT scans}{29}
+\contentsline {section}{\numberline {A.2}Motion of AV node in native CT scan}{35}

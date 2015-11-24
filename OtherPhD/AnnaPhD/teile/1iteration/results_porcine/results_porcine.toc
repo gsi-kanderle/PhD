@@ -1,0 +1,18 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Treatment planning for experimental irradiation of cardiac target volumes in porcine data}{3}
+\contentsline {section}{\numberline {1.1}Material and methods}{4}
+\contentsline {subsection}{\numberline {1.1.1}Treatment planning input data}{4}
+\contentsline {subsection}{\numberline {1.1.2}Treatment planning parameters}{5}
+\contentsline {subsection}{\numberline {1.1.3}Treatment planning studies}{7}
+\contentsline {subsection}{\numberline {1.1.4}Analysis}{7}
+\contentsline {section}{\numberline {1.2}Results}{8}
+\contentsline {subsection}{\numberline {1.2.1}Motion directions and magnitude}{8}
+\contentsline {subsection}{\numberline {1.2.2}Dose to organs at risk for the irradiation of AV node}{15}
+\contentsline {subsection}{\numberline {1.2.3}Motion mitigation techniques for AV node irradition}{17}
+\contentsline {subsubsection}{Dose deposition }{17}
+\contentsline {subsubsection}{Irradiation time}{22}
+\contentsline {section}{\numberline {1.3}Discussion}{23}
+\contentsline {subsection}{\numberline {1.3.1}Movement of cardiac target volumes in cardiac cycle}{24}
+\contentsline {subsection}{\numberline {1.3.2}Dose to critcal structures}{25}
+\contentsline {subsection}{\numberline {1.3.3}Rescanning as motion mitigation technique}{26}
+\contentsline {section}{\numberline {1.4}Conclusion}{26}

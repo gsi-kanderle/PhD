@@ -1,0 +1,103 @@
+\documentclass[type=dr, dr=rernat, accentcolor=tud7b,colorbacktitle, bigchapter, openright, twoside, 12pt ]{tudthesis}
+\usepackage[english]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{pstricks}
+\usepackage{psfrag}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{epsfig}
+%\usepackage{geometry}
+\usepackage{subfigure}
+\usepackage{rotating}
+\usepackage{minitoc}
+\usepackage{appendix}
+
+%%%% 1 1/2 facher Zeilenabstand:	
+\usepackage{setspace}
+\onehalfspacing
+
+
+\begin{document}
+
+% \dominitoc
+% % in big toc display only chapters and sections
+% \setcounter{tocdepth}{1}
+% \tableofcontents
+
+\chapter{Conclusion and outlook}
+% \minitoc
+
+Particle therapy enables to deposit a high target dose while sparing the surrounding tissue. Actively applied particles allow moreover for a 
+higly conformal irradiation without the need of patient specific hardware. Due to the successfull treatment outcomes an increasing number of 
+therapy centers treat patients with scanned particle therapy. Up to now clinical applications of these centers have been restricted to radiotherapy 
+treatments where the tumor showed no intrafractional displacements. This is due to the intereference effects which can otherwise be observed 
+between the excisting target motion and the actively applied particle beam, leading to local over and under dosages (interplay effect) and hence to the need of 
+motion mitigation techniques. Recently, pilot studies have been conducted which enabled the irradiation of tumors with small intrafractional 
+motion. This is the first work to study the irradiation of intrafractionally moving, non-cancerous target volumes. Its aim is to investigate 
+the feasibility of a non-invasive treatment for cardiac arrhythmias like atrial fibrillation by particel radiosurgery. The search for a new 
+treatment modality for this condition is motivated by the currently excisting possibility of catheter ablation, an anatomical based treatment 
+approach which has varying success rates and can lead to severe side effects. Studies for the potential of a non-invasive treatment with 
+photon irradiation already exist. Due to the differing interaction mechanisms of photons with matter in comparison 
+to ions, a better sparing of the surrounding tissue was expected for the here studied radiosurgery with ions. 
+This could be demonstrated in this thesis, where carbon ion and photon delivery were compared on the same data sets, enabling a direct 
+comparison. The difference in dose deposition to the organs at risk was significant and made a strong case for the usage of ions in cardiac 
+radiosurgery.
+% \newline
+Ablation via particle radiosurgery was studied for the pulmonary veins atria junction in human data separately for the underlying respiratory 
+and heartbeat motion. These intrafractional motion types have a differing motion period and amplitude. While the respiration is a rather slow 
+motion which causes the pulmonary vein junction to move in particular in the superior-inferior direction up to more than 2cm, the heartbeat 
+displays a fast motion period causing a chaotic motion of the ablation site with an amplitude of up to 1cm. The interplay effet caused by 
+respiration was hence found to be more pronounced than in case of heartbeat motion. In order to guarantee a robust treatment 
+delivery, motion mitigation techniques have also been studied in case of heartbeat displacements. 
+For the influence of the respiratory motion, the interrupted irradiation during a selected part of the motion cycle (gating) was studied and 
+resulted to be an adequate technique. Nevertheless, gating always results in the prolongation of treatment time. Alternative methods could be
+jet ventilation or apneic oxygenation, in which the patient is given artifical breathing and hence kept in steady respiratory phase. 
+This would result in a shorter treatment time and would reduce the technical requirements for the application. 
+In order to mitigate the influence of the heartbeat motion an averaging effect of different interplay patterns by scanning the same slice 
+multiple times (rescanning) was applied. Also this motion mitigation technique resulted in a good dose coverage, already for small rescan numbers. 
+This delivery would not prolong the treatment time. Since other rascanning techniques are nevertheless known to result in better treatment outcomes, like e.g. 
+breath-sampled rescanning, where the rescans are distributed over the motion cycle, a similiar technique should be investigated in the 
+future for the cardiac motion (ECG-sampled rescanning). In case of the studied porcine data, where the cardiac target volumes also displayed 
+a chaotic motion but had a more shallow motion region in common, cardiac gating could furthermore be a potential application. This would 
+require the application of a fast beam extraction modality for synchrotrons with radiofrequency knock-out exciters, which exist e.g. at the 
+Heidelberg Ion Therapy Center \cite{Sch11} and are tested in first studieds at GSI. In case of the use of protons or other particles and hence 
+the useage of cyclotrons, such a fast beam application could be achieved without any further hardware. In preparation for the planned 
+animal experiments with pigs at GSI, which will be an experimental validation of the here found treatment planning results, rescanning 
+was found to be a well suited technique to overcome the heartbeat motion influence in the atrioventricular node of swine. For the respiratory 
+motion of the animals, an artifical breathing, similar to the above proposed, will be used. 
+% \newline
+In all presented treatment planning results a 
+physical dose of 25Gy was used. Biological effects leading to an relative biological effectiveness higher than one might occur, even though 
+preliminary studies did not support this assumption. Also older photon studied suggested that 20Gy are sufficient to induce fibrotic tissue 
+in the heart. Nevertheless higher doses than the here stated might be needed to create a complete electrophysiological block in the desired 
+target area. The planned dose escalation studies in the animal models will offer valuable clues in respect to this question. 
+The treatment planning results obtained from Mayo Clinic were obtained on contrast-enhanced CT scans, since the contrast between cardiac muscle 
+and blood was not sufficient in native CT scans. A closer analysis on the resulting range uncertainties are needed. Potential 
+experimental validations were suggested in order to test for potential range differences which might endanger critical structures. These 
+need to be investigated and tested for suitability.
+% \newline
+In general, even though the feasibility of the studied motion mitigation techniques was shown, it also became obvious that the non-invasive 
+treatment is challenging due to the amount of organs at risk which are in direct proximity of the desired target area. 
+Intensity modulated particle therapy was hence needed in order to fall below dose-volume limits stated for these structures in radiosurgery. 
+Besides the here studied potential ablation sites of the pulmonary veins junction and the atrioventricular node, other applications are also 
+conceivable in the future. Cather ablation started to be also used for isolation of low-voltage areas in the ventricles of patients who 
+suffered a myocardial infraction in order to prevent the formation of life-threatening ventricular tachycardias \cite{Til14} \cite{Mad14}. 
+It has furthermore been shown that the underlying myocardial scar and border zones can be visualized in contrast-enhanced CT scans \cite{Tia14}. 
+Treatment planning for this condition is hence potentially feasible. Due to the larger distance of the ventricles to many critical structures 
+this delivery might even be easier achievable. The feasibility is planned to be tested in the upcoming animal experiments. 
+
+
+
+
+
+\begin{thebibliography}{9999999}
+
+\bibitem[Mad14]{Mad14}{Madhavan M, Lehmann HI, Swale MK, Johnson SB, Parker KD, Curley M, Hindricks G and Packer DL: Impact of a Novel Heated Saline Augmented Needle Tip Catheter on Improving Ablative Lesion Penetration and Eliminating Deep Tissue Conducting Channels in Canine Infarcts; Abstract (PO05-162); HRS Scientific Session 2014}
+\bibitem[Sch11]{Sch11}{Schoemers C, Feldmeier E, Haberer T, Naumann J, Panse R and Peters A: Implementation of an intensity feedback-loop for an ion-therapy synchrotron; Prcoeedings of IPAC 2011; 2851-22853}
+ \bibitem[Tia14]{Tia14}{Tian J, Jeudy J, Smith MF, Jimenez A, Yin X, Bruce PA, Lei P, Turgeman A, Abbo A, Shekhar R, Saba M, Shorofsky S, Dickfeld T: Three-Dimensional Contrast-Enhanced Multidetector CT for Anatomic, Dynamic, and Perfusion Characterization of Abnormal Myocardium To Guide Ventricular Tachycardia Ablations; Circ Arrhythm Electrophysiol.; 3; 2010}
+ \bibitem[Til14]{Til14}{Tilz RR, Makimoto H, Lin T, Rillig A, Deiss S, Wissner E, Mathew S, Metzner A, Rausch P, Kuck KH, Ouyang F: Electrical isolation of a substrate after myocardial infarction: a novel ablation strategy for unmappable ventricular tachycardias--feasibility and clinical outcome; Europace; 2014}
+
+ \end{thebibliography}
+
+\end{document}

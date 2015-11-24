@@ -1,0 +1,17 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Irradiation of pulmonary veins under influence of respiration in human data}{3}
+\contentsline {section}{\numberline {1.1}Material and methods}{4}
+\contentsline {subsection}{\numberline {1.1.1}Treatment planning input data}{4}
+\contentsline {subsection}{\numberline {1.1.2}Treatment planning parameters}{5}
+\contentsline {subsection}{\numberline {1.1.3}Treatment planning studies}{7}
+\contentsline {subsection}{\numberline {1.1.4}Analysis}{7}
+\contentsline {section}{\numberline {1.2}Results}{8}
+\contentsline {subsection}{\numberline {1.2.1}Motion assessment of respiration}{8}
+\contentsline {subsection}{\numberline {1.2.2}Motion mitigation techniques for respiration}{12}
+\contentsline {subsubsection}{Dose deposition}{12}
+\contentsline {subsubsection}{Irradiation time}{22}
+\contentsline {section}{\numberline {1.3}Discussion}{23}
+\contentsline {section}{\numberline {1.4}Conclusion}{25}
+\contentsline {chapter}{\numberline {A}Appendix of chapter 2}{27}
+\contentsline {section}{\numberline {A.1}Motion of PV due to respiration}{27}
+\contentsline {section}{\numberline {A.2}Values of dose analysis parameters for all patients}{33}

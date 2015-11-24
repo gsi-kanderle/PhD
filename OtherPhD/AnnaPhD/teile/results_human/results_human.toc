@@ -1,0 +1,26 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Irradiation of pulmonary veins under influence of heartbeat in human data}{3}
+\contentsline {section}{\numberline {1.1}Material and methods}{4}
+\contentsline {subsection}{\numberline {1.1.1}Treatment planning input data}{4}
+\contentsline {subsection}{\numberline {1.1.2}Treatment planning parameters}{5}
+\contentsline {subsubsection}{Field number and beam directions}{6}
+\contentsline {subsection}{\numberline {1.1.3}Treatment planning studies}{7}
+\contentsline {subsection}{\numberline {1.1.4}Analysis}{7}
+\contentsline {subsubsection}{Dose-volume constraints for organs at risk}{8}
+\contentsline {subsubsection}{Dose deposition in target volume and motion of PVs}{8}
+\contentsline {section}{\numberline {1.2}Results}{9}
+\contentsline {subsection}{\numberline {1.2.1}Beam direction}{9}
+\contentsline {subsection}{\numberline {1.2.2}Safety margin limitations}{16}
+\contentsline {subsection}{\numberline {1.2.3}Motion assessment of heartbeat}{22}
+\contentsline {subsection}{\numberline {1.2.4}Motion mitigation techniques for heartbeat}{26}
+\contentsline {subsubsection}{Dose deposition}{26}
+\contentsline {subsubsection}{Irradiation time}{32}
+\contentsline {section}{\numberline {1.3}Discussion}{33}
+\contentsline {subsection}{\numberline {1.3.1}Dose to critical structures}{33}
+\contentsline {subsection}{\numberline {1.3.2}Beam channel directions and safety margins}{35}
+\contentsline {subsection}{\numberline {1.3.3}Movement of PVs in cardiac cycle}{36}
+\contentsline {subsection}{\numberline {1.3.4}Rescanning as motion mitigation technique}{37}
+\contentsline {section}{\numberline {1.4}Conclusion}{38}
+\contentsline {chapter}{\numberline {A}Appendix of chapter 3}{39}
+\contentsline {section}{\numberline {A.1}Motion of PV due to heartbeat}{39}
+\contentsline {section}{\numberline {A.2}Values of dose analysis parameters for all patients}{42}

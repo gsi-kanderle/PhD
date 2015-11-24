@@ -1,0 +1,21 @@
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.1}Material and methods}{\reset@font\mtcSfont 4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.1}Treatment planning input data}{\reset@font\mtcSSfont 4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.2}Treatment planning parameters}{\reset@font\mtcSSfont 5}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Field number and beam directions}{\reset@font\mtcSSSfont 6}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.3}Treatment planning studies}{\reset@font\mtcSSfont 7}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.4}Analysis}{\reset@font\mtcSSfont 7}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Dose-volume constraints for organs at risk}{\reset@font\mtcSSSfont 8}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Dose deposition in target volume and motion of PVs}{\reset@font\mtcSSSfont 8}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.2}Results}{\reset@font\mtcSfont 9}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.1}Beam direction}{\reset@font\mtcSSfont 9}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.2}Safety margin limitations}{\reset@font\mtcSSfont 16}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.3}Motion assessment of heartbeat}{\reset@font\mtcSSfont 22}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.4}Motion mitigation techniques for heartbeat}{\reset@font\mtcSSfont 26}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Dose deposition}{\reset@font\mtcSSSfont 26}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Irradiation time}{\reset@font\mtcSSSfont 32}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.3}Discussion}{\reset@font\mtcSfont 33}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.3.1}Dose to critical structures}{\reset@font\mtcSSfont 33}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.3.2}Beam channel directions and safety margins}{\reset@font\mtcSSfont 35}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.3.3}Movement of PVs in cardiac cycle}{\reset@font\mtcSSfont 36}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.3.4}Rescanning as motion mitigation technique}{\reset@font\mtcSSfont 37}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.4}Conclusion}{\reset@font\mtcSfont 38}}

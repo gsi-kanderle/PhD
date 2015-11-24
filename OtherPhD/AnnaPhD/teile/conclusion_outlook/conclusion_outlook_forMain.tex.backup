@@ -1,0 +1,78 @@
+
+\chapter{Conclusion and outlook}
+
+This is the first work to study the irradiation of intrafractionally moving, non-cancerous target volumes with carbon ions. Its aim was to 
+investigate the feasibility of a non-invasive treatment for cardiac arrhythmias like atrial fibrillation by 
+particle radiosurgery. \newline
+\newline
+The search for a new treatment modality for this condition is motivated by the currently existing possibility of 
+catheter ablation, which has varying success rates and can lead to severe side effects \cite{Cap05, Cap10, Jong05, Her13, Gai10, Med13}. 
+Studies for the potential of a non-invasive treatment with photon irradiation already exist \cite{Sha10}. 
+Due to differing interaction mechanisms of photons with matter in comparison to ions, a better sparing of the surrounding tissue was 
+expected for the here studied radiosurgery with ions \cite{Ber12}. This could be demonstrated in this thesis, where carbon ion and photon delivery were 
+compared on the same data sets. The difference in dose deposition to the organs at risk (OAR) was significant and made a strong case to use ions in 
+cardiac radiosurgery.\newline  
+\newline
+Due to successful treatment outcomes in cancer radiotherapy an increasing number of therapy centers treat patients with scanned particle 
+therapy \cite{PTCOG13}. Up to now clinical applications of these centers have been mostly conducted on tumors which showed no 
+intrafractional displacements. This is due to the otherwise occuring interference effects between the existing target motion and 
+the actively applied particle beam, leading to local over and under dosages (interplay effect) and hence to the need of motion mitigation 
+techniques \cite{Phi92, Ber08, Ber12, Loe13}.\newline
+\newline
+The here relevant intrafractional motion of the pulmonary veins atria junction was studied separately in human data for the underlying 
+respiratory and heartbeat motion. These intrafractional motion types differ in motion period and amplitude. While the respiration is a rather 
+slow motion which causes the pulmonary vein junction to move in particular in the superior-inferior direction up to more than 2cm, the heartbeat 
+displays a fast motion period causing a fairly irregular motion of the ablation site with an amplitude of up to 1cm. The interplay effect 
+caused by respiration was hence found to be more pronounced than in case of heartbeat motion. In order to guarantee a robust treatment 
+delivery, motion mitigation techniques have also been studied in case of heartbeat displacements. 
+For the influence of the respiratory motion, the interrupted irradiation during a selected part of the motion cycle (gating) \cite{Kub96} was 
+studied and was found to be an adequate technique for a 30\% gating window around end exhale. Nevertheless, gating always results in a 
+prolonged treatment time. Alternative methods could be jet ventilation \cite{Hof03} or apneic oxygenation \cite{RPTC12}, where the patient is 
+kept in a steady respiratory phase and which would result in a shorter treatment time. 
+In order to mitigate the influence of the heartbeat motion, an averaging effect of different interplay patterns by scanning the same slice 
+multiple times (rescanning) \cite{Phi92} was applied. Also this motion mitigation technique resulted in a good dose coverage, already for small 
+rescan numbers. This delivery would not prolong the treatment time. Other rescanning techniques are nevertheless known to result in an 
+increased robustness while requiring fewer rescan numbers, like e.g. breath-sampled rescanning \cite{Sec09} or phase-controlled rescanning 
+\cite{Fur07}, where the rescans are equally distributed over the motion cycle. Thus a similar technique should be investigated in the 
+future for the cardiac motion (ECG-sampled rescanning). In case of the studied porcine data, where the cardiac target volumes also displayed 
+an irregular motion but had a more shallow motion region in common, cardiac gating could furthermore be a potential application. This would 
+require the application of a fast beam extraction modality for synchrotrons with radiofrequency knock-out exciters, which exist, e.g., at  
+NIRS \cite{Nod96, Fur05} and HIT \cite{Schoe11} and are tested in first studies at GSI \cite{Ber09}. In preparation for the planned 
+animal experiments with pigs at GSI, which will be an experimental validation of the here found treatment planning results, rescanning 
+was found to be a well suited technique to overcome the heartbeat motion influence in the atrioventricular node of swine. For the breathing 
+motion of the animals a respirator will be used. \newline
+\newline
+In all presented treatment planning results a physical dose of 25Gy was used. Biological effects leading to a relative biological 
+effectiveness higher than one might occur, even though preliminary studies did not support this assumption and a RBE of 1.1 was found 
+for single fraction deliveries with the stated dose. The RBE is expected to  
+
+Preliminary studies using the LEM for the calculation of biological doses in single fraction deliveries with the stated 25Gy resulted to have 
+a RBE of 1.1. As the RBE is expected to be smaller for even higher doses, the physical dose can be considered proportional to the biological 
+dose. Hence the dose to the target volume, as well as the dose to the critical structures, could be directly scaled to the desired value. 
+
+In case an RBE effect is found 
+
+
+Also older photon studied 
+suggested that 20Gy are sufficient to induce fibrotic tissue in the heart \cite{Faj70, Faj73}. 
+Nevertheless higher doses than the here stated might be needed to create a complete electrophysiological block in the desired 
+target area. The planned dose escalation studies in the animal models will offer valuable data in respect to this question. 
+The treatment planning results were obtained on contrast-enhanced CT scans, since the contrast between cardiac muscle 
+and blood was not sufficient in native CT scans. A closer analysis on the resulting range uncertainties is needed. Potential 
+experimental validations like small dose depositions in silicon diodes \cite{Bent12} or PET probing beams \cite{Lin12} were suggested in order to 
+test for potential range differences which might endanger critical structures. These need to be investigated and tested for suitability.\newline
+\newline
+In general it became obvious that a non-invasive 
+treatment is challenging due to the amount of OAR which are in direct proximity of the desired target area. Intensity modulated particle 
+therapy was hence needed in order to adhere to dose-volume limits stated for these structures \cite{RTOG0631, RTOG0915}. 
+Furthermore a delivery with an ion beam gantry would be beneficial as this allows to choose suitable beam entry channels, 
+enabling a sparing of the critical structures.\newline
+\newline
+Besides the here studied potential ablation sites of the pulmonary veins junction and the atrioventricular node, other applications are also 
+conceivable in the future. Cather ablation started to be also used for isolation of low-voltage areas in the ventricles of patients who 
+suffered a myocardial infarction in order to prevent the formation of life-threatening ventricular tachycardias \cite{Til14, Mad14}. 
+It has furthermore been shown that the underlying myocardial scar and border zones can be visualized in contrast-enhanced CT scans \cite{Tia14}. 
+Treatment planning for this condition is hence potentially feasible. Due to the larger distance of the ventricles to many critical structures 
+this delivery might even be easier achievable. Nevertheless the displacements of ventricular target sites are expected to be larger then the 
+here studied motion, so that further research on suitable motion mitigation techniques might be needed. 
+

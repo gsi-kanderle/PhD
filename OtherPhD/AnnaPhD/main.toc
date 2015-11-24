@@ -1,0 +1,106 @@
+\select@language {english}
+\contentsline {chapter}{Motivation}{11}
+\contentsline {chapter}{\numberline {1}Introduction - research background and fundamentals}{13}
+\contentsline {section}{\numberline {1.1}Physical and biological basics of radiotherapy}{14}
+\contentsline {subsection}{\numberline {1.1.1}Dose}{14}
+\contentsline {subsection}{\numberline {1.1.2}Interaction of radiation with matter}{14}
+\contentsline {subsubsection}{Interaction of photons with matter}{16}
+\contentsline {subsubsection}{Interaction of ions with matter}{16}
+\contentsline {subsubsection}{Range straggling and lateral scattering}{17}
+\contentsline {subsubsection}{Nuclear fragmentation}{18}
+\contentsline {subsubsection}{Track structure}{19}
+\contentsline {subsubsection}{Linear Energy Transfer LET}{19}
+\contentsline {subsection}{\numberline {1.1.3}Radiobiology}{21}
+\contentsline {subsubsection}{Impact of radiation on cells}{21}
+\contentsline {subsubsection}{Relative Biological Effectiveness RBE}{22}
+\contentsline {section}{\numberline {1.2}Radiotherapy}{24}
+\contentsline {subsection}{\numberline {1.2.1}Photon therapy}{24}
+\contentsline {subsection}{\numberline {1.2.2}Carbon therapy}{25}
+\contentsline {subsection}{\numberline {1.2.3}Treatment planning}{30}
+\contentsline {subsection}{\numberline {1.2.4}Organ motion in radiotherapy}{32}
+\contentsline {subsubsection}{Motion types}{32}
+\contentsline {subsubsection}{Motion acquisition}{34}
+\contentsline {subsubsection}{Motion mitigation techniques for intrafractional motion}{35}
+\contentsline {subsubsection}{4D Treatment planning at GSI}{37}
+\contentsline {section}{\numberline {1.3}Atrial fibrillation}{40}
+\contentsline {subsection}{\numberline {1.3.1}Heart's conduction system}{41}
+\contentsline {subsection}{\numberline {1.3.2}Types of atrial fibrillation}{43}
+\contentsline {subsection}{\numberline {1.3.3}Possible causes for atrial fibrillation and risk factors}{44}
+\contentsline {subsection}{\numberline {1.3.4}Treatment modalities}{45}
+\contentsline {chapter}{\numberline {2}Irradiation of pulmonary veins under influence of respiration in human data}{53}
+\contentsline {section}{\numberline {2.1}Material and methods}{54}
+\contentsline {subsection}{\numberline {2.1.1}Treatment planning input data}{54}
+\contentsline {subsection}{\numberline {2.1.2}Treatment planning parameters}{55}
+\contentsline {subsection}{\numberline {2.1.3}Treatment planning studies}{57}
+\contentsline {subsection}{\numberline {2.1.4}Analysis}{57}
+\contentsline {section}{\numberline {2.2}Results}{58}
+\contentsline {subsection}{\numberline {2.2.1}Motion assessment of respiration}{58}
+\contentsline {subsection}{\numberline {2.2.2}Motion mitigation techniques for respiration}{62}
+\contentsline {subsubsection}{Dose deposition}{62}
+\contentsline {subsubsection}{Irradiation time}{72}
+\contentsline {section}{\numberline {2.3}Discussion}{73}
+\contentsline {section}{\numberline {2.4}Conclusion}{75}
+\contentsline {chapter}{\numberline {3}Irradiation of pulmonary veins under influence of heartbeat in human data}{77}
+\contentsline {section}{\numberline {3.1}Material and methods}{78}
+\contentsline {subsection}{\numberline {3.1.1}Treatment planning input data}{78}
+\contentsline {subsection}{\numberline {3.1.2}Treatment planning parameters}{79}
+\contentsline {subsubsection}{Field number and beam directions}{80}
+\contentsline {subsection}{\numberline {3.1.3}Treatment planning studies}{81}
+\contentsline {subsection}{\numberline {3.1.4}Analysis}{81}
+\contentsline {subsubsection}{Dose-volume constraints for organs at risk}{82}
+\contentsline {subsubsection}{Dose deposition in target volume and motion of PVs}{82}
+\contentsline {section}{\numberline {3.2}Results}{83}
+\contentsline {subsection}{\numberline {3.2.1}Beam direction}{83}
+\contentsline {subsection}{\numberline {3.2.2}Safety margin limitations}{90}
+\contentsline {subsection}{\numberline {3.2.3}Motion assessment of heartbeat}{96}
+\contentsline {subsection}{\numberline {3.2.4}Motion mitigation techniques for heartbeat}{100}
+\contentsline {subsubsection}{Dose deposition}{100}
+\contentsline {subsubsection}{Irradiation time}{106}
+\contentsline {section}{\numberline {3.3}Discussion}{107}
+\contentsline {subsection}{\numberline {3.3.1}Dose to critical structures}{107}
+\contentsline {subsection}{\numberline {3.3.2}Beam channel directions and safety margins}{109}
+\contentsline {subsection}{\numberline {3.3.3}Movement of PVs in cardiac cycle}{110}
+\contentsline {subsection}{\numberline {3.3.4}Rescanning as motion mitigation technique}{111}
+\contentsline {section}{\numberline {3.4}Conclusion}{112}
+\contentsline {chapter}{\numberline {4}Irradiation of cardiac target volumes in porcine data}{113}
+\contentsline {section}{\numberline {4.1}Material and methods}{114}
+\contentsline {subsection}{\numberline {4.1.1}Treatment planning input data}{114}
+\contentsline {subsection}{\numberline {4.1.2}Treatment planning parameters}{115}
+\contentsline {subsection}{\numberline {4.1.3}Treatment planning studies}{116}
+\contentsline {subsection}{\numberline {4.1.4}Analysis}{116}
+\contentsline {section}{\numberline {4.2}Results}{117}
+\contentsline {subsection}{\numberline {4.2.1}Motion directions and magnitude}{117}
+\contentsline {subsection}{\numberline {4.2.2}Dose to organs at risk when irradiating the AV node}{125}
+\contentsline {subsection}{\numberline {4.2.3}Motion mitigation techniques for AV node irradition}{126}
+\contentsline {subsubsection}{Dose deposition}{126}
+\contentsline {subsubsection}{Irradiation time}{132}
+\contentsline {section}{\numberline {4.3}Discussion}{133}
+\contentsline {subsection}{\numberline {4.3.1}Movement of cardiac target volumes in cardiac cycle}{134}
+\contentsline {subsection}{\numberline {4.3.2}Dose to organs at risk for the irradiation of AV node}{135}
+\contentsline {subsection}{\numberline {4.3.3}Rescanning as motion mitigation technique for AV node irradiation}{136}
+\contentsline {section}{\numberline {4.4}Conclusion}{137}
+\contentsline {chapter}{\numberline {5}Discussion}{139}
+\contentsline {section}{\numberline {5.1}Dose deposition}{140}
+\contentsline {subsection}{\numberline {5.1.1}Dose to target area}{140}
+\contentsline {subsection}{\numberline {5.1.2}Dose to OAR}{141}
+\contentsline {subsection}{\numberline {5.1.3}Dose to OAR: Comparison to photons}{143}
+\contentsline {subsubsection}{Human data}{143}
+\contentsline {subsubsection}{Porcine data}{147}
+\contentsline {section}{\numberline {5.2}Treatment planning of cardiac target volumes with scanned ions}{150}
+\contentsline {subsection}{\numberline {5.2.1}Motion of cardiac volumes}{150}
+\contentsline {subsubsection}{PVs motion in humans}{150}
+\contentsline {subsubsection}{Motion in porcine due to heartbeat}{151}
+\contentsline {subsection}{\numberline {5.2.2}Contrast enhanced CT scans}{152}
+\contentsline {subsection}{\numberline {5.2.3}Motion mitigation techniques}{152}
+\contentsline {subsubsection}{Respiratory motion}{153}
+\contentsline {subsubsection}{Heartbeat motion}{154}
+\contentsline {chapter}{\numberline {6}Conclusion and outlook}{155}
+\contentsline {chapter}{\numberline {A}Appendix of chapter 2}{159}
+\contentsline {section}{\numberline {A.1}Motion of PV due to respiration}{159}
+\contentsline {section}{\numberline {A.2}Values of dose analysis parameters for all patients}{165}
+\contentsline {chapter}{\numberline {B}Appendix of chapter 3}{189}
+\contentsline {section}{\numberline {B.1}Motion of PV due to heartbeat}{189}
+\contentsline {section}{\numberline {B.2}Values of dose analysis parameters for all patients}{192}
+\contentsline {chapter}{\numberline {C}Appendix of chapter 4}{203}
+\contentsline {section}{\numberline {C.1}Motion of target volumes in constrast enhanced CT scans}{203}
+\contentsline {section}{\numberline {C.2}Motion of AV node in native CT scan}{209}

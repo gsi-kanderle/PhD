@@ -1,0 +1,1778 @@
+\documentclass[type=dr, dr=rernat, accentcolor=tud7b,colorbacktitle, bigchapter, openright, twoside, 12pt ]{tudthesis}
+\usepackage[english]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{pstricks}
+\usepackage{psfrag}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{epsfig}
+%\usepackage{geometry}
+\usepackage{subfigure}
+\usepackage{rotating}
+\usepackage{minitoc}
+\usepackage{appendix}
+% \usepackage{epstopdf}
+\usepackage{graphics}
+ 
+%%%% 1 1/2 facher Zeilenabstand:	
+\usepackage{setspace}
+\onehalfspacing
+
+
+
+
+\begin{document}
+
+\dominitoc
+% in big toc display only chapters and sections
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+\chapter{Treatment planning for experimental irradiation of cardiac target volumes in porcine data}
+\minitoc
+
+% \section{Introduction}
+
+An experimental validation of the here presented non-invasive treatment modality for cardiac target sites will be carried out at GSI in 2014.
+These experiments will be carried out in collaboration with HIT and Uniklinik Heidelberg as well as the Mayo 
+Clinic (Minnesota, USA). Animal models will be used and the study results will be compared to findings with photon irradiation \cite{Sha10} 
+\cite{Bla13}. For the feasibility study different cardiac target sites are possible: PV isolation, ablation of the CTI as well as the AV node. 
+In a first iteration of the experiments, only the AV node of the pigs will be irradiated, both at Mayo Clinic with photons and at GSI with 
+carbon ions. The experiments are planned to enable a direct comparison between particle therapy and photon irradiation, hence many of the 
+treatment settings are kept constant inbetween the two centers. Also in pigs, the cardiac target sites move 
+due to respiration as well as heartbeat. As the breathing motion of the pigs will be compensated with a respirator, only the influence of 
+heartbeat motion will be studied in more detail. Rescanning as motion mitigation technique will be presented.
+
+% - motivation: GSI experiments
+% - difference anatomy poricine/human
+% - sharma, luebeck, mayo: comparison with photons
+
+\section{Material and methods}
+
+
+% - ct data
+% - respiration (end exhale and end inhale) to assess respiratory motion
+% - cardiac cyle (wie phasen einteilung) to assess motion due to heart beat, max bewegung ventrikel / vorhoefe: 3/18
+% - registration (plastimatch, parameter, check mit checkerboard / false color / vectorfield / (contour propagation)
+% 
+% - 3 target volumen: IPV, CTI und AV
+% 
+% - einstrahlrichtung: -2.203 / 90 / -90
+% 
+% - dose to OAR in stereotactic body radiosurgery: gomez
+% 
+% 
+% %%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% 
+% ?	Definition Dual Source (Siemens Healthcare, Forchheim, Germany).  It is a 64 slice scanner (2 x 32, when using the flying focal spot mode). The gantry rotation time of 0.33 s results in 83 ms temporal resolution for the ecg gated cardiac images, retrospective ECG gating.
+% ?	4 domestic swine 35-50 Kg
+% ?	All animals anesthetized with Ketamine/Diazepam, intubated and ventilated with a volume cycled respirator and maintained on 1-3\% Isoflurane of 400 mL tidal volume, 15x/min, and will be continuously monitored with 5 ECG leads, along with blood pressure monitoring.
+% ?	Contouring with Eclipse TP
+% ?	50 mL KM bolus (muss ich schauen welches?)
+% 
+% 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Details on the used input data as well as the used treatment planning parameters will be given. Afterwards an overview over all 
+studies will be given. Finally, the analysis proceeding will be described.  
+
+
+\subsection{Treatment planning input data}
+For treatment planning studies with the in-house treatment planning software TRiP4D \cite{Ric13}, 4DCT data sets, target and OAR contours as 
+well as a deformable image registration for motion assessment in-between the different motion phases are needed.\newline
+\newline
+% \subsubsection{4DCT} 
+In order to assess the motion of the potential cardiac target sites (PV, CTI and AV node) in pigs under influence of heartbeat motion 
+ECG gated 4DCTs were studied. Four porcine data sets were recorded at Mayo Clinic (Minnesota, USA). Thereby the pigs were anesthetized, 
+intubated and ventilated. The CT scans were acquired on a Definition Dual Source CT scanner (Siemens). The 4DCT data set each consisted of 
+twenty cardiac motion phases, the reference phase was motion phase zero. Nativ CT scans were recorded. In order to distinguish structures 
+within the heart contrast enhanced CT scans were also aquired after the native scans. The radiopaque material was administered intravenously.\newline
+\newline
+% \subsubsection{Segmentation}
+Segmentation of the target volumes as well as the OAR were carried out by a collaborating cardiologist at Mayo Clinic with Eclipse\texttrademark 
+(Varian Medical Systems). The volumes of the contours for the different ablation sites are presented for each pig in table 
+\ref{tab:volume:mayo:porcine}. The location of these sites are visualized in figure \ref{pig1_targets} exemplary for pig 1. 
+Contrary to humans pigs have only one PV pair, distinguished inbetween inferior PV (IPV) and superior PV (SPV). The contour for the 
+PV encircles both of these structures. 
+
+\vspace*{-0.4cm}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Target volume for the different cardiac target sites for all investigated pigs.}
+  \begin{tabular}{|c|c|c|c|}
+    \hline\hline
+    pig no\rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt} & PVs [cm$^{3}$] & CTI [cm$^{3}$] & AV [cm$^{3}$]\\
+    \hline
+    1 & 0.72 & 0.20 & 0.08 \\
+    2 & 1.01 & 0.13 & 0.05 \\
+    3 & 1.09 & 0.24 & 0.06 \\
+    4 & 1.03 & 0.31 & 0.02 \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:volume:mayo:porcine}
+\end{table}
+
+% \newpage
+
+ \begin{figure}[H]
+ \begin{center}
+\subfigure[PVs and AV node]{
+%  \includegraphics[scale=0.4]{L829_PVsandAV.png}
+ \includegraphics[scale=0.3]{L829_PVsandAV.png}
+ }
+\subfigure[PVs and CTI]{
+%  \includegraphics[scale=0.4]{L829_PVsandCTI.png}
+ \includegraphics[scale=0.3]{L829_PVsandCTI.png}
+ }
+\caption{Cardiac target volumes (PV, CTI and AV node) in pig 1. }
+\label{pig1_targets}
+ \end{center}
+\end{figure}
+
+% \newpage
+
+
+% \subsubsection{Image registration}
+
+Non-rigid image registration have been performed with Plastimatch \cite{Sharp07} \cite{Shack10}. 
+A B-spline registration with the following parameters were chosen. For the contrast enhanced CT scans the regularization was chosen to 
+$\lambda$=0.005, the first step was carried out with 50 maximal iterations and the spacing between the control points of the B-spline grid was 
+chosen to 4mm in all three directions. In the second step, with 100 maximal iterations, the grid spacing was chosen to 1mm in all directions. 
+For the native CT scans the grid spacing was the same, but the regularization lambda was chosen to $\lambda$=0.0001. 
+The quality of registration was validated with visualization techniques: false color images \cite{Bro07}, checker board images 
+\cite{Bro07} as well as a qualitative check of the vector field regularization. These tests were carried out between motion phase 3 
+(which is the motion phase of the maximal displacement of the ventricle) and  the reference phase (motion phase zero) or motion 
+phase 18 (the motion phase of the maximal displacement of the atria) and the reference phase.  
+
+\subsection{Treatment planning parameters}
+
+Treatment plans without motion (3D, static) as well as with motion (4D) were generated. 
+For the dose optimization process, 3D treatment plans were generated to homogenously cover the CTVs, 4D treatment plans covered the ITV 
+\cite{Gra12}. Both CTV and ITV were studied with additional safety margins of 5mm. The grid spacing was chosen to 1$\mathrm{mm}$ in $x$ 
+and $y$ direction, respectively. The spacing between the IESs were chosen to 3mm$_{H2O}$. A maximal contour extension of 1.1 times the focal 
+spot size of 4mm was chosen as well as a distal contour fall off of 4mm$_{H2O}$. TRiP's 'all points divergent beam' algorithm was used to 
+calculate the absorbed dose. All treatment plans were generated as single field uniform dose (SFUD). In all simulations a physical dose of 
+25 Gy was applied in one fraction.\newline
+\newline
+The generation of treatment plans is furthermore also dependent on the theoretically possible 
+beam application. Spill lenght, shape and particle density are thus important factors. As the here presented simulations should 
+study the feasibility of the planned experiments at GSI, the corresponding accelerator 
+parameters have been used. Thereby a spill length of 2.2s is assumed. The pause in between spills is either 2.2s, when no energy change is 
+required afterwards, or 3.2s when a energy change is needed. The spill shape is approximated by a Gaussian function. The particle intensities 
+feasible at GSI vary between 2x10$^{6}$ particles per spill and 2x10$^{8}$ particles per spill. Inbetween these two extreme intensity levels, 
+fifteen different intensity levels can be used. In the resulting treatment plan, the intensity steps are automatically chosen.
+A minimum particle number of 75.000 was chosen.\newline
+\newline
+The dose was planned to be applied from two different beam channel directions. As no carbon ion gantry is available at GSI, the beam position 
+was chosen as two lateral fields with a couch angles of -90$^{\circ}$ and 90$^{\circ}$. With these opposing fields the treatment should be 
+more robust against potential uncertainties like range differences. Due to the GSI specific beam output, the particles are applied at an 
+angle of -2.203$^{\circ}$, which was integrated in the treatment plans as a gantry angle.\newline
+\newline
+% \subsubsection{Motion trajectories}
+As the reconstruction of the 4DCTs was based on the time scale a phase-based motion state detection was employed. 
+In order to consider possible divergence in the heartbeat motion pattern of the pigs, different motion periods (0.7s and 0.5s) as well as 
+different starting phases (0$^{\circ}$ and 90$^{\circ}$) were used. The fast motion periods were chosen in order to account for the fast 
+heartbeat of the pigs, which lay between 110 and 120 beats per minutes.\newline
+\newline
+% \subsubsection{Margins}
+Besides the original volume of the CTV a safety margin has been added to the volumes of the treatment planning study. The margin was applied 
+in order to account for theoretically possible deviations in between treatment planning and delivery, like slight positioning errors, changes 
+between CT acquisition and treatment delivery etc. In confer with the radiologists from Mayo Clinic an isotropic safety margins of 5mm 
+has been chosen, which will also be applied in the irradiation with photons. The ITV volumes used as the final target were generated from the 
+original CTV contour as well as the CTV with margin, so that potential range variations were considered in the margins. 
+
+
+\subsection{Treatment planning studies}
+
+On the basis of 3D treatment plans on the AV node the dose to enclosed OAR were studied. These were carried out on the CTV of all four pig data 
+sets. Furthermore the 3D treatment plans were produced as reference values to the 4D cases, as it represents the ideal but not deliverable 
+dose distribution. 
+4D plans were distinguished between an underlying motion without any compensation, resulting in interplay patterns, and with the application of 
+rescanning as motion mitigation technique. For rescanning two different rescan numbers (10 and 15) were compared.
+Static, interplay as well as rescanning treatment plans for all pigs where carried out with the two stated beam entry channels,
+a safety margin of 5mm, the stated treatment planning parameters and the four stated motion trajectories. 
+All treatment planning studies were carried out on contrast enhanced CT scans. 
+
+
+\subsection{Analysis}
+
+Both the dose deposition in OAR as well as dose homogeneity in the target volume were studied. For the OAR dose-volume restriction in 
+esophagus, trachea, aorta and the whole heart were compared to values from RTOG study protocols (see table \ref{tab:RTOG:pig}). 
+As further OAR cardiac substructures (ventricles and coronary arteries) were studied. Here the mean dose into the structures as well as the 
+maximum point dose and the maximal irradiated volume (thus sum over all voxels of the organ which receive dose) were analyzed. In general, the 
+median values of these parameters over all pigs were further calculated. Besides the second quartile (median, 50th percentile) also the 
+third quartile (75th percentile) was assessed. For comparison of the resulting dose coverage in the target region dose-volume-histograms 
+(DVHs) were studied. Furthermore motion-volume-histograms (MVHs) \cite{Ric13} were generated displaying the relative displacement of every 
+voxel of the investigated volume to the reference phase in all three motion directions. With these the resulting motion of the cardiac 
+target sites due to heartbeat could be assessed. In particular, the motion assessable from the native CT scans were compared with the contrast 
+enhanced motion information.  
+
+\begin{table}[H]
+  \centering
+  \caption{Dose-volume limits for OAR.}
+  \begin{tabular}{|c|c|c|c|}
+    \hline\hline
+    OAR & Volume [cc] & Dose [Gy] & endpoint \\
+    \hline
+    Aorta / great vessels & 10 & 31 & Aneurysm \\
+    Esophagus & 5 & 11.9 &  Stenosis / fistula \\
+    Heart & 15 & 16 & Pericarditis \\
+    Trachea & 4 & 10.5 & Stenosis / fistula \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:RTOG:pig}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % 
+% % \subsection{Data acquistion}
+% % 
+% % Definition Dual Source (Siemens Healthcare, Forchheim, Germany).  It is a 64 slice scanner (2 x 32, when using the flying focal spot mode). The gantry rotation time of 0.33 s results in 83 ms temporal resolution for the ecg gated cardiac images. 
+% % 
+% % 
+% % 
+% % Four XXX mini swine were anesthetized (XXX mittel) and (XXX beatmung). In two cases (pig 1 and pig 2) cardiac gated CT scans were acquired. 
+% % The 
+% % 
+% % The porcine data was acquired on a Dual Source CT scanner (Siemens Healthcare, Forchheim, Germany). 
+% % 
+% % 
+% % Der ct scanner war ein Definition Dual Source richtig? 
+% % mit welchem tool hast du denn die konturieren generiert?
+% % Was fuer mini swines waren das? 
+% % welches kontrastmittel? 
+% % waren die schweine beatmet und wie? 
+% % under vollnarkose? mit welchem mittel?
+% % 
+% % \subsubsection{CT scans}
+% % \subsubsection{Cardiac target volumes (Contouring)}
+% % 
+% % \subsection{Treatment planning}
+% % 
+% % TRiP4D
+% % beam size
+% % beam direction
+% % 
+% % \subsubsection{Dose to organs at risk}
+% % 
+% % In order to study the robustness of the static irradiation, different PTV margins (3 mm, 5 mm and 7 mm isotropic margins) were applied on the 
+% % cardiac target volumes on the reference CT motion phase. For comparison the CTV (0 mm margin) was also assessed. The resulting dose deposition 
+% % in the organs at risk was studied. Special emphasis lay on the dose exposure of the heart, excluding the target volume in (CTI, AV) or close 
+% % to (IPV) the heart. For the IPV further critical structures had to be taken into account including the esophagus, the aorta and the treachea. 
+% % Dose-volume limits were chosen according to the Radiation Therapy Oncology Group (RTOG) protocols \cite{RTOG0631} \cite{RTOG0915}. Values for 
+% % single fraction treatment are stated in table \ref{DVLimits}. 
+% % % were \cite{Gri10} \cite{Ben10}. 
+% % 
+% % \begin{center}
+% %   \begin{tabular}{ | c || c | c |}
+% %     \hline
+% %     OAR & Volume [cc] & Dose [Gy]\\ \hline \hline
+% %     Aorta & 10 & 31 \\ \hline
+% %     Esophagus & 5 & 11.9 \\ \hline
+% %     Heart & 15 & 16 \\ \hline
+% %     Trachea & 4 & 10.5 \\ \hline
+% %     \hline
+% %   \end{tabular}
+% %   \label{DVLimits}
+% % \end{center}
+% % 
+% % Doses exceeding this dose-volume limits can cause major complications. Based on the critical organs, these side-effects and toxicities include 
+% % XXX. 
+% % 
+% % \subsubsection{Assessment of motion}
+% % 
+% % 
+% % \subsubsection{Motion mitigation techniques for dose deposition in AV node}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Results}
+
+In the following the results of the motion assessment due to heartbeat will be shown. Afterwards the dose to OAR when irradiating the AV node 
+will be presented in detail. For the treatment planning study different dose analysis parameters will be presented and compared for different 
+cases (static, interplay and rescanning). 
+
+\subsection{Motion directions and magnitude}
+
+Treatment planning for particle therapy is carried out on native CT scans, as the Hounsfield units (HU) give information on the density of the 
+structures and hence enable a calculation of the needed particle range. 
+Nevertheless, as the heart is such a dense muscular structure, it was not certain if native CT scans would offer the needed contrast 
+to assess the motion of substructures within the heart. Thus a comparison between motion assessments of the cardiac target volumes 
+in native and contrast-enhanced CT scans will be presented for one porcine data set. Afterwards the motion of all target volumes (PVs, CTI and 
+AV node) will be shown for all pigs. 
+
+\subsubsection*{Motion of cardiac target volumes in contrast enhanced versus native CT scans}
+%%%%%%% CONTRAST VS NATIV %%%%%%
+
+Only one of the four porcine data sets (pig 3) offered identical CT slices between native and contrast enhanced data sets. For a fair 
+comparison this data set was hence analyzed. Using the resulting deformation maps from deformable image registration the motion of the 
+ablation sites of PVs, CTI and AV node were assessed in both scans. Motion volume histograms (MVHs) \cite{Ric13} displaying the relative 
+displacement of every voxel of the investigated volume to the reference phase in all three motion directions were generated. The mean and 
+standard deviation of these displacement values in each motion phase are plotted for all motion directions in figures \ref{motion_hb_pv_contrast_native} - 
+\ref{motion_hb_av_contrast_native}.
+% In table \ref{tab:motion_native_vs_contrast} a numerical comparison between the motion obtained from native and contrast enhanced CT scans is shown. 
+It can be seen that the motion assassable in the contrast enhanced CT is much larger than in the native CTs. While the mean absolute 
+displacement in the native CT is smaller than 1mm in case of PVs and AV node and smaller than 1.5mm in case of CTI, the contrast CT enables a 
+motion assessment with yields a mean absolute displacement of larger than 2mm in all studied target volumes (see table \ref{tab:motion_native_vs_contrast}). 
+The difference is especially large in the AV node, a structure found in the center of the cardiac muscle. The maximal observable displacement 
+for this structure in case of the native CT scan is (0.23 $\pm$ 0.08) mm (MP 12), while with the contrast enhanced CT an absolute displacement of (2.47 $\pm$ 0.37)mm is 
+assassable in this motion phase and the maximal absolute displacement is found to (4.35 $\pm$ 0.10)mm (MP 5) (see Appendix XXX). It can thus 
+be concluded that contrast enhanced CTs are needed in order to fully assess the motion of cardiac target volumes in pigs. 
+% The motion information for all pigs in case of contrast CTs can be found in section \ref{Sec:Motion_pigs}.
+
+\newpage
+
+\vspace*{0.5cm}
+
+\begin{table}[H]
+  \centering
+  \small
+  \caption{Mean displacement of cardiac taget volumes in pig 3 over all motion phases.}
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline\hline
+    & Target & ABS [mm] & SI [mm] & AP [mm] & LR [mm] \\
+    \hline
+    & PVs & 2.09 $\pm$ 0.61 & 0.27 $\pm$ 0.43 & 1.83 $\pm$ 0.69 &  -0.17 $\pm$ 0.73 \\
+    contrast CT & CTI & 2.14 $\pm$ 0.46 & 0.81 $\pm$ 0.39 & 1.71 $\pm$ 0.47 & 0.01 $\pm$ 0.48 \\
+    & AV & 2.05 $\pm$ 0.39 & 0.45 $\pm$ 0.19 & 1.73 $\pm$ 0.32 & -0.66 $\pm$ 0.43 \\
+    \hline\hline
+    & Target & ABS [mm] & SI [mm] & AP [mm] & LR [mm] \\
+   \hline
+    & PVs & 0.88 $\pm$ 0.44 & 0.03 $\pm$ 0.44 & 0.11 $\pm$ 0.51 & -0.12 $\pm$ 0.52 \\
+    native CT & CTI & 1.11 $\pm$ 0.50 & -0.07 $\pm$ 0.59 & 0.61 $\pm$ 0.51 & -0.09 $\pm$ 0.48 \\
+    & AV & 0.14 $\pm$ 0.06 & 0.05 $\pm$ 0.06 & 0.00 $\pm$ 0.07 & 0.00 $\pm$ 0.06 \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:motion_native_vs_contrast}
+\end{table}
+
+\vspace*{0.8cm}
+
+% \newpage
+
+\begin{figure}[H]
+\begin{center}
+ \includegraphics[scale=0.22]{Mayo_IPV_HB_NATIV_VS_CONTRAST.png}
+\caption{PV: motion amplitude in each motion phase of the heart beat relative to the reference phase. Comparison between nativee CT data 
+(black) and contrast CT (red) for Pig 3.}
+\label{motion_hb_pv_contrast_native}
+\end{center}
+\end{figure}
+
+\newpage
+
+% \vspace*{-0.5cm}
+
+\begin{figure}[H]
+\begin{center}
+ \includegraphics[scale=0.22]{Mayo_CTI_HB_NATIV_VS_CONTRAST.png}
+\caption{CTI: motion amplitude in each motion phase of the heart beat relative to the reference phase. Comparison between nativee CT data 
+(black) and contrast CT (red) for Pig 3.}
+\label{motion_hb_cti_contrast_native}
+\end{center}
+\end{figure}
+
+% \newpage
+
+\vspace*{-0.5cm}
+
+\begin{figure}[H]
+\begin{center}
+ \includegraphics[scale=0.22]{Mayo_AV_NATIV_VS_HB_CONTRAST.png}
+\caption{AV: motion amplitude in each motion phase of the heart beat relative to the reference phase. Comparison between nativee CT data 
+(black) and contrast CT (red) for Pig 3.}
+\label{motion_hb_av_contrast_native}
+\end{center}
+\end{figure}
+
+
+% \newpage
+
+
+\subsubsection*{Motion of cardiac target volumes due to heartbeat}
+\label{Sec:Motion_pigs}
+
+% \vspace*{-0.4cm}
+
+The mean and standard deviation over all target volume voxels are plotted for each motion phase and for all pigs and motion directions in figure 
+\ref{fig:motion_hb_all_pv} to \ref{fig:motion_hb_all_av}. It can be seen that the displacement within the cardiac target volume varies 
+dependent on the studied pig and are hence dependent on the underlying anatomy. Furthermore the highest absolute displacement can be observed 
+in different pigs, depending on the studied target volume. While the PVs move the most in pig 1 with a displacement of up to 5mm, pig 2 has the 
+largest motion both in CTI and AV node (more than 6mm in both structures, respectively) (see also table \ref{tab:maxabsmotion_allpigs}). 
+In this table it can furthermore be seen that the maximal absolute displacement varies depending on the studied volume. The  
+CTI moves with a bigger amplitude than the other two target volumes, in three of the four studied pigs (difference found in pig 3). 
+The smallest displacement is found in the PVs, again in three of the four studied data sets (again the difference is found in pig 3). 
+This can be interpreted in connection to the placement of the target volumes within the heart. While the PVs are found in the upper atria, 
+the CTI is located in the lower atria and hence the influence of the ventricular motion should be bigger. The AV node is in between 
+the atria and ventricles and was found to have an intermediate absolute displacement in most cases (exception in pig 3).
+Independent of the studied target volume the largest contribution to the absolute displacement is found in AP direction for all pigs 
+(see table \ref{tab:motion_allpigs}). This can also be seen in the mean displacements over all pigs. 
+For the PVs the mean amplitude in SI direction is (0.30 $\pm$ 0.77)mm, (1.53 $\pm$ 1.06) in AP direction and (-0.46 $\pm$ 0.95) in LR 
+direction. In case of the CTI the mean amplitude in SI is (0.75 $\pm$ 0.74), (1.84 $\pm$ 0.65) in AP and (0.52 $\pm$ 0.85) in LR. For the AV 
+node it is (0.71 $\pm$ 0.33) in SI, (2.42 $\pm$ 0.36) in AP and (-0.67  $\pm$ 0.47) in LR. On average, the absolute amplitude over all motion 
+phases and pigs is found to (2.32 $\pm$ 0.79)mm for the PVs, (2.78 $\pm$ 0.68) for CTI and (2.97 $\pm$ 0.39)mm for the AV node.\newline
+\newline
+It can moreover be seen in table \ref{tab:maxabsmotion_allpigs} that no motion phase can be directly connected to the maximal absolute 
+displacment of the target volumes. Since the motion phases of the heartbeat gated CT scan are based on the ECG trace and result in a division 
+of a single heartbeat the motion phases should be directly assigned to the contraction (systole) and dilatation (diastole) of both atria and 
+ventricles. Contraction of the atria (atrial systole) is occurring in between motion phase four and nineteen, in the same time as the 
+ventricular relaxation (ventricular diastole). The ventricular systole and at the same time atria diastole are hence much shorter, occurring 
+in the remaining motion phases twenty to three. The maximal displacement of the atria should thus be observed in motion phase eightteen, while 
+the maximal amplitude of the ventricle should be observed in motion phase three. 
+While this pattern is not directly connectable to the motion of the cardiac volumes it can nevertheless be seen that for all pig the 
+displacement in the biggest motion direction (AP) results in a shallower motion in between MP 6 and 13 compared to the other MPs. 
+For the PVs the motion in pig 1 (pig with the largest motion in this target volume) has a range of less than 0.5mm in the interval between MP 
+6 and 13, while the motion ranges more than 3mm in the other MPs (see Appendix XXX). The same can be observed in case of the CTI, where pig 2 
+has a less shallow motion range of about 2mm within MP 6 and 13, but nevertheless a larger motion range of up to 4mm in the other MPs. 
+Also for the AV node the motion within the MP interval (6-13) is lower (up to 2mm) compared to the the other MPs (range of about 4.5mm) 
+in pig 2. 
+
+\begin{table}[H]
+  \centering
+  \caption{Biggest absolute displacement of target volumes for all pigs with corresponding motion phase.}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline\hline
+    Target & Pig 1 [mm] (MP) & Pig 2 [mm] (MP) & Pig 3 [mm] (MP) & Pig 4 [mm] (MP) \\
+    \hline
+    PVs & 4.22 $\pm$ 1.07 (13) & 3.71 $\pm$ 1.55 (12) & 2.39 $\pm$ 0.89 (06) & 3.13 $\pm$ 1.03 (11) \\
+    CTI & 5.79 $\pm$ 0.98 (07) & 6.34 $\pm$ 0.54 (08) & 2.23 $\pm$ 0.63 (11) & 3.95 $\pm$ 0.83 (13) \\
+    AV & 4.93 $\pm$ 0.26 (13) & 6.04 $\pm$ 0.19 (11) & 4.35 $\pm$ 0.10 (05)  & 3.63 $\pm$ 0.67 (10) \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:maxabsmotion_allpigs}
+\end{table}
+
+
+\vspace*{-0.4cm}
+
+% \newpage
+
+\begin{table}[H]
+  \centering
+  \small
+  \caption{Mean displacement of target volumes over all motion phases for all pigs and motion directions.}
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline\hline
+    Target & Pig & ABS [mm] & SI [mm] & AP [mm] & LR [mm] \\
+    \hline
+    PVs & 1 & 2.88 $\pm$ 0.74 & 0.24 $\pm$ 1.00 & 2.02 $\pm$ 1.28 & -1.05 $\pm$ 1.11 \\
+    & 2 & 2.30 $\pm$ 0.94 & 0.85 $\pm$ 0.91 & 1.38 $\pm$ 1.16 & -0.63 $\pm$ 1.02 \\
+    & 3 & 1.71 $\pm$ 0.78 & -0.19 $\pm$ 0.55 & 0.68 $\pm$ 0.92 & 0.08 $\pm$ 0.81 \\
+    & 4 & 2.09 $\pm$ 0.61 & 0.27 $\pm$ 0.43 & 1.83 $\pm$ 0.69 & -0.17 $\pm$ 0.73 \\
+    \hline\hline
+    & Pig & ABS [mm] & SI [mm] & AP [mm] & LR [mm] \\
+   \hline
+    CTI & 1 & 3.54 $\pm$ 0.82 & 0.73 $\pm$ 0.84 & 2.30 $\pm$ 0.82 & 1.51 $\pm$ 0.92 \\
+    & 2 & 3.51 $\pm$ 0.78 & 0.96 $\pm$ 1.01 & 2.37 $\pm$ 0.54 & 0.31 $\pm$ 1.17 \\
+    & 3 & 1.55 $\pm$ 0.55 & 0.40 $\pm$ 0.50 & 0.70 $\pm$ 0.66 & 0.17 $\pm$ 0.57 \\
+    & 4 & 2.14 $\pm$ 0.46 & 0.81 $\pm$ 0.39 & 1.71 $\pm$ 0.47 & 0.01 $\pm$ 0.48 \\
+    \hline\hline
+   & Pig & ABS [mm] & SI [mm] & AP [mm] & LR [mm] \\
+   \hline
+    AV & 1 & 2.96 $\pm$ 0.41 & 0.39 $\pm$ 0.42 & 2.54 $\pm$ 0.49 & -0.70 $\pm$ 0.40 \\
+    & 2 & 3.70 $\pm$ 0.36 & 1.89 $\pm$ 0.34 & 3.04 $\pm$ 0.26 & 0.11 $\pm$ 0.36 \\
+    & 3 & 2.78 $\pm$ 0.37 & 0.04 $\pm$ 0.31 & 1.98 $\pm$ 0.27 & -1.37 $\pm$ 0.61 \\
+    & 4 & 2.05 $\pm$ 0.39 & 0.45 $\pm$ 0.19 & 1.73 $\pm$ 0.32 & -0.66 $\pm$ 0.43 \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:motion_allpigs}
+\end{table}
+
+% \vspace*{-0.8cm}
+
+
+
+
+% % The mean and standard deviation over all motion phases are stated for each pig in 
+% % table \ref{tab:motion_allpigs}.
+% % Depending on the studied target volume, the highest absolute displacement can be observed in different pigs. 
+% % While the PVs and CTI move the most in pig 1 with a displacement of up to 3mm and 4mm, respectively, the maximal AV node movement is 
+% % observed in pig 2 (up to 4mm). Independent of the studied target volume the largest contribution to the absolute displacement is found in 
+% % AP direction for all pigs. This can also be seen in the mean displacements over all pigs. 
+% % For the PVs the mean amplitude in SI direction is (0.30 $\pm$ 0.77)mm, (1.53 $\pm$ 1.06) in AP direction and (-0.46 $\pm$ 0.95) in LR 
+% % direction. In case of the CTI the mean amplitude in SI is (0.75 $\pm$ 0.74), (1.84 $\pm$ 0.65) in AP and (0.52 $\pm$ 0.85) in LR. For the AV 
+% % node it is (0.71 $\pm$ 0.33) in SI, (2.42 $\pm$ 0.36) in AP and (-0.67  $\pm$ 0.47) in LR. On average, the absolute amplitude over all motion 
+% % phases and pigs is found to (2.32 $\pm$ 0.79)mm for the PVs, (2.78 $\pm$ 0.68) for CTI and (2.97 $\pm$ 0.39)mm for the AV node.
+% % Concerning the maximal absolute displacement it can be seen in table \ref{tab:maxabsmotion_allpigs} that the results vary not only for the 
+% % cardiac target volumes but are also dependent on the pig data set. Furthermore it can be seen that in the maximal absolute displacement the 
+% % CTI moves with a bigger amplitude than the other two target volumes, in three of the four studied pigs (difference found in pig 3). 
+% % The smallest displacement is found in the PVs, again in three of the four studied data sets (again the difference is found in pig 3). 
+% % This can be interpreted in connection to the placement of the target volumes within the heart. While the PVs are found in the upper atria, 
+% % the CTI is located in the lower atria and hence the influence of the ventricular motion should be bigger. The AV node is in between 
+% % the atria and ventricles and was found to have an intermediate absolute displacement in most cases (exception in pig 3).\newline
+% % \newline
+% % Furthermore it can be seen in table \ref{tab:maxabsmotion_allpigs} that no motion phase can be directly connected to the maximal absolute 
+% % displacment of the target volumes. Since the motion phases of the heartbeat gated CT scan are based on the ECG trace and result in a division 
+% % of a single heartbeat the motion phases should be directly assigned to the contraction (systole) and dilatation (diastole) of both atria and 
+% % ventricles. Contraction of the atria (atrial systole) is occurring in between motion phase four and nineteen, in the same time as the 
+% % ventricular relaxation (ventricular diastole). The ventricular systole and at the same time atria diastole are hence much shorter, occurring 
+% % in the remaining motion phases twenty to three. 
+% % % The maximal displacement of the atria should thus be observed in motion phase eightteen, while 
+% % % the maximal amplitude of the ventricle should be observed in motion phase three. 
+% % Looking into more detail into the motion pattern of the target volumes based on the motion phase division, it can be seen that the 
+% % CTI moves most rapidly between motion phase 14 and 19, and between motion phase 1 and 5. 
+% % 
+% % % While no motion phase can be connected to a maximal displacment for the different cardiac target volumes in all pig cases, the motion can be 
+% % % interpreted in connection to the placement of the target volumes within the heart.  
+% % % The CTI, which is found on the lower atrium, moves most rapidly between motion phase 15 and 19, and between motion phase 1 and 6. 
+% % % 
+% % %
+% % % The motion of the PVs on the other hand result in a much more 
+% % % chaotic displacement. No motion phase can be assessed to a maximal displacement in all patient cases and no dominant motion direction is 
+% % % observed. The underlying heartbeat motion which causes the PVs to move should hence be much more complex. 
+% % % 
+% % % For none of the studied porcine data sets a maximal motion phase 
+% % 
+% % % \newpage
+
+
+\newpage
+
+% \vspace*{-0.4cm}
+% \vspace*{0.4cm}
+
+\begin{figure}[H]
+\begin{center}
+ \includegraphics[scale=0.22]{Mayo_PV_HB.png}
+\caption{Motion amplitude of PVs under influence of heartbeat for all porcine. (pig 1: black, pig 2: red, pig 3: blue, 
+pig 4: green) }
+\label{fig:motion_hb_all_pv}
+\end{center}
+\end{figure}
+
+\vspace*{-0.4cm}
+% \newpage
+
+\begin{figure}[H]
+\begin{center}
+ \includegraphics[scale=0.22]{Mayo_CTI_HB.png}
+\caption{Motion amplitude of CTI under influence of heartbeat for all porcine. (pig 1: black, pig 2: red, pig 3: blue, 
+pig 4: green) }
+\label{fig:motion_hb_all_cti}
+\end{center}
+\end{figure}
+
+\newpage
+% \vspace*{-0.4cm}
+
+\begin{figure}[H]
+\begin{center}
+ \includegraphics[scale=0.22]{Mayo_AV_HB.png}
+\caption{Motion amplitude of AV node under influence of heartbeat for all porcine. (pig 1: black, pig 2: red, pig 3: blue, 
+pig 4: green) }
+\label{fig:motion_hb_all_av}
+\end{center}
+\end{figure}
+
+% \newpage
+\vspace*{-0.8cm}
+
+The overall displacement field for two exemplary pigs with a small motion amplitude (pig 4) and a large motion amplitude (pig 2) of the 
+AV node are shown in figure \ref{contour_plot_hb_pigs}. The field is shown for the maximal displacement motion phase of the respective pigs 
+(motion phase 11 for pig 2 and motion phase 10 for pig 4, see table \ref{tab:maxabsmotion_allpigs}). 
+In order to visualize the location of the displacement, an axial cut of the reference state CT is 
+underlayed. The absolute values of the displacement vectors are shown as contour plots. 
+
+% \vspace*{-0.4cm}
+
+\begin{figure}[H]
+\centering
+\subfigure[Pig 2: max absolute motion (MP 11)]{
+%  \includegraphics[scale=0.21]{Contour_z_abs_HB_L833_11_gedreht.png}
+ \includegraphics[scale=0.16]{Contour_z_abs_HB_L833_11_gedreht.png}
+}
+\subfigure[Pig 4: max absolute motion (MP 10)]{
+% \includegraphics[scale=0.21]{Contour_z_abs_HB_L979_10_gedreht.png}
+\includegraphics[scale=0.16]{Contour_z_abs_HB_L979_10_gedreht.png}
+}
+\caption{Axial slices of the reference state of the CT overlayed with the absolute values of the displacement field (obtained from 
+deformable image registration) in the corresponding slice for heartbeat motion. Left: the resulting displacement of pig 2 is shown 
+in MP 11. Right: the results for pig 4 in MP 10.}
+\label{contour_plot_hb_pigs}
+\end{figure}
+ 
+\newpage
+
+
+
+
+% % 
+% % 
+% % 
+% % - BILD dy von L833: sagittal view -> man sieht das konturen am herzem zwischen native und contrast ok!
+% % - large difference between native and contrast! naturally ecsp. for targets inside of heart (AV and CTI) \newline 
+% % - IPV: SI largest motion direction \newline
+% % - AV and CTI: AP largest motion direction \newline
+% % - for this pig MP 14 largest motion in IPV \newline
+% % 
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+% % - max bewegung des vorhofes: MP 16/17/18/19
+% % - max bewegung der ventrikel: MP 3
+% % 
+% % - ventrikulaere systole: MP 20 - 3
+% % - ventrikulaere diastole: MP 4 - 19
+% % - atrial systole: MP 4 - 19
+% % - atrial diastole: MP 20 - 3
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % 
+% % - av knoten: bewegt sich selbstverstaendlich am steilsten in MP 2 - 7 und MP 14 - 18. denn dort jeweils max bewegung vorhof bzw ventrikel, und 
+% % AV ist verbindung zwischen diesen
+% % - ipv: ploetzlichste bewegung in MP 14 -19, wo maximale bewewgung der ventrikel (?)
+% % - cti: auch hier steilster anstieg und abfall in MP 2 - 7 und MP 14 - 18
+% % 
+% % - possible solution: vectorfield information from contrast ct on native ct!!!!
+% % 
+% % \newpage
+
+
+\newpage
+
+\subsection{Dose to organs at risk for the irradiation of AV node}
+
+Due to the fact that the AV node is located in a large distance to the OAR (see figure \ref{pig1_targets}), the dose 
+deposition in the studied structures is noncritical. The dose-volume limit results in the four studied porcine data sets can be seen 
+in figure \ref{static_dosevolume_oar_pig}. Esophagus, trachea as well as the aorta are receiving no dose in all studied cases. 
+Only the heart is receiving a certain dose deposition. Nevertheless the respective dose-volume limit, which is represented by a dashed line 
+in the plot, is not endangered. The dose deposited in 15cm$^{3}$ of heart ranges from 19\% (pig 3) to 29\% (pig 4) of the physical dose, thus 
+even higher doses of up to 40Gy would not exceed the dose volume limit. 
+
+\begin{figure}[H]
+\subfigure[Esophagus]{
+ \includegraphics[scale=0.18]{Mayo_Pigs_ESO_alternativeLimit.png}
+ }
+ \subfigure[Trachea]{
+ \includegraphics[scale=0.18]{Mayo_Pigs_TRACHEA.png}
+ }
+  \subfigure[Heart]{
+ \includegraphics[scale=0.18]{Mayo_Pigs_HEARTwoOverlap.png}
+ }
+  \subfigure[Aorta]{
+ \includegraphics[scale=0.18]{Mayo_Pigs_AORTA.png}
+ }
+\caption{Dose-volume data of different OAR when irradiating the AV node in the four porcine data sets with a margin of 5mm. 
+The dose-volume-limit for each critical organ is indicated with a dashed line in each plot, respectively.}
+\label{static_dosevolume_oar_pig}
+\end{figure}
+
+\newpage
+
+The results of a more detailed analysis of the affected cardiac substructures can be seen in table \ref{DV_OAR:pig}. Here the mean dose to the 
+whole structure is stated next to the maximal point dose for all pigs and studied structures. Furthermore the maximal irradiated volume 
+is shown. 
+
+\begin{table}[htbp]
+\centering
+\caption{Mean as well as maximum point dose to the whole heart and different critcal cardiac substructures as well as maximal irradiated 
+volume of the structures for all pigs.}
+  \begin{tabular}{ |c||c||c|c|c|}
+    \hline
+    OAR & Pig & Mean dose [Gy] & Max dose [Gy] & Max volume [\%] \\ \hline \hline
+Heart & 1 & 0.6 & 25.8 & 14.0 \\ 
+ & 2 & 0.5 & 25.4 & 12.7 \\ 
+ & 3 & 0.8 & 25.3 & 17.4 \\ 
+ & 4 & 0.8 & 25.7 & 16.6 \\ 
+\hline
+% LA & 1 & 0.9 & 25.9 & 28.0 \\ 
+%  & 2 & 0.9 & 25.3 & 25.5 \\ 
+%  & 3 & 1.4 & 25.7 & 31.4 \\ 
+%  & 4 & 2.0 & 26.0 & 41.7 \\ 
+% \hline
+% RA & 1 & 1.9 & 26.2 & 35.8 \\ 
+%  & 2 & 1.5 & 26.2 & 23.8 \\ 
+%  & 3 & 1.4 & 25.6 & 35.4 \\ 
+%  & 4 & 2.3 & 26.1 & 24.9 \\ 
+% \hline
+LV & 1 & 0.5 & 26.3 & 6.7 \\ 
+ & 2 & 0.5 & 26.3 & 6.1 \\ 
+ & 3 & 0.3 & 26.1 & 5.1 \\ 
+ & 4 & 0.4 & 26.0 & 4.5 \\ 
+\hline
+RV & 1 & 0.3 & 25.2 & 9.1 \\ 
+ & 2 & 0.2 & 25.2 & 8.0 \\ 
+ & 3 & 0.4 & 25.3 & 9.6 \\ 
+ & 4 & 0.5 & 25.8 & 14.3 \\ 
+\hline
+LCA & 1 & 0.8 & 7.4 & 19.9 \\ 
+ & 2 & 0.6 & 7.2 & 13.5 \\ 
+ & 3 & 0.2 & 6.4 & 8.9 \\ 
+ & 4 & 0.7 & 7.4 & 14.6 \\ 
+\hline
+RCA & 1 & 1.5 & 9.2 & 37.6 \\ 
+ & 2 & 1.1 & 8.4 & 24.0 \\ 
+ & 3 & 1.4 & 9.8 & 37.3 \\ 
+ & 4 & 1.4 & 9.6 & 34.1 \\ 
+\hline
+  \end{tabular}
+  \label{DV_OAR:pig}
+\end{table}
+
+Due to the physical dose deposition of 25Gy in the AV node the heart is receiving a relatively high maximal point dose with a median of 
+25.6Gy (75th percentile: 25.8Gy) over all pigs. The mean heart dose is found to have a median of 0.7Gy (0.8Gy) and the median of the 
+maximal irradiated volume over all porcine data sets is 15.3\% (17.7\%). Comparing the dose deposition in the left and right ventricles 
+it can be seen that the maximum point dose is higher in the LV than in the RV, with a median of 26.2Gy (26.3Gy) compared to 25.2Gy (25.5Gy). 
+Nevertheless the mean dose is comparable with a median of 0.5Gy (0.5Gy) for the LV and 0.4Gy (0.5Gy) for the RV and the maximal irradiated 
+volume is smaller for the LV compared to the RV with a median of 5.6\% (6.4\%) compared to 9.3\% (11.9 \%). Concerning the coronary arteries 
+it can be seen that the mean and maximal point dose to the LCA is smaller than to the RCA, resulting in a median mean dose of 0.6Gy (0.7Gy) 
+in LCA compared to 1.4Gy (1.4Gy) in RCA and a median maximum point dose of 7.3Gy (7.4Gy) in LCA compared to 9.4Gy (9.7Gy) in LCA. 
+Also the maximal irradiated volume is much smaller in the LCA compared to the RCA, resulting in a median maximum volume of 14.1\% (17.2\%) 
+versus 35.7\% (37.5\%). 
+
+
+% LV: median mean dose 0.5Gy (0.5Gy), median max dose 26.2Gy (26.3Gy), max volume 5.6\% (6.4\%)
+% RV: median mean dose 0.4Gy (0.5Gy), median max dose 25.2Gy (25.5Gy), max volume 9.3\%(11.9 \%)
+% 
+% LCA: median mean dose 0.6Gy (0.7Gy), median max dose 7.3Gy (7.4Gy), max volume 14.1\% (17.2\%)
+% RCA: median mean dose 1.4Gy (1.4Gy), median max dose 9.4Gy (9.7Gy), max volume 35.7\% (37.5\%)
+
+
+% 
+% \begin{table}[htbp]
+% \centering
+% \caption{Median as well as maximum point dose to the whole heart and different critcal cardiac substructures as well as maximal irradiated 
+% volume of the structures for all pigs.}
+%   \begin{tabular}{ |c||c||c|c|c|}
+%     \hline
+%     OAR & Pig & Mean dose [Gy] & Max dose [Gy] & Max volume [\%] \\ \hline \hline
+% Heart & 1 & 0.57 & 25.77 & 13.95 \\ \hline 
+% Heart & 2 & 0.51 & 25.42 & 12.74 \\ \hline
+% Heart & 3 & 0.76 & 25.27 & 17.44 \\ \hline
+% Heart & 4 & 0.77 & 25.72 & 16.57 \\ \hline
+% \hline
+% LA & 1 & 0.86 & 25.87 & 28.01 \\ \hline
+% LA & 2 & 0.93 & 25.25 & 25.53 \\ \hline
+% LA & 3 & 1.37 & 25.72 & 31.36 \\ \hline
+% LA & 4 & 2.05 & 26.00 & 41.70 \\ \hline
+% \hline
+% RA & 1 & 1.87 & 26.20 & 35.76 \\ \hline
+% RA & 2 & 1.46 & 26.15 & 23.82 \\ \hline
+% RA & 3 & 1.44 & 25.62 & 35.41 \\ \hline
+% RA & 4 & 2.25 & 26.10 & 24.85 \\ \hline
+% \hline
+% LV & 1 & 0.53 & 26.30 & 6.67 \\ \hline 
+% LV & 2 & 0.52 & 26.25 & 6.12 \\ \hline
+% LV & 3 & 0.33 & 26.07 & 5.06 \\ \hline
+% LV & 4 & 0.40 & 25.97 & 4.51 \\ \hline
+% \hline
+% RV & 1 & 0.26 & 25.15 & 9.06 \\ \hline
+% RV & 2 & 0.23 & 25.15 & 7.95 \\ \hline
+% RV & 3 & 0.44 & 25.25 & 9.56 \\ \hline
+% RV & 4 & 0.52 & 25.77 & 14.28 \\ \hline
+% \hline
+% LCA & 1 & 0.82 & 7.37 & 19.86 \\ \hline
+% LCA & 2 & 0.60 & 7.15 & 13.53 \\ \hline
+% LCA & 3 & 0.24 & 6.42 & 8.91 \\ \hline
+% LCA & 4 & 0.66 & 7.42 & 14.61 \\ \hline
+% \hline
+% RCA & 1 & 1.49 & 9.15 & 37.59 \\ \hline
+% RCA & 2 & 1.12 & 8.42 & 23.98 \\ \hline
+% RCA & 3 & 1.35 & 9.75 & 37.31 \\ \hline
+% RCA & 4 & 1.39 & 9.62 & 34.09 \\ \hline
+% \hline
+%     \hline
+%   \end{tabular}
+%   \label{DV_OAR}
+% \end{table}
+
+% % \begin{table}[htbp]
+% % \centering
+% % \caption{Mean and standard deviation as well as maximum point dose to the whole heart and different critcal cardiac substructures for all 
+% %   four pigs.}
+% %   \begin{tabular}{ |c||c||c|c|}
+% %     \hline
+% %     OAR & Pig & Dose: Mean $\pm$ Stdev [Gy] & Dose: Max [Gy]\\ \hline \hline
+% % Heart & 1 & 0.57 $\pm$ 2.33 & 25.77 \\ \hline
+% % Heart & 2 & 0.51 $\pm$ 2.21 & 25.42 \\ \hline
+% % Heart & 3 & 0.76 $\pm$ 2.90 & 25.27 \\ \hline
+% % Heart & 4 & 0.77$\pm$ 2.80 & 25.72 \\ \hline
+% % \hline
+% % LA & 1 & 0.86 $\pm$ 2.70 & 25.87 \\ \hline
+% % LA & 2 & 0.93 $\pm$ 2.65 & 25.25 \\ \hline
+% % LA & 3 & 1.37 $\pm$ 3.55 & 25.72 \\ \hline
+% % LA & 4 & 2.05 $\pm$ 4.60 & 26.00 \\ \hline
+% % \hline
+% % RA & 1 & 1.87 $\pm$ 5.25 & 26.20 \\ \hline
+% % RA & 2 & 1.46 $\pm$ 4.75 & 26.15 \\ \hline
+% % RA & 3 & 1.44 $\pm$ 4.47 & 25.62 \\ \hline
+% % RA & 4 & 2.25 $\pm$ 5.92 & 26.10 \\ \hline
+% % \hline
+% % LV & 1 & 0.53 $\pm$ 3.12 & 26.30 \\ \hline 
+% % LV & 2 & 0.52 $\pm$ 3.15 & 26.25 \\ \hline
+% % LV & 3 & 0.33 $\pm$ 2.46 & 26.07 \\ \hline
+% % LV & 4 & 0.40 $\pm$ 2.82 & 25.97 \\ \hline
+% % \hline
+% % RV & 1 & 0.26 $\pm$ 1.63 & 25.15 \\ \hline
+% % RV & 2 & 0.23 $\pm$ 1.54 & 25.15 \\ \hline
+% % RV & 3 & 0.44 $\pm$ 2.55 & 25.25 \\ \hline
+% % RV & 4 & 0.52 $\pm$ 2.44 & 25.77 \\ \hline
+% % \hline
+% % LCA & 1 & 0.82 $\pm$ 2.06 & 7.37 \\ \hline
+% % LCA & 2 & 0.60 $\pm$ 1.84 & 7.15 \\ \hline
+% % LCA & 3 & 0.24 $\pm$ 0.99 & 6.42 \\ \hline
+% % LCA & 4 & 0.66 $\pm$ 1.93 & 7.42 \\ \hline
+% % \hline
+% % RCA & 1 & 1.49 $\pm$ 2.85 & 9.15 \\ \hline
+% % RCA & 2 & 1.12 $\pm$ 2.55 & 8.42 \\ \hline
+% % RCA & 3 & 1.35 $\pm$ 2.77 & 9.75 \\ \hline
+% % RCA & 4 & 1.39 $\pm$ 2.95 & 9.62 \\ \hline
+% % \hline
+% %     \hline
+% %   \end{tabular}
+% %   \label{DV_OAR}
+% % \end{table}
+
+\newpage
+
+
+\subsection{Motion mitigation techniques for AV node irradition}
+
+The absolute motion amplitudes of the AV node of up to 6mm due to heartbeat are expected to yield dose inhomogeneities when not compensated 
+for. The resulting Interplay effect and dose deposition was studied for every porcine data set for different motion patterns and 5mm margin 
+to the target volume. The dose analysis values V95, V107 and D5-D95 were assessed and plotted. For comparison also the corresponding 
+values for the 3D case (static) are shown. Rescanning was studied as motion mitigation technique.  
+The results of the stated dose values in case of rescanning with rescan numbers of ten and fifteen will be presented. 
+
+
+\subsubsection{Dose deposition }
+A representative dose deposition for all studied techniques (static, interplay and rescanning with fifteen rescans) is shown exemplary for pig  
+2 (as this is the pig with the largest motion amplitude in the AV node) in figure \ref{dose_pig2}. Rescanning and interplay are 
+shown for a motion with a period of 0.5s and a starting phase of 90$^{\circ}$. The target volume was irradiated 
+with an added margin of 5mm. It can already been seen from this dose cut figures that rescanning with fifteen rescans improves the outcome 
+compared to interplay and yields a result which is comparable to the static case. Due to the mechanism of rescanning, the field size is 
+slighlty increased compared to the static irradiation.\newline
+\newline
+For pig 2, the different motion patterns DVHs of fifteen rescans compared to the interplay results as well as a static irradiation are 
+displayed in figure \ref{dvhs_pig2_pig4} for 5mm safety margin. In order to assess the dose information of all patients the DVHs were analyzed and 
+compared for dose steepness, dose coverage as well as over dosage. The results for all porcine data sets can be seen in figure 
+\ref{static_interplay_rescanning_ALLpigs}. The corresponding numerical values can be found in appendix XXX (tables \ref{tab:Pig1_AV} - 
+\ref{tab:Pig4_AV}).\newline
+\newline
+As can be seen from figure \ref{static_interplay_rescanning_ALLpigs} the resulting interplay pattern is dependent on the underlying motion 
+period and starting phase. This can also be seen in the mean values and standard deviations of the dose analysis parameters over all patients 
+for different motion patterns. The dose coverage for example is found to have a mean value of V95=(84.3 $\pm$ 17.5)\% for a motion with 0.7s 
+period and a starting phase of 0$^{\circ}$, while it is found to (91.0 $\pm$ 10.3) for the same period and a starting phase of 90$^{\circ}$. 
+For a period of 0.5s the mean dose coverage over all pigs is found to (84.5 $\pm$ 8.0) with a phase of 0$^{\circ}$ and to (86.0$\pm$ 24.0) 
+for a phase of 90$^{\circ}$. The resulting high standard deviation shows that the result is also dependent on the studied porcine case.
+These dependencies are also valid for the other studied dose analysis parameters, dose homogeneity and over dosage.\newline
+% Exemplary the mean values for dose coverage are stated for all motions in table \ref{tab:meandoseparameters_allpigs_interplay}. 
+\newline
+It can furthermore be seen in figure \ref{static_interplay_rescanning_ALLpigs} (as well as numerical values for all pigs in appendix XXX) 
+that rescanning can improve the results for dose steepness, dose coverage as well as over dosage compared to the interplay case in all studied 
+motion cases for three out of four pigs. Pig 2 on the other hand, who was found to have the largest absolute displacement of the AV node out of 
+the four studied porcine data sets, results in some cases where rescanning yields slighlty inferior results compared to interplay. This is the 
+case in dose steepness, where a motion with 0.7s and 90$^{\circ}$ starting phase results to D5-D95=7.9\% with ten rescans compared to 
+D5-D95=6.2\% without any compensation (interplay). For the same motion the dose coverage is found to V95=98.5\% with ten rescans compared to 
+V95=99.0\% with interplay. Also in over dosage a motion pattern (period of 0.5s and starting phase of 0$^{\circ}$) is found to result in 
+inferior results compared to interplay (9.31\% versus 0\%). Nevertheless these results could be improved with fifteen rescans, so that e.g. 
+the dose coverage is found to V95=100\% for the stated motion pattern (0.7s period and 90$^{\circ}$ starting phase) (static: 100\%), 
+hence resulting in an improved result compared to interplay and even reaching the static irradition. 
+For pig 4, who has the smallest absolute displacement of the AV node in the studied porcine cohort, all rescanning results yield 
+improved results compared to interplay. Nevertheless it can also here be observed that fifteen rescans results in better dose analysis parameters 
+and even improves the static outcome in some cases. E.g. the dose steepness is found to D5-D95=3.0\% with a motion period of 0.5s and starting 
+phase of 0$^{\circ}$ for fifteen rescans and to 5.1\% with ten rescans, while in the static case it is found to 5.5\%. 
+For the dose coverage fifteen rescans yields results as he static result (100\%) for all motion patterns, while ten rescans yields 
+slighlty inferior results (e.g. 97.8\% for motion period of 0.7s and starting phase of 90$^{\circ}$, interplay: 74.3\%).\newline  
+% % % Exemplary, the results of pig 2 (with the largest absolute displacement of the AV node) 
+% % % and pig 4 (with the smallest absolute displacement of the AV node) will be discussed. 
+% % % The dose coverage for a static irradiation of the AV node with 5mm margin is found to 100\% in this pig. This value decreases to 91.2\% for an 
+% % % uncompensated motion with 0.5s period and a starting phase of 0$^{\circ}$. With rescanning the result can be improved to 100\% with ten 
+% % % rescans or 99.5\% with fifteen rescans. The over dosage is found to 9.3\% with ten rescans for the stated motion case, while it can be 
+% % % reduced to 0\% (static: 0\%) with fifteen rescans. The dose steepness on the other hand is slighlty better with ten rescans compared to fifteen, 
+% % % resulting to 6.2\% versus 7.3\% for the presented motion case (compared to 4.4\% in the static case). For pig 4 on the other hand, which is 
+% % % the data set with the smallest absolute displacement of the AV node, it can be observed that e.g. the dose coverage is improved with fifteen 
+% % % rescans (100\%) compared to ten rescans (97.8\%) for a motion of 0.7s period and starting phase of 90$^{\circ}$. \newline
+\newline
+As the dose coverage is especially important for the planned experiments in order to to enable a correct dose-escalation study fifteen rescans 
+are hence favorable. For the here studied motion pattern and porcine data set cases this rescan number would lead to a dose deposition 
+corresponding to the planned dose deposition. 
+
+% It can hence be concluded that 
+% ten rescans already yield good results in all studied motion cases, but nevertheless the result needs to be checked individually for each 
+% porcine data set and eventually increased to a slighlty higher rescan number. 
+
+\newpage
+
+\vspace*{0.8cm}
+
+ \begin{figure}[H]
+ \begin{center}
+\subfigure[pig 2]{
+ \includegraphics[scale=0.28]{L833_AV_allDVHs_withLegend.png}
+ }
+\subfigure[pig 4]{
+ \includegraphics[scale=0.28]{L979_AV_allDVHs_withLegend.png}
+ }
+\caption{Dose volume histograms for CTV of pig 2 (largest absolute displacement of AV node) and pig 4 (smallest absolute displacement of AV 
+node) for 5mm safety margin irradiation of AV node in case of static irradiation (black), interplay (dashed) and rescanning with fifteen 
+rescans (solid). The motion patterns are shown in colors (0.7s 0: motion period of 0.7s and starting phase 0$^{\circ}$, 0.7s 90: motion period 
+of 0.7s and starting phase 90$^{\circ}$, 0.5s 0: motion period of 0.5s and starting phase 0$^{\circ}$, 0.5s 90: motion period of 0.5s and 
+starting phase 90$^{\circ}$).}
+\label{dvhs_pig2_pig4}
+ \end{center}
+\end{figure}
+
+
+\newpage
+
+\vspace*{0.4cm}
+
+
+ \begin{figure}[H]
+ \begin{center}
+ \centering
+\subfigure[static]{
+ \includegraphics[scale=0.32]{Mayo_Pig_L833_contrast_STATIC_withLegend.png}
+ }
+\subfigure[interplay]{
+ \includegraphics[scale=0.32]{Mayo_Pig_L833_contrast_INTERPLAY_sin05s90_withLegend.png}
+ }
+ \subfigure[rescanning (15x)]{
+ \includegraphics[scale=0.32]{Mayo_Pig_L833_contrast_RESCANNING_15x_sin05s90_withLegend.png}
+ }
+\caption{Dose distribution of pig 2 for static (a) as well as interplay (b) and fifteen rescans (c) at motion period of 0.5s and a motion 
+starting phase of 90$^{\circ}$. The target volume has an added margin of 5mm. The improved outcome of rescanning compared to interplay 
+can already be seen in these dose cuts. The window size for interplay and rescanning have been reduced in the simulations.}
+\label{dose_pig2}
+ \end{center}
+\end{figure}
+
+\newpage
+
+\begin{figure}[H]
+\centering
+\subfigure[D5-D95]{
+ \includegraphics[scale=0.18]{MAYO_CTV_AV_D5D95.png}
+ }
+ \subfigure[V95]{
+ \includegraphics[scale=0.18]{MAYO_CTV_AV_V95.png}
+ }
+  \subfigure[V107]{
+ \includegraphics[scale=0.18]{MAYO_CTV_AV_V107.png}
+}
+\caption{Dose analysis parameters D5-D95 (first row), V95 (middle row) and V107 (last row) for all porcine data sets when irraditing the AV 
+node with 5mm safety margin. Static (black) as well as interplay (red) and different rescanning 
+numbers (10 times: blue, 15 times: green,) were compared for different motion patterns and 
+safety margins. For a better visualization the rescanning data points for each motion pattern are shifted.}
+\label{static_interplay_rescanning_ALLpigs}
+\end{figure}
+
+\newpage
+
+% \begin{table}[H]
+%   \centering
+%   \caption{Interplay: Mean value and standard deviation of dose parameters over all pigs for irradiation of the AV node with a safety margin of 5mm.}
+%   \begin{tabular}{|c|c||c|c|c|}
+%     \hline\hline
+%     Motion period [s] & Motion phase [$^{\circ}$] & D5-D95 [\%] & V95 [\%] & V107 [\%] \\
+%     \hline
+%     0.7 & 0 & 10.2 $\pm$ 3.8 & 84.3 $\pm$ 17.5 & 13.0 $\pm$ 22.5 \\
+%     0.7 & 90 & & & \\
+%     0.5 & 0 & 13.0 $\pm$ 4.0 & 84.5 $\pm$ 8.0 & 5.5 $\pm$ 7.0 \\
+%     0.5 & 90 & & & \\
+%     \hline\hline
+%     \end{tabular}
+%   \label{tab:meandoseparameters_allpigs_interplay}
+% \end{table}
+% 
+% \begin{table}[H]
+%   \centering
+%   \caption{Interplay: Mean value and standard deviation of dose coverage over all pigs for irradiation of the AV node with a safety margin of 5mm.}
+%   \begin{tabular}{|c|c||c|}
+%     \hline\hline
+%     Motion period [s] & Motion phase [$^{\circ}$] & V95 [\%] \\
+%     \hline
+%     0.7 & 0 & 84.3 $\pm$ 17.5 \\
+%     0.7 & 90 & 91.0 $\pm$ 10.3 \\
+%     0.5 & 0 & 84.5 $\pm$ 8.0 \\
+%     0.5 & 90 & 86.0$\pm$ 24.0\\
+%     \hline\hline
+%     \end{tabular}
+%   \label{tab:meandoseparameters_allpigs_interplay}
+% \end{table}
+
+
+\newpage
+
+\subsubsection{Irradiation time}
+
+In figure \ref{irrTime_rescan15} the irradiation time for rescanning of AV node are shown for all pigs and the two studied 
+beam channel directions (couch angle 90$^{\circ}$ and -90$^{\circ}$). 
+The stated results were achieved with a low intensity irradiation (minimal particle number of 5.000). For an irradiation with 5mm margin 
+the treatment time over all pig data sets results to a mean value of about one minute per field (see table \ref{tab:rescan_time:pigs}). 
+Thus the overall treatment time would result to (1.85 $\pm$ 0.12)min with rescanning as motion mitigation technique for heartbeat motion 
+in porcine data. Theoretically, this result could be further reduced with a higher minimum particle number and hence a higher irradiation 
+intensity. Nevertheless these irradiation times are already very short due to the small target volume. It needs to be observed in 
+the upcoming experiments if these short treatment times can be verified. 
+
+\vspace*{0.5cm}
+
+ \begin{figure}[H]
+ \begin{center}
+ \includegraphics[scale=0.2]{Rescan15_irrTime.png}
+\caption{Irradiation time of fifteen rescans for all pigs and beam entry channels.}
+\label{irrTime_rescan15}
+ \end{center}
+\end{figure}
+
+\begin{table}[H]
+  \centering
+  \caption{Mean irradiation time for AV node with a safety margin of 5mm over all pigs.}
+  \begin{tabular}{|c|c|}
+    \hline\hline
+    Couch angle [$^{\circ}$] & time [min] \\
+    \hline
+    -90 & 0.89 $\pm$ 0.14 \\
+    90 & 0.96 $\pm$ 0.10 \\ \hline
+    total & 1.85 $\pm$ 0.12 \\
+    \hline\hline
+    \end{tabular}
+  \label{tab:rescan_time:pigs}
+\end{table}
+
+
+\newpage
+
+\section{Discussion}
+
+In this chapter the influence of heart beat motion on different cardiac target volumes (PVs, CTI, AV node) in porcine data sets were studied 
+and treatment planning studies with rescanning as motion mitigation technique were carried out. A detailed analysis of the dose depositions to 
+the OAR was performed, with special emphasis on the irradiation of cardiac substructures. This analysis is motivated by the planned 
+experiments on the feasibility of the non-invasive ablation of cardiac target sites with carbon ions. These experiments will be carried out 
+in animal models. In experimental cardiology dogs as well as pigs are most frequently used. As dogs are known to display certain differences 
+in anatomy and physiology compared to man \cite{Hug86} \cite{Cri98} it is planned to use pigs in the upcoming GSI experiments.\newline
+\newline
+Even though it seems to be accepted in literature that the anatomy of pig hearts are very similar to that of humans 
+\cite{Lum66} \cite{Dou72} \cite{Hug86} \cite{Coo91} \cite{Whi93} Crick et al. \cite{Cri98} carried out a detailed comparison between the 
+anatomy of porcine and human hearts. They found several significant differences which they suspected to arise mainly from the different 
+orientation of the bodys (unguligrade versus orthograde) and hence location of the heart in the thorax and moreover from the differing form of 
+the thorax itself. While the upper and lower borders of 
+the hearts were found to have similar size and features, the general shape differs as the pig hearts are more 'Valentine' shaped and the human 
+hearts more trapezoidal. This also leads to important differences  in the internal anatomy. While in human hearts the right atrium is 
+typically larger than the left, the atria of pigs have a similar size. Concerning the left atrium only two orifices for the pulmonary veins 
+are observed, while in human hearts four pulmonary vein openings can be located. The right atrium was furthermore stated to differ 
+significantly from the human heart, especially in the atrial appendage. 
+Regarding the ventricles Crick et al. stated that the right ventricle was observed to have a similar structure than human hearts, such as 
+the tricuspid and pulmonary valvar arrangements. But also here differences were found (e.g. the orientation of the pulmonary valve). 
+The left ventricles seem to have similar features to the human structure, but the ventricular wall was found to be much thicker in porcine. 
+Furthermore it was stated that the left chambers of the pig hearts were significantly bigger compared to the right chambers, so that the 
+apex was found to be composed entirely of left ventricular musculature. In human hearts the chambers are usually equal in size. 
+Concerning coronary circulation it was noted that most pigs displayed a blood supply to the sinus and atrioventricular node by branches 
+of the right coronary artery, while in humans this is observed to a lesser extend.\newline
+% While the coronary atrial circulation is very similar to humans \cite{Wea86} th venous circulation is different from humans. 
+\newline
+Due to the different anatomy of pigs compared to humans it was expected to find different results in the motion of the cardiac target volumes 
+as well as in the dose deposition to the OAR. The findings will be discussed in the next subsections. 
+
+\subsection{Movement of cardiac target volumes in cardiac cycle}
+
+Due to the dense muscular structure of the heart contrast enhanced CT scans were acquired in comparison to native scans. Deformable image 
+registrations were carried out on both data sets and the resulting motion displacement of the cardiac target volumes were assessed. It 
+could be concluded that native CT scans do not enable an estimation of either the motion amplitude or direction. While e.g. the absolute displacement 
+of the AV node was found to (0.14 $\pm$ 0.06)mm in the native scans of pig 3, the absolute displacement on contrast CT scans was found to 
+(2.05 $\pm$ 0.39)mm. This difference of 2mm is already sufficient to completely alter the results of the treatment planning study as
+an interplay pattern would be expected with the motion field from the contrast enhanced CT scans, while the motion of the native scans would 
+be too small to yield an interplay effect. 
+It is thus obvious that contrast enhanced CT scans are needed in order to correctly assess the motion of the cardiac target volumes. 
+As contrast enhanced CT scans change the Hounsfield unit information, which are needed for range informations in particle therapy, it is 
+not intented to deliver treatment plans created on these data sets. In the case of treatment planning studies for pure feasibility studies 
+it can nevertheless be accepted as the range information does not need to be applied. In the planned experiments at GSI a strategy to use 
+the motion displacement field of the contrast enhanced CT, while carrying out the treatment planning on native CT scans, is nevertheless needed. 
+A first concept could be to enable a robust stabilization of the pigs during CT acquisition so that no position divergence between the native 
+CT scan and the injection of the contrast agent is induced. This would hence enable a direct application of the 
+deformation field of the contrast enhanced CTs on the native CT scans.\newline
+\newline
+Based on the contrast enhanced CT scans the motion of the cardiac target volumes - PV, CTI and AV node - in all four porcine 
+data sets was assessed. It could be observed that the CTI moved the most in all four pigs, followed by the AV node. The PV moved to a lesser 
+extend in all four pigs. It was assumed that this finding is connected to the location of the target volumes within the heart, where 
+the PVs are found in the upper atria and the CTI in the lower atria, hence increasing the influence of the stronger ventricular motion. 
+As the AV node is found in between ventricles and atria it can be hypothesized that the position is more stable and hence the influence 
+of the ventricular motion on the displacement of the structure is slighlty reduced. Furthermore it was found that in all four  
+porcine data sets as well as for all three studied cardiac target volumes the displacement in AP direction was larger than in the other two 
+motion directions (SI and LR). As was already stated in the comparison of cardiac anatomy the location of the heart as well as the thorax form 
+differ between porcine and humans. It is thus not suprising these finding vary from the results of heartbeat induced motion in human 
+hearts (see chapter XXX), where no dominant motion direction was found. For the porcine data sets a shallower motion range of the target 
+volumes was furthermore observed in-between MP 6 and 13, enabling a potential application of gating as another motion mitigation technique 
+for the compensation of heartbeat motion in swines. Nevertheless a close analysis of the individual motion pattern of the respective pig 
+is needed as the motion pattern differed in-between the animals. 
+
+
+% - motion very dependent on pig - hence carefull consideration of motion in individual treatment plans for each pig 
+% - contrast CT needed: possible solution: use vectorfield of contrast CT on nativ CT 
+% - comparison to human hb motion 
+
+
+\subsection{Dose to critcal structures}
+
+Due to a lack of corresponding data dose-volume limits for the studied OAR (esophagus, trachea, aorta and heart) were taken from the RTOG 
+protocols for SBRT treatments of humans. These limits were not exceeded in the irradiation of AV node with 5mm safety margin. 
+It can be argued that this is due to the large distance of the target volume from the analyzed critical structures. Nevertheless the resulting 
+dose deposition with carbon ions is also smaller than the results for photon irradiation. A study by radiologists from the collaborating 
+Mayo Clinic \cite{Son14} stated that an IMRT irradiation of the AV node with 5-6mm margin and (32 $\pm$ 0.6)Gy in the same porcine data sets 
+resulted in a mean dose to the esophagus of 1.6Gy. In case of carbon ions no dose deposition was found in this structure (mean: (0 $\pm$ 0)Gy). 
+The mean dose to the trachea was found to 2.2Gy with IMRT delivery, while also here no dose was deposited with carbon ions (mean: (0 $\pm$ 0)Gy). 
+This result was found primary as 0\% of the physical dose, so that the apparent discrepancy between the deposited physical dose in IMRT 
+and carbon ions plans can be neglected. The finding would also hold true for a higher physical dose of e.g. 32Gy. 
+Concerning the mean overall cardiac dose it was stated that an IMRT delivery would result in (4.7 $\pm$ 1.3)Gy. For carbon ions a mean 
+cardiac dose of (0.03 $pm$ 0.00)\% of the physical dose was found, resulting in (0.7 $\pm$ 0.1)Gy for 25Gy or (1.0 $\pm$ 0.1)Gy for 32Gy. 
+The better sparing of the critical structures with carbon ions compared to IMRT is one hand due to the reduced beam channel number. 
+On the other hand the physical advantages of carbon ions compared to photon delivery (e.g. Bragg peak) become obvious in this results. 
+The study also included an analysis of the dose deposition when irradiating the AV node with proton beams. Here a single AP field was 
+applied, resulting in (30.7 $\pm$ 0.2)Gy. The mean overall cardiac dose was stated to result to (3.6 $\pm$ 1.5) Gy. 
+The dose deposition to the surrounding heart is hence higher in case of proton irradiation compared to carbon ions. This is especially striking 
+since only one field was used in proton treatment compared to the here presented two carbon ion beam channels, hence resulting in a bigger 
+irradiated cardiac volume. Nevertheless it should be kept in mind that the beam channels can not be directly compared, since two lateral 
+fields were used in carbon ion treatment planning, while an AP field was applied in proton therapy.\newline
+\newline
+The dose deposition in the cardiac substructures were also studied in the here presented AV node irradiation with carbon ions. The LV resulted 
+to receive a slighlty higher maximum point dose compared to the RV, while the mean dose in the two structures were comparable and the 
+maximal irradiated volume was even smaller for the LV compared to the RV. It is stated that the LV is significantly bigger compared to 
+the RV in swines \cite{Cri98} and that sensitive structures like the apex are composed entirely of LV musculature. It can thus be understood why the 
+maximal irradiated volume of the LV is significantly smaller than the RV even though the beam channels are symmetrical in lateral position. 
+Concerning the coronary arteries it was found that the mean and maximal point dose to the LCA is smaller than the RCA and also the maximal 
+irradiated volume of the LCA is smaller compared to the RCA. Since no clear dose limit exist it is unclear whether the larger exposure of the 
+RCA compared to LCA is problematic, especially since pigs were found to supply the SA and AV node via branches of the RCA.
+
+
+% % Limin Abstract:
+% % - same porcine data (?)
+% % - comparison IMRT (photons) and p-plan (single ap field)
+% % - 5-6 mm margin
+% % - AV node irradiation 
+% % - single p field: 30 Gy
+% % - average mean dose to AV node: IMRT: 32 pm 0.6 Gy, p: 30.7 pm 0.2 Gy
+% % - mean overall cardiac dose: IMRT: 4.7 pm 1.3 Gy, p: 3.6 pm 1.5 Gy
+% % ----- IMRT:
+% % - average max dose to spinal cord: 2.9 Gy
+% % - mean dose to eso: 1.6 Gy
+% % - mean dose trachea: 2.2 Gy
+% % - mean dose lung: 1 Gy
+% % ------ p:
+% % - negliggible dose exposure to these risk structures
+% % 
+% % 
+% % - RTOG protocol: for human, no idea if pigs more or less dose to critical structures 
+% % 
+% % 
+% % 
+% % % (- grossere foki! -> auch hilfreich bei interplay!)
+% % % 
+% % % - paper zu bewegung in schweineherzen?
+
+\subsection{Rescanning as motion mitigation technique}
+
+In the irradiation of cardiac volumes in the animal study carried out at CyberHeart and at the Universit\"atsklinikum 
+Schleswig-Holstein in L\"ubeck, both with photons, only an ITV approach was used in order to compensate for heartbeat motion. Due to the 
+interference effects between the active carbon ion beam application and the assessed motion of a couple of millimeters due to heartbeat, 
+a different approach was needed for carbon ions. Rescanning was studied as potential motion mitigation technique for the non-invasive 
+ablation of the AV node with an underlying heartbeat motion in swines.\newline
+\newline
+It was found that rescanning yields good dose analysis parameters. The dose coverage was higher than 99\% in 93.75\% of all studied cases 
+and even increased to 100\% of the studied cases when only fifteen rescans were analyzed. V107 values higher than 0\% were obtained also 
+in 93.25\% of all cases, which also reduced to 0\% of the studied cases when only the DVHs for fifteen rescans were evaluated. The 
+dose homogeneity D5-D95 did not exceed 7.9\%. This value was achieved with ten rescans and could be improved to 7.0\% with fifteen rescans. 
+It can thus be concluded that rescanning with fifteen rescans yields a slighlty better results. Especially the 
+dose coverage, which is of particular interest for the planned feasibility study in animal models and the included planned dose escalation 
+study, did improve with a slightly higher rescan number of fifteen rescans. 
+
+
+% - wie bei anderen zentren herzbewegung in schweinen kompensiert, generell experimten (auch in introduction) 
+
+
+\section{Conclusion}
+
+
+
+\newpage
+
+\section*{for APPENDIX}
+
+\subsection*{Motion of target volumes in constrast enhanced CT scans}
+
+\begin{table}[htbp]
+  \centering
+     \tiny 
+  \caption{PV: Mean and standard deviation of target motion in all phases of the heart beat, relative to the reference phase. The values are 
+  taken from the contrast CTs of Pig 1.}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline\hline
+    motion phase\rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt} & ABS [mm] & SI [mm] & AP [mm] & LR [mm]\\
+    \hline
+01 &0.43 $\pm$ 0.23 &0.30 $\pm$ 0.25 &0.03 $\pm$ 0.13 &-0.10 $\pm$ 0.24 \\
+02 &1.76 $\pm$ 0.52 &0.49 $\pm$ 0.28 &1.29 $\pm$ 0.33 &-0.79 $\pm$ 0.79 \\
+03 &2.61 $\pm$ 0.30 &0.62 $\pm$ 0.39 &2.00 $\pm$ 0.49 &-1.16 $\pm$ 0.89 \\
+04 &3.10 $\pm$ 0.28 &0.51 $\pm$ 0.41 &2.47 $\pm$ 0.68 &-1.27 $\pm$ 1.03 \\
+05 &3.46 $\pm$ 0.39 &0.40 $\pm$ 0.57 &2.77 $\pm$ 0.90 &-1.42 $\pm$ 1.07 \\
+06 &3.52 $\pm$ 0.59 &0.54 $\pm$ 0.64 &2.78 $\pm$ 1.09 &-1.31 $\pm$ 1.19 \\
+07 &3.80 $\pm$ 0.77 &0.46 $\pm$ 0.86 &3.06 $\pm$ 1.32 &-1.32 $\pm$ 1.12 \\
+08 &3.85 $\pm$ 0.98 &0.34 $\pm$ 1.04 &3.04 $\pm$ 1.60 &-1.13 $\pm$ 1.23 \\
+09 &3.80 $\pm$ 0.77 &0.46 $\pm$ 0.86 &3.06 $\pm$ 1.32 &-1.32 $\pm$ 1.12 \\
+10 &4.02 $\pm$ 1.09 &0.10 $\pm$ 1.42 &2.88 $\pm$ 1.85 &-1.01 $\pm$ 1.62 \\
+11 &4.04 $\pm$ 1.14 &0.25 $\pm$ 1.57 &2.66 $\pm$ 2.09 &-1.11 $\pm$ 1.56 \\
+12 &4.12 $\pm$ 1.13 &0.48 $\pm$ 1.68 &2.49 $\pm$ 2.25 &-1.16 $\pm$ 1.61 \\
+13 &4.22 $\pm$ 1.07 &0.79 $\pm$ 1.56 &2.42 $\pm$ 2.22 &-1.40 $\pm$ 1.79 \\
+14 &3.83 $\pm$ 0.88 &0.31 $\pm$ 1.76 &2.26 $\pm$ 1.58 &-1.77 $\pm$ 1.26 \\
+15 &2.97 $\pm$ 0.72 &-0.00 $\pm$ 1.16 &2.02 $\pm$ 1.08 &-1.46 $\pm$ 0.77 \\
+16 &1.94 $\pm$ 0.76 &-0.01 $\pm$ 0.75 &1.37 $\pm$ 0.79 &-1.01 $\pm$ 0.53 \\
+17 &1.67 $\pm$ 0.55 &-0.60 $\pm$ 0.43 &1.12 $\pm$ 0.37 &-0.79 $\pm$ 0.72 \\
+18 &1.17 $\pm$ 0.46 &-0.58 $\pm$ 0.30 &0.69 $\pm$ 0.39 &-0.34 $\pm$ 0.65 \\
+19 &0.48 $\pm$ 0.23 &-0.36 $\pm$ 0.20 &0.05 $\pm$ 0.24 &-0.04 $\pm$ 0.23 \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:motion:PV:Pig1}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \tiny
+  \caption{CTI: Mean and standard deviation of target motion in all phases of the heart beat, relative to the reference phase. The values are 
+  taken from the contrast CTs of Pig 1.}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline\hline
+    motion phase\rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt} & ABS [mm] & SI [mm] & AP [mm] & LR [mm]\\
+    \hline
+01 &0.49 $\pm$ 0.21 &-0.02 $\pm$ 0.13 &0.20 $\pm$ 0.23 &0.39 $\pm$ 0.16 \\
+02 &0.87 $\pm$ 0.26 &0.46 $\pm$ 0.24 &0.04 $\pm$ 0.43 &0.55 $\pm$ 0.28 \\
+03 &1.75 $\pm$ 0.66 &1.35 $\pm$ 0.53 &0.70 $\pm$ 0.48 &0.61 $\pm$ 0.54 \\
+04 &1.92 $\pm$ 0.62 &1.18 $\pm$ 0.45 &0.99 $\pm$ 0.51 &0.91 $\pm$ 0.63 \\
+05 &2.82 $\pm$ 0.94 &0.93 $\pm$ 0.57 &2.00 $\pm$ 0.58 &1.56 $\pm$ 0.93 \\
+06 &5.05 $\pm$ 0.80 &0.39 $\pm$ 0.45 &4.20 $\pm$ 0.66 &2.63 $\pm$ 0.93 \\
+07 &5.79 $\pm$ 0.98 &0.62 $\pm$ 0.58 &4.48 $\pm$ 0.73 &3.47 $\pm$ 1.06 \\
+08 &5.36 $\pm$ 1.06 &0.42 $\pm$ 0.60 &3.95 $\pm$ 1.31 &3.31 $\pm$ 0.99 \\
+09 &5.79 $\pm$ 0.98 &0.62 $\pm$ 0.58 &4.48 $\pm$ 0.73 &3.47 $\pm$ 1.06 \\
+10 &5.73 $\pm$ 0.94 &-0.20 $\pm$ 0.66 &4.92 $\pm$ 0.81 &2.58 $\pm$ 1.29 \\
+11 &5.40 $\pm$ 1.01 &0.75 $\pm$ 0.65 &4.60 $\pm$ 1.13 &2.46 $\pm$ 0.82 \\
+12 &5.67 $\pm$ 1.07 &0.84 $\pm$ 0.98 &4.90 $\pm$ 1.20 &2.37 $\pm$ 0.70 \\
+13 &5.25 $\pm$ 1.14 &0.80 $\pm$ 1.11 &4.60 $\pm$ 1.30 &1.82 $\pm$ 0.91 \\
+14 &3.83 $\pm$ 1.10 &1.43 $\pm$ 0.95 &2.92 $\pm$ 1.38 &0.86 $\pm$ 1.35 \\
+15 &3.78 $\pm$ 0.83 &1.92 $\pm$ 1.71 &2.32 $\pm$ 0.76 &0.76 $\pm$ 1.35 \\
+16 &3.29 $\pm$ 0.44 &1.46 $\pm$ 1.52 &1.28 $\pm$ 0.74 &1.56 $\pm$ 1.40 \\
+17 &1.97 $\pm$ 0.60 &0.70 $\pm$ 1.30 &-0.80 $\pm$ 0.47 &0.62 $\pm$ 0.90 \\
+18 &1.82 $\pm$ 0.43 &0.31 $\pm$ 0.71 &-1.46 $\pm$ 0.30 &-0.76 $\pm$ 0.33 \\
+19 &0.76 $\pm$ 0.37 &-0.01 $\pm$ 0.17 &-0.60 $\pm$ 0.32 &-0.40 $\pm$ 0.23 \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:motion:CTI:Pig1}
+\end{table}
+
+
+\begin{table}[htbp]
+  \centering
+    \tiny
+  \caption{AV node: Mean and standard deviation of target motion in all phases of the heart beat, relative to the reference phase. The values are 
+  taken from the contrast CTs of Pig 1.}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline\hline
+    motion phase\rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt} & ABS [mm] & SI [mm] & AP [mm] & LR [mm]\\
+    \hline
+01 &0.15 $\pm$ 0.09 &-0.01 $\pm$ 0.06 &-0.01 $\pm$ 0.04 &0.12 $\pm$ 0.10 \\
+02 &0.66 $\pm$ 0.27 &-0.01 $\pm$ 0.14 &0.51 $\pm$ 0.12 &-0.08 $\pm$ 0.46 \\
+03 &2.38 $\pm$ 0.24 &0.52 $\pm$ 0.31 &2.25 $\pm$ 0.21 &-0.28 $\pm$ 0.41 \\
+04 &2.95 $\pm$ 0.34 &0.87 $\pm$ 0.11 &2.80 $\pm$ 0.37 &-0.25 $\pm$ 0.18 \\
+05 &3.12 $\pm$ 0.40 &0.79 $\pm$ 0.60 &2.90 $\pm$ 0.56 &-0.42 $\pm$ 0.21 \\
+06 &3.60 $\pm$ 0.53 &0.64 $\pm$ 0.38 &3.46 $\pm$ 0.62 &-0.44 $\pm$ 0.36 \\
+07 &3.79 $\pm$ 0.56 &0.33 $\pm$ 0.55 &3.62 $\pm$ 0.70 &-0.63 $\pm$ 0.50 \\
+08 &4.14 $\pm$ 0.69 &0.29 $\pm$ 0.39 &4.03 $\pm$ 0.80 &-0.44 $\pm$ 0.56 \\
+09 &3.79 $\pm$ 0.56 &0.33 $\pm$ 0.55 &3.62 $\pm$ 0.70 &-0.63 $\pm$ 0.50 \\
+10 &4.25 $\pm$ 0.66 &0.36 $\pm$ 0.33 &4.10 $\pm$ 0.80 &-0.64 $\pm$ 0.63 \\
+11 &4.33 $\pm$ 0.57 &0.54 $\pm$ 0.39 &4.08 $\pm$ 0.76 &-1.06 $\pm$ 0.56 \\
+12 &4.67 $\pm$ 0.29 &0.49 $\pm$ 0.40 &4.43 $\pm$ 0.41 &-1.21 $\pm$ 0.50 \\
+13 &4.93 $\pm$ 0.26 &1.70 $\pm$ 0.35 &4.46 $\pm$ 0.39 &-1.11 $\pm$ 0.27 \\
+14 &4.27 $\pm$ 0.30 &0.00 $\pm$ 0.44 &3.84 $\pm$ 0.34 &-1.76 $\pm$ 0.31 \\
+15 &3.57 $\pm$ 0.24 &0.03 $\pm$ 0.42 &3.33 $\pm$ 0.23 &-1.20 $\pm$ 0.15 \\
+16 &2.25 $\pm$ 0.21 &1.00 $\pm$ 0.46 &1.86 $\pm$ 0.28 &-0.56 $\pm$ 0.27 \\
+17 &1.91 $\pm$ 0.35 &-0.30 $\pm$ 0.78 &-0.41 $\pm$ 0.40 &-1.61 $\pm$ 0.38 \\
+18 &1.14 $\pm$ 0.40 &-0.29 $\pm$ 0.41 &-0.32 $\pm$ 0.25 &-0.88 $\pm$ 0.51 \\
+19 &0.37 $\pm$ 0.15 &0.06 $\pm$ 0.06 &-0.27 $\pm$ 0.12 &-0.14 $\pm$ 0.22 \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:motion:AV:Pig1}
+\end{table}
+
+
+\begin{table}[htbp]
+  \centering
+    \tiny
+  \caption{PV: Mean and standard deviation of target motion in all phases of the heart beat, relative to the reference phase. The values are 
+  taken from the contrast CTs of Pig 2.}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline\hline
+    motion phase\rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt} & ABS [mm] & SI [mm] & AP [mm] & LR [mm]\\
+    \hline
+01 &0.37 $\pm$ 0.25 &0.02 $\pm$ 0.27 &0.14 $\pm$ 0.20 &-0.10 $\pm$ 0.24 \\
+02 &1.16 $\pm$ 0.69 &0.40 $\pm$ 0.42 &0.78 $\pm$ 0.58 &-0.43 $\pm$ 0.60 \\
+03 &2.06 $\pm$ 0.57 &0.73 $\pm$ 0.47 &1.61 $\pm$ 0.63 &-0.61 $\pm$ 0.69 \\
+04 &2.26 $\pm$ 0.64 &0.79 $\pm$ 0.47 &1.74 $\pm$ 0.75 &-0.77 $\pm$ 0.69 \\
+05 &2.50 $\pm$ 0.66 &1.09 $\pm$ 0.65 &1.82 $\pm$ 0.80 &-0.61 $\pm$ 0.89 \\
+06 &2.71 $\pm$ 0.96 &1.26 $\pm$ 0.85 &1.89 $\pm$ 1.04 &-0.51 $\pm$ 1.02 \\
+07 &3.02 $\pm$ 1.11 &1.33 $\pm$ 0.95 &2.14 $\pm$ 1.35 &-0.67 $\pm$ 0.91 \\
+08 &3.09 $\pm$ 1.22 &1.20 $\pm$ 0.96 &2.18 $\pm$ 1.50 &-0.47 $\pm$ 1.22 \\
+09 &3.02 $\pm$ 1.11 &1.33 $\pm$ 0.95 &2.14 $\pm$ 1.35 &-0.67 $\pm$ 0.91 \\
+10 &3.30 $\pm$ 1.12 &1.21 $\pm$ 1.24 &1.81 $\pm$ 1.72 &-0.64 $\pm$ 1.57 \\
+11 &3.24 $\pm$ 1.14 &1.33 $\pm$ 1.33 &1.60 $\pm$ 1.68 &-0.68 $\pm$ 1.57 \\
+12 &3.71 $\pm$ 1.55 &1.50 $\pm$ 1.46 &2.08 $\pm$ 2.05 &-0.81 $\pm$ 1.61 \\
+13 &3.37 $\pm$ 1.23 &1.67 $\pm$ 1.41 &1.62 $\pm$ 1.58 &-0.92 $\pm$ 1.46 \\
+14 &2.92 $\pm$ 1.11 &1.55 $\pm$ 1.26 &1.42 $\pm$ 1.25 &-0.97 $\pm$ 1.12 \\
+15 &2.19 $\pm$ 1.00 &1.12 $\pm$ 1.00 &1.27 $\pm$ 0.87 &-0.70 $\pm$ 0.83 \\
+16 &1.80 $\pm$ 0.70 &0.10 $\pm$ 0.61 &0.87 $\pm$ 0.86 &-1.01 $\pm$ 0.90 \\
+17 &1.52 $\pm$ 0.69 &-0.19 $\pm$ 0.61 &0.72 $\pm$ 0.71 &-0.86 $\pm$ 0.79 \\
+18 &1.11 $\pm$ 0.57 &-0.23 $\pm$ 0.58 &0.21 $\pm$ 0.65 &-0.50 $\pm$ 0.66 \\
+19 &0.39 $\pm$ 0.25 &-0.04 $\pm$ 0.32 &0.10 $\pm$ 0.21 &-0.03 $\pm$ 0.23 \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:motion:PV:Pig2}
+\end{table}
+
+
+\begin{table}[htbp]
+  \centering
+    \tiny
+  \caption{CTI: Mean and standard deviation of target motion in all phases of the heart beat, relative to the reference phase. The values are 
+  taken from the contrast CTs of Pig 2.}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline\hline
+    motion phase\rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt} & ABS [mm] & SI [mm] & AP [mm] & LR [mm]\\
+    \hline
+01 &0.29 $\pm$ 0.13 &-0.00 $\pm$ 0.13 &0.19 $\pm$ 0.11 &0.16 $\pm$ 0.11 \\
+02 &1.89 $\pm$ 0.49 &0.25 $\pm$ 0.87 &1.55 $\pm$ 0.56 &0.25 $\pm$ 0.48 \\
+03 &2.21 $\pm$ 0.55 &0.48 $\pm$ 0.85 &1.79 $\pm$ 0.46 &0.51 $\pm$ 0.72 \\
+04 &2.17 $\pm$ 0.43 &0.84 $\pm$ 0.65 &1.56 $\pm$ 0.39 &-0.49 $\pm$ 0.98 \\
+05 &4.12 $\pm$ 1.29 &2.00 $\pm$ 1.31 &3.40 $\pm$ 0.82 &0.01 $\pm$ 0.85 \\
+06 &4.43 $\pm$ 0.60 &0.07 $\pm$ 1.42 &4.10 $\pm$ 0.55 &0.66 $\pm$ 0.68 \\
+07 &4.92 $\pm$ 0.57 &-0.75 $\pm$ 1.49 &4.26 $\pm$ 0.54 &1.47 $\pm$ 1.06 \\
+08 &6.34 $\pm$ 0.54 &1.26 $\pm$ 1.32 &5.09 $\pm$ 0.60 &3.04 $\pm$ 1.25 \\
+09 &4.92 $\pm$ 0.57 &-0.75 $\pm$ 1.49 &4.26 $\pm$ 0.54 &1.47 $\pm$ 1.06 \\
+10 &4.33 $\pm$ 1.08 &1.28 $\pm$ 1.14 &3.50 $\pm$ 0.80 &1.46 $\pm$ 1.38 \\
+11 &4.41 $\pm$ 1.19 &1.72 $\pm$ 1.11 &3.45 $\pm$ 0.72 &1.41 $\pm$ 1.51 \\
+12 &4.89 $\pm$ 0.95 &2.34 $\pm$ 0.86 &3.68 $\pm$ 0.48 &0.76 $\pm$ 2.06 \\
+13 &5.53 $\pm$ 0.80 &3.12 $\pm$ 0.96 &4.11 $\pm$ 0.34 &0.23 $\pm$ 1.87 \\
+14 &4.70 $\pm$ 1.00 &3.17 $\pm$ 0.96 &3.03 $\pm$ 0.57 &0.26 $\pm$ 1.60 \\
+15 &4.31 $\pm$ 0.67 &3.22 $\pm$ 0.81 &2.45 $\pm$ 0.73 &-0.19 $\pm$ 1.20 \\
+16 &2.03 $\pm$ 0.77 &0.89 $\pm$ 0.94 &0.65 $\pm$ 0.62 &-1.00 $\pm$ 1.12 \\
+17 &2.35 $\pm$ 0.99 &-0.70 $\pm$ 0.64 &-0.63 $\pm$ 0.27 &-2.01 $\pm$ 1.04 \\
+18 &2.09 $\pm$ 0.78 &-0.41 $\pm$ 0.60 &-0.88 $\pm$ 0.25 &-1.67 $\pm$ 0.92 \\
+19 &0.71 $\pm$ 0.23 &0.28 $\pm$ 0.18 &-0.48 $\pm$ 0.18 &-0.39 $\pm$ 0.19 \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:motion:CTI:Pig2}
+\end{table}
+
+
+\begin{table}[htbp]
+  \centering
+    \tiny
+  \caption{AV node: Mean and standard deviation of target motion in all phases of the heart beat, relative to the reference phase. The values are 
+  taken from the contrast CTs of Pig 2.}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline\hline
+    motion phase\rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt} & ABS [mm] & SI [mm] & AP [mm] & LR [mm]\\
+    \hline
+01 &0.53 $\pm$ 0.10 &0.34 $\pm$ 0.09 &0.40 $\pm$ 0.07 &-0.04 $\pm$ 0.05 \\
+02 &1.83 $\pm$ 0.49 &0.08 $\pm$ 0.10 &1.73 $\pm$ 0.42 &0.46 $\pm$ 0.46 \\
+03 &2.10 $\pm$ 0.08 &0.68 $\pm$ 0.25 &1.97 $\pm$ 0.14 &0.06 $\pm$ 0.09 \\
+04 &3.32 $\pm$ 0.17 &1.62 $\pm$ 0.37 &2.86 $\pm$ 0.09 &-0.11 $\pm$ 0.30 \\
+05 &3.95 $\pm$ 0.29 &1.35 $\pm$ 0.20 &3.68 $\pm$ 0.33 &0.12 $\pm$ 0.37 \\
+06 &3.94 $\pm$ 0.28 &1.56 $\pm$ 0.30 &3.56 $\pm$ 0.20 &-0.56 $\pm$ 0.20 \\
+07 &4.89 $\pm$ 0.36 &2.48 $\pm$ 0.23 &4.20 $\pm$ 0.41 &-0.09 $\pm$ 0.24 \\
+08 &5.44 $\pm$ 0.25 &2.68 $\pm$ 0.37 &4.71 $\pm$ 0.33 &0.14 $\pm$ 0.27 \\
+09 &4.89 $\pm$ 0.36 &2.48 $\pm$ 0.23 &4.20 $\pm$ 0.41 &-0.09 $\pm$ 0.24 \\
+10 &5.83 $\pm$ 0.25 &2.79 $\pm$ 0.41 &5.08 $\pm$ 0.11 &-0.21 $\pm$ 0.49 \\
+11 &6.04 $\pm$ 0.19 &3.71 $\pm$ 0.36 &4.71 $\pm$ 0.17 &-0.38 $\pm$ 0.51 \\
+12 &5.86 $\pm$ 0.23 &3.27 $\pm$ 0.28 &4.85 $\pm$ 0.11 &0.12 $\pm$ 0.22 \\
+13 &5.47 $\pm$ 0.46 &3.55 $\pm$ 0.56 &4.13 $\pm$ 0.21 &0.07 $\pm$ 0.21 \\
+14 &5.25 $\pm$ 0.53 &3.01 $\pm$ 0.51 &4.25 $\pm$ 0.35 &0.23 $\pm$ 0.50 \\
+15 &4.15 $\pm$ 0.48 &1.99 $\pm$ 0.28 &3.52 $\pm$ 0.34 &0.56 $\pm$ 0.76 \\
+16 &2.98 $\pm$ 0.43 &1.82 $\pm$ 0.40 &2.30 $\pm$ 0.26 &0.30 $\pm$ 0.36 \\
+17 &2.52 $\pm$ 0.53 &1.84 $\pm$ 0.45 &1.45 $\pm$ 0.23 &0.89 $\pm$ 0.28 \\
+18 &1.05 $\pm$ 0.61 &0.70 $\pm$ 0.46 &0.21 $\pm$ 0.24 &0.73 $\pm$ 0.38 \\
+19 &0.21 $\pm$ 0.06 &-0.10 $\pm$ 0.06 &-0.03 $\pm$ 0.08 &-0.14 $\pm$ 0.09 \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:motion:AV:Pig2}
+\end{table}
+
+
+
+\begin{table}[htbp]
+  \centering
+    \tiny
+  \caption{PV: Mean and standard deviation of target motion in all phases of the heart beat, relative to the reference phase. The values are 
+  taken from the contrast CTs of Pig 3.}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline\hline
+    motion phase\rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt} & ABS [mm] & SI [mm] & AP [mm] & LR [mm]\\
+    \hline
+01 &0.59 $\pm$ 0.27 &0.05 $\pm$ 0.22 &-0.07 $\pm$ 0.42 &0.25 $\pm$ 0.35 \\
+02 &1.39 $\pm$ 0.85 &-0.21 $\pm$ 0.41 &1.13 $\pm$ 0.85 &0.46 $\pm$ 0.50 \\
+03 &2.09 $\pm$ 0.80 &-0.15 $\pm$ 0.48 &1.67 $\pm$ 0.70 &0.69 $\pm$ 1.01 \\
+04 &2.17 $\pm$ 0.85 &-0.27 $\pm$ 0.50 &1.64 $\pm$ 0.73 &0.81 $\pm$ 1.11 \\
+05 &2.21 $\pm$ 0.89 &-0.41 $\pm$ 0.57 &1.94 $\pm$ 0.81 &0.41 $\pm$ 0.79 \\
+06 &2.39 $\pm$ 0.89 &-0.48 $\pm$ 0.58 &2.10 $\pm$ 0.80 &0.42 $\pm$ 0.85 \\
+07 &2.36 $\pm$ 0.91 &-0.48 $\pm$ 0.65 &2.00 $\pm$ 0.83 &0.44 $\pm$ 0.92 \\
+08 &2.23 $\pm$ 0.97 &-0.55 $\pm$ 0.67 &1.77 $\pm$ 0.89 &0.47 $\pm$ 1.01 \\
+09 &2.36 $\pm$ 0.91 &-0.48 $\pm$ 0.65 &2.00 $\pm$ 0.83 &0.44 $\pm$ 0.92 \\
+10 &1.79 $\pm$ 0.74 &-0.19 $\pm$ 0.54 &1.29 $\pm$ 0.77 &0.32 $\pm$ 1.03 \\
+11 &1.61 $\pm$ 0.76 &0.06 $\pm$ 0.56 &0.92 $\pm$ 0.85 &0.16 $\pm$ 1.12 \\
+12 &1.54 $\pm$ 0.57 &-0.13 $\pm$ 0.43 &0.53 $\pm$ 1.03 &-0.17 $\pm$ 1.07 \\
+13 &1.21 $\pm$ 0.52 &0.01 $\pm$ 0.41 &0.31 $\pm$ 0.82 &-0.44 $\pm$ 0.77 \\
+14 &1.53 $\pm$ 0.59 &0.09 $\pm$ 0.45 &-0.52 $\pm$ 1.31 &-0.42 $\pm$ 0.58 \\
+15 &1.38 $\pm$ 0.59 &-0.13 $\pm$ 0.49 &-0.52 $\pm$ 1.09 &-0.59 $\pm$ 0.46 \\
+16 &1.58 $\pm$ 0.77 &-0.16 $\pm$ 0.59 &-0.80 $\pm$ 1.21 &-0.56 $\pm$ 0.53 \\
+17 &1.76 $\pm$ 1.05 &-0.13 $\pm$ 0.76 &-1.08 $\pm$ 1.35 &-0.54 $\pm$ 0.60 \\
+18 &1.65 $\pm$ 0.98 &-0.11 $\pm$ 0.81 &-1.12 $\pm$ 1.15 &-0.25 $\pm$ 0.59 \\
+19 &0.63 $\pm$ 0.43 &0.03 $\pm$ 0.36 &-0.22 $\pm$ 0.33 &-0.29 $\pm$ 0.47 \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:motion:PV:Pig3}
+\end{table}
+
+
+\begin{table}[htbp]
+  \centering
+    \tiny
+  \caption{CTI: Mean and standard deviation of target motion in all phases of the heart beat, relative to the reference phase. The values are 
+  taken from the contrast CTs of Pig 3.}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline\hline
+    motion phase\rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt} & ABS [mm] & SI [mm] & AP [mm] & LR [mm]\\
+    \hline
+01 &0.40 $\pm$ 0.16 &0.26 $\pm$ 0.21 &-0.08 $\pm$ 0.18 &0.10 $\pm$ 0.15 \\
+02 &1.30 $\pm$ 0.59 &-0.85 $\pm$ 0.50 &0.84 $\pm$ 0.43 &0.20 $\pm$ 0.38 \\
+03 &1.59 $\pm$ 0.38 &-0.56 $\pm$ 0.45 &1.37 $\pm$ 0.32 &0.05 $\pm$ 0.40 \\
+04 &1.63 $\pm$ 0.43 &-0.16 $\pm$ 0.60 &1.41 $\pm$ 0.52 &0.02 $\pm$ 0.45 \\
+05 &1.84 $\pm$ 0.70 &0.37 $\pm$ 0.82 &1.53 $\pm$ 0.74 &0.19 $\pm$ 0.36 \\
+06 &1.58 $\pm$ 0.67 &0.08 $\pm$ 0.64 &1.26 $\pm$ 0.82 &0.02 $\pm$ 0.53 \\
+07 &1.73 $\pm$ 0.78 &-0.02 $\pm$ 0.46 &1.54 $\pm$ 0.91 &0.28 $\pm$ 0.36 \\
+08 &1.66 $\pm$ 0.63 &0.19 $\pm$ 0.47 &1.08 $\pm$ 1.22 &0.39 $\pm$ 0.31 \\
+09 &1.73 $\pm$ 0.78 &-0.02 $\pm$ 0.46 &1.54 $\pm$ 0.91 &0.28 $\pm$ 0.36 \\
+10 &1.92 $\pm$ 0.58 &0.36 $\pm$ 0.38 &1.44 $\pm$ 1.17 &0.04 $\pm$ 0.56 \\
+11 &2.23 $\pm$ 0.63 &0.89 $\pm$ 0.46 &1.30 $\pm$ 0.79 &1.16 $\pm$ 0.83 \\
+12 &2.08 $\pm$ 0.58 &0.09 $\pm$ 0.55 &1.45 $\pm$ 0.42 &1.03 $\pm$ 0.99 \\
+13 &1.44 $\pm$ 0.55 &0.90 $\pm$ 0.51 &0.48 $\pm$ 0.35 &0.60 $\pm$ 0.76 \\
+14 &1.83 $\pm$ 0.69 &1.50 $\pm$ 0.73 &-0.06 $\pm$ 0.49 &0.16 $\pm$ 0.86 \\
+15 &1.43 $\pm$ 0.49 &1.06 $\pm$ 0.49 &-0.00 $\pm$ 0.46 &0.17 $\pm$ 0.83 \\
+16 &1.60 $\pm$ 0.29 &1.25 $\pm$ 0.41 &-0.48 $\pm$ 0.48 &-0.10 $\pm$ 0.67 \\
+17 &1.97 $\pm$ 0.40 &1.48 $\pm$ 0.43 &-0.68 $\pm$ 0.46 &-0.88 $\pm$ 0.45 \\
+18 &1.10 $\pm$ 0.48 &0.77 $\pm$ 0.41 &-0.44 $\pm$ 0.19 &-0.44 $\pm$ 0.51 \\
+19 &0.42 $\pm$ 0.14 &0.08 $\pm$ 0.18 &-0.22 $\pm$ 0.14 &-0.12 $\pm$ 0.27 \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:motion:CTI:Pig3}
+\end{table}
+
+
+\begin{table}[htbp]
+  \centering
+    \tiny
+  \caption{AV node: Mean and standard deviation of target motion in all phases of the heart beat, relative to the reference phase. The values are 
+  taken from the contrast CTs of Pig 3.}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline\hline
+    motion phase\rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt} & ABS [mm] & SI [mm] & AP [mm] & LR [mm]\\
+    \hline
+01 &0.97 $\pm$ 0.23 &0.25 $\pm$ 0.24 &-0.58 $\pm$ 0.14 &-0.66 $\pm$ 0.30 \\
+02 &3.86 $\pm$ 0.24 &-0.46 $\pm$ 0.45 &3.19 $\pm$ 0.54 &-1.72 $\pm$ 1.06 \\
+03 &3.38 $\pm$ 0.23 &-0.62 $\pm$ 0.41 &3.06 $\pm$ 0.18 &-1.15 $\pm$ 0.48 \\
+04 &2.87 $\pm$ 0.48 &0.15 $\pm$ 0.20 &1.97 $\pm$ 0.33 &-2.06 $\pm$ 0.43 \\
+05 &4.35 $\pm$ 0.10 &-0.30 $\pm$ 0.41 &3.88 $\pm$ 0.23 &-1.85 $\pm$ 0.42 \\
+06 &4.15 $\pm$ 0.14 &0.08 $\pm$ 0.40 &3.60 $\pm$ 0.26 &-1.94 $\pm$ 0.54 \\
+07 &3.84 $\pm$ 0.16 &0.02 $\pm$ 0.31 &3.40 $\pm$ 0.29 &-1.68 $\pm$ 0.41 \\
+08 &3.17 $\pm$ 0.17 &0.04 $\pm$ 0.24 &2.71 $\pm$ 0.24 &-1.51 $\pm$ 0.55 \\
+09 &3.84 $\pm$ 0.16 &0.02 $\pm$ 0.31 &3.40 $\pm$ 0.29 &-1.68 $\pm$ 0.41 \\
+10 &3.16 $\pm$ 0.13 &0.28 $\pm$ 0.13 &2.85 $\pm$ 0.20 &-1.18 $\pm$ 0.59 \\
+11 &3.40 $\pm$ 0.26 &1.46 $\pm$ 0.54 &2.18 $\pm$ 0.52 &-1.91 $\pm$ 0.76 \\
+12 &2.47 $\pm$ 0.37 &0.04 $\pm$ 0.20 &2.26 $\pm$ 0.20 &-0.79 $\pm$ 0.68 \\
+13 &1.56 $\pm$ 0.43 &0.24 $\pm$ 0.39 &1.24 $\pm$ 0.23 &-0.70 $\pm$ 0.57 \\
+14 &2.07 $\pm$ 0.44 &0.06 $\pm$ 0.23 &1.80 $\pm$ 0.30 &-0.68 $\pm$ 0.78 \\
+15 &2.30 $\pm$ 0.65 &0.04 $\pm$ 0.26 &0.60 $\pm$ 0.17 &-2.20 $\pm$ 0.66 \\
+16 &2.49 $\pm$ 0.63 &-0.07 $\pm$ 0.17 &0.19 $\pm$ 0.18 &-2.47 $\pm$ 0.64 \\
+17 &2.89 $\pm$ 0.74 &-0.10 $\pm$ 0.13 &0.41 $\pm$ 0.17 &-2.84 $\pm$ 0.76 \\
+18 &1.26 $\pm$ 0.26 &-0.22 $\pm$ 0.11 &0.73 $\pm$ 0.17 &0.72 $\pm$ 0.72 \\
+19 &0.85 $\pm$ 0.12 &-0.18 $\pm$ 0.28 &0.67 $\pm$ 0.14 &0.34 $\pm$ 0.21 \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:motion:AV:Pig3}
+\end{table}
+
+
+\begin{table}[htbp]
+  \centering
+    \tiny
+  \caption{PV: Mean and standard deviation of target motion in all phases of the heart beat, relative to the reference phase. The values are 
+  taken from the contrast CTs of Pig 4.}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline\hline
+    motion phase\rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt} & ABS [mm] & SI [mm] & AP [mm] & LR [mm]\\
+    \hline
+01 &0.52 $\pm$ 0.31 &0.22 $\pm$ 0.31 &0.29 $\pm$ 0.27 &-0.07 $\pm$ 0.22 \\
+02 &1.72 $\pm$ 0.39 &0.09 $\pm$ 0.27 &1.56 $\pm$ 0.32 &-0.44 $\pm$ 0.53 \\
+03 &2.21 $\pm$ 0.28 &0.07 $\pm$ 0.29 &1.96 $\pm$ 0.22 &-0.73 $\pm$ 0.66 \\
+04 &2.39 $\pm$ 0.23 &0.22 $\pm$ 0.32 &2.14 $\pm$ 0.33 &-0.63 $\pm$ 0.75 \\
+05 &2.48 $\pm$ 0.38 &0.14 $\pm$ 0.34 &2.24 $\pm$ 0.53 &-0.37 $\pm$ 0.86 \\
+06 &2.48 $\pm$ 0.56 &0.14 $\pm$ 0.33 &2.24 $\pm$ 0.71 &-0.23 $\pm$ 0.86 \\
+07 &2.38 $\pm$ 0.68 &0.29 $\pm$ 0.33 &2.12 $\pm$ 0.86 &-0.25 $\pm$ 0.80 \\
+08 &2.34 $\pm$ 0.80 &0.41 $\pm$ 0.38 &1.99 $\pm$ 1.00 &-0.30 $\pm$ 0.86 \\
+09 &2.38 $\pm$ 0.68 &0.29 $\pm$ 0.33 &2.12 $\pm$ 0.86 &-0.25 $\pm$ 0.80 \\
+10 &3.05 $\pm$ 1.06 &0.70 $\pm$ 0.59 &2.45 $\pm$ 1.36 &-0.59 $\pm$ 1.19 \\
+11 &3.13 $\pm$ 1.03 &0.81 $\pm$ 0.67 &2.64 $\pm$ 1.17 &-0.49 $\pm$ 1.09 \\
+12 &2.82 $\pm$ 0.80 &0.80 $\pm$ 0.63 &2.44 $\pm$ 0.84 &-0.37 $\pm$ 0.87 \\
+13 &2.38 $\pm$ 0.74 &0.56 $\pm$ 0.62 &2.19 $\pm$ 0.68 &-0.08 $\pm$ 0.51 \\
+14 &2.17 $\pm$ 0.63 &0.45 $\pm$ 0.52 &2.02 $\pm$ 0.58 &0.13 $\pm$ 0.48 \\
+15 &2.05 $\pm$ 0.45 &0.22 $\pm$ 0.37 &1.92 $\pm$ 0.46 &0.30 $\pm$ 0.47 \\
+16 &1.98 $\pm$ 0.41 &-0.10 $\pm$ 0.43 &1.79 $\pm$ 0.37 &0.32 $\pm$ 0.68 \\
+17 &1.68 $\pm$ 0.51 &-0.03 $\pm$ 0.56 &1.42 $\pm$ 0.41 &0.41 $\pm$ 0.64 \\
+18 &1.12 $\pm$ 0.43 &-0.02 $\pm$ 0.32 &0.87 $\pm$ 0.39 &0.37 $\pm$ 0.54 \\
+19 &0.48 $\pm$ 0.22 &-0.11 $\pm$ 0.19 &0.29 $\pm$ 0.29 &0.09 $\pm$ 0.22 \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:motion:PV:Pig4}
+\end{table}
+
+
+\begin{table}[htbp]
+  \centering
+  \tiny
+  \caption{CTI: Mean and standard deviation of target motion in all phases of the heart beat, relative to the reference phase. The values are 
+  taken from the contrast CTs of Pig 4.}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline\hline
+    motion phase\rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt} & ABS [mm] & SI [mm] & AP [mm] & LR [mm]\\
+    \hline
+01 &0.24 $\pm$ 0.07 &0.11 $\pm$ 0.16 &0.01 $\pm$ 0.11 &0.07 $\pm$ 0.07 \\
+02 &0.73 $\pm$ 0.16 &0.55 $\pm$ 0.20 &0.26 $\pm$ 0.29 &-0.10 $\pm$ 0.24 \\
+03 &1.47 $\pm$ 0.47 &0.41 $\pm$ 0.41 &1.19 $\pm$ 0.36 &-0.59 $\pm$ 0.39 \\
+04 &1.66 $\pm$ 0.47 &0.50 $\pm$ 0.34 &1.46 $\pm$ 0.37 &-0.09 $\pm$ 0.59 \\
+05 &2.18 $\pm$ 0.34 &0.44 $\pm$ 0.26 &2.04 $\pm$ 0.31 &0.20 $\pm$ 0.54 \\
+06 &2.64 $\pm$ 0.36 &0.09 $\pm$ 0.13 &2.55 $\pm$ 0.40 &0.53 $\pm$ 0.39 \\
+07 &2.63 $\pm$ 0.43 &0.07 $\pm$ 0.26 &2.54 $\pm$ 0.41 &0.51 $\pm$ 0.43 \\
+08 &2.70 $\pm$ 0.61 &0.46 $\pm$ 0.48 &2.56 $\pm$ 0.56 &0.26 $\pm$ 0.52 \\
+09 &2.63 $\pm$ 0.43 &0.07 $\pm$ 0.26 &2.54 $\pm$ 0.41 &0.51 $\pm$ 0.43 \\
+10 &3.52 $\pm$ 0.53 &1.76 $\pm$ 0.65 &2.86 $\pm$ 0.58 &0.12 $\pm$ 0.75 \\
+11 &3.52 $\pm$ 0.49 &2.02 $\pm$ 0.56 &2.71 $\pm$ 0.56 &0.10 $\pm$ 0.74 \\
+12 &3.67 $\pm$ 0.63 &1.97 $\pm$ 0.51 &2.96 $\pm$ 0.59 &0.47 $\pm$ 0.64 \\
+13 &3.95 $\pm$ 0.83 &2.27 $\pm$ 0.59 &3.12 $\pm$ 0.77 &0.36 $\pm$ 0.57 \\
+14 &3.11 $\pm$ 0.69 &1.72 $\pm$ 0.66 &2.44 $\pm$ 0.75 &-0.17 $\pm$ 0.43 \\
+15 &1.98 $\pm$ 0.40 &0.98 $\pm$ 0.37 &1.56 $\pm$ 0.51 &-0.16 $\pm$ 0.53 \\
+16 &1.42 $\pm$ 0.32 &0.70 $\pm$ 0.29 &1.05 $\pm$ 0.49 &-0.34 $\pm$ 0.29 \\
+17 &1.19 $\pm$ 0.32 &0.55 $\pm$ 0.28 &0.55 $\pm$ 0.38 &-0.69 $\pm$ 0.46 \\
+18 &0.94 $\pm$ 0.23 &0.66 $\pm$ 0.25 &0.02 $\pm$ 0.24 &-0.54 $\pm$ 0.30 \\
+19 &0.46 $\pm$ 0.20 &0.12 $\pm$ 0.07 &0.12 $\pm$ 0.20 &-0.29 $\pm$ 0.31 \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:motion:CTI:Pig4}
+\end{table}
+
+
+\begin{table}[htbp]
+  \centering
+    \tiny
+  \caption{AV node: Mean and standard deviation of target motion in all phases of the heart beat, relative to the reference phase. The values are 
+  taken from the contrast CTs of Pig 4.}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline\hline
+    motion phase\rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt} & ABS [mm] & SI [mm] & AP [mm] & LR [mm]\\
+    \hline
+01 &0.27 $\pm$ 0.08 &0.17 $\pm$ 0.05 &-0.17 $\pm$ 0.12 &0.01 $\pm$ 0.07 \\
+02 &0.52 $\pm$ 0.18 &0.11 $\pm$ 0.04 &0.16 $\pm$ 0.25 &-0.36 $\pm$ 0.27 \\
+03 &2.19 $\pm$ 0.21 &0.13 $\pm$ 0.17 &1.99 $\pm$ 0.18 &-0.82 $\pm$ 0.38 \\
+04 &2.30 $\pm$ 0.23 &0.17 $\pm$ 0.12 &2.16 $\pm$ 0.22 &-0.71 $\pm$ 0.27 \\
+05 &2.30 $\pm$ 0.23 &0.17 $\pm$ 0.08 &2.22 $\pm$ 0.24 &-0.52 $\pm$ 0.22 \\
+06 &2.52 $\pm$ 0.32 &0.24 $\pm$ 0.17 &2.44 $\pm$ 0.32 &-0.40 $\pm$ 0.36 \\
+07 &2.42 $\pm$ 0.37 &0.28 $\pm$ 0.10 &2.32 $\pm$ 0.39 &-0.50 $\pm$ 0.36 \\
+08 &3.05 $\pm$ 0.33 &0.42 $\pm$ 0.13 &2.84 $\pm$ 0.40 &-0.86 $\pm$ 0.52 \\
+09 &2.42 $\pm$ 0.37 &0.28 $\pm$ 0.10 &2.32 $\pm$ 0.39 &-0.50 $\pm$ 0.36 \\
+10 &3.63 $\pm$ 0.67 &0.77 $\pm$ 0.22 &3.18 $\pm$ 0.44 &-1.43 $\pm$ 0.81 \\
+11 &3.49 $\pm$ 0.55 &0.98 $\pm$ 0.20 &3.16 $\pm$ 0.47 &-0.95 $\pm$ 0.62 \\
+12 &2.92 $\pm$ 0.60 &1.03 $\pm$ 0.30 &2.59 $\pm$ 0.47 &-0.66 $\pm$ 0.59 \\
+13 &2.39 $\pm$ 0.55 &0.75 $\pm$ 0.31 &2.16 $\pm$ 0.42 &-0.56 $\pm$ 0.48 \\
+14 &1.96 $\pm$ 0.40 &0.65 $\pm$ 0.18 &1.72 $\pm$ 0.34 &-0.54 $\pm$ 0.41 \\
+15 &2.04 $\pm$ 0.46 &0.40 $\pm$ 0.21 &1.67 $\pm$ 0.28 &-1.04 $\pm$ 0.48 \\
+16 &2.01 $\pm$ 0.39 &0.69 $\pm$ 0.27 &1.37 $\pm$ 0.25 &-1.24 $\pm$ 0.40 \\
+17 &1.31 $\pm$ 0.38 &0.64 $\pm$ 0.24 &0.62 $\pm$ 0.20 &-0.89 $\pm$ 0.41 \\
+18 &0.74 $\pm$ 0.40 &0.55 $\pm$ 0.31 &0.09 $\pm$ 0.27 &-0.36 $\pm$ 0.31 \\
+19 &0.41 $\pm$ 0.15 &0.13 $\pm$ 0.09 &-0.06 $\pm$ 0.19 &-0.26 $\pm$ 0.25 \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:motion:AV:Pig4}
+\end{table}
+
+\newpage
+
+\subsection*{Motion of AV node in native CT scan}
+
+\begin{table}[H]
+  \centering
+    \small
+  \caption{AV node: Mean and standard deviation of target motion in all phases of the heart beat, relative to the reference phase. The values are 
+  taken from the native CTs of Pig 3.}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline\hline
+    motion phase\rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt} & ABS [mm] & SI [mm] & AP [mm] & LR [mm]\\
+    \hline
+01&0.07 $\pm$ 0.02 &0.01 $\pm$ 0.03 &-0.03 $\pm$ 0.03 &-0.02 $\pm$ 0.03 \\
+02&0.12 $\pm$ 0.06 &0.09 $\pm$ 0.06 &0.04 $\pm$ 0.04 &-0.04 $\pm$ 0.03 \\
+03&0.09 $\pm$ 0.05 &-0.02 $\pm$ 0.03 &0.05 $\pm$ 0.05 &-0.01 $\pm$ 0.06 \\
+04&0.19 $\pm$ 0.07 &0.13 $\pm$ 0.07 &0.09 $\pm$ 0.08 &0.03 $\pm$ 0.05 \\
+05&0.16 $\pm$ 0.07 &0.05 $\pm$ 0.07 &0.11 $\pm$ 0.08 &-0.00 $\pm$ 0.06 \\
+06&0.18 $\pm$ 0.08 &0.12 $\pm$ 0.10 &0.06 $\pm$ 0.08 &-0.01 $\pm$ 0.05 \\
+07&0.19 $\pm$ 0.08 &0.16 $\pm$ 0.09 &0.03 $\pm$ 0.05 &-0.04 $\pm$ 0.05 \\
+08&0.13 $\pm$ 0.05 &0.06 $\pm$ 0.08 &-0.01 $\pm$ 0.05 &-0.06 $\pm$ 0.06 \\
+09&0.19 $\pm$ 0.08 &0.16 $\pm$ 0.09 &0.03 $\pm$ 0.05 &-0.04 $\pm$ 0.05 \\
+10&0.17 $\pm$ 0.05 &0.10 $\pm$ 0.05 &-0.10 $\pm$ 0.08 &-0.03 $\pm$ 0.07 \\
+11&0.16 $\pm$ 0.07 &0.05 $\pm$ 0.03 &-0.12 $\pm$ 0.08 &0.05 $\pm$ 0.05 \\
+12&0.23 $\pm$ 0.08 &0.11 $\pm$ 0.03 &-0.14 $\pm$ 0.09 &0.11 $\pm$ 0.06 \\
+13&0.13 $\pm$ 0.04 &-0.00 $\pm$ 0.05 &-0.06 $\pm$ 0.08 &0.06 $\pm$ 0.05 \\
+14&0.10 $\pm$ 0.04 &-0.05 $\pm$ 0.02 &0.01 $\pm$ 0.07 &0.03 $\pm$ 0.06 \\
+15&0.11 $\pm$ 0.05 &0.01 $\pm$ 0.04 &0.01 $\pm$ 0.07 &-0.01 $\pm$ 0.09 \\ 
+16&0.12 $\pm$ 0.06 &0.03 $\pm$ 0.03 &0.04 $\pm$ 0.07 &-0.02 $\pm$ 0.10 \\
+17&0.08 $\pm$ 0.04 &-0.01 $\pm$ 0.03 &0.01 $\pm$ 0.07 &-0.01 $\pm$ 0.04 \\
+18&0.10 $\pm$ 0.04 &-0.06 $\pm$ 0.03 &-0.00 $\pm$ 0.06 &-0.03 $\pm$ 0.03 \\
+19&0.05 $\pm$ 0.02 &0.01 $\pm$ 0.03 &-0.02 $\pm$ 0.04 &-0.00 $\pm$ 0.03 \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:motion:native:AV:Pig3}
+\end{table}
+ 
+\newpage
+
+\subsection*{Dose parameters for AV node irradiation}
+
+\vspace*{-0.4cm}
+
+\begin{table}[H]
+  \centering
+  \tiny
+  \caption{Pig 1, AV node}
+  \begin{tabular}{|c||c|c|c|c||c|c|c|}
+    \hline\hline
+    Case & motion period & motion starting phase & Margin & rescan no. & D5-D95 [\%] & V95 [\%] & V107 [\%] \\
+    \hline 
+STATIC & - & - & 5mm & - & 5.66 & 100.00 & 0.00\\
+INTERPLAY & 0.7s & 0 & 5mm & - & 13.94 & 100.00 & 51.85\\
+INTERPLAY & 0.7s & 90 & 5mm & - & 13.64 & 90.74 & 6.67\\
+INTERPLAY & 0.5s & 0 & 5mm & - & 16.37 & 73.33 & 4.81\\
+INTERPLAY & 0.5s & 90 & 5mm & - & 8.19 & 100.00 & 32.96\\
+RESCANNING & 0.7s & 0 & 5mm & 10 & 6.26 & 100.00 & 0.00\\
+RESCANNING & 0.7s & 90 & 5mm & 10 & 4.70 & 100.00 & 0.00\\
+RESCANNING & 0.5s & 0 & 5mm & 10 & 5.79 & 100.00 & 0.00\\
+RESCANNING & 0.5s & 90 & 5mm & 10 & 4.24 & 100.00 & 0.00\\
+RESCANNING & 0.7s & 0 & 5mm & 15 & 4.88 & 100.00 & 0.00\\
+RESCANNING & 0.7s & 90 & 5mm & 15 & 3.91 & 100.00 & 0.00\\
+RESCANNING & 0.5s & 0 & 5mm & 15 & 5.37 & 100.00 & 0.00\\
+RESCANNING & 0.5s & 90 & 5mm & 15 & 5.80 & 100.00 & 0.00\\
+    \hline\hline 
+  \end{tabular}
+  \label{tab:Pig1_AV}
+\end{table}
+
+\vspace*{-0.4cm}
+
+\begin{table}[H]
+  \centering
+\tiny
+  \caption{Pig 2, AV node}
+  \begin{tabular}{|c||c|c|c|c||c|c|c|}
+    \hline\hline
+    Case & motion period & motion starting phase & Margin & rescan no. & D5-D95 [\%] & V95 [\%] & V107 [\%] \\
+    \hline 
+STATIC & - & - & 5mm & - & 4.41 & 100.00 & 0.00\\
+INTERPLAY & 0.7s & 0 & 5mm & - & 7.20 & 97.55 & 0.00\\
+INTERPLAY & 0.7s & 90 & 5mm & - & 6.19 & 99.02 & 0.00\\
+INTERPLAY & 0.5s & 0 & 5mm & - & 9.33 & 91.18 & 0.00\\
+INTERPLAY & 0.5s & 90 & 5mm & - & 10.90 & 99.51 & 4.90\\
+RESCANNING & 0.7s & 0 & 5mm & 10 & 3.66 & 100.00 & 0.00\\
+RESCANNING & 0.7s & 90 & 5mm & 10 & 7.90 & 98.53 & 0.00\\
+RESCANNING & 0.5s & 0 & 5mm & 10 & 6.20 & 100.00 & 9.31\\
+RESCANNING & 0.5s & 90 & 5mm & 10 & 4.03 & 100.00 & 0.00\\
+RESCANNING & 0.7s & 0 & 5mm & 15 & 4.35 & 100.00 & 0.00\\
+RESCANNING & 0.7s & 90 & 5mm & 15 & 6.98 & 100.00 & 0.00\\
+RESCANNING & 0.5s & 0 & 5mm & 15 & 7.27 & 99.51 & 0.00\\
+RESCANNING & 0.5s & 90 & 5mm & 15 & 3.61 & 100.00 & 0.00\\
+    \hline\hline 
+  \end{tabular}
+  \label{tab:Pig2_AV}
+\end{table}
+
+\vspace*{-0.4cm}
+
+\begin{table}[H]
+  \centering
+  \tiny
+  \caption{Pig 3, AV node}
+  \begin{tabular}{|c||c|c|c|c||c|c|c|}
+    \hline\hline
+    Case & motion period & motion starting phase & Margin & rescan no. & D5-D95 [\%] & V95 [\%] & V107 [\%] \\
+    \hline 
+STATIC & - & - & 5mm & - & 2.20 & 100.00 & 0.00\\
+INTERPLAY & 0.7s & 0 & 5mm & - & 5.64 & 55.88 & 0.00\\
+INTERPLAY & 0.7s & 90 & 5mm & - & 6.98 & 100.00 & 0.00\\
+INTERPLAY & 0.5s & 0 & 5mm & - & 8.83 & 92.94 & 0.00\\
+INTERPLAY & 0.5s & 90 & 5mm & - & 5.22 & 100.00 & 0.00\\
+RESCANNING & 0.7s & 0 & 5mm & 10 & 4.89 & 100.00 & 0.00\\
+RESCANNING & 0.7s & 90 & 5mm & 10 & 6.22 & 100.00 & 0.00\\
+RESCANNING & 0.5s & 0 & 5mm & 10 & 4.42 & 100.00 & 0.00\\
+RESCANNING & 0.5s & 90 & 5mm & 10 & 3.42 & 100.00 & 0.00\\
+RESCANNING & 0.7s & 0 & 5mm & 15 & 5.85 & 99.41 & 0.00\\
+RESCANNING & 0.7s & 90 & 5mm & 15 & 5.57 & 100.00 & 0.00\\
+RESCANNING & 0.5s & 0 & 5mm & 15 & 4.70 & 100.00 & 0.00\\
+RESCANNING & 0.5s & 90 & 5mm & 15 & 5.38 & 100.00 & 0.00\\
+    \hline\hline 
+  \end{tabular}
+  \label{tab:Pig3_AV}
+\end{table}
+
+\vspace*{-0.4cm}
+
+\begin{table}[H]
+  \centering
+  \tiny
+  \caption{Pig 4, AV node}
+  \begin{tabular}{|c||c|c|c|c||c|c|c|}
+    \hline\hline
+    Case & motion period & motion starting phase & Margin & rescan no. & D5-D95 [\%] & V95 [\%] & V107 [\%] \\
+    \hline 
+STATIC & - & - & 5mm & - & 5.53 & 100.00 & 0.00\\
+INTERPLAY & 0.7s & 0 & 5mm & - & 13.82 & 83.67 & 0.00\\
+INTERPLAY & 0.7s & 90 & 5mm & - & 12.81 & 74.29 & 0.41\\
+INTERPLAY & 0.5s & 0 & 5mm & - & 17.58 & 80.61 & 17.14\\
+INTERPLAY & 0.5s & 90 & 5mm & - & 21.75 & 44.49 & 0.00\\
+RESCANNING & 0.7s & 0 & 5mm & 10 & 5.25 & 100.00 & 0.00\\
+RESCANNING & 0.7s & 90 & 5mm & 10 & 5.95 & 97.76 & 0.00\\
+RESCANNING & 0.5s & 0 & 5mm & 10 & 5.09 & 100.00 & 0.20\\
+RESCANNING & 0.5s & 90 & 5mm & 10 & 5.44 & 98.37 & 0.00\\
+RESCANNING & 0.7s & 0 & 5mm & 15 & 4.99 & 100.00 & 0.00\\
+RESCANNING & 0.7s & 90 & 5mm & 15 & 5.55 & 100.00 & 0.00\\
+RESCANNING & 0.5s & 0 & 5mm & 15 & 2.96 & 100.00 & 0.00\\
+RESCANNING & 0.5s & 90 & 5mm & 15 & 4.69 & 100.00 & 0.00\\
+    \hline\hline 
+  \end{tabular}
+  \label{tab:Pig4_AV}
+\end{table}
+
+\begin{thebibliography}{9999999}
+ \bibitem[afib]{afib}{Atrial fibrillation Resources for patients, a-fib.com}
+ \bibitem[Bla13]{Bla13}{Blanck O, Bode F, Gebhard M, Hunold P, Brandt S, Bruder R, Schweikard A, Grossherr M, Rades D and Dunst J: Radiochirurgisch erzeugte L\"asionen im Antrum der Pulmonarvenen: Vorl\"aufige Ergebnisse im Tiermodell und m\"ogliche Implikationen f\"ur die Behandlung von Vorhofflimmern; DEGRO 2013}
+ \bibitem[Bro07]{Bro07}{Brock et al: Image Registration in IMRT, IGRT and SBRT; in C.Meyer (ed): IMRT-IGRT-SBRT; Front Radiat Ther Oncol; Karger; 2007}
+ \bibitem[Gra12]{Gra12}{Graeff C, Durante M and Bert C: Motion mitigation in intensity modulated particle therapy by internal target volumes covering range changes; Med. Phys. 39 (10); 2012}
+ \bibitem[Ric13]{Ric13}{Richter D, Schwarzkopf A, Trautmann J, Kr\"amer M, Durante M, J\"akel O, Bert C: Upgrade and benchmarking of a 4D treatment planning system for scanned ion beam therapy; Med Phys.; 40(5); 2013}
+ \bibitem[Sha10]{Sha10}{Sharma A, Wong D, Weidlich G, Fogarty T, Jack A, Sumanaweera T, Maguire P: Noninvasive stereotactic radiosurgery (CyberHeart) for creation of ablation lesions in the atrium; Heart Rhythm 7(6); 802-810; 2010}            NCBINCBI Logo    NCBINCBI Logo
+ \bibitem[Sharp07]{Sharp07}{Sharp CG, Kandasamy N, Singh H and Folkert M: GPU-based streaming architectures for fast cone-beam CT image reconstruction and demons deformable registration; Phys. Med. Biol.; 52(19); 5771-5783; 2007}
+ \bibitem[Shack10]{Shack10}{Shakleford JA, Kandasamy N and Sharp GC: On developing B-spline registration algorithms for multi-core processors; Physics in Medicine and Biology; 55(21); 2010}
+ \bibitem[Zen10]{Zen10}{Zenklusen SM, Pedroni E and Meer D: A study on repainting strategies for treating moderately moving targets with proton pencil beam scanning at the new gantry 2 at PSI; Physics in Medicine and Biology; 55(17); 5103-5121; 2010}
+ 
+  \bibitem[Cri98]{Cri98}{Crick SJ, Sheppard MN, Ho SY, Gebstein L, Anderson RH: Anatomy of the pig heart: comparisons with normal human cardiac structure; J Anat.; 193(Pt 1): 105?119; 1998}
+  \bibitem[Hug86]{Hug86}{Hughes HC: Swine in cardiovascular research; Laboratory Animal Science 36, 348-350; 1986}
+  \bibitem[Lum66]{Lum66}{Lumb GD: Experimentally induced cardiac failure in swine: pathological changes; Swine in Biomedical Research (ed. Bustad LK, McClellan RO), pp. 389-403. Pacific Northwest Laboratory, Seattle, Washington: Batelle Memorial Institute; 1966}
+  \bibitem[Dou72]{Dou72}{Douglas WR: Of pigs and men and research: a review of applications and analogies of the pig, Sus scrofa, in human medical research: Space Life Sciences 3, 226-234; 1972}
+  \bibitem[Coo91]{Coo91}{Cooper DKC, Ye Y, Rolf LL, Zuhdi N: The pig as potential organ donor for man. In Xenotransplantation: The Transplantation of Organs and Tissues Between Species (ed. Cooper DKC, Kemp E, Reemtsma K, White DJG), pp. 480-500. Berlin: Springer; 1991}
+  \bibitem[Whi93]{Whi93}{White D, Wallwork J: Xenografting: probability, possibility, or pipe-dream?; Lancet 342; 879-880; 1993}
+ 
+ \bibitem[Son14]{Son14}{Song L, Lehmann HI, Cusma JT, Christner JA, Misiri J, Johnson SB, Parker KD, Takami M, Miller RC, Herman MG and Packer DL: Intensity Modulated  Proton Therapy using Pencil Beam Scanning as a Catheter-free Ablation Approach: A 4D Treatment Planning Study in the Porcine Model; HRS Abstract; 2014}
+ \end{thebibliography}
+
+
+
+
+\end{document}

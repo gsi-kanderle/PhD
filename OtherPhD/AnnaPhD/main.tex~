@@ -1,0 +1,315 @@
+\documentclass[type=dr, dr=rernat, accentcolor=tud7b,colorbacktitle, bigchapter, openright, twoside, 12pt ]{tudthesis}
+\usepackage[english]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{pstricks}
+\usepackage{psfrag}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{epsfig}
+\usepackage{subfigure}
+\usepackage{rotating}
+\usepackage{minitoc}
+\usepackage{appendix}
+\usepackage{acronym}
+\usepackage{graphics}
+\usepackage[abs]{overpic}
+
+
+%%%% 1 1/2 facher Zeilenabstand:	
+\usepackage{setspace}
+\onehalfspacing
+
+
+\setcounter{minitocdepth}{2}
+\setcounter{tocdepth}{2}
+
+
+\thesistitle{Planning studies for a non-invasive treatment of atrial fibrillation with scanned ion beams}{Planungsstudien zur 
+nicht invasiven Behandlung von Vorhofflimmern mit gescannten Ionenstrahlen}
+\author{MSc Anna Maria Constantinescu}
+\birthplace{Bukarest, Rum\"anien}
+\date{\today}
+\referee{Prof. Dr. Marco Durante}{Prof. Dr. Christoph Bert}
+\department{Fachbereich Physik}
+\setinstitutionlogo{GSI_Logo_cmyk}
+\group{Prof. Durante\newline Institut f\"ur Festk\"orperphysik}
+\dateofexam{18. Juni 2014}{}
+
+
+\begin{document}
+
+  \makethesistitle
+
+\dominitoc
+% \setcounter{tocdepth}{1}
+
+  \include{teile/abstract/abstract}
+  
+  \include{teile/publications/publications}
+
+  \tableofcontents
+  
+  \include{teile/abbrevations/abbrevetions}
+
+  \include{teile/motivation/motivation}
+  
+  \setcounter{mtc}{1}
+  \include{teile/introduction/introduction_forMain}
+  
+  \setcounter{mtc}{2}
+  \include{teile/results_mdacc/results_mdacc_forMain}
+  
+  \setcounter{mtc}{3}
+  \include{teile/results_human/results_human_forMain}
+  
+  \setcounter{mtc}{4}
+  \include{teile/results_porcine/results_porcine_forMain}
+  
+  \setcounter{mtc}{5}
+  \include{teile/discussion/discussion_forMain}
+
+  \include{teile/conclusion_outlook/conclusion_outlook_forMain}
+  
+  
+  \begin{appendices}
+    \include{teile/results_mdacc/results_mdacc_forMain_appendix}
+    \include{teile/results_human/results_human_forMain_appendix}
+    \include{teile/results_porcine/results_porcine_forMain_appendix}
+  \end{appendices}
+  
+  
+%   \include{bib.tex}
+\begin{thebibliography}{9999999}
+ \bibitem[AAPM10]{AAPM10}{Benedict SH, Yenice KM, Followill D, Galvin JM, Hinson W, Kavanagh B, Keall P, Lovelock M, Meeks S, Papiez L, Purdie T, Sadagopan R, Schell MC, Salter B, Schlesinger DJ, Shiu AS, Solberg T, Song DY, Stieber V, Timmerman R, Tome WA, Verellen D, Wang L, Yin FF: Stereotactic body radiation therapy: the report of AAPM Task Group 101; Med. Phys.; 37(8); 2010}
+ \bibitem[ACC06]{ACC06}{Bonow RO et al: ACC/AHA 2006 Guidelines for the Management of Patients With Valvular Heart Disease; J. Am. Coll. Cardiol.; 48(3); 2006}
+ \bibitem[afib]{afib}{Atrial fibrillation Resources for patients, a-fib.com}
+ \bibitem[Ahl80]{Ahl80}{Ahlen SP: Theoretical and experimental aspects of the enery loss of relativistic heavily ionizing particles; Rev. Mod. Phys; 52(1); 121; 1980} 
+ \bibitem[Alp98]{Alp98}{Alpen EL: Radiation Biophysics; Academic Press; 2nd edition; 1998}
+ \bibitem[Ama04]{Ama04}{Amaldia U: CNAO - the Italian centre for light ion therapy; Radiother. Oncol.; 73(Supplement 2); 191-201; 2004}
+ \bibitem[amc]{amc}{Arthur's Medical Clipart, arthursclipart.org}
+ \bibitem[Ami06]{Ami06}{Amino M, Yoshioka K, Tanabe T, Tanaka E, Mori H, Furusawa Y, Zareba W, Yamazaki M, Nakagawa H, Honjo H, Yasui K, Kamiya K, Kodama I: Heavy ion radiation up-regulates Cx43 and ameliorates arrhythmogenic substrates in hearts after myocardial infarction; Cardiovasc. Res.; 72(3); 412-421; 2006}
+ \bibitem[Ami10]{Ami10}{Amino M, Yoshioka K, Fujibayashi D, Hashida T, Furusawa Y, Zareba W, Ikari Y, Tanaka E, Mori H, Inokuchi S, Kodama I, Tanabe T: Year-long upregulation of connexin43 in rabbit hearts by heavy ion irradiation; Am. J. Physiol. Heart Circ. Physiol.; 298(3); H1014-21; 2010}
+ \bibitem[Aok04]{Aok04}{Aoka Y, Kamada T, Kawana M, Yamada Y, Nishikawa T, Kasanuki H and Tsujii H: Primary cardiac angiosarcoma treated with carbon-ion radiotherapy; Lancet Oncol.; 5(10); 636-638; 2004}                       
+ \bibitem[Bar63]{Bar63}{Barkas H.W.: Nuclear Research Emulsions; Vol.I; Academic Press New York and London; 1963}
+ \bibitem[Ben98]{Ben98}{Benjamin EJ, Wolf PA, D'Agostino RB, Silbershatz H, Kannel WB, Levy D. Impact of atrial fibrillation on the risk of death: the Framingham Heart Study; Circulation; 98(10); 946-952; 1998}
+ \bibitem[Bent12]{Bent12}{Bentefour el H, Shikui T, Prieels D, Lu HM: Effect of tissue heterogeneity on an in vivo range verification technique for proton therapy; Phys. Med. Biol.; 57(17); 5473-5484; 2012}
+ \bibitem[Ber05]{Ber05}{Bert C, Metheany KG, Doppke K, Chen GT: A phantom evaluation of a stereovision surface imaging system for radiotherapy patient setup; Med. Phys.; 32(9); 2753-2762; 2005}
+ \bibitem[Ber06]{Ber06}{Bert C: Bestrahlungsplanung f\"ur bewegte Zielvolumina in der Tumortherapie mit gescanntem Kohlenstoffstrahl; Dissertation; TU Darmstadt; 2006}
+ \bibitem[Ber07]{Ber07}{Bert C, Saito N, Schmidt A, Chaudhri N, Schardt D and Rietzel E: Target motion tracking with a scanned particle beam; Med. Phys.; 34(12); 4768-4771; 2007}
+ \bibitem[Ber07b]{Ber07b}{Bert C and Rietzel E: 4D treatment planning for scanned carbon ion beams; Radiat. Oncol.; 2(24); 2007}
+ \bibitem[Ber08]{Ber08}{Bert C, Groezinger SO and Rietzel E: Quantification of interplay effects of scanned particle beams and moving targets; Phys. Med. Biol.; 53(9); 2253-2265; 2008}
+ \bibitem[Ber09]{Ber09}{Bert C, Gemmel A, Saito N and Rietzel E: Gated irradiation with scanned particle beams; Int. J. Radiat. Oncol. Biol. Phys.; 73(4); 1270-1275; 2009}
+ \bibitem[Ber09b]{Ber09b}{Bert C, Gemmel A, Chaudhri N, L\"uechtenborg R, Saito N, Durante M and Rietzel E: Rescanning to mitigate the impact of motion in scanned particle therapy; GSI Scientific Report; 397; 2008}
+ \bibitem[Ber10]{Ber10}{Bert C, Gemmel A, Saito N, Chaudhri N, Schardt D, Durante M, Kraft G and Rietzel E: Dosimetric precision of an ion beam tracking system; Radiat. Oncol.; 5(1); 61; 2010}
+ \bibitem[Ber11]{Ber11}{Bert C and Durante M: Motion in radiotherapy: particle therapy; Phys. Med. Biol.; 56(16); 2011}
+ \bibitem[Ber12]{Ber12}{Bert C, Engenhart-Cabillic R and Durante M: Particle therapy for noncancer diseases; Med. Phys.; 39(4); 2012}
+ \bibitem[Bet30]{Bet30}{Bethe H: Zur Theorie des Durchgangs schneller Korpuskularstrahlung durch Materie; Annalen der Physik; 5(5); 325-400; 1930}
+ \bibitem[Bik11]{Bik11}{Bikou O, Thomas D, Trappe K, Lugenbiel P, Kelemen K, Koch M, Soucek R, Voss F, Becker R, Katus HA, Bauer A: Connexin 43 gene therapy prevents persistent atrial fibrillation in a porcine model; Cardiovasc. Res.; 92(2); 2011}
+ \bibitem[Bis65]{Bis65}{Bishop VS, Stone HL, Yates J, Simek J, Davis JA: Effects of external irradiation of the heart on cardiac output, venous pressure and arterial pressure; J. Nucl. Med.; 6(9); 1965}
+ \bibitem[Bla13]{Bla13}{Blanck O, Bode F, Gebhard M, Hunold P, Brandt S, Bruder R, Schweikard A, Grossherr M, Rades D and Dunst J: Radiochirurgisch erzeugte L\"asionen im Antrum der Pulmonarvenen: Vorl\"aufige Ergebnisse im Tiermodell und m\"ogliche Implikationen f\"ur die Behandlung von Vorhofflimmern [abstract]; DEGRO 2013}
+ \bibitem[Blo33]{Blo33}{Block F: Bremsverm\"ogen von Atomen mit mehreren Elektronen; Zeitschrift der Physik A Hadrons and Nuclei; 81(5); 285-321; 1933}
+ \bibitem[Boe12]{Boe12}{Boersma LV et al.: Atrial fibrillation catheter ablation vs. surgical ablation treatment (FAST): a 2-center randomized clinical trial; Circulation; 125(1); 23-30; 2005}
+ \bibitem[Bor11]{Bor11}{Boriani G et al.: Italian AT-500 Registry Investigators. Improving stroke risk stratification using the CHADS$_{2}$ and CHADS$_{2}$-VASc risk score in patients with paroxysmal atrial fibrillation by continous arrhythmia burden monitoring; Stroke; 42(6); 1768-1770; 2011}
+ \bibitem[Bor40]{Bor40}{Bohr N: Scattering and stopping of fission fragments; Phys.Rev.; 58(7); 654-655; 1940}
+ \bibitem[Bro07]{Bro07}{Brock et al.: Image Registration in IMRT, IGRT and SBRT; in C. Meyer (ed): IMRT-IGRT-SBRT; Front. Radiat. Ther. Oncol.; Karger; 2007}
+ \bibitem[Bro10]{Bro10}{Brock KK: Results of multi-institution deformable registration accuracy study (midras); Int. J. Radiat. Oncol. Biol. Phys.; 76(2); 538-596; 2010}
+ \bibitem[Buc05]{Buc05}{Bucci MK, Bevan A and Roach M: Advances in radiation therapy: Conventional to 3D, to IMRT, to 4D, and beyond; CA: A Cancer Journal for Clinicians; 55(2); 117-134; 2005}
+ \bibitem[bw]{bw}{http://www.biosensewebster.com/carto3.php}
+ \bibitem[Cap05]{Cap05}{Cappato R et al: Worldwide Survey on the Methods, Efficacy, and Safety of Catheter Ablation for Human Atrial Fibrillation; Circulation; 111(9); 1100-1105; 2005}
+ \bibitem[Cap10]{Cap10}{Cappato R, Calkins H, Chen SA, Davies W, Iesaka Y, Kalman J, Kim YH, Klein G, Natale A, Packer D, Skanes A, Ambrogi F and Biganzoli E: Updated Worldwide Survey on the Methods, Efficacy, and Safety of Catheter Ablation for Human Atrial Fibrillation; Circ. Arrhythm. Electrophysiol.; 3(1); 32-38; 2010} 
+ \bibitem[Car76]{Car76}{Carmel RJ, Kaplan HS: Mantle irradiation in Hodgkin's disease. An analysis of technique, tumor eradication, and complications; Cancer; 37(6); 1976}
+ \bibitem[CE09]{CE09}{Zipes and Jalife: Cardiac Electrophysiology: From Cell to Bedside; Saunders Elsevier; 5th Edition; 2009}
+ \bibitem[Cha76]{Cha76}{Chatterjee A and Schaefer HJ: Microdosimetric structure of heavy ion tracks in tissue; Radiat. Environ. Biophys.; 13(3); 215-227; 1976}
+ \bibitem[Chr13]{Chr13}{Christodouleas JP, Tang S, Susil RC, McNutt TR, Song DY, Bekelman J, Deville C, Vapiwala N, Deweese TL, Lu HM, Both S: The effect of anterior proton beams in the setting of a prostate-rectum spacer; Med. Dosim.; 38(3); 2013}
+ \bibitem[Chu93]{Chu93}{Chu WT, Ludewigt BA and Renner TR: Instrumentation for treatment of cancer using protons and light-ion beams; Rev. Sci. Instrum.; 64; 2055; 1993}
+ \bibitem[Com10]{Com10}{Combs SE, J\"akel O, Haberer T, Debus J: Particle therapy at the Heidelberg Ion Therapy Center (HIT) - Integrated research-driven university-hospital-based radiation oncology service in Heidelberg, Germany; Radiother. Oncol.; 95(1); 41-44; 2010}
+ \bibitem[Com11]{Com11}{Combs SE, Habermehl D, Ganten T, Schmidt J, Edler L, Burkholder I, J\"akel O, Haberer T and Debus J: Phase i study evaluating the treatment of patients with hepatocellular carcinoma (HCC) with carbon ion radiotherapy: The PROMETHEUS-01 trial; BMC Cancer; 11; 2011}
+ \bibitem[Coo91]{Coo91}{Cooper DKC, Ye Y, Rolf LL, Zuhdi N: The pig as potential organ donor for man. In Xenotransplantation: The Transplantation of Organs and Tissues Between Species (ed. Cooper DKC, Kemp E, Reemtsma K, White DJG); pp. 480-500; Springer; 1991}
+ \bibitem[Cot05]{Cot05}{Cotton JM, Rance K, Patil A and Thomas MR: Intracoronary brachytherapy for the treatment of complex in-stent restenosis; Heart; 91(2); 231-231; 2005}
+ \bibitem[Cri98]{Cri98}{Crick SJ, Sheppard MN, Ho SY, Gebstein L, Anderson RH: Anatomy of the pig heart: comparisons with normal human cardiac structure; J. Anat.; 193(Pt 1); 105-119; 1998}
+ \bibitem[CTS13]{CTS13}{cts.usc.edu/mazeprocedure.html; Cardiothoracic surgery, University of Southern Carolina Keck School of Medicine; 2013}
+ \bibitem[Dar13]{Dar13}{Darby SC, Ewertz M, McGale P, Bennet AM, Blom-Goldman U, Brønnum D, Correa C, Cutter D, Gagliardi G, Gigante B, Jensen MB, Nisbet A, Peto R, Rahimi K, Taylor C, Hall P: Risk of ischemic heart disease in women after radiotherapy for breast cancer; N. Engl. J. Med.; 368(11); 2013}
+ \bibitem[Dou72]{Dou72}{Douglas WR: Of pigs and men and research: a review of applications and analogies of the pig, Sus scrofa, in human medical research; Space Life Sciences; 3(3); 226-234; 1972}
+ \bibitem[Doug06]{Doug06}{Douglas YL, Jongbloed MR, Gittenbergerde Groot AC et al: Histology of vascular myocardial wall of left atrial body after pulmonary venous incorporation; Am. J. Cardiol.; 97(5); 662-670; 2006}
+ \bibitem[Ect08]{Ect08}{Ector J, De Buck S, Loeckx D, Coudyzer W, Maes F, Dymarkowski S, Bogaert J, Heidb\"uchel H: Changes in left atrial anatomy due to respiration: impact on three-dimensional image integration during atrial fibrillation ablation; J. Cardiovasc. Electrophysiol.; 19(8); 828-34; 2008 }
+ \bibitem[Efs56]{Efs56}{Efskind D: The Effect of Massive X-ray Doses to the Mediastinum, Especially the Heart; Norsk Hydro's Institute for Cancer Research Report 1954-1956; pp. 13-14; 1956}
+ \bibitem[Ele12]{Ele12}{Eley J, Graeff C, L\"uchtenborg R, Durante M, Howell R, Newhauser W and Bert C: 4D Optimization for Scanned Ion Beam Tracking Therapy for Moving Tumors; Med. Phys.; 39(6); 3970; 2012}
+ \bibitem[Ema91]{Ema91}{Emami B, Lyman J, Brown A, Coia L, Goitein M, Munzenrider JE, Shank B, Solin LJ, Wesson M: Tolerance of normal tissue to therapeutic irradiation; Int. J. Radiat. Oncol. Biol. Phys.; 21(1); 1991}
+ \bibitem[Eng11]{Eng11}{Engelsman M and Bert C: Precision and Uncertainties in Proton Therapy for Moving Targets; in Paganetti H: Proton Therapy Physics; Taylor \& Francis; 2011}
+ \bibitem[Eva08]{Eva08}{Evans PM: Anatomical imaging for radiotherapy; Phys. Med. Bio.; 53(12); 151-191; 2008}
+ \bibitem[ESC10]{ESC10}{ESC Guidlines for the management of atrial fibrillation: The task force for the Management of Atrial Fibrillation of the European Society of Cardiology (ESC); Eur. Heart J.; 31; 2369-2429; 2010}
+ \bibitem[ESC12]{ESC12}{2012 focused update of the ESC Guidlines for the management of atrial fibrillation: An update of the 2010 ESC Guidlines for the management of atrial fibrillation; Eur. Heart J.; 33(21); 2719-472; 2012}
+ \bibitem[Faj70]{Faj70}{Fajardo LF and Stewart JR: Capillary Injury Preceding Radiation-Induced Myocardial Fibrosis; Radiology; 101; 1971}
+ \bibitem[Faj73]{Faj73}{Fajardo LF and Stewart JR: Pathogenesis of radiation-induced myocardial fibrosis; Laboratory Investigation; 29(2); 244; 1973}
+ \bibitem[Fie10]{Fie10}{Fiedler F, Shakirin G, Skowron J, Braess H, Crespo P, Kunath D, Pawelke J, P\"onisch F and Enghardt W: On the effectiveness of ion range determination from in-beam PET data; Phys. Med. Bio.; 55(7); 2010}
+ \bibitem[Fle]{Fle}{http://flexikon.doccheck.com/de/CHA2DS2-VASc-Score}
+ \bibitem[Fok04]{Fok04}{Fokdal L et al.: Impact of changes in bladder and rectal filling volume n organ motion and dose distribution of the bladder in radiotherapy for urinary bladder cancer; Int. J. Radiat. Oncol. Biol. Phys.; 59(2); 436-444; 2004 }
+ \bibitem[Fox09]{Fox09}{Fox CS et al.: Parental atrial fibrillation as a risk factor for atrial fibrillation in offspring; JAMA 291; 2851-2855; 2004}
+ \bibitem[Fri12]{Fri12}{Friberg L et al.: Evaluation of risk stratification schemes for ischemic stroke and bleeding in 182 678 patients with atrial fibrillation: the Swedish Atrial Fibrillation Cohort study; Eur. Heart J.; 33(12); 1500-1510; 2012}
+ \bibitem[Frie12]{Frie12}{Friedmann PA: Hitting a moving target: Catheter ablation and respiration; Heart Rhythm; 9(7); 1048-1049; 2012}
+ \bibitem[Fried13]{Fried13}{Friedrich T, Gr\"un R, Scholz U, Els\"asser T, Durante M and Scholz M: Sensitivity analysis of the relative biological effectiveness predicted by the local effect model; Phys. Med. Biol.; 58(19); 6827-6849; 2013}
+ \bibitem[Fur05]{Fur05}{Furukawa T, Noda K, Uesugi TH, Naruse T, Shibuya S: Intensity control in RF-knockout extraction for scanning irradiation; Nucl. Inst \& Meth. in Phys. Res. B; 240(1); 32-35; 2005}
+ \bibitem[Fur07]{Fur07}{Furukawa T, Inaniwa T, Sato S, Tomitani T, Minohara S, Noda K and Kanai T: Design study of a raster scanning system for moving target irradiation in heavy-ion radiotherapy; Med. Phys.; 34(3); 1085-1097; 2007}
+ \bibitem[Fus06]{Fus06}{Fuster V, Ryden LE, Cannom DS et al.: ACC/AHA/ESC 2006 guidelines for the management of patients with atrial fibrillation; Europace; 8(9); 651-745; 2006}
+ \bibitem[Gag10]{Gag10}{Gagliardi G, Constine LS, Moiseenko V, Correa C, Pierce LJ, Allen AM and Marks LB: Radiation dose-volume effects in the heart; Int. J. Radiat. Oncol. Biol. Phys.; 76(3 Suppl); 2010}
+ \bibitem[Gai10]{Gai10}{Gaita F, Caponi D, Pianelli M, Scaglione M, Toso E, Cesarani F, Boffano C, Gandini G, Valentini MC, De Ponti R, Halimi F and Leclercq JF: Radiofrequency catheter ablation of atrial fibrillation: A cause of silent thromboembolism? Magnetic resonanceimaging assessment of cerebral thromboembolism in patients undergoing ablation of atrial fibrillation; Circulation; 122(17); 1667-1673; 2010}
+ \bibitem[Gem11]{Gem11}{Gemmel A, Rietzel E, Kraft G, Durante M and Bert C: Calculation and experimental verification of the RBE-weighted dose for scanned ion beams in the presence of target motion; Phys. Med. Biol.; 56(23); 2011}
+ \bibitem[Gra12]{Gra12}{Graeff C, Durante M and Bert C: Motion mitigation in intensity modulated particle therapy by internal target volumes covering range changes; Med. Phys.; 39(10); 6004-6013; 2012}
+ \bibitem[Gra13]{Gra13}{Graeff C, Constantinescu A, L\"uchtenborg R, Durante M and Bert C: Multigating: 4D optimized beam tracking in scanned ion beam therapy;  Technol. Cancer Res. Treat., Epub ahead of print; 2013}
+ \bibitem[Gri11]{Gri11}{Grimm J, LaCouture T, Croce R, Yeo I, Zhu Y and Xue J: Dose tolerance limits and dose volume histogram evaluation for stereotactic body radiotherapy; J. Appl. Clin. Med. Phys.; 12(2); 2011}
+ \bibitem[Gro04]{Gro04}{Groezinger SO: Volume conformal irradiation of moving target volumes with scanned ion beams; Dissertation; TU Darmstadt; 2004}
+ \bibitem[Gru12]{Gru12}{Gr\"un R, Friedrich T, Els\"asser T, Kr\"amer M, Zink K, Karger CP, Durante M, Engenhart-Cabillic R, Scholz M: Impact of enhancements in the local effect model (LEM) on the predicted RBE-weighted target dose distribution in carbon ion therapy; Phys Med Biol.; 57(22); 2012}
+ \bibitem[Gys14]{Gys14}{van Gysen K, Kneebone A, Alfieri F, Guo L, Eade T: Feasibility of and rectal dosimetry improvement with the use of SpaceOAR\textsuperscript{\textregistered} hydrogel for dose-escalated prostate cancer radiotherapy; J. Med. Imaging Radiat. Oncol.; 2014}
+ \bibitem[Hab93]{Hab93}{Haberer T et al.: Magnetic Scanning System for Heavy Ion Therapy; Nucl. Inst \& Meth. in Phys. Res. A; 330(1-2); 296-305; 1993}
+ \bibitem[Hai98]{Hai98} {Ha\"{\i}ssagurre M, Jais P, Shah DC et al.: Spontaneous initiation of atrial fibrillation by ectopic beats originating in the pulmonary veins; N. Engl. J. Med.; 339(10); 659-666; 1998}
+ \bibitem[Hai04]{Hai04}{Ha\"{\i}ssaguerre M, Sanders P, Hocini M, et al.: Changes in atrial fibrillation cycle length and inducibility during catheter ablation and their relation to outcome; Circulation; 109(24); 3007-3013; 2004}
+ \bibitem[Hai05]{Hai05}{Ha\"{\i}ssaguerre M, Hocini M, Sanders P, et al.: Catheter ablation of long-lasting persistent atrial fibrillation: Clinical outcome and mechanisms of subsequent arrhythmias; J. Cardiovasc. Electrophysiol.; 16(11); 1138-1147; 2005} 
+ \bibitem[Hal06]{Hal06}{Hall EJ and Giaccia AJ: Radiobiology for the Radiologist; Lippincott Williams \& Wilkins; 6th Edition; 2006}
+ \bibitem[Han93]{Han93}{Hancock SL, Tucker MA and Hoppe RT: Factors affecting late mortality from heart disease after treatment of Hodgkin's disease; JAMA; 270(16); 1993}
+ \bibitem[Hanl99]{Hanl99}{Hanley J et al.: Deep inspiration breath-hold technique for lung tumors: the potential value of target immobilisation and reduced lung density in dose escalation; Int. J. Radiat. Oncol. Biol. Phys.; 45(3); 603-611; 1999}
+ \bibitem[Has06]{Has06}{Hashimoto T et al.: Repeated proton beam therapy for hepatocellular carcinoma; Int. J. Radiat. Oncol. Biol. Phys.; 65(1); 196-202; 2006}
+ \bibitem[Her13]{Her13}{Herm J et al.: Neuropsychological Effects of MRI-Detected Brain Lesions after Left Atrial Catheter Ablation for Atrial Fibrillation: Long Term Results of the MACPAF Study; Circ. Arrhythm. Electrophysiol.; 6(5); 843-50; 2013}
+ \bibitem[Hil09]{Hil09}{Hild S, Kr\"amer M, Durante M and Bert C: Display functionality for TRiP; GSI Scientific Report; 492; 2009}
+ \bibitem[Hof03]{Hof03}{Hof H et al.: Stereotactic single-dose radiotherapy of stage I non-small cell lung cancer (nsclc); Int. J. Radiat. Oncol. Biol. Phys.; 56(2); 335-341; 2003}
+ \bibitem[Hoo07]{Hoo07}{Hooning MJ, Botma A, Aleman BM, Baaijens MH, Bartelink H, Klijn JG, Taylor CW, van Leeuwen FE: Long-term risk of cardiovascular disease in 10-year survivors of breast cancer; J. Natl. Cancer Inst.; 99(5); 2007}
+ \bibitem[Hug86]{Hug86}{Hughes HC: Swine in cardiovascular research; Laboratory Animal Science; 36(4); 348-350; 1986}
+ \bibitem[ICRU93]{ICRU93}{Quantities and units in radiation protection dosimetry; ICRU report 51}
+ \bibitem[ICRU93a]{ICRU93a}{Prescribing, Recording and Reporting Photon Beam Therapy; ICRU report 50}
+ \bibitem[ICRU99]{ICRU99}{Prescribing, Recording and Reporting Photon Beam Therapy (Supplement to ICRU report 50); ICRU report 62}
+ \bibitem[Inf05]{Inf05}{Tumortherapie mit schweren Ionen, Physikalische und biologische Grundlagen, Technische Realisierung an der GSI, klinische Ergebnisse; Informationen f\"ur Studenten, \"Arzte und Patienten; 2005}
+ \bibitem[Iwa10]{Iwa10}{Iwata et al.: High-dose proton therapy and carbon-ion therapy for stage I non-small cell lung cancer; Cancer; 116(110); 2476-2485; 2010}
+ \bibitem[Iwa10b]{Iwa10b}{Iwata Y, Kadowaki T, Uchiyama H, Fujimoto T, Takada E, Shirai T, Furukawa T, Mizushima K, Takeshita E, Katagiri K, Sato S, Sano Y, Noda K: Multiple-energy operation with extended flattops at HIMAC; Nucl. Inst \& Meth. in Phys. Res. A; 624(1); 2010}
+ \bibitem[Jong05]{Jong05}{Jongbloed MR, Dirksen MS, Bax JJ et al.: Atrial fibrillation: multi-detector row CT of pulmonary vein anatomy prior to radiofrequency catheter ablation - initial experience; Radiology; 234(3); 702-709; 2005}
+ \bibitem[Kad12]{Kad12}{Kaderka R, Schardt D, Durante M, Berger T, Ramm U, Licher J and La Tessa C: Out-of-field dose measurements in a water phantom using different radiotherapy modalities; Phys. Med. Biol.; 57(16); 5059-5074; 2012}
+ \bibitem[Kea01]{Kea01}{Kaell PJ, Kini VR, Vedem SS and Mohan R: Motion adaptive x-ray therapy: a feasibility study; Phys. Med. Biol; 46(1); 1-10; 2001}
+ \bibitem[Kea06]{Kea06}{Keall PJ, Mageras GS, Balter JM, Emery RS, Forster KM, Jiang SB, Kapatoes JM, Low DA, Murphy MJ, Murray BR, Ramsey CR, Van Herk MB, Vedam SS, Wong JW, Yorke E: The management of respiratory motion in radiation oncology report of AAPM Task Group 76; Med. Phys.; 33(10); 2006}
+ \bibitem[Kan04]{Kan04}{Kanagaratnam P, Cherian A, Stanbridge RD, Glenville B, Severs NJ, Peters NS: Relationship between connexins and atrial activation during human atrial fibrillation; J. Cardiovasc. Electrophysiol.; 15(2); 206-216; 2004}
+ \bibitem[Kat99]{Kat99}{Katz R and Cucinotta E: Tracks to therapy; Radiat. Meas.; 31(1-6); 379-388; 1999}
+ \bibitem[Kha10]{Kha10}{Khan FM: The physics of radiation therapy; 4th edition; Lippincott Williams \& Wilkins; 2010}
+ \bibitem[Kie86]{Kie86}{Kiefer J and Straaten H: A model of ion track structure based on classical collision dynamics; Phys. Med. Biol.; 31(11); 1201-1209; 1986}
+ \bibitem[Kne08]{Kne08}{Knecht S, Oelschlager C, Duning T, Lohmann H, Albers J, Stehling C,Heindel W, Breithardt G, Berger G, Ringelstein EB, Kirchhof P, Wersching H: Atrial fibrillation in stroke-free patients is associated with memory impairment and hippocampal atrophy; Eur. Heart J.; 29(17); 2125-2132; 2008}
+ \bibitem[Kra92]{Kra92}{Kraft G, Kraemer M, Scholz M: LET, track structure and models. A review; Radiat. Environ. Biophys.; 31(3); 161-180; 1992}
+ \bibitem[Kra00]{Kra00}{Kraft G: Tumor therapie with heavy charged particles; Progress in Particle and Nuclear Physics; 45; 473; 2000}
+ \bibitem[Krae00]{Krae00}{Kr\"amer M, J\"akel O, Haberer T, Kraft G, Schardt D and Weber U: Treatment planning for heavy-ion radiotherapy: a physical beam model and dose optimization; Phys. Med. Biol.; 45(11); 3299-3317; 2000}
+ \bibitem[Krae00b]{Krae00b}{Kr\"amer M and Scholz M: Treatment planning for heavy-ion radiotherapy: calculation and optimization of biologically effective dose; Phys. Med. Biol.; 45(11); 3319-3330; 2000}
+ \bibitem[Krae03]{Krae03}{Kr\"amer M et al.: The increased biological effectiveness of heavy charged particles: from radiobiology to treatment planning; Technol. Cancer. Res. Treat.; 2(5); 427-36; 2003}
+ \bibitem[Krae10]{Krae10}{Kr\"amer M and Durante M: Ion beam transport calculations and treatment plans in particle therapy; Eur. Phys. J. D; 60; 195-202; 2010}
+ \bibitem[Kub96]{Kub96}{Kubo HD and Hill BC: Respiration gated radiotherapy treatment: a technical study; Phys. Med. Biol.; 41(1); 83-91; 1996}
+ \bibitem[Kum12]{Kum12}{Kumar S, Morton JB,  Halloran K, Spence SJ, Wong MCG, Kistler PM and Kalman JM: Effect of respiration on catheter-tissue contact force during ablation of atrial arrhythmias; Heart Rhythm; 9(7); 2012}
+ \bibitem[Lan01]{Lan01}{Langen KM and Jones DTL: Organ motion and its management; Int. J. Radiat. Oncol. Biol. Phys.; 50(1); 265-278; 2001}
+ \bibitem[Li06]{Li06}{Li T, Thorndyke B, Schreibmann E, Yang Y and Xing L: Model-based image reconstruction for four-dimensional PET; Med. Phys.; 33(5); 1288-1298; 2006}
+ \bibitem[Lic05]{Lic05}{Lickfett L, Dickfeld T, Kato R, Tandri H, Vasamreddy CR, Berger R, Bluemke D, Lüderitz B, Halperin H, Calkins H: Changes of pulmonary vein orifice size and location throughout the cardiac cycle: dynamic analysis using magnetic resonance cine imaging; J. Cardiovasc. Electrophysiol.; 16(6); 2005}
+ \bibitem[Lic06]{Lic06}{Lickfett L, Hackenbroch M, Lewalter T, Selbach S, Schwab JO, Yang A, Balta O, Schrickel J, Bitzen A, L\"uderitz B, Sommer T: Cerebral diffusion-weighted magnetic imaging: A tool to monitor the thrombogenicity of left atrial catheter ablation; J. Cardiovasc. Electrophysiol.; 17(1); 1-7l 2006}
+ \bibitem[Lil06]{Lil06}{Lilley J: Nuclear Physics - Principles and Applications; Wiley; 2006}
+ \bibitem[Lin12]{Lin12}{Linz U: Ion Beam Therapy - Fundamentals, Technology and Clinical Applications; Springer; chapter 31: Online Irradiation Control by Mean of PET by Fiedler F, Kunath D, Priegnitz M and Enghardt W; p.535; 2012}
+ \bibitem[Lip11]{Lip11}{Lip GY: Stroke in atrial atrial fibrillation: epidemiology and thromboprophylaxis; J. Thromb. Hearnost.; 107; 1053-1065; 2011}
+ \bibitem[Loe13]{Loe13}{Loeffler JS and Durante M: Charged particle therapy--optimization, challenges and future directions; Nat. Rev. Clin. Oncol.; 10(7); 411-24; 2013}
+ \bibitem[Lue12]{Lue12}{L\"uchtenborg R: Real-time dose compensation methods for scanned ion beam therapy of moving tumors; Dissertation; TU Darmstadt; 2012}
+ \bibitem[Luj99]{Luj99}{Lujan AE, Larsen EW, Balter JM and Haken RKT: A method for incorporating organ motion due to breathing into 3D dose calculations; Med. Phys.; 26(5); 1999}
+ \bibitem[Lum66]{Lum66}{Lumb GD: Experimentally induced cardiac failure in swine: pathological changes; Swine in Biomedical Research (ed. Bustad LK, McClellan RO); pp. 389-403; Pacific Northwest Laboratory, Seattle, Washington: Batelle Memorial Institute; 1966}
+ \bibitem[Mad14]{Mad14}{Madhavan M, Lehmann HI, Swale MK, Johnson SB, Parker KD, Curley M, Hindricks G and Packer DL: Impact of a Novel Heated Saline Augmented Needle Tip Catheter on Improving Ablative Lesion Penetration and Eliminating Deep Tissue Conducting Channels in Canine Infarcts; [abstract] (PO05-162); HRS Scientific Session; 2014}
+ \bibitem[Mag11]{Mag11}{Maguire P, Gardner E, Jack A, Zei P, Al-Ahmed A, Fajardo L, Ladich E and Takeda P: Cardiac radiosurgery (CyberHeart) for treatment of arrhythmia: physiologic and histopathologic correlation in the porcine model; Cureus; 3(8); 2011}
+ \bibitem[Mar98]{Mar98}{Martel MK, Sahijdak WM, Ten Haken RK, Kessler ML, Turrisi AT: Fraction size and dose parameters related to the incidence of pericardial effusions; Int. J. Radiat. Oncol. Biol. Phys.; 40(1); 1998}
+ \bibitem[Marti13]{Marti13}{Martinek M et al.: Asymptomatic cerebral lesions during pulmonary vein isolation under uninterrupted oral anticoagulantion; Europace; 15(3); 325-331; 2013}
+ \bibitem[Mayo]{Mayo}{Atrial fibrillation: Health information, mayoclinic.com}
+ \bibitem[Med]{Med}{Seeley R.R., Stephans T.D and Tate P: Essentials of Anatomy and Physiology, McGraw-Hill International Edition; 6th edition; 2007}
+ \bibitem[Med13]{Med13}{Medi C, Evered L, Silbert B, The A, Halloran K, Morton J, Kistler P, Kalman J: Subtle Post-Procedural Cognitive Dysfunction following Atrial Fibrillation Ablation; J. Am. Coll. Cardiol.; 62(6); 2013}
+ \bibitem[Min00]{Min00}{Minohara S, Kanai T, Endo M, Noda K and Kanazawa M: Respiratory gated irradiation system for heavy-ion radiotherapy; Int. J. Radiat. Oncol. Biol. Phys.; 47(4); 1097-1103; 2000}
+ \bibitem[Miy06]{Miy06}{Miyasak Y, Barnes ME, Gersh BJ et al: Secular trends in incidences of atrial fibrillation in Olmsted County, Minnesota, 1980 to 2000, and implications on the projection for future prevalence; Circulation; 114(2); 119-125; 2006}
+ \bibitem[Mol48]{Mol48}{Moli\`{e}re G: Theorie der Streuung schneller geladener Teilchen II, Mehrfach- und Vielfachstreuung; Zeitschrift f\"ur Naturforschung; 3a; 78-97; 1948}
+ \bibitem[Mon08]{Mon08}{Monz M, K\"ufer KH, Bortfeld TR, Thieke C: Pareto navigation: algorithmic foundation of interactive multi-criteria IMRT planning; Phys. Med. Biol.; 53(4); 2008}
+ \bibitem[Mor09]{Mor09}{Mori S, Lu H, Wolfgang JA, Choi NC and Chen GTY: Effects of interfractional anatomical changes on water-equivalent pathlength in charged-particle radiotherapy of lung cancer; J. Radiat. Res.; 50(6); 513-519; 2009}
+ \bibitem[Mue14]{Mue14}{Muessig D: Re-scanning in scanned ion beam therapy in the presence of organ motion; Dissertation; TU Darmstadt; 2014}
+ \bibitem[Nab09]{Nab09}{Nabauer M et al.: The registry of the German Competence Network on atrial fibrillation: patient characteristics and initial management; Eurospace; 11(4); 423-434; 2009}
+ \bibitem[Nak10]{Nak10}{Nakamura K and Particle Data Group: Review of particle physics; Journal of Physics G: Nuclear and Particle Physics; 37(7A); 2010}
+ \bibitem[Nat99]{Nat99}{Nath R, Amols H, Coffey C, Duggan D, Jani S, Li Z, Schell M, Soares C, Whiting J, Cole PE, Crocker I and Schwartz R: Intravascular brachytherapy physics: Report of the AAPM Radiation Therapy Committee Task Group No. 60; Med. Phys.; 26(2); 1999}
+ \bibitem[Neg01]{Neg01}{Negoro Y et al: The effectiveness of an immobilization device in conformal radiotherapy for lung tumor: reduction of respiratory tumor movement and evaluation of the daily setup accuracy; Int. J. Radiat. Oncol. Biol. Phys.; 65(1); 107-111; 2001}
+ \bibitem[Nie07]{Nie07}{Nieder C, Schill S, Kneschaurek P, Molls M: Influence of different treatment techniques on radiation dose to the LAD coronary artery; Radiat Oncol.; 2:20; 2007}
+ \bibitem[Nod96]{Nod96}{Noda K, Kanazawa AI, Takada E, Torikoshi M, Araki N, Yoshizawa J, Sate K, Yamada S, Ogawa H, Itoh H, Noda A, Tomizawa M, Yoshizawa M: Slow beam extraction by a transverse RF field with AM and FM; Nucl. Inst \& Meth. in Phys. Res. A; 374; 269-277; 1996}
+ \bibitem[Nos05]{Nos05}{Noseworthy PA, Malchano ZJ, Ahmed J, Holmvang G, Ruskin JN, and Reddy VY: The impact of respiration on left atrial and pulmonary venous anatomy: Implications for image-guided intervention; Heart Rhythm; 2(11); 1173-1178; 2005}
+ \bibitem[Ole11]{Ole11}{Olesen JB et al.: Validation of the risk stratification schemes for predicting stroke and thromboembolism in patients with atrial fibrillation: nationwide cohort study; Br. Med. J.; 342; 2011}
+ \bibitem[Ole12]{Ole12}{Olesen JB et al.: The value of the CHADS$_{2}$-VASc score for refining stroke risk stratification in patients with atrial fibrillation with a CHADS$_{2}$ score 0-1: a nationwide cohort study; J. Thromb. Haernost.; 107; 1172-1179; 2012}
+ \bibitem[Oles62]{Oles62}{Olesen KH: The natural history of 271 patients with mitral stenosis under medical treatment; Br. Heart. J.; 24(3); 349-357; 1962}
+ \bibitem[Ora02]{Ora02}{Oral H, Ozaydin M, Tada H, et al.: Mechanistic significance of intermittent pulmonary vein tachycardia in patients with atrial fibrillation; J. Cardiovasc. Electrophysiol.; 13(7); 645-650; 2002}
+ \bibitem[Ora03]{Ora03}{Oral H, Scharf C, Chugh A, et al.: Catheter ablation for paroxysmal atrial fibrillation: Segmental pulmonary vein ostial ablation versus left atrial ablation; Circulation; 108(19); 2355-2360; 2003}
+ \bibitem[Ora04]{Ora04}{Oral H, Chugh A, Lemola K, et al.: Noninducibility of atrial fibrillation as an end point of left atrial circumferential ablation for paroxysmal atrial fibrillation: A randomized study; Circulation; 110; 2797-2801; 2004}
+ \bibitem[Ora06]{Ora06}{Oral H, Pappone C, Chugh A, et al.: Circumferential pulmonary-vein ablation for chronic atrial fibrillation; N. Engl. J. Med.; 354; 934-941; 2006}
+ \bibitem[Ouy04]{Ouy04}{Ouyang D, Bansch D, Ernst S, et al.: Complete isolation of left atrium surrunding the pulmonary veins: New insights from the double-Lasso technique in paroxysmal atrial fibrillation; Circulation; 110; 2090-2096; 2004}
+ \bibitem[Ozh08]{Ozh08}{Ozhasoglu SC, Chen H, et al: Synchrony-CyberKnife respiratory compensation technology; Med. Dosim.; 33 (2); 117-123; 2008}
+ \bibitem[Pat08]{Pat08}{Patel AR, Fatemi O, Norton PT, West JJ, Helms AS, Kramer CM, Ferguson JD: Cardiac cycle-dependent left atrial dynamics: implications for catheter ablation of atrial fibrillation; Heart Rhythm; 5(6); 2008}
+ \bibitem[Ped95]{Ped95}{Pedroni E et al: The 200 MeV proton therapy project at the Paul Scherer Institute: conceptual design and practical realization; Med. Phys; 22(1); 37-53; 1995}
+ \bibitem[Ped04]{Ped04}{Pedroni E, Bearpark R, Böhringer T, Coray A, Duppich J, Forss S, George D, Grossmann M, Goitein G, Hilbes C, Jermann M, Lin S, Lomax A, Negrazus M, Schippers M, Kotle G: The PSI Gantry 2: a second generation proton scanning gantry; Z Med Phys.; 14(1); 25-34; 2004}
+ \bibitem[Per06]{Per06}{P\'erez-Castellano N et al.: Pathological effects of pulmonary vein $\beta$-radiation in a swine model; J. Cardiovasc. Electrophysiol.; 17; 662-669; 2006}
+ \bibitem[Phil64]{Phil64}{Phillips SJ, Reid JA and Rugh R: Electrocardiographic and patholic changes after cardiac X-irradiation in dogs; Am. Heart J.; 68; 1964}
+ \bibitem[Phi92]{Phi92}{Phillips MH, Pedroni E, Blattmann H, Boehringer T, Corey A and Scheib S: Effects of respiratory motion on dose uniformity with a charged particle scanning method; Phys. Med. Biol.; 37(1); 223-233; 1992}
+ \bibitem[Pol01]{Pol01}{Polontchouk L, Haefliger J-A, Ebelt B, Schafer T, Stuhlmann D, Mehlhorn U et al: Effects of chronic atrial fibrillation on gap junction distribution in human and rat atria; J. Am. Coll. Cardiol.; 38; 883-891; 2001}
+ \bibitem[Pra12]{Pra12}{Prall M, Kaderka R, Jenne J, Saito N, Sarti C, Schwaab J and Bert C: Ion beam tracking using ultrasound motion detection; GSI Scientific Report; 2012}
+ \bibitem[PTCOG13]{PTCOG13}{http://ptcog.web.psi.ch/ptcentres.html; Overview of particle centers; 2013}
+ \bibitem[Pot12]{Pot12}{Potpara TS et al.: Reliable identification of 'truly low' thromboembolic risk in patients initially initially diagnosed with 'lone' atrial fibrillation: the Belgrade Atrial Fibrillation Study; Circ. Arrhythm. Electrophysiol.; 5; 319-326; 2012}
+ \bibitem[QUANTEC10]{QUANTEC10}{Bentzen SM, Constine LS, Deasy JO, Eisbruch A, Jackson A, Marks LB, Ten Haken RK, Yorke ED: Quantitative Analyses of Normal Tissue Effects in the Clinic (QUANTEC): an introduction to the scientific issues; Int. J. Radiat. Oncol. Biol. Phys.; 76 (3 Suppl); 2010}
+ \bibitem[Red11]{Red11}{Reddy VY, Neuzil P, Kautzner J, et al.: Low catheter-tissue contact force results in late PV reconnection - initial results from EFFICAS I [abstract]; Heart Rhythm; 8; S26; 2011}
+ \bibitem[Ric13]{Ric13}{Richter D, Schwarzkopf A, Trautmann J, Kr\"amer M, Durante M, J\"akel O, Bert C: Upgrade and benchmarking of a 4D treatment planning system for scanned ion beam therapy; Med. Phys.; 40(5); 2013}
+ \bibitem[Rie05]{Rie05}{Rietzel E, Pan T and Chen GTY: Four-dimensional computed tomography: Image formation and clinical protocol; Med. Phys.; 32(4); 874-889; 2005}
+ \bibitem[Rie10]{Rie10}{Rietzel E and Bert C: Respiratory motion management in particle radiotherapy; Med. Phys.; 37(2); 449-460; 2010}
+ \bibitem[Ric12]{Ric12}{Richter D: Treatment planning for tumors with residual motion in scanned ion beam therapy; Dissertation; TU Darmstadt; 2012}
+ \bibitem[Ric13]{Ric13}{Richter D, Schwarzkopf A, Trautmann J, Kr\"amer M, Durante M, J\"akel O, Bert C: Upgrade and benchmarking of a 4D treatment planning system for scanned ion beam therapy; Med. Phys.; 40(5); 2013}
+ \bibitem[RPTC12]{RPTC12}{Erfahrungsbericht zweiter Monat klinischer Betrieb RPTC; Mai 2009; Internet Communication}
+ \bibitem[RTOG]{RTOG}{http://www.rtog.org/}
+ \bibitem[RTOG0631]{RTOG0631}{RTOG 0631 Protocol Information: Phase II/III Study of Image-Guided Radiosurgery/SBRT for Localized Spine Metastasis; 2011}
+ \bibitem[RTOG0915]{RTOG0915}{RTOG 0915 Protocol Information: A Randomized Phase II Study Comparing 2 Stereotactic Body Radiation Therapy (SBRT) Schedules for Medically Inoperable Patients with Stage I Peripheral Non-Small Cell Lung Cancer; 2010}
+ \bibitem[Ruc13]{Ruc13}{Ruci\'nski A, Bauer J, Campbell P, Brons S, Unholtz D, Habl G, Herfarth K, Debus J, Bert C, Parodi K, J\"akel O, Haberer T: Preclinical investigations towards the first spacer gel application in prostate cancer treatment during particle therapy at HIT; Radiat. Oncol.; 8:134; 2013}
+ \bibitem[Sai09]{Sai09}{Saito N, Bert C, Chaudhri N, Gemmel A, Schardt D and Rietzel E: Speed and accuracy of a beam tracking system for treatment of moving targets with scanned ion beams; Phys. Med. Biol.; 54; 4849-4862; 2009}
+ \bibitem[Sch10]{Sch10}{Schardt D, Elsaesser T and Schulz-Ertner D: Heavy ion tumor therapy: Physical and radiobiological benefits; Rev. Mod. Phys; 82(1); 383; 2010}
+ \bibitem[Schl01]{Schl01}{Schlegel W and Mahr A: 3D Conformal Radiation Therapy: Multimedia Introduction to Methods and Techniques; Springer; 2001}
+ \bibitem[Scho94]{Scho94}{Scholz M and Kraft G: Calculation of heavy ion inactivation probabilities based on track structure, x ray sensitivity and target size; Radiat. Prot. Dosim.; 52; 1-4; 1994}
+ \bibitem[Scho96]{Scho96}{Scholz M and Kraft G: Track structure and the calculation of biological effects of heavy charged particles; Adv. Space Res.; 18; 5-14; 1996}
+ \bibitem[Schoe11]{Schoe11}{Schoemers C, Feldmeier E, Haberer T, Naumann J, Panse R and Peters A: Implementation of an intensity feedback-loop for an ion-therapy synchrotron; Prcoeedings of IPAC 2011; 2851-22853}
+ \bibitem[Schu07]{Schu07}{Schulz-Ertner D et al: Effectiveness of carbon ion radiotherapy in the treatment of skull-base chordomas; Int. J. Radiat. Oncol. Biol. Phys.; 68(2); 449-457; 2007}
+ \bibitem[Schr10]{Schr10}{Schrickel JW, Lickfett L, Lewalter T, Mittman-Braun E, Selbach S, Strach K, Nahle CP, Schwab JO, Linhart M, Andrie R, Nickenig G, Sommer T: Incidence and predictors of silent cerebral embolism during pulmonary vein catheter ablation for atrial fibrillation; Europace; 12; 52-57; 2010}
+ \bibitem[Schw04]{Schw04}{Schweikard A, Shiomi H and Adler J: Respiration tracking in radiosurgery; Med. Phys.; 31(10); 2738-2741; 2004}
+ \bibitem[Sec09]{Sec09}{Seco J, Robertson D, Trofimov A, Paganetti H: Breathing interplay effects during proton beam scanning: simulation and statistical analysis; Phys. Med. Biol.; 54(14); 2009}
+ \bibitem[Ser13]{Ser13}{Seregni M, Kaderka R, Fattori G, Riboldi M, Pella A, Constantinescu A, Saito N, Durante M, Cerveri P, Bert C, Baroni G: Tumor tracking based on correlation models in scanned ion beam therapy: an experimental study; Phys. Med. Biol.;58(13); 2013}
+ \bibitem[Sev04]{Sev04}{Severs NJ, Coppen SR, Dupont E, Yeh H-I, Ko Y-S, Matsushita T: Gap junction alterations in human cardiac disease; Cardiovas. Res.; 62(2); 368-377; 2004}
+ \bibitem[Sev08]{Sev08}{Severs NJ, Bruce AF, Dupont E and Rothery S: Remodelling of gap junctions and connexin expression in diseased myocardium; Cardiovas. Res.; 80(1); 9-19; 2008}
+ \bibitem[Sha10]{Sha10}{Sharma A, Wong D, Weidlich G, Fogarty T, Jack A, Sumanaweera T, Maguire P: Noninvasive stereotactic radiosurgery (CyberHeart) for creation of ablation lesions in the atrium; Heart Rhythm; 7(6); 802-810; 2010}          
+ \bibitem[Shack10]{Shack10}{Shakleford JA, Kandasamy N and Sharp GC: On developing B-spline registration algorithms for multi-core processors; Phys. Med. Biol.; 55(21); 2010}
+ \bibitem[Shah10]{Shah10}{Shah DC, Lambert H, Nakagawa H, Langenkamp A, Aeby N, Leo G: Area under the real-time contact force curve (force-time integral) predicts radiofrequency lesion size in an in vitro contractile model; J. Cardiovasc. Electrophysiol.; 21; 1038-1043; 2010}
+ \bibitem[Shah11]{Shah11}{Shah DC, Reddy VY, Kautzner J, et al.: Contact force during ablation predicts AF recurrence at 12 months [abstract]; Heart Rhythm; 8; S447-S448; 2011}
+ \bibitem[Shar07]{Sha07}{Sharp CG, Kandasamy N, Singh H and Folkert M: GPU-based streaming architectures for fast cone-beam CT image reconstruction and demons deformable registration; Phys. Med. Biol.; 52(19); 5771-5783; 2007}
+ \bibitem[Sharp07]{Sharp07}{Sharp CG, Kandasamy N, Singh H and Folkert M: GPU-based streaming architectures for fast cone-beam CT image reconstruction and demons deformable registration; Phys. Med. Biol.; 52(19); 5771-5783; 2007}
+ \bibitem[Son08]{Son08}{Sonke JJ, Lebesque J and van Herk M: Variability of four-dimensional computed tomography patient models; Int. J. Radiat. Oncol. Biol. Phys.; 70(2); 590-598; 2008}                                                         
+ \bibitem[Song14]{Song14}{Song L, Lehmann HI, Cusma JT, Christner JA, Misiri J, Johnson SB, Parker KD, Takami M, Miller RC, Herman MG and Packer DL: Intensity Modulated  Proton Therapy using Pencil Beam Scanning as a Catheter-free Ablation Approach: A 4D Treatment Planning Study in the Porcine Model; HRS [abstract]; 2014}
+ \bibitem[Ste68]{Ste68}{Stewart JR, Fajardo LF, Cohn K and Page V: Experimental Radiation-Induced Heart Disease in Rabbits; Radiology; 91; 1968}
+ \bibitem[Tad98]{Tad98}{Tada T et al.: Lung cancer: intermitten irradiation synchronized with respiratory motion - results of a pilot study; Radiology; 207; 779-783; 1998}                                                                    
+ \bibitem[Tay07]{Tay07}{Taylor CW, Nisbet A, McGale P and Darby SC: Cardiac exposures in breast cancer radiotherapy: 1950s-1990s; Int. J. Radiat. Oncol. Biol. Phys.; 69(5); 2007}
+ \bibitem[Tay08]{Tay08}{Taylor CW, Povall JM, McGale P, Nisbet A, Dodwell D, Smith JT, Darby SC: Cardiac dose from tangential breast cancer radiotherapy in the year 2006; Int. J. Radiat. Oncol. Biol. Phys.; 72(2); 2008}
+ \bibitem[Tia14]{Tia14}{Tian J, Jeudy J, Smith MF, Jimenez A, Yin X, Bruce PA, Lei P, Turgeman A, Abbo A, Shekhar R, Saba M, Shorofsky S, Dickfeld T: Three-Dimensional Contrast-Enhanced Multidetector CT for Anatomic, Dynamic, and Perfusion Characterization of Abnormal Myocardium To Guide Ventricular Tachycardia Ablations; Circ. Arrhythm. Electrophysiol.; 3; 2010}
+  \bibitem[Til14]{Til14}{Tilz RR, Makimoto H, Lin T, Rillig A, Deiss S, Wissner E, Mathew S, Metzner A, Rausch P, Kuck KH, Ouyang F: Electrical isolation of a substrate after myocardial infarction: a novel ablation strategy for unmappable ventricular tachycardias--feasibility and clinical outcome; Europace; Epub ahead of print; 2014}
+ \bibitem[Tob58]{Tob58}{Tobias CA et al: Pituitary irradiation with high energy proton beams: a preliminary report; Cancer Research; 18(2); 121-134; 1958}                                                                                     
+ \bibitem[Tsu08]{Tsu08}{Tsunashima Y, Vedam S, Dong L, Umezawa M, Sakae T, Bues M, Balter P, Smith A, Mohan R: Efficiency of respiratory-gated delivery of synchrotron-based pulsed proton irradiation; Phys. Med. Biol.; 53(7); 2008}
+ \bibitem[Van11]{Van11}{Van Staa TP et al.: A comparison of risk stratification schemes for stroke in 79,884 atrial fibrillation patients in general pratice; J. Thromb. Haernost.; 9(1); 39-48; 2011}                                                
+ \bibitem[Vij10]{Vij10}{Vijaykumar R, Locke AH, Ahmed H, Neuzil P, Lambert H, Reddy VY: Novel visualisation of catheter-tissue contact force during pulmonary vein isolation [abstract]. Heart Rhythm; 7; S100-S101; 2010}
+ \bibitem[Vis13]{Vis13}{Viswanathan AN, Damato AL, Nguyen PL: Novel use of a hydrogel spacer permits reirradiation in otherwise incurable recurrent gynecologic cancers; J. Clin. Oncol.; 31(34); 2013}
+ \bibitem[Wat09]{Wat09}{van de Water S, Kreuger R, Zenklusen S, Hug E and Lomax AJ: Tumour tracking with scanned proton beams: assessing the accuracy and practicalities; Phys. Med. Biol.; 54(21); 6549-6563; 2009}            
+ \bibitem[Web99]{Web99}{Weber U and Kraft G: Design and construction of a ripple filter for a smoothed depth dose distribution in conformal particle therapy. Phys. Med. Biol.; 44(11); 2765-2775; 1999}
+ \bibitem[Wei08]{Wei08}{Wei X, Liu HH, Tucker SL, Wang S, Mohan R, Cox JD, Komaki R, Liao Z: Risk factors for pericardial effusion in inoperable esophageal cancer patients treated with definitive chemoradiation therapy; Int. J. Radiat. Oncol. Biol. Phys.; 70(3); 2008}
+ \bibitem[Wer04]{Wer04}{Wertz H and J\"akel O: Influence of iodine contrast agent on the range of ion beams for radiotherapy; Med Phys.; 31(4); 767-73; 2004}
+ \bibitem[Whi93]{Whi93}{White D, Wallwork J: Xenografting: probability, possibility, or pipe-dream?; Lancet, 342(8876); 879-880; 1993}
+ \bibitem[Wil46]{Wil46}{Wilson RR: Radiobiological use of fast protons; Radiology; 47; 487-491; 1946}                                                                                                                                               
+ \bibitem[Woe11]{Woe11}{W\"oelfelschneider J: Fraktionierte Bestrahlung bewegter Tumoren mit gescannten Schwerionen; Diplomarbeit; Technische Hochschule Mittelhessen; 2011}
+ \bibitem[Wol91]{Wol91}{Wolf PA, Abbott RD, Kannel WB: Atrial fibrillation as an independent risk factor for stroke: the Framingham study; Stroke; 22; 938-988; 1991}                                                                              
+ \bibitem[Yeh01]{Yeh01}{Yeh H-I, Lai Y-J, Lee S-H, Lee Y-N, Ko Y-S, Chen S-A et al: Heterogeneity of myocardial sleeve morphology and gap junctions in canine superiorvena cava; Circulation; 104; 3152-3157; 2001}
+ \bibitem[Yok08]{Yok08}{Yokoyama K, Nakagawa H, Shah DC, et al.: Novel contact force sensor incorporated in irrigated radiofrequency ablation catheter predicts lesion size and incidence of steam pop and thrombus; Circ. Arrhythm. Electrophysiol.; 1; 354-362; 2008}
+ \bibitem[Zen10]{Zen10}{Zenklusen SM, Pedroni E and Meer D: A study on repainting strategies for treating moderately moving targets with proton pencil beam scanning at the new gantry 2 at PSI; Phys. Med. Biol.; 55(17); 5103-5121; 2010}
+       
+ \end{thebibliography}
+ 
+ 
+   \include{teile/lebenslauf/lebenslauf_forMain}
+   
+   \include{teile/danksagung/danksagung}
+ 
+   \affidavit[23. April 2014]{Anna Constantinescu}
+
+\end{document}

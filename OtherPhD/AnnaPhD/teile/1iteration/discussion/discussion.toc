@@ -1,0 +1,17 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Discussion}{3}
+\contentsline {section}{\numberline {1.1}Dose deposition}{4}
+\contentsline {subsection}{\numberline {1.1.1}Dose to target area}{4}
+\contentsline {subsection}{\numberline {1.1.2}Dose to OAR}{5}
+\contentsline {subsection}{\numberline {1.1.3}Dose to OAR: Comparison to photons}{6}
+\contentsline {subsubsection}{Human data}{6}
+\contentsline {subsubsection}{Porcine data}{10}
+\contentsline {section}{\numberline {1.2}Motion of cardiac volumes}{13}
+\contentsline {subsection}{\numberline {1.2.1}PVs motion in humans}{13}
+\contentsline {subsubsection}{Due to respiration}{13}
+\contentsline {subsubsection}{Due to heartbeat}{13}
+\contentsline {subsection}{\numberline {1.2.2}Motion in porcine due to heartbeat}{14}
+\contentsline {section}{\numberline {1.3}Contrast enhanced CT scans}{14}
+\contentsline {section}{\numberline {1.4}Motion mitigation techniques}{15}
+\contentsline {subsection}{\numberline {1.4.1}Respiratory motion}{15}
+\contentsline {subsection}{\numberline {1.4.2}Heartbeat motion}{16}

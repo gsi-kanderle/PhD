@@ -1,0 +1,4966 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.9.20)  23 APR 2014 09:23
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2011-07-01, ngerman-x-2011-07-01, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, galician, german, ngerman, swissgerman, monogreek, greek, hungarian,
+ icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, marathi, or
+iya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, kurmanji,
+ lao, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk, pol
+ish, portuguese, romanian, russian, sanskrit, serbian, serbianc, slovak, sloven
+ian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, welsh, loaded
+.
+(/u/aconstan/texmf/tex/latex/tuddesign/tudthesis.cls
+Document Class: tudthesis 2009/05/15 0.96 Joe Werner's TUD-Design-Manual packag
+e
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/xkeyval/
+xkeyval.sty
+Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/xkeyva
+l/xkeyval.tex
+\XKV@toks=\toks14
+\XKV@tempa@toks=\toks15
+\XKV@depth=\count79
+File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/xkeyva
+l/keyval.tex)))
+Class tudthesis Info: Unknown option 'accentcolor=tud7b`. Pass to tudreport cla
+ss. on input line 37.
+Class tudthesis Info: Unknown option 'colorbacktitle`. Pass to tudreport class.
+ on input line 37.
+Class tudthesis Info: Unknown option 'bigchapter`. Pass to tudreport class. on 
+input line 37.
+Class tudthesis Info: Unknown option 'openright`. Pass to tudreport class. on i
+nput line 37.
+Class tudthesis Info: Unknown option 'twoside`. Pass to tudreport class. on inp
+ut line 37.
+Class tudthesis Info: Unknown option '12pt`. Pass to tudreport class. on input 
+line 37.
+ (/u/aconstan/texmf/tex/latex/tuddesign/tudreport.cls
+Document Class: tudreport 2009/11/17 1.13 Clemens von Loewenich's and Joe Werne
+r's TUD-Design package
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/ift
+hen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+Class tudreport Info: Option `paper=a4report' selected. on input line 142.
+Class tudreport Info: Unknown option 'openright`. Pass to KOMA-Script class. on
+ input line 144.
+Class tudreport Info: Unknown option 'twoside`. Pass to KOMA-Script class. on i
+nput line 144.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/koma-scr
+ipt/scrreprt.cls
+Document Class: scrreprt 2011/06/16 v3.09a KOMA-Script document class (report)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/koma-scr
+ipt/scrkbase.sty
+Package: scrkbase 2011/06/16 v3.09a KOMA-Script package (KOMA-Script-dependent 
+basics and keyval usage)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/koma-scr
+ipt/scrbase.sty
+Package: scrbase 2011/06/16 v3.09a KOMA-Script package (KOMA-Script-independent
+ basics and keyval usage)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/koma-scr
+ipt/scrlfile.sty
+Package: scrlfile 2011/03/09 v3.09 KOMA-Script package (loading files)
+
+Package scrlfile, 2011/03/09 v3.09 KOMA-Script package (loading files)
+                  Copyright (C) Markus Kohm
+
+)))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/koma-scr
+ipt/tocbasic.sty
+Package: tocbasic 2011/05/30 v3.09a KOMA-Script package (handling toc-files)
+)
+Package tocbasic Info: omitting babel extension for `toc'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `toc' on input line 117.
+Package tocbasic Info: omitting babel extension for `lof'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lof' on input line 118.
+Package tocbasic Info: omitting babel extension for `lot'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lot' on input line 119.
+Class scrreprt Info: You've used standard option `openright'.
+(scrreprt)           This is correct!
+(scrreprt)           Internally I'm using `open=right'.
+(scrreprt)           If you'd like to set the option with \KOMAoptions,
+(scrreprt)           you'd have to use `open=right' there
+(scrreprt)           instead of `openright', too.
+Class scrreprt Info: File `scrsize11pt.clo' used instead of
+(scrreprt)           file `scrsize11.clo' to setup font sizes on input line 134
+7.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/koma-scr
+ipt/scrsize11pt.clo
+File: scrsize11pt.clo 2011/06/16 v3.09a KOMA-Script font size class option (11p
+t)
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/koma-scr
+ipt/typearea.sty
+Package: typearea 2011/06/16 v3.09a KOMA-Script package (type area)
+
+Package typearea, 2011/06/16 v3.09a KOMA-Script package (type area)
+                  Copyright (C) Frank Neukam, 1992-1994
+                  Copyright (C) Markus Kohm, 1994-
+
+\ta@bcor=\skip41
+\ta@div=\count80
+\ta@hblk=\skip42
+\ta@vblk=\skip43
+\ta@temp=\skip44
+Package typearea Info: These are the values describing the layout:
+(typearea)             DIV  = 10
+(typearea)             BCOR = 0.0pt
+(typearea)             \paperwidth      = 597.50793pt
+(typearea)              \textwidth      = 418.25555pt
+(typearea)              DIV departure   = -6%
+(typearea)              \evensidemargin = 47.2316pt
+(typearea)              \oddsidemargin  = -12.5192pt
+(typearea)             \paperheight     = 845.04694pt
+(typearea)              \textheight     = 595.80026pt
+(typearea)              \topmargin      = -25.16531pt
+(typearea)              \headheight     = 17.0pt
+(typearea)              \headsep        = 20.40001pt
+(typearea)              \topskip        = 11.0pt
+(typearea)              \footskip       = 47.60002pt
+(typearea)              \baselineskip   = 13.6pt
+(typearea)              on input line 1139.
+)
+\c@part=\count81
+\c@chapter=\count82
+\c@section=\count83
+\c@subsection=\count84
+\c@subsubsection=\count85
+\c@paragraph=\count86
+\c@subparagraph=\count87
+\abovecaptionskip=\skip45
+\belowcaptionskip=\skip46
+\c@pti@nb@sid@b@x=\box26
+\c@figure=\count88
+\c@table=\count89
+\bibindent=\dimen102
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/tools/ca
+lc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count90
+\calc@Bcount=\count91
+\calc@Adimen=\dimen103
+\calc@Bdimen=\dimen104
+\calc@Askip=\skip47
+\calc@Bskip=\skip48
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count92
+\calc@Cskip=\skip49
+) (/u/aconstan/texmf/tex/latex/tuddesign/colours/tudcolours.sty
+Package: tudcolours 2009/03/12 1.9 Clemens von Loewenich's and Joe Werner's TUD
+-Design package
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/xcolor/x
+color.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/latexcon
+fig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Package option `override' ignored on input line 216.
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/pdftex-d
+ef/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/oberdi
+ek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/oberdi
+ek/ltxcmds.sty
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count93
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+) (/u/aconstan/texmf/tex/latex/tuddesign/colours/tudcolours.cfg
+File: tudcolours.cfg 2008/12/03
+) (/u/aconstan/texmf/tex/latex/tuddesign/colours/tudcolours.def
+File: tudcolours.def 2008/12/03
+))
+(/u/aconstan/texmf/tex/latex/tuddesign/report/tudreprt_fonts.sty
+Package: tudreprt_fonts 2009/00/18 1.11 Clemens von Loewenich's and Joe Werner'
+s TUD-Design package
+
+(/u/aconstan/texmf/tex/latex/tuddesign/base/tudfonts.sty
+Package: tudfonts 2009/09/18 1.12 Clemens von Loewenich's and Joe Werner's TUD-
+Design package
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/fon
+tenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/t1e
+nc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/tex
+tcomp.sty
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
+Package textcomp Info: Changing ? sub-encoding to TS1/4 on input line 72.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/ts1
+enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 266.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 311.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 312.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 313.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 314.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 315.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 316.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 317.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 318.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 319.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 320.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 321.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 322.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 323.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 324.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 326.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 327.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 328.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 329.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 330.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 331.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 332.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 333.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 334.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 335.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 336.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 337.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/fix
+-cm.sty
+Package: fix-cm 2006/09/13 v1.1m fixes to LaTeX
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/ts1
+enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TS1 on input line 42.
+))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mathdesign.sty
+Package: mathdesign 2006/01/29 v1.55 Math Design Project
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdbch/mdbch.cfg)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdbch/mdbch.sty
+Package: mdbch 2006/01/29 v1.55 bitstream charter + mdbch (Math Design Project)
+
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdfont.def
+File: mdfont.def 2006/01/29 v1.55 (Math Design Project)
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdsffont.def
+File: mdsffont.def 2006/01/29 v1.55 (Math Design Project)
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdttfont.def
+File: mdttfont.def 2006/01/29 v1.55 (Math Design Project)
+)
+\symmdcal=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `mdcal' in version `bold'
+(Font)                  OMS/mdbch/m/n --> OMS/mdbch/b/n on input line 89.
+\symmdscr=\mathgroup5
+LaTeX Font Info:    Overwriting symbol font `mdscr' in version `bold'
+(Font)                  OMS/mdbch/m/n --> OMS/mdbch/b/n on input line 95.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/xmdeuf/m/n --> U/xmdeuf/b/n on input line 102.
+LaTeX Font Info:    Try loading font information for T1+mdbch on input line 111
+.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdbch/t1mdbch.fd
+File: t1mdbch.fd 2006/01/28 Fontinst v1.928 font definitions for T1/mdbch.
+)
+LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
+(Font)              scaled to size 10.51207pt on input line 111.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/mdbch/m/n on input line 114.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/mdbch/m/it on input line 115.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/mdbch/m/n on input line 116.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/mdbch/m/n on input line 117.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/mdbch/b/n on input line 119.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/mdbch/b/it on input line 120.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/mdbch/b/n on input line 121.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/mdbch/b/n on input line 122.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  OT1/mdbch/m/n --> T1/mdbch/m/n on input line 124.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> T1/mdbch/b/n on input line 125.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> T1/mdbch/m/it on input line 126.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 127.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 128.
+LaTeX Font Info:    Overwriting math alphabet `\mathcal' in version `normal'
+(Font)                  OMS/mdbch/m/n --> OMS/mdbch/m/n on input line 132.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
+(Font)                  OT1/mdbch/b/n --> T1/mdbch/b/n on input line 137.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> T1/mdbch/b/n on input line 138.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> T1/mdbch/b/it on input line 139.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> T1/cmss/b/n on input line 140.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/b/n on input line 141.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 153.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 154.
+\symlettersupright=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lettersupright' in version `bold'
+(Font)                  OML/mdbch/m/n --> OML/mdbch/b/n on input line 190.
+LaTeX Font Info:    Redeclaring math alphabet \mathrm on input line 193.
+\symmathdesignA=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `mathdesignA' in version `bold'
+(Font)                  MDA/mdbch/m/n --> MDA/mdbch/b/n on input line 382.
+\@emptytoks=\toks16
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 421.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 422.
+\symmathdesignB=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `mathdesignB' in version `bold'
+(Font)                  MDB/mdbch/m/n --> MDB/mdbch/b/n on input line 685.
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/fon
+tenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/t1e
+nc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+)))
+\symutopiasymbol=\mathgroup9
+LaTeX Font Info:    Overwriting math alphabet `\mathmb' in version `normal'
+(Font)                  T1/5ch/mb/n --> T1/5ch/mb/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathmb' in version `bold'
+(Font)                  T1/5ch/mb/n --> T1/5ch/mb/n on input line 35.
+LaTeX Info: Redefining \em on input line 37.
+\fontheight=\skip50
+\fontdepth=\skip51
+\fontstrutbox=\box27
+LaTeX Info: Redefining \LaTeX on input line 108.
+)
+LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
+(Font)              scaled to size 11.52008pt on input line 239.
+)
+\TUD@headfootsep=\skip52
+ (/u/aconstan/texmf/tex/latex/tuddesign/base/tudpage.sty
+Package: tudpage 2009/08/11 1.10 Clemens von Loewenich's and Joe Werner's TUD-D
+esign package
+
+(/u/aconstan/texmf/tex/latex/tuddesign/base/tudpaper.sty
+Package: tudpaper 2009/01/28 1.9 Clemens von Loewenich's and Joe Werner's TUD-D
+esign package
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/graphics
+/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/graphics
+/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/graphics
+/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/latexcon
+fig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+)
+\Gin@req@height=\dimen105
+\Gin@req@width=\dimen106
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/eso-pic/
+eso-pic.sty
+Package: eso-pic 2010/10/06 v2.0c eso-pic (RN)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/oberdi
+ek/atbegshi.sty
+Package: atbegshi 2011/01/30 v1.15 At begin shipout hook (HO)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/oberdi
+ek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)))
+\TUD@logo@height=\skip53
+\TUD@logo@leftskip=\skip54
+\TUD@sep@top=\skip55
+\TUD@sep@left=\skip56
+\TUD@sep@right=\skip57
+\TUD@sep@bottom=\skip58
+\TUD@titlepos=\skip59
+\TUD@titlebox@sep@left=\skip60
+\TUD@titlebox@sep@right=\skip61
+\TUD@titlebox@sep@bottom=\skip62
+\TUD@subtitlebox@sep=\skip63
+\TUD@textwidth=\skip64
+\TUD@cols@width=\skip65
+\TUD@cols@sep=\skip66
+\c@TUD@cols@n=\count94
+ (/u/aconstan/texmf/tex/latex/tuddesign/base/tudrules.sty
+Package: tudrules 2008/10/09 1.6 Clemens von Loewenich's and Joe Werner's TUD-D
+esign package
+\TUD@indentbar@height=\skip67
+\TUD@indentbar@depth=\skip68
+\TUD@indentbar@totalheight=\skip69
+\@TUD@indentbar@width=\skip70
+\@TUD@largeruleheight=\skip71
+\@TUD@smallruleheight=\skip72
+\@TUD@rulesep=\skip73
+\@TUD@ruleheight=\skip74
+)
+\TUD@indentbarheight=\skip75
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/geometry
+/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/oberdi
+ek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/ifxete
+x/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count95
+\Gm@cntv=\count96
+\c@Gm@tempcnt=\count97
+\Gm@bindingoffset=\dimen107
+\Gm@wd@mp=\dimen108
+\Gm@odd@mp=\dimen109
+\Gm@even@mp=\dimen110
+\Gm@layoutwidth=\dimen111
+\Gm@layoutheight=\dimen112
+\Gm@layouthoffset=\dimen113
+\Gm@layoutvoffset=\dimen114
+\Gm@dimlist=\toks17
+))
+\TUD@footparindent=\skip76
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/fancyhdr
+/fancyhdr.sty
+\fancy@headwidth=\skip77
+\f@ncyO@elh=\skip78
+\f@ncyO@erh=\skip79
+\f@ncyO@olh=\skip80
+\f@ncyO@orh=\skip81
+\f@ncyO@elf=\skip82
+\f@ncyO@erf=\skip83
+\f@ncyO@olf=\skip84
+\f@ncyO@orf=\skip85
+)) (/u/aconstan/texmf/tex/latex/tuddesign/base/tudheading.sty
+Package: tudheading 2009/12/31 1.17 Clemens von Loewenich's and Joe Werner's TU
+D-Design package
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/titlesec
+/titlesec.sty
+Package: titlesec 2011/08/28 v2.9.1 Sectioning titles
+\ttl@box=\box28
+\beforetitleunit=\skip86
+\aftertitleunit=\skip87
+\ttl@plus=\dimen115
+\ttl@minus=\dimen116
+\ttl@toksa=\toks18
+\titlewidth=\dimen117
+\titlewidthlast=\dimen118
+\titlewidthfirst=\dimen119
+)
+\c@seclinedepth=\count98
+\TUD@chapter@diff@height=\skip88
+LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
+(Font)              scaled to size 24.28816pt on input line 75.
+\@TUD@above@headskip=\skip89
+\@TUD@below@headskip=\skip90
+ (/u/aconstan/texmf/tex/latex/tuddesign/base/tudheading.def
+File: tudheading.def 2009/07/14
+\TUD@part@tmp@height=\skip91
+\TUD@part@tmp@depth=\skip92
+\@TUD@partbox=\box29
+)
+\TUD@parind=\skip93
+\TUD@chapind=\skip94
+\TUD@secind=\skip95
+\TUD@subsecind=\skip96
+\TUD@subsubsecind=\skip97
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/titlesec
+/block.tss
+File: block.tss 2011/08/28
+)) (/u/aconstan/texmf/tex/latex/tuddesign/base/tudredef.sty
+Package: tudredef 2010/04/10 1.2 Clemens von Loewenich's and Joe Werner's TUD-D
+esign package
+\TUD@abstract@count=\count99
+)
+(/u/aconstan/texmf/tex/latex/tuddesign/report/tudreprt_title.sty
+Package: tudreprt_title 2009/09/18 1.11 Clemens von Loewenich's and Joe Werner'
+s TUD-Design package
+\TUD@sponsorlogo=\box30
+\TUD@titleskip=\skip98
+))
+(/u/aconstan/texmf/tex/latex/tuddesign/thesis/tudthess_title.sty
+Package: tudthess_title 2010/03/22 0.99 Joe Werner's TUD-Design-Manual package
+))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/babel/
+babel.sty
+Package: babel 2008/07/08 v3.8m The Babel package
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/babel/
+english.ldf
+Language: english 2005/03/30 v3.3o English support from the babel system
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/babel/
+babel.def
+File: babel.def 2008/07/08 v3.8m Babel common definitions
+\babel@savecnt=\count100
+\U@D=\dimen120
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/inp
+utenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks19
+\inpenc@posthook=\toks20
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/utf
+8.def
+File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/t1e
+nc.dfu
+File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0132 (decimal 306)
+   defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
+)
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/ot1
+enc.dfu
+File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+)
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/oms
+enc.dfu
+File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/ts1
+enc.dfu
+File: ts1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+)
+Now handling font encoding MDA ...
+... no UTF-8 mapping file for font encoding MDA
+Now handling font encoding MDB ...
+... no UTF-8 mapping file for font encoding MDB
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02DC (decimal 732)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
+))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/pstricks
+/pstricks.sty
+Package: pstricks 2011/08/201 v0.51 LaTeX wrapper for `PSTricks' (RN,HV)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pstric
+ks/pstricks.tex
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/xkeyva
+l/pst-xkey.tex
+File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pstric
+ks/pst-fp.tex `pst-fp' v0.05, 2010/01/17 (hv)
+\pstFP@xs=\count101
+\pstFP@xia=\count102
+\pstFP@xib=\count103
+\pstFP@xfa=\count104
+\pstFP@xfb=\count105
+\pstFP@rega=\count106
+\pstFP@regb=\count107
+\pstFP@regs=\count108
+\pstFP@times=\count109
+)
+\psLoopIndex=\count110
+
+`PSTricks' v2.23  <2011/09/04> (tvz)
+\pst@dima=\dimen121
+\pst@dimb=\dimen122
+\pst@dimc=\dimen123
+\pst@dimd=\dimen124
+\pst@dimg=\dimen125
+\pst@dimh=\dimen126
+\pst@dimm=\dimen127
+\pst@dimn=\dimen128
+\pst@dimo=\dimen129
+\pst@dimp=\dimen130
+\pst@hbox=\box31
+\pst@ibox=\box32
+\pst@boxg=\box33
+\pst@cnta=\count111
+\pst@cntb=\count112
+\pst@cntc=\count113
+\pst@cntd=\count114
+\pst@cntg=\count115
+\pst@cnth=\count116
+\pst@cntm=\count117
+\pst@cntn=\count118
+\pst@cnto=\count119
+\pst@cntp=\count120
+\@zero=\count121
+\pst@toks=\toks21
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pstric
+ks/pstricks.con)
+\psunit=\dimen131
+\psxunit=\dimen132
+\psyunit=\dimen133
+\pst@C@@rType=\count122
+\pslinewidth=\dimen134
+\psk@startLW=\dimen135
+\psk@endLW=\dimen136
+\pst@customdefs=\toks22
+\pslinearc=\dimen137
+\pst@symbolStep=\dimen138
+\pst@symbolWidth=\dimen139
+\everypsbox=\toks23
+\psframesep=\dimen140
+\pslabelsep=\dimen141
+\pst@shift=\dimen142
+\theoverlaybox=\box34
+)
+File: pstricks.tex 2011/09/04 v2.23 `PSTricks' (tvz,hv)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pstric
+ks/pst-fp.tex)
+File: pst-fp.tex 2011/09/04 v2.23 `PST-fp' (hv)
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/psfrag/p
+sfrag.sty
+Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
+\pfg@pcount=\count123
+\pfg@scount=\count124
+\pfg@temp=\write3
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/tools/en
+umerate.sty
+Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
+\@enLab=\toks24
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/float/fl
+oat.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count125
+\float@exts=\toks25
+\float@box=\box35
+\@float@everytoks=\toks26
+\@floatcapt=\box36
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/graphics
+/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+\epsfxsize=\dimen143
+\epsfysize=\dimen144
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/subfigur
+e/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip99
+\subfigcapskip=\skip100
+\subfigcaptopadj=\dimen145
+\subfigbottomskip=\skip101
+\subfigcapmargin=\dimen146
+\subfiglabelskip=\skip102
+\c@subfigure=\count126
+\c@lofdepth=\count127
+\c@subtable=\count128
+\c@lotdepth=\count129
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/subfigur
+e/subfigure.cfg)
+\subfig@top=\skip103
+\subfig@bottom=\skip104
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/rotating
+/rotating.sty
+Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
+\c@r@tfl@t=\count130
+\rotFPtop=\skip105
+\rotFPbot=\skip106
+\rot@float@box=\box37
+\rot@mess@toks=\toks27
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/minitoc/
+minitoc.sty
+Package: minitoc 2008/07/16 v60 Package minitoc (JPFD)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/minitoc/
+mtcmess.sty
+Package: mtcmess 2006/03/14
+)
+Package minitoc Info: I0001
+(minitoc)             *** minitoc package, version 60 ***.
+\tf@mtc=\write4
+\mtcindent=\skip107
+\mtcskipamount=\skip108
+Package minitoc Info: I0005
+(minitoc)             compatible with hyperref.
+Package minitoc Info: I0023
+(minitoc)             part level macros available.
+Package minitoc Info: I0003
+(minitoc)             chapter level macros available.
+\mtc@toks=\toks28
+\mtc@strutbox=\box38
+\mtc@hstrutbox=\box39
+Package minitoc Info: I0002
+(minitoc)             Autoconfiguration of extensions.
+\openout4 = `main.mtc0'.
+
+\openout4 = `main.mtc'.
+
+ (./main.mtc0)
+Package minitoc Info: I0012
+(minitoc)             Long extensions (Unix-like) will be used.
+Package minitoc Info: I0031
+(minitoc)             ==> this version is configured for UNIX-like 
+(minitoc)                 (long extensions) file names.
+\openout4 = `main.mtc'.
+
+\openout4 = `main.mtc0'.
+
+\c@mtc=\count131
+\c@minitocdepth=\count132
+\c@ptc=\count133
+\c@parttocdepth=\count134
+\ptcindent=\skip109
+Package minitoc Info: I0010
+(minitoc)             The english language is selected.
+(minitoc)              on input line 4910.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/minitoc/
+english.mld
+File: english.mld 2006/01/13
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/minitoc/
+english.mld
+File: english.mld 2006/01/13
+))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/appendix
+/appendix.sty
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count135
+\c@@ppsavesec=\count136
+\c@@ppsaveapp=\count137
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/acronym/
+acronym.sty
+Package: acronym 2010/09/08 v1.36 Support for acronyms (Tobias Oetiker)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/bigfoot/
+suffix.sty
+Package: suffix 2006/07/15 1.5 Variant command support
+)
+\AC@clearlist=\toks29
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/overpic/
+overpic.sty
+Package: overpic 2010/09/13 v0.53  Overwriting graphics
+
+Package: overpic v0.53 <2010/09/13> (RN)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/eepic/ep
+ic.sty
+Enhancements to Picture Environment. Version 1.2 - Released June 1, 1986
+\@@multicnt=\count138
+\d@lta=\count139
+\@delta=\dimen147
+\@@delta=\dimen148
+\@gridcnt=\count140
+\@joinkind=\count141
+\@dotgap=\dimen149
+\@ddotgap=\dimen150
+\@x@diff=\count142
+\@y@diff=\count143
+\x@diff=\dimen151
+\y@diff=\dimen152
+\@dotbox=\box40
+\num@segments=\count144
+\num@segmentsi=\count145
+\@datafile=\read1
+)
+overpic: absolute positioning in \unitlength 
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/setspace
+/setspace.sty
+Package: setspace 2000/12/01 6.7 Contributed and Supported LaTeX2e package
+
+Package: `setspace' 6.7 <2000/12/01>
+)
+
+Package  Warning: Command `\dateofexam ' ignored!
+()                See documentation for details. on input line 37.
+
+
+LaTeX Warning: Unused global option(s):
+    [accentcolor=tud7b,colorbacktitle,bigchapter,12pt].
+
+(./main.aux (./teile/abstract/abstract.aux)
+(./teile/publications/publications.aux) (./teile/abbrevations/abbrevetions.aux)
+(./teile/motivation/motivation.aux)
+(./teile/introduction/introduction_forMain.aux
+
+LaTeX Warning: Label `ida' multiply defined.
+
+) (./teile/results_mdacc/results_mdacc_forMain.aux
+
+LaTeX Warning: Label `motion' multiply defined.
+
+) (./teile/results_human/results_human_forMain.aux)
+(./teile/results_porcine/results_porcine_forMain.aux)
+(./teile/discussion/discussion_forMain.aux)
+(./teile/conclusion_outlook/conclusion_outlook_forMain.aux)
+(./teile/results_mdacc/results_mdacc_forMain_appendix.aux)
+(./teile/results_human/results_human_forMain_appendix.aux)
+(./teile/results_porcine/results_porcine_forMain_appendix.aux)
+
+LaTeX Warning: Label `Ric13' multiply defined.
+
+(./teile/lebenslauf/lebenslauf_forMain.aux) (./teile/danksagung/danksagung.aux)
+)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 40.
+LaTeX Font Info:    Try loading font information for MDA+cmr on input line 40.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdacmr.fd
+File: mdacmr.fd 
+)
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for MDB/cmr/m/n on input line 40.
+LaTeX Font Info:    Try loading font information for MDB+cmr on input line 40.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdbcmr.fd
+File: mdbcmr.fd 
+)
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Try loading font information for T1+5ch on input line 40.
+
+(/u/aconstan/texmf/tex/latex/tex-tudfonts/softmake/charter/t15ch.fd
+File: t15ch.fd 2008/06/23 Fontinst v1.927 font definitions for T1/5ch.
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/context/base/s
+upp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count146
+\scratchdimen=\dimen153
+\scratchbox=\box41
+\nofMPsegments=\count147
+\nofMParguments=\count148
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count149
+\MPscratchDim=\dimen154
+\MPnumerator=\count150
+\makeMPintoPDFobject=\count151
+\everyMPtoPDFconversion=\toks31
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/oberdi
+ek/pdftexcmds.sty
+Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/oberdi
+ek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/oberdiek
+/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/oberdiek
+/grfext.sty
+Package: grfext 2010/08/19 v1.1 Managing graphics extensions (HO)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/oberdi
+ek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Defining keys (HO)
+))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/oberdiek
+/kvoptions.sty
+Package: kvoptions 2010/12/23 v3.10 Keyval support for LaTeX options (HO)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/oberdi
+ek/kvsetkeys.sty
+Package: kvsetkeys 2011/04/07 v1.13 Key value parser (HO)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/oberdi
+ek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Prefix for e-TeX command names (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/latexcon
+fig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\AtBeginShipoutBox=\box42
+
+*geometry* detected driver: dvips
+*geometry* verbose mode - [ preamble ] result:
+* driver: dvips
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead includefoot includemp twoside 
+* h-part:(L,W,R)=(56.9055pt, 497.92325pt, 42.67912pt)
+* v-part:(T,H,B)=(42.67912pt, 745.46222pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=497.92325pt
+* \textheight=698.49777pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-29.59087pt
+* \topmargin=-29.59087pt
+* \headheight=16.56445pt
+* \headsep=15.2pt
+* \topskip=11.0pt
+* \footskip=15.2pt
+* \marginparwidth=0.0pt
+* \marginparsep=0.0pt
+* \columnsep=11.95013pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\TUD@part@topskip=\skip110
+\c@minilofdepth=\count152
+\c@minilotdepth=\count153
+\c@partlofdepth=\count154
+\c@partlotdepth=\count155
+\c@sectlofdepth=\count156
+\c@sectlotdepth=\count157
+Package minitoc(hints) Info: I0049
+(minitoc(hints))             ==> You requested the hints option. 
+(minitoc(hints))             Some hints are eventually given below.
+Package minitoc(hints) Info: I0042
+(minitoc(hints))             --- The appendix package is loaded. 
+(minitoc(hints))             See the minitoc package documentation 
+(minitoc(hints))             for specific precautions.
+Package minitoc(hints) Info: I0043
+(minitoc(hints))             --- The KOMAScript scrreprt class is loaded. 
+(minitoc(hints))             See the minitoc package documentation 
+(minitoc(hints))             for specific precautions.
+
+Package minitoc(hints) Warning: W0099
+(minitoc(hints))                --- The titlesec package is loaded. 
+(minitoc(hints))                It is incompatible 
+(minitoc(hints))                with the minitoc package.
+
+
+Package minitoc(hints) Warning: W0028
+(minitoc(hints))                --- The \chapter command is altered 
+(minitoc(hints))                after minitoc.
+
+\@TUD@tmp@baselineskip=\skip111
+\TUD@titleboxheight=\skip112
+\TUD@titleboxdepth=\skip113
+\TUD@subtitleboxheight=\skip114
+\TUD@subtitleboxdepth=\skip115
+\TUD@logoboxheight=\skip116
+\TUD@logoboxwidth=\skip117
+\TUD@colorbackheight=\skip118
+\TUD@colorbacktitleheight=\skip119
+\TUD@instboxheight=\skip120
+\TUD@instboxdepth=\skip121
+\TUD@instboxwidth=\skip122
+\TUD@instlogoheight=\skip123
+\TUD@instlogowidth=\skip124
+\TUD@sponsorheight=\skip125
+\TUD@titlebox=\box43
+\TUD@subtitlebox=\box44
+\TUD@logobox=\box45
+\TUD@instbox=\box46
+\TUD@sponsorbox=\box47
+\TUD@tmp@height=\skip126
+\TUD@tmp@depth=\skip127
+LaTeX Font Info:    Try loading font information for T1+5fp on input line 42.
+(/u/aconstan/texmf/tex/latex/tex-tudfonts/softmake/frontpage/t15fp.fd
+File: t15fp.fd 2009/08/06 Fontinst v1.927 font definitions for T1/5fp.
+)
+LaTeX Font Info:    Try loading font information for OT1+mdbch on input line 42
+.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdbch/ot1mdbch.fd
+File: ot1mdbch.fd 2006/01/28 Fontinst v1.928 font definitions for OT1/mdbch.
+)
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 12.00008pt on input line 42.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 8.44806pt on input line 42.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 7.20004pt on input line 42.
+LaTeX Font Info:    Try loading font information for OML+mdbch on input line 42
+.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdbch/omlmdbch.fd
+File: omlmdbch.fd 2006/01/28 Fontinst v1.928 font definitions for OML/mdbch.
+)
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 12.00008pt on input line 42.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 8.44806pt on input line 42.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 7.20004pt on input line 42.
+LaTeX Font Info:    Try loading font information for OMS+mdbch on input line 42
+.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdbch/omsmdbch.fd
+File: omsmdbch.fd 2006/01/28 Fontinst v1.928 font definitions for OMS/mdbch.
+)
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 12.00008pt on input line 42.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 8.44806pt on input line 42.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 7.20004pt on input line 42.
+LaTeX Font Info:    Try loading font information for OMX+mdbch on input line 42
+.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdbch/omxmdbch.fd
+File: omxmdbch.fd 2006/01/28 Fontinst v1.928 font definitions for OMX/mdbch.
+)
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 12.00008pt on input line 42.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 8.44806pt on input line 42.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 7.20004pt on input line 42.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 12.00008pt on input line 42.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 8.44806pt on input line 42.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 7.20004pt on input line 42.
+LaTeX Font Info:    Try loading font information for MDA+mdbch on input line 42
+.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdbch/mdamdbch.fd
+File: mdamdbch.fd 2006/01/28 Fontinst v1.928 font definitions for MDA/mdbch.
+)
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 12.00008pt on input line 42.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 8.44806pt on input line 42.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 7.20004pt on input line 42.
+LaTeX Font Info:    Try loading font information for MDB+mdbch on input line 42
+.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdbch/mdbmdbch.fd
+File: mdbmdbch.fd 2006/01/28 Fontinst v1.928 font definitions for MDB/mdbch.
+)
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 12.00008pt on input line 42.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 8.44806pt on input line 42.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 7.20004pt on input line 42.
+LaTeX Font Info:    Try loading font information for OML+mdput on input line 42
+.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdput/omlmdput.fd
+File: omlmdput.fd 2006/01/29 Fontinst v1.928 font definitions for OML/mdput.
+)
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 11.49997pt on input line 42.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 8.09598pt on input line 42.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 6.89998pt on input line 42.
+\@TUD@titlelines=\count158
+
+
+Package  Warning: Title has more then 3 lines. Fontsize reduced on input line 4
+2.
+
+<tud_logo.pdf, id=1, 157.58875pt x 63.23625pt>
+File: tud_logo.pdf Graphic file (type pdf)
+ <use tud_logo.pdf>
+Package pdftex.def Info: tud_logo.pdf used on input line 42.
+(pdftex.def)             Requested size: 134.92238pt x 62.59605pt.
+File: tud_logo.pdf Graphic file (type pdf)
+
+<use tud_logo.pdf>
+Package pdftex.def Info: tud_logo.pdf used on input line 42.
+(pdftex.def)             Requested size: 134.92238pt x 62.59605pt.
+Package epstopdf Info: Source file: <GSI_Logo_cmyk.eps>
+(epstopdf)                    date: 2014-04-14 13:28:41
+(epstopdf)                    size: 188380 bytes
+(epstopdf)             Output file: <GSI_Logo_cmyk-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-04-14 13:30:54
+(epstopdf)                    size: 8716 bytes
+(epstopdf)             Command: <repstopdf --outfile=GSI_Logo_cmyk-eps-converte
+d-to.pdf GSI_Logo_cmyk.eps>
+(epstopdf)             \includegraphics on input line 42.
+Package epstopdf Info: Output file is already uptodate.
+
+<GSI_Logo_cmyk-eps-converted-to.pdf, id=4, 286.06876pt x 91.34125pt>
+File: GSI_Logo_cmyk-eps-converted-to.pdf Graphic file (type pdf)
+
+<use GSI_Logo_cmyk-eps-converted-to.pdf>
+Package pdftex.def Info: GSI_Logo_cmyk-eps-converted-to.pdf used on input line 
+42.
+(pdftex.def)             Requested size: 89.94824pt x 28.71968pt.
+ [-1
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+
+
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!{/u/aconstan/.texlive2011/texmf-var/fonts/map/pdftex/up
+dmap/pdftex.map} </u/aconstan/texmf/tex/latex/tuddesign/logo/tud_logo.pdf> <./G
+SI_Logo_cmyk-eps-converted-to.pdf>] [0
+
+]
+Package minitoc Info: I0024
+(minitoc)             PREPARING MINITOCS FROM main.toc on input line 46.
+Package minitoc Info: I0033
+(minitoc)             Writing main.mtc1.
+\openout4 = `main.mtc1'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing main.mtc2.
+\openout4 = `main.mtc2'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing main.mtc3.
+\openout4 = `main.mtc3'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing main.mtc4.
+\openout4 = `main.mtc4'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing main.mtc5.
+\openout4 = `main.mtc5'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing main.mtc6.
+\openout4 = `main.mtc6'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing main.mtc7.
+\openout4 = `main.mtc7'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing main.mtc8.
+\openout4 = `main.mtc8'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing main.mtc9.
+\openout4 = `main.mtc9'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing main.mtc10.
+\openout4 = `main.mtc10'.
+
+\openout2 = `teile/abstract/abstract.aux'.
+
+ (./teile/abstract/abstract.tex)
+[1
+
+
+]
+\openout2 = `teile/publications/publications.aux'.
+
+ (./teile/publications/publications.tex [2
+
+
+
+
+] [3]) [4] (./main.toc
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5
+
+
+
+]
+Overfull \hbox (1.41595pt too wide) detected at line 56
+ []\T1/5ch/m/n/12 100
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 59
+ []\T1/5ch/m/n/12 107
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 60
+ []\T1/5ch/m/n/12 107
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 61
+ []\T1/5ch/m/n/12 109
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 62
+ []\T1/5ch/m/n/12 110
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 63
+ []\T1/5ch/m/n/12 111
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 64
+ []\T1/5ch/m/n/12 112
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 66
+ []\T1/5ch/m/n/12 114
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 67
+ []\T1/5ch/m/n/12 114
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 68
+ []\T1/5ch/m/n/12 115
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 69
+ []\T1/5ch/m/n/12 116
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 70
+ []\T1/5ch/m/n/12 116
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 71
+ []\T1/5ch/m/n/12 117
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 72
+ []\T1/5ch/m/n/12 117
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 73
+ []\T1/5ch/m/n/12 125
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 74
+ []\T1/5ch/m/n/12 126
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 77
+ []\T1/5ch/m/n/12 133
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 78
+ []\T1/5ch/m/n/12 134
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 79
+ []\T1/5ch/m/n/12 135
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 80
+ []\T1/5ch/m/n/12 136
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 81
+ []\T1/5ch/m/n/12 137
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 83
+ []\T1/5ch/m/n/12 140
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 84
+ []\T1/5ch/m/n/12 140
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 85
+ []\T1/5ch/m/n/12 141
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 86
+ []\T1/5ch/m/n/12 143
+ []
+
+[6]
+Overfull \hbox (1.41595pt too wide) detected at line 89
+ []\T1/5ch/m/n/12 150
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 90
+ []\T1/5ch/m/n/12 150
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 93
+ []\T1/5ch/m/n/12 152
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 94
+ []\T1/5ch/m/n/12 152
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 99
+ []\T1/5ch/m/n/12 159
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 100
+ []\T1/5ch/m/n/12 165
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 102
+ []\T1/5ch/m/n/12 189
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 103
+ []\T1/5ch/m/n/12 192
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 105
+ []\T1/5ch/m/n/12 203
+ []
+
+
+Overfull \hbox (1.41595pt too wide) detected at line 106
+ []\T1/5ch/m/n/12 209
+ []
+
+)
+\tf@toc=\write5
+\openout5 = `main.toc'.
+
+ [7]
+\openout2 = `teile/abbrevations/abbrevetions.aux'.
+
+ (./teile/abbrevations/abbrevetions.tex [8
+
+
+
+
+]
+LaTeX Font Info:    Font shape `T1/5fp/b/n' in size <12> not available
+(Font)              Font shape `T1/5fp/mb/n' tried instead on input line 33.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
+[10
+
+])
+\openout2 = `teile/motivation/motivation.aux'.
+
+ (./teile/motivation/motivation.tex
+Underfull \hbox (badness 10000) in paragraph at lines 27--33
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--41
+
+ []
+
+[11
+
+
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 58--62
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--75
+
+ []
+
+) [12]
+\openout2 = `teile/introduction/introduction_forMain.aux'.
+
+ (./teile/introduction/introduction_forMain.tex
+Chapter 1.
+
+Class scrreprt Warning: \float@addtolists detected!
+(scrreprt)              You should use the features of package `tocbasic'
+(scrreprt)              instead of \float@addtolists.
+(scrreprt)              Support for \float@addtolists may be removed from
+(scrreprt)              `scrreprt' soon .
+
+\openout4 = `main.mtc'.
+
+\openout4 = `main.mtc'.
+
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 11.04007pt on input line 4.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 4.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 6.62404pt on input line 4.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 11.04007pt on input line 4.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 7.68005pt on input line 4.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 6.62404pt on input line 4.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 11.04007pt on input line 4.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 4.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 6.62404pt on input line 4.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 11.04007pt on input line 4.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 4.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 6.62404pt on input line 4.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 11.04007pt on input line 4.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 4.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 6.62404pt on input line 4.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 11.04007pt on input line 4.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 4.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 6.62404pt on input line 4.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 11.04007pt on input line 4.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 4.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 6.62404pt on input line 4.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 10.57997pt on input line 4.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 7.35999pt on input line 4.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 6.34798pt on input line 4.
+(./main.mtc2) [13
+
+
+
+
+] [14]
+Package epstopdf Info: Source file: <./teile/introduction/depthdose.eps>
+(epstopdf)                    date: 2013-08-02 13:13:40
+(epstopdf)                    size: 31110 bytes
+(epstopdf)             Output file: <./teile/introduction/depthdose-eps-convert
+ed-to.pdf>
+(epstopdf)                    date: 2013-10-04 13:22:30
+(epstopdf)                    size: 19285 bytes
+(epstopdf)             Command: <repstopdf --outfile=./teile/introduction/depth
+dose-eps-converted-to.pdf ./teile/introduction/depthdose.eps>
+(epstopdf)             \includegraphics on input line 56.
+Package epstopdf Info: Output file is already uptodate.
+
+<./teile/introduction/depthdose-eps-converted-to.pdf, id=73, 486.81876pt x 579.
+16376pt>
+File: ./teile/introduction/depthdose-eps-converted-to.pdf Graphic file (type pd
+f)
+ <use ./teile/introduction/depthdose-eps-converted-to.pdf>
+Package pdftex.def Info: ./teile/introduction/depthdose-eps-converted-to.pdf us
+ed on input line 56.
+(pdftex.def)             Requested size: 340.7708pt x 405.41187pt.
+ [15 <./teile/introduction/depthdose-eps-converted-to.pdf>]
+Underfull \vbox (badness 2221) has occurred while \output is active []
+
+ [16]
+Underfull \hbox (badness 10000) in paragraph at lines 127--141
+
+ []
+
+
+Underfull \vbox (badness 2521) has occurred while \output is active []
+
+ [17]
+<./teile/introduction/iondepthdosesum.png, id=94, 980.66376pt x 721.69624pt>
+File: ./teile/introduction/iondepthdosesum.png Graphic file (type png)
+
+<use ./teile/introduction/iondepthdosesum.png>
+Package pdftex.def Info: ./teile/introduction/iondepthdosesum.png used on input
+ line 153.
+(pdftex.def)             Requested size: 294.2014pt x 216.51054pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18 <./teile/introduction/iondepthdosesum.png>] [19]
+<./teile/introduction/trackstructure.png, id=102, 1332.98pt x 2010.51125pt>
+File: ./teile/introduction/trackstructure.png Graphic file (type png)
+
+<use ./teile/introduction/trackstructure.png>
+Package pdftex.def Info: ./teile/introduction/trackstructure.png used on input 
+line 205.
+(pdftex.def)             Requested size: 333.24419pt x 502.62659pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20 <./teile/introduction/trackstructure.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 226--246
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--246
+
+ []
+
+<./teile/introduction/SSB_DSB.png, id=108, 908.64468pt x 526.96875pt>
+File: ./teile/introduction/SSB_DSB.png Graphic file (type png)
+
+<use ./teile/introduction/SSB_DSB.png>
+Package pdftex.def Info: ./teile/introduction/SSB_DSB.png used on input line 24
+9.
+(pdftex.def)             Requested size: 454.32123pt x 263.48372pt.
+ [21]
+Underfull \hbox (badness 10000) in paragraph at lines 268--284
+
+ []
+
+[22 <./teile/introduction/SSB_DSB.png>]
+<./teile/introduction/rbe_let.png, id=115, 501.875pt x 442.65375pt>
+File: ./teile/introduction/rbe_let.png Graphic file (type png)
+
+<use ./teile/introduction/rbe_let.png>
+Package pdftex.def Info: ./teile/introduction/rbe_let.png used on input line 28
+7.
+(pdftex.def)             Requested size: 250.93687pt x 221.32632pt.
+ [23 <./teile/introduction/rbe_let.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 316--330
+
+ []
+
+<./teile/introduction/lamellen.png, id=120, 1353.055pt x 285.065pt>
+File: ./teile/introduction/lamellen.png Graphic file (type png)
+
+<use ./teile/introduction/lamellen.png>
+Package pdftex.def Info: ./teile/introduction/lamellen.png used on input line 3
+36.
+(pdftex.def)             Requested size: 270.6062pt x 57.01198pt.
+ [24 <./teile/introduction/lamellen.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 346--355
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 358--380
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 358--380
+
+ []
+
+[25]
+<./teile/introduction/deliverypassive.png, id=128, 967.615pt x 639.38875pt>
+File: ./teile/introduction/deliverypassive.png Graphic file (type png)
+
+<use ./teile/introduction/deliverypassive.png>
+Package pdftex.def Info: ./teile/introduction/deliverypassive.png used on input
+ line 385.
+(pdftex.def)             Requested size: 387.03915pt x 255.75096pt.
+ [26 <./teile/introduction/deliverypassive.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 396--419
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--419
+
+ []
+
+[27] <./teile/introduction/therapy.png, id=135, 1096.095pt x 486.81876pt>
+File: ./teile/introduction/therapy.png Graphic file (type png)
+
+<use ./teile/introduction/therapy.png>
+Package pdftex.def Info: ./teile/introduction/therapy.png used on input line 42
+6.
+(pdftex.def)             Requested size: 438.43024pt x 194.72404pt.
+
+<./teile/introduction/active.png, id=136, 1072.75781pt x 470.50781pt>
+File: ./teile/introduction/active.png Graphic file (type png)
+
+<use ./teile/introduction/active.png>
+Package pdftex.def Info: ./teile/introduction/active.png used on input line 437
+.
+(pdftex.def)             Requested size: 482.73656pt x 211.72655pt.
+ [28 <./teile/introduction/therapy.png> <./teile/introduction/active.png>]
+<./teile/introduction/targetvergleich.png, id=141, 1183.42125pt x 588.1975pt>
+File: ./teile/introduction/targetvergleich.png Graphic file (type png)
+
+<use ./teile/introduction/targetvergleich.png>
+Package pdftex.def Info: ./teile/introduction/targetvergleich.png used on input
+ line 459.
+(pdftex.def)             Requested size: 295.85458pt x 147.04901pt.
+
+<./teile/introduction/chordoma_farben.png, id=142, 695.59875pt x 505.89pt>
+File: ./teile/introduction/chordoma_farben.png Graphic file (type png)
+
+<use ./teile/introduction/chordoma_farben.png>
+Package pdftex.def Info: ./teile/introduction/chordoma_farben.png used on input
+ line 470.
+(pdftex.def)             Requested size: 243.46321pt x 177.06415pt.
+
+Underfull \vbox (badness 1038) has occurred while \output is active []
+
+ [29 <./teile/introduction/targetvergleich.png> <./teile/introduction/chordoma_
+farben.png>] <./teile/introduction/volumes.png, id=148, 557.83406pt x 563.10374
+pt>
+File: ./teile/introduction/volumes.png Graphic file (type png)
+
+<use ./teile/introduction/volumes.png>
+Package pdftex.def Info: ./teile/introduction/volumes.png used on input line 51
+6.
+(pdftex.def)             Requested size: 167.3515pt x 168.93242pt.
+ [30]
+Underfull \hbox (badness 10000) in paragraph at lines 524--541
+
+ []
+
+<./teile/introduction/inhomo.png, id=152, 838.63312pt x 317.68687pt>
+File: ./teile/introduction/inhomo.png Graphic file (type png)
+
+<use ./teile/introduction/inhomo.png>
+Package pdftex.def Info: ./teile/introduction/inhomo.png used on input line 544
+.
+(pdftex.def)             Requested size: 335.4473pt x 127.07248pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [31 <./teile/introduction/volumes.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 563--574
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 563--574
+
+ []
+
+[32 <./teile/introduction/inhomo.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 575--588
+
+ []
+
+
+<./teile/introduction/motion_examples.png, id=159, 1164.60094pt x 407.27156pt>
+File: ./teile/introduction/motion_examples.png Graphic file (type png)
+
+<use ./teile/introduction/motion_examples.png>
+Package pdftex.def Info: ./teile/introduction/motion_examples.png used on input
+ line 591.
+(pdftex.def)             Requested size: 500.76865pt x 175.12335pt.
+
+Overfull \hbox (2.8454pt too wide) in paragraph at lines 591--594
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 601--626
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 601--626
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 601--626
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33 <./teile/introduction/motion_examples.png>] [34]
+Underfull \hbox (badness 10000) in paragraph at lines 634--649
+
+ []
+
+<./teile/introduction/rescanning.png, id=166, 802.49812pt x 505.89pt>
+File: ./teile/introduction/rescanning.png Graphic file (type png)
+
+<use ./teile/introduction/rescanning.png>
+Package pdftex.def Info: ./teile/introduction/rescanning.png used on input line
+ 654.
+(pdftex.def)             Requested size: 361.12082pt x 227.64839pt.
+
+Underfull \vbox (badness 8019) has occurred while \output is active []
+
+ [35 <./teile/introduction/rescanning.png>]
+<./teile/introduction/gating.png, id=171, 799.48688pt x 575.90157pt>
+File: ./teile/introduction/gating.png Graphic file (type png)
+
+<use ./teile/introduction/gating.png>
+Package pdftex.def Info: ./teile/introduction/gating.png used on input line 673
+.
+(pdftex.def)             Requested size: 359.76576pt x 259.1533pt.
+ [36 <./teile/introduction/gating.png>]
+<./teile/introduction/tracking.png, id=175, 1003.49907pt x 279.29344pt>
+File: ./teile/introduction/tracking.png Graphic file (type png)
+
+<use ./teile/introduction/tracking.png>
+Package pdftex.def Info: ./teile/introduction/tracking.png used on input line 6
+95.
+(pdftex.def)             Requested size: 401.39252pt x 111.7154pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 702--711
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 715--727
+
+ []
+
+[37 <./teile/introduction/tracking.png>]
+<./teile/introduction/registration.png, id=179, 1149.5447pt x 232.61906pt>
+File: ./teile/introduction/registration.png Graphic file (type png)
+
+<use ./teile/introduction/registration.png>
+Package pdftex.def Info: ./teile/introduction/registration.png used on input li
+ne 730.
+(pdftex.def)             Requested size: 494.29459pt x 100.02423pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 738--771
+
+ []
+
+
+Underfull \vbox (badness 1655) has occurred while \output is active []
+
+ [38 <./teile/introduction/registration.png>]
+<./teile/introduction/4DtreatmentPlanning.png, id=183, 980.91469pt x 439.6425pt
+>
+File: ./teile/introduction/4DtreatmentPlanning.png Graphic file (type png)
+ <use ./teile/introduction/4DtreatmentPlanning.png>
+Package pdftex.def Info: ./teile/introduction/4DtreatmentPlanning.png used on i
+nput line 776.
+(pdftex.def)             Requested size: 343.32529pt x 153.87717pt.
+ [39 <./teile/introduction/4DtreatmentPlanning.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 791--795
+
+ []
+
+<./teile/introduction/af_incidences_us.png, id=187, 86.724pt x 53.33527pt>
+File: ./teile/introduction/af_incidences_us.png Graphic file (type png)
+
+<use ./teile/introduction/af_incidences_us.png>
+Package pdftex.def Info: ./teile/introduction/af_incidences_us.png used on inpu
+t line 798.
+(pdftex.def)             Requested size: 260.17131pt x 160.00534pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 806--815
+
+ []
+
+[40 <./teile/introduction/af_incidences_us.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 820--832
+
+ []
+
+
+<./teile/introduction/conduction_system.png, id=191, 1195.3458pt x 1221.363pt>
+File: ./teile/introduction/conduction_system.png Graphic file (type png)
+
+<use ./teile/introduction/conduction_system.png>
+Package pdftex.def Info: ./teile/introduction/conduction_system.png used on inp
+ut line 838.
+(pdftex.def)             Requested size: 274.92375pt x 280.90758pt.
+ [41 <./teile/introduction/conduction_system.png>]
+<./teile/introduction/ecg_2.png, id=196, 903.375pt x 910.90312pt>
+File: ./teile/introduction/ecg_2.png Graphic file (type png)
+
+<use ./teile/introduction/ecg_2.png>
+Package pdftex.def Info: ./teile/introduction/ecg_2.png used on input line 849.
+
+(pdftex.def)             Requested size: 271.01459pt x 273.27304pt.
+
+<./teile/introduction/AF_ECG_1.png, id=197, 365.86688pt x 72.27pt>
+File: ./teile/introduction/AF_ECG_1.png Graphic file (type png)
+
+<use ./teile/introduction/AF_ECG_1.png>
+Package pdftex.def Info: ./teile/introduction/AF_ECG_1.png used on input line 8
+64.
+(pdftex.def)             Requested size: 365.86598pt x 72.2698pt.
+
+<./teile/introduction/AF_ECG_2.png, id=198, 363.60844pt x 72.27pt>
+File: ./teile/introduction/AF_ECG_2.png Graphic file (type png)
+
+<use ./teile/introduction/AF_ECG_2.png>
+Package pdftex.def Info: ./teile/introduction/AF_ECG_2.png used on input line 8
+67.
+(pdftex.def)             Requested size: 363.60754pt x 72.2698pt.
+ [42 <./teile/introduction/ecg_2.png> <./teile/introduction/AF_ECG_1.png> <./te
+ile/introduction/AF_ECG_2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 877--887
+
+ []
+
+<./teile/introduction/af_types.png, id=203, 985.6825pt x 769.87625pt>
+File: ./teile/introduction/af_types.png Graphic file (type png)
+
+<use ./teile/introduction/af_types.png>
+Package pdftex.def Info: ./teile/introduction/af_types.png used on input line 8
+94.
+(pdftex.def)             Requested size: 248.96162pt x 194.45389pt.
+
+<./teile/introduction/af_over_time.png, id=204, 988.69376pt x 576.1525pt>
+File: ./teile/introduction/af_over_time.png Graphic file (type png)
+
+<use ./teile/introduction/af_over_time.png>
+Package pdftex.def Info: ./teile/introduction/af_over_time.png used on input li
+ne 902.
+(pdftex.def)             Requested size: 258.92221pt x 150.87744pt.
+
+Overfull \hbox (12.49258pt too wide) in paragraph at lines 892--906
+[]$[]$  $[]$ 
+ []
+
+[43 <./teile/introduction/af_types.png> <./teile/introduction/af_over_time.png>
+]
+Underfull \hbox (badness 10000) in paragraph at lines 932--936
+
+ []
+
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 9.98405pt on input line 939.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 7.00804pt on input line 939.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 6.04803pt on input line 939.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 9.98405pt on input line 939.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 7.00804pt on input line 939.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 6.04803pt on input line 939.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 9.98405pt on input line 939.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 7.00804pt on input line 939.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 6.04803pt on input line 939.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 9.98405pt on input line 939.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 7.00804pt on input line 939.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 6.04803pt on input line 939.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 9.98405pt on input line 939.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 7.00804pt on input line 939.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 6.04803pt on input line 939.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 9.98405pt on input line 939.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 7.00804pt on input line 939.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 6.04803pt on input line 939.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 9.98405pt on input line 939.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 7.00804pt on input line 939.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 6.04803pt on input line 939.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 9.56796pt on input line 939.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 6.71599pt on input line 939.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 5.79599pt on input line 939.
+<./teile/introduction/PVatriumTissue.png, id=208, 86.724pt x 35.99046pt>
+File: ./teile/introduction/PVatriumTissue.png Graphic file (type png)
+
+<use ./teile/introduction/PVatriumTissue.png>
+Package pdftex.def Info: ./teile/introduction/PVatriumTissue.png used on input 
+line 949.
+(pdftex.def)             Requested size: 303.53319pt x 125.96625pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 960--964
+
+ []
+
+[44 <./teile/introduction/PVatriumTissue.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 982--985
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 986--990
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 991--995
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 996--997
+
+ []
+
+[45]
+Underfull \hbox (badness 10000) in paragraph at lines 998--1002
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1004--1009
+
+ []
+
+<./teile/introduction/ablation_cut.png, id=215, 297.11pt x 261.97874pt>
+File: ./teile/introduction/ablation_cut.png Graphic file (type png)
+
+<use ./teile/introduction/ablation_cut.png>
+Package pdftex.def Info: ./teile/introduction/ablation_cut.png used on input li
+ne 1013.
+(pdftex.def)             Requested size: 207.97557pt x 183.38387pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1023--1027
+
+ []
+
+[46 <./teile/introduction/ablation_cut.png>]
+<./teile/introduction/freedom_recurrence_AF.png, id=219, 288.07625pt x 226.8475
+pt>
+File: ./teile/introduction/freedom_recurrence_AF.png Graphic file (type png)
+ <use ./teile/introduction/freedom_recurrence_AF.png>
+Package pdftex.def Info: ./teile/introduction/freedom_recurrence_AF.png used on
+ input line 1039.
+(pdftex.def)             Requested size: 288.07553pt x 226.84694pt.
+ [47 <./teile/introduction/freedom_recurrence_AF.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 1063--1068
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1069--1085
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1086--1091
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1092--1096
+
+ []
+
+[48]
+Underfull \hbox (badness 10000) in paragraph at lines 1106--1141
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1106--1141
+
+ []
+
+[49]
+<./teile/introduction/cyberheart_voltagemap.png, id=230, 643.6547pt x 390.70969
+pt>
+File: ./teile/introduction/cyberheart_voltagemap.png Graphic file (type png)
+ <use ./teile/introduction/cyberheart_voltagemap.png>
+Package pdftex.def Info: ./teile/introduction/cyberheart_voltagemap.png used on
+ input line 1144.
+(pdftex.def)             Requested size: 289.64194pt x 175.81773pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1151--1156
+
+ []
+
+[50 <./teile/introduction/cyberheart_voltagemap.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1157--1162
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1163--1169
+
+ []
+
+) [51]
+\openout2 = `teile/results_mdacc/results_mdacc_forMain.aux'.
+
+ (./teile/results_mdacc/results_mdacc_forMain.tex [52
+
+
+
+
+]
+Chapter 2.
+\openout4 = `main.mtc'.
+
+\openout4 = `main.mtc'.
+
+(./main.mtc3) [53]
+Underfull \hbox (badness 10000) in paragraph at lines 25--39
+
+ []
+
+[54]
+Underfull \hbox (badness 10000) in paragraph at lines 107--138
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--138
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--138
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--138
+
+ []
+
+[55] [56]
+Underfull \hbox (badness 10000) in paragraph at lines 156--169
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--169
+
+ []
+
+[57]
+Underfull \hbox (badness 10000) in paragraph at lines 182--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--206
+
+ []
+
+[58]
+<./teile/results_mdacc/MDACC_allPatients_RESP_LPV.png, id=259, 1580.90625pt x 1
+185.42876pt>
+File: ./teile/results_mdacc/MDACC_allPatients_RESP_LPV.png Graphic file (type p
+ng)
+ <use ./teile/results_mdacc/MDACC_allPatients_RESP_LPV.png>
+Package pdftex.def Info: ./teile/results_mdacc/MDACC_allPatients_RESP_LPV.png u
+sed on input line 214.
+(pdftex.def)             Requested size: 347.80045pt x 260.79514pt.
+
+<./teile/results_mdacc/MDACC_allPatients_RESP_RPV.png, id=260, 1580.90625pt x 1
+185.42876pt>
+File: ./teile/results_mdacc/MDACC_allPatients_RESP_RPV.png Graphic file (type p
+ng)
+ <use ./teile/results_mdacc/MDACC_allPatients_RESP_RPV.png>
+Package pdftex.def Info: ./teile/results_mdacc/MDACC_allPatients_RESP_RPV.png u
+sed on input line 226.
+(pdftex.def)             Requested size: 347.80045pt x 260.79514pt.
+
+[59 <./teile/results_mdacc/MDACC_allPatients_RESP_LPV.png> <./teile/results_mda
+cc/MDACC_allPatients_RESP_RPV.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 284--294
+
+ []
+
+[60]
+<./teile/results_mdacc/Contour_z_abs_RESP_Pat037_HUSkala_gedreht_2.png, id=270,
+ 1344.02126pt x 1056.94875pt>
+File: ./teile/results_mdacc/Contour_z_abs_RESP_Pat037_HUSkala_gedreht_2.png Gra
+phic file (type png)
+
+<use ./teile/results_mdacc/Contour_z_abs_RESP_Pat037_HUSkala_gedreht_2.png>
+Package pdftex.def Info: ./teile/results_mdacc/Contour_z_abs_RESP_Pat037_HUSkal
+a_gedreht_2.png used on input line 302.
+(pdftex.def)             Requested size: 295.6856pt x 232.52943pt.
+
+<./teile/results_mdacc/Contour_z_abs_RESP_Pat122_HUSkala_gedreht_2.png, id=271,
+ 1344.02126pt x 1056.94875pt>
+File: ./teile/results_mdacc/Contour_z_abs_RESP_Pat122_HUSkala_gedreht_2.png Gra
+phic file (type png)
+
+<use ./teile/results_mdacc/Contour_z_abs_RESP_Pat122_HUSkala_gedreht_2.png>
+Package pdftex.def Info: ./teile/results_mdacc/Contour_z_abs_RESP_Pat122_HUSkal
+a_gedreht_2.png used on input line 312.
+(pdftex.def)             Requested size: 295.6856pt x 232.52943pt.
+
+[61 <./teile/results_mdacc/Contour_z_abs_RESP_Pat037_HUSkala_gedreht_2.png (PNG
+ copy)> <./teile/results_mdacc/Contour_z_abs_RESP_Pat122_HUSkala_gedreht_2.png 
+(PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 334--384
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 334--384
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 334--384
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 334--384
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 334--384
+
+ []
+
+[62] [63]
+<./teile/results_mdacc/Pat122_slice50_static.png, id=281, 572.1375pt x 296.6081
+2pt>
+File: ./teile/results_mdacc/Pat122_slice50_static.png Graphic file (type png)
+ <use ./teile/results_mdacc/Pat122_slice50_static.png>
+Package pdftex.def Info: ./teile/results_mdacc/Pat122_slice50_static.png used o
+n input line 393.
+(pdftex.def)             Requested size: 343.28514pt x 177.96623pt.
+
+<./teile/results_mdacc/Pat122_slice50_interplay.png, id=282, 572.1375pt x 296.6
+0812pt>
+File: ./teile/results_mdacc/Pat122_slice50_interplay.png Graphic file (type png
+)
+ <use ./teile/results_mdacc/Pat122_slice50_interplay.png>
+Package pdftex.def Info: ./teile/results_mdacc/Pat122_slice50_interplay.png use
+d on input line 396.
+(pdftex.def)             Requested size: 343.28514pt x 177.96623pt.
+
+<./teile/results_mdacc/Pat122_slice50_gating.png, id=283, 572.1375pt x 297.3609
+3pt>
+File: ./teile/results_mdacc/Pat122_slice50_gating.png Graphic file (type png)
+ <use ./teile/results_mdacc/Pat122_slice50_gating.png>
+Package pdftex.def Info: ./teile/results_mdacc/Pat122_slice50_gating.png used o
+n input line 399.
+(pdftex.def)             Requested size: 343.28514pt x 178.41792pt.
+ [64 <./teile/results_mdacc/Pat122_slice50_static.png> <./teile/results_mdacc/P
+at122_slice50_interplay.png> <./teile/results_mdacc/Pat122_slice50_gating.png>]
+
+<./teile/results_mdacc/Pat09_allDVHs_LPV_withLegend.png, id=288, 706.13812pt x 
+502.87875pt>
+File: ./teile/results_mdacc/Pat09_allDVHs_LPV_withLegend.png Graphic file (type
+ png)
+ <use ./teile/results_mdacc/Pat09_allDVHs_LPV_withLegend.png>
+Package pdftex.def Info: ./teile/results_mdacc/Pat09_allDVHs_LPV_withLegend.png
+ used on input line 414.
+(pdftex.def)             Requested size: 338.94244pt x 241.37906pt.
+
+<./teile/results_mdacc/Pat09_allDVHs_RPV_withLegend.png, id=289, 706.13812pt x 
+502.87875pt>
+File: ./teile/results_mdacc/Pat09_allDVHs_RPV_withLegend.png Graphic file (type
+ png)
+ <use ./teile/results_mdacc/Pat09_allDVHs_RPV_withLegend.png>
+Package pdftex.def Info: ./teile/results_mdacc/Pat09_allDVHs_RPV_withLegend.png
+ used on input line 417.
+(pdftex.def)             Requested size: 338.94244pt x 241.37906pt.
+
+[65 <./teile/results_mdacc/Pat09_allDVHs_LPV_withLegend.png> <./teile/results_m
+dacc/Pat09_allDVHs_RPV_withLegend.png>]
+<./teile/results_mdacc/MDACC_CTV_LPV_D5D95.png, id=296, 1344.02126pt x 933.4875
+pt>
+File: ./teile/results_mdacc/MDACC_CTV_LPV_D5D95.png Graphic file (type png)
+ <use ./teile/results_mdacc/MDACC_CTV_LPV_D5D95.png>
+Package pdftex.def Info: ./teile/results_mdacc/MDACC_CTV_LPV_D5D95.png used on 
+input line 431.
+(pdftex.def)             Requested size: 241.91339pt x 168.0205pt.
+
+<./teile/results_mdacc/MDACC_CTV_RPV_D5D95.png, id=297, 1344.02126pt x 933.4875
+pt>
+File: ./teile/results_mdacc/MDACC_CTV_RPV_D5D95.png Graphic file (type png)
+ <use ./teile/results_mdacc/MDACC_CTV_RPV_D5D95.png>
+Package pdftex.def Info: ./teile/results_mdacc/MDACC_CTV_RPV_D5D95.png used on 
+input line 434.
+(pdftex.def)             Requested size: 241.91339pt x 168.0205pt.
+
+<./teile/results_mdacc/MDACC_CTV_LPV_V95.png, id=298, 1344.02126pt x 950.55125p
+t>
+File: ./teile/results_mdacc/MDACC_CTV_LPV_V95.png Graphic file (type png)
+ <use ./teile/results_mdacc/MDACC_CTV_LPV_V95.png>
+Package pdftex.def Info: ./teile/results_mdacc/MDACC_CTV_LPV_V95.png used on in
+put line 437.
+(pdftex.def)             Requested size: 241.91339pt x 171.09184pt.
+
+<./teile/results_mdacc/MDACC_CTV_RPV_V95.png, id=299, 1344.02126pt x 950.55125p
+t>
+File: ./teile/results_mdacc/MDACC_CTV_RPV_V95.png Graphic file (type png)
+ <use ./teile/results_mdacc/MDACC_CTV_RPV_V95.png>
+Package pdftex.def Info: ./teile/results_mdacc/MDACC_CTV_RPV_V95.png used on in
+put line 440.
+(pdftex.def)             Requested size: 241.91339pt x 171.09184pt.
+
+<./teile/results_mdacc/MDACC_CTV_LPV_V107.png, id=300, 1344.02126pt x 933.4875p
+t>
+File: ./teile/results_mdacc/MDACC_CTV_LPV_V107.png Graphic file (type png)
+ <use ./teile/results_mdacc/MDACC_CTV_LPV_V107.png>
+Package pdftex.def Info: ./teile/results_mdacc/MDACC_CTV_LPV_V107.png used on i
+nput line 443.
+(pdftex.def)             Requested size: 241.91339pt x 168.0205pt.
+
+<./teile/results_mdacc/MDACC_CTV_RPV_V107.png, id=301, 1344.02126pt x 933.4875p
+t>
+File: ./teile/results_mdacc/MDACC_CTV_RPV_V107.png Graphic file (type png)
+ <use ./teile/results_mdacc/MDACC_CTV_RPV_V107.png>
+Package pdftex.def Info: ./teile/results_mdacc/MDACC_CTV_RPV_V107.png used on i
+nput line 446.
+(pdftex.def)             Requested size: 241.91339pt x 168.0205pt.
+
+Overfull \hbox (1.77953pt too wide) in paragraph at lines 431--449
+[][] []
+ []
+
+
+Overfull \hbox (1.77953pt too wide) in paragraph at lines 431--449
+[] []
+ []
+
+
+Overfull \hbox (1.77953pt too wide) in paragraph at lines 431--449
+[] [] 
+ []
+
+[66 <./teile/results_mdacc/MDACC_CTV_LPV_D5D95.png> <./teile/results_mdacc/MDAC
+C_CTV_RPV_D5D95.png> <./teile/results_mdacc/MDACC_CTV_LPV_V95.png> <./teile/res
+ults_mdacc/MDACC_CTV_RPV_V95.png> <./teile/results_mdacc/MDACC_CTV_LPV_V107.png
+> <./teile/results_mdacc/MDACC_CTV_RPV_V107.png>]
+<./teile/results_mdacc/D5D95_vs_margin_2.png, id=311, 421.29796pt x 348.84729pt
+>
+File: ./teile/results_mdacc/D5D95_vs_margin_2.png Graphic file (type png)
+ <use ./teile/results_mdacc/D5D95_vs_margin_2.png>
+Package pdftex.def Info: ./teile/results_mdacc/D5D95_vs_margin_2.png used on in
+put line 459.
+(pdftex.def)             Requested size: 315.9727pt x 261.63483pt.
+
+<./teile/results_mdacc/V95_vs_margin_2.png, id=312, 421.26183pt x 348.84729pt>
+File: ./teile/results_mdacc/V95_vs_margin_2.png Graphic file (type png)
+
+<use ./teile/results_mdacc/V95_vs_margin_2.png>
+Package pdftex.def Info: ./teile/results_mdacc/V95_vs_margin_2.png used on inpu
+t line 462.
+(pdftex.def)             Requested size: 315.94559pt x 261.63483pt.
+ [67 <./teile/results_mdacc/D5D95_vs_margin_2.png> <./teile/results_mdacc/V95_v
+s_margin_2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 476--500
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 476--500
+
+ []
+
+[68]
+<./teile/results_mdacc/MDACC_Pat122_CTV_LPV_D5D95_withRescan.png, id=321, 1344.
+02126pt x 961.5925pt>
+File: ./teile/results_mdacc/MDACC_Pat122_CTV_LPV_D5D95_withRescan.png Graphic f
+ile (type png)
+
+<use ./teile/results_mdacc/MDACC_Pat122_CTV_LPV_D5D95_withRescan.png>
+Package pdftex.def Info: ./teile/results_mdacc/MDACC_Pat122_CTV_LPV_D5D95_withR
+escan.png used on input line 506.
+(pdftex.def)             Requested size: 241.91339pt x 173.07918pt.
+
+<./teile/results_mdacc/MDACC_Pat122_CTV_RPV_D5D95_withRescan.png, id=322, 1344.
+02126pt x 961.5925pt>
+File: ./teile/results_mdacc/MDACC_Pat122_CTV_RPV_D5D95_withRescan.png Graphic f
+ile (type png)
+
+<use ./teile/results_mdacc/MDACC_Pat122_CTV_RPV_D5D95_withRescan.png>
+Package pdftex.def Info: ./teile/results_mdacc/MDACC_Pat122_CTV_RPV_D5D95_withR
+escan.png used on input line 509.
+(pdftex.def)             Requested size: 241.91339pt x 173.07918pt.
+
+<./teile/results_mdacc/MDACC_Pat122_CTV_LPV_V95_withRescan.png, id=323, 1344.02
+126pt x 950.55125pt>
+File: ./teile/results_mdacc/MDACC_Pat122_CTV_LPV_V95_withRescan.png Graphic fil
+e (type png)
+
+<use ./teile/results_mdacc/MDACC_Pat122_CTV_LPV_V95_withRescan.png>
+Package pdftex.def Info: ./teile/results_mdacc/MDACC_Pat122_CTV_LPV_V95_withRes
+can.png used on input line 512.
+(pdftex.def)             Requested size: 241.91339pt x 171.09184pt.
+
+<./teile/results_mdacc/MDACC_Pat122_CTV_RPV_V95_withRescan.png, id=324, 1344.02
+126pt x 950.55125pt>
+File: ./teile/results_mdacc/MDACC_Pat122_CTV_RPV_V95_withRescan.png Graphic fil
+e (type png)
+
+<use ./teile/results_mdacc/MDACC_Pat122_CTV_RPV_V95_withRescan.png>
+Package pdftex.def Info: ./teile/results_mdacc/MDACC_Pat122_CTV_RPV_V95_withRes
+can.png used on input line 515.
+(pdftex.def)             Requested size: 241.91339pt x 171.09184pt.
+
+<./teile/results_mdacc/MDACC_Pat122_CTV_LPV_V107_withRescan.png, id=325, 1344.0
+2126pt x 933.4875pt>
+File: ./teile/results_mdacc/MDACC_Pat122_CTV_LPV_V107_withRescan.png Graphic fi
+le (type png)
+
+<use ./teile/results_mdacc/MDACC_Pat122_CTV_LPV_V107_withRescan.png>
+Package pdftex.def Info: ./teile/results_mdacc/MDACC_Pat122_CTV_LPV_V107_withRe
+scan.png used on input line 518.
+(pdftex.def)             Requested size: 241.91339pt x 168.0205pt.
+
+<./teile/results_mdacc/MDACC_Pat122_CTV_RPV_V107_withRescan.png, id=326, 1344.0
+2126pt x 933.4875pt>
+File: ./teile/results_mdacc/MDACC_Pat122_CTV_RPV_V107_withRescan.png Graphic fi
+le (type png)
+
+<use ./teile/results_mdacc/MDACC_Pat122_CTV_RPV_V107_withRescan.png>
+Package pdftex.def Info: ./teile/results_mdacc/MDACC_Pat122_CTV_RPV_V107_withRe
+scan.png used on input line 521.
+(pdftex.def)             Requested size: 241.91339pt x 168.0205pt.
+
+Overfull \hbox (1.77953pt too wide) in paragraph at lines 506--525
+[][] []
+ []
+
+
+Overfull \hbox (1.77953pt too wide) in paragraph at lines 506--525
+[] []
+ []
+
+
+Overfull \hbox (1.77953pt too wide) in paragraph at lines 506--525
+[] [] 
+ []
+
+[69 <./teile/results_mdacc/MDACC_Pat122_CTV_LPV_D5D95_withRescan.png> <./teile/
+results_mdacc/MDACC_Pat122_CTV_RPV_D5D95_withRescan.png> <./teile/results_mdacc
+/MDACC_Pat122_CTV_LPV_V95_withRescan.png> <./teile/results_mdacc/MDACC_Pat122_C
+TV_RPV_V95_withRescan.png> <./teile/results_mdacc/MDACC_Pat122_CTV_LPV_V107_wit
+hRescan.png> <./teile/results_mdacc/MDACC_Pat122_CTV_RPV_V107_withRescan.png>]
+<./teile/results_mdacc/Pat09_allDVHs_LPV_rescan_withLegend.png, id=336, 706.138
+12pt x 502.87875pt>
+File: ./teile/results_mdacc/Pat09_allDVHs_LPV_rescan_withLegend.png Graphic fil
+e (type png)
+
+<use ./teile/results_mdacc/Pat09_allDVHs_LPV_rescan_withLegend.png>
+Package pdftex.def Info: ./teile/results_mdacc/Pat09_allDVHs_LPV_rescan_withLeg
+end.png used on input line 535.
+(pdftex.def)             Requested size: 338.94244pt x 241.37906pt.
+
+<./teile/results_mdacc/Pat09_allDVHs_RPV_rescan_withLegend.png, id=337, 706.138
+12pt x 502.87875pt>
+File: ./teile/results_mdacc/Pat09_allDVHs_RPV_rescan_withLegend.png Graphic fil
+e (type png)
+
+<use ./teile/results_mdacc/Pat09_allDVHs_RPV_rescan_withLegend.png>
+Package pdftex.def Info: ./teile/results_mdacc/Pat09_allDVHs_RPV_rescan_withLeg
+end.png used on input line 538.
+(pdftex.def)             Requested size: 338.94244pt x 241.37906pt.
+ [70 <./teile/results_mdacc/Pat09_allDVHs_LPV_rescan_withLegend.png> <./teile/r
+esults_mdacc/Pat09_allDVHs_RPV_rescan_withLegend.png>]
+<./teile/results_mdacc/MDACC_Pat024_CTV_LPV_D5D95_withRescan.png, id=343, 1344.
+02126pt x 961.5925pt>
+File: ./teile/results_mdacc/MDACC_Pat024_CTV_LPV_D5D95_withRescan.png Graphic f
+ile (type png)
+
+<use ./teile/results_mdacc/MDACC_Pat024_CTV_LPV_D5D95_withRescan.png>
+Package pdftex.def Info: ./teile/results_mdacc/MDACC_Pat024_CTV_LPV_D5D95_withR
+escan.png used on input line 552.
+(pdftex.def)             Requested size: 241.91339pt x 173.07918pt.
+
+<./teile/results_mdacc/MDACC_Pat024_CTV_RPV_D5D95_withRescan.png, id=344, 1344.
+02126pt x 961.5925pt>
+File: ./teile/results_mdacc/MDACC_Pat024_CTV_RPV_D5D95_withRescan.png Graphic f
+ile (type png)
+
+<use ./teile/results_mdacc/MDACC_Pat024_CTV_RPV_D5D95_withRescan.png>
+Package pdftex.def Info: ./teile/results_mdacc/MDACC_Pat024_CTV_RPV_D5D95_withR
+escan.png used on input line 555.
+(pdftex.def)             Requested size: 241.91339pt x 173.07918pt.
+
+<./teile/results_mdacc/MDACC_Pat024_CTV_LPV_V95_withRescan.png, id=345, 1344.02
+126pt x 950.55125pt>
+File: ./teile/results_mdacc/MDACC_Pat024_CTV_LPV_V95_withRescan.png Graphic fil
+e (type png)
+
+<use ./teile/results_mdacc/MDACC_Pat024_CTV_LPV_V95_withRescan.png>
+Package pdftex.def Info: ./teile/results_mdacc/MDACC_Pat024_CTV_LPV_V95_withRes
+can.png used on input line 558.
+(pdftex.def)             Requested size: 241.91339pt x 171.09184pt.
+
+<./teile/results_mdacc/MDACC_Pat024_CTV_RPV_V95_withRescan.png, id=346, 1344.02
+126pt x 950.55125pt>
+File: ./teile/results_mdacc/MDACC_Pat024_CTV_RPV_V95_withRescan.png Graphic fil
+e (type png)
+
+<use ./teile/results_mdacc/MDACC_Pat024_CTV_RPV_V95_withRescan.png>
+Package pdftex.def Info: ./teile/results_mdacc/MDACC_Pat024_CTV_RPV_V95_withRes
+can.png used on input line 561.
+(pdftex.def)             Requested size: 241.91339pt x 171.09184pt.
+
+<./teile/results_mdacc/MDACC_Pat024_CTV_LPV_V107_withRescan.png, id=347, 1344.0
+2126pt x 933.4875pt>
+File: ./teile/results_mdacc/MDACC_Pat024_CTV_LPV_V107_withRescan.png Graphic fi
+le (type png)
+
+<use ./teile/results_mdacc/MDACC_Pat024_CTV_LPV_V107_withRescan.png>
+Package pdftex.def Info: ./teile/results_mdacc/MDACC_Pat024_CTV_LPV_V107_withRe
+scan.png used on input line 564.
+(pdftex.def)             Requested size: 241.91339pt x 168.0205pt.
+
+<./teile/results_mdacc/MDACC_Pat024_CTV_RPV_V107_withRescan.png, id=348, 1344.0
+2126pt x 933.4875pt>
+File: ./teile/results_mdacc/MDACC_Pat024_CTV_RPV_V107_withRescan.png Graphic fi
+le (type png)
+
+<use ./teile/results_mdacc/MDACC_Pat024_CTV_RPV_V107_withRescan.png>
+Package pdftex.def Info: ./teile/results_mdacc/MDACC_Pat024_CTV_RPV_V107_withRe
+scan.png used on input line 567.
+(pdftex.def)             Requested size: 241.91339pt x 168.0205pt.
+
+Overfull \hbox (1.77953pt too wide) in paragraph at lines 552--571
+[][] []
+ []
+
+
+Overfull \hbox (1.77953pt too wide) in paragraph at lines 552--571
+[] []
+ []
+
+
+Overfull \hbox (1.77953pt too wide) in paragraph at lines 552--571
+[] [] 
+ []
+
+[71 <./teile/results_mdacc/MDACC_Pat024_CTV_LPV_D5D95_withRescan.png> <./teile/
+results_mdacc/MDACC_Pat024_CTV_RPV_D5D95_withRescan.png> <./teile/results_mdacc
+/MDACC_Pat024_CTV_LPV_V95_withRescan.png> <./teile/results_mdacc/MDACC_Pat024_C
+TV_RPV_V95_withRescan.png> <./teile/results_mdacc/MDACC_Pat024_CTV_LPV_V107_wit
+hRescan.png> <./teile/results_mdacc/MDACC_Pat024_CTV_RPV_V107_withRescan.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 580--595
+
+ []
+
+
+<./teile/results_mdacc/Pat024_all_irrTime.png, id=359, 1344.02126pt x 961.5925p
+t>
+File: ./teile/results_mdacc/Pat024_all_irrTime.png Graphic file (type png)
+ <use ./teile/results_mdacc/Pat024_all_irrTime.png>
+Package pdftex.def Info: ./teile/results_mdacc/Pat024_all_irrTime.png used on i
+nput line 601.
+(pdftex.def)             Requested size: 241.91339pt x 173.07918pt.
+
+<./teile/results_mdacc/Pat024_all_irrTime_hoheNmin.png, id=360, 1344.02126pt x 
+961.5925pt>
+File: ./teile/results_mdacc/Pat024_all_irrTime_hoheNmin.png Graphic file (type 
+png)
+ <use ./teile/results_mdacc/Pat024_all_irrTime_hoheNmin.png>
+Package pdftex.def Info: ./teile/results_mdacc/Pat024_all_irrTime_hoheNmin.png 
+used on input line 604.
+(pdftex.def)             Requested size: 241.91339pt x 173.07918pt.
+
+Overfull \hbox (1.77953pt too wide) in paragraph at lines 601--606
+[][] [] 
+ []
+
+[72 <./teile/results_mdacc/Pat024_all_irrTime.png> <./teile/results_mdacc/Pat02
+4_all_irrTime_hoheNmin.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 615--681
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 615--681
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 615--681
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 615--681
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 615--681
+
+ []
+
+[73]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [74])
+[75]
+\openout2 = `teile/results_human/results_human_forMain.aux'.
+
+ (./teile/results_human/results_human_forMain.tex [76
+
+
+
+
+]
+Chapter 3.
+\openout4 = `main.mtc'.
+
+\openout4 = `main.mtc'.
+
+(./main.mtc4
+Overfull \hbox (1.29796pt too wide) detected at line 13
+ []\T1/5ch/m/n/11 100
+ []
+
+
+Overfull \hbox (2.12294pt too wide) detected at line 16
+ []\T1/5ch/b/n/11 107
+ []
+
+
+Overfull \hbox (1.29796pt too wide) detected at line 17
+ []\T1/5ch/m/n/11 107
+ []
+
+
+Overfull \hbox (1.29796pt too wide) detected at line 18
+ []\T1/5ch/m/n/11 109
+ []
+
+
+Overfull \hbox (1.29796pt too wide) detected at line 19
+ []\T1/5ch/m/n/11 110
+ []
+
+
+Overfull \hbox (1.29796pt too wide) detected at line 20
+ []\T1/5ch/m/n/11 111
+ []
+
+
+Overfull \hbox (2.12294pt too wide) detected at line 21
+ []\T1/5ch/b/n/11 112
+ []
+
+) [77]
+LaTeX Font Info:    Try loading font information for TS1+5ch on input line 32.
+ (/u/aconstan/texmf/tex/latex/tex-tudfonts/softmake/charter/ts15ch.fd
+File: ts15ch.fd 2008/06/23 Fontinst v1.927 font definitions for TS1/5ch.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 22--34
+
+ []
+
+[78]
+Underfull \hbox (badness 10000) in paragraph at lines 65--90
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--90
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--90
+
+ []
+
+[79]
+<./teile/results_human/GantryDirection_BEV.png, id=388, 634.62094pt x 511.9125p
+t>
+File: ./teile/results_human/GantryDirection_BEV.png Graphic file (type png)
+ <use ./teile/results_human/GantryDirection_BEV.png>
+Package pdftex.def Info: ./teile/results_human/GantryDirection_BEV.png used on 
+input line 139.
+(pdftex.def)             Requested size: 253.84387pt x 204.76137pt.
+ [80 <./teile/results_human/GantryDirection_BEV.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 151--166
+
+ []
+
+[81] [82]
+Underfull \hbox (badness 10000) in paragraph at lines 245--264
+
+ []
+
+[83] <./teile/results_human/Whisker_ESO.png, id=402, 1344.02126pt x 919.435pt>
+File: ./teile/results_human/Whisker_ESO.png Graphic file (type png)
+
+<use ./teile/results_human/Whisker_ESO.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_ESO.png used on input li
+ne 276.
+(pdftex.def)             Requested size: 241.91339pt x 165.49115pt.
+
+<./teile/results_human/Whisker_TRACHEA.png, id=403, 1344.02126pt x 919.435pt>
+File: ./teile/results_human/Whisker_TRACHEA.png Graphic file (type png)
+
+<use ./teile/results_human/Whisker_TRACHEA.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_TRACHEA.png used on inpu
+t line 279.
+(pdftex.def)             Requested size: 241.91339pt x 165.49115pt.
+
+<./teile/results_human/Whisker_HEARTwoOverlap.png, id=404, 1344.02126pt x 919.4
+35pt>
+File: ./teile/results_human/Whisker_HEARTwoOverlap.png Graphic file (type png)
+ <use ./teile/results_human/Whisker_HEARTwoOverlap.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_HEARTwoOverlap.png used 
+on input line 282.
+(pdftex.def)             Requested size: 241.91339pt x 165.49115pt.
+
+<./teile/results_human/Whisker_AORTA.png, id=405, 1344.02126pt x 919.435pt>
+File: ./teile/results_human/Whisker_AORTA.png Graphic file (type png)
+
+<use ./teile/results_human/Whisker_AORTA.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_AORTA.png used on input 
+line 285.
+(pdftex.def)             Requested size: 241.91339pt x 165.49115pt.
+
+Overfull \hbox (1.77953pt too wide) in paragraph at lines 276--288
+[][] []
+ []
+
+
+Overfull \hbox (1.77953pt too wide) in paragraph at lines 276--288
+[] [] 
+ []
+
+[84 <./teile/results_human/Whisker_ESO.png> <./teile/results_human/Whisker_TRAC
+HEA.png> <./teile/results_human/Whisker_HEARTwoOverlap.png> <./teile/results_hu
+man/Whisker_AORTA.png>]
+<./teile/results_human/Mayo_Human_BeamDirection_ESO.png, id=413, 1344.02126pt x
+ 1498.59875pt>
+File: ./teile/results_human/Mayo_Human_BeamDirection_ESO.png Graphic file (type
+ png)
+ <use ./teile/results_human/Mayo_Human_BeamDirection_ESO.png>
+Package pdftex.def Info: ./teile/results_human/Mayo_Human_BeamDirection_ESO.png
+ used on input line 299.
+(pdftex.def)             Requested size: 241.91339pt x 269.73613pt.
+
+<./teile/results_human/Mayo_Human_BeamDirection_TRACHEA.png, id=414, 1344.02126
+pt x 1498.59875pt>
+File: ./teile/results_human/Mayo_Human_BeamDirection_TRACHEA.png Graphic file (
+type png)
+
+<use ./teile/results_human/Mayo_Human_BeamDirection_TRACHEA.png>
+Package pdftex.def Info: ./teile/results_human/Mayo_Human_BeamDirection_TRACHEA
+.png used on input line 302.
+(pdftex.def)             Requested size: 241.91339pt x 269.73613pt.
+
+<./teile/results_human/Mayo_Human_BeamDirection_HEARTwoOverlap.png, id=415, 134
+4.02126pt x 1498.59875pt>
+File: ./teile/results_human/Mayo_Human_BeamDirection_HEARTwoOverlap.png Graphic
+ file (type png)
+
+<use ./teile/results_human/Mayo_Human_BeamDirection_HEARTwoOverlap.png>
+Package pdftex.def Info: ./teile/results_human/Mayo_Human_BeamDirection_HEARTwo
+Overlap.png used on input line 305.
+(pdftex.def)             Requested size: 241.91339pt x 269.73613pt.
+
+<./teile/results_human/Mayo_Human_BeamDirection_AORTA.png, id=416, 1344.02126pt
+ x 1498.59875pt>
+File: ./teile/results_human/Mayo_Human_BeamDirection_AORTA.png Graphic file (ty
+pe png)
+
+<use ./teile/results_human/Mayo_Human_BeamDirection_AORTA.png>
+Package pdftex.def Info: ./teile/results_human/Mayo_Human_BeamDirection_AORTA.p
+ng used on input line 308.
+(pdftex.def)             Requested size: 241.91339pt x 269.73613pt.
+
+Overfull \hbox (1.77953pt too wide) in paragraph at lines 299--311
+[][] []
+ []
+
+
+Overfull \hbox (1.77953pt too wide) in paragraph at lines 299--311
+[] [] 
+ []
+
+[85 <./teile/results_human/Mayo_Human_BeamDirection_ESO.png> <./teile/results_h
+uman/Mayo_Human_BeamDirection_TRACHEA.png> <./teile/results_human/Mayo_Human_Be
+amDirection_HEARTwoOverlap.png> <./teile/results_human/Mayo_Human_BeamDirection
+_AORTA.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 317--358
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 317--358
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [86]
+[87]
+<./teile/results_human/Whisker_HEARTwoOverlap_MeanDose.png, id=430, 1344.02126p
+t x 856.19875pt>
+File: ./teile/results_human/Whisker_HEARTwoOverlap_MeanDose.png Graphic file (t
+ype png)
+
+<use ./teile/results_human/Whisker_HEARTwoOverlap_MeanDose.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_HEARTwoOverlap_MeanDose.
+png used on input line 369.
+(pdftex.def)             Requested size: 154.35498pt x 98.32361pt.
+
+<./teile/results_human/Whisker_HEARTwoOverlap_MaxDose.png, id=431, 1344.02126pt
+ x 849.1725pt>
+File: ./teile/results_human/Whisker_HEARTwoOverlap_MaxDose.png Graphic file (ty
+pe png)
+ <use ./teile/results_human/Whisker_HEARTwoOverlap_MaxDose.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_HEARTwoOverlap_MaxDose.p
+ng used on input line 375.
+(pdftex.def)             Requested size: 154.35498pt x 97.51672pt.
+
+<./teile/results_human/Whisker_HEARTwoOverlap_MaxVolume.png, id=432, 1344.02126
+pt x 853.1875pt>
+File: ./teile/results_human/Whisker_HEARTwoOverlap_MaxVolume.png Graphic file (
+type png)
+
+<use ./teile/results_human/Whisker_HEARTwoOverlap_MaxVolume.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_HEARTwoOverlap_MaxVolume
+.png used on input line 379.
+(pdftex.def)             Requested size: 154.35498pt x 97.9778pt.
+
+<./teile/results_human/Whisker_LV_MeanDose.png, id=433, 1344.02126pt x 856.1987
+5pt>
+File: ./teile/results_human/Whisker_LV_MeanDose.png Graphic file (type png)
+ <use ./teile/results_human/Whisker_LV_MeanDose.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_LV_MeanDose.png used on 
+input line 386.
+(pdftex.def)             Requested size: 154.35498pt x 98.32361pt.
+
+<./teile/results_human/Whisker_LV_MaxDose.png, id=434, 1344.02126pt x 849.1725p
+t>
+File: ./teile/results_human/Whisker_LV_MaxDose.png Graphic file (type png)
+ <use ./teile/results_human/Whisker_LV_MaxDose.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_LV_MaxDose.png used on i
+nput line 392.
+(pdftex.def)             Requested size: 154.35498pt x 97.51672pt.
+
+<./teile/results_human/Whisker_LV_MaxVolume.png, id=435, 1344.02126pt x 853.187
+5pt>
+File: ./teile/results_human/Whisker_LV_MaxVolume.png Graphic file (type png)
+ <use ./teile/results_human/Whisker_LV_MaxVolume.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_LV_MaxVolume.png used on
+ input line 396.
+(pdftex.def)             Requested size: 154.35498pt x 97.9778pt.
+
+<./teile/results_human/Whisker_RV_MeanDose.png, id=436, 1344.02126pt x 856.1987
+5pt>
+File: ./teile/results_human/Whisker_RV_MeanDose.png Graphic file (type png)
+ <use ./teile/results_human/Whisker_RV_MeanDose.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_RV_MeanDose.png used on 
+input line 403.
+(pdftex.def)             Requested size: 154.35498pt x 98.32361pt.
+
+<./teile/results_human/Whisker_RV_MaxDose.png, id=437, 1344.02126pt x 849.1725p
+t>
+File: ./teile/results_human/Whisker_RV_MaxDose.png Graphic file (type png)
+ <use ./teile/results_human/Whisker_RV_MaxDose.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_RV_MaxDose.png used on i
+nput line 409.
+(pdftex.def)             Requested size: 154.35498pt x 97.51672pt.
+
+<./teile/results_human/Whisker_RV_MaxVolume.png, id=438, 1344.02126pt x 853.187
+5pt>
+File: ./teile/results_human/Whisker_RV_MaxVolume.png Graphic file (type png)
+ <use ./teile/results_human/Whisker_RV_MaxVolume.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_RV_MaxVolume.png used on
+ input line 413.
+(pdftex.def)             Requested size: 154.35498pt x 97.9778pt.
+
+<./teile/results_human/Whisker_LCA_MeanDose.png, id=439, 1344.02126pt x 856.198
+75pt>
+File: ./teile/results_human/Whisker_LCA_MeanDose.png Graphic file (type png)
+ <use ./teile/results_human/Whisker_LCA_MeanDose.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_LCA_MeanDose.png used on
+ input line 420.
+(pdftex.def)             Requested size: 154.35498pt x 98.32361pt.
+
+<./teile/results_human/Whisker_LCA_MaxDose.png, id=440, 1344.02126pt x 849.1725
+pt>
+File: ./teile/results_human/Whisker_LCA_MaxDose.png Graphic file (type png)
+ <use ./teile/results_human/Whisker_LCA_MaxDose.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_LCA_MaxDose.png used on 
+input line 426.
+(pdftex.def)             Requested size: 154.35498pt x 97.51672pt.
+
+<./teile/results_human/Whisker_LCA_MaxVolume.png, id=441, 1344.02126pt x 853.18
+75pt>
+File: ./teile/results_human/Whisker_LCA_MaxVolume.png Graphic file (type png)
+ <use ./teile/results_human/Whisker_LCA_MaxVolume.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_LCA_MaxVolume.png used o
+n input line 430.
+(pdftex.def)             Requested size: 154.35498pt x 97.9778pt.
+
+<./teile/results_human/Whisker_RCA_MeanDose.png, id=442, 1344.02126pt x 926.461
+24pt>
+File: ./teile/results_human/Whisker_RCA_MeanDose.png Graphic file (type png)
+ <use ./teile/results_human/Whisker_RCA_MeanDose.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_RCA_MeanDose.png used on
+ input line 437.
+(pdftex.def)             Requested size: 154.35498pt x 106.39236pt.
+
+<./teile/results_human/Whisker_RCA_MaxDose.png, id=443, 1344.02126pt x 919.435p
+t>
+File: ./teile/results_human/Whisker_RCA_MaxDose.png Graphic file (type png)
+ <use ./teile/results_human/Whisker_RCA_MaxDose.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_RCA_MaxDose.png used on 
+input line 443.
+(pdftex.def)             Requested size: 154.35498pt x 105.58548pt.
+
+<./teile/results_human/Whisker_RCA_MaxVolume.png, id=444, 1344.02126pt x 923.45
+pt>
+File: ./teile/results_human/Whisker_RCA_MaxVolume.png Graphic file (type png)
+ <use ./teile/results_human/Whisker_RCA_MaxVolume.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_RCA_MaxVolume.png used o
+n input line 447.
+(pdftex.def)             Requested size: 154.35498pt x 106.04655pt.
+
+<./teile/results_human/Mayo_Human_BeamDirection_HEARTwoOverlap_MeanDose.png, id
+=445, 1344.02126pt x 870.25125pt>
+File: ./teile/results_human/Mayo_Human_BeamDirection_HEARTwoOverlap_MeanDose.pn
+g Graphic file (type png)
+
+<use ./teile/results_human/Mayo_Human_BeamDirection_HEARTwoOverlap_MeanDose.png
+>
+Package pdftex.def Info: ./teile/results_human/Mayo_Human_BeamDirection_HEARTwo
+Overlap_MeanDose.png used on input line 464.
+(pdftex.def)             Requested size: 154.35498pt x 99.93735pt.
+
+<./teile/results_human/Mayo_Human_BeamDirection_HEARTwoOverlap_MaxDose.png, id=
+446, 1344.02126pt x 863.225pt>
+File: ./teile/results_human/Mayo_Human_BeamDirection_HEARTwoOverlap_MaxDose.png
+ Graphic file (type png)
+
+<use ./teile/results_human/Mayo_Human_BeamDirection_HEARTwoOverlap_MaxDose.png>
+Package pdftex.def Info: ./teile/results_human/Mayo_Human_BeamDirection_HEARTwo
+Overlap_MaxDose.png used on input line 470.
+(pdftex.def)             Requested size: 154.35498pt x 99.13048pt.
+
+<./teile/results_human/Mayo_Human_BeamDirection_HEARTwoOverlap_MaxVolume.png, i
+d=447, 1344.02126pt x 868.24374pt>
+File: ./teile/results_human/Mayo_Human_BeamDirection_HEARTwoOverlap_MaxVolume.p
+ng Graphic file (type png)
+
+<use ./teile/results_human/Mayo_Human_BeamDirection_HEARTwoOverlap_MaxVolume.pn
+g>
+Package pdftex.def Info: ./teile/results_human/Mayo_Human_BeamDirection_HEARTwo
+Overlap_MaxVolume.png used on input line 474.
+(pdftex.def)             Requested size: 154.35498pt x 99.70682pt.
+
+<./teile/results_human/Mayo_Human_BeamDirection_LV_MeanDose.png, id=448, 1344.0
+2126pt x 870.25125pt>
+File: ./teile/results_human/Mayo_Human_BeamDirection_LV_MeanDose.png Graphic fi
+le (type png)
+
+<use ./teile/results_human/Mayo_Human_BeamDirection_LV_MeanDose.png>
+Package pdftex.def Info: ./teile/results_human/Mayo_Human_BeamDirection_LV_Mean
+Dose.png used on input line 481.
+(pdftex.def)             Requested size: 154.35498pt x 99.93735pt.
+
+<./teile/results_human/Mayo_Human_BeamDirection_LV_MaxDose.png, id=449, 1344.02
+126pt x 863.225pt>
+File: ./teile/results_human/Mayo_Human_BeamDirection_LV_MaxDose.png Graphic fil
+e (type png)
+
+<use ./teile/results_human/Mayo_Human_BeamDirection_LV_MaxDose.png>
+Package pdftex.def Info: ./teile/results_human/Mayo_Human_BeamDirection_LV_MaxD
+ose.png used on input line 487.
+(pdftex.def)             Requested size: 154.35498pt x 99.13048pt.
+
+<./teile/results_human/Mayo_Human_BeamDirection_LV_MaxVolume.png, id=450, 1344.
+02126pt x 868.24374pt>
+File: ./teile/results_human/Mayo_Human_BeamDirection_LV_MaxVolume.png Graphic f
+ile (type png)
+
+<use ./teile/results_human/Mayo_Human_BeamDirection_LV_MaxVolume.png>
+Package pdftex.def Info: ./teile/results_human/Mayo_Human_BeamDirection_LV_MaxV
+olume.png used on input line 491.
+(pdftex.def)             Requested size: 154.35498pt x 99.70682pt.
+
+<./teile/results_human/Mayo_Human_BeamDirection_RV_MeanDose.png, id=451, 1344.0
+2126pt x 870.25125pt>
+File: ./teile/results_human/Mayo_Human_BeamDirection_RV_MeanDose.png Graphic fi
+le (type png)
+
+<use ./teile/results_human/Mayo_Human_BeamDirection_RV_MeanDose.png>
+Package pdftex.def Info: ./teile/results_human/Mayo_Human_BeamDirection_RV_Mean
+Dose.png used on input line 499.
+(pdftex.def)             Requested size: 154.35498pt x 99.93735pt.
+
+<./teile/results_human/Mayo_Human_BeamDirection_RV_MaxDose.png, id=452, 1344.02
+126pt x 863.225pt>
+File: ./teile/results_human/Mayo_Human_BeamDirection_RV_MaxDose.png Graphic fil
+e (type png)
+
+<use ./teile/results_human/Mayo_Human_BeamDirection_RV_MaxDose.png>
+Package pdftex.def Info: ./teile/results_human/Mayo_Human_BeamDirection_RV_MaxD
+ose.png used on input line 505.
+(pdftex.def)             Requested size: 154.35498pt x 99.13048pt.
+
+<./teile/results_human/Mayo_Human_BeamDirection_RV_MaxVolume.png, id=453, 1344.
+02126pt x 868.24374pt>
+File: ./teile/results_human/Mayo_Human_BeamDirection_RV_MaxVolume.png Graphic f
+ile (type png)
+
+<use ./teile/results_human/Mayo_Human_BeamDirection_RV_MaxVolume.png>
+Package pdftex.def Info: ./teile/results_human/Mayo_Human_BeamDirection_RV_MaxV
+olume.png used on input line 509.
+(pdftex.def)             Requested size: 154.35498pt x 99.70682pt.
+
+<./teile/results_human/Mayo_Human_BeamDirection_LCA_MeanDose.png, id=454, 1344.
+02126pt x 870.25125pt>
+File: ./teile/results_human/Mayo_Human_BeamDirection_LCA_MeanDose.png Graphic f
+ile (type png)
+
+<use ./teile/results_human/Mayo_Human_BeamDirection_LCA_MeanDose.png>
+Package pdftex.def Info: ./teile/results_human/Mayo_Human_BeamDirection_LCA_Mea
+nDose.png used on input line 516.
+(pdftex.def)             Requested size: 154.35498pt x 99.93735pt.
+
+<./teile/results_human/Mayo_Human_BeamDirection_LCA_MaxDose.png, id=455, 1344.0
+2126pt x 863.225pt>
+File: ./teile/results_human/Mayo_Human_BeamDirection_LCA_MaxDose.png Graphic fi
+le (type png)
+
+<use ./teile/results_human/Mayo_Human_BeamDirection_LCA_MaxDose.png>
+Package pdftex.def Info: ./teile/results_human/Mayo_Human_BeamDirection_LCA_Max
+Dose.png used on input line 522.
+(pdftex.def)             Requested size: 154.35498pt x 99.13048pt.
+
+<./teile/results_human/Mayo_Human_BeamDirection_LCA_MaxVolume.png, id=456, 1344
+.02126pt x 868.24374pt>
+File: ./teile/results_human/Mayo_Human_BeamDirection_LCA_MaxVolume.png Graphic 
+file (type png)
+
+<use ./teile/results_human/Mayo_Human_BeamDirection_LCA_MaxVolume.png>
+Package pdftex.def Info: ./teile/results_human/Mayo_Human_BeamDirection_LCA_Max
+Volume.png used on input line 526.
+(pdftex.def)             Requested size: 154.35498pt x 99.70682pt.
+
+<./teile/results_human/Mayo_Human_BeamDirection_RCA_MeanDose.png, id=457, 1344.
+02126pt x 1510.64375pt>
+File: ./teile/results_human/Mayo_Human_BeamDirection_RCA_MeanDose.png Graphic f
+ile (type png)
+
+<use ./teile/results_human/Mayo_Human_BeamDirection_RCA_MeanDose.png>
+Package pdftex.def Info: ./teile/results_human/Mayo_Human_BeamDirection_RCA_Mea
+nDose.png used on input line 534.
+(pdftex.def)             Requested size: 154.35498pt x 173.47835pt.
+
+<./teile/results_human/Mayo_Human_BeamDirection_RCA_MaxDose.png, id=458, 1344.0
+2126pt x 1498.59875pt>
+File: ./teile/results_human/Mayo_Human_BeamDirection_RCA_MaxDose.png Graphic fi
+le (type png)
+
+<use ./teile/results_human/Mayo_Human_BeamDirection_RCA_MaxDose.png>
+Package pdftex.def Info: ./teile/results_human/Mayo_Human_BeamDirection_RCA_Max
+Dose.png used on input line 540.
+(pdftex.def)             Requested size: 154.35498pt x 172.09512pt.
+
+<./teile/results_human/Mayo_Human_BeamDirection_RCA_MaxVolume.png, id=459, 1344
+.02126pt x 1506.62875pt>
+File: ./teile/results_human/Mayo_Human_BeamDirection_RCA_MaxVolume.png Graphic 
+file (type png)
+
+<use ./teile/results_human/Mayo_Human_BeamDirection_RCA_MaxVolume.png>
+Package pdftex.def Info: ./teile/results_human/Mayo_Human_BeamDirection_RCA_Max
+Volume.png used on input line 544.
+(pdftex.def)             Requested size: 154.35498pt x 173.01727pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [88 <./teile/results_human/Whisker_HEARTwoOverlap_MeanDose.png> <./teile/resul
+ts_human/Whisker_HEARTwoOverlap_MaxDose.png> <./teile/results_human/Whisker_HEA
+RTwoOverlap_MaxVolume.png> <./teile/results_human/Whisker_LV_MeanDose.png> <./t
+eile/results_human/Whisker_LV_MaxDose.png> <./teile/results_human/Whisker_LV_Ma
+xVolume.png> <./teile/results_human/Whisker_RV_MeanDose.png> <./teile/results_h
+uman/Whisker_RV_MaxDose.png> <./teile/results_human/Whisker_RV_MaxVolume.png> <
+./teile/results_human/Whisker_LCA_MeanDose.png> <./teile/results_human/Whisker_
+LCA_MaxDose.png> <./teile/results_human/Whisker_LCA_MaxVolume.png> <./teile/res
+ults_human/Whisker_RCA_MeanDose.png> <./teile/results_human/Whisker_RCA_MaxDose
+.png> <./teile/results_human/Whisker_RCA_MaxVolume.png>] [89 <./teile/results_h
+uman/Mayo_Human_BeamDirection_HEARTwoOverlap_MeanDose.png> <./teile/results_hum
+an/Mayo_Human_BeamDirection_HEARTwoOverlap_MaxDose.png> <./teile/results_human/
+Mayo_Human_BeamDirection_HEARTwoOverlap_MaxVolume.png> <./teile/results_human/M
+ayo_Human_BeamDirection_LV_MeanDose.png> <./teile/results_human/Mayo_Human_Beam
+Direction_LV_MaxDose.png> <./teile/results_human/Mayo_Human_BeamDirection_LV_Ma
+xVolume.png> <./teile/results_human/Mayo_Human_BeamDirection_RV_MeanDose.png> <
+./teile/results_human/Mayo_Human_BeamDirection_RV_MaxDose.png> <./teile/results
+_human/Mayo_Human_BeamDirection_RV_MaxVolume.png> <./teile/results_human/Mayo_H
+uman_BeamDirection_LCA_MeanDose.png> <./teile/results_human/Mayo_Human_BeamDire
+ction_LCA_MaxDose.png> <./teile/results_human/Mayo_Human_BeamDirection_LCA_MaxV
+olume.png> <./teile/results_human/Mayo_Human_BeamDirection_RCA_MeanDose.png> <.
+/teile/results_human/Mayo_Human_BeamDirection_RCA_MaxDose.png> <./teile/results
+_human/Mayo_Human_BeamDirection_RCA_MaxVolume.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 560--605
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 560--605
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 560--605
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 560--605
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 560--605
+
+ []
+
+[90] [91]
+<./teile/results_human/Whisker_ESO_alternativeLimit_ITV.png, id=503, 1344.02126
+pt x 945.5325pt>
+File: ./teile/results_human/Whisker_ESO_alternativeLimit_ITV.png Graphic file (
+type png)
+
+<use ./teile/results_human/Whisker_ESO_alternativeLimit_ITV.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_ESO_alternativeLimit_ITV
+.png used on input line 631.
+(pdftex.def)             Requested size: 154.35498pt x 108.58246pt.
+
+<./teile/results_human/Whisker_ESO_alternativeLimit_IMPT_woOverlap.png, id=504,
+ 1344.02126pt x 945.5325pt>
+File: ./teile/results_human/Whisker_ESO_alternativeLimit_IMPT_woOverlap.png Gra
+phic file (type png)
+
+<use ./teile/results_human/Whisker_ESO_alternativeLimit_IMPT_woOverlap.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_ESO_alternativeLimit_IMP
+T_woOverlap.png used on input line 635.
+(pdftex.def)             Requested size: 154.35498pt x 108.58246pt.
+
+<./teile/results_human/Whisker_ESO_alternativeLimit_IMPT_woOverlap_otherParamet
+ers.png, id=505, 1344.02126pt x 945.5325pt>
+File: ./teile/results_human/Whisker_ESO_alternativeLimit_IMPT_woOverlap_otherPa
+rameters.png Graphic file (type png)
+
+<use ./teile/results_human/Whisker_ESO_alternativeLimit_IMPT_woOverlap_otherPar
+ameters.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_ESO_alternativeLimit_IMP
+T_woOverlap_otherParameters.png used on input line 639.
+(pdftex.def)             Requested size: 154.35498pt x 108.58246pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 644--645
+
+ []
+
+
+<./teile/results_human/Whisker_TRACHEA_ITV.png, id=506, 1344.02126pt x 945.5325
+pt>
+File: ./teile/results_human/Whisker_TRACHEA_ITV.png Graphic file (type png)
+ <use ./teile/results_human/Whisker_TRACHEA_ITV.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_TRACHEA_ITV.png used on 
+input line 648.
+(pdftex.def)             Requested size: 154.35498pt x 108.58246pt.
+
+<./teile/results_human/Whisker_TRACHEA_IMPT_woOverlap.png, id=507, 1344.02126pt
+ x 945.5325pt>
+File: ./teile/results_human/Whisker_TRACHEA_IMPT_woOverlap.png Graphic file (ty
+pe png)
+ <use ./teile/results_human/Whisker_TRACHEA_IMPT_woOverlap.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_TRACHEA_IMPT_woOverlap.p
+ng used on input line 652.
+(pdftex.def)             Requested size: 154.35498pt x 108.58246pt.
+
+<./teile/results_human/Whisker_TRACHEA_IMPT_woOverlap_otherParameters.png, id=5
+08, 1344.02126pt x 945.5325pt>
+File: ./teile/results_human/Whisker_TRACHEA_IMPT_woOverlap_otherParameters.png 
+Graphic file (type png)
+
+<use ./teile/results_human/Whisker_TRACHEA_IMPT_woOverlap_otherParameters.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_TRACHEA_IMPT_woOverlap_o
+therParameters.png used on input line 656.
+(pdftex.def)             Requested size: 154.35498pt x 108.58246pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 661--662
+
+ []
+
+
+<./teile/results_human/Whisker_HEARTwoOverlap_ITV.png, id=509, 1344.02126pt x 9
+45.5325pt>
+File: ./teile/results_human/Whisker_HEARTwoOverlap_ITV.png Graphic file (type p
+ng)
+ <use ./teile/results_human/Whisker_HEARTwoOverlap_ITV.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_HEARTwoOverlap_ITV.png u
+sed on input line 665.
+(pdftex.def)             Requested size: 154.35498pt x 108.58246pt.
+
+<./teile/results_human/Whisker_HEARTwoOverlap_IMPT_woOverlap.png, id=510, 1344.
+02126pt x 945.5325pt>
+File: ./teile/results_human/Whisker_HEARTwoOverlap_IMPT_woOverlap.png Graphic f
+ile (type png)
+
+<use ./teile/results_human/Whisker_HEARTwoOverlap_IMPT_woOverlap.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_HEARTwoOverlap_IMPT_woOv
+erlap.png used on input line 669.
+(pdftex.def)             Requested size: 154.35498pt x 108.58246pt.
+
+<./teile/results_human/Whisker_HEARTwoOverlap_IMPT_woOverlap_otherParameters.pn
+g, id=511, 1344.02126pt x 945.5325pt>
+File: ./teile/results_human/Whisker_HEARTwoOverlap_IMPT_woOverlap_otherParamete
+rs.png Graphic file (type png)
+
+<use ./teile/results_human/Whisker_HEARTwoOverlap_IMPT_woOverlap_otherParameter
+s.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_HEARTwoOverlap_IMPT_woOv
+erlap_otherParameters.png used on input line 673.
+(pdftex.def)             Requested size: 154.35498pt x 108.58246pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 678--679
+
+ []
+
+
+<./teile/results_human/Whisker_AORTA_ITV.png, id=512, 1344.02126pt x 945.5325pt
+>
+File: ./teile/results_human/Whisker_AORTA_ITV.png Graphic file (type png)
+ <use ./teile/results_human/Whisker_AORTA_ITV.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_AORTA_ITV.png used on in
+put line 682.
+(pdftex.def)             Requested size: 154.35498pt x 108.58246pt.
+
+<./teile/results_human/Whisker_AORTA_IMPT_woOverlap.png, id=513, 1344.02126pt x
+ 945.5325pt>
+File: ./teile/results_human/Whisker_AORTA_IMPT_woOverlap.png Graphic file (type
+ png)
+ <use ./teile/results_human/Whisker_AORTA_IMPT_woOverlap.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_AORTA_IMPT_woOverlap.png
+ used on input line 687.
+(pdftex.def)             Requested size: 154.35498pt x 108.58246pt.
+
+<./teile/results_human/Whisker_AORTA_IMPT_woOverlap_otherParameters.png, id=514
+, 1344.02126pt x 945.5325pt>
+File: ./teile/results_human/Whisker_AORTA_IMPT_woOverlap_otherParameters.png Gr
+aphic file (type png)
+
+<use ./teile/results_human/Whisker_AORTA_IMPT_woOverlap_otherParameters.png>
+Package pdftex.def Info: ./teile/results_human/Whisker_AORTA_IMPT_woOverlap_oth
+erParameters.png used on input line 692.
+(pdftex.def)             Requested size: 154.35498pt x 108.58246pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 696--697
+
+ []
+
+
+Overfull \vbox (15.90132pt too high) has occurred while \output is active []
+
+
+[92 <./teile/results_human/Whisker_ESO_alternativeLimit_ITV.png> <./teile/resul
+ts_human/Whisker_ESO_alternativeLimit_IMPT_woOverlap.png> <./teile/results_huma
+n/Whisker_ESO_alternativeLimit_IMPT_woOverlap_otherParameters.png> <./teile/res
+ults_human/Whisker_TRACHEA_ITV.png> <./teile/results_human/Whisker_TRACHEA_IMPT
+_woOverlap.png> <./teile/results_human/Whisker_TRACHEA_IMPT_woOverlap_otherPara
+meters.png> <./teile/results_human/Whisker_HEARTwoOverlap_ITV.png> <./teile/res
+ults_human/Whisker_HEARTwoOverlap_IMPT_woOverlap.png> <./teile/results_human/Wh
+isker_HEARTwoOverlap_IMPT_woOverlap_otherParameters.png> <./teile/results_human
+/Whisker_AORTA_ITV.png> <./teile/results_human/Whisker_AORTA_IMPT_woOverlap.png
+> <./teile/results_human/Whisker_AORTA_IMPT_woOverlap_otherParameters.png>]
+[93] [94] [95]
+Underfull \hbox (badness 10000) in paragraph at lines 941--967
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 941--967
+
+ []
+
+[96]
+<./teile/results_human/MAYO_allPatients_HB_LPV.png, id=544, 1580.90625pt x 1185
+.42876pt>
+File: ./teile/results_human/MAYO_allPatients_HB_LPV.png Graphic file (type png)
+
+ <use ./teile/results_human/MAYO_allPatients_HB_LPV.png>
+Package pdftex.def Info: ./teile/results_human/MAYO_allPatients_HB_LPV.png used
+ on input line 972.
+(pdftex.def)             Requested size: 347.80045pt x 260.79514pt.
+
+<./teile/results_human/MAYO_allPatients_HB_RPV.png, id=545, 1580.90625pt x 1185
+.42876pt>
+File: ./teile/results_human/MAYO_allPatients_HB_RPV.png Graphic file (type png)
+
+ <use ./teile/results_human/MAYO_allPatients_HB_RPV.png>
+Package pdftex.def Info: ./teile/results_human/MAYO_allPatients_HB_RPV.png used
+ on input line 985.
+(pdftex.def)             Requested size: 347.80045pt x 260.79514pt.
+ [97 <./teile/results_human/MAYO_allPatients_HB_LPV.png> <./teile/results_human
+/MAYO_allPatients_HB_RPV.png>] [98]
+<./teile/results_human/Contour_z_abs_HB_Pat08_03_HUSkala_gedreht.png, id=554, 1
+344.02126pt x 1056.94875pt>
+File: ./teile/results_human/Contour_z_abs_HB_Pat08_03_HUSkala_gedreht.png Graph
+ic file (type png)
+
+<use ./teile/results_human/Contour_z_abs_HB_Pat08_03_HUSkala_gedreht.png>
+Package pdftex.def Info: ./teile/results_human/Contour_z_abs_HB_Pat08_03_HUSkal
+a_gedreht.png used on input line 1056.
+(pdftex.def)             Requested size: 241.91339pt x 190.24255pt.
+
+<./teile/results_human/Contour_z_abs_HB_Pat10_03_HUSkala_gedreht.png, id=555, 1
+344.02126pt x 1056.94875pt>
+File: ./teile/results_human/Contour_z_abs_HB_Pat10_03_HUSkala_gedreht.png Graph
+ic file (type png)
+
+<use ./teile/results_human/Contour_z_abs_HB_Pat10_03_HUSkala_gedreht.png>
+Package pdftex.def Info: ./teile/results_human/Contour_z_abs_HB_Pat10_03_HUSkal
+a_gedreht.png used on input line 1059.
+(pdftex.def)             Requested size: 241.91339pt x 190.24255pt.
+
+<./teile/results_human/Contour_z_abs_HB_Pat08_18_HUSkala_gedreht.png, id=556, 1
+344.02126pt x 1056.94875pt>
+File: ./teile/results_human/Contour_z_abs_HB_Pat08_18_HUSkala_gedreht.png Graph
+ic file (type png)
+
+<use ./teile/results_human/Contour_z_abs_HB_Pat08_18_HUSkala_gedreht.png>
+Package pdftex.def Info: ./teile/results_human/Contour_z_abs_HB_Pat08_18_HUSkal
+a_gedreht.png used on input line 1062.
+(pdftex.def)             Requested size: 241.91339pt x 190.24255pt.
+
+<./teile/results_human/Contour_z_abs_HB_Pat10_18_HUSkala_gedreht.png, id=557, 1
+344.02126pt x 1056.94875pt>
+File: ./teile/results_human/Contour_z_abs_HB_Pat10_18_HUSkala_gedreht.png Graph
+ic file (type png)
+
+<use ./teile/results_human/Contour_z_abs_HB_Pat10_18_HUSkala_gedreht.png>
+Package pdftex.def Info: ./teile/results_human/Contour_z_abs_HB_Pat10_18_HUSkal
+a_gedreht.png used on input line 1065.
+(pdftex.def)             Requested size: 241.91339pt x 190.24255pt.
+
+Overfull \hbox (1.77953pt too wide) in paragraph at lines 1056--1069
+[][] []
+ []
+
+
+Overfull \hbox (1.77953pt too wide) in paragraph at lines 1056--1069
+[] [] 
+ []
+
+[99 <./teile/results_human/Contour_z_abs_HB_Pat08_03_HUSkala_gedreht.png (PNG c
+opy)> <./teile/results_human/Contour_z_abs_HB_Pat10_03_HUSkala_gedreht.png (PNG
+ copy)> <./teile/results_human/Contour_z_abs_HB_Pat08_18_HUSkala_gedreht.png (P
+NG copy)> <./teile/results_human/Contour_z_abs_HB_Pat10_18_HUSkala_gedreht.png 
+(PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 1085--1147
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1085--1147
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1085--1147
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1085--1147
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1085--1147
+
+ []
+
+[100]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [101]
+<./teile/results_human/D5-D95_vs_margin.png, id=568, 384.6872pt x 298.11375pt>
+File: ./teile/results_human/D5-D95_vs_margin.png Graphic file (type png)
+
+<use ./teile/results_human/D5-D95_vs_margin.png>
+Package pdftex.def Info: ./teile/results_human/D5-D95_vs_margin.png used on inp
+ut line 1155.
+(pdftex.def)             Requested size: 173.10764pt x 134.14995pt.
+
+<./teile/results_human/V95_vs_margin.png, id=569, 379.4175pt x 298.86656pt>
+File: ./teile/results_human/V95_vs_margin.png Graphic file (type png)
+
+<use ./teile/results_human/V95_vs_margin.png>
+Package pdftex.def Info: ./teile/results_human/V95_vs_margin.png used on input 
+line 1158.
+(pdftex.def)             Requested size: 170.73628pt x 134.4887pt.
+
+<./teile/results_human/D5-D95_vs_rescans.png, id=570, 377.15906pt x 286.82156pt
+>
+File: ./teile/results_human/D5-D95_vs_rescans.png Graphic file (type png)
+ <use ./teile/results_human/D5-D95_vs_rescans.png>
+Package pdftex.def Info: ./teile/results_human/D5-D95_vs_rescans.png used on in
+put line 1161.
+(pdftex.def)             Requested size: 169.72pt x 129.0685pt.
+
+<./teile/results_human/V95_vs_rescans.png, id=571, 381.67593pt x 290.58563pt>
+File: ./teile/results_human/V95_vs_rescans.png Graphic file (type png)
+
+<use ./teile/results_human/V95_vs_rescans.png>
+Package pdftex.def Info: ./teile/results_human/V95_vs_rescans.png used on input
+ line 1164.
+(pdftex.def)             Requested size: 171.75258pt x 130.76231pt.
+ [102 <./teile/results_human/D5-D95_vs_margin.png> <./teile/results_human/V95_v
+s_margin.png> <./teile/results_human/D5-D95_vs_rescans.png> <./teile/results_hu
+man/V95_vs_rescans.png>]
+<./teile/results_human/Pat08_static_withLegend.png, id=575, 526.96875pt x 376.4
+0625pt>
+File: ./teile/results_human/Pat08_static_withLegend.png Graphic file (type png)
+
+ <use ./teile/results_human/Pat08_static_withLegend.png>
+Package pdftex.def Info: ./teile/results_human/Pat08_static_withLegend.png used
+ on input line 1178.
+(pdftex.def)             Requested size: 242.40855pt x 173.14897pt.
+
+<./teile/results_human/Pat08_interplay_withLegend.png, id=576, 526.96875pt x 37
+6.40625pt>
+File: ./teile/results_human/Pat08_interplay_withLegend.png Graphic file (type p
+ng)
+ <use ./teile/results_human/Pat08_interplay_withLegend.png>
+Package pdftex.def Info: ./teile/results_human/Pat08_interplay_withLegend.png u
+sed on input line 1181.
+(pdftex.def)             Requested size: 242.40855pt x 173.14897pt.
+
+<./teile/results_human/Pat08_10rescans_withLegend.png, id=577, 526.96875pt x 37
+6.40625pt>
+File: ./teile/results_human/Pat08_10rescans_withLegend.png Graphic file (type p
+ng)
+ <use ./teile/results_human/Pat08_10rescans_withLegend.png>
+Package pdftex.def Info: ./teile/results_human/Pat08_10rescans_withLegend.png u
+sed on input line 1184.
+(pdftex.def)             Requested size: 242.40855pt x 173.14897pt.
+ [103 <./teile/results_human/Pat08_static_withLegend.png> <./teile/results_huma
+n/Pat08_interplay_withLegend.png> <./teile/results_human/Pat08_10rescans_withLe
+gend.png>]
+<./teile/results_human/Pat08_LPV_allDVHs_newColor_withLegend.png, id=584, 1008.
+01593pt x 764.10469pt>
+File: ./teile/results_human/Pat08_LPV_allDVHs_newColor_withLegend.png Graphic f
+ile (type png)
+
+<use ./teile/results_human/Pat08_LPV_allDVHs_newColor_withLegend.png>
+Package pdftex.def Info: ./teile/results_human/Pat08_LPV_allDVHs_newColor_withL
+egend.png used on input line 1198.
+(pdftex.def)             Requested size: 282.24254pt x 213.94785pt.
+
+<./teile/results_human/Pat08_RPV_allDVHs_newColor_withLegend.png, id=585, 1008.
+01593pt x 764.10469pt>
+File: ./teile/results_human/Pat08_RPV_allDVHs_newColor_withLegend.png Graphic f
+ile (type png)
+
+<use ./teile/results_human/Pat08_RPV_allDVHs_newColor_withLegend.png>
+Package pdftex.def Info: ./teile/results_human/Pat08_RPV_allDVHs_newColor_withL
+egend.png used on input line 1201.
+(pdftex.def)             Requested size: 282.24254pt x 213.94785pt.
+ [104 <./teile/results_human/Pat08_LPV_allDVHs_newColor_withLegend.png> <./teil
+e/results_human/Pat08_RPV_allDVHs_newColor_withLegend.png>]
+<./teile/results_human/MAYO_CTV_LPV_D5D95.png, id=591, 1344.02126pt x 933.4875p
+t>
+File: ./teile/results_human/MAYO_CTV_LPV_D5D95.png Graphic file (type png)
+ <use ./teile/results_human/MAYO_CTV_LPV_D5D95.png>
+Package pdftex.def Info: ./teile/results_human/MAYO_CTV_LPV_D5D95.png used on i
+nput line 1216.
+(pdftex.def)             Requested size: 241.91339pt x 168.0205pt.
+
+<./teile/results_human/MAYO_CTV_RPV_D5D95.png, id=592, 1344.02126pt x 933.4875p
+t>
+File: ./teile/results_human/MAYO_CTV_RPV_D5D95.png Graphic file (type png)
+ <use ./teile/results_human/MAYO_CTV_RPV_D5D95.png>
+Package pdftex.def Info: ./teile/results_human/MAYO_CTV_RPV_D5D95.png used on i
+nput line 1219.
+(pdftex.def)             Requested size: 241.91339pt x 168.0205pt.
+
+<./teile/results_human/MAYO_CTV_LPV_V95.png, id=593, 1344.02126pt x 950.55125pt
+>
+File: ./teile/results_human/MAYO_CTV_LPV_V95.png Graphic file (type png)
+ <use ./teile/results_human/MAYO_CTV_LPV_V95.png>
+Package pdftex.def Info: ./teile/results_human/MAYO_CTV_LPV_V95.png used on inp
+ut line 1222.
+(pdftex.def)             Requested size: 241.91339pt x 171.09184pt.
+
+<./teile/results_human/MAYO_CTV_RPV_V95.png, id=594, 1344.02126pt x 950.55125pt
+>
+File: ./teile/results_human/MAYO_CTV_RPV_V95.png Graphic file (type png)
+ <use ./teile/results_human/MAYO_CTV_RPV_V95.png>
+Package pdftex.def Info: ./teile/results_human/MAYO_CTV_RPV_V95.png used on inp
+ut line 1225.
+(pdftex.def)             Requested size: 241.91339pt x 171.09184pt.
+
+<./teile/results_human/MAYO_CTV_LPV_V107.png, id=595, 1344.02126pt x 951.555pt>
+File: ./teile/results_human/MAYO_CTV_LPV_V107.png Graphic file (type png)
+<use ./teile/results_human/MAYO_CTV_LPV_V107.png>
+Package pdftex.def Info: ./teile/results_human/MAYO_CTV_LPV_V107.png used on in
+put line 1228.
+(pdftex.def)             Requested size: 241.91339pt x 171.2725pt.
+
+<./teile/results_human/MAYO_CTV_RPV_V107.png, id=596, 1344.02126pt x 951.555pt>
+File: ./teile/results_human/MAYO_CTV_RPV_V107.png Graphic file (type png)
+<use ./teile/results_human/MAYO_CTV_RPV_V107.png>
+Package pdftex.def Info: ./teile/results_human/MAYO_CTV_RPV_V107.png used on in
+put line 1231.
+(pdftex.def)             Requested size: 241.91339pt x 171.2725pt.
+
+Overfull \hbox (1.77953pt too wide) in paragraph at lines 1216--1235
+[][] []
+ []
+
+
+Overfull \hbox (1.77953pt too wide) in paragraph at lines 1216--1235
+[] []
+ []
+
+
+Overfull \hbox (1.77953pt too wide) in paragraph at lines 1216--1235
+[] [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [105 <./teile/results_human/MAYO_CTV_LPV_D5D95.png> <./teile/results_human/MAY
+O_CTV_RPV_D5D95.png> <./teile/results_human/MAYO_CTV_LPV_V95.png> <./teile/resu
+lts_human/MAYO_CTV_RPV_V95.png> <./teile/results_human/MAYO_CTV_LPV_V107.png> <
+./teile/results_human/MAYO_CTV_RPV_V107.png>]
+<./teile/results_human/All_irrTime.png, id=606, 1344.02126pt x 969.6225pt>
+File: ./teile/results_human/All_irrTime.png Graphic file (type png)
+
+<use ./teile/results_human/All_irrTime.png>
+Package pdftex.def Info: ./teile/results_human/All_irrTime.png used on input li
+ne 1254.
+(pdftex.def)             Requested size: 268.79948pt x 193.92107pt.
+ [106 <./teile/results_human/All_irrTime.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1291--1342
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1291--1342
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1291--1342
+
+ []
+
+[107] [108] [109]
+Underfull \hbox (badness 10000) in paragraph at lines 1376--1398
+
+ []
+
+[110]
+Underfull \hbox (badness 10000) in paragraph at lines 1403--1433
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1403--1433
+
+ []
+
+[111]) [112]
+\openout2 = `teile/results_porcine/results_porcine_forMain.aux'.
+
+ (./teile/results_porcine/results_porcine_forMain.tex
+Chapter 4.
+\openout4 = `main.mtc'.
+
+\openout4 = `main.mtc'.
+
+(./main.mtc5
+Overfull \hbox (2.12294pt too wide) detected at line 1
+ []\T1/5ch/b/n/11 114
+ []
+
+
+Overfull \hbox (1.29796pt too wide) detected at line 2
+ []\T1/5ch/m/n/11 114
+ []
+
+
+Overfull \hbox (1.29796pt too wide) detected at line 3
+ []\T1/5ch/m/n/11 115
+ []
+
+
+Overfull \hbox (1.29796pt too wide) detected at line 4
+ []\T1/5ch/m/n/11 116
+ []
+
+
+Overfull \hbox (1.29796pt too wide) detected at line 5
+ []\T1/5ch/m/n/11 116
+ []
+
+
+Overfull \hbox (2.12294pt too wide) detected at line 6
+ []\T1/5ch/b/n/11 117
+ []
+
+
+Overfull \hbox (1.29796pt too wide) detected at line 7
+ []\T1/5ch/m/n/11 117
+ []
+
+
+Overfull \hbox (1.29796pt too wide) detected at line 8
+ []\T1/5ch/m/n/11 125
+ []
+
+
+Overfull \hbox (1.29796pt too wide) detected at line 9
+ []\T1/5ch/m/n/11 126
+ []
+
+
+Overfull \hbox (2.12294pt too wide) detected at line 12
+ []\T1/5ch/b/n/11 133
+ []
+
+
+Overfull \hbox (1.29796pt too wide) detected at line 13
+ []\T1/5ch/m/n/11 134
+ []
+
+
+Overfull \hbox (1.29796pt too wide) detected at line 14
+ []\T1/5ch/m/n/11 135
+ []
+
+
+Overfull \hbox (1.29796pt too wide) detected at line 15
+ []\T1/5ch/m/n/11 136
+ []
+
+
+Overfull \hbox (2.12294pt too wide) detected at line 16
+ []\T1/5ch/b/n/11 137
+ []
+
+) [113
+
+
+
+
+] [114]
+<./teile/results_porcine/L829_PVsandAV_2.png, id=637, 301.125pt x 244.66406pt>
+File: ./teile/results_porcine/L829_PVsandAV_2.png Graphic file (type png)
+
+<use ./teile/results_porcine/L829_PVsandAV_2.png>
+Package pdftex.def Info: ./teile/results_porcine/L829_PVsandAV_2.png used on in
+put line 61.
+(pdftex.def)             Requested size: 225.84319pt x 183.49759pt.
+
+<./teile/results_porcine/L829_PVsandCTI_2.png, id=638, 301.125pt x 244.66406pt>
+File: ./teile/results_porcine/L829_PVsandCTI_2.png Graphic file (type png)
+<use ./teile/results_porcine/L829_PVsandCTI_2.png>
+Package pdftex.def Info: ./teile/results_porcine/L829_PVsandCTI_2.png used on i
+nput line 64.
+(pdftex.def)             Requested size: 225.84319pt x 183.49759pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--90
+
+ []
+
+[115 <./teile/results_porcine/L829_PVsandAV_2.png> <./teile/results_porcine/L82
+9_PVsandCTI_2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 91--101
+
+ []
+
+[116] [117] [118]
+<./teile/results_porcine/Mayo_IPV_HB_NATIV_VS_CONTRAST.png, id=651, 1580.90625p
+t x 1185.42876pt>
+File: ./teile/results_porcine/Mayo_IPV_HB_NATIV_VS_CONTRAST.png Graphic file (t
+ype png)
+
+<use ./teile/results_porcine/Mayo_IPV_HB_NATIV_VS_CONTRAST.png>
+Package pdftex.def Info: ./teile/results_porcine/Mayo_IPV_HB_NATIV_VS_CONTRAST.
+png used on input line 218.
+(pdftex.def)             Requested size: 347.80045pt x 260.79514pt.
+
+<./teile/results_porcine/Mayo_CTI_HB_NATIV_VS_CONTRAST.png, id=652, 1580.90625p
+t x 1185.42876pt>
+File: ./teile/results_porcine/Mayo_CTI_HB_NATIV_VS_CONTRAST.png Graphic file (t
+ype png)
+
+<use ./teile/results_porcine/Mayo_CTI_HB_NATIV_VS_CONTRAST.png>
+Package pdftex.def Info: ./teile/results_porcine/Mayo_CTI_HB_NATIV_VS_CONTRAST.
+png used on input line 230.
+(pdftex.def)             Requested size: 347.80045pt x 260.79514pt.
+ [119 <./teile/results_porcine/Mayo_IPV_HB_NATIV_VS_CONTRAST.png> <./teile/resu
+lts_porcine/Mayo_CTI_HB_NATIV_VS_CONTRAST.png>]
+<./teile/results_porcine/Mayo_AV_HB_NATIV_VS_CONTRAST.png, id=659, 1580.90625pt
+ x 1185.42876pt>
+File: ./teile/results_porcine/Mayo_AV_HB_NATIV_VS_CONTRAST.png Graphic file (ty
+pe png)
+
+<use ./teile/results_porcine/Mayo_AV_HB_NATIV_VS_CONTRAST.png>
+Package pdftex.def Info: ./teile/results_porcine/Mayo_AV_HB_NATIV_VS_CONTRAST.p
+ng used on input line 243.
+(pdftex.def)             Requested size: 347.80045pt x 260.79514pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 259--288
+
+ []
+
+[120 <./teile/results_porcine/Mayo_AV_HB_NATIV_VS_CONTRAST.png>] [121]
+<./teile/results_porcine/Mayo_PV_HB.png, id=667, 1580.90625pt x 1185.42876pt>
+File: ./teile/results_porcine/Mayo_PV_HB.png Graphic file (type png)
+
+<use ./teile/results_porcine/Mayo_PV_HB.png>
+Package pdftex.def Info: ./teile/results_porcine/Mayo_PV_HB.png used on input l
+ine 344.
+(pdftex.def)             Requested size: 347.80045pt x 260.79514pt.
+ [122 <./teile/results_porcine/Mayo_PV_HB.png>]
+<./teile/results_porcine/Mayo_CTI_HB.png, id=672, 1580.90625pt x 1185.42876pt>
+File: ./teile/results_porcine/Mayo_CTI_HB.png Graphic file (type png)
+
+<use ./teile/results_porcine/Mayo_CTI_HB.png>
+Package pdftex.def Info: ./teile/results_porcine/Mayo_CTI_HB.png used on input 
+line 355.
+(pdftex.def)             Requested size: 347.80045pt x 260.79514pt.
+
+<./teile/results_porcine/Mayo_AV_HB.png, id=673, 1580.90625pt x 1185.42876pt>
+File: ./teile/results_porcine/Mayo_AV_HB.png Graphic file (type png)
+
+<use ./teile/results_porcine/Mayo_AV_HB.png>
+Package pdftex.def Info: ./teile/results_porcine/Mayo_AV_HB.png used on input l
+ine 367.
+(pdftex.def)             Requested size: 347.80045pt x 260.79514pt.
+ [123 <./teile/results_porcine/Mayo_CTI_HB.png> <./teile/results_porcine/Mayo_A
+V_HB.png>]
+<./teile/results_porcine/Contour_z_abs_HB_L833_11_HUskala_gedreht.png, id=679, 
+1344.02126pt x 1056.94875pt>
+File: ./teile/results_porcine/Contour_z_abs_HB_L833_11_HUskala_gedreht.png Grap
+hic file (type png)
+
+<use ./teile/results_porcine/Contour_z_abs_HB_L833_11_HUskala_gedreht.png>
+Package pdftex.def Info: ./teile/results_porcine/Contour_z_abs_HB_L833_11_HUska
+la_gedreht.png used on input line 387.
+(pdftex.def)             Requested size: 268.79948pt x 211.386pt.
+
+<./teile/results_porcine/Contour_z_abs_HB_L979_10_HUskala_gedreht.png, id=680, 
+1344.02126pt x 1056.94875pt>
+File: ./teile/results_porcine/Contour_z_abs_HB_L979_10_HUskala_gedreht.png Grap
+hic file (type png)
+
+<use ./teile/results_porcine/Contour_z_abs_HB_L979_10_HUskala_gedreht.png>
+Package pdftex.def Info: ./teile/results_porcine/Contour_z_abs_HB_L979_10_HUska
+la_gedreht.png used on input line 390.
+(pdftex.def)             Requested size: 268.79948pt x 211.386pt.
+
+[124 <./teile/results_porcine/Contour_z_abs_HB_L833_11_HUskala_gedreht.png (PNG
+ copy)> <./teile/results_porcine/Contour_z_abs_HB_L979_10_HUskala_gedreht.png (
+PNG copy)>] [125]
+Underfull \hbox (badness 10000) in paragraph at lines 471--482
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 471--482
+
+ []
+
+[126]
+Underfull \hbox (badness 10000) in paragraph at lines 483--509
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 483--509
+
+ []
+
+[127]
+<./teile/results_porcine/L833_AV_allDVHs_withLegend.png, id=694, 1008.01593pt x
+ 718.18312pt>
+File: ./teile/results_porcine/L833_AV_allDVHs_withLegend.png Graphic file (type
+ png)
+ <use ./teile/results_porcine/L833_AV_allDVHs_withLegend.png>
+Package pdftex.def Info: ./teile/results_porcine/L833_AV_allDVHs_withLegend.png
+ used on input line 518.
+(pdftex.def)             Requested size: 282.24254pt x 201.0899pt.
+
+<./teile/results_porcine/L979_AV_allDVHs_withLegend.png, id=695, 1008.01593pt x
+ 718.18312pt>
+File: ./teile/results_porcine/L979_AV_allDVHs_withLegend.png Graphic file (type
+ png)
+ <use ./teile/results_porcine/L979_AV_allDVHs_withLegend.png>
+Package pdftex.def Info: ./teile/results_porcine/L979_AV_allDVHs_withLegend.png
+ used on input line 521.
+(pdftex.def)             Requested size: 282.24254pt x 201.0899pt.
+
+[128 <./teile/results_porcine/L833_AV_allDVHs_withLegend.png> <./teile/results_
+porcine/L979_AV_allDVHs_withLegend.png>]
+<./teile/results_porcine/Mayo_Pig_L833_contrast_STATIC_withLegend.png, id=701, 
+422.32782pt x 355.3275pt>
+File: ./teile/results_porcine/Mayo_Pig_L833_contrast_STATIC_withLegend.png Grap
+hic file (type png)
+
+<use ./teile/results_porcine/Mayo_Pig_L833_contrast_STATIC_withLegend.png>
+Package pdftex.def Info: ./teile/results_porcine/Mayo_Pig_L833_contrast_STATIC_
+withLegend.png used on input line 542.
+(pdftex.def)             Requested size: 236.50195pt x 198.98203pt.
+
+<./teile/results_porcine/Mayo_Pig_L833_contrast_INTERPLAY_sin05s90_withLegend.p
+ng, id=702, 423.08063pt x 357.58594pt>
+File: ./teile/results_porcine/Mayo_Pig_L833_contrast_INTERPLAY_sin05s90_withLeg
+end.png Graphic file (type png)
+
+<use ./teile/results_porcine/Mayo_Pig_L833_contrast_INTERPLAY_sin05s90_withLege
+nd.png>
+Package pdftex.def Info: ./teile/results_porcine/Mayo_Pig_L833_contrast_INTERPL
+AY_sin05s90_withLegend.png used on input line 545.
+(pdftex.def)             Requested size: 236.92352pt x 200.24675pt.
+
+<./teile/results_porcine/Mayo_Pig_L833_contrast_RESCANNING_15x_sin05s90_withLeg
+end.png, id=703, 423.08063pt x 357.58594pt>
+File: ./teile/results_porcine/Mayo_Pig_L833_contrast_RESCANNING_15x_sin05s90_wi
+thLegend.png Graphic file (type png)
+
+<use ./teile/results_porcine/Mayo_Pig_L833_contrast_RESCANNING_15x_sin05s90_wit
+hLegend.png>
+Package pdftex.def Info: ./teile/results_porcine/Mayo_Pig_L833_contrast_RESCANN
+ING_15x_sin05s90_withLegend.png used on input line 548.
+(pdftex.def)             Requested size: 236.92352pt x 200.24675pt.
+ [129 <./teile/results_porcine/Mayo_Pig_L833_contrast_STATIC_withLegend.png> <.
+/teile/results_porcine/Mayo_Pig_L833_contrast_INTERPLAY_sin05s90_withLegend.png
+> <./teile/results_porcine/Mayo_Pig_L833_contrast_RESCANNING_15x_sin05s90_withL
+egend.png>]
+<./teile/results_porcine/MAYO_CTV_AV_D5D95.png, id=709, 1344.02126pt x 961.5925
+pt>
+File: ./teile/results_porcine/MAYO_CTV_AV_D5D95.png Graphic file (type png)
+ <use ./teile/results_porcine/MAYO_CTV_AV_D5D95.png>
+Package pdftex.def Info: ./teile/results_porcine/MAYO_CTV_AV_D5D95.png used on 
+input line 563.
+(pdftex.def)             Requested size: 241.91339pt x 173.07918pt.
+
+<./teile/results_porcine/MAYO_CTV_AV_V95.png, id=710, 1344.02126pt x 950.55125p
+t>
+File: ./teile/results_porcine/MAYO_CTV_AV_V95.png Graphic file (type png)
+ <use ./teile/results_porcine/MAYO_CTV_AV_V95.png>
+Package pdftex.def Info: ./teile/results_porcine/MAYO_CTV_AV_V95.png used on in
+put line 566.
+(pdftex.def)             Requested size: 241.91339pt x 171.09184pt.
+
+<./teile/results_porcine/MAYO_CTV_AV_V107.png, id=711, 1344.02126pt x 976.64874
+pt>
+File: ./teile/results_porcine/MAYO_CTV_AV_V107.png Graphic file (type png)
+ <use ./teile/results_porcine/MAYO_CTV_AV_V107.png>
+Package pdftex.def Info: ./teile/results_porcine/MAYO_CTV_AV_V107.png used on i
+nput line 569.
+(pdftex.def)             Requested size: 241.91339pt x 175.78918pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [130 <./teile/results_porcine/MAYO_CTV_AV_D5D95.png> <./teile/results_porcine/
+MAYO_CTV_AV_V95.png> <./teile/results_porcine/MAYO_CTV_AV_V107.png>]
+<./teile/results_porcine/D5D95_Korr_MMT.png, id=718, 398.99063pt x 307.90031pt>
+File: ./teile/results_porcine/D5D95_Korr_MMT.png Graphic file (type png)
+<use ./teile/results_porcine/D5D95_Korr_MMT.png>
+Package pdftex.def Info: ./teile/results_porcine/D5D95_Korr_MMT.png used on inp
+ut line 583.
+(pdftex.def)             Requested size: 139.6488pt x 107.76671pt.
+
+<./teile/results_porcine/V95_Korr_MMT_2.png, id=719, 398.99063pt x 304.88907pt>
+File: ./teile/results_porcine/V95_Korr_MMT_2.png Graphic file (type png)
+<use ./teile/results_porcine/V95_Korr_MMT_2.png>
+Package pdftex.def Info: ./teile/results_porcine/V95_Korr_MMT_2.png used on inp
+ut line 586.
+(pdftex.def)             Requested size: 139.6488pt x 106.71277pt.
+
+<./teile/results_porcine/V107_Korr_MMT_2.png, id=720, 393.72093pt x 285.31593pt
+>
+File: ./teile/results_porcine/V107_Korr_MMT_2.png Graphic file (type png)
+ <use ./teile/results_porcine/V107_Korr_MMT_2.png>
+Package pdftex.def Info: ./teile/results_porcine/V107_Korr_MMT_2.png used on in
+put line 589.
+(pdftex.def)             Requested size: 147.64499pt x 106.99321pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 598--615
+
+ []
+
+[131 <./teile/results_porcine/D5D95_Korr_MMT.png> <./teile/results_porcine/V95_
+Korr_MMT_2.png> <./teile/results_porcine/V107_Korr_MMT_2.png>]
+<./teile/results_porcine/Rescan15_irrTime.png, id=727, 1344.02126pt x 952.55875
+pt>
+File: ./teile/results_porcine/Rescan15_irrTime.png Graphic file (type png)
+ <use ./teile/results_porcine/Rescan15_irrTime.png>
+Package pdftex.def Info: ./teile/results_porcine/Rescan15_irrTime.png used on i
+nput line 635.
+(pdftex.def)             Requested size: 268.79948pt x 190.50838pt.
+ [132 <./teile/results_porcine/Rescan15_irrTime.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 661--687
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 661--687
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 690--717
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [133]
+[134]
+Underfull \hbox (badness 10000) in paragraph at lines 721--749
+
+ []
+
+[135]
+Underfull \hbox (badness 10000) in paragraph at lines 754--777
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--777
+
+ []
+
+[136]) [137]
+\openout2 = `teile/discussion/discussion_forMain.aux'.
+
+ (./teile/discussion/discussion_forMain.tex [138
+
+
+
+
+]
+Chapter 5.
+\openout4 = `main.mtc'.
+
+\openout4 = `main.mtc'.
+
+(./main.mtc6
+Overfull \hbox (2.12294pt too wide) detected at line 1
+ []\T1/5ch/b/n/11 140
+ []
+
+
+Overfull \hbox (1.29796pt too wide) detected at line 2
+ []\T1/5ch/m/n/11 140
+ []
+
+
+Overfull \hbox (1.29796pt too wide) detected at line 3
+ []\T1/5ch/m/n/11 141
+ []
+
+
+Overfull \hbox (1.29796pt too wide) detected at line 4
+ []\T1/5ch/m/n/11 143
+ []
+
+
+Overfull \hbox (2.12294pt too wide) detected at line 7
+ []\T1/5ch/b/n/11 150
+ []
+
+
+Overfull \hbox (1.29796pt too wide) detected at line 8
+ []\T1/5ch/m/n/11 150
+ []
+
+
+Overfull \hbox (1.29796pt too wide) detected at line 11
+ []\T1/5ch/m/n/11 152
+ []
+
+
+Overfull \hbox (1.29796pt too wide) detected at line 12
+ []\T1/5ch/m/n/11 152
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 9--23
+
+ []
+
+[139]
+Underfull \hbox (badness 10000) in paragraph at lines 28--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--72
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--72
+
+ []
+
+[140]
+Underfull \hbox (badness 10000) in paragraph at lines 76--126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--126
+
+ []
+
+[141]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [142]
+[143] <./teile/discussion/Pat05_Amanda.png, id=768, 615.29875pt x 450.68375pt>
+File: ./teile/discussion/Pat05_Amanda.png Graphic file (type png)
+
+<use ./teile/discussion/Pat05_Amanda.png>
+Package pdftex.def Info: ./teile/discussion/Pat05_Amanda.png used on input line
+ 157.
+(pdftex.def)             Requested size: 246.11513pt x 180.2703pt.
+
+<./teile/discussion/Pat05_carbon.png, id=769, 615.29875pt x 450.68375pt>
+File: ./teile/discussion/Pat05_carbon.png Graphic file (type png)
+
+<use ./teile/discussion/Pat05_carbon.png>
+Package pdftex.def Info: ./teile/discussion/Pat05_carbon.png used on input line
+ 159.
+(pdftex.def)             Requested size: 246.11513pt x 180.2703pt.
+
+<./teile/discussion/Pat08_Amanda.png, id=770, 615.29875pt x 450.68375pt>
+File: ./teile/discussion/Pat08_Amanda.png Graphic file (type png)
+
+<use ./teile/discussion/Pat08_Amanda.png>
+Package pdftex.def Info: ./teile/discussion/Pat08_Amanda.png used on input line
+ 161.
+(pdftex.def)             Requested size: 246.11513pt x 180.2703pt.
+
+<./teile/discussion/Pat08_carbon.png, id=771, 615.29875pt x 450.68375pt>
+File: ./teile/discussion/Pat08_carbon.png Graphic file (type png)
+
+<use ./teile/discussion/Pat08_carbon.png>
+Package pdftex.def Info: ./teile/discussion/Pat08_carbon.png used on input line
+ 163.
+(pdftex.def)             Requested size: 246.11513pt x 180.2703pt.
+
+Overfull \hbox (6.847pt too wide) in paragraph at lines 157--166
+[][] []
+ []
+
+
+Overfull \hbox (3.511pt too wide) in paragraph at lines 157--166
+[] [] 
+ []
+
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 8.25606pt on input line 181.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 5.85603pt on input line 181.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 4.99202pt on input line 181.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 8.25606pt on input line 181.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 5.85603pt on input line 181.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 4.99202pt on input line 181.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 8.25606pt on input line 181.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 5.85603pt on input line 181.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 4.99202pt on input line 181.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 8.25606pt on input line 181.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 5.85603pt on input line 181.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 4.99202pt on input line 181.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 8.25606pt on input line 181.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 5.85603pt on input line 181.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 4.99202pt on input line 181.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 8.25606pt on input line 181.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 5.85603pt on input line 181.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 4.99202pt on input line 181.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 8.25606pt on input line 181.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 5.85603pt on input line 181.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 4.99202pt on input line 181.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 7.91199pt on input line 181.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 5.61198pt on input line 181.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 4.78398pt on input line 181.
+
+Overfull \hbox (16.27733pt too wide) in paragraph at lines 181--197
+ [][] 
+ []
+
+[144 <./teile/discussion/Pat05_Amanda.png> <./teile/discussion/Pat05_carbon.png
+> <./teile/discussion/Pat08_Amanda.png> <./teile/discussion/Pat08_carbon.png>]
+<./teile/discussion/Pat05_DVH_Amanda_withLegend.png, id=779, 491.58656pt x 299.
+61937pt>
+File: ./teile/discussion/Pat05_DVH_Amanda_withLegend.png Graphic file (type png
+)
+ <use ./teile/discussion/Pat05_DVH_Amanda_withLegend.png>
+Package pdftex.def Info: ./teile/discussion/Pat05_DVH_Amanda_withLegend.png use
+d on input line 207.
+(pdftex.def)             Requested size: 226.13255pt x 137.82658pt.
+
+<./teile/discussion/Pat05_DVH_carbon_withLegend.png, id=780, 491.58656pt x 299.
+61937pt>
+File: ./teile/discussion/Pat05_DVH_carbon_withLegend.png Graphic file (type png
+)
+ <use ./teile/discussion/Pat05_DVH_carbon_withLegend.png>
+Package pdftex.def Info: ./teile/discussion/Pat05_DVH_carbon_withLegend.png use
+d on input line 210.
+(pdftex.def)             Requested size: 226.13255pt x 137.82658pt.
+
+<./teile/discussion/Pat08_DVH_Amanda_forLegend.png, id=781, 491.58656pt x 299.6
+1937pt>
+File: ./teile/discussion/Pat08_DVH_Amanda_forLegend.png Graphic file (type png)
+
+ <use ./teile/discussion/Pat08_DVH_Amanda_forLegend.png>
+Package pdftex.def Info: ./teile/discussion/Pat08_DVH_Amanda_forLegend.png used
+ on input line 213.
+(pdftex.def)             Requested size: 226.13255pt x 137.82658pt.
+
+<./teile/discussion/Pat08_DVH_carbon_withLegend.png, id=782, 491.58656pt x 299.
+61937pt>
+File: ./teile/discussion/Pat08_DVH_carbon_withLegend.png Graphic file (type png
+)
+ <use ./teile/discussion/Pat08_DVH_carbon_withLegend.png>
+Package pdftex.def Info: ./teile/discussion/Pat08_DVH_carbon_withLegend.png use
+d on input line 216.
+(pdftex.def)             Requested size: 226.13255pt x 137.82658pt.
+ [145 <./teile/discussion/Pat05_DVH_Amanda_withLegend.png> <./teile/discussion/
+Pat05_DVH_carbon_withLegend.png> <./teile/discussion/Pat08_DVH_Amanda_forLegend
+.png> <./teile/discussion/Pat08_DVH_carbon_withLegend.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 254--276
+
+ []
+
+[146]
+Underfull \hbox (badness 10000) in paragraph at lines 281--306
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--306
+
+ []
+
+[147]
+<./teile/discussion/L976_IMRT_Limin.png, id=792, 615.29875pt x 450.68375pt>
+File: ./teile/discussion/L976_IMRT_Limin.png Graphic file (type png)
+
+<use ./teile/discussion/L976_IMRT_Limin.png>
+Package pdftex.def Info: ./teile/discussion/L976_IMRT_Limin.png used on input l
+ine 313.
+(pdftex.def)             Requested size: 233.81595pt x 171.2616pt.
+
+<./teile/discussion/L976_carbon.png, id=793, 615.29875pt x 450.68375pt>
+File: ./teile/discussion/L976_carbon.png Graphic file (type png)
+
+<use ./teile/discussion/L976_carbon.png>
+Package pdftex.def Info: ./teile/discussion/L976_carbon.png used on input line 
+316.
+(pdftex.def)             Requested size: 233.81595pt x 171.2616pt.
+ [148 <./teile/discussion/L976_IMRT_Limin.png> <./teile/discussion/L976_carbon.
+png>]
+<./teile/discussion/L829_DVH.png, id=799, 453.94594pt x 280.79906pt>
+File: ./teile/discussion/L829_DVH.png Graphic file (type png)
+
+<use ./teile/discussion/L829_DVH.png>
+Package pdftex.def Info: ./teile/discussion/L829_DVH.png used on input line 365
+.
+(pdftex.def)             Requested size: 236.05324pt x 146.01634pt.
+
+<./teile/discussion/L833_DVH_2.png, id=800, 453.94594pt x 280.79906pt>
+File: ./teile/discussion/L833_DVH_2.png Graphic file (type png)
+
+<use ./teile/discussion/L833_DVH_2.png>
+Package pdftex.def Info: ./teile/discussion/L833_DVH_2.png used on input line 3
+68.
+(pdftex.def)             Requested size: 236.05324pt x 146.01634pt.
+
+<./teile/discussion/L976_DVH_2.png, id=801, 453.94594pt x 280.79906pt>
+File: ./teile/discussion/L976_DVH_2.png Graphic file (type png)
+
+<use ./teile/discussion/L976_DVH_2.png>
+Package pdftex.def Info: ./teile/discussion/L976_DVH_2.png used on input line 3
+71.
+(pdftex.def)             Requested size: 236.05324pt x 146.01634pt.
+
+<./teile/discussion/L979_DVH_2.png, id=802, 453.94594pt x 280.79906pt>
+File: ./teile/discussion/L979_DVH_2.png Graphic file (type png)
+
+<use ./teile/discussion/L979_DVH_2.png>
+Package pdftex.def Info: ./teile/discussion/L979_DVH_2.png used on input line 3
+74.
+(pdftex.def)             Requested size: 236.05324pt x 146.01634pt.
+ [149 <./teile/discussion/L829_DVH.png> <./teile/discussion/L833_DVH_2.png> <./
+teile/discussion/L976_DVH_2.png> <./teile/discussion/L979_DVH_2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 425--454
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 425--454
+
+ []
+
+[150] [151] [152] [153]) [154]
+\openout2 = `teile/conclusion_outlook/conclusion_outlook_forMain.aux'.
+
+
+(./teile/conclusion_outlook/conclusion_outlook_forMain.tex
+Chapter 6.
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--70
+
+ []
+
+[155
+
+
+
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [156])
+[157]
+\openout2 = `teile/results_mdacc/results_mdacc_forMain_appendix.aux'.
+
+ (./teile/results_mdacc/results_mdacc_forMain_appendix.tex [158
+
+
+
+
+]
+Appendix A.
+[159]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [160]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [161]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [162]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [163]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [164]
+[165] [166] [167] [168] [169] [170] [171] [172] [173] [174] [175] [176]
+[177] [178] [179] [180] [181] [182] [183]
+Overfull \vbox (15.82724pt too high) has occurred while \output is active []
+
+
+[184]
+Overfull \vbox (15.82724pt too high) has occurred while \output is active []
+
+
+[185]
+Overfull \vbox (15.82724pt too high) has occurred while \output is active []
+
+
+[186])
+Overfull \vbox (15.82724pt too high) has occurred while \output is active []
+
+
+[187]
+\openout2 = `teile/results_human/results_human_forMain_appendix.aux'.
+
+ (./teile/results_human/results_human_forMain_appendix.tex [188
+
+
+
+
+]
+Appendix B.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 6.91203pt on input line 19.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 4.80003pt on input line 19.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 4.12802pt on input line 19.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 6.91203pt on input line 19.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 4.80003pt on input line 19.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 4.12802pt on input line 19.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 6.91203pt on input line 19.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 4.80003pt on input line 19.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 4.12802pt on input line 19.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 6.91203pt on input line 19.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 4.80003pt on input line 19.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 4.12802pt on input line 19.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 6.91203pt on input line 19.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 4.80003pt on input line 19.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 4.12802pt on input line 19.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 6.91203pt on input line 19.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 4.80003pt on input line 19.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 4.12802pt on input line 19.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 6.91203pt on input line 19.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 4.80003pt on input line 19.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 4.12802pt on input line 19.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 6.62398pt on input line 19.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 4.59999pt on input line 19.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 3.956pt on input line 19.
+[189] [190] [191] [192]
+Overfull \vbox (37.92117pt too high) has occurred while \output is active []
+
+
+[193]
+Overfull \vbox (37.92117pt too high) has occurred while \output is active []
+
+
+[194]
+Overfull \vbox (37.92117pt too high) has occurred while \output is active []
+
+
+[195]
+Overfull \vbox (37.92117pt too high) has occurred while \output is active []
+
+
+[196]
+Overfull \vbox (37.92117pt too high) has occurred while \output is active []
+
+
+[197]
+Overfull \vbox (37.92117pt too high) has occurred while \output is active []
+
+
+[198]
+Overfull \vbox (37.92117pt too high) has occurred while \output is active []
+
+
+[199]
+Overfull \vbox (37.92117pt too high) has occurred while \output is active []
+
+
+[200]
+Overfull \vbox (37.92117pt too high) has occurred while \output is active []
+
+
+[201])
+Overfull \vbox (37.92117pt too high) has occurred while \output is active []
+
+
+[202]
+\openout2 = `teile/results_porcine/results_porcine_forMain_appendix.aux'.
+
+ (./teile/results_porcine/results_porcine_forMain_appendix.tex
+Appendix C.
+[203
+
+
+
+
+] [204] [205] [206] [207] [208] [209] [210]) [211] [212
+
+
+
+] [213] [214]
+[215] [216]
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.133 ... McGale P, Bennet AM, Blom-Goldman U, Brø
+                                                  nnum D, Correa C, Cutter D...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+[217] [218] [219] [220] [221]
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.203 ...H, Vasamreddy CR, Berger R, Bluemke D, Lü
+                                                  deritz B, Halperin H, Calk...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+[222] [223] [224]
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.243 ...m[Ped04]{Ped04}{Pedroni E, Bearpark R, Bö
+                                                  hringer T, Coray A, Duppic...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+[225] [226] [227] [228] [229] [230] [231]
+\openout2 = `teile/lebenslauf/lebenslauf_forMain.aux'.
+
+
+(./teile/lebenslauf/lebenslauf_forMain.tex [232
+
+
+
+]
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 5--11
+[] 
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 13--28
+[] 
+ []
+
+)
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 30--310
+[] 
+ []
+
+[233]
+\openout2 = `teile/danksagung/danksagung.aux'.
+
+ (./teile/danksagung/danksagung.tex [234
+
+
+
+
+])
+Underfull \hbox (badness 10000) in paragraph at lines 3--312
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--312
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--312
+
+ []
+
+[235] [236
+
+
+
+]
+LaTeX Font Info:    Try loading font information for T1+5sf on input line 314.
+
+(/u/aconstan/texmf/tex/latex/tex-tudfonts/softmake/stafford/t15sf.fd
+File: t15sf.fd 2008/06/23 Fontinst v1.927 font definitions for T1/5sf.
+) [237
+
+
+]
+Package minitoc Info: I0009
+(minitoc)             Listing minitoc auxiliary files. 
+(minitoc)             Creating the main.maf file.
+\openout4 = `main.maf'.
+
+Package minitoc(hints) Info: I0053
+(minitoc(hints))             You have loaded the float package; 
+(minitoc(hints))             please be aware that the minitoc package 
+(minitoc(hints))             facilities can not be used for new types 
+(minitoc(hints))             of floats defined by the float package.
+
+
+Package minitoc(hints) Warning: W0024
+(minitoc(hints))                Some hints have been written 
+(minitoc(hints))                in the main.log file.
+
+[238
+
+] (./main.aux (./teile/abstract/abstract.aux)
+(./teile/publications/publications.aux) (./teile/abbrevations/abbrevetions.aux)
+(./teile/motivation/motivation.aux)
+(./teile/introduction/introduction_forMain.aux)
+(./teile/results_mdacc/results_mdacc_forMain.aux)
+(./teile/results_human/results_human_forMain.aux)
+(./teile/results_porcine/results_porcine_forMain.aux)
+(./teile/discussion/discussion_forMain.aux)
+(./teile/conclusion_outlook/conclusion_outlook_forMain.aux)
+(./teile/results_mdacc/results_mdacc_forMain_appendix.aux)
+(./teile/results_human/results_human_forMain_appendix.aux)
+(./teile/results_porcine/results_porcine_forMain_appendix.aux)
+(./teile/lebenslauf/lebenslauf_forMain.aux) (./teile/danksagung/danksagung.aux)
+)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 13599 strings out of 493629
+ 238401 string characters out of 3132894
+ 391603 words of memory out of 3000000
+ 16003 multiletter control sequences out of 15000+200000
+ 214603 words of font info for 218 fonts, out of 3000000 for 9000
+ 831 hyphenation exceptions out of 8191
+ 65i,13n,77p,879b,492s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/fonts/enc/dvips/
+base/8r.enc}{/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/fonts/
+enc/dvips/ly1/texnansi.enc}</u/aconstan/texmf/fonts/type1/softmake/charter/5chb
+8a.pfb></u/aconstan/texmf/fonts/type1/softmake/charter/5chr8a.pfb></u/aconstan/
+texmf/fonts/type1/softmake/charter/5chri8a.pfb></u/aconstan/texmf/fonts/type1/s
+oftmake/frontpage/5fpm8a.pfb></u/aconstan/texmf/fonts/type1/softmake/frontpage/
+5fpr8a.pfb></u/aconstan/texmf/fonts/type1/softmake/stafford/5sfr8a.pfb></AIXd/b
+iomotion_user/drichter/share/texlive/2011/texmf-dist/fonts/type1/bitstrea/chart
+er/bchr8a.pfb></AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/font
+s/type1/bitstrea/charter/bchri8a.pfb></AIXd/biomotion_user/drichter/share/texli
+ve/2011/texmf-dist/fonts/type1/mathdesign/mdbch/md-chr7t.pfb></AIXd/biomotion_u
+ser/drichter/share/texlive/2011/texmf-dist/fonts/type1/mathdesign/mdbch/md-chr7
+v.pfb></AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/fonts/type1/
+mathdesign/mdbch/md-chr7y.pfb></AIXd/biomotion_user/drichter/share/texlive/2011
+/texmf-dist/fonts/type1/mathdesign/mdbch/md-chri7m.pfb></AIXd/biomotion_user/dr
+ichter/share/texlive/2011/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
+Output written on main.pdf (240 pages, 17715897 bytes).
+PDF statistics:
+ 1144 PDF objects out of 1200 (max. 8388607)
+ 585 compressed objects within 6 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 889 words of extra memory for PDF output out of 10000 (max. 10000000)
+

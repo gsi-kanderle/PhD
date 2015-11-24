@@ -1,0 +1,1454 @@
+
+% \chapter{Treatment planning study for irradiation of pulmonary veins under influence of heartbeat motion in human data}
+\chapter{Irradiation of pulmonary veins under influence of heartbeat in human data}
+\label{chapter:human}
+\minitoc
+
+The PVs move on one hand due to the heartbeat and on the other hand due to respiration of the patient. 
+Both motion types are independent from each other and can hence be studied individually. While the influence of respiration is analyzed in 
+chapter \ref{chapter:mdacc}, the effect of heartbeat motion will be discussed in this chapter. 
+CTs of five AF patients, gated to the complete cardiac cycle in end-expiration, were acquired at Mayo Clinic (Rochester, Minnesota, USA). 
+The motion direction as well as motion amplitude of LPV and RPV were studied for all cases. 
+Motion influences on accuracy and homogeneity of the dose delivery in the PVs were studied using these data. 
+The resulting interplay pattern for all patients as well as 
+rescanning as possible motion mitigation technique have been analyzed and the results will be presented in this chapter. 
+
+\section{Material and methods}
+The input data as well as the treatment planning parameters will be stated before all conducted studies will be specified. 
+The analysis procedure will be explained.  
+
+
+\subsection{Treatment planning input data}
+As was already stated in chapter \ref{chapter:mdacc} 4DCT data sets, segmentation of the target volumes and OARs and deformable image 
+registrations in-between the different motion phases are needed for the here presented treatment planning studies using the in-house software 
+TRiP4D \cite{Ric13}.\newline
+\newline
+In order to study the displacement of the PV due to heartbeat ECG gated 4DCTs in end exhale (breath hold) were studied. 
+Five AF patient data sets (four male patients and one female) were recorded and anonymized at Mayo Clinic (Rochester, Minnesota, USA). 
+The CT scans were acquired on a Sensation 64 CT scanner (Siemens). Each of the 4DCT data set consisted of twenty temporal equally distributed 
+cardiac motion phases, the reference phase zero started at the R-peak of the QRS-complex (see chapter \ref{chapter:intro}, section \ref{HCS}). 
+In order to distinguish structures within the heart the CT scans were contrast enhanced. The radiopaque material was administered intravenously (150cc Omnipaque 350 at 4cc/sec). 
+Segmentation of the target volumes (LPVs and RPVs) as well as the OAR (esophagus, trachea, aorta and cardiac structures) were carried out by a 
+collaborating cardiologist at Mayo Clinic on the reference 4DCT phase with Eclipse\texttrademark (Varian Medical Systems). The volumes of the 
+contours for the ablation sites for LPV and RPV are presented for each patient in table \ref{tab:volume:mayo}. 
+
+\begin{table}[htbp]
+  \centering
+  \caption{Target volume for LPVs and RPVs for all investigated patients.}
+  \begin{tabular}{|c|c|c|}
+    \hline\hline
+    patient no\rule{0pt}{2.6ex}\rule[-1.2ex]{0pt}{0pt} & LPV [cm$^{3}$] & RPV [cm$^{3}$]\\
+    \hline
+    1 & 2.03 & 2.39 \\
+    2 & 2.62 & 5.16 \\
+    3 & 1.45 & 4.16 \\
+    4 & 1.66 & 2.07 \\
+    5 & 2.06 & 1.90 \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:volume:mayo}
+\end{table}
+
+Non-rigid image registration of the nineteen motion phase on the reference phase have been performed with Plastimatch \cite{Sharp07, Shack10}. 
+Here the first step of the B-spline registration was carried out with 50 maximal iterations and an isotropic 
+spacing of 20mm was chosen. The second step was carried out with 100 maximal iterations and the grid spacing was set to 3mm. 
+The regularization was chosen to be $\lambda$=0.0001. The same visualization techniques as stated in chapter \ref{chapter:mdacc} were used for 
+a quality assurance of the registration (false color images \cite{Bro07}, checker board images \cite{Bro07} and a qualitative check of the 
+vector field regularization). The stated tests were carried out on the one hand between motion phase 3 (the motion phase of the 
+maximal ventricular displacement) and the reference phase (motion phase zero) and on the other hand between motion 
+phase 18 (maximal displacement of the atria) and the reference phase.  
+
+\vspace*{-0.5cm}
+
+\subsection{Treatment planning parameters}
+\label{human:tpp}
+Also here 3D (static) and 4D treatment plans were generated. For informations on the dose optimization process, the ITV generation 
+with the implementation of the studied safety margins (3mm, 5mm and 7mm), the used raster spacing and the dose 
+algorithm the reader should be referred to \ref{mdacc:tpp}.\newline
+\newline
+All treatment plans were calculated as intensity modulated particle therapy (IMPT). Part of the study included the 
+esophagus as critical structure in the optimization process (IMPT(OAR)). Thereby two different dose restrictions to this OAR were used. 
+In one part of the calculations it was stated that the esophagus should not receive more than 70\% of the physical dose. 
+The strength of this restriction was determined by a weightfactor, which was set to 75\%. In a second iteration the restrictions were stronger and 
+the maximal physical dose to this structure was set to 30\% with a weighting factor of 200\%. 
+Also here a physical dose of 25Gy was applied in one fraction in all simulations. Since potential biological 
+effects were not included in the studies the applied dose is linear and the results, e.g. dose depositions to critical structures, can be 
+scaled to other dose values \footnote{only limited by the minimal particle fluence per beam spot}.\newline
+\newline
+The generation of treatment plans is furthermore also dependent on the theoretically possible 
+beam application. Spill length, shape and particle intensity are thus important factors. For the here presented simulations GSI accelerator 
+parameters have been used. Thereby a spill length of 2.2s is assumed. The pause in between spills is either 2.2s, when no energy change is 
+required afterwards, or 3.2s when an energy change is needed. The spill shape is approximated by a Gaussian function. The particle intensities 
+feasible at GSI vary between 2x10$^{6}$ and 2x10$^{8}$ particles per spill. Inbetween these two extreme intensity levels, 
+fifteen different intensity levels can be used. In the resulting treatment plan, the intensity steps are automatically chosen \cite{Krae00, Ric13}. 
+The minimum particle number per beam spot was set to 5,000.\newline
+\newline
+As the reconstruction of the 4DCTs was based on the time scale a phase-based motion state detection was employed. 
+In order to consider possible divergence in the heartbeat motion pattern of patients, different periods (1s and 0.7s) as well as 
+different starting phases (0$^{\circ}$ and 90$^{\circ}$) were used. The motion periods were chosen according to the heartbeat rate of 
+60 to 80 beats per minute. 
+
+
+% \newpage
+
+\subsubsection{Field number and beam directions}
+
+The field number and directions were systematically investigated and are listed in table \ref{tab:fields}. 
+Four different field numbers 
+(one to four) were studied. While for one field the gantry angle was kept constant to 0$^{\circ}$ and only the couch angle was 
+changed, for higher field numbers different gantry angles were used. These angles are illustrated in figure \ref{gantrydirection}. 
+
+
+\begin{table}[H]
+  \centering
+     \small
+  \caption{Studied field number and beam channel directions}
+  \begin{tabular}{|c|c|c|}
+    \hline\hline
+    Field number & Couch angle [$^{\circ}$] & Gantry angle [$^{\circ}$]\\
+    \hline 
+1 field & -90 & 0 \\
+& -45 & 0 \\
+& -135 & 0 \\
+\hline
+2 fields & 90 & -60/120 \\
+& 90 & -60/135 \\
+& 90 & -60/0 \\
+& 90 & -45/135 \\
+& 90 & -45/150 \\
+& 90 & -45/0 \\
+\hline
+3 fields & 90 & -60/120/150 \\
+& 90 & -60/120/0 \\
+& 90 & -45/135/150 \\
+& 90 & -45/135/0 \\
+\hline
+4 fields & 90 & -60/120/-45/135 \\
+& 90 & -60/120/0/180 \\
+& 90 & -45/135/0/180 \\
+& 90 & -160/90/-60/145 \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:fields}
+\end{table}
+
+\vspace*{-0.6cm}
+
+\begin{figure}[H]
+ \begin{center}
+  \includegraphics[scale=0.4]{./teile/results_human/GantryDirection_BEV.png}
+  \caption{Entry channels for different gantry directions for a couch angle of 90$^{\circ}$. The beam's eye view (BEV) is marked.}
+  \label{gantrydirection}
+ \end{center}
+\end{figure}
+
+
+\newpage
+
+
+\subsection{Treatment planning studies}
+
+Besides representing a reference value for the 4D cases, 3D treatment plans were also generated here 
+in order to find the best suited combinations of beam entry channels as well as to study possible safety margin limitations. In order to find 
+a suitable field number and beam direction for the 4D treatment planning 
+studies, static simulations on the original CTV volume (LPV together with RPV) with the above mentioned treatment planning parameters were 
+carried out for all five patients. 17 different beam channel combinations were studied (see table \ref{tab:fields}). As a criteria for the 
+best possible solution the dose to OAR was assessed. Furthermore, different ITV margins (original and increased with 3mm, 5mm and 7mm margin) 
+were studied in 3D treatment plans for all patients. The resulting dose depositions were compared to dose deliveries with the same margins 
+where the esophagus was included in the optimization process. Possible limitations were again analyzed according to the dose deposition in the OARs. \newline
+\newline
+In order to prepare for the 4D simulations, the motion of the PVs due to heartbeat was assessed. 
+4D plans were distinguished between an underlying motion without any compensation, resulting in interplay patterns \cite{Phi92, Ber08}, 
+and with the application of rescanning \cite{Phi92} as motion mitigation technique. For rescanning different rescan numbers 
+(5, 10, 15 and 20) were compared. Static, interplay as well as rescanning treatment plans for all patients were carried out with one 
+beam channel combination (couch angle of 90$^{\circ}$ and gantry angles of -45$^{\circ}$, 135$^{\circ}$ and 0$^{\circ}$), all four safety 
+margins, the stated treatment planning parameters and the four stated motion trajectories. 
+
+
+\subsection{Analysis}
+
+Both the dose deposition in OAR as well as dose homogeneity in the target volume were studied. For the OAR dose-volume restrictions in 
+esophagus, trachea, aorta and the whole heart were compared to values from RTOG study protocols (see next paragraph). 
+As further OARs cardiac substructures (ventricles and coronary arteries) were studied. 
+For comparison of the resulting dose coverage in the target region dose-volume-histograms (DVHs) were studied. Furthermore 
+motion-volume-histograms (MVHs) \cite{Ric13} were generated displaying the relative displacement of every voxel of the investigated volume to 
+the reference phase in all three motion directions. With these values the resulting motion of the PVs due to heartbeat could be assessed. 
+
+\newpage
+
+\subsubsection{Dose-volume constraints for organs at risk}
+\label{human:dose-volumeOar}
+The dose deposition in the OAR is an important limitation and selection criteria when studying the field number and beam channel 
+direction as well as the possible safety margin limitations. Since a single fraction of 25Gy or higher is assumed to be used in this 
+non-invasive treatment modality, dose tolerance limits used in stereotactic body radiotherapy (SBRT) are highly related. An 
+extensive collection of dose-volume-limits for SBRT are presented in Grimm et al. \cite{Gri11} and the AAPM Task Group Report \cite{AAPM10}.  
+Both are literature reviews of limits utilized and reported in existing publications. For the OAR in the here presented 
+treatment planning study (esophagus, trachea, heart and aorta) the dose-volume-limits in both literature reviews were taken from the 
+Radiation Therapy Oncology Group (RTOG). The RTOG is a national clinical cooperative group of over 360 institutions across the United 
+States and Canada, which was funded by the National Cancer Institute (NCI) \cite{RTOG}. In their study protocols RTOG 0631 
+(a phase II/III trial of SBRT for localized spine metastasis) \cite{RTOG0631} and RTOG 0915 (a randomized phase II trial of SBRT for 
+medically inoperable patients with stage I peripheral non-small cell lunger cancer) \cite{RTOG0915} the following dose-volume-limits 
+were stated (see table \ref{tab:RTOG}). 
+
+\vspace*{-1cm}
+
+\begin{table}[H]
+  \centering
+  \footnotesize
+  \caption{Dose-volume limits for OAR.}
+  \begin{tabular}{|c|c|c|c|}
+    \hline\hline
+    OAR & Volume [cc] & Dose [Gy] & endpoint \\
+    \hline
+    Aorta / great vessels & 10 & 31 & Aneurysm \\
+    Esophagus & 5 & 11.9 &  Stenosis / fistula \\
+    Heart & 15 & 16 & Pericarditis \\
+    Trachea & 4 & 10.5 & Stenosis / fistula \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:RTOG}
+\end{table}
+
+\vspace*{-0.3cm}
+
+Since the heart is not only a critical organ but also the target site in this treatment modality, further differentiation of 
+limits depending on the substructures of the heart are needed. Unfortunately, data on this topic is scarce. Literature on cardiac disease 
+resulting from radiation exposure mostly relies on cancer patient data treated with radiotherapy (in particular breast cancer and Hodgkin's 
+lymphoma) or atomic bomb survivors. Besides the stated dose-volume limitation, the mean dose and maximum point dose to the whole heart was 
+studied. Furthermore the maximal irradiated heart volume (V$_{>0}$) was examined. 
+Concerning substructures the left and right ventricle as well as the coronary arteries were analyzed for mean and maximum dose deposition and 
+maximal irradiated volume contribution. Since the values were not normally distributed, boxplots were generated, where the median (50th 
+percentile), the 25th and 75th percentile and the minimum and maximum values over all patient cases are displayed. 
+
+\subsubsection{Dose deposition in target volume and motion of PVs}
+
+The V95, V107 as well as D5-D95 of the CTVs were analyzed. 
+The stated values have been evaluated for all beam applications (static, interplay, rescanning). 
+Futhermore the median and percentile values of these parameters over all studied motion patterns and patient cases were 
+generated. The relation of dose analysis parameters to different margin sizes and rescanning number was analyzed by a one-way ANOVA and 
+the proportion of variance explained $r^{2}$ is reported with the corresponding p-value ($p$<0.0001). 
+
+
+\vspace*{-0.3cm}
+
+\section{Results}
+
+In the following the results of the beam direction and safety margin study, of PV motion assessment as well as of the treatment planning studies 
+will be discussed. As a criteria for an adequate field number and beam channel direction as well as safety margin limitation the dose to OAR 
+will be presented. The motion due to heartbeat is shown. For the treatment planning study different dose analysis parameters will be presented 
+and compared for different cases (static, interplay and rescanning). 
+
+\vspace*{-0.3cm}
+
+\subsection{Beam direction}
+\label{human:beamdirection}
+In figures \ref{beamdirection_boxplot} and \ref{beamdirection} the resulting dose to the pertinent OARs is shown for all studied beam 
+directions and patients. Figure \ref{beamdirection_boxplot} displays the results as a boxplot over all patient cases for a respective field 
+number (and hence different beam directions) while figure \ref{beamdirection} shows the individual results for each patient and beam direction. 
+The corresponding volumes result from the dose volume limits (see table \ref{tab:RTOG}, represented by a dashed line in the plots). 
+In all studied cases, the difference between different beam directions for a certain patient is rather small, resulting in no obvious 
+preferable beam direction for the five studied patients. For the four studied OAR it becomes furthermore obvious that while trachea and aorta 
+are well spared for almost all beam directions in all patients, esophagus and in particular the heart are much more 
+critical.\newline
+\newline
+In the esophagus the median dose over all patients is 7.8Gy (75th percentile: 9.0Gy) for one field, 11.0Gy (14.1Gy) for 
+two fields, 11.0Gy (13.9Gy) for three and 8.0Gy (11.9Gy) for four fields. The result is dependent on the underlying patient anatomy. 
+While the majority of the beam directions for patient 1, 4 and 5 remain under the respective dose-volume limit, many plans for patient 2 and 3 
+exceed the dose-volume constraints. For these patients dose depositions of 11.9Gy or less are achieved in only about 98\% and 65\% of 
+studied cases (patient 2 and 3, respectively). While a single field yields acceptable dose deposition in the esophagus, the beam channel 
+results in higher dose depositions in the heart and cardiac substructures like the coronary arteries (see 
+figure \ref{beamdirection_MeanMaxD_MaxV} and \ref{beamdirection_MeanMaxD_MaxV_boxplot}) and are thus 
+inapplicable. For patient 2 higher field numbers and thus more beam directions result in dose limit exceeding depositions. Due to this 
+result the esophagus was included in the optimization of the treatment delivery (IMPT(OAR)). This was studied in comparison 
+to a simple IMPT irradiation (see section \ref{safetymarginlimitation}).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% DOSE TO OAR
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\vspace*{2cm}
+
+\begin{figure}[H]
+\subfigure[Esophagus]{
+ \includegraphics[scale=0.18]{./teile/results_human/Whisker_ESO.png}
+ }
+ \subfigure[Trachea]{
+ \includegraphics[scale=0.18]{./teile/results_human/Whisker_TRACHEA.png}
+ }
+  \subfigure[Heart]{
+ \includegraphics[scale=0.18]{./teile/results_human/Whisker_HEARTwoOverlap.png}
+ }
+  \subfigure[Aorta]{
+ \includegraphics[scale=0.18]{./teile/results_human/Whisker_AORTA.png}
+ }
+\caption{Boxplots of dose-volume data for different field numbers (one to four fields) over all patients and over the 
+respective beam directions. The data is plotted for different OARs when irradiating the LPV and RPV as IMPT in the five patient data sets. 
+The dose-volume-limit for each critical organ is indicated with a dashed line in each plot, respectively.}
+\label{beamdirection_boxplot}
+\end{figure}
+
+\newpage
+
+% \vspace*{0.5cm}
+
+\begin{figure}[H]
+\subfigure[Esophagus]{
+ \includegraphics[scale=0.18]{./teile/results_human/Mayo_Human_BeamDirection_ESO.png}
+ }
+ \subfigure[Trachea]{
+ \includegraphics[scale=0.18]{./teile/results_human/Mayo_Human_BeamDirection_TRACHEA.png}
+ }
+  \subfigure[Heart]{
+ \includegraphics[scale=0.18]{./teile/results_human/Mayo_Human_BeamDirection_HEARTwoOverlap.png}
+ }
+  \subfigure[Aorta]{
+ \includegraphics[scale=0.18]{./teile/results_human/Mayo_Human_BeamDirection_AORTA.png}
+ }
+\caption{Dose-volume data of different OAR when irradiating the LPV and RPV as IMPT in the five patient data sets (patient 1: black, 2: 
+red, 3: blue, 4: green, 5: orange) with different field numbers (1 field, 2 fields, 3 fields, 4 fields) and different beam directions. 
+The dose-volume-limit for each critical organ is indicated with a dashed line in each plot.}
+\label{beamdirection}
+\end{figure}
+
+\newpage
+
+The dose volume limit for the heart is exceeded in all patients for all beam directions (see figure \ref{beamdirection_boxplot} and \ref{beamdirection}). 
+As the heart is not only an OAR in this treatment modality, but some of its substructures are also the target itself, a closer analysis of 
+the dose deposition in the heart is required. In the first row of figure \ref{beamdirection_MeanMaxD_MaxV_boxplot} and figure \ref{beamdirection_MeanMaxD_MaxV} 
+the mean and maximal dose deposition in the whole heart as well as the maximal irradiated volume are shown. The mean dose over all 
+patients and beam directions is found to have a median of 1.3Gy (75th percentile: 1.5Gy). The median over the maximum point dose is 26.6Gy (27.1Gy).
+Concerning the maximal irradiated volume it can be seen that except for one result less than 30\% of the heart is irradiated in all other cases. 
+In the case of couch position 90$^{\circ}$ and gantry angles of -160$^{\circ}$, -90$^{\circ}$, -60$^{\circ}$ and 145$^{\circ}$ these maximal 
+volume is drastically increased, and reaches up to 49.9\% for patient 2. Hence this beam channel case (beam channel case 17) will be 
+stated separately in the following analysis. The median of the maximal irradiated volume over all patients is 16.8\% (20.5\%), 
+excluding beam channel case 17, and 17.4\% (20.8\%) including this case.\newline
+\newline
+The results for the dose deposition in the cardiac substructures are presented in row two to five of figure \ref{beamdirection_MeanMaxD_MaxV_boxplot} and 
+figure \ref{beamdirection_MeanMaxD_MaxV}. For the ventricles (LV: second row, RV: third row), the mean dose to both LV and RV is negligible. 
+The maximal point dose on the other hand varies depending on beam direction and patient. Single beam directions yield a high maximal dose 
+deposition in the LV as in the case of a couch angle of -90$^{\circ}$ or -135$^{\circ}$ the beam traverses the LV. 
+Consequently for these beam directions the maximal dose to the RV is smaller. The overall maximal dose deposition has a median of 
+1.4Gy (75th percentile: 7.4Gy) for LV and 1.3Gy (5.0Gy) for RV. Besides some single beam directions no maximal point dose exceeds 11.2Gy and 10.1Gy 
+for LV and RV, respectively. Concerning the maximal irradiated volume of the ventricles, it can be stated that the results differ depending on 
+the studied patient. In case of the LV patient 2 has a higher irradiated volume compared to the other patients, while for this patient on the 
+contrary the RV is better spared than in other patients. Over all patients the LV is irradiated to a higher extend than the RV. For LV the maximal 
+irradiated volume over all beam directions and patients has a median of 1.2\% (6.0\%), when excluding the case of beam channel 17 and to 
+1.9\% (6.4\%) when including this case. For RV it is 0.2\% (7.6\%) excluding the beam channel case 17 and to 0.2\% (8.3\%) including it.
+For the coronary arteries the beam channel 17 also results in the highest irradiated volume. 
+Even though the coronary arteries are found on the surface of the whole heart and hence also on the ventricles, the irradiated volume of 
+these structures differ from the result of the ventricles. Here the RCA are irradiated to a higher extent than the LCA. 
+The median maximal value for the LCA is 15.7\% (28.0\%) including the stated beam channel case 17 and 15.2\% 
+(27.4\%) excluding it. For the RCA the median over the maximal value is much higher and found to be 27.9\% (42.4\%) including the beam channel 
+case 17 and to 24.8\% (42.1\%) excluding it. For the mean dose deposited in the LCA one and four beam directions result in an increased dose 
+deposition, while three fields yield in general a low mean dose for all studied beam directions and patients. The same is true for the maximum 
+point dose in the LCA. In the case of RCA, the results seem to be independent of field number and beam direction. Overall the median over the 
+mean dose is 0.4Gy (1.0Gy) for LCA and 0.6Gy (1.6Gy) for RCA. For the maximal point dose the median dose deposition over all beam directions 
+and patients is 6.8Gy (10.9Gy) for LCA. For the RCA it was found to be 5.4Gy (7.9Gy). \newline
+\newline
+While it was not expected to find one beam direction feasible for all five patients, it is striking that no beam position results in a clear 
+benefit for the OAR of the individual patients. This is due to the challenging position of the PV target site, which is in direct proximity 
+to the esophagus and due to the fact that the heart is not only an OAR in this treatment modality, but also the target site itself. 
+Nevertheless for the analyzed cardiac substructure, especially the radiosensitive LCA, it can be concluded that three beam channels seem to be 
+beneficial for all patients. Regarding the mean dose deposition in the LCA as well as the maximal irradiated heart volume, combined with the 
+requirement of a robust treatment and hence the benefit of large gantry angles in between different beam channels, a couch angle of 
+90$^{\circ}$ was chosen together with gantry angles of -45$^{\circ}$, 135$^{\circ}$ and 0$^{\circ}$. These beam channel directions were used 
+for a closer analysis of safety margin limitation as well as for the treatment planning studies for all patients. 
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% DOSE TO THE HEART
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[H]
+
+\begin{minipage}{0.31\textwidth}
+    \begin{overpic}
+    [width=\textwidth]{./teile/results_human/Whisker_HEARTwoOverlap_MeanDose.png}
+    \put(40,80){Heart}
+    \end{overpic} 
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Whisker_HEARTwoOverlap_MaxDose.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Whisker_HEARTwoOverlap_MaxVolume.png}
+\end{minipage}
+
+\hfill
+
+\begin{minipage}{0.31\textwidth}
+    \begin{overpic}
+    [width=\textwidth]{./teile/results_human/Whisker_LV_MeanDose.png}
+    \put(40,80){LV}
+    \end{overpic} 
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Whisker_LV_MaxDose.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Whisker_LV_MaxVolume.png}
+\end{minipage}
+
+\hfill
+
+\begin{minipage}{0.31\textwidth}
+    \begin{overpic}
+    [width=\textwidth]{./teile/results_human/Whisker_RV_MeanDose.png}
+    \put(40,80){RV}
+    \end{overpic} 
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Whisker_RV_MaxDose.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Whisker_RV_MaxVolume.png}
+\end{minipage}
+
+\hfill
+
+\begin{minipage}{0.31\textwidth}
+    \begin{overpic}
+    [width=\textwidth]{./teile/results_human/Whisker_LCA_MeanDose.png}
+    \put(40,80){LCA}
+    \end{overpic} 
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Whisker_LCA_MaxDose.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Whisker_LCA_MaxVolume.png}
+\end{minipage}
+
+\hfill
+
+\begin{minipage}{0.31\textwidth}
+    \begin{overpic}
+    [width=\textwidth]{./teile/results_human/Whisker_RCA_MeanDose.png}
+    \put(40,90){RCA}
+    \end{overpic} 
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Whisker_RCA_MaxDose.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Whisker_RCA_MaxVolume.png}
+\end{minipage}
+
+  \caption{Boxplots of mean and maximum dose as well as maximal irradiated volume for different field numbers (one to four fields) over all 
+  patients and over the respective beam directions. The data is plotted for different OARs (heart: first row, 
+  and cardiac substructures (LV: second row, RV: third row, LCA: fourth row, RCA: last row) when irradiating the LPVs and RPVs as IMPT 
+  treatment in the five patient data sets with different field numbers and thus beam directions.}
+  \label{beamdirection_MeanMaxD_MaxV_boxplot}
+  
+\end{figure}
+
+
+
+\begin{figure}[H]
+
+\begin{minipage}{0.31\textwidth}
+    \begin{overpic}
+    [width=\textwidth]{./teile/results_human/Mayo_Human_BeamDirection_HEARTwoOverlap_MeanDose.png}
+    \put(40,80){Heart}
+    \end{overpic} 
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Mayo_Human_BeamDirection_HEARTwoOverlap_MaxDose.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Mayo_Human_BeamDirection_HEARTwoOverlap_MaxVolume.png}
+\end{minipage}
+
+\hfill
+
+\begin{minipage}{0.31\textwidth}
+    \begin{overpic}
+    [width=\textwidth]{./teile/results_human/Mayo_Human_BeamDirection_LV_MeanDose.png}
+    \put(40,80){LV}
+    \end{overpic} 
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Mayo_Human_BeamDirection_LV_MaxDose.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Mayo_Human_BeamDirection_LV_MaxVolume.png}
+\end{minipage}
+
+
+\hfill
+
+\begin{minipage}{0.31\textwidth}
+    \begin{overpic}
+    [width=\textwidth]{./teile/results_human/Mayo_Human_BeamDirection_RV_MeanDose.png}
+    \put(40,80){RV}
+    \end{overpic} 
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Mayo_Human_BeamDirection_RV_MaxDose.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Mayo_Human_BeamDirection_RV_MaxVolume.png}
+\end{minipage}
+
+\hfill
+
+\begin{minipage}{0.31\textwidth}
+    \begin{overpic}
+    [width=\textwidth]{./teile/results_human/Mayo_Human_BeamDirection_LCA_MeanDose.png}
+    \put(40,80){LCA}
+    \end{overpic} 
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Mayo_Human_BeamDirection_LCA_MaxDose.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Mayo_Human_BeamDirection_LCA_MaxVolume.png}
+\end{minipage}
+
+
+\hfill
+
+\begin{minipage}{0.31\textwidth}
+    \begin{overpic}
+    [width=\textwidth]{./teile/results_human/Mayo_Human_BeamDirection_RCA_MeanDose.png}
+    \put(40,120){RCA}
+    \end{overpic} 
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Mayo_Human_BeamDirection_RCA_MaxDose.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Mayo_Human_BeamDirection_RCA_MaxVolume.png}
+\end{minipage}
+
+  \caption{Mean and maximum dose as well as maximal irradiated volume of the heart (first row) as well as cardiac substructures (second row: 
+  LV, third row: RV, fourth row: LCA, last row: RCA) when irradiating the LPV and RPV in the five patient data sets with different field 
+  numbers and beam directions. The different patients are displayed in different colors (patient 1: black, 2: red, 3: blue, 4: green, 5: 
+  orange). The different beam channel directions are stated in the the figures of the last row.}
+  \label{beamdirection_MeanMaxD_MaxV}
+  
+\end{figure}
+
+\newpage
+
+\subsection{Safety margin limitations}
+\label{safetymarginlimitation}
+
+Figure \ref{margin_boxplot} shows the dose results for the main OARs when irradiating the PVs with no safety margin (0mm) and different additional, 
+isotropic safety margins (3mm, 5mm or 7mm). The dose-volume-limits were studied according to the recommendation of RTOG (see table \ref{tab:RTOG}) 
+and the limit for each organ is indicated by a dashed line in the boxplots. Besides an IMPT treatment IMPT(OAR) deliveries were also 
+studied. Thereby the esophagus was implemented as a critical structure in the optimization process with two different restrictions 
+(IMPT(OAR)$_{R1}$ and (IMPT(OAR)$_{R2}$). In IMPT(OAR)$_{R1}$ it was stated that this structure should not receive more than 70\% of the 
+physical dose of 25Gy, while IMPT(OAR)$_{R2}$ had stronger restrictions with the maximal dose deposition set to 30\% of the physical dose. 
+The results of these three treatment deliveries are shown in each column of the plot.\newline
+\newline
+As expected, the dose to the enclosed OAR increases with increasing safety margin for all patients. This is the case for both IMPT and IMPT(OAR) 
+deliveries. Nevertheless the IMPT(OAR) deliveries lead to a reduced dose deposition, especially in the esophagus. For no safety margin, 
+the median dose to the esophagus over all patients is found to be 8.5Gy (75th percentile: 12.4Gy), which decreases to 7.0Gy (9.0Gy) with IMPT(OAR)$_{R1}$ delivery and 
+to 2.8Gy (4.4Gy) with IMPT(OAR)$_{R2}$. For 3mm safety margin and an IMPT irradiation the median dose resulted in 13.0Gy (18.6Gy) and reduces to 9.3Gy (12.1Gy) 
+for IMPT(OAR)$_{R1}$ and 3.5Gy (6.0Gy) for IMPT(OAR)$_{R2}$. With 5mm safety margin the RTOG limit of 11.9Gy starts to be exceeded for  
+IMPT(OAR)$_{R1}$ deliveries as it was found to be 11.8Gy (15.1Gy) (compared to 19.0Gy (22.8Gy) with IMPT). With the stronger restrictions on 
+the other hand the dose to the esophagus remains under the stated limit with 4.3Gy(6.6Gy). Even for a margin of 7mm the 
+stronger restrictions result in an appropiate dose deposition with a median of 6.0Gy (7.9Gy). 
+For IMPT(OAR)$_{R1}$ the 7mm margin result increased further to 14.3Gy (17.1Gy) (IMPT irradiation: 23.3Gy (24.6Gy)).\newline
+\newline
+Even though only the esophagus is included in the IMPT optimization process, also other OAR profit from this irradiation mode. This can be 
+understood as the beam stopping in front of the esophagus (gantry angle of -45$^{\circ}$) is optimized into having less raster points in the 
+IMPT(OAR) delivery compared to an IMPT irradiation and hence a reduced dose contribution to the total dose delivery. The other beam 
+channels (gantry angles of 135$^{\circ}$ and 0$^{\circ}$) are hence optimized into having more raster points compared to the IMPT delivery, 
+contributing more to the dose deposition. Adjacent OAR to the esophagus, like trachea and aorta, are thus also receiving a smaller dose 
+deposition from the beam channel stopping in proximity to them. As only an IMPT(OAR) treatment leads to acceptable dose depositions in the esophagus, 
+the median dose to the other organs will only be stated for this delivery type.\newline
+\newline
+Over all patients the trachea is receiving a median dose of 
+0Gy in all cases, since only patient 2 and 3 yield a dose in this critical structure. The 75th percentile is found to be 0.1Gy with no 
+safety margin and 1.1Gy, 3.0Gy, 6.6Gy for 3mm, 5mm and 7mm, respectively for IMPT(OAR)$_{R1}$. For IMPT(OAR)$_{R2}$ the 75th percentile 
+results also to 0.1Gy for no safety margin and 0.5Gy, 3.0Gy, 7.4Gy for 3mm, 5mm and 7mm, respectively. 
+All of these dose deposition are far below the recommended dose-volume-limit for the trachea (10.5Gy for 4cm$^{3}$).\newline
+\newline
+For the aorta an IMPT(OAR)$_{R1}$ irradiation with no safety margin leads to a median dose deposition of 6.5Gy (8.5Gy), while 8.3Gy 
+(10.6Gy), 9.8Gy (12.3Gy) and 11.3Gy (14.0Gy) are deposited with 3mm, 5mm and 7mm margin. In case of IMPT(OAR)$_{R2}$ these results are 
+further reduced to 3.5Gy (5.3Gy) with no safety margin and 5.0Gy (7.9Gy), 6.3Gy (12.0Gy) and 7.8Gy (13.6Gy) with 3mm, 5mm and 7mm margin, respectively. 
+Also these results are far below the critical dose-volume limit of 31Gy for 10cm$^{3}$. It can thus be concluded that trachea and aorta do 
+not receive a critical dose deposition while treating the PVs with a dose of 25Gy.\newline 
+\newline
+For the heart the dose-volume limits are much more critical. A median of 18.3Gy (22.8Gy) was obtained for IMPT(OAR)$_{R1}$ irradiations with 
+no safety margin and 23.0Gy (24.9Gy), 24.3Gy (25.0Gy) and 24.8Gy (25.0Gy) for 3mm, 5mm and 7mm margin, respectively. These results are 
+slightly decreased with IMPT(OAR)$_{R2}$ where the median is found to be 16.5Gy (21.0Gy) for no margin and 20.0Gy (24.0Gy), 22.0Gy (25.3Gy) 
+and 22.8Gy (17.8Gy) for 3mm, 5mm and 7mm margin, respectively. 
+Hence all studied irradiations exceed by far the dose-volume limit of 16Gy for 15cm$^{3}$. 
+A close analysis of the radiosensitive cardiac substructures is presented on the next pages (in table \ref{tab:meandose_heart} to table 
+\ref{tab:maxvolume_ca}). 
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% DOSE TO OAR %%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\begin{figure}[H]
+
+\hfill
+\begin{minipage}{0.3\textwidth}
+\hspace*{1.6cm} IMPT 
+\end{minipage}
+\hfill
+\begin{minipage}{0.3\textwidth}
+ \hspace*{1.3cm} IMPT(OAR)$_{R1}$ 
+\end{minipage}
+\hfill
+\begin{minipage}{0.3\textwidth}
+\hspace*{1.3cm} IMPT(OAR)$_{R2}$ 
+\end{minipage}
+\hfill
+
+\vspace*{0.3cm}
+
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Whisker_ESO_alternativeLimit_ITV.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Whisker_ESO_alternativeLimit_IMPT_woOverlap.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Whisker_ESO_alternativeLimit_IMPT_woOverlap_otherParameters.png}
+\end{minipage}
+\hfill
+\vspace*{0.1cm}
+\begin{minipage}{\textwidth}
+ \hspace*{7.5cm} (a) Esophagus \\
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Whisker_TRACHEA_ITV.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Whisker_TRACHEA_IMPT_woOverlap.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Whisker_TRACHEA_IMPT_woOverlap_otherParameters.png}
+\end{minipage}
+\hfill
+\vspace*{0.1cm}
+\begin{minipage}{\textwidth}
+ \hspace*{7.5cm} (b) Trachea \\
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Whisker_HEARTwoOverlap_ITV.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Whisker_HEARTwoOverlap_IMPT_woOverlap.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Whisker_HEARTwoOverlap_IMPT_woOverlap_otherParameters.png}
+\end{minipage}
+\hfill
+\vspace*{0.1cm}
+\begin{minipage}{\textwidth}
+ \hspace*{7.5cm} (c) Heart \\
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+  \includegraphics[width=\textwidth]{./teile/results_human/Whisker_AORTA_ITV.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+\hspace*{-0.35cm}
+ \includegraphics[width=\textwidth]{./teile/results_human/Whisker_AORTA_IMPT_woOverlap.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+\hspace*{-0.5cm}
+ \includegraphics[width=\textwidth]{./teile/results_human/Whisker_AORTA_IMPT_woOverlap_otherParameters.png}
+\end{minipage}
+\hfill
+\begin{minipage}{\textwidth}
+ \hspace*{7.5cm} (d) Aorta \\
+\end{minipage}
+\caption{Boxplots of dose-volume data for different safety margins (0mm, 3mm, 5mm and 7mm) over all patients. 
+The data is plotted for different OARs when irradiating the LPV and RPV as IMPT (first column) or IMPT(OAR) in the five patient data sets. 
+The results for the different IMPT(OAR) restrictions are plotted individually, so that IMPT(OAR)$_{R1}$ (second column) are the treatment plans 
+with a maximal dose of 70\% of the physical dose and a weightfactor of 75\% and IMPT(OAR)$_{R2}$ (third column) are the results for the treatment plans 
+with a maximal dose of 30\% physical dose and a weightfactor of 200\%. The dose-volume-limit for each critical organ is indicated with a 
+dashed line in each plot, respectively.}
+\label{margin_boxplot}
+  
+\end{figure}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% DOSE TO THE HEART %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Closer analysis of the dose deposition in the heart was carried out. The result of the median and 75th percentile over all patients 
+is shown in table \ref{tab:meandose_heart} for the mean dose and in table \ref{tab:maxdose_heart} for the maximal point dose.
+The mean deposited dose in the heart is negligible and does not increase with the size of the safety margins. Furthermore no 
+difference in between IMPT and IMPT(OAR)$_{R1}$ or IMPT(OAR)$_{R2}$ irradiation can be observed.  
+While also the maximum point dose does not increase with added safety margin, it can be seen that IMPT(OAR) treatment does lead to a higher 
+point dose compared to an IMPT irradiation. This is higher for the irradiation with stronger restrictions on the maximal dose to the 
+esophagus.  
+
+
+\vspace*{-0.3cm}
+
+\begin{table}[H]
+  \centering
+  \footnotesize
+  \caption{Mean dose to heart: median and 75th percentile.}
+  \begin{tabular}{|c||c|c|c|}
+    \hline\hline
+      Margin & IMPT [Gy] & IMPT(OAR)$_{R1}$ [Gy] & IMPT(OAR)$_{R2}$ [Gy]\\
+    \hline
+    0 mm & 1.0 (1.3) & 1.0 (1.1) & 0.9 (0.9) \\
+    3 mm & 1.3 (1.7) & 1.3 (1.5) & 1.1 (1.4) \\
+    5 mm & 1.5 (1.9) & 1.4 (1.7) & 1.1 (1.4) \\
+    7 mm & 1.6 (2.0) & 1.5 (1.8) & 1.1 (1.5) \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:meandose_heart}
+\end{table}
+
+\begin{table}[H]
+  \centering
+    \footnotesize
+  \caption{Maximum point dose to heart: median and 75th percentile.}
+  \begin{tabular}{|c||c|c|c|}
+    \hline\hline
+      Margin & IMPT [Gy] & IMPT(OAR)$_{R1}$ [Gy] & IMPT(OAR)$_{R2}$ [Gy]\\
+    \hline
+    0 mm & 26.9 (27.1) & 27.6 (29.6) & 34.1 (36.9) \\
+    3 mm & 26.2 (27.3) & 28.4 (29.7) & 31.6 (36.4) \\
+    5 mm & 26.5 (27.1) & 28.0 (29.1) & 30.7 (31.6) \\
+    7 mm & 26.2 (28.0) & 26.8 (27.9) & 30.1 (31.0) \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:maxdose_heart}
+\end{table}
+
+This can be understood as the esophagus and the other adjacent 
+OAR (trachea, aorta) receive in general less dose with IMPT(OAR) due to the intensity reduction in one beam channel direction. Hence, the other 
+beam channels have to deposit more particles. Especially gantry angle 0$^{\circ}$, which traverses the heart, is leading to an 
+increased dose deposition in the heart. Since this beam channel direction has to penetrate only a small volume of the heart, the maximal 
+irradiated volume shows a slight improvement in IMPT(OAR) deliveries compared to an IMPT irradiation. The results are 
+presented in table \ref{tab:maxvolume_heart}. Comparing the two IMPT(OAR) deliveries it can be seen that the results do not change, 
+since the number of beam channels and hence penetrated volume does not change. 
+
+
+\vspace*{-0.3cm}
+
+\begin{table}[H]
+  \centering
+    \footnotesize
+  \caption{Maximal irradiated volume of heart: median and 75th percentile.}
+  \begin{tabular}{|c||c|c|c|}
+    \hline\hline
+      Margin & IMPT [Gy] & IMPT(OAR)$_{R1}$ [Gy] & IMPT(OAR)$_{R2}$ [Gy]\\
+    \hline
+    0 mm & 17.2 (20.0) & 15.7 (18.9) & 15.7 (19.3) \\
+    3 mm & 19.4 (22.6) & 17.4 (21.2) & 17.4 (21.8) \\
+    5 mm & 20.7 (24.9) & 18.5 (23.2) & 18.5 (23.7) \\
+    7 mm & 21.8 (26.4) & 19.9 (24.4) & 19.9 (25.2) \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:maxvolume_heart}
+\end{table}
+
+
+\newpage
+
+%%%%%%%% DOSE TO THE VENTRICLES
+
+Concerning the ventricles the mean dose is negligible, with a median of less than 0.1Gy (75th percentile of less than 0.2Gy) for 
+the LV and no dose exposure to the RV (median of 0.0Gy (75th percentile of 0.0Gy)).  
+For the IMPT irradiations the median and 75th percentile of the maximal dose to the LV and RV over all patients and for all safety margin 
+cases is shown in table \ref{tab:maxdose_ventricle}. For both ventricles the dose is slightly increasing with the size of the safety 
+margin. The left ventricle is receiving a higher maximum point dose than the right ventricle in case of an irradiation with the stronger 
+dose restrictions. Concerning the maximal 
+irradiated volume it can be stated that the LV is irradiated to a higher extend than the RV in all studied cases, and that also here 
+the affected volume is increasing with the underlying safety margin size. Nevertheless it can be stated that the irradiated volume of 
+both ventricles is negligible and that the maximum point dose is small. 
+
+
+\begin{table}[H]
+  \centering
+      \footnotesize
+  \caption{Maximum point dose to ventricles: median and 75th percentile.}
+  \begin{tabular}{|c|c|c|c|}
+    \hline\hline
+    OAR & Margin & IMPT(OAR)$_{R1}$ [Gy] & IMPT(OAR)$_{R2}$ [Gy] \\
+    \hline
+    LV & 0 mm & 0.9 (2.8) & 0.8 (3.3) \\
+    & 3 mm & 1.5 (3.9) & 1.7 (7.9) \\
+    & 5 mm & 1.8 (5.0) & 4.6 (6.5) \\
+    & 7 mm & 3.2 (6.1) & 6.1 (9.0) \\
+    \hline
+    RV & 0 mm & 0.0 (0.5) & 0.0 (0.0) \\
+    & 3 mm & 0.9 (2.1) & 0.3 (0.9) \\
+    & 5 mm & 2.5 (3.7) & 0.0 (1.5) \\
+    & 7 mm & 4.1 (5.0) & 0.0 (3.7) \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:maxdose_ventricle}
+\end{table}
+
+% \vspace*{-0.3cm}
+
+\begin{table}[H]
+  \centering
+      \footnotesize
+  \caption{Maximal irradiated volume of ventricles: median and 75th percentile.}
+  \begin{tabular}{|c|c|c|c|}
+    \hline\hline
+    OAR & Margin & IMPT(OAR)$_{R1}$ [\%] & IMPT(OAR)$_{R2}$ [\%] \\
+    \hline
+    LV & 0 mm & 4.7 (12.0) & 3.9 (11.2) \\
+    & 3 mm & 6.1 (14.7) & 5.6 (14.5) \\
+    & 5 mm & 7.3 (16.7) & 7.7 (15.8) \\
+    & 7 mm & 8.9 (18.7) & 9.2 (17.9) \\
+     \hline
+    RV & 0 mm & 0.0 (0.1) &  0.0 (0.0) \\
+    & 3 mm & 0.5 (0.6) & 0.2 (0.2) \\
+    & 5 mm & 1.1 (1.7) & 0.0 (1.1) \\
+    & 7 mm & 1.8 (3.0) & 0.0 (2.3) \\ 
+    \hline\hline
+  \end{tabular}
+  \label{tab:maxvolume_ventricle}
+\end{table}
+
+\newpage 
+
+%%%%%%%% DOSE TO THE CA
+
+Concerning the coronary arteries, it can be seen that the LCA and RCA are receiving a comparable, small mean dose, which has a median of 
+less than 1Gy in most studied cases. 
+For both structures the maximum point dose increases with safety margin. The maximal deposited dose is higher in the LCA than in the RCA. 
+In both cases the dose can be reduced with the stronger IMPT(OAR) restriction parameters, so that it can be concluded that also these 
+structures benefit from the IMPT(OAR)$_{R2}$ settings. 
+Due to the small vessel size of the coronary arteries the dose deposition results in a relatively high maximal irradiated volume. 
+In general, the maximum irradiated volume also increases with safety margin. While the maximal irradiated volume of the RCA can be 
+drastically reduced for the stronger IMPT(OAR) settings, especially for large margins, the volume of the LPV does not change significantly. 
+This is due to the proximity of the upper LCA branches to the LPV target site. 
+
+% \vspace*{-0.4cm}
+
+\begin{table}[H]
+  \centering
+      \footnotesize
+  \caption{Mean dose to coronary arteries: median and 75th percentile.}
+  \begin{tabular}{|c|c|c|c|}
+    \hline\hline
+    OAR & Margin & IMPT(OAR)$_{R1}$ [Gy] & IMPT(OAR)$_{R2}$ [Gy] \\
+    \hline
+    LCA & 0 mm & 0.2 (0.7) & 0.2 (0.7) \\
+    & 3 mm & 0.5 (0.9) & 0.4 (1.7) \\
+    & 5 mm & 0.7 (1.2) & 1.0 (2.0) \\
+    & 7 mm & 1.5 (2.0) & 1.3 (2.8) \\
+    \hline
+    RCA & 0 mm & 0.3 (1.1) & 0.1 (0.4) \\
+    & 3 mm & 0.5 (0.8) & 0.3 (1.0) \\
+    & 5 mm & 0.7 (1.5) & 0.1 (0.7) \\
+    & 7 mm & 1.0 (2.0) & 0.2 (1.1) \\ 
+    \hline\hline
+  \end{tabular}
+  \label{tab:meandose_ca}
+\end{table}
+
+% \vspace*{-0.8cm}
+
+\begin{table}[H]
+  \centering
+        \footnotesize
+  \caption{Maximum point dose to coronary arteries: median and 75th percentile.}
+  \begin{tabular}{|c|c|c|c|}
+    \hline\hline
+    OAR & Margin & IMPT(OAR)$_{R1}$ [Gy] & IMPT(OAR)$_{R2}$ [Gy] \\
+    \hline
+    LCA & 0 mm & 6.0 (7.0) & 5.2 (8.3) \\
+    & 3 mm & 7.4 (9.4) & 8.0 (15.6) \\
+    & 5 mm & 8.7 (15.9) & 12.3 (17.6) \\
+    & 7 mm & 20.1 (23.0) & 16.2 (22.0) \\
+   \hline
+    RCA & 0 mm & 3.1 (5.2) & 2.8 (5.7) \\
+    & 3 mm & 3.8 (6.5) & 3.1 (7.8) \\
+    & 5 mm & 4.3 (8.8) & 3.4 (9.8) \\
+    & 7 mm & 5.9 (15.3) & 4.2 (11.9) \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:maxdose_ca}
+\end{table}
+
+% \vspace*{-0.8cm}
+
+\begin{table}[H]
+  \centering
+        \footnotesize
+  \caption{Maximal irradiated volume of coronary arteries: median and 75th percentile.}
+  \begin{tabular}{|c|c|c|c|}
+    \hline\hline
+    OAR & Margin & IMPT(OAR)$_{R1}$ [Gy] & IMPT(OAR)$_{R2}$ [Gy] \\
+    \hline
+    LCA & 0 mm & 26.7 (41.0) & 25.3 (38.3) \\
+    & 3 mm & 28.5 (45.7) & 28.0 (44.2) \\
+    & 5 mm & 29.6 (49.1) & 30.3 (46.5) \\
+    & 7 mm & 31.4 (53.4) & 31.2 (50.3) \\
+    \hline
+    RCA & 0 mm & 19.2 (28.6) & 15.6 (23.6) \\
+    & 3 mm & 25.1 (32.2) & 21.8 (30.2) \\
+    & 5 mm & 33.2 (37.6) & 2.1 (29.6) \\
+    & 7 mm & 39.6 (43.4) & 2.1 (36.1) \\ 
+    \hline\hline
+  \end{tabular}
+  \label{tab:maxvolume_ca}
+\end{table}
+
+
+
+\newpage
+
+\subsection{Motion assessment of heartbeat}
+\label{human:motionheart}
+% \vspace*{-0.7cm}
+Using the resulting deformation maps from deformable image registration the motion of the ablation sites of LPV and RPV was assessed. Motion 
+volume histograms (MVHs) \cite{Ric13} displaying the relative displacement of every voxel of the investigated volume to the reference phase in 
+all three motion directions were generated. The mean and standard deviation of these displacement values in each motion phase of LPV and RPV 
+are plotted for all patients and motion directions in figure \ref{fig:motion_hb_lpv} and \ref{fig:motion_hb_rpv}, respectively. The numerical 
+values can be found in appendix \ref{app:human:motion}. \newline
+\newline
+The mean and standard deviation of each patient over all motion phases are stated in table \ref{tab:motion_pv}. 
+From the five studied patients patient 4 is displaying the highest absolute displacement, both in LPV and RPV. 
+Furthermore it can be seen that none of the motion directions can be determined as the largest contribution to the absolute displacement, 
+neither in LPV or RPV motion. 
+In table \ref{tab:maxabs_pv} the maximal absolute displacement for each patient is presented together with the corresponding motion 
+phase. While motion phase six is the motion phase with the biggest displacement in 30\% of all cases, no evident maximal motion phase can be 
+assessed. On average, the absolute amplitude over all motion phases and patients is found to be (2.7 $\pm$ 1.6)mm for LPV and 
+(2.6 $\pm$ 1.4)mm for RPV. In SI direction, the mean amplitude is (-0.6 $\pm$ 1.4)mm for LPV and (-0.2 $\pm$ 1.6)mm for RPV. In AP 
+direction it is (0.8 $\pm$ 1.0)mm for LPV and (1.0 $\pm$ 1.6)mm for RPV, while in LR direction it is found to be (0.4 $\pm$ 0.9)mm for LPV 
+and (-1.0 $\pm$ 1.5)mm for RPV. Hence, averaged over all patients it can be stated that while the PVs are moving mostly in AP direction, 
+the contribution of the other motion directions are in the same order of magnitude.\newline 
+\newline
+The motion phases of the heartbeat gated CT scan are based on the ECG trace and result in a division of a single heartbeat. The 
+motion phases can hence be directly assigned to the contraction (systole) and dilatation (diastole) of both atria and ventricles.  
+Contraction of the atria (atrial systole) is occurring in between motion phase four and nineteen, in the same time as the ventricular relaxation 
+(ventricular diastole). The ventricular systole and at the same time atria diastole are hence much shorter, occurring in the 
+remaining motion phases twenty to three. The maximal displacement of the atria should thus be observed in motion phase eightteen, while the 
+maximal amplitude of the ventricle should be observed in motion phase three. The motion of the PVs on the other hand result in a 
+chaotic displacement. No motion phase can be assessed to a maximal displacement in all patient cases and no dominant motion direction is 
+observed. The underlying heartbeat motion which causes the PVs to move should hence be much more complex. 
+
+\newpage
+
+\begin{figure}[H]
+\begin{center}
+ \includegraphics[scale=0.22]{./teile/results_human/MAYO_allPatients_HB_LPV.png}
+\caption{Mean motion amplitude and standard deviation of LPV in each motion phase (MP) relative to the reference phase under influence of 
+heartbeat for all patients (Patient 1: black, Patient 2: red, Patient 3: green, Patient 4: blue, Patient 5: turquois). 
+The motion is shown in the three studied motion directions (SI: superior-inferior, AP: anterior-posterior, LR: left-right) and the absolute 
+(ABS) displacment.}
+\label{fig:motion_hb_lpv}
+\end{center}
+\end{figure}
+
+\vspace*{-1.3cm}
+
+\begin{figure}[H]
+\begin{center}
+ \includegraphics[scale=0.22]{./teile/results_human/MAYO_allPatients_HB_RPV.png}
+\caption{Mean motion amplitude and standard deviation of RPV in each motion phase (MP) relative to the reference phase under influence of 
+heartbeat for all patients (Patient 1: black, Patient 2: red, Patient 3: green, Patient 4: blue, Patient 5: turquois). }
+\label{fig:motion_hb_rpv}
+\end{center}
+\end{figure}
+
+\newpage
+
+\vspace*{1cm}
+
+\begin{table}[H]
+  \centering
+  \caption{Mean displacement of PVs over all motion phases (MP) in all patients and motion directions.}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline\hline
+    Patient & LPV: ABS [mm] & LPV: SI [mm] & LPV: AP [mm] & LPV: LR [mm] \\
+    \hline
+    1 & 2.7 $\pm$ 1.2 & -1.2 $\pm$ 0.9 & 1.4 $\pm$ 1.1 & -0.9 $\pm$ 0.8 \\
+    2 & 2.3 $\pm$ 1.1 & 1.2 $\pm$ 1.1 & 0.6 $\pm$ 0.5 & -1.4 $\pm$ 0.9 \\
+    3 & 2.5 $\pm$ 1.8 & -0.4 $\pm$ 1.1 & 0.5 $\pm$ 0.8 & -1.2 $\pm$ 2.0 \\
+    4 & 4.3 $\pm$ 2.5 & -3.1 $\pm$ 2.5 & 0.3 $\pm$ 1.4 & -0.8 $\pm$ 2.5 \\
+    5 & 2.2 $\pm$ 1.2 & -0.8 $\pm$ 1.4 & 0.7 $\pm$ 1.1 & -0.2 $\pm$ 1.0 \\
+    \hline\hline
+    Patient & RPV: ABS [mm] & RPV: SI [mm] & RPV: AP [mm] & RPV: LR [mm] \\
+   \hline
+    1 & 2.1 $\pm$ 0.7 & -0.9 $\pm$ 0.7 & 1.1 $\pm$ 0.9 & 0.6 $\pm$ 0.6 \\
+    2 & 2.3 $\pm$ 1.3 & 0.7 $\pm$ 1.1 & 1.0 $\pm$ 1.1 & -1.2 $\pm$ 1.0 \\
+    3 & 2.2 $\pm$ 1.2 & 0.2 $\pm$ 1.3 & 0.5 $\pm$ 1.8 & 0.4 $\pm$ 0.7 \\
+    4 & 4.6 $\pm$ 2.3 & -1.7 $\pm$ 3.1 & 1.7 $\pm$ 2.8 & 1.8 $\pm$ 1.0 \\
+    5 & 2.8 $\pm$ 1.7 & 0.2 $\pm$ 1.8 & 1.0 $\pm$ 1.3 & 1.4 $\pm$ 1.4 \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:motion_pv}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \caption{Biggest absolute displacement of PVs with corresponding motion phase (MP) in all patients.}
+  \begin{tabular}{|c|c|c|}
+    \hline\hline
+    Patient & LPV: max. ABS [mm] & MP \\
+    \hline
+    1 & 4.5 $\pm$ 1.7 & 06 \\
+    2 & 5.3 $\pm$ 1.9 & 06 \\
+    3 & 3.4 $\pm$ 2.2 & 08 \\
+    4 & 5.5 $\pm$ 3.1 & 11 \\
+    5 & 2.9 $\pm$ 1.5 & 16 \\
+    \hline\hline
+   Patient & RPV: max. ABS [mm] & MP \\
+   \hline
+    1 & 4.0 $\pm$ 1.4 & 06 \\
+    2 & 5.2 $\pm$ 1.8 & 04 \\
+    3 & 2.9 $\pm$ 1.4 & 11 \\
+    4 & 6.5 $\pm$ 3.0 & 10 \\
+    5 & 4.0 $\pm$ 4.0 & 15 \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:maxabs_pv}
+\end{table}
+
+\newpage
+
+The overall displacement field between the extreme states of the ventricular displacement (motion phase three) and atrial displacement 
+(motion phase eightteen) for two exemplary patients with a small motion amplitude (patient 5) and a large motion amplitude (patient 4) are 
+shown in figure \ref{contour_plot_hb}. In order to visualize the location of the displacement, an axial cut of the reference state CT is 
+underlayed. The absolute values of the displacement vectors are shown as contour plots. 
+
+\begin{figure}[H]
+\subfigure[Patient 4: max motion ventricle]{
+ \includegraphics[scale=0.18]{./teile/results_human/Contour_z_abs_HB_Pat08_03_HUSkala_gedreht.png}
+}
+\subfigure[Patient 5: max motion ventricle]{
+\includegraphics[scale=0.18]{./teile/results_human/Contour_z_abs_HB_Pat10_03_HUSkala_gedreht.png}
+}
+\subfigure[Patient 4: max motion atria]{
+ \includegraphics[scale=0.18]{./teile/results_human/Contour_z_abs_HB_Pat08_18_HUSkala_gedreht.png}
+}
+\subfigure[Patient 5: max motion atria]{
+\includegraphics[scale=0.18]{./teile/results_human/Contour_z_abs_HB_Pat10_18_HUSkala_gedreht.png}
+}
+\caption{Axial slices of the reference state of the CT overlayed with the absolute values of the displacement field (obtained from 
+deformable image registration) in the corresponding slice for heartbeat motion. In the top row the displacement from the motion phase with the 
+maximal ventricle motion to the reference phase is shown, in the lower row the displacement from the motion phase with the maximal 
+atrial motion, for Patient 4 and Patient 5, respectively.}
+\label{contour_plot_hb}
+\end{figure}
+
+
+\newpage
+\subsection{Motion mitigation techniques for heartbeat}
+
+The absolute motion amplitudes of up to 5mm due to heartbeat are expected to yield dose inhomogeneities when not compensated for. The 
+resulting interplay effect and dose deposition were studied for every patient for different motion patterns and different margins to the target 
+volumes. The dose analysis values V95, V107 and D5-D95 were assessed and plotted. For comparison also the corresponding 
+values for the 3D case (static) are shown. Due to the small motion amplitude, rescanning was studied as motion mitigation technique.  
+The results of the stated dose values in case of rescanning with different rescan numbers will also be presented. 
+
+
+\subsubsection{Dose deposition}
+The dependencies of dose coverage and dose homogeneity on safety margin and rescan numbers are shown over all patients and motion patterns 
+for the two target volumes, LPV and RPV, in figure \ref{static_interplay_rescanning_ALLpatients_KORR}. 
+It can be shown that ten rescans yield a robust motion mitigation technique for the displacement of the PVs due to heartbeat motion. 
+This will be studied in more detail in the following.\newline
+\newline
+A representative dose deposition for all studied techniques (static, interplay and rescanning with ten rescans) is shown exemplary for patient 
+4 (as this is the patient with the largest PV motion amplitude both in LPV and RPV) in figure \ref{dose_pat08}. Rescanning and interplay 
+are shown for a motion period of 0.7s and a starting phase of 0$^{\circ}$. The target volumes LPV and RPV were irradiated 
+simultaneously and a margin of 3mm was added. \newline
+\newline
+Exemplary for patient 4, DVHs of the CTV for a static irradiation as well as interplay and ten rescans for different motion patterns and a 
+target volume with 3mm safety margin are displayed in figure \ref{dvhs_pat08}. 
+In order to assess the dose information of all patients the DVHs were analyzed and compared for dose steepness, dose coverage as well as 
+over dosage. The average results over all patients with the resulting standard deviation can be seen in figure 
+\ref{static_interplay_rescanning_ALL}. A more detailed analysis can be found in appendix \ref{app:human}, where the 
+corresponding numerical values are shown (tables \ref{tab:Pat02_LPV} - \ref{tab:Pat10_RPV}).\newline
+\newline
+For interplay it can be seen that the results are slightly dependent on the used motion period and starting phase. This can be seen in the 
+mean values of the resulting dose parameter values for different, underlying motion patterns. E.g. for LPV, the mean value of the dose 
+coverage parameter over all patients is V95=(87.7 $\pm$ 7.4)\% for a motion with 1s period and a starting phase of 90$^{\circ}$ and 
+(92.1 $\pm$ 4.3)\% for a motion with 0.7s period and a starting phase of 90$^{\circ}$, while for a motion with 0.7s period 
+and a starting phase of 0$^{\circ}$ the dose coverage is found to be (90.4 $\pm$ 3.3)\%. 
+Furthermore the result is also dependent on the studied safety margin, so that e.g. the dose coverage for a motion with 1s period 
+and a starting phase of 90$^{\circ}$ is (94.6 $\pm$ 4.4)\% with 3mm safety margin. All these dependencies are also valid for 
+the other studied dose analysis parameters, dose homogeneity and over dosage. The improvement of the dose coverage and dose homogeneity 
+in relation to the size of the safety margin are also presented in figure \ref{static_interplay_rescanning_ALLpatients_KORR} (a and b). 
+The dose homogeneity resulting from interplay as well as all rescanning irradiations was studied in relation to the used margin size and the 
+proportion of variance explained resulted in $r^{2}$=0.35 (p<0.0001), hence favoring the application of the necessary safety margins. 
+It becomes obvious that a safety margin of 3mm is already sufficient to drastically improve the outcome.\newline 
+\newline
+The underlying deformation map with its motion amplitude does not enable a prediction of the magnitude of the interplay effect. 
+This was studied in more detail for the dose homogeneity, as these values were normally distributed. 
+The proportion of variance explained between the maximal motion amplitude of the left and right PV (see table \ref{tab:maxabs_pv}) and 
+the resulting D5-D95 values for all studied margins resulted in $r^{2}$=0.02 (p<0.0001).\newline 
+\newline
+As can be seen in figure \ref{static_interplay_rescanning_ALL} (as well as in more detail for all patients in appendix \ref{app:human:mmt}) 
+rescanning yields improved results compared to interplay in all studied cases. This is valid for dose steepness, dose 
+coverage as well as over dosage. Especially dose coverage and over dosage are comparable to the static results for all patient and motion patterns.  
+Exemplary, the dose coverage of patient 4 (with the largest absolute displacement) will be discussed. V95 for a static irradiation of the 
+LPV of patient 4 with 3mm safety margin is found to be 99.8\%. With a motion of 0.7s period length and a starting phase of 0$^{\circ}$ the value  
+decreases to 90.0\%. With rescanning, V95 can be improved to 99.8\% with only five rescans. For RPV the static dose coverage 
+with 3mm margin is found to be 100\% for this patient. With the stated motion and safety margin the dose coverage decreases to 97.0\%  
+in case of interplay. Even though this is an acceptable value, the treatment gets more robust with rescanning and only five rescans are 
+sufficient to increase the value to 100.0\%. The improvement of dose coverage and over dosage 
+compared to interplay is valid for all studied rescan numbers, starting from the smallest studied rescan number of five, as shown here. 
+Nevertheless, in some studied cases five rescans is not enough to yield results comparable to the static irradiation. 
+This was studied in more detail for the dose coverage parameter V95. 
+For example for the LPV irradiation with five rescans in patient 1 with a motion period of 1s and 90$^{\circ}$ starting phase (3mm safety 
+margin) V95 results in a smaller dose coverage (93.2\%) than the static case (100\%). Even though this result is improved compared to 
+interplay (86.9\%), a much better result can be gained with higher rescan numbers, starting with ten rescans (99.2\%). Also the results for 
+dose homogeneity improves with higher rescan numbers. For a motion pattern of 0.7s period and 0$^{\circ}$ starting phase (3mm safety margin) 
+in patient 4, the dose homogeneity in case of interplay is found to be 9.9\%. With five rescans a dose homogeneity of 5.5\% is yielded, which 
+further decreases to 4.6\% with ten rescans, 4.4\% with fifteen rescans and 3.9\% with twenty rescans (compared to 3.9\% in the static irradiation). 
+As the dose homogeneity was normally distributed, the relation between dose homogeneity and rescan number was analyzed. 
+Thereby interplay was included as a rescan number of one. The explained variance was found to be $r^{2}$=0.37 (p<0.0001). 
+It can thus be concluded that rescan numbers higher than five yield slightly better results, while ten rescans show results comparable to the 
+static irradiation in all studied patient cases, for all studied safety margins and for all underlying motion patterns. This can 
+also be seen in figure \ref{static_interplay_rescanning_ALLpatients_KORR} (c) where the dose coverage over all patients and margins 
+is studied in relation to the used rescan number. It can be seen that while interplay (one rescan) results into a median of 8.9\% 
+(75th percentile of 10.0\%), five rescans can reduce it to 6.1\% (8.1\%). With ten rescans this can be further improved to 4.1\% (5.9\%). 
+Fifteen and twenty rescans on the other hand do not lead to an improved result compared to ten rescans (fifteen: 4.1\% (5.9\%), 
+twenty: 4.0\% (5.7\%)).
+
+\vspace*{-0.2cm}
+
+
+\begin{figure}[H]
+\centering
+\subfigure[D5-D95 versus margin size]{
+ \includegraphics[scale=0.45]{./teile/results_human/D5-D95_vs_margin.png}
+ }
+ \subfigure[V95 versus margin size]{
+ \includegraphics[scale=0.45]{./teile/results_human/V95_vs_margin.png}
+ }
+  \subfigure[D5-D95 versus rescan numbers]{
+ \includegraphics[scale=0.45]{./teile/results_human/D5-D95_vs_rescans.png}
+}
+  \subfigure[D5-D95 versus rescan numbers]{
+ \includegraphics[scale=0.45]{./teile/results_human/V95_vs_rescans.png}
+}
+\caption{Boxplots of dose analysis parameters D5-D95 and V95 over all patient data sets and target volumes (LPV: circle and 
+RPV: cross) depending on the used margins size (0mm: black, 3mm:red, 5mm: green, 7mm: blue) or the used rescan number (one rescan equals 
+interplay, rescanning with five, ten, fifteen and twenty rescans). Minimum and maximum of the data is plotted within 1.5 times the
+interquartile range, the other data points are stated as outliers. Figures are courtesy of Dr. Christian Graeff.}
+\label{static_interplay_rescanning_ALLpatients_KORR}
+\end{figure}
+
+\newpage
+
+ \begin{figure}[H]
+ \begin{center}
+\subfigure[static]{
+ \includegraphics[scale=0.46]{./teile/results_human/Pat08_static_withLegend.png}
+ }
+\subfigure[interplay]{
+ \includegraphics[scale=0.46]{./teile/results_human/Pat08_interplay_withLegend.png}
+ }
+ \subfigure[rescanning (10x)]{
+ \includegraphics[scale=0.46]{./teile/results_human/Pat08_10rescans_withLegend.png}
+ }
+\caption{Dose distribution of patient 4 for static (a) as well as interplay (b) and ten rescans (c) for a motion period of 0.7s and a motion 
+starting phase of 0$^{\circ}$. The target volume has an added margin of 3mm.}
+\label{dose_pat08}
+ \end{center}
+\end{figure}
+
+\newpage
+% \vspace*{-0.3cm}
+
+ \begin{figure}[H]
+ \begin{center}
+\subfigure[LPV]{
+ \includegraphics[scale=0.28]{./teile/results_human/Pat08_LPV_allDVHs_newColor_withLegend.png}
+ }
+\subfigure[RPV]{
+ \includegraphics[scale=0.28]{./teile/results_human/Pat08_RPV_allDVHs_newColor_withLegend.png}
+ }
+\caption{Dose volume histograms for CTV of patient 4 for 3mm safety margin irradiation (LPV (a) as well as RPV (b)) in case of static 
+irradiation (black), interplay (dashed) and rescanning with ten rescans (solid). The motion patterns are shown in colors (1s 0: motion period of 1s 
+and starting phase 0$^{\circ}$, 1s 90: motion period of 1s and starting phase 90$^{\circ}$, 07s 0: motion period of 0.7s 
+and starting phase 0$^{\circ}$, 07s 90: motion period of 0.7s and starting phase 90$^{\circ}$).}
+\label{dvhs_pat08}
+ \end{center}
+\end{figure}
+
+
+\newpage
+% \vspace*{-0.3cm}
+\begin{figure}[H]
+\subfigure[D5-D95: LPV]{
+ \includegraphics[scale=0.18]{./teile/results_human/MAYO_CTV_LPV_D5D95.png}
+ }
+ \subfigure[D5-D95: RPV]{
+ \includegraphics[scale=0.18]{./teile/results_human/MAYO_CTV_RPV_D5D95.png}
+ }
+ \subfigure[V95: LPV]{
+ \includegraphics[scale=0.18]{./teile/results_human/MAYO_CTV_LPV_V95.png}
+ }
+\subfigure[V95: RPV]{
+ \includegraphics[scale=0.18]{./teile/results_human/MAYO_CTV_RPV_V95.png}
+ }
+  \subfigure[V107: LPV]{
+ \includegraphics[scale=0.18]{./teile/results_human/MAYO_CTV_LPV_V107.png}
+ }
+\subfigure[V107: RPV]{
+ \includegraphics[scale=0.18]{./teile/results_human/MAYO_CTV_RPV_V107.png}
+ }
+\caption{Mean and standard deviation of dose analysis parameters D5-D95 (first row), V95 (middle row) and V107 (last row) over all patients. 
+The LPV (left column) and RPV (right column) were studied seperately. Static (black) as well as interplay (red) and different rescanning 
+numbers (5 times: blue, 10 times: green) were compared for different motion patterns and safety margins. For a better visualization the 
+rescanning data points for each motion pattern are shifted and the result for fifteen and twenty rescans are not displayed.}
+\label{static_interplay_rescanning_ALL}
+\end{figure}
+
+\newpage
+
+
+\subsubsection{Irradiation time}
+In figure \ref{irrTime_all} the mean irradiation time over all patients for different rescanning irradiations of LPV and RPV are shown for 
+different safety margins and motion patterns. The duration for each beam entry channel (gantry angle of -45$^{\circ}$, 135$^{\circ}$ and 0$^{\circ}$) 
+is plotted individually. It can be seen that the needed irradiation time increases with the used safety margin as the irradiated volume 
+increases. The irradiation time is independent of the motion pattern but varies depending on the used beam entry channel. 
+The stated results were achieved with a low intensity irradiation 
+(minimal particle number of 5,000). For an irradiation with 3mm margin around LPV and RPV the overall treatment time is calculated to (13.7 $\pm$ 
+0.9)min (see table \ref{tab:rescan_time}) with rescanning as motion mitigation technique for heartbeat motion. This time could be increased 
+if a higher minimum particle number per beam spot (e.g. 75,000) was used, which needs to be studied. 
+
+ \begin{figure}[H]
+ \begin{center}
+ \includegraphics[scale=0.2]{./teile/results_human/All_irrTime.png}
+\caption{Mean and standard deviation of the irradiation time over all patients for different underlying motion patterns and beam entry 
+channels.}
+\label{irrTime_all}
+ \end{center}
+\end{figure}
+
+\begin{table}[H]
+  \centering
+%   \footnotesize
+  \caption{Mean irradiation time for LPV and RPV with a safety margin of 3mm over all patients.}
+  \begin{tabular}{|c|c|c|}
+    \hline\hline
+    Gantry angle [$^{\circ}$] & time [min] & total [min] \\
+    \hline
+    -45 & 4.7 $\pm$ 0.9 & \\
+    135 &  4.4 $\pm$ 0.9 & 13.7 $\pm$ 0.9\\
+    0 & 4.6  $\pm$ 1.0 & \\
+    \hline\hline
+    \end{tabular}
+  \label{tab:rescan_time}
+\end{table}
+
+
+\newpage
+
+\section{Discussion}
+
+In this chapter the influence of heartbeat motion on the PVs was studied and treatment planning studies with rescanning as motion 
+mitigation technique were carried out. A detailed analysis of the dose depositions to the OAR was performed, with special 
+emphasis on the irradiation of cardiac substructures. Beforehand, a study of the best suited field number and beam directions was  
+conducted as well as an analysis of possible safety margin limitations. 
+
+
+\subsection{Dose to critical structures}
+\label{Discussion:doseOAR}
+
+Concerning the dose deposition in OAR (esophagus, trachea, aorta and heart) dose-volume limits from SBRT were used. In SBRT 
+treatment a high dose is applied in a single fraction and hence comparable to the here stated dose delivery of 25Gy physical 
+dose in one treatment session. 
+An extensive collection of dose-volume-limits for SBRT are presented in the study protocols of the Radiation Therapy Oncology Group (RTOG). 
+The stated dose-volume limits for trachea (10.5Gy in 4cm$^{3}$) and aorta (31Gy in 10cm$^{3}$) were not exceeded for any of the studied field 
+numbers and beam channel combinations. The same is valid while keeping the chosen three fields (couch angle of 90$^{\circ}$ 
+and gantry angles of -45$^{\circ}$, 135$^{\circ}$ and 0$^{\circ}$) constant and changing the studied safety margins (0mm, 3mm, 5mm and 7mm). 
+For the esophagus on the other hand, the dose-volume limits were much more critical. Most of the studied beam directions yielded a dose 
+which exceeded the stated dose-volume limit (11.9Gy for 5cm$^{3}$). Hence IMPT(OAR) deliveries, including the esophagus in the 
+optimization process, were necessary. With this delivery technique and the above stated beam direction, the dose to the esophagus could be 
+drastically reduced. With restrictions to a maximum point dose of 70\% to the esophagus (IMPT(OAR)$_{R1}$, weightfactor of 75\%) only an 
+irradiation of the PVs with 3mm safety margin resulted in a dose deposition into the esophagus which met the dose volume limit 
+(median of 9.3Gy, 75th percentile: 12.1Gy). This result could be further improved with different IMPT parameters (IMPT(OAR)$_{R2}$, 
+maximum dose of 30\% and weightfactor of 200\%), enabling a safe irradiation. Thus also safety margins higher then 3mm should result in an 
+uncritical dose deposition to the esophagus. 
+For the heart all beam channels, safety margins and delivery types (IMPT or IMPT(OAR)) exceeded the stated dose-volume limit (16Gy for 
+15cm$^{3}$). This is due to the fact that the heart is not only an OAR but part of the target itself. Hence a closer look on the affected 
+cardiac substructures and the relevance of these dose depositions on cardiac toxicity and late effects were given.\newline
+\newline
+QUANTEC (quantitative analysis of normal tissue effects in the clinic) \cite{QUANTEC10} offers an comprehensive literature review 
+on the available data of the last 20 years and is meant as an update of the extensively used dose-limits proposed by Emami et al. 
+\cite{Ema91}. In the QUANTEC publication by Gagliardi et al. \cite{Gag10} radiation dose-volume effects in the heart are presented. 
+It is stated that radiation-induced cardiac diseases are distinguished between acute injuries like pericarditis\footnote{inflammation 
+of the sac containing the heart}, which can turn into a chronic disease, and late injuries which manifest months or even 
+years after radiation exposure. Typical late injuries are congestive heart failure\footnote{heart is unable to maintain sufficient 
+blood flow}, ischemia,
+coronary artery disease and myocardial infarction. 
+It was summarized that it remains uncertain which region of the heart is most important for radiation induced tissue toxicities. 
+But it is stated that the risk of cardiac events is probably related to both dose and irradiated volume. 
+Pericarditis seems to be related to left ventricle (LV) irradiation, and it was found that LV shielding was able to drastically 
+reduce the incidence rate \cite{Car76}. It was stated that a mean cardiac dose of 27.1Gy and maximum dose of 47Gy seem to act as 
+predictors for pericarditis \cite{Mar98}. 
+Wei et al. \cite{Wei08} stated another discriminator for pericarditis which was found to be V30 < 46\%, which translates in a mean 
+pericardial dose of less than 26Gy. For coronary and ischemic events relevant substructures are assumed to be coronary arteries on 
+the left ventricle (LCA) \cite{Nie07, Tay07, Tay08}. Furthermore it is stated that excess deaths from heart disease are observed 
+in patients receiving more than 42Gy \cite{Han93} and that aortic and mitral stenosis incidences increased above a threshold dose of 
+30Gy \cite{Tay07}. For long term cardiac mortality an increased rate was only observed at whole heart doses above 30Gy \cite{Han93}.\newline
+\newline
+Hooning et al. \cite{Hoo07} studied the cardiovascular disease incidence in more than 4000 breast cancer survivors 
+after a follow-up period of more than 10 years as patients were treated from 1970 through 1986. It was the first study to examine the 
+effects of cardiovascular risk factors in combination to radiotherapy. They found that the risk of congestive heart failure was 
+significantly increased when the patients had received chemotherapy (95\% confidence interval of 1.25 to 2.73) and that smoking drastically 
+increased the risk of the patients to suffer a myocardial infarction (95\% confidence interval of 2.03 to 4.55). Concerning 
+radiotherapy they stated that a higher mean dose to the whole heart resulted in an increased risk of congestive heart failure and 
+that an irradiation of the left vs right chest wall (thus more heart volume and in particular including the LV and apex) led to an 
+increased risk of myocardial infarction.\newline
+\newline
+A recent study by Darby et al. \cite{Dar13} investigated more than 2000 breast cancer patients treated in between 1958 and 2001 
+for coronary events like myocardial infarction, coronary revascularization or death from ischemic heart disease. They found a mean 
+heart dose of 4.9Gy (0.03Gy to 27.72Gy) and that the rates of major coronary events increased linearly with the mean heart dose. 
+They stated an increase of incidences by 7.4\% per Gy (95\% confidence interval of 2.9 to 14.5) after five years post radiotherapy.
+\newpage
+For the here studied seventeen beam channel combinations, applying a physical dose of 25Gy, the mean dose to the heart of all five studied 
+patients was found to have a median of 1.3Gy (75th percentile of 1.5Gy). The median over the maximal point dose was 
+found to be up to 26.6Gy (75th percentile: 27.1Gy), while in general less than 30\% of the heart was irradiated. 
+With the chosen field number of three beam channels with a couch angle of 90$^{\circ}$ and gantry angles of -45$^{\circ}$, 
+135$^{\circ}$ and 0$^{\circ}$, the mean dose was found to be negligible (median of 1Gy, 75th percentile of up to 1.5Gy) in all 
+studied patient cases. The median mean dose over all patients did not increase with increasing safety margin for both IMPT(OAR) deliveries. 
+As the LV, and with it especially the LCA, are assumed to be radiosensitive structures within the heart the dose 
+depositions to these structures were analyzed in more detail. It was found that three beam channel directions were best suited to yield a lower 
+mean dose deposition in the LCA. Due to robustness criteria of the treatment delivery the above stated beam channel combination was 
+chosen. With this delivery direction and an IMPT(OAR)$_{R2}$ treatment it was found that the mean dose to the LCA was, dependent on the 
+used safety margin, 0.2Gy(75th percentile: 0.7Gy) with no margin, 0.4Gy (75th percentile: 1.7Gy) for 3mm margin, 1.0Gy (75th percentile: 
+2.0Gy) for 5mm and 1.3Gy (75th percentile: 2.8Gy) for 7mm. The maximum point dose to the LCA with these beam channels nevertheless led to 
+an increased dose in the left chamber compared to the right site. This is due to the proximity of the upper LCA branches 
+to the LPV target site. 
+
+\subsection{Beam channel directions and safety margins}
+In general, it can be stated that field number and beam direction always result in a trade-off between dose to the OAR, irradiation time and 
+robustness. While less fields and hence beam directions shorten the treatment time, it does lead to a less robust treatment. In case OAR are 
+displaced during the treatment (intrafractional motion, see Introduction) or move in between CT image acquisition and irradiation 
+(interfractional motion) beam channels with a large angle in between them are more robust, as not all fields are affected by this displacement 
+and hence only a small dose would be shifted. Furthermore, opposite fields (like -45$^{\circ}$ and 135$^{\circ}$) (see figure 
+\ref{gantrydirection}) are more robust against potential range uncertainties and should hence be favored. Due to this reason, combined with 
+the smaller LCA dose deposition in case of three field numbers, a couch angle of 90$^{\circ}$ and gantry angles of -45$^{\circ}$, 
+135$^{\circ}$ and 0$^{\circ}$ were selected for the safety margin limitation studies as well as the motion mitigation treatment plans. 
+Concerning safety margins, which need to be applied in order to account for possible deviations in between treatment planning and dose 
+delivery, it can be stated that only a small margin tolerance was observed. This is due to the difficult position of the PVs close to 
+radiosensitive structures like the esophagus and especially the heart. With IMPT treatment a delivery with 3mm safety margin was found to 
+fulfill all the needed requirements. A more realistic safety margin of 5mm could be achieved with more restricted parameters in the IMPT 
+optimization. 
+
+
+\subsection{Movement of PVs in cardiac cycle}
+
+Lickfett et al. \cite{Lic05} analyzed the volume changes and displacement of the PVs in 25 healthy volunteers with MRI images. They 
+studied the posterior edge of the PV orifice and observed that the size and location changed considerably during the cardiac cycle. 
+Displacements of up to 7.2mm were found and it could be concluded that the motion amplitudes were bigger in the coronal (left-right) 
+than in the sagittal (anterior-posterior) direction. In more detail the largest coronal movement was found in the left superior PV, 
+while the largest sagittal motion was observed in the right superior PV with 3.9mm. The smallest saggital displacement was 2.5mm in the 
+left anterior PV. They suspected that the reason for movement is not resulting from a single influence, but is rather a mix of PV 
+contraction, atrial contraction and ventricular force. The movement of PV due to heartbeat is also relevant for catheter ablation. Based 
+on the stated finding Lickfett et al. recommended to keep a 5mm distance from the PV orifice during PV encircling ablation in order to 
+reduce the risk for PV stenosis. 
+Patel et al. \cite{Pat08} studied the MRI images of 30 patients in sinus rhythm with paroxysmal atrial fibrillation. They  
+stated that the mean displacement of the pulmonary veins was small. The left lower PV was found to move (2.7 $\pm$ 1.2)mm, the left upper PV 
+(2.1 $\pm$ 1.1)mm, the right lower PV (1.9 $\pm$ 1.1)mm and the right upper PV (2.3 $\pm$ 1.0)mm.\newline 
+\newline
+In the here studied patient cohort of five AF patients no differentiation between the upper and lower PVs was carried out. 
+The motion was assessed for the whole potential ablation site of LPV and RPV, respectively. Similar to the study by Patel et al. only a small 
+mean displacement was found, resulting in an average absolute displacement of less than 3mm (LPV: (2.71 $\pm$ 1.57)mm, RPV: (2.62 $\pm$ 1.41)mm). 
+Even though a tendency to a higher motion in AP direction could be observed, the contributions of the other motion directions 
+were in the same order of magnitude (up to 1mm). Hence no dominant motion direction could be determined. 
+The motion phases of the heartbeat gated CT scan were based on the ECG trace and resulted in a division of a single heartbeat. Thus the motion 
+phases could be directly assigned to the contraction (systole) and dilatation (diastole) of both atria and ventricles. 
+Nevertheless no motion phase could be assessed to yield the maximum displacement. This reinforces the hypothesis by Lickfett et al. that the 
+underlying heartbeat motion, which causes the PVs to move, is much more complex. 
+
+\newpage
+
+\subsection{Rescanning as motion mitigation technique}
+
+The small target volume displacement due to heartbeat led to small interplay effects, where the dose coverage was found 
+to have V95 values smaller than 95\% in only 31\% of the studied cases. This result could be already improved by using safety margins, as 
+71\% of these cases were irradiations with no safety margin and only 3\% of the stated cases were irradiations with safety margins of 
+5mm or more. Nevertheless also irradiations with a safety margin of 7mm were found to have a V95 of 89\% in some cases (e.g. 
+in the irradiation of the LPV in patient 4 with a motion period of 1s and a starting phase of 90$^{\circ}$). In order to 
+guarantee a robust and conformal irradiation a motion mitigation technique was hence needed. Rescanning was studied 
+and it can be concluded that this technique yields good results. \newline
+\newline
+Regarding dose coverage V95 values were higher than 99\% in 96.3\% of all studied cases with a safety margin of 3mm or higher. 
+The minimum dose coverage over all studied cases with safety margin was found in patient 1, in the irradiation of the LPV with a margin 
+of 3mm and an underlying motion of 1s period and 90$^{\circ}$ starting phase (V95=93.2\%). This result was obtained with five rescans. 
+With higher rescans the dose coverage could be improved, so that only 1.5\% of the studied cases with ten or more rescans had a dose coverage 
+smaller than 99\% (minimum: 97.1\%; 10 rescans in patient 1, 7mm safety margin and motion of 1s period and 90$^{\circ}$ starting phase). 
+The dose coverage for rescans without safety margin was worse, resulting in 93.1\% cases under 99\%. In comparison, the static irradiations 
+without safety margin resulted in a V95<99\% in only 17\% of the cases. 
+V107 values higher than 0\% were obtained in 7.3\% of all cases with safety margin (maximum of V107=3.7\% in the LPV of patient 3 
+with safety margin of 5mm, 5 rescans and motion of 1s period and 0$^{\circ}$ starting phase) compared to 
+28.8\% of cases without safety margin (maximum: V107=8.0\% for the LPV of patient 2 with 5 rescans and motion of 1s period 
+and 0$^{\circ}$ starting phase. This could be reduced to V107=2.9\% with 10 rescans). With safety margin, the dose homogeneity D5-D95 
+did not exceed 8.9\%. Without safety margin D5-D95 did not exceed 10.2\%. Both of these values were achieved with 5 rescans and could be 
+improved with 10 rescans (with safety margin to less than 7\% and without to less than 9\%). It can hence be concluded that additional 
+safety margins enable a more robust and successful treatment delivery. However, if possible, these margins should be kept as small 
+as technical feasible, as it increases the dose deposition in OARs. Regarding rescan numbers ten rescans yield improved results compared 
+to five rescans. These results are not significantly improved with rescan numbers higher than ten.\newline 
+\newline
+All these results were found for slice-by-slice rescanning, which means that each IES is irradiated independently with the predefined number 
+of rescans and the adapted particle numbers. In this case the treatment time is not prolonged. It needs to be studied if other rescanning 
+techniques like breath-sampled rescanning \cite{Sec09} or phase-controlled rescanning \cite{Fur07}, where the rescanning of the individual IES 
+are sampled according to the motion phase of the breathing period, are applicable to cardiac motion (ECG-sampled rescanning) and if this 
+method would result in the need of fewer rescan numbers. 
+
+\section{Conclusion}
+
+The PVs were found to move due to heartbeat with an amplitude of up to 6mm. 
+This displacement creates interplay effects when irradiated with scanned carbon ions. Rescanning as motion mitigation technique was studied. 
+It yields improved dose coverage and dose homogeneity compared to interplay in all studied patient cases, motion patterns and 
+for all safety margins. It is thus an adequate motion mitigation technique for the irradiation of PVs under influence of heartbeat motion. 
+A rescan number of ten is sufficient to obtain results comparable to the static irradiation. 
+For the treatment delivery, IMPT dose optimization together with a rather small safety margin (of e.g. 3mm) results in dose depositions in the 
+OARs (like esophagus as well as in the cardiac substructures) which are considered tolerable. In order to achieve this an ion gantry, 
+such as the one at HIT, is needed, as it allows for ion beam entry channels which better spare the critical structures. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% APPENDIX %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+

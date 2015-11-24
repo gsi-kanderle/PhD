@@ -1,0 +1,71 @@
+\documentclass[type=dr, dr=rernat, accentcolor=tud7b,colorbacktitle, bigchapter, openright, twoside, 12pt ]{tudthesis}
+\usepackage[english]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{pstricks}
+\usepackage{psfrag}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{epsfig}
+%\usepackage{geometry}
+\usepackage{subfigure}
+\usepackage{rotating}
+\usepackage{minitoc}
+\usepackage{appendix}
+
+%%%% 1 1/2 facher Zeilenabstand:	
+\usepackage{setspace}
+\onehalfspacing
+
+
+\begin{document}
+
+\newpage
+\chapter*{Publications related to this work}
+
+
+\section*{Peer-reviewed articles}
+\begin{setlength}{\leftmargini}{3ex}
+  \begin{description}
+%     \item[] Sonnabend K, Savran D, Beller, J, B\"ussing, MA, \textbf{Constantinescu A}, Elvers M, Endres J, Fritzsche M, Glorius J, Hasper J, Isaak J, L\"oher B, M\"uller S, Pietralla N, Romig C, Sauerwein A, Schnorrenberger L, W\"alzlein C, Zilges A, Zweidinger M; The Darmstadt High-Intensity Photon Setup (DHIPS) at the S-DALINAC; Nuclear Inst. and Methods in Physics Research, A; Volume 640; issue 1; p. 6-12; (2011) 
+      \item[] Seregni M, Kaderka R, Fattori G, Riboldi M, Pella A, \textbf{Constantinescu A}, Saito N, Durante M, Cerveri P, Bert C, Baroni G: Tumor tracking based on correlation models in scanned ion beam therapy: an experimental study; Phys Med Biol; 58(13); (2013)
+      \item[] Graeff C, \textbf{Constantinescu A}, L\"uchtenborg R, Durante M, Bert C: Multigating: 4D optimized beam tracking in scanned ion beam therapy; TCRT Express; accepted
+      \item[] Fattori G, Saito N, Seregni M, Kaderka R, Pella A, \textbf{Constantinescu A}, Riboldi M, Steidl P, Cerveri P, Bert C, Durante M and Baroni G: Commissioning of an integrated platform for time-resolved treatment delivery in scanned ion beam therapy by means of optical motion monitoring; TCRT Expres; submitted
+  \end{description}
+\end{setlength}
+
+\section*{GSI scientific reports}
+\begin{setlength}{\leftmargini}{3ex}
+  \begin{description}
+%     \item[] \textbf{Constantinescu A}, Saito N, Chaudhri N, Durante M, Bert C: Optimisation of the ion optical range adaptation method for tracking of moving tumours with scanned ion beams; \textit{GSI Scientific Report 2009}, 502
+%     \item[] \textbf{Constantinescu A}, Saito N, Chaudhri N, Durante M, Kraft G, Bert C: Optimisation of an ion optical range adaptation method for beam tracking of moving tumours with scanned ion beams;  \textit{GSI Scientific Report 2010}, 487
+    \item[] \textbf{Constantinescu A}, L\"uchtenborg R, Durante M, Bert C: Experimental validation of motion phase interpolation when tracking a moving tumor with a scanned ion beam; \textit{GSI Scientific Report 2011}, 541
+    \item[] \textbf{Constantinescu A}, Lehmann HI, Graeff C, Packer D, Durante M, Bert C: Influence of cardiac motion on pulmonary veins for the non-invasive treatment of atrial fibrillation with a scanned cabon ion beam; \textit{GSI Scientific Report 2012}, 472
+    \item[] \textbf{Constantinescu A}, Lehmann HI, Graeff C, Packer D, Durante M, Bert C: Influence of cardiac motion on porcine AV node for the non-invasive treatment of atrial fibrillation with a scanned carbon ion beam; \textit{GSI Scientific Report 2013}
+  \end{description}
+\end{setlength}
+
+\section*{Articles}
+\begin{setlength}{\leftmargini}{1.4em}
+  \begin{description}
+    \item[] Carbon ions tackle atrial fibrillation; Tami Freeman; medicalphysicsweb; 2013
+      \end{description}
+\end{setlength}
+
+\newpage
+
+\section*{Conference contributions}
+\begin{setlength}{\leftmargini}{1.4em}
+  \begin{description}
+    \item[] \textbf{Constantinescu A}, Blanck O, Durante M, Bert C (2012). Non-invasive treatment of atrial fibrillation with a scanned carbon ion beam; \textit{Radiotherapy and Oncology}, 102(Supplement 1):S215. Oral presentation
+    \item[] \textbf{Constantinescu A}, Blanck O, Durante M, Bert C (2012). Non-invasive treatment of atrial fibrillation with a scanned carbon ion beam; \textit{DPG spring meeting}. Oral presentation
+    \item[] \textbf{Constantinescu A}, Lehmann HI, Graeff C, Packer DL, Durante M and Bert C (2013). Planning studies for non-invasive isolation of the pulmonary veins with a scanned carbon ion beam; \textit{HRS Scientific Meeting}. Oral presentation
+    \item[] \textbf{Constantinescu A}, Lehmann HI, Graeff C, Packer DL, Durante M and Bert C (2013). Planning studies for non-invasive isolation of the pulmonary veins with a scanned carbon ion beam; \textit{PTCOG 52}. Oral presentation
+    \item[] \textbf{Constantinescu A}, Lehmann HI, Graeff C, Packer DL, Durante M and Bert C (2013). Non-invasive treatment of atrial fibrillation with a scanned carbon ion beam; \textit{Particle Radiosurgery: A new Frontier in Physics in Medicine}. Poster presentation
+      \end{description}
+\end{setlength}
+
+
+
+
+\end{document}

@@ -1,0 +1,2170 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.9.20)  1 APR 2014 16:52
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**discussion.tex
+(./discussion.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2011-07-01, ngerman-x-2011-07-01, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, galician, german, ngerman, swissgerman, monogreek, greek, hungarian,
+ icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, marathi, or
+iya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, kurmanji,
+ lao, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk, pol
+ish, portuguese, romanian, russian, sanskrit, serbian, serbianc, slovak, sloven
+ian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, welsh, loaded
+.
+(/u/aconstan/texmf/tex/latex/tuddesign/tudthesis.cls
+Document Class: tudthesis 2009/05/15 0.96 Joe Werner's TUD-Design-Manual packag
+e
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/xkeyval/
+xkeyval.sty
+Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/xkeyva
+l/xkeyval.tex
+\XKV@toks=\toks14
+\XKV@tempa@toks=\toks15
+\XKV@depth=\count79
+File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/xkeyva
+l/keyval.tex)))
+Class tudthesis Info: Unknown option 'accentcolor=tud7b`. Pass to tudreport cla
+ss. on input line 37.
+Class tudthesis Info: Unknown option 'colorbacktitle`. Pass to tudreport class.
+ on input line 37.
+Class tudthesis Info: Unknown option 'bigchapter`. Pass to tudreport class. on 
+input line 37.
+Class tudthesis Info: Unknown option 'openright`. Pass to tudreport class. on i
+nput line 37.
+Class tudthesis Info: Unknown option 'twoside`. Pass to tudreport class. on inp
+ut line 37.
+Class tudthesis Info: Unknown option '12pt`. Pass to tudreport class. on input 
+line 37.
+ (/u/aconstan/texmf/tex/latex/tuddesign/tudreport.cls
+Document Class: tudreport 2009/11/17 1.13 Clemens von Loewenich's and Joe Werne
+r's TUD-Design package
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/ift
+hen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+Class tudreport Info: Option `paper=a4report' selected. on input line 142.
+Class tudreport Info: Unknown option 'openright`. Pass to KOMA-Script class. on
+ input line 144.
+Class tudreport Info: Unknown option 'twoside`. Pass to KOMA-Script class. on i
+nput line 144.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/koma-scr
+ipt/scrreprt.cls
+Document Class: scrreprt 2011/06/16 v3.09a KOMA-Script document class (report)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/koma-scr
+ipt/scrkbase.sty
+Package: scrkbase 2011/06/16 v3.09a KOMA-Script package (KOMA-Script-dependent 
+basics and keyval usage)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/koma-scr
+ipt/scrbase.sty
+Package: scrbase 2011/06/16 v3.09a KOMA-Script package (KOMA-Script-independent
+ basics and keyval usage)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/koma-scr
+ipt/scrlfile.sty
+Package: scrlfile 2011/03/09 v3.09 KOMA-Script package (loading files)
+
+Package scrlfile, 2011/03/09 v3.09 KOMA-Script package (loading files)
+                  Copyright (C) Markus Kohm
+
+)))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/koma-scr
+ipt/tocbasic.sty
+Package: tocbasic 2011/05/30 v3.09a KOMA-Script package (handling toc-files)
+)
+Package tocbasic Info: omitting babel extension for `toc'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `toc' on input line 117.
+Package tocbasic Info: omitting babel extension for `lof'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lof' on input line 118.
+Package tocbasic Info: omitting babel extension for `lot'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lot' on input line 119.
+Class scrreprt Info: You've used standard option `openright'.
+(scrreprt)           This is correct!
+(scrreprt)           Internally I'm using `open=right'.
+(scrreprt)           If you'd like to set the option with \KOMAoptions,
+(scrreprt)           you'd have to use `open=right' there
+(scrreprt)           instead of `openright', too.
+Class scrreprt Info: File `scrsize11pt.clo' used instead of
+(scrreprt)           file `scrsize11.clo' to setup font sizes on input line 134
+7.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/koma-scr
+ipt/scrsize11pt.clo
+File: scrsize11pt.clo 2011/06/16 v3.09a KOMA-Script font size class option (11p
+t)
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/koma-scr
+ipt/typearea.sty
+Package: typearea 2011/06/16 v3.09a KOMA-Script package (type area)
+
+Package typearea, 2011/06/16 v3.09a KOMA-Script package (type area)
+                  Copyright (C) Frank Neukam, 1992-1994
+                  Copyright (C) Markus Kohm, 1994-
+
+\ta@bcor=\skip41
+\ta@div=\count80
+\ta@hblk=\skip42
+\ta@vblk=\skip43
+\ta@temp=\skip44
+Package typearea Info: These are the values describing the layout:
+(typearea)             DIV  = 10
+(typearea)             BCOR = 0.0pt
+(typearea)             \paperwidth      = 597.50793pt
+(typearea)              \textwidth      = 418.25555pt
+(typearea)              DIV departure   = -6%
+(typearea)              \evensidemargin = 47.2316pt
+(typearea)              \oddsidemargin  = -12.5192pt
+(typearea)             \paperheight     = 845.04694pt
+(typearea)              \textheight     = 595.80026pt
+(typearea)              \topmargin      = -25.16531pt
+(typearea)              \headheight     = 17.0pt
+(typearea)              \headsep        = 20.40001pt
+(typearea)              \topskip        = 11.0pt
+(typearea)              \footskip       = 47.60002pt
+(typearea)              \baselineskip   = 13.6pt
+(typearea)              on input line 1139.
+)
+\c@part=\count81
+\c@chapter=\count82
+\c@section=\count83
+\c@subsection=\count84
+\c@subsubsection=\count85
+\c@paragraph=\count86
+\c@subparagraph=\count87
+\abovecaptionskip=\skip45
+\belowcaptionskip=\skip46
+\c@pti@nb@sid@b@x=\box26
+\c@figure=\count88
+\c@table=\count89
+\bibindent=\dimen102
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/tools/ca
+lc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count90
+\calc@Bcount=\count91
+\calc@Adimen=\dimen103
+\calc@Bdimen=\dimen104
+\calc@Askip=\skip47
+\calc@Bskip=\skip48
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count92
+\calc@Cskip=\skip49
+) (/u/aconstan/texmf/tex/latex/tuddesign/colours/tudcolours.sty
+Package: tudcolours 2009/03/12 1.9 Clemens von Loewenich's and Joe Werner's TUD
+-Design package
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/xcolor/x
+color.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/latexcon
+fig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Package option `override' ignored on input line 216.
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/pdftex-d
+ef/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/oberdi
+ek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/oberdi
+ek/ltxcmds.sty
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count93
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+) (/u/aconstan/texmf/tex/latex/tuddesign/colours/tudcolours.cfg
+File: tudcolours.cfg 2008/12/03
+) (/u/aconstan/texmf/tex/latex/tuddesign/colours/tudcolours.def
+File: tudcolours.def 2008/12/03
+))
+(/u/aconstan/texmf/tex/latex/tuddesign/report/tudreprt_fonts.sty
+Package: tudreprt_fonts 2009/00/18 1.11 Clemens von Loewenich's and Joe Werner'
+s TUD-Design package
+
+(/u/aconstan/texmf/tex/latex/tuddesign/base/tudfonts.sty
+Package: tudfonts 2009/09/18 1.12 Clemens von Loewenich's and Joe Werner's TUD-
+Design package
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/fon
+tenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/t1e
+nc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/tex
+tcomp.sty
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
+Package textcomp Info: Changing ? sub-encoding to TS1/4 on input line 72.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/ts1
+enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 266.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 311.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 312.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 313.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 314.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 315.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 316.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 317.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 318.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 319.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 320.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 321.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 322.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 323.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 324.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 326.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 327.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 328.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 329.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 330.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 331.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 332.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 333.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 334.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 335.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 336.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 337.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/fix
+-cm.sty
+Package: fix-cm 2006/09/13 v1.1m fixes to LaTeX
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/ts1
+enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TS1 on input line 42.
+))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mathdesign.sty
+Package: mathdesign 2006/01/29 v1.55 Math Design Project
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdbch/mdbch.cfg)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdbch/mdbch.sty
+Package: mdbch 2006/01/29 v1.55 bitstream charter + mdbch (Math Design Project)
+
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdfont.def
+File: mdfont.def 2006/01/29 v1.55 (Math Design Project)
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdsffont.def
+File: mdsffont.def 2006/01/29 v1.55 (Math Design Project)
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdttfont.def
+File: mdttfont.def 2006/01/29 v1.55 (Math Design Project)
+)
+\symmdcal=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `mdcal' in version `bold'
+(Font)                  OMS/mdbch/m/n --> OMS/mdbch/b/n on input line 89.
+\symmdscr=\mathgroup5
+LaTeX Font Info:    Overwriting symbol font `mdscr' in version `bold'
+(Font)                  OMS/mdbch/m/n --> OMS/mdbch/b/n on input line 95.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/xmdeuf/m/n --> U/xmdeuf/b/n on input line 102.
+LaTeX Font Info:    Try loading font information for T1+mdbch on input line 111
+.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdbch/t1mdbch.fd
+File: t1mdbch.fd 2006/01/28 Fontinst v1.928 font definitions for T1/mdbch.
+)
+LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
+(Font)              scaled to size 10.51207pt on input line 111.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/mdbch/m/n on input line 114.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/mdbch/m/it on input line 115.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/mdbch/m/n on input line 116.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/mdbch/m/n on input line 117.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/mdbch/b/n on input line 119.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/mdbch/b/it on input line 120.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/mdbch/b/n on input line 121.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/mdbch/b/n on input line 122.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  OT1/mdbch/m/n --> T1/mdbch/m/n on input line 124.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> T1/mdbch/b/n on input line 125.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> T1/mdbch/m/it on input line 126.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 127.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 128.
+LaTeX Font Info:    Overwriting math alphabet `\mathcal' in version `normal'
+(Font)                  OMS/mdbch/m/n --> OMS/mdbch/m/n on input line 132.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
+(Font)                  OT1/mdbch/b/n --> T1/mdbch/b/n on input line 137.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> T1/mdbch/b/n on input line 138.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> T1/mdbch/b/it on input line 139.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> T1/cmss/b/n on input line 140.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/b/n on input line 141.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 153.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 154.
+\symlettersupright=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lettersupright' in version `bold'
+(Font)                  OML/mdbch/m/n --> OML/mdbch/b/n on input line 190.
+LaTeX Font Info:    Redeclaring math alphabet \mathrm on input line 193.
+\symmathdesignA=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `mathdesignA' in version `bold'
+(Font)                  MDA/mdbch/m/n --> MDA/mdbch/b/n on input line 382.
+\@emptytoks=\toks16
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 421.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 422.
+\symmathdesignB=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `mathdesignB' in version `bold'
+(Font)                  MDB/mdbch/m/n --> MDB/mdbch/b/n on input line 685.
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/fon
+tenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/t1e
+nc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+)))
+\symutopiasymbol=\mathgroup9
+LaTeX Font Info:    Overwriting math alphabet `\mathmb' in version `normal'
+(Font)                  T1/5ch/mb/n --> T1/5ch/mb/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathmb' in version `bold'
+(Font)                  T1/5ch/mb/n --> T1/5ch/mb/n on input line 35.
+LaTeX Info: Redefining \em on input line 37.
+\fontheight=\skip50
+\fontdepth=\skip51
+\fontstrutbox=\box27
+LaTeX Info: Redefining \LaTeX on input line 108.
+)
+LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
+(Font)              scaled to size 11.52008pt on input line 239.
+)
+\TUD@headfootsep=\skip52
+ (/u/aconstan/texmf/tex/latex/tuddesign/base/tudpage.sty
+Package: tudpage 2009/08/11 1.10 Clemens von Loewenich's and Joe Werner's TUD-D
+esign package
+
+(/u/aconstan/texmf/tex/latex/tuddesign/base/tudpaper.sty
+Package: tudpaper 2009/01/28 1.9 Clemens von Loewenich's and Joe Werner's TUD-D
+esign package
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/graphics
+/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/graphics
+/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/graphics
+/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/latexcon
+fig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+)
+\Gin@req@height=\dimen105
+\Gin@req@width=\dimen106
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/eso-pic/
+eso-pic.sty
+Package: eso-pic 2010/10/06 v2.0c eso-pic (RN)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/oberdi
+ek/atbegshi.sty
+Package: atbegshi 2011/01/30 v1.15 At begin shipout hook (HO)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/oberdi
+ek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)))
+\TUD@logo@height=\skip53
+\TUD@logo@leftskip=\skip54
+\TUD@sep@top=\skip55
+\TUD@sep@left=\skip56
+\TUD@sep@right=\skip57
+\TUD@sep@bottom=\skip58
+\TUD@titlepos=\skip59
+\TUD@titlebox@sep@left=\skip60
+\TUD@titlebox@sep@right=\skip61
+\TUD@titlebox@sep@bottom=\skip62
+\TUD@subtitlebox@sep=\skip63
+\TUD@textwidth=\skip64
+\TUD@cols@width=\skip65
+\TUD@cols@sep=\skip66
+\c@TUD@cols@n=\count94
+ (/u/aconstan/texmf/tex/latex/tuddesign/base/tudrules.sty
+Package: tudrules 2008/10/09 1.6 Clemens von Loewenich's and Joe Werner's TUD-D
+esign package
+\TUD@indentbar@height=\skip67
+\TUD@indentbar@depth=\skip68
+\TUD@indentbar@totalheight=\skip69
+\@TUD@indentbar@width=\skip70
+\@TUD@largeruleheight=\skip71
+\@TUD@smallruleheight=\skip72
+\@TUD@rulesep=\skip73
+\@TUD@ruleheight=\skip74
+)
+\TUD@indentbarheight=\skip75
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/geometry
+/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/oberdi
+ek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/ifxete
+x/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count95
+\Gm@cntv=\count96
+\c@Gm@tempcnt=\count97
+\Gm@bindingoffset=\dimen107
+\Gm@wd@mp=\dimen108
+\Gm@odd@mp=\dimen109
+\Gm@even@mp=\dimen110
+\Gm@layoutwidth=\dimen111
+\Gm@layoutheight=\dimen112
+\Gm@layouthoffset=\dimen113
+\Gm@layoutvoffset=\dimen114
+\Gm@dimlist=\toks17
+))
+\TUD@footparindent=\skip76
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/fancyhdr
+/fancyhdr.sty
+\fancy@headwidth=\skip77
+\f@ncyO@elh=\skip78
+\f@ncyO@erh=\skip79
+\f@ncyO@olh=\skip80
+\f@ncyO@orh=\skip81
+\f@ncyO@elf=\skip82
+\f@ncyO@erf=\skip83
+\f@ncyO@olf=\skip84
+\f@ncyO@orf=\skip85
+)) (/u/aconstan/texmf/tex/latex/tuddesign/base/tudheading.sty
+Package: tudheading 2009/12/31 1.17 Clemens von Loewenich's and Joe Werner's TU
+D-Design package
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/titlesec
+/titlesec.sty
+Package: titlesec 2011/08/28 v2.9.1 Sectioning titles
+\ttl@box=\box28
+\beforetitleunit=\skip86
+\aftertitleunit=\skip87
+\ttl@plus=\dimen115
+\ttl@minus=\dimen116
+\ttl@toksa=\toks18
+\titlewidth=\dimen117
+\titlewidthlast=\dimen118
+\titlewidthfirst=\dimen119
+)
+\c@seclinedepth=\count98
+\TUD@chapter@diff@height=\skip88
+LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
+(Font)              scaled to size 24.28816pt on input line 75.
+\@TUD@above@headskip=\skip89
+\@TUD@below@headskip=\skip90
+ (/u/aconstan/texmf/tex/latex/tuddesign/base/tudheading.def
+File: tudheading.def 2009/07/14
+\TUD@part@tmp@height=\skip91
+\TUD@part@tmp@depth=\skip92
+\@TUD@partbox=\box29
+)
+\TUD@parind=\skip93
+\TUD@chapind=\skip94
+\TUD@secind=\skip95
+\TUD@subsecind=\skip96
+\TUD@subsubsecind=\skip97
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/titlesec
+/block.tss
+File: block.tss 2011/08/28
+)) (/u/aconstan/texmf/tex/latex/tuddesign/base/tudredef.sty
+Package: tudredef 2010/04/10 1.2 Clemens von Loewenich's and Joe Werner's TUD-D
+esign package
+\TUD@abstract@count=\count99
+)
+(/u/aconstan/texmf/tex/latex/tuddesign/report/tudreprt_title.sty
+Package: tudreprt_title 2009/09/18 1.11 Clemens von Loewenich's and Joe Werner'
+s TUD-Design package
+\TUD@sponsorlogo=\box30
+\TUD@titleskip=\skip98
+))
+(/u/aconstan/texmf/tex/latex/tuddesign/thesis/tudthess_title.sty
+Package: tudthess_title 2010/03/22 0.99 Joe Werner's TUD-Design-Manual package
+))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/babel/
+babel.sty
+Package: babel 2008/07/08 v3.8m The Babel package
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/babel/
+english.ldf
+Language: english 2005/03/30 v3.3o English support from the babel system
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/babel/
+babel.def
+File: babel.def 2008/07/08 v3.8m Babel common definitions
+\babel@savecnt=\count100
+\U@D=\dimen120
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/inp
+utenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks19
+\inpenc@posthook=\toks20
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/utf
+8.def
+File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/t1e
+nc.dfu
+File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0132 (decimal 306)
+   defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
+)
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/ot1
+enc.dfu
+File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+)
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/oms
+enc.dfu
+File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/base/ts1
+enc.dfu
+File: ts1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+)
+Now handling font encoding MDA ...
+... no UTF-8 mapping file for font encoding MDA
+Now handling font encoding MDB ...
+... no UTF-8 mapping file for font encoding MDB
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02DC (decimal 732)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
+))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/pstricks
+/pstricks.sty
+Package: pstricks 2011/08/201 v0.51 LaTeX wrapper for `PSTricks' (RN,HV)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pstric
+ks/pstricks.tex
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/xkeyva
+l/pst-xkey.tex
+File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pstric
+ks/pst-fp.tex `pst-fp' v0.05, 2010/01/17 (hv)
+\pstFP@xs=\count101
+\pstFP@xia=\count102
+\pstFP@xib=\count103
+\pstFP@xfa=\count104
+\pstFP@xfb=\count105
+\pstFP@rega=\count106
+\pstFP@regb=\count107
+\pstFP@regs=\count108
+\pstFP@times=\count109
+)
+\psLoopIndex=\count110
+
+`PSTricks' v2.23  <2011/09/04> (tvz)
+\pst@dima=\dimen121
+\pst@dimb=\dimen122
+\pst@dimc=\dimen123
+\pst@dimd=\dimen124
+\pst@dimg=\dimen125
+\pst@dimh=\dimen126
+\pst@dimm=\dimen127
+\pst@dimn=\dimen128
+\pst@dimo=\dimen129
+\pst@dimp=\dimen130
+\pst@hbox=\box31
+\pst@ibox=\box32
+\pst@boxg=\box33
+\pst@cnta=\count111
+\pst@cntb=\count112
+\pst@cntc=\count113
+\pst@cntd=\count114
+\pst@cntg=\count115
+\pst@cnth=\count116
+\pst@cntm=\count117
+\pst@cntn=\count118
+\pst@cnto=\count119
+\pst@cntp=\count120
+\@zero=\count121
+\pst@toks=\toks21
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pstric
+ks/pstricks.con)
+\psunit=\dimen131
+\psxunit=\dimen132
+\psyunit=\dimen133
+\pst@C@@rType=\count122
+\pslinewidth=\dimen134
+\psk@startLW=\dimen135
+\psk@endLW=\dimen136
+\pst@customdefs=\toks22
+\pslinearc=\dimen137
+\pst@symbolStep=\dimen138
+\pst@symbolWidth=\dimen139
+\everypsbox=\toks23
+\psframesep=\dimen140
+\pslabelsep=\dimen141
+\pst@shift=\dimen142
+\theoverlaybox=\box34
+)
+File: pstricks.tex 2011/09/04 v2.23 `PSTricks' (tvz,hv)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pstric
+ks/pst-fp.tex)
+File: pst-fp.tex 2011/09/04 v2.23 `PST-fp' (hv)
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/psfrag/p
+sfrag.sty
+Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
+\pfg@pcount=\count123
+\pfg@scount=\count124
+\pfg@temp=\write3
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/tools/en
+umerate.sty
+Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
+\@enLab=\toks24
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/float/fl
+oat.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count125
+\float@exts=\toks25
+\float@box=\box35
+\@float@everytoks=\toks26
+\@floatcapt=\box36
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/graphics
+/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+\epsfxsize=\dimen143
+\epsfysize=\dimen144
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/subfigur
+e/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip99
+\subfigcapskip=\skip100
+\subfigcaptopadj=\dimen145
+\subfigbottomskip=\skip101
+\subfigcapmargin=\dimen146
+\subfiglabelskip=\skip102
+\c@subfigure=\count126
+\c@lofdepth=\count127
+\c@subtable=\count128
+\c@lotdepth=\count129
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/subfigur
+e/subfigure.cfg)
+\subfig@top=\skip103
+\subfig@bottom=\skip104
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/rotating
+/rotating.sty
+Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
+\c@r@tfl@t=\count130
+\rotFPtop=\skip105
+\rotFPbot=\skip106
+\rot@float@box=\box37
+\rot@mess@toks=\toks27
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/minitoc/
+minitoc.sty
+Package: minitoc 2008/07/16 v60 Package minitoc (JPFD)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/minitoc/
+mtcmess.sty
+Package: mtcmess 2006/03/14
+)
+Package minitoc Info: I0001
+(minitoc)             *** minitoc package, version 60 ***.
+\tf@mtc=\write4
+\mtcindent=\skip107
+\mtcskipamount=\skip108
+Package minitoc Info: I0005
+(minitoc)             compatible with hyperref.
+Package minitoc Info: I0023
+(minitoc)             part level macros available.
+Package minitoc Info: I0003
+(minitoc)             chapter level macros available.
+\mtc@toks=\toks28
+\mtc@strutbox=\box38
+\mtc@hstrutbox=\box39
+Package minitoc Info: I0002
+(minitoc)             Autoconfiguration of extensions.
+\openout4 = `discussion.mtc0'.
+
+\openout4 = `discussion.mtc'.
+
+ (./discussion.mtc0)
+Package minitoc Info: I0012
+(minitoc)             Long extensions (Unix-like) will be used.
+Package minitoc Info: I0031
+(minitoc)             ==> this version is configured for UNIX-like 
+(minitoc)                 (long extensions) file names.
+\openout4 = `discussion.mtc'.
+
+\openout4 = `discussion.mtc0'.
+
+\c@mtc=\count131
+\c@minitocdepth=\count132
+\c@ptc=\count133
+\c@parttocdepth=\count134
+\ptcindent=\skip109
+Package minitoc Info: I0010
+(minitoc)             The english language is selected.
+(minitoc)              on input line 4910.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/minitoc/
+english.mld
+File: english.mld 2006/01/13
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/minitoc/
+english.mld
+File: english.mld 2006/01/13
+))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/appendix
+/appendix.sty
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count135
+\c@@ppsavesec=\count136
+\c@@ppsaveapp=\count137
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/pgf/fron
+tendlayer/tikz.sty
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/pgf/basi
+clayer/pgf.sty
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/pgf/util
+ities/pgfrcs.sty
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ut
+ilities/pgfutil-common.tex
+\pgfutil@everybye=\toks29
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ut
+ilities/pgfutil-latex.def
+\pgfutil@abb=\box40
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/ms/every
+shi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ut
+ilities/pgfrcs.code.tex
+Package: pgfrcs 2010/10/25 v2.10 (rcs-revision 1.24)
+))
+Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/pgf/basi
+clayer/pgfcore.sty
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/pgf/syst
+emlayer/pgfsys.sty
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/sy
+stemlayer/pgfsys.code.tex
+Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ut
+ilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks30
+\pgfkeys@temptoks=\toks31
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ut
+ilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks32
+))
+\pgf@x=\dimen147
+\pgf@y=\dimen148
+\pgf@xa=\dimen149
+\pgf@ya=\dimen150
+\pgf@xb=\dimen151
+\pgf@yb=\dimen152
+\pgf@xc=\dimen153
+\pgf@yc=\dimen154
+\w@pgf@writea=\write5
+\r@pgf@reada=\read1
+\c@pgf@counta=\count138
+\c@pgf@countb=\count139
+\c@pgf@countc=\count140
+\c@pgf@countd=\count141
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/sy
+stemlayer/pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Package pgfsys Info: Driver file for pgf: pgfsys-pdftex.def on input line 900.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/sy
+stemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2009/05/22  (rcs-revision 1.26)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/sy
+stemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
+)))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/sy
+stemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
+\pgfsyssoftpath@smallbuffer@items=\count142
+\pgfsyssoftpath@bigbuffer@items=\count143
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/sy
+stemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ba
+siclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ma
+th/pgfmath.code.tex
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ma
+th/pgfmathcalc.code.tex
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ma
+th/pgfmathutil.code.tex)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ma
+th/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen155
+\pgfmath@count=\count144
+\pgfmath@box=\box41
+\pgfmath@toks=\toks33
+\pgfmath@stack@operand=\toks34
+\pgfmath@stack@operation=\toks35
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ma
+th/pgfmathfunctions.code.tex
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ma
+th/pgfmathfunctions.basic.code.tex)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ma
+th/pgfmathfunctions.trigonometric.code.tex)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ma
+th/pgfmathfunctions.random.code.tex)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ma
+th/pgfmathfunctions.comparison.code.tex)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ma
+th/pgfmathfunctions.base.code.tex)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ma
+th/pgfmathfunctions.round.code.tex)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ma
+th/pgfmathfunctions.misc.code.tex)))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ma
+th/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count145
+))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ba
+siclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
+\pgf@picminx=\dimen156
+\pgf@picmaxx=\dimen157
+\pgf@picminy=\dimen158
+\pgf@picmaxy=\dimen159
+\pgf@pathminx=\dimen160
+\pgf@pathmaxx=\dimen161
+\pgf@pathminy=\dimen162
+\pgf@pathmaxy=\dimen163
+\pgf@xx=\dimen164
+\pgf@xy=\dimen165
+\pgf@yx=\dimen166
+\pgf@yy=\dimen167
+\pgf@zx=\dimen168
+\pgf@zy=\dimen169
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ba
+siclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
+\pgf@path@lastx=\dimen170
+\pgf@path@lasty=\dimen171
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ba
+siclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
+\pgf@shorten@end@additional=\dimen172
+\pgf@shorten@start@additional=\dimen173
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ba
+siclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
+\pgfpic=\box42
+\pgf@hbox=\box43
+\pgf@layerbox@main=\box44
+\pgf@picture@serial@count=\count146
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ba
+siclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
+\pgflinewidth=\dimen174
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ba
+siclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
+\pgf@pt@x=\dimen175
+\pgf@pt@y=\dimen176
+\pgf@pt@temp=\dimen177
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ba
+siclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ba
+siclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ba
+siclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2008/10/09  (rcs-revision 1.8)
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ba
+siclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ba
+siclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
+\pgf@max=\dimen178
+\pgf@sys@shading@range@num=\count147
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ba
+siclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ba
+siclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
+\pgfexternal@startupbox=\box45
+))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ba
+siclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2010/08/27  (rcs-revision 1.2)
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ba
+siclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2008/01/17  (rcs-revision 1.2)
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ba
+siclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
+)))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/mo
+dules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
+\pgfnodeparttextbox=\box46
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/mo
+dules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/pgf/comp
+atibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen179
+\pgf@nodesepend=\dimen180
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/pgf/comp
+atibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
+))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/pgf/util
+ities/pgffor.sty
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/pgf/util
+ities/pgfkeys.sty
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ut
+ilities/pgfkeys.code.tex))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/ut
+ilities/pgffor.code.tex
+Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
+\pgffor@iter=\dimen181
+\pgffor@skip=\dimen182
+\pgffor@stack=\toks36
+\pgffor@toks=\toks37
+))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/fr
+ontendlayer/tikz/tikz.code.tex
+Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/li
+braries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
+\pgf@plot@mark@count=\count148
+\pgfplotmarksize=\dimen183
+)
+\tikz@lastx=\dimen184
+\tikz@lasty=\dimen185
+\tikz@lastxsaved=\dimen186
+\tikz@lastysaved=\dimen187
+\tikzleveldistance=\dimen188
+\tikzsiblingdistance=\dimen189
+\tikz@figbox=\box47
+\tikz@tempbox=\box48
+\tikztreelevel=\count149
+\tikznumberofchildren=\count150
+\tikznumberofcurrentchild=\count151
+\tikz@fig@count=\count152
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/mo
+dules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
+\pgfmatrixcurrentrow=\count153
+\pgfmatrixcurrentcolumn=\count154
+\pgf@matrix@numberofcolumns=\count155
+)
+\tikz@expandcount=\count156
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/pgf/fr
+ontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
+)))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/setspace
+/setspace.sty
+Package: setspace 2000/12/01 6.7 Contributed and Supported LaTeX2e package
+
+Package: `setspace' 6.7 <2000/12/01>
+)
+
+LaTeX Warning: Unused global option(s):
+    [accentcolor=tud7b,colorbacktitle,bigchapter,12pt].
+
+(./discussion.aux)
+\openout1 = `discussion.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 23.
+LaTeX Font Info:    Try loading font information for MDA+cmr on input line 23.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdacmr.fd
+File: mdacmr.fd 
+)
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for MDB/cmr/m/n on input line 23.
+LaTeX Font Info:    Try loading font information for MDB+cmr on input line 23.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdbcmr.fd
+File: mdbcmr.fd 
+)
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Try loading font information for T1+5ch on input line 23.
+
+(/u/aconstan/texmf/tex/latex/tex-tudfonts/softmake/charter/t15ch.fd
+File: t15ch.fd 2008/06/23 Fontinst v1.927 font definitions for T1/5ch.
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/context/base/s
+upp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count157
+\scratchdimen=\dimen190
+\scratchbox=\box49
+\nofMPsegments=\count158
+\nofMParguments=\count159
+\everyMPshowfont=\toks38
+\MPscratchCnt=\count160
+\MPscratchDim=\dimen191
+\MPnumerator=\count161
+\makeMPintoPDFobject=\count162
+\everyMPtoPDFconversion=\toks39
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/oberdi
+ek/pdftexcmds.sty
+Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/oberdi
+ek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/oberdiek
+/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/oberdiek
+/grfext.sty
+Package: grfext 2010/08/19 v1.1 Managing graphics extensions (HO)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/oberdi
+ek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Defining keys (HO)
+))
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/oberdiek
+/kvoptions.sty
+Package: kvoptions 2010/12/23 v3.10 Keyval support for LaTeX options (HO)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/oberdi
+ek/kvsetkeys.sty
+Package: kvsetkeys 2011/04/07 v1.13 Key value parser (HO)
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/generic/oberdi
+ek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Prefix for e-TeX command names (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/latexcon
+fig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\AtBeginShipoutBox=\box50
+
+*geometry* detected driver: dvips
+*geometry* verbose mode - [ preamble ] result:
+* driver: dvips
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead includefoot includemp twoside 
+* h-part:(L,W,R)=(56.9055pt, 497.92325pt, 42.67912pt)
+* v-part:(T,H,B)=(42.67912pt, 745.46222pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=497.92325pt
+* \textheight=698.49777pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-29.59087pt
+* \topmargin=-29.59087pt
+* \headheight=16.56445pt
+* \headsep=15.2pt
+* \topskip=11.0pt
+* \footskip=15.2pt
+* \marginparwidth=0.0pt
+* \marginparsep=0.0pt
+* \columnsep=11.95013pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\TUD@part@topskip=\skip110
+\c@minilofdepth=\count163
+\c@minilotdepth=\count164
+\c@partlofdepth=\count165
+\c@partlotdepth=\count166
+\c@sectlofdepth=\count167
+\c@sectlotdepth=\count168
+Package minitoc(hints) Info: I0049
+(minitoc(hints))             ==> You requested the hints option. 
+(minitoc(hints))             Some hints are eventually given below.
+Package minitoc(hints) Info: I0042
+(minitoc(hints))             --- The appendix package is loaded. 
+(minitoc(hints))             See the minitoc package documentation 
+(minitoc(hints))             for specific precautions.
+Package minitoc(hints) Info: I0043
+(minitoc(hints))             --- The KOMAScript scrreprt class is loaded. 
+(minitoc(hints))             See the minitoc package documentation 
+(minitoc(hints))             for specific precautions.
+
+Package minitoc(hints) Warning: W0099
+(minitoc(hints))                --- The titlesec package is loaded. 
+(minitoc(hints))                It is incompatible 
+(minitoc(hints))                with the minitoc package.
+
+
+Package minitoc(hints) Warning: W0028
+(minitoc(hints))                --- The \chapter command is altered 
+(minitoc(hints))                after minitoc.
+
+ABD: EveryShipout initializing macros
+Package minitoc Info: I0024
+(minitoc)             PREPARING MINITOCS FROM discussion.toc on input line 27.
+Package minitoc Info: I0033
+(minitoc)             Writing discussion.mtc1.
+\openout4 = `discussion.mtc1'.
+
+LaTeX Font Info:    Try loading font information for T1+5fp on input line 28.
+
+(/u/aconstan/texmf/tex/latex/tex-tudfonts/softmake/frontpage/t15fp.fd
+File: t15fp.fd 2009/08/06 Fontinst v1.927 font definitions for T1/5fp.
+)
+(./discussion.toc
+LaTeX Font Info:    Try loading font information for OT1+mdbch on input line 3.
+
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdbch/ot1mdbch.fd
+File: ot1mdbch.fd 2006/01/28 Fontinst v1.928 font definitions for OT1/mdbch.
+)
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 12.00008pt on input line 3.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 8.44806pt on input line 3.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 7.20004pt on input line 3.
+LaTeX Font Info:    Try loading font information for OML+mdbch on input line 3.
+
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdbch/omlmdbch.fd
+File: omlmdbch.fd 2006/01/28 Fontinst v1.928 font definitions for OML/mdbch.
+)
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 12.00008pt on input line 3.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 8.44806pt on input line 3.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 7.20004pt on input line 3.
+LaTeX Font Info:    Try loading font information for OMS+mdbch on input line 3.
+
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdbch/omsmdbch.fd
+File: omsmdbch.fd 2006/01/28 Fontinst v1.928 font definitions for OMS/mdbch.
+)
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 12.00008pt on input line 3.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 8.44806pt on input line 3.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 7.20004pt on input line 3.
+LaTeX Font Info:    Try loading font information for OMX+mdbch on input line 3.
+
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdbch/omxmdbch.fd
+File: omxmdbch.fd 2006/01/28 Fontinst v1.928 font definitions for OMX/mdbch.
+)
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 12.00008pt on input line 3.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 8.44806pt on input line 3.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 7.20004pt on input line 3.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 12.00008pt on input line 3.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 8.44806pt on input line 3.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 7.20004pt on input line 3.
+LaTeX Font Info:    Try loading font information for MDA+mdbch on input line 3.
+
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdbch/mdamdbch.fd
+File: mdamdbch.fd 2006/01/28 Fontinst v1.928 font definitions for MDA/mdbch.
+)
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 12.00008pt on input line 3.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 8.44806pt on input line 3.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 7.20004pt on input line 3.
+LaTeX Font Info:    Try loading font information for MDB+mdbch on input line 3.
+
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdbch/mdbmdbch.fd
+File: mdbmdbch.fd 2006/01/28 Fontinst v1.928 font definitions for MDB/mdbch.
+)
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 12.00008pt on input line 3.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 8.44806pt on input line 3.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 7.20004pt on input line 3.
+LaTeX Font Info:    Try loading font information for OML+mdput on input line 3.
+
+
+(/AIXd/biomotion_user/drichter/share/texlive/2011/texmf-dist/tex/latex/mathdesi
+gn/mdput/omlmdput.fd
+File: omlmdput.fd 2006/01/29 Fontinst v1.928 font definitions for OML/mdput.
+)
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 11.49997pt on input line 3.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 8.09598pt on input line 3.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 6.89998pt on input line 3.
+)
+\tf@toc=\write6
+\openout6 = `discussion.toc'.
+
+ [1
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+
+
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+
+
+{/u/aconstan/.texlive2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
+
+
+]
+Chapter 1.
+
+Class scrreprt Warning: \float@addtolists detected!
+(scrreprt)              You should use the features of package `tocbasic'
+(scrreprt)              instead of \float@addtolists.
+(scrreprt)              Support for \float@addtolists may be removed from
+(scrreprt)              `scrreprt' soon .
+
+\openout4 = `discussion.mtc'.
+
+\openout4 = `discussion.mtc'.
+
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 11.04007pt on input line 32.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 32.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 6.62404pt on input line 32.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 11.04007pt on input line 32.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 7.68005pt on input line 32.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 6.62404pt on input line 32.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 11.04007pt on input line 32.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 32.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 6.62404pt on input line 32.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 11.04007pt on input line 32.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 32.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 6.62404pt on input line 32.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 11.04007pt on input line 32.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 32.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 6.62404pt on input line 32.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 11.04007pt on input line 32.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 32.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 6.62404pt on input line 32.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 11.04007pt on input line 32.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 32.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 6.62404pt on input line 32.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 10.57997pt on input line 32.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 7.35999pt on input line 32.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 6.34798pt on input line 32.
+(./discussion.mtc1) [3]
+Underfull \hbox (badness 10000) in paragraph at lines 54--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--101
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 105--147
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 160--192
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--192
+
+ []
+
+[6] [7] <Pat05_transverse.png, id=32, 405.76593pt x 270.25969pt>
+File: Pat05_transverse.png Graphic file (type png)
+
+<use Pat05_transverse.png>
+Package pdftex.def Info: Pat05_transverse.png used on input line 200.
+(pdftex.def)             Requested size: 243.46143pt x 162.15706pt.
+
+<Pat05_IMPT_5mmMargin_STATIC_slice38_cut_withLegend.png, id=33, 809.27344pt x 5
+23.20468pt>
+File: Pat05_IMPT_5mmMargin_STATIC_slice38_cut_withLegend.png Graphic file (type
+ png)
+ <use Pat05_IMPT_5mmMargin_STATIC_slice38_cut_withLegend.png>
+Package pdftex.def Info: Pat05_IMPT_5mmMargin_STATIC_slice38_cut_withLegend.png
+ used on input line 202.
+(pdftex.def)             Requested size: 250.87218pt x 162.19177pt.
+
+<Pat08_transverse.png, id=34, 405.01312pt x 284.56313pt>
+File: Pat08_transverse.png Graphic file (type png)
+
+<use Pat08_transverse.png>
+Package pdftex.def Info: Pat08_transverse.png used on input line 208.
+(pdftex.def)             Requested size: 243.00974pt x 170.73918pt.
+
+<Pat08_IMPT_5mmMargin_STATIC_slice43_cut_withLegend.png, id=35, 806.26219pt x 5
+16.42938pt>
+File: Pat08_IMPT_5mmMargin_STATIC_slice43_cut_withLegend.png Graphic file (type
+ png)
+ <use Pat08_IMPT_5mmMargin_STATIC_slice43_cut_withLegend.png>
+Package pdftex.def Info: Pat08_IMPT_5mmMargin_STATIC_slice43_cut_withLegend.png
+ used on input line 210.
+(pdftex.def)             Requested size: 266.06734pt x 170.42221pt.
+
+Overfull \hbox (8.95035pt too wide) in paragraph at lines 200--213
+[][] []
+ []
+
+
+Overfull \hbox (20.35782pt too wide) in paragraph at lines 200--213
+[] [] 
+ []
+
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 8.25606pt on input line 229.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 5.85603pt on input line 229.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 4.99202pt on input line 229.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 8.25606pt on input line 229.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 5.85603pt on input line 229.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 4.99202pt on input line 229.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 8.25606pt on input line 229.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 5.85603pt on input line 229.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 4.99202pt on input line 229.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 8.25606pt on input line 229.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 5.85603pt on input line 229.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 4.99202pt on input line 229.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 8.25606pt on input line 229.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 5.85603pt on input line 229.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 4.99202pt on input line 229.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 8.25606pt on input line 229.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 5.85603pt on input line 229.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 4.99202pt on input line 229.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 8.25606pt on input line 229.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 5.85603pt on input line 229.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 4.99202pt on input line 229.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 7.91199pt on input line 229.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 5.61198pt on input line 229.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 4.78398pt on input line 229.
+
+Overfull \hbox (18.40414pt too wide) in paragraph at lines 229--245
+ [][] 
+ []
+
+[8 <./Pat05_transverse.png> <./Pat05_IMPT_5mmMargin_STATIC_slice38_cut_withLege
+nd.png> <./Pat08_transverse.png> <./Pat08_IMPT_5mmMargin_STATIC_slice43_cut_wit
+hLegend.png>]
+<Pat05_DVH_Amanda_withLegend.png, id=39, 527.72156pt x 281.55188pt>
+File: Pat05_DVH_Amanda_withLegend.png Graphic file (type png)
+
+<use Pat05_DVH_Amanda_withLegend.png>
+Package pdftex.def Info: Pat05_DVH_Amanda_withLegend.png used on input line 253
+.
+(pdftex.def)             Requested size: 242.75487pt x 129.51543pt.
+
+<Pat05_IMPT_VS_AMANDA_DVH_withOtherParameters_rotated.png, id=40, 785.93625pt x
+ 560.0925pt>
+File: Pat05_IMPT_VS_AMANDA_DVH_withOtherParameters_rotated.png Graphic file (ty
+pe png)
+ <use Pat05_IMPT_VS_AMANDA_DVH_withOtherParameters_rotated.png>
+Package pdftex.def Info: Pat05_IMPT_VS_AMANDA_DVH_withOtherParameters_rotated.p
+ng used on input line 256.
+(pdftex.def)             Requested size: 157.18446pt x 112.01651pt.
+
+<Pat08_DVH_Amanda_forLegend.png, id=41, 527.72156pt x 281.55188pt>
+File: Pat08_DVH_Amanda_forLegend.png Graphic file (type png)
+
+<use Pat08_DVH_Amanda_forLegend.png>
+Package pdftex.def Info: Pat08_DVH_Amanda_forLegend.png used on input line 259.
+
+(pdftex.def)             Requested size: 242.75487pt x 129.51543pt.
+
+<Pat08_IMPT_VS_AMANDA_DVH_withOtherParameters_rotated.png, id=42, 785.93625pt x
+ 560.0925pt>
+File: Pat08_IMPT_VS_AMANDA_DVH_withOtherParameters_rotated.png Graphic file (ty
+pe png)
+ <use Pat08_IMPT_VS_AMANDA_DVH_withOtherParameters_rotated.png>
+Package pdftex.def Info: Pat08_IMPT_VS_AMANDA_DVH_withOtherParameters_rotated.p
+ng used on input line 262.
+(pdftex.def)             Requested size: 157.18446pt x 112.01651pt.
+
+[9 <./Pat05_DVH_Amanda_withLegend.png> <./Pat05_IMPT_VS_AMANDA_DVH_withOtherPar
+ameters_rotated.png> <./Pat08_DVH_Amanda_forLegend.png> <./Pat08_IMPT_VS_AMANDA
+_DVH_withOtherParameters_rotated.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 292--317
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--317
+
+ []
+
+[10] <L976_IMRT_Limin.png, id=50, 547.2947pt x 388.45125pt>
+File: L976_IMRT_Limin.png Graphic file (type png)
+
+<use L976_IMRT_Limin.png>
+Package pdftex.def Info: L976_IMRT_Limin.png used on input line 324.
+(pdftex.def)             Requested size: 251.7586pt x 178.68973pt.
+
+<L976_static_CTV_slice37_cut.png, id=51, 671.50874pt x 520.19344pt>
+File: L976_static_CTV_slice37_cut.png Graphic file (type png)
+
+<use L976_static_CTV_slice37_cut.png>
+Package pdftex.def Info: L976_static_CTV_slice37_cut.png used on input line 328
+.
+(pdftex.def)             Requested size: 228.30995pt x 176.86342pt.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 9.98405pt on input line 371.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 7.00804pt on input line 371.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 6.04803pt on input line 371.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 9.98405pt on input line 371.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 7.00804pt on input line 371.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 6.04803pt on input line 371.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 9.98405pt on input line 371.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 7.00804pt on input line 371.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 6.04803pt on input line 371.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 9.98405pt on input line 371.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 7.00804pt on input line 371.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 6.04803pt on input line 371.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 9.98405pt on input line 371.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 7.00804pt on input line 371.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 6.04803pt on input line 371.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 9.98405pt on input line 371.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 7.00804pt on input line 371.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 6.04803pt on input line 371.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 9.98405pt on input line 371.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 7.00804pt on input line 371.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 6.04803pt on input line 371.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 9.56796pt on input line 371.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 6.71599pt on input line 371.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 5.79599pt on input line 371.
+
+<L829_IMRT_DVH_Limin.png, id=52, 453.94594pt x 280.79906pt>
+File: L829_IMRT_DVH_Limin.png Graphic file (type png)
+
+<use L829_IMRT_DVH_Limin.png>
+Package pdftex.def Info: L829_IMRT_DVH_Limin.png used on input line 391.
+(pdftex.def)             Requested size: 208.81766pt x 129.16913pt.
+
+<L829_STATIC_VS_LIMIN_DVH_rotate.png, id=53, 785.93625pt x 560.0925pt>
+File: L829_STATIC_VS_LIMIN_DVH_rotate.png Graphic file (type png)
+
+<use L829_STATIC_VS_LIMIN_DVH_rotate.png>
+Package pdftex.def Info: L829_STATIC_VS_LIMIN_DVH_rotate.png used on input line
+ 395.
+(pdftex.def)             Requested size: 161.11797pt x 114.8197pt.
+
+<L833_IMRT_DVH_Limin.png, id=54, 453.94594pt x 280.79906pt>
+File: L833_IMRT_DVH_Limin.png Graphic file (type png)
+
+<use L833_IMRT_DVH_Limin.png>
+Package pdftex.def Info: L833_IMRT_DVH_Limin.png used on input line 398.
+(pdftex.def)             Requested size: 208.81766pt x 129.16913pt.
+
+<L833_STATIC_VS_LIMIN_DVH_rotate.png, id=55, 785.93625pt x 560.0925pt>
+File: L833_STATIC_VS_LIMIN_DVH_rotate.png Graphic file (type png)
+
+<use L833_STATIC_VS_LIMIN_DVH_rotate.png>
+Package pdftex.def Info: L833_STATIC_VS_LIMIN_DVH_rotate.png used on input line
+ 401.
+(pdftex.def)             Requested size: 161.11797pt x 114.8197pt.
+
+<L976_IMRT_DVH_Limin.png, id=57, 453.94594pt x 280.79906pt>
+File: L976_IMRT_DVH_Limin.png Graphic file (type png)
+
+<use L976_IMRT_DVH_Limin.png>
+Package pdftex.def Info: L976_IMRT_DVH_Limin.png used on input line 404.
+(pdftex.def)             Requested size: 208.81766pt x 129.16913pt.
+
+<L976_STATIC_VS_LIMIN_DVH_rotate.png, id=58, 783.67781pt x 559.33969pt>
+File: L976_STATIC_VS_LIMIN_DVH_rotate.png Graphic file (type png)
+
+<use L976_STATIC_VS_LIMIN_DVH_rotate.png>
+Package pdftex.def Info: L976_STATIC_VS_LIMIN_DVH_rotate.png used on input line
+ 407.
+(pdftex.def)             Requested size: 160.65498pt x 114.66537pt.
+
+<L979_IMRT_DVH_Limin.png, id=59, 453.94594pt x 280.79906pt>
+File: L979_IMRT_DVH_Limin.png Graphic file (type png)
+
+<use L979_IMRT_DVH_Limin.png>
+Package pdftex.def Info: L979_IMRT_DVH_Limin.png used on input line 410.
+(pdftex.def)             Requested size: 208.81766pt x 129.16913pt.
+
+<L979_STATIC_VS_LIMIN_DVH_rotate.png, id=60, 785.93625pt x 560.0925pt>
+File: L979_STATIC_VS_LIMIN_DVH_rotate.png Graphic file (type png)
+
+<use L979_STATIC_VS_LIMIN_DVH_rotate.png>
+Package pdftex.def Info: L979_STATIC_VS_LIMIN_DVH_rotate.png used on input line
+ 413.
+(pdftex.def)             Requested size: 161.11797pt x 114.8197pt.
+ [11 <./L976_IMRT_Limin.png> <./L976_static_CTV_slice37_cut.png>] [12 <./L829_I
+MRT_DVH_Limin.png> <./L829_STATIC_VS_LIMIN_DVH_rotate.png> <./L833_IMRT_DVH_Lim
+in.png> <./L833_STATIC_VS_LIMIN_DVH_rotate.png> <./L976_IMRT_DVH_Limin.png> <./
+L976_STATIC_VS_LIMIN_DVH_rotate.png> <./L979_IMRT_DVH_Limin.png> <./L979_STATIC
+_VS_LIMIN_DVH_rotate.png>] [13]
+[14] [15] [16] [17] [18
+
+
+]
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.633 ...aess H, Crespo P, Kunath D, Pawelke J, Pö
+                                                  nisch F, Enghardt W: On th...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+LaTeX Font Info:    Try loading font information for TS1+5ch on input line 634.
+
+(/u/aconstan/texmf/tex/latex/tex-tudfonts/softmake/charter/ts15ch.fd
+File: ts15ch.fd 2008/06/23 Fontinst v1.927 font definitions for TS1/5ch.
+) [19]
+[20]
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.658 ... McGale P, Bennet AM, Blom-Goldman U, Brø
+                                                  nnum D, Correa C, Cutter D...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.665 ...H, Vasamreddy CR, Berger R, Bluemke D, Lü
+                                                  deritz B, Halperin H, Calk...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+[21]
+Package minitoc Info: I0009
+(minitoc)             Listing minitoc auxiliary files. 
+(minitoc)             Creating the discussion.maf file.
+\openout4 = `discussion.maf'.
+
+Package minitoc(hints) Info: I0053
+(minitoc(hints))             You have loaded the float package; 
+(minitoc(hints))             please be aware that the minitoc package 
+(minitoc(hints))             facilities can not be used for new types 
+(minitoc(hints))             of floats defined by the float package.
+
+
+Package minitoc(hints) Warning: W0024
+(minitoc(hints))                Some hints have been written 
+(minitoc(hints))                in the discussion.log file.
+
+[22] (./discussion.aux) ) 
+Here is how much of TeX's memory you used:
+ 19372 strings out of 493629
+ 345048 string characters out of 3132894
+ 447492 words of memory out of 3000000
+ 21966 multiletter control sequences out of 15000+200000
+ 134306 words of font info for 150 fonts, out of 3000000 for 9000
+ 831 hyphenation exceptions out of 8191
+ 65i,12n,77p,740b,686s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/AIXd/biomotion_user/drichter/share/texlive/2011/texm
+f-dist/fonts/enc/dvips/ly1/texnansi.enc}{/AIXd/biomotion_user/drichter/share/te
+xlive/2011/texmf-dist/fonts/enc/dvips/base/8r.enc}</u/aconstan/texmf/fonts/type
+1/softmake/charter/5chb8a.pfb></u/aconstan/texmf/fonts/type1/softmake/charter/5
+chr8a.pfb></u/aconstan/texmf/fonts/type1/softmake/frontpage/5fpm8a.pfb></u/acon
+stan/texmf/fonts/type1/softmake/frontpage/5fpr8a.pfb></AIXd/biomotion_user/dric
+hter/share/texlive/2011/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></AI
+Xd/biomotion_user/drichter/share/texlive/2011/texmf-dist/fonts/type1/mathdesign
+/mdbch/md-chr7y.pfb>
+Output written on discussion.pdf (22 pages, 1397423 bytes).
+PDF statistics:
+ 124 PDF objects out of 1000 (max. 8388607)
+ 74 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 103 words of extra memory for PDF output out of 10000 (max. 10000000)
+
