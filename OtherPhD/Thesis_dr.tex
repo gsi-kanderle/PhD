@@ -1,0 +1,75 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Main source file.
+%
+%
+% author: Daniel Richter (d.richter@gsi.de)
+%
+% $Id: thesis.tex 2097 2012-11-13 15:26:30Z drichter $
+%                                                              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{header}
+\input{macros}
+
+\begin{document}
+
+%
+% title matter
+%
+\selectlanguage{ngerman} 
+\thesistitle{Treatment planning for tumors with residual
+  motion in scanned ion beam therapy}{Bestrahlungsplanung 
+  f\"ur restbewegte Tumoren in der gescannten Ionenstrahltherapie}
+\author{Dipl.-Phys.\@ Daniel Richter} \birthplace{Aachen, Deutschland}
+\date{Juli 2012}
+\referee{Prof.\@ Dr.\@ Marco Durante}{Prof.\@ Dr.\@ Dr.\@ h.\@ c.\@
+  Gerhard Kraft}  \department{Fachbereich
+  Physik} \group{Institut f\"ur Festk\"operphysik}
+\dateofexam{10. April 2012}{6. Juni 2012}
+\makethesistitle
+
+%
+% front matter
+%
+\selectlanguage{english}
+\frontmatter
+\setcounter{tocdepth}{2}
+\input{summary}
+\input{publications}
+\tableofcontents
+\input{abbreviations}
+
+%
+% main matter
+%
+\mainmatter
+\selectlanguage{english}
+\input{introduction}
+\input{background}
+\input{tpsdevelopment}
+\input{beamparoptimization}
+\input{tpstudies}
+\input{discussion}
+\input{conclusion}
+
+%
+% back matter
+%
+\begin{appendix}
+  \input{appendix}
+\end{appendix}
+\backmatter
+\addcontentsline{toc}{part}{References}
+\bibliographystyle{apa}
+\bibliography{references,references_ds,references_dr}
+\input{acknowlegments}
+\input{currvitae}
+\affidavit[29. Juli 2012]{Daniel Richter}
+
+\end{document}
+
+	
+%%% Local Variables:
+%%% TeX-master: "thesis"
+%%% End:
