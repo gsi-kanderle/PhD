@@ -53,6 +53,10 @@ it will be explained in detail in the following sections.
 
 \subsection{Interaction of radiation with matter}
 
+The interactions between photons and ions with matter are quite different, as can be seen from depth dose distributions in figure \ref{ddp}.  Photons deposit highest local dose shortly after entering the matter 
+(at the energies used in radiotherapy). Ions deposit most of their dose right before they stop in the Bragg Peak region. The position of the Bragg Peak depends on the energy of the ions, which is exploited in the treatment
+of deep suited tumors.
+
 \newpage
  
 \vspace*{1cm}
@@ -61,12 +65,83 @@ it will be explained in detail in the following sections.
 \begin{center}
 % \includegraphics[scale=1]{depthdose.eps}
 \includegraphics[scale=1]{depthdose.png}
-\caption{Depth dose distributions of photons and carbon ions at different energies. Photons display an exponential decrease after a certain 
-build up. Ions on the other hand interact differently with matter, resulting in an increased dose deposition at the end of the particle 
-track, the Bragg peak. Figure taken from \cite{Schardt2010} }
+\caption{Photon and carbon ions depth dose distributions at different energies. Photons start with a build up, which is followed by an exponential decrease after.
+Ions deposit most of the dose at the end of the particle track, the Bragg peak. Figure taken from \cite{Schardt2010} }
 \label{ddp}
 \end{center}
 \end{figure}
+
+
+\subsubsection{Interaction of photons with matter}
+
+Photons mostly interact with matter in one of the following ways: coherent or Rayleigh scattering, photoelectric effect, Compton scattering and pair production. The cross section, $\sigma$, for each of these processes depends
+as well on the energy of the indicent photons as on the atomic number of the absorbin material \cite{Lilley2006}. The decreasing photon intesity in matter, $I$, can be described as:
+
+
+\begin{equation}
+ I = I_{0} \cdot e^{- N \sigma x} = I_{0} \cdot e^{-\mu x}
+ \label{expdecrease}
+\end{equation} 
+
+where $I_{0}$ stands for the initial intensity of the photons, $x$ the depth of the material in units of length, $N$ the atomic density of the material and $\mu$ is the attenuation coefficient. The cross section, $sigma$ is the sum of all
+possibile Interaction processes.
+
+\begin{equation}
+{\sigma} = \sigma_{rayleigh} + \sigma_{photoelectric} + Z\sigma_{compton} + \sigma_{pairproduction} 
+\end{equation}
+
+The energy range of photons used in radiotherapy is between 100 keV and 25 MeV. The dominating process in this energy range is Compton scattering \cite{Alpen1998}.
+The electrons resulting from Compton interaction scatter mostly in a forward direction. Therefore a maximum of the depth-dose profile occurs when electons stop at a certain depth, 
+the mean electron range. After this build up the dose deposition decreases exponentially (see figure \ref{ddp} and eq. \ref{expdecrease}).
+
+
+\subsubsection{Interaction of ions with matter}
+\label{iion}
+Ions can interact with matter either with elastic columb scattering from target nuclei (nuclear stopping) or with inelastic collision with target electorns (electronic stopping).
+At the ion energies used in radiotherapy, which are less then 500$\mathrm{MeV}/\mathrm{u}$, the electronic stoping is the dominated interaction. This results in ionization and excitation of the atoms in target.
+
+The mean rate of ions energy loss in matter is described by the Bethe-Bloch formula \cite{Bethe1930, Bloch1933}. Since we are interested in low ion energies, we can make the following approximation:
+
+\begin{equation}
+- \left \langle \frac{dE}{dx} \right \rangle = \frac{ 4 \pi N_{e} z_{eff}^{2} }{ m_{e} v^{2} } \left( \frac{e^{2}}{4\pi \epsilon_{0}} \right) ^{2} \left[ln \left( \frac{2m_{e}v^{2}}{I} \right)+correction \right]
+ \label{bethe}
+\end{equation}
+
+here $N_{e}$ is the materials electron density, $e$ and $m_{e}$ are the charge and mass 
+of an electron, $\epsilon_{0}$ the electrical field constant and $I$ the mean excitation energy of the absorber material. 
+Barkas formula \cite{Barkas1963} can be used for the approximation of the effective projectile charge $z_{eff}$: 
+
+\vspace*{-0.8cm}
+\begin{equation}
+ z_{eff} = z \left( 1 - e^{-125 \beta z^{\frac{2}{3}}} \right)
+\end{equation}
+
+where $\beta$ is the projectile speed in units of $c$.
+
+The energy loss of ions is proportional to $z_{eff}$ and inversely proportional to $v^2$. The shape of the curve in figure \cite{ddp} can now be understood. Ions enter the matter with a high velocity,
+resulting in a small energy deposition. Their velocity gradualy decreases, which in turn increases the energy deposition. The maximum of the energy loss is called Bragg peak or particle range.
+
+\subsubsection{Lateral scattering of ions}
+\label{scat}
+As mentioned in section \cite{iion} ions interact mostly via electronic stopping at energies used in radiotherapy. However, nuclear stopping still occurs and it is the main reason for lateral scattering.
+The angular spread of ions is dependent on the mass of the target nuclei and on the momentum of the indecient ions \cite{Moliere1948}. The lateral scattering is proportional to mass of the target nuclei and inversely proportional
+on the momentum of indecient ions. Carbon ions have thus less lateral scatter then protons. Experiments have shown that carbon ions have three times smaller angular spread compared to protons at the same range in water (15.6 cm, 15 \cite{Schardt2010}.
+
+Even though electronic stopping via inelastic collisions with target electrons is the main interaction process in the therapeutic energy 
+range, elastic Coulomb scattering from target nuclei is still occurring and the main reason for lateral scattering. In an analytical 
+approximation by Moli\`{e}re \cite{Mol48}, the angular spread of the overall deflection in a material has been described. It is 
+on one hand dependent on the mass of the target nuclei, where a higher mass causes a larger angular spread for the same material thickness. 
+And on the other hand it is inversely proportional on the momentum of the projectile, causing carbon ions to have a smaller 
+lateral deflection than e.g. protons. Experimental validation comparing carbon ions to protons having the same range in water 
+(15.6cm, 150MeV protons and 285MeV/u 12C ions) resulted in an approximately three times smaller angular spread \cite{Sch10}.\newline
+\newline
+Range straggling is caused by the statistical fluctuations of single electronic stopping events. In case of large number of collisions or 
+thick layers of material these fluctuations can be approximated by a Gaussian probability distribution \cite{Bor40} 
+\cite{Ahl80} \cite{Ric12}. This leads to an inverse proportional dependence between the ratio of the straggling width $\sigma_{R}$ with 
+the mean range $R$ and the square root of the ion mass $M$ ( $\mathrm{\sigma_{R}}/\mathrm{R} \propto \mathrm{1}/{\sqrt{M}}$ ). This results 
+in a smaller range scattering for heavier ions. Experimentally, the ratio between the straggling width and the mean range was found to be 
+3.5 smaller for carbon ions compared to protons \cite{Sch10}.
+
 % 
 % *\include{ref.bib}
 \bibliographystyle{apalike}
