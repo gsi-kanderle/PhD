@@ -1,46 +1,48 @@
-This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Fundamentals.aux
 The style file: apalike.bst
-Database file #1: ref.bib
-You've used 1 entry,
+Database file #1: ../ref.bib.bib
+Warning--I didn't find a database entry for "Kra00"
+You've used 10 entries,
             1935 wiz_defined-function locations,
-            479 strings with 3847 characters,
-and the built_in function-call counts, 397 in all, are:
-= -- 35
-> -- 18
-< -- 0
-+ -- 6
-- -- 6
-* -- 36
-:= -- 76
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 8
-chr.to.int$ -- 1
-cite$ -- 1
-duplicate$ -- 14
-empty$ -- 27
-format.name$ -- 7
-if$ -- 73
+            548 strings with 4936 characters,
+and the built_in function-call counts, 3268 in all, are:
+= -- 322
+> -- 81
+< -- 10
++ -- 24
+- -- 24
+* -- 259
+:= -- 591
+add.period$ -- 30
+call.type$ -- 10
+change.case$ -- 60
+chr.to.int$ -- 10
+cite$ -- 10
+duplicate$ -- 138
+empty$ -- 258
+format.name$ -- 34
+if$ -- 634
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 1
-newline$ -- 8
-num.names$ -- 3
-pop$ -- 6
+missing$ -- 12
+newline$ -- 53
+num.names$ -- 30
+pop$ -- 45
 preamble$ -- 1
-purify$ -- 8
+purify$ -- 62
 quote$ -- 0
-skip$ -- 11
+skip$ -- 106
 stack$ -- 0
-substring$ -- 21
-swap$ -- 1
-text.length$ -- 0
+substring$ -- 234
+swap$ -- 11
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 6
+type$ -- 54
 warning$ -- 0
-while$ -- 3
+while$ -- 29
 width$ -- 0
-write$ -- 15
+write$ -- 134
+(There was 1 warning)

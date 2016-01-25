@@ -64,7 +64,7 @@ of deep suited tumors.
 \begin{figure}[H]
 \begin{center}
 % \includegraphics[scale=1]{depthdose.eps}
-\includegraphics[scale=1]{depthdose.png}
+\includegraphics[scale=1]{./Images/depthdose.png}
 \caption{Photon and carbon ions depth dose distributions at different energies. Photons start with a build up, which is followed by an exponential decrease after.
 Ions deposit most of the dose at the end of the particle track, the Bragg peak. Figure taken from \cite{Schardt2010} }
 \label{ddp}
@@ -111,35 +111,62 @@ here $N_{e}$ is the materials electron density, $e$ and $m_{e}$ are the charge a
 of an electron, $\epsilon_{0}$ the electrical field constant and $I$ the mean excitation energy of the absorber material. 
 Barkas formula \cite{Barkas1963} can be used for the approximation of the effective projectile charge $z_{eff}$: 
 
-\vspace*{-0.8cm}
+% \vspace*{-0.8cm}
 \begin{equation}
  z_{eff} = z \left( 1 - e^{-125 \beta z^{\frac{2}{3}}} \right)
 \end{equation}
 
 where $\beta$ is the projectile speed in units of $c$.
 
-The energy loss of ions is proportional to $z_{eff}$ and inversely proportional to $v^2$. The shape of the curve in figure \cite{ddp} can now be understood. Ions enter the matter with a high velocity,
+The energy loss of ions is proportional to $z_{eff}$ and inversely proportional to $v^2$. The shape of the curve in figure \ref{ddp} can now be understood. Ions enter the matter with a high velocity,
 resulting in a small energy deposition. Their velocity gradualy decreases, which in turn increases the energy deposition. The maximum of the energy loss is called Bragg peak or particle range.
 
-\subsubsection{Lateral scattering of ions}
+\subsubsection{Lateral scattering and range straggling of ions}
 \label{scat}
-As mentioned in section \cite{iion} ions interact mostly via electronic stopping at energies used in radiotherapy. However, nuclear stopping still occurs and it is the main reason for lateral scattering.
+As mentioned in section \ref{iion} ions interact mostly via electronic stopping at energies used in radiotherapy. However, nuclear stopping still occurs and it is the main reason for lateral scattering.
 The angular spread of ions is dependent on the mass of the target nuclei and on the momentum of the indecient ions \cite{Moliere1948}. The lateral scattering is proportional to mass of the target nuclei and inversely proportional
 on the momentum of indecient ions. Carbon ions have thus less lateral scatter then protons. Experiments have shown that carbon ions have three times smaller angular spread compared to protons at the same range in water 
 (15.6 cm, 150 MeV/u protons and 285 MeV/u $^{12}$C ions) \cite{Schardt2010}.
 
+Statistical fluctuations of specific electronic stopping events cause range straggling of ions. If the number of collisions is high or the material is thick enoguh these fluctuations can be approximated by
+a Gaussian probability distribution \cite{Bohr1940, Ahlen1980}. The straggling width $\sigma_R$ is proportional to:
 
-Range straggling is caused by the statistical fluctuations of single electronic stopping events. In case of large number of collisions or 
-thick layers of material these fluctuations can be approximated by a Gaussian probability distribution \cite{Bor40} 
-\cite{Ahl80} \cite{Ric12}. This leads to an inverse proportional dependence between the ratio of the straggling width $\sigma_{R}$ with 
-the mean range $R$ and the square root of the ion mass $M$ ( $\mathrm{\sigma_{R}}/\mathrm{R} \propto \mathrm{1}/{\sqrt{M}}$ ). This results 
-in a smaller range scattering for heavier ions. Experimentally, the ratio between the straggling width and the mean range was found to be 
-3.5 smaller for carbon ions compared to protons \cite{Sch10}.
+\begin{equation}
+ \sigma_R \propto R/\sqrt{M}
+\end{equation}
+
+where $R$ is the mean range of ions and $M$ the ion mass. Thus, the heavier the ion is, the less range straggling it has. Carbon ions have 3.5 smaller range straggling when compared to protons \cite{Schardt2010}.
+
+\subsubsection{Nuclear fragmentation}
+\label{nuclfrag}
+
+Projectile ions (except protons) can be fragmented into ions with lower Z when transversing through matter. This becomes more important as projectile ions loose their energy, close to Bragg peak (see figure \ref{iondd}).
+Fragments move in the same direction as projectile ions, with simmilar velocity. 
+At large penetration depths, when the projectile ions have lost most of their energy, projectile fragmentation processes start to be 
+relevant for ions heavier than protons. Mostly lower Z fragments are produced, which move with approximately the same velocity 
+and in the same direction as the primary ions. This causes dose tails behind the Bragg peak position. Thus the resulting depth-dose 
+distribution is actually the sum of the energy deposition of the projectiles and the resulting 
+fragments. 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.3]{./Images/iondepthdosesum.png}
+\caption{Depth dose distribution of carbon ions. Besides of the energy deposition of the primary ions (red), the produced fragments 
+(blue curve) contribute to the overall dose deposition (black) and are especially visible in the dose tail behind the Bragg 
+peak. Figure taken from \cite{Groezinger2004}}
+\label{iondd}
+\end{center}
+\end{figure}
+
+Nevertheless, the produced fragments  also offer the chance for PET (Positron Emission Tomography) monitoring, 
+without additional radiation exposure for the patient. As peripheral collisions are more frequent then central ones \cite{Kra00} 
+isotopes like $^{11}C$ and $^{10}C$ are often produced when $^{12}C$ ions penetrate through tissue. Both isotopes are $\beta^{+}$ 
+emitters. They annihilate with electrons in the human body, producing two $\gamma$-rays which travel in opposite directions.
 
 % 
-% *\include{ref.bib}
+% \include{../ref.bib}
 \bibliographystyle{apalike}
-\bibliography{ref}
+\bibliography{../ref.bib}{}
 % \bibliographystyle{plain}
 
 \end{document}
