@@ -53,7 +53,7 @@ it will be explained in detail in the following sections.
 
 \subsection{Interaction of radiation with matter}
 
-The interactions between photons and ions with matter are quite different, as can be seen from depth dose distributions in figure \ref{ddp}.  Photons deposit highest local dose shortly after entering the matter 
+The interactions between photons and ions with matter are quite different, as can be seen from depth dose distributions in Figure \ref{ddp}.  Photons deposit highest local dose shortly after entering the matter 
 (at the energies used in radiotherapy). Ions deposit most of their dose right before they stop in the Bragg Peak region. The position of the Bragg Peak depends on the energy of the ions, which is exploited in the treatment
 of deep suited tumors.
 
@@ -64,12 +64,29 @@ of deep suited tumors.
 \begin{figure}[H]
 \begin{center}
 % \includegraphics[scale=1]{depthdose.eps}
-\includegraphics[scale=1]{depthdose.png}
+\includegraphics[scale=1]{./Images/depthdose.png}
 \caption{Photon and carbon ions depth dose distributions at different energies. Photons start with a build up, which is followed by an exponential decrease after.
 Ions deposit most of the dose at the end of the particle track, the Bragg peak. Figure taken from \cite{Schardt2010} }
 \label{ddp}
 \end{center}
 \end{figure}
+
+\subsection{Dose definition}
+
+Physicis in radiotherapy revolves around dose, $D$, which is defined as the ratio of the absorbed energy $dE$ per mass element $dm$ \cite{ICRU1993}:
+
+\begin{equation}
+ D = \frac{dE}{dm}
+\end{equation}
+
+Usually we can describe energy loss of a beam in a thin layer of material, $dE/dx$. Dose can be then rewritten as:
+
+\begin{equation}
+ D = \frac{dE}{dx} \times \frac{1}{F} \times \frac{1}{\rho}
+\end{equation}
+
+where $F$ is fluence and $\rho$ the material denisty.
+
 
 
 \subsubsection{Interaction of photons with matter}
@@ -91,8 +108,8 @@ possibile Interaction processes.
 \end{equation}
 
 The energy range of photons used in radiotherapy is between 100 keV and 25 MeV. The dominating process in this energy range is Compton scattering \cite{Alpen1998}.
-The electrons resulting from Compton interaction scatter mostly in a forward direction. Therefore a maximum of the depth-dose profile occurs when electons stop at a certain depth, 
-the mean electron range. After this build up the dose deposition decreases exponentially (see figure \ref{ddp} and eq. \ref{expdecrease}).
+The electrons resulting from Compton interaction scatter mostly in a forward direction. Therefore a maximum of the depth-dose profile occurs when electrons stop at a certain depth, 
+the mean electron range. After this build up the dose deposition decreases exponentially (see Figure \ref{ddp} and Equation \ref{expdecrease}).
 
 
 \subsubsection{Interaction of ions with matter}
@@ -118,12 +135,12 @@ Barkas formula \cite{Barkas1963} can be used for the approximation of the effect
 
 where $\beta$ is the projectile speed in units of $c$.
 
-The energy loss of ions is proportional to $z_{eff}$ and inversely proportional to $v^2$. The shape of the curve in figure \cite{ddp} can now be understood. Ions enter the matter with a high velocity,
+The energy loss of ions is proportional to $z_{eff}$ and inversely proportional to $v^2$. The shape of the curve in Figure \ref{ddp} can now be understood. Ions enter the matter with a high velocity,
 resulting in a small energy deposition. Their velocity gradualy decreases, which in turn increases the energy deposition. The maximum of the energy loss is called Bragg peak or particle range.
 
 \subsubsection{Lateral scattering and range straggling of ions}
 \label{scat}
-As mentioned in section \cite{iion} ions interact mostly via electronic stopping at energies used in radiotherapy. However, nuclear stopping still occurs and it is the main reason for lateral scattering.
+As mentioned in section \ref{iion} ions interact mostly via electronic stopping at energies used in radiotherapy. However, nuclear stopping still occurs and it is the main reason for lateral scattering.
 The angular spread of ions is dependent on the mass of the target nuclei and on the momentum of the indecient ions \cite{Moliere1948}. The lateral scattering is proportional to mass of the target nuclei and inversely proportional
 on the momentum of indecient ions. Carbon ions have thus less lateral scatter then protons. Experiments have shown that carbon ions have three times smaller angular spread compared to protons at the same range in water 
 (15.6 cm, 150 MeV/u protons and 285 MeV/u $^{12}$C ions) \cite{Schardt2010}.
@@ -135,19 +152,91 @@ a Gaussian probability distribution \cite{Bohr1940, Ahlen1980}. The straggling w
  \sigma_R \propto R/\sqrt{M}
 \end{equation}
 
+where $R$ is the mean range of ions and $M$ the ion mass. Thus, the heavier the ion is, the less range straggling it has. Carbon ions have 3.5 smaller range straggling when compared to protons \cite{Schardt2010}.
+
+\subsubsection{Nuclear fragmentation}
+\label{nuclfrag}
+
+When transversing through matter ions (except protons) can be fragmented into ions with lower Z. The lower Z fragments travel in the same direction as projectile ions and 
+have a significant contribution to the dose deposited (see Figure \ref{iondd}). It is essential that this fragments are included in the treatment planning, so that the accurate dose can be assesed.
+
+After colliding with target projectile fragments enter in a excited state. De-excitation occurs through
+emisson of nucleons, nucleon clusters and photons. Two of the possible fragments of projectile $^{12}$C ions are isotopes $^{11}C$ and $^{10}C$, which are both $\beta^+$ emmiters \cite{Kraft2000}.
+The resulting positron is annihilated with electrons in matter, resulting in two photons traveling in opposite direction. This can be used in PET (Positron Emission Tomography) without exposing patient
+to additional radiation.. 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.3]{./Images/iondepthdosesum.png}
+\caption{Impact of fragmantation on a depth dose distribution of carbon ions. Main contribution to the overall deposited dose (black line) comes from the primary ions (red line). The produced fragments 
+(blue line) have a smaller impact, but non-negleigble especially in the dose tail behind the Bragg peak. Figure taken from \cite{Groezinger2004}}
+\label{iondd}
+\end{center}
+\end{figure}
+
+\subsubsection{Secondary electrons and track structure}
+
+As mentioned in section \ref{iion} ions used in radiotherapy lose most of their energy via inelastic Coulumb scattering on target electrons. Such electrons can be libirated from target atoms and are called
+secondary electrons, also $\delta$-electrons. $\delta$-electrons also travel throguh matter, further scattering and may even cause secondary ionization of the target atoms. When $\delta$-electrons energies are larger than $>$50 eV,
+ionization becomes dominant process, which produces a large number of additional electrons \cite{Kraft2000,Schardt2010}.
+
+The radial dose profile and track diameter is defined by the energy spectrum of the $\delta$-electrons. Most of the $\delta$-electorns are concentrated around the projectile ions path, since they receive small energy transfers 
+or are scattered in the direction of indicent ions. Different models \cite{!!}, Monte Carlo simulations \cite{!!} predict radial dose fall-off approximatelly with $1/r^2$ for radial distances $r$. Varma et. al. have confirmed 
+this experimentaly \cite{Varma1977}. The maximum radial distance $r_{max}$ is defined by the most energetic $\delta$-electrons, which are related to energy, $E$, of the projectile ions \cite{Kiefer1986}.
+
+\begin{equation}
+ r_{max} = E^{1.7}
+\end{equation}
+
+Following equation \ref{bethe}, $E$ is corelated to $Z^2$ and $1/\beta^2$, which means track structure is highly dependent on the projectile ion species and energy. This is well demonstrated on Figure \ref{track}:
+Carbon ions have much more dense ionization structure compared to protons \cite{!!}. $\delta$-electrons have low energies, and thus the $r$ is on nanometer scale. As the energy of projectile ions decreases, their
+stopping power increases and causes significantly larger number of $\delta$-electorns. The energy deposited by $\delta$-electrons in medium is described using the Linear Energy Transfer (LET), which is closely related to 
+$dE/dx$. Fast ions, with little ionization, have thus small LET, while slow ions, with large ionization, have a high LET.
 
 
-Range straggling is caused by the statistical fluctuations of single electronic stopping events. In case of large number of collisions or 
-thick layers of material these fluctuations can be approximated by a Gaussian probability distribution \cite{Bohr40, Ahlen1980}. 
-. This leads to an inverse proportional dependence between the ratio of the straggling width $\sigma_{R}$ with 
-the mean range $R$ and the square root of the ion mass $M$ ( $\mathrm{\sigma_{R}}/\mathrm{R} \propto \mathrm{1}/{\sqrt{M}}$ ). This results 
-in a smaller range scattering for heavier ions. Experimentally, the ratio between the straggling width and the mean range was found to be 
-3.5 smaller for carbon ions compared to protons \cite{Sch10}.
+\begin{figure}[H]
+\begin{center}
+% \includegraphics[scale=0.75]{trackstructure.eps}
+\includegraphics[scale=0.25]{./Images/trackstructure.png}
+\caption{Microscopic track structure of protons (left side) and carbon ions (right side) at different energies. Protons and high energy 
+carbon ions are low LET radiation and hence sparsely ionizing. Low energy carbon ions on the other hand are high LET radiation and hence 
+densely ionizing. For comparison the size of the DNA is displayed. Figure courtesy of Michael Kr\"amer.}
+\label{track}
+\end{center}
+\end{figure}
 
-% 
-% *\include{ref.bib}
+
+\subsection{Radiobiology}
+
+The aim of radiotherapy is to kill tumor cells and prevent furhter growth, while sparring healthy tissue. Ionizing radiation (photons and ions) causes damage throughout the cell. However the most susceptible part to radiation is the
+carrier of genetic information, the deoxyribonucleic acid (DNA), located in the cell nucleus \cite{Munro1970}. Radiation can destroy DNA in two ways - directly or inderectly. Ionization and consequent destruction of DNA molecular bonds
+via radiation is a direct effect (see Figure \ref{ida}b) and is typical for high-LET radiation. On the other hand, an indirect effect is when radiation hydrolyses water around DNA and produce highly reactive hydroxyl-radicals, OH 
+(see Figure \ref{ida}a). Eventhough their lifetime is short, it's enough to cause severe damage to DNA. The formation of OH is typical for low-LET radiation, like photons. The two processes, direct and inderect, are not 
+excluding and can damage DNA in parallel.
+
+Damage to DNA can result in either single strand breaks (SSB) or double strand breaks (DSB) as  shown in Figure \ref{ida}b). When one of the double strands in the DNA helix is destroyed (SSB), it can be usually easily repaired by cell 
+repair-mechanisms, since the complementary base is intact. If bases on both stands are destroyed (DSB) the DNA damage is much more complex and can lead to the breakage of the chromatin. The cell repair-mechanisms can handle DSB as well, 
+albeit not that efficient as SSB. However if there are clustered DSBs, the damage is usually too severe for repair-mechanisms to undo it. The changes in damaged DNA can lead to carcinogenesis or cell death. The aim of radiotherapy is to 
+cause apoptosis - a controlled self-inactivation of the cell due to DNA damage. Beside apoptosis, there is necrosis, an uncontrolled cell death. Cell necrosis often cause response from the immune system, leading to inflammation, which
+radiotherapy tends to avoid.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.5]{SSB_DSB.png}
+\caption{Types of DNA damage caused by radiadtion. (a) Indirect damage occurs, when radiation forms free radicals hydroxyl radicals (OH), which can damage DNA. (b) Direct effects of radiation can cause single or double-strand breaks. 
+Figure taken from \cite{Richter2012}}
+\label{ida}
+\end{center}
+\end{figure}
+
+
+\subsubsection{Relative Biological Effectiveness}
+
+Figure \ref{track} shows the size of DNA molecule in comparison with proton and carbon ion distribution of $\delta$-electrons around their track. Clustered DSB occur around ions Bragg peak due to the large ionization denseties. As mentioned
+this poses a too large of a dificulty for cell repair-mechanisms, leading to cell death. The large ionization density is typical for ion
+
 \bibliographystyle{apalike}
-\bibliography{ref}
+\bibliography{../ref.bib}{}
 % \bibliographystyle{plain}
 
 \end{document}

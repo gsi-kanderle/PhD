@@ -53,7 +53,7 @@ it will be explained in detail in the following sections.
 
 \subsection{Interaction of radiation with matter}
 
-The interactions between photons and ions with matter are quite different, as can be seen from depth dose distributions in figure \ref{ddp}.  Photons deposit highest local dose shortly after entering the matter 
+The interactions between photons and ions with matter are quite different, as can be seen from depth dose distributions in Figure \ref{ddp}.  Photons deposit highest local dose shortly after entering the matter 
 (at the energies used in radiotherapy). Ions deposit most of their dose right before they stop in the Bragg Peak region. The position of the Bragg Peak depends on the energy of the ions, which is exploited in the treatment
 of deep suited tumors.
 
@@ -70,6 +70,23 @@ Ions deposit most of the dose at the end of the particle track, the Bragg peak. 
 \label{ddp}
 \end{center}
 \end{figure}
+
+\subsection{Dose definition}
+
+Physicis in radiotherapy revolves around dose, $D$, which is defined as the ratio of the absorbed energy $dE$ per mass element $dm$ \cite{ICRU1993}:
+
+\begin{equation}
+ D = \frac{dE}{dm}
+\end{equation}
+
+Usually we can describe energy loss of a beam in a thin layer of material, $dE/dx$. Dose can be then rewritten as:
+
+\begin{equation}
+ D = \frac{dE}{dx} \times \frac{1}{F} \times \frac{1}{\rho}
+\end{equation}
+
+where $F$ is fluence and $\rho$ the material denisty.
+
 
 
 \subsubsection{Interaction of photons with matter}
@@ -91,8 +108,8 @@ possibile Interaction processes.
 \end{equation}
 
 The energy range of photons used in radiotherapy is between 100 keV and 25 MeV. The dominating process in this energy range is Compton scattering \cite{Alpen1998}.
-The electrons resulting from Compton interaction scatter mostly in a forward direction. Therefore a maximum of the depth-dose profile occurs when electons stop at a certain depth, 
-the mean electron range. After this build up the dose deposition decreases exponentially (see figure \ref{ddp} and eq. \ref{expdecrease}).
+The electrons resulting from Compton interaction scatter mostly in a forward direction. Therefore a maximum of the depth-dose profile occurs when electrons stop at a certain depth, 
+the mean electron range. After this build up the dose deposition decreases exponentially (see Figure \ref{ddp} and Equation \ref{expdecrease}).
 
 
 \subsubsection{Interaction of ions with matter}
@@ -118,7 +135,7 @@ Barkas formula \cite{Barkas1963} can be used for the approximation of the effect
 
 where $\beta$ is the projectile speed in units of $c$.
 
-The energy loss of ions is proportional to $z_{eff}$ and inversely proportional to $v^2$. The shape of the curve in figure \ref{ddp} can now be understood. Ions enter the matter with a high velocity,
+The energy loss of ions is proportional to $z_{eff}$ and inversely proportional to $v^2$. The shape of the curve in Figure \ref{ddp} can now be understood. Ions enter the matter with a high velocity,
 resulting in a small energy deposition. Their velocity gradualy decreases, which in turn increases the energy deposition. The maximum of the energy loss is called Bragg peak or particle range.
 
 \subsubsection{Lateral scattering and range straggling of ions}
@@ -140,31 +157,91 @@ where $R$ is the mean range of ions and $M$ the ion mass. Thus, the heavier the 
 \subsubsection{Nuclear fragmentation}
 \label{nuclfrag}
 
-Projectile ions (except protons) can be fragmented into ions with lower Z when transversing through matter. This becomes more important as projectile ions loose their energy, close to Bragg peak (see figure \ref{iondd}).
-Fragments move in the same direction as projectile ions, with simmilar velocity. 
-At large penetration depths, when the projectile ions have lost most of their energy, projectile fragmentation processes start to be 
-relevant for ions heavier than protons. Mostly lower Z fragments are produced, which move with approximately the same velocity 
-and in the same direction as the primary ions. This causes dose tails behind the Bragg peak position. Thus the resulting depth-dose 
-distribution is actually the sum of the energy deposition of the projectiles and the resulting 
-fragments. 
+When transversing through matter ions (except protons) can be fragmented into ions with lower Z. The lower Z fragments travel in the same direction as projectile ions and 
+have a significant contribution to the dose deposited (see Figure \ref{iondd}). It is essential that this fragments are included in the treatment planning, so that the accurate dose can be assesed.
+
+After colliding with target projectile fragments enter in a excited state. De-excitation occurs through
+emisson of nucleons, nucleon clusters and photons. Two of the possible fragments of projectile $^{12}$C ions are isotopes $^{11}C$ and $^{10}C$, which are both $\beta^+$ emmiters \cite{Kraft2000}.
+The resulting positron is annihilated with electrons in matter, resulting in two photons traveling in opposite direction. This can be used in PET (Positron Emission Tomography) without exposing patient
+to additional radiation.. 
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.3]{./Images/iondepthdosesum.png}
-\caption{Depth dose distribution of carbon ions. Besides of the energy deposition of the primary ions (red), the produced fragments 
-(blue curve) contribute to the overall dose deposition (black) and are especially visible in the dose tail behind the Bragg 
-peak. Figure taken from \cite{Groezinger2004}}
+\caption{Impact of fragmantation on a depth dose distribution of carbon ions. Main contribution to the overall deposited dose (black line) comes from the primary ions (red line). The produced fragments 
+(blue line) have a smaller impact, but non-negleigble especially in the dose tail behind the Bragg peak. Figure taken from \cite{Groezinger2004}}
 \label{iondd}
 \end{center}
 \end{figure}
 
-Nevertheless, the produced fragments  also offer the chance for PET (Positron Emission Tomography) monitoring, 
-without additional radiation exposure for the patient. As peripheral collisions are more frequent then central ones \cite{Kra00} 
-isotopes like $^{11}C$ and $^{10}C$ are often produced when $^{12}C$ ions penetrate through tissue. Both isotopes are $\beta^{+}$ 
-emitters. They annihilate with electrons in the human body, producing two $\gamma$-rays which travel in opposite directions.
+\subsubsection{Secondary electrons and track structure}
 
-% 
-% \include{../ref.bib}
+As mentioned in section \ref{iion} ions used in radiotherapy lose most of their energy via inelastic Coulumb scattering on target electrons. Such electrons can be libirated from target atoms and are called
+secondary electrons, also $\delta$-electrons. $\delta$-electrons also travel throguh matter, further scattering and may even cause secondary ionization of the target atoms. When $\delta$-electrons energies are larger than $>$50 eV,
+ionization becomes dominant process, which produces a large number of additional electrons \cite{Kraft2000,Schardt2010}.
+
+The radial dose profile and track diameter is defined by the energy spectrum of the $\delta$-electrons. Most of the $\delta$-electorns are concentrated around the projectile ions path, since they receive small energy transfers 
+or are scattered in the direction of indicent ions. Different models \cite{!!}, Monte Carlo simulations \cite{!!} predict radial dose fall-off approximatelly with $1/r^2$ for radial distances $r$. Varma et. al. have confirmed 
+this experimentaly \cite{Varma1977}. The maximum radial distance $r_{max}$ is defined by the most energetic $\delta$-electrons, which are related to energy, $E$, of the projectile ions \cite{Kiefer1986}.
+
+\begin{equation}
+ r_{max} = E^{1.7}
+\end{equation}
+
+Following equation \ref{bethe}, $E$ is corelated to $Z^2$ and $1/\beta^2$, which means track structure is highly dependent on the projectile ion species and energy. This is well demonstrated on Figure \ref{track}:
+Carbon ions have much more dense ionization structure compared to protons \cite{!!}. $\delta$-electrons have low energies, and thus the $r$ is on nanometer scale. As the energy of projectile ions decreases, their
+stopping power increases and causes significantly larger number of $\delta$-electorns. The energy deposited by $\delta$-electrons in medium is described using the Linear Energy Transfer (LET), which is closely related to 
+$dE/dx$. Fast ions, with little ionization, have thus small LET, while slow ions, with large ionization, have a high LET.
+
+
+\begin{figure}[H]
+\begin{center}
+% \includegraphics[scale=0.75]{trackstructure.eps}
+\includegraphics[scale=0.25]{./Images/trackstructure.png}
+\caption{Track structure of ions in water at different energies. The distribution of $\delta$-electrons is highly dependent on ion species and their energy.
+A molecule of DNA is displayed for size comparison. Figure courtesy of Michael Kr\"amer.}
+\label{track}
+\end{center}
+\end{figure}
+
+
+\subsection{Radiobiology}
+
+The aim of radiotherapy is to kill tumor cells and prevent furhter growth, while sparring healthy tissue. Ionizing radiation (photons and ions) causes damage throughout the cell. However the most susceptible part to radiation is the
+carrier of genetic information, the deoxyribonucleic acid (DNA), located in the cell nucleus \cite{Munro1970}. Radiation can destroy DNA in two ways - directly or inderectly. Ionization and consequent destruction of DNA molecular bonds
+via radiation is a direct effect (see Figure \ref{ida}b) and is typical for high-LET radiation. On the other hand, an indirect effect is when radiation hydrolyses water around DNA and produce highly reactive hydroxyl-radicals, OH 
+(see Figure \ref{ida}a). Eventhough their lifetime is short, it's enough to cause severe damage to DNA. The formation of OH is typical for low-LET radiation, like photons. The two processes, direct and inderect, are not 
+excluding and can damage DNA in parallel.
+
+Damage to DNA can result in either single strand breaks (SSB) or double strand breaks (DSB) as  shown in Figure \ref{ida}b). When one of the double strands in the DNA helix is destroyed (SSB), it can be usually easily repaired by cell 
+repair-mechanisms, since the complementary base is intact. If bases on both stands are destroyed (DSB) the DNA damage is much more complex and can lead to the breakage of the chromatin. The cell repair-mechanisms can handle DSB as well, 
+albeit not that efficient as SSB. However if there are clustered DSBs, the damage is usually too severe for repair-mechanisms to undo it. The changes in damaged DNA can lead to carcinogenesis or cell death. The aim of radiotherapy is to 
+cause apoptosis - a controlled self-inactivation of the cell due to DNA damage. Beside apoptosis, there is necrosis, an uncontrolled cell death. Cell necrosis often cause response from the immune system, leading to inflammation, which
+radiotherapy tends to avoid.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.5]{SSB_DSB.png}
+\caption{Types of DNA damage caused by radiadtion. (a) Indirect damage occurs, when radiation forms free radicals hydroxyl radicals (OH), which can damage DNA. (b) Direct effects of radiation can cause single or double-strand breaks. 
+Figure taken from \cite{Richter2012}}
+\label{ida}
+\end{center}
+\end{figure}
+
+
+\subsubsection{Relative Biological Effectiveness}
+
+Figure \ref{track} shows the size of DNA molecule in comparison with proton and carbon ion distribution of $\delta$-electrons around their track. Clustered DSB occur around ions Bragg peak due to the large ionization denseties. As mentioned
+this poses a too large of a dificulty for cell repair-mechanisms, leading to cell death. The large ionization density is typical for ions and is one of the main advantages over photons in radiotherapeutic sense. Since most of the research about
+cell response to radiadtion was done for photons, the biological effect of ions is usually described relative to a reference photon response. Relative biological effectiveness (RBE) is therefore defined as the ratio of the reference 
+photon dose to the dose level of a specific ion radiation at the same biological effect (isoeffect):
+
+\begin{equation}
+ RBE = \left.\frac{D^{ref}_{photon}}{D_{ion}} \right|_{isoeffect}
+\end{equation}
+
+
+
 \bibliographystyle{apalike}
 \bibliography{../ref.bib}{}
 % \bibliographystyle{plain}
