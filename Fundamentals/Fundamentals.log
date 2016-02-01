@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.1.22)  25 JAN 2016 06:32
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.1.22)  29 JAN 2016 16:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1378,18 +1378,34 @@ Package pdftex.def Info: ./Images/depthdose.png used on input line 67.
 Overfull \vbox (18.19629pt too high) has occurred while \output is active []
 
 
-[3 <./Images/depthdose.png>] [4]
-<./Images/iondepthdosesum.png, id=26, 980.66376pt x 721.69624pt>
+[3 <./Images/depthdose.png>] [4] [5]
+<./Images/iondepthdosesum.png, id=29, 980.66376pt x 721.69624pt>
 File: ./Images/iondepthdosesum.png Graphic file (type png)
 
 <use ./Images/iondepthdosesum.png>
-Package pdftex.def Info: ./Images/iondepthdosesum.png used on input line 152.
+Package pdftex.def Info: ./Images/iondepthdosesum.png used on input line 170.
 (pdftex.def)             Requested size: 294.2014pt x 216.51054pt.
- [5]
+ [6 <./Images/iondepthdosesum.png>]
 
-LaTeX Warning: Citation `Kra00' on page 6 undefined on input line 160.
+LaTeX Warning: Citation `!!' on page 7 undefined on input line 184.
 
-(./Fundamentals.bbl [6 <./Images/iondepthdosesum.png>])
+
+LaTeX Warning: Citation `!!' on page 7 undefined on input line 184.
+
+
+LaTeX Warning: Citation `!!' on page 7 undefined on input line 192.
+
+<./Images/trackstructure.png, id=34, 1332.98pt x 2010.51125pt>
+File: ./Images/trackstructure.png Graphic file (type png)
+
+<use ./Images/trackstructure.png>
+Package pdftex.def Info: ./Images/trackstructure.png used on input line 200.
+(pdftex.def)             Requested size: 333.24419pt x 502.62659pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7]
+(./Fundamentals.bbl [8 <./Images/trackstructure.png>])
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the Fundamentals.maf file.
@@ -1417,22 +1433,22 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
 (minitoc(hints))                in the Fundamentals.log file.
 
-[7
+[9
 
 
-] (./Fundamentals.aux)
+] [10] (./Fundamentals.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 12168 strings out of 493304
- 186129 string characters out of 6139871
+ 12180 strings out of 493304
+ 186344 string characters out of 6139871
  335482 words of memory out of 5000000
- 15103 multiletter control sequences out of 15000+600000
+ 15114 multiletter control sequences out of 15000+600000
  86649 words of font info for 79 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 65i,13n,77p,413b,343s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,13n,77p,486b,355s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texliv
 e/texmf-dist/fonts/enc/dvips/ly1/texnansi.enc}</home/kanderle/texmf/fonts/type1
 /softmake/charter/5chb8a.pfb></home/kanderle/texmf/fonts/type1/softmake/charter
@@ -1446,10 +1462,10 @@ c/mathdesign/mdbch/md-chr7v.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/mathdesign/mdbch/md-chr7y.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/mathdesign/mdbch/md-chri7m.pfb></usr/share/texlive/texmf-dist/fonts/type1/a
 dobe/utopia/putri8a.pfb>
-Output written on Fundamentals.pdf (7 pages, 126994 bytes).
+Output written on Fundamentals.pdf (10 pages, 338934 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
+ 93 PDF objects out of 1000 (max. 8388607)
+ 63 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

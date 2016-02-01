@@ -38,6 +38,22 @@ Groezinger, S.~O. (2004).
   Scanned Ion Beams}.
 \newblock Thesis/dissertation, TU Darmstadt.
 
+\bibitem[{ICRU}, 1993]{ICRU1993}
+{ICRU} (1993).
+\newblock Report 50.
+\newblock Report.
+
+\bibitem[Kiefer and Straaten, 1986]{Kiefer1986}
+Kiefer, J. and Straaten, H. (1986).
+\newblock A model of ion track structure based on classical collision dynamics.
+\newblock {\em Phys. Med. Biol.}, 31(11):1201--1209.
+
+\bibitem[Kraft, 2000]{Kraft2000}
+Kraft, G. (2000).
+\newblock Tumor therapy with heavy charged particles.
+\newblock {\em Progress in Particle and Nuclear Physics}, 45(Supplement
+  2):S473--S544.
+
 \bibitem[Lilley, 2006]{Lilley2006}
 Lilley, J. (2006).
 \newblock {\em Nuclear Physics - Principles and Applications}.
@@ -53,5 +69,11 @@ Moli\`{e}re, G. (1948).
 Schardt, D., Elsaesser, T., and Schulz-Ertner, D. (2010).
 \newblock Heavy-ion tumor therapy: Physical and radiobiological benefits.
 \newblock {\em Rev. Mod. Phys.}, 82(1):383.
+
+\bibitem[Varma et~al., 1977]{Varma1977}
+Varma, M.~N., Baum, J.~W., and Kuehner, A.~V. (1977).
+\newblock Radial dose, {LET}, and {W} for 160 ions in {N2} and
+  tissue-equivalent gases.
+\newblock {\em Radiat. Res.}, 70(3):511--518.
 
 \end{thebibliography}
