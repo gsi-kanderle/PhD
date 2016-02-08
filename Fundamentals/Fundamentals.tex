@@ -76,7 +76,7 @@ Ions deposit most of the dose at the end of the particle track, the Bragg peak. 
 Physicis in radiotherapy revolves around dose, $D$, which is defined as the ratio of the absorbed energy $dE$ per mass element $dm$ \cite{ICRU1993}:
 
 \begin{equation}
- D = \frac{dE}{dm}
+ D = \frac{dE}{dm} \quad \left[ Gy = \frac{J}{kg} \right]
 \end{equation}
 
 Usually we can describe energy loss of a beam in a thin layer of material, $dE/dx$. Dose can be then rewritten as:
@@ -221,7 +221,7 @@ radiotherapy tends to avoid.
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.5]{SSB_DSB.png}
+\includegraphics[scale=0.5]{./Images/SSB_DSB.png}
 \caption{Types of DNA damage caused by radiadtion. (a) Indirect damage occurs, when radiation forms free radicals hydroxyl radicals (OH), which can damage DNA. (b) Direct effects of radiation can cause single or double-strand breaks. 
 Figure taken from \cite{Richter2012}}
 \label{ida}
@@ -239,6 +239,86 @@ photon dose to the dose level of a specific ion radiation at the same biological
 \begin{equation}
  RBE = \left.\frac{D^{ref}_{photon}}{D_{ion}} \right|_{isoeffect}
 \end{equation}
+
+It is important to note at this point that RBE values are valid only for the same effect, the same biological endpoint and the same reference radiation. The most interesting biological endpoint in radiotherapy is cell survival and
+side effects. RBE values are usually obtained from the cell survival curves (see Fig. ??). Cell survival curves, S, are commonly described by an exponential linear-quadratic model:
+
+\begin{equation}
+ S(D) = exp(-\alpha D - \beta D^2)
+ \label{lq}
+\end{equation}
+
+characteristic of a tissue (cell) type is written in the $\alpha / \beta$ ratio, namely the tissue capacity to repair radiation damage. A small $\alpha / \beta$ ratio means cell is radioresistive (high repair capacity) and vice versa.
+As seen in Figure \ref{dosedep} and Eq. \ref{lq} RBE values are dependent on dose level. Hence in ion radiotherapy, beside the physical absorbed dose, a photo-equivalent or biological dose incorporating the RBE also plays an important role. 
+The unit for biological dose is Gy (RBE) \cite{ICRU2007}. 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.5]{./Images/dose_dependence.pdf}
+\caption{Typical cell survival curve for photons (black solid line) and heavy ions (red dashed line). Photon line shows typical shouldered form, described by linear-quadratic model.
+Heavy ions show a much steeper decrease with dose. The RBE value can be calculated by looking at the points at the same survival value - same biological effect. Figure taken from \cite{Schardt2010}}
+\label{dosedep}
+\end{center}
+\end{figure}
+
+Beside dose level, RBE among other depends also on the LET, the particle species and the tissue type \cite{Kraft2000}. Therefore RBE modeling is a very complex issue.
+At GSI RBE is calculated using \textit{local effect model} (LEM) developed by Scholz et al \cite{Scholz1994}. The main assumption in LEM model is that biological 
+effects are independent on the radiation type. The difference between different radiation types comes from the dose deposition in a small volume in the cell nucleus.
+At the same total dose, photons have a homogeneous dose distribution over a cell nucleus, while ions have a highly localized dose distribution (around ion track).
+Next assumption of the LEM is that the photon response is the same at these high local doses. With this assumption ion dose response can be predicted, by comparing
+photon response at the high local dose level. LEM has received several revisions \cite{Elsaesser2006, Elsaesser2007, Elsaesser2009} and experimental verifications
+\cite{Mitaroff1998, Kraemer2000a, Kraemer2003}, making it valid for clinical use. RBE for carbon ions ranges from 1 in the entrance channel, to a value around 5 at 
+the Bragg peak \cite{Kraft2000}. The highest RBE for carbon ions is right around Bragg peak, which gives carbon ions a great advantage, since there is an increased 
+biological effectiveness at target tissue compared to the normal tissue in the entrance channel. In proton therapy a constant RBE value of 1.1 across the treatment field
+is used \cite{Paganetti2002}.
+
+
+\subsection{Application technique}
+
+Introduction
+
+\subsubsection{Photon therapy}
+
+
+\subsubsection{Ion therapy}
+
+In order to ion therapy be successful, ions must be accelerated to appropriate energies (several hunderd MeV/u), the beam must be transported to target area and guided
+onto the target with neccessary accuracy (around 1 mm). This requires very complex delivery systems and is one of the reason ion therapy is not as common as photon one.
+
+Two types of particle accelerators are used in ion therapy - cyclotrons and synchrotrons. \textbf{Cyclotrons} can be built in a compact design and offer a continuous beam with
+stable intensities. Particle energy, however, can not be regulated and therefore passive energy degraders are needed. Active energy variation is possible with synchrotrons, where a linear
+accelerator is used to inject ions into the synchrotron and then the beam is regulated with ion optics. Synchrotrons are used in all heavy ion therapy centers, while cyclotrons are most
+commonly used in proton therapy.
+
+Each tumor has a unique shape, shize and position in patient. Therefore a single Bragg peak would not provide adequate dose and a beam shaping has to be employed. Two beam shaping systems
+can be used - passive and active beam shaping. In the next two sections both will be explained, with focus on active beam shaping, which was used later in simulations.
+
+
+\subsubsection{Passive beam shaping}
+
+The general idea of passive beam shaping is to transform a beam into the shape of the tumor. This is done in several steps as schematically shown in Fig. \ref{passive}. Firstly, the beam is broadened using a scattering device (passive double scattering systems or magnetic wobbler)
+ in order to obtain a broad, flat profile. In the next step, the beam is spread out over the required energy range with a range modulator. Usually range modulator are a rotating wheels of various thickness or a ridge filter \cite{Chu1993}.
+ A single Bragg Peak is thus spread out into so-called \textit{spread-out Bragg peak (SOBP)}, which is moved to the required depth using a range shifter. The final two devices in beam's path are built for each patient individually. Collimator
+ shapes beam in a lateral direction, while compensator adjusts SOBP to the distal edge of the tumor. However, compensator cannot adjust dose in the proximal edge of the tumor, resulting in an access dose to the healthy tissue (hatched area in
+ Fig. \ref{passive}).
+ 
+ Passive beam shaping offers more robust and faster treatment delivery in contrast to active beam shaping. However, it lacks tumor conformity, dose cannot be modulated and each patient needs individually tailored devices for each beam used in treatment.
+ Furthermore beam travels through some material, exposing patient to additional dose due to fragmantation.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.4]{./Images/deliverypassive.png}
+\caption{Schematic presentation of a passive beam shaping. A scattering system is used to broaden the beam. afterwards a range modulator spreads out Bragg Peak to the required energy range.
+The spread out Bragg peak is then shifted to a fixed range with a range modulator. Finally patient specific collimator and conformator serve for lateral and longitudinal conformity, respectively.
+The proximal edge of the tumor cannot be shaped, as shown with hatched area. Figure taken from \cite{Sch10}.
+\label{passive}
+\end{center}
+\end{figure}
+
+\subsubsection{Acitve beam shaping}
+
+
+
 
 
 
