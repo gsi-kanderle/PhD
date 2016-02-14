@@ -286,7 +286,7 @@ In order to ion therapy be successful, ions must be accelerated to appropriate e
 onto the target with neccessary accuracy (around 1 mm). This requires very complex delivery systems and is one of the reason ion therapy is not as common as photon one.
 
 Two types of particle accelerators are used in ion therapy - cyclotrons and synchrotrons. \textbf{Cyclotrons} can be built in a compact design and offer a continuous beam with
-stable intensities. Particle energy, however, can not be regulated and therefore passive energy degraders are needed. Active energy variation is possible with synchrotrons, where a linear
+stable intensities. Particle energy, however, can not be regulated and therefore passive energy degraders are needed. Active energy variation is possible with \textbf{synchrotrons}, where a linear
 accelerator is used to inject ions into the synchrotron and then the beam is regulated with ion optics. Synchrotrons are used in all heavy ion therapy centers, while cyclotrons are most
 commonly used in proton therapy.
 
@@ -310,45 +310,28 @@ The general idea of passive beam shaping is to transform a beam into the shape o
 \includegraphics[scale=0.4]{./Images/deliverypassive.png}
 \caption{Schematic presentation of a passive beam shaping. A scattering system is used to broaden the beam. afterwards a range modulator spreads out Bragg Peak to the required energy range.
 The spread out Bragg peak is then shifted to a fixed range with a range modulator. Finally patient specific collimator and conformator serve for lateral and longitudinal conformity, respectively.
-The proximal edge of the tumor cannot be shaped, as shown with hatched area. Figure taken from \cite{Sch10}.
+The proximal edge of the tumor cannot be shaped, as shown with hatched area. Figure taken from \cite{Sch10}.}
 \label{passive}
 \end{center}
 \end{figure}
 
 \subsubsection{Acitve beam shaping}
 
-In contrast to passive beam shaping, active beam shaping works by dividing tumor into small points, which are then irradiated using a thin pencil beam. Tumor is first segmented into iso-energy slices (layers) and each of these slices
+In contrast to passive beam shaping, active beam shaping works by dividing tumor into small points, which are then irradiated using a thin pencil beam. Tumor is first segmented into iso-energy slices (IES) and each of IES
 is then covered with 2 dimensional grid. A thin pencil beam travels from point to point on this grid, irradiating each point with designated dose. This technique allows irradiation of arbitrary shape, without introducing additional, patient specific 
 hardware. The lack of additional material in front of the patient also means less dose due to lesser neutron flux. Furthermore with the option to modulate dose in each point, dose in tumor is very conformal with less dose to healthy tissue.
 
 There are differences in specifics of active beam shaping, so the GSI system of three-dimensional scanning system will be presented here \cite{Haberer1993,Kraft2000,Schardt2010} and a schematic presentation in Fig. \ref{scanning} and Fig. \ref{active}.
-Synchrotron provides a thin pencil beam of $^{12}$C ions with selected energy. The energy
+Synchrotron provides a thin pencil beam of $^{12}$C ions with selected energy. The energy defines the position of the Bragg peak in depth. Fig. \ref{active}b shows how are Bragg peaks stacked in depth to cover longitudinal extension of the tumor.
+IES is covered with 2 dimensional grid of target points (raster points). The thin pencil beam travels continuously over raster points. It is guided by two magnetic deflection units. In treatment planing each raster point is designated a specific dose. 
+During treatment the beam stays on each raster point until intensity monitoring system measures the designated dose. Then it moves to the next raster point. When the whole IES is irradiated, the treatment halts until next beam energy for next IES comes
+from accelerator.
 
-In the following section the GSI concept of a fully active three-dimensional scanning system
-for therapy will be given attention to. For more comprehensive reviews the reader is referred
-to the literature (Haberer et al., 1993; Kraft, 2000; Schardt et al., 2010). A schematic of the
-GSI raster-scan system, is given in figure 2.8 on the next page. A thin pencil beam of 12 C ions is
-extracted from a synchrotron providing active energy control. The position of the Bragg peak in
-depth is defined by the beam energy. The dose is delivered slice-by-slice with each of the slices
-corresponding to a fixed beam energy (IES). The Bragg peaks are stacked in depth over the
-longitudinal extension of the tumor (figure 2.9b). In each IES a raster of target points, so-called
-raster points, is adjusted to match the tumor cross section in BEV. The beam is guided over the
-raster on a continuous and optimized path by two orthogonal magnetic deflection units. The
-dwell time of the beam at a raster point is controlled by an intensity monitoring system, moving
-the beam to the next position when the variable pre-defined dose of a raster point has been
-delivered. The stability of the beam position is ensured by using a fast feed-back loop between
-the magnet power supplies and two multi-wire proportional chambers (MWPCs) measuring the
-beam position. After the completion of an energy slice the irradiation is interrupted and the
-next beam energy is requested from the accelerator for the next IES of the treatment plan. The
-treatment control system (TCS) communicates with the accelerator control system (ACS) and
-requests the appropriate beam parameters and the beam intensity for each slice, namely the
-size of the beam spot, the beam energy and the beam intensity. For each of the available sets
-of beam parameters the ACS holds a data base with optimized settings for the synchrotron and
-all magnets in the beam line. In this way, the accelerator is capable of providing reproducible
-and stable conditions for each of the parameter sets. The technical design of the HIT beam
-delivery system in large parts is based on the GSI prototype and therefore is very similar. A
-major technical achievement is the transfer of the raster-scan concept to an iso-centric gantry
-system in one of the three treatment rooms (Haberer et al., 2004).
+Fig. \ref{active}a displays how dose homogeneity in target is achieved. In typical configuration beam's full width half maximum is three times the lateral raster spacing. Such configuration offers robustness for uncertainties of the beam spots.
+There also should be enough overlap between individual Bragg peaks. However, there should not be too many of IES, since the changing of the beam energy takes most of the time and hence prolongs the treatment. So instead of using high number of
+ IES, Bragg peaks are broadened in longitudinal direction by using ripple filter (RiFi) - device similar to ridge filters used in passive beam shaping. 
+
+
 
 \newpage
 
@@ -357,9 +340,8 @@ system in one of the three treatment rooms (Haberer et al., 2004).
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.4]{./Images/therapy.png}
-\caption{Principle of the raster scanning technique at GSI. The target volume is divided into IES, which is again subdivided into a regular 
-grid. By varying the particle energy from the accelerator and by deflecting the pencil beam via a magnetic scanning system the raster points 
-are scanned. Figure taken from \cite{Inf05}}
+\caption{Schematics of GSI's active beam shaping. Tumor is divided into isoenergy slices, which are further overlayed with a 2 dimensional grid. 
+Longitudinal direction (in beam's eye view) is varied with particle energy from accelerator, while lateral is via a magnetic scanning system. Figure taken from REFERENCE!}
 \label{scanning}
 \end{center}
 \end{figure}
@@ -368,9 +350,8 @@ are scanned. Figure taken from \cite{Inf05}}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.45]{./Images/active.png}
-\caption{Target dose homogeneity is achieved by sufficient overlap in lateral and longitudinal directio. a) In lateral direction the FWHM of 
-the pencil beam is adjusted to three times the raster spacing $\Delta\mathrm{s}$. b) In longitudinal direction the Bragg peaks are broadend 
-in depth by using a ripple filter and then stacked in depth to a SOBP. An IES spacing $\Delta\mathrm{z}$ of typically 3mm is chosen. 
+\caption{Schematic presentation of how target dose homogeneity is achieved at active beam shaping. a) To provide sufficient homogeneity in lateral direction (in beam's eye view) full width
+half maximum of beam is three times the spacing between raster points. b) Bragg peaks are boradended in depth with a ripple filther and then stack to provide longitudinal dose homogeneity. 
 Figure taken from \cite{Richter2012}}
 \label{active}
 \end{center}
@@ -378,6 +359,165 @@ Figure taken from \cite{Richter2012}}
 
 
 \newpage
+
+\subsection{Motion in radiotherapy}
+
+Introduction
+
+
+\subsubsection{Motion types}
+
+Motion types, is's extent and origin is a vast topic. A brief introduction will be given here, for an in-depth explanation reader is pointed to review by Langen and Jones \cite{Langen2001}.
+There are three main types of motion: patient positioning, inter- and intra-fractional motion. All three motion types are shown in Fig. \ref{motion}.
+\newline
+\textbf{Patient motion} is difference in patient position between image acquisition (e.g. CT) used for treatment planning and actual delivery. Patient motion introduces changes in tumor shape and tumor position. To overcome patient 
+position uncertainties, patient immobilization and dedicated protocols are used.
+\newline
+\textbf{Interfractional motion} happens between two treatment sessions (fractions) and results in anatomical changes in a patient. It has a time scale of hours and days. For lung cancer patients, tumor shrinkage and lung density change occur between fractions MORI2009. 
+Also changes in breathing pattern can impact treatment delivery. While the breathing motion trajectory has a good reproducibilty, the tumor baseline drifts significantly \cite{Sonke2008}. Repeted imaging and replanning reduces the impact of the interfractional motion.
+\newline
+\textbf{Intrafractional motion} usually stands for respiration and heart beat. It has a time scale from seconds to minutes. In this thesis we will focus on respiratory motion. Respiratory motion varies from patient to patient and 
+it is responsible for tumor motion from a mm range to a couple of cm. Tumor size and T-staging are also corraleted to tumor motion \cite{Liu2007}. The respiratory-induced motion is largest in superior-inferior (SI) direction rather than 
+in the anterior-posterior (AP) or left-right (LR) directions.
+
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.43]{./Images/motion_examples.png}
+\caption{Examples of the three major motion categories. On the left side (a) a lung tumor is displayed, which moves due to the respiration 
+of the patient (intrafractional motion). Interfractional position changes are examplary shown in the middle (b), where two CT scans of a 
+prostate patient are compared. Density variations between two CT scans are shown in (c). Figure taken from \cite{Eng11}}
+\label{motion}
+\end{center}
+\end{figure}
+
+\subsubsection{Motion mitigation techniques}
+
+
+While all three motion types have to be addressed in treatment planning, special focus will be given on the intrafractional motion mitigation. Photon radiotherapy or particle radiotherapy with passive beam shaping 
+use larger saftey margins to encompas the whole tumor motion as explained in section \ref{treatmentPlanning}. However, larger saftey margins are not enough to mitiage motion when active beam shaping is used. The beam delivery 
+sequence and target motion interfere with one another, resulting in over- and underdosages in patients. Effect is called interplay and it has been thouroughly reviewed elsewhere \cite{Phillips1992,Bert2008}. The effect of interplay depends
+on many factors, such as motion amplitude, beam direction, starting breathing phase etc. Three main techniques are currently established as mitigation to interplay: rescanning, gating and beam tracking. Several others techniques exist
+to reduce the effect of tumor motion, such as abdominal pressure, jet ventilation, apneic oxygenation etc., but will not be described here, since they are far from the topic of this thesis.
+\newline
+\textbf{Rescanning} or repainting, is a techinque that uses advantage of statistical averaging of different interplay patterns \cite{Phillips1992}. Instead of applying the whole dose $D$ at once, the target is scanned $N$ times, each
+time irradiated with $\mathrm{D}/\mathrm{N}$. The result is a Gaussian distribution of $D$ around the $D$ with no interplay (static case), as shown in Fig. \ref{rescanning}. With more rescanns (larger $N$), better dose homogeneity is achieved, because variance is proportional
+to $\mathrm{1}/\mathrm{N}$. Technically the method is the easiest to impliment of the three mentioned, since no real-time motion monitoring is neccessary. However, it introduces additional dosage to normal tissue. Rescanning has not yet be
+implemented clinically, but should be in the near future in several centers worldwide \cite{Furukawa2007, Zenklusen2010}.
+\newline
+\textbf{Gating} applies irradiation only in a selected part of the breating cycle in a so-called gating window (GW) \cite{Minohara2000,Lu2006}. Usually exhale position is used as the center of the GW, as highlited in Fig. \ref{gating}.
+Motion monitoring singal is used to control beam extraction. While there is no additional normal tissue irradiation, the treatment time is prolonged due to the frequent beam interuptions as shown in Fig. \ref{gating}.
+Conventional radiotherapy and passive beam shaping can also use advantage of gating to reduce the effects of motion on treatment delivery.
+\newline
+\textbf{Beam tracking} is a method, where the tumor is followed by beam throughout different motion phases in real time. Similar to gating, beam tracking is not limited to active beam shaping. It was even proposed originally 
+for photons \cite{Keall2001} and later implemented clinically in x-ray radiosurgery in the robotic Cyberknife Synchrony system (Accuray Inc., Sunnyvale, Ca., USA) \cite{Brown2007a,Kilby2010}. Regardless of radiation type, 
+fast beam delivery system is neccessary for beam tracking. In contrast to photon radiotherapy, beam tracking with particles need to pay special consideration to longitudinal changes. At GSI beam tracking system has been implemented.
+The solution for longitudinal changes was carried out by two polymethyl methacrylate (PMMA) wedges close to the target, that are operated via linear stepmotor \cite{Saito2009}, as shown in Fig. \ref{tracking}. Linear stepmotor can
+change the relative distance between the wedges and therefore introducing more or less material that beam travels and consequently changes beam energy (range). The beam tracking system at GSI was able ta achive high precision \cite{Bert2007, Bert2009, Saito2009},
+however, clinical implementation is not yet feasible, since internal motion monitoring that includes range change information in real-time is not fast enough.
+
+
+The three motion mitigation techniques mentioned are not exclusive and can be used in parallel. Furukawa et al. made a study on a combination between rescaning and gating \cite{Furukawa2007} and Water et al. presented a combination
+between rescanning and tracking \cite{Water2009}.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.45]{./Images/rescanning.png}
+\caption{Film irradiation with rescanning. With statistical averaging of multiple interplay patterns dose in the target (solid red square) becomes homogeneous. Figure taken from \cite{Bert09}.}
+\label{rescanning}
+\end{center}
+\end{figure}
+
+% \begin{figure}[tbp]
+%   \centering
+%   \includegraphics[width=0.9\textwidth]{gatingscheme}
+%   \caption[Diagram of the gating delivery mode with a synchrotron
+%   accelerator.]{Simplified diagram of the gating delivery mode with a
+%     synchrotron accelerator. The logical gate signal is generated by
+%     applying the \acf{GW} to the motion monitoring signal. Irradiation
+%     is only possible if the gate signal is active during beam
+%     availability. The amount of residual tumor motion depends on the
+%     \ac{GW} size.}
+%   \label{gating}
+% \end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.4]{./Images/tracking.png}
+\caption{Schematic presentation of GSI's beam tracking system. Two PMMA wedges, mounted on linear stepmotor, can change the energy of the beam traveling through. The changes in lateral direction are 
+The lateral deflection is achieved via dipole scanner magnets. For the longitudinal adaptation two 
+PMMA wedges are mounted on step motors, enabling to change the depth the particle beam has to traverse. Figure taken from \cite{Groezinger2004}}
+\label{tracking}
+\end{center}
+\end{figure}
+
+\subsection{Treatment planning}
+\label{treatmentPlanning}
+
+The task of treatment planning is to determine machine parameters in order to deliever prescribed dose to the target, while not violaiting maximum allowed dose to critical organs, also known as organs at risk (OARs) \cite{Richter2012}.
+Treatment planning thus revolves around dose optimization process and it is highly dependent on delivery type used for treatment. The basis of treatment planning is computed tomography (CT), where deleniation of target volume and OARs is
+done by physician. Additional imaging, such as magnetic resonance (MRI) or positron emission tomography (PET), is often used as a supplement to CT for even better deleniation. In the following sections target definition will be explained,
+as well as the basics of intensity modulated photon treatment (IMPT) and scanned ion beam treatment planning. Later will be further expanded into dose calculation for moving targets.
+
+\subsubsection{Target definition}
+The definition of target volume is crucial, since it has to cover the whole tumor, prevent furhter tumor spreading, while at the same time it should not be too big, to spare normal tissue.  \textbf{REF!}.
+
+\begin{description}
+\item[Gross Tumor volume:] \emph{The GTV is the gross
+    palpable or visible/demonstrable extent and location of malignant
+    growth.}
+\item[Clinical Target Volume:] \emph{The CTV is a tissue
+    volume that contains a demonstrable GTV and/or subclinical
+    microscopic malignant disease, which has to be eliminated. This
+    volume thus has to be treated adequately in order to achieve the
+    aim of therapy, cure or palliation.}
+\item[Planning Target Volume:] \emph{The PTV is a geometrical
+    concept, and it is defined to select an appropriate beam size and
+    beam arrangements, taking into consideration the net effect of all
+    the possible geometrical variations, in order to ensure that the
+    prescribed dose is actually absorbed in the CTV.}
+\item[Internal Target Volume:] \emph{This is the margin that must be
+    added to the CTV to compensate for expected physio-logical
+    movements and variations in size, shape, and position of the
+    CTV during therapy.}
+\item[Organs at risk:] \emph{Organs at risk (OAR) are normal
+    tissues whose radiation sensitivity may significantly influence
+    treatment planning and/or prescribed dose.}
+\end{description}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.3]{./Images/volumes.png}
+\caption{Treatment planning volumes as defined by the ICRU. Figure taken from \cite{Ric12}}
+\end{center}
+\end{figure}
+
+% The adaption of the treatment plan in practice is often used in
+% conjunction with additional motion mitigation techniques. Optimization
+% of safety margins is done during treatment planning which will be
+% introduced later in this chapter. For reasons of clarity, the common
+% definitions of treatment margins shall be given here already. The
+% \ac{ICRU} recommends the definition of a number of volumes for
+% treatment planning \citep{ICRU50,ICRU62}:
+
+
+\subsubsection{Image registration and contour propagation}
+
+\subsubsection{Treatment planning for scanned ion beams}
+
+Modern three-dimensional treatment planning is based on a computed tomography (CT) of the
+volume of interest. The volumetric dataset is the basis for the delineation of the target volume,
+nearby organs and critical structures by a physician. Other fused volumetric data sets like mag-
+netic resonance imaging (MRI) or positron emmission tomography (PET) can be used in support
+during the delineation process. The common definitions of the different treatment volumes have
+been introduced in the last section (cf. figure 2.12 on page 20). The core task of treatment plan-
+ning is the dose optimization process. That is the determination of the machine-dependent
+delivery parameters needed to yield the prescribed—usually homogeneous—PTV dose coverage
+for a chosen beam configuration while minimizing the dose to normal tissue. According to rec-
+ommendations by the ICRU, 100 % of the PTV volume should receive between 95 % and 107 %
+of the planned dose (ICRU, 1993a). The dose optimization is normally performed in an iterative
+computational way using a treatment planning system (TPS). Treatment planning strongly de-
+pends on the employed radiation type and the beam delivery technique. The following section
+will concentrate on the specifics for scanned ion beam therapy.
 
 \bibliographystyle{apalike}
 \bibliography{../ref.bib}{}
