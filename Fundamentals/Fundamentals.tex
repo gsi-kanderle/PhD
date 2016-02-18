@@ -423,7 +423,7 @@ The three motion mitigation techniques mentioned are not exclusive and can be us
 between rescanning and tracking \cite{Water2009}.
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.45]{./Images/rescanning.png}
+\includegraphics[width=0.9\textwidth{./Images/rescanning.png}
 \caption{Film irradiation with rescanning. With statistical averaging of multiple interplay patterns dose in the target (solid red square) becomes homogeneous. Figure taken from \cite{Bert09}.}
 \label{rescanning}
 \end{center}
@@ -439,7 +439,7 @@ between rescanning and tracking \cite{Water2009}.
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.4]{./Images/tracking.png}
+\includegraphics[width=0.9\textwidth]{./Images/tracking.png}
 \caption{Schematic presentation of GSI's beam tracking system. Two PMMA wedges, mounted on linear stepmotor, can change the energy of the beam traveling through. The changes in lateral direction are 
 The lateral deflection is achieved via dipole scanner magnets. For the longitudinal adaptation two 
 PMMA wedges are mounted on step motors, enabling to change the depth the particle beam has to traverse. Figure taken from \cite{Groezinger2004}}
@@ -492,9 +492,6 @@ The International Commission on Radiation Units (ICRU) recomends the following d
 Further recommendations by ICRU state, that 100 \% of the PTV volume should receive between 95 \% and 107 \% of the planned dose \cite{ICRU50}.
 
 
-\subsubsection{Image registration and contour propagation}
-\label{sec:registration}
-
 \subsubsection{Treatment planning for scanned ion beams}
 
 Treatment planning system (TPS) for active shaping ion beams has to incorporate active beam delivery system and the beam interactions with the tissue. Furthermore, for ions heavier than protons
@@ -515,8 +512,8 @@ TRiP98 was expanded to be able to calculate time-resolved (4D) treatment plans. 
 A static CT is not sufficient for 4D treatment planning. A time-resolved CT scans (4DCT) therefore have to be used. 4DCT consist of several quasi-statonary sections, called motion phases. Data is
 recorded in each slice throughout the whole motion and is then sorted to appropriate motion phases, according to motion signal \cite{Rietzel2005}.
 
-Beside 4DCT a vital part of 4D treatment planning, is the \textbf{image registration}. It provides quantification of motion with deformation maps between different 4DCT motion states. Beacuse it plays
-Image registration principles are covered in detail in chapter \ref{sec:registration}. The image registration is not included in TRiP4D, so an external software must provide the neccessary
+Beside a 4DCT a vital part of 4D treatment planning is the \textbf{image registration}. It provides quantification of motion with deformation maps between different 4DCT motion states. Beacuse it plays
+Image registration principles are described in section \ref{sec:registration}. The image registration is not included in TRiP4D, so an external software must provide the neccessary
 deformation maps.
 
 The calculation of 4D dose starts with the division of the treatment plan into sub-plans, according to the motion phase it will irradiate. The number of sub-plans is the same as number of motion phases (or number of motion phases
@@ -533,8 +530,26 @@ Image f) shows accumulated 4D dose and image g) a homogeneous dose on a statonar
 \end{center}
 \end{figure}
 
+\subsubsection{Image registration}
+\label{sec:registration}
+
+Image registration is used to quantitatively assest the temporal changes of the anatomy, as demonstrated in Fig.~\ref{RegistrationCompare}. It is used to obtain deformation maps between different motion phases of 4DCT
+as well as between different consequtive CTs or even between different imaging modalities, e.g. between PET and CT or MRI and CT. There are different possibile types of
+registration and can be placed in two groups. First groups consist of linear registration that include translation, rotation and scaling. The most common used linear transformation used
+in medical imaging is translation or rigid registration. Other group are elastic or deformable registrations. The actual algorithms for performing registration are complex and reader can
+find detailed review elswehre \cite{Hill2001,Brock2006,Rietzel2006a}. A multi-institutional study has shown that the accuracy for the majority of the algorithms is at the order of image voxel
+size, \ie milimiters \cite{Brock2010}. The study further states that the registration quality depends on image contrast. The quality of image registration is actually hard to quantitatively
+assest and usually the registration results are checked by eye. To improve image registration quality assurance a special software was developed and is described in detail in chapter \textbf{REF}.
 
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{./Images/RegistrationCompare.png}
+\caption{Overlap of two CT scans of one patient before (a) and after (b) registration. Inverse colors are used in both CTs so that the overlayed image should be gray colored,
+if the registration was successful.}
+\label{RegistrationCompare}
+\end{center}
+\end{figure}
 
 \bibliographystyle{apalike}
 \bibliography{../ref.bib}{}
