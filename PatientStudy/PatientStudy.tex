@@ -12,6 +12,7 @@
 \usepackage{subfigure}
 \usepackage{rotating}
 \usepackage{minitoc}
+\usepackage{multirow}
 %\usepackage{appendix}
 
 %%%% 1 1/2 facher Zeilenabstand:	
@@ -24,32 +25,161 @@
 \begin{document}
 \chapter{Patient Study}
 
+
+\section{Introduction}
+
+As described in section \textbf{REF} stereotactic body-radiation therapy with photons (SBRT) showed very promising results for treating non-small cell lung cancer (NSCLC) \cite{Baumann2009, Fakiris2009, Grutters2010, Ricardi2010, Timmerman2010, Greco2011}.
+In chapter \textbf{REF} was showed that particle therapy (PT) can produce sharp dose gradients with a finite range of the beam and can thus provide higher healthy tissue sparing. 
+This reduces both side effects as well as the risk of  secondary cancer \cite{Newhauser2011}. Treatment of lung tumors with PT is still challenging due to interplay and radiological path length changes (see section \textbf{REF}. 
+Nevertheless, in recent years there have been several clinical studies using PT on lung tumors with promising results \cite{Tsujii2012}. It is important to note that all of these studies used passive beam 
+scattering avoiding the problem of interplay between organ motion and scanning beam motion. However, the active beam scanning can provide even better dose shaping which becomes even more important in high dose single fractionation regimes. 
+Therefore an in silico comparison between photon and active scanning ion carbon therapy (CiT) for NSCLC was conducted and will be presented in this chapter.
+\newline
+We hypothesize that 
+(a) CiT could provide better healthy tissue sparing than photons in treating lung tumors or metastases due to its favorable dose profile.
+(b) Patient characteristics can be identified that allow the selection of patients especially suited for CiT.
+To evaluate our hypothesis, an in silico comparison of simulated CiT plans to single dose SBRT (SDRT) plans actually delivered was performed.
+Target coverage and a wide range of OAR doses were assessed both with and without simulated motion on 4DCTs.  
+
 \section{Materials and methods}
 
 In this section input data will be presented as well as treatment planning parameters and procedures for SDRT and CiT. Finally, analysis method will be described.
 
+\subsection{Patient data}
+
+Study included 19 patients with in total 26 lesions that were actually treated with SDRT at the Funda\c{c}ao Champalimaud. The lesion size was 2.9 cm$^3$ (median, 25-75\% 1.4 – 9.7) and peak-to-peak motion was 3.1 mm (1.6 – 5.6).
+Three patients had two targets, one had five and the rest one. 13 lesions were right-sided and 12 were left-sided and one was located in right cardiophrenic space. An overview of tumor characteristics can be found in Table~\ref{tab:paddata}.
+Two computed tomographies (CT) were available for all patients. A planning CT was used for OAR delineation and SDRT planning. Target motion was estimated on a second, time-resolved CT (4D-CT), consisting of 10 motion phases. 
+Clinical target volumes (CTV) were delineated using a registered positron emission tomography (PET) scan. The planning objectives were that 99 \% of planning target volume (PTV) must receive at least 24 Gy (V99\% $\geq$ 24 Gy) 
+in a single fraction, while all OAR constraints as defined in the AAPM task group 101 report on stereotactic radiotherapy had to be respected \cite{Benedict2010}. Different PTV definitions were used in SDRT and CiT, due to CiT sensitivity
+to range changes. The definitions are described in next section.
+
+\begin{table}[H]
+  \centering
+%   \footnotesize
+  \caption{MISSING}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline\hline
+    Lesion & Lesion & \multirow{2}{*}{Stage} &
+    peak-to-peak \\
+    number & location & & motion [mm] \\
+    \hline
+    1 & LSL & IIa & 4.8  \\
+    2 & LSL & Ia & 3.1 \\
+    3 & IRL & IV & 12.0 \\
+    4 & RSL & Ia & 0.5 \\
+    5 & ILL & IV & 4.4 \\
+    6 & ILL & IV & 7.5 \\
+    7 & RSL & IV & 3.9 \\
+    8 & ILL & IV & 0.6 \\
+    9 & LSL & IV & 2.0 \\
+    10 & IRL & IV & 3.4 \\
+    11 & ILL & IV & 2.8 \\
+    12 & ILL & IV & 5.8 \\
+    13 & RSL & IV & 0.8 \\
+    14 & LSL & IV & 3.4 \\
+    15 & RSL & IV & 2.1 \\
+    16 & LSL & IV & 0.5 \\
+    17 & ILL & IV & 7.8 \\
+    18 & LSL & IV & 0.1 \\
+    19 & IRL & IIIb & 11.4 \\
+    20 & RSL & Ia & 2.2 \\
+    21 & RSL & IV & 0.2 \\
+    22 & RSL & IV & 2.2 \\
+    23 & LSL & IV & 3.1 \\
+    24 & RSL & IV & 8.1 \\
+    25 & LSL & IV & 1.4 \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:patdata}
+\end{table}
+
+\subsection{Planning target volume definition}
+
+To account for range changes relevant for particles only, different PTV definitions were used for SDRT and CiT, as shown in Figure~\textbf{MISSING}. 
+Within this thesis they will be named SPTV and FTV (field-specific target volume) for SDRT and CiT, respectively.
+In SDRT, the responsible clinician determined the maximum breathing motion of the CTV from the 4DCT, hence creating an ITV. This ITV plus an additional 3 mm for setup uncertainty yielded the SPTV.
+
+FTV was constructed following principles from Graeff et al \cite{Graeff2012}. Each beam has a unique FTV. For setup uncertainty margins of 3 mm laterally and 1 mm in beam’s eyes view (BEV) were used on the CTV. 
+Afterwards a water-equivalent path length ITV (WEPL-ITV) was build, using transformation maps from the B-Spline deformable registration of the 4DCT data \cite{Shackleford2010}. Additional 2 mm + 2 \% proximal and distal margins 
+were added in BEV to account for uncertainty from Hounsfield units to water equivalent path length conversion.
+
+If the target overlapped with an OAR (e.g. small airways) then OAR plus a margin of 2-5 mm was subtracted from SPTV or FTV, to satisfy OAR constraints.
 
 
 \begin{table}[H]
   \centering
 %   \footnotesize
-  \caption{Respiratory motion in the direction of the largest motion component (SI) for all investigated patients.
-  Furthermore the lung tumor 
-  location (left lung (L) or right lung (R)) is stated next to the tumor volume.}
+  \caption{MISSING}
   \begin{tabular}{|c|c|c|c|c|}
     \hline\hline
-    Patient no & Lesion number & Lesion location & Stage &
-    peak-to-peak motion [mm]\\
+     & \multicolumn{3}{|c|}{Volume (cm$^3$)} \\
+     \hline
+    Lesion number & CTV & SPTV & FTV\\
     \hline
-    1 & 1 & LSL & IIa & 4.8  \\
+    1 & 35.9 & 100.0 & 179.0  \\
+    2 & 1.6 & 7.7 & 40.6 \\
+    3 & 2.3 & 11.6 & 32.0 \\
+    4 & 6.9 & 25.2 & 38.0 \\
+    5 & 2.5 & 15.0 & 20.5 \\
+    6 & 1.4 & 7.7 & 26.5 \\
+    7 & 16.0 & 40.0 & 72.5 \\
+    8 & 139.0 & 261.0 & 255.0 \\
+    9 & 9.2 & 35.0 & 46.5 \\
+    10 & 10.2 & 38.0 & 45.5 \\
+    11 & 14.4 &46.4 & 57.2 \\
+    12 & 3.8 & 17.4 & 23.4 \\
+    13 & 4.3 & 17.7 & 26.3 \\
+    14 & 2.7 & 14.5 & 23.1 \\
+    15 & 3.1 & 15.4 & 33.5 \\
+    16 & 0.5 & 5.4 & 6.7 \\
+    17 & 0.8 & 6.1 & 23.5 \\
+    18 & 1.7 & 15.0 & 23.5 \\
+    19 & 27.0 & 137.0 & 118.5 \\
+    20 & 1.7 & 10.0 & 23.4 \\
+    21 & 0.9 & 3.2 & 14.9 \\
+    22 & 3.9 & 22.1 & 27.5 \\
+    23 & 9.8 & 28.0 & 51.0 \\
+    24 & 0.6 & 3.3 & 4.1  \\
+    25 & 0.8 & 5.9 & 10.0 \\
     \hline\hline
   \end{tabular}
   \label{tab:patdata}
 \end{table}
 
 
-% \bibliographystyle{apalike}
-% \bibliography{../ref.bib}{}
-% \bibliographystyle{plain}
+\subsection{SDRT treatment planning}
+
+The clinical plans were calculated with the Eclipse v10 planning system (Varian Medical Systems, Palo Alto, Ca, USA) using the AAA algorithm. All plans delivered 24 Gy, 
+generally using 4 VMAT partial arcs. For tumor sizes $>$ 2.5 cm a calculation grid of 2.5 mm was used, otherwise it was 1 mm. During optimization, a first iteration included the 
+SPTV only, after which the OARs were added. In order to lower OAR dose and improve the SPTV homogeneity,an artificial shell of 2 cm around the SPTV was created and the dose was minimized there as well.
+Finally, an intermediate dose calculation with AAA was mandatory to get an adequate SPTV coverage after optimization.
+
+\subsection{CiT treatment planning}
+
+For CiT, state of the art 4D treatment planning software TRiP4D was used (see section \textbf{REF}). A single field uniform dose plan (SFUD) was optimized on the FTV in the end-inhale reference phase of the 4D-CT. 
+Dose was then calculated on end-inhale (3D-0\%) and end-exhale (3D-50\%) phases. 4D dose delivery was simulated over the whole breathing cycle with two different breathing periods (3.6 and 5 s) and two different 
+starting phases (0° and 90°). Simulations without motion compensation (interplay) and with slice-by-slice rescanning were performed. Five rescans were used for the majority of targets (n=24), whereas 20 rescans 
+were used for targets (n=2) where the interplay effects were too big to achieve a satisfactory target coverage. 
+
+Dose was computed considering the relative biological effectiveness (RBE) following the local effect model (LEM) IV \cite{Elsaesser2010}. The Alpha beta ratio was chosen conservatively, withion a ratio of 10 Gy
+and 2 Gy for target and OARs, respectively. This led to RBE of approximately 1.1 in target tissue and approximately 1.1 to 3 in OARs.
+
+Most targets (n=20) were planned with two fields. For remaining targets, one (n=1), three (n=3) or four (n=2) fields were used due to proximity of OARs.
+A beam spot spacing of 2 mm, a focal size of approximately 6 mm (FWHM), a 3 mm ripple filter and in most cases a bolus of a 80 mm width were used.
+
+\subsection{Dose metrics and analysis}
+
+For comparison between SDRT and CiT the following dose metrics were used – relative volume of the CTV receiving 100 \% of prescribed dose ($V_{100}\%$), 
+the minimum dose in 95\% of the volume ($D_{95\%}$), the maximum point dose ($D_{Max}$), and the mean dose ($D_{Mean}$). The first two metrics, $V_{100}\%$ and $D_{95\%}$ were used 
+to compare target coverage, whereas OAR dose was compared with DMax and DMean.
+
+For 4D CiT dose calculations, mean and standard deviation were calculated for different breathing periods and starting phases.
+
+Paired t-tests were performed to compare the dose metrics and for post-hoc exploratory analysis between groups a two-sided t-test with Welch correction for different variances
+as carried out. A p-value < 0.05 was considered significant. Dose differences are always reported such that higher dose levels for SDRT result in positive values.
+
+\bibliographystyle{apalike}
+\bibliography{../ref.bib}{}
 
 \end{document}
