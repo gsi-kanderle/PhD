@@ -57,39 +57,42 @@ to range changes. The definitions are described in next section.
 \begin{table}[H]
   \centering
 %   \footnotesize
-  \caption{MISSING}
-  \begin{tabular}{|c|c|c|c|c|}
+  \caption{Lesion characteristics, with lesion locations, stages, peak-to-peak motions and volumes of corresponding CTV, SPTV and FTV. Abberevations for lesion location are: 
+  RSL, right superior lung; IRL, inferior right lung; LSL, left superior lung; ILL, inferior left lung; RCS, right cardiophrenic space.}
+  \begin{tabular}{|c|c|c|c|c|c|c|}
     \hline\hline
-    Lesion & Lesion & \multirow{2}{*}{Stage} &
-    peak-to-peak \\
-    number & location & & motion [mm] \\
+     & & & & \multicolumn{3}{|c|}{Volume (cm$^3$)} \\ \cline{5-7}
+    \multirow{2}{*}{Number} & \multirow{2}{*}{Location} & \multirow{2}{*}{Stage} &
+    Peak-to-peak & \multirow{2}{*}{CTV} & \multirow{2}{*}{SPTV} & \multirow{2}{*}{FTV}\\
+     &  & & motion [mm] & & & \\
     \hline
-    1 & LSL & IIa & 4.8  \\
-    2 & LSL & Ia & 3.1 \\
-    3 & IRL & IV & 12.0 \\
-    4 & RSL & Ia & 0.5 \\
-    5 & ILL & IV & 4.4 \\
-    6 & ILL & IV & 7.5 \\
-    7 & RSL & IV & 3.9 \\
-    8 & ILL & IV & 0.6 \\
-    9 & LSL & IV & 2.0 \\
-    10 & IRL & IV & 3.4 \\
-    11 & ILL & IV & 2.8 \\
-    12 & ILL & IV & 5.8 \\
-    13 & RSL & IV & 0.8 \\
-    14 & LSL & IV & 3.4 \\
-    15 & RSL & IV & 2.1 \\
-    16 & LSL & IV & 0.5 \\
-    17 & ILL & IV & 7.8 \\
-    18 & LSL & IV & 0.1 \\
-    19 & IRL & IIIb & 11.4 \\
-    20 & RSL & Ia & 2.2 \\
-    21 & RSL & IV & 0.2 \\
-    22 & RSL & IV & 2.2 \\
-    23 & LSL & IV & 3.1 \\
-    24 & RSL & IV & 8.1 \\
-    25 & LSL & IV & 1.4 \\
-    26 & RCS & IV & 11.8 \\
+    1 & LSL & IIa & 4.8 & 35.9 & 100 & 179 \\
+    2 & LSL & Ia & 3.1 & 1.6 & 7.7 & 40.6 \\
+    3 & IRL & IV & 12 & 2.3 & 11.6 & 32 \\
+    4 & RSL & Ia & 0.5 & 6.9 & 25.2 & 38 \\
+    5 & ILL & IV & 4.4 & 2.5 & 15 & 20.5 \\
+    6 & ILL & IV & 7.5 & 1.4 & 7.7 & 26.5 \\
+    7 & RSL & IV & 3.9 & 16 & 40 & 72.5 \\
+    8 & ILL & IV & 0.6 & 139 & 261 & 255 \\
+    9 & LSL & IV & 2 & 9.2 & 35 & 46.5 \\
+    10 & IRL & IV & 3.4 & 10.2 & 38 & 45.5 \\
+    11 & ILL & IV & 2.8 & 14.4 & 46.4 & 57.2 \\
+    12 & ILL & IV & 5.8 & 3.8 & 17.4 & 23.4 \\
+    13 & RSL & IV & 0.8 & 4.3 & 17.7 & 26.3 \\
+    14 & LSL & IV & 3.4 & 2.7 & 14.5 & 23.1 \\
+    15 & RSL & IV & 2.1 & 3.1 & 15.4 & 33.5 \\
+    16 & LSL & IV & 0.5 & 0.5 & 5.4 & 6.7 \\
+    17 & ILL & IV & 7.8 & 0.8 & 6.1 & 23.5 \\
+    18 & LSL & IV & 0.1 & 1.7 & 15 & 23.5 \\
+    19 & IRL & IIIb & 11.4 & 27 & 137 & 118.5 \\
+    20 & RSL & Ia & 2.2 & 1.7 & 10 & 23.4 \\
+    21 & RSL & IV & 0.2 & 0.9 & 3.2 & 14.9 \\
+    22 & RSL & IV & 2.2 & 3.9 & 22.1 & 27.5 \\
+    23 & LSL & IV & 3.1 & 9.8 & 28 & 51 \\
+    24 & RSL & IV & 8.1 & 0.6 & 3.3 & 4.1 \\
+    25 & LSL & IV & 1.4 & 0.8 & 5.9 & 10 \\
+    26 & RCS & IV & 11.8 & 0.4 & 6.6 & 8.6 \\
+
     \hline\hline
   \end{tabular}
   \label{tab:patdata}
@@ -107,49 +110,6 @@ were added in BEV to account for uncertainty from Hounsfield units to water equi
 
 If the target overlapped with an OAR (e.g. small airways) then OAR plus a margin of 2-5 mm was subtracted from SPTV or FTV, to satisfy OAR constraints.
 
-
-\begin{table}[H]
-  \centering
-%   \footnotesize
-  \caption{MISSING}
-  \begin{tabular}{|c|c|c|c|c|}
-    \hline\hline
-     & \multicolumn{3}{|c|}{Volume (cm$^3$)} \\
-     \hline
-    Lesion number & CTV & SPTV & FTV\\
-    \hline
-    1 & 35.9 & 100.0 & 179.0  \\
-    2 & 1.6 & 7.7 & 40.6 \\
-    3 & 2.3 & 11.6 & 32.0 \\
-    4 & 6.9 & 25.2 & 38.0 \\
-    5 & 2.5 & 15.0 & 20.5 \\
-    6 & 1.4 & 7.7 & 26.5 \\
-    7 & 16.0 & 40.0 & 72.5 \\
-    8 & 139.0 & 261.0 & 255.0 \\
-    9 & 9.2 & 35.0 & 46.5 \\
-    10 & 10.2 & 38.0 & 45.5 \\
-    11 & 14.4 &46.4 & 57.2 \\
-    12 & 3.8 & 17.4 & 23.4 \\
-    13 & 4.3 & 17.7 & 26.3 \\
-    14 & 2.7 & 14.5 & 23.1 \\
-    15 & 3.1 & 15.4 & 33.5 \\
-    16 & 0.5 & 5.4 & 6.7 \\
-    17 & 0.8 & 6.1 & 23.5 \\
-    18 & 1.7 & 15.0 & 23.5 \\
-    19 & 27.0 & 137.0 & 118.5 \\
-    20 & 1.7 & 10.0 & 23.4 \\
-    21 & 0.9 & 3.2 & 14.9 \\
-    22 & 3.9 & 22.1 & 27.5 \\
-    23 & 9.8 & 28.0 & 51.0 \\
-    24 & 0.6 & 3.3 & 4.1  \\
-    25 & 0.8 & 5.9 & 10.0 \\
-    26 & 0.4 & 6.6 & 8.6 \\
-    \hline\hline
-  \end{tabular}
-  \label{tab:patdata}
-\end{table}
-
-
 \subsection{SDRT treatment planning}
 
 The clinical plans were calculated with the Eclipse v10 planning system (Varian Medical Systems, Palo Alto, Ca, USA) using the AAA algorithm. All plans delivered 24 Gy, 
@@ -161,11 +121,11 @@ Finally, an intermediate dose calculation with AAA was mandatory to get an adequ
 
 For CiT, state of the art 4D treatment planning software TRiP4D was used (see section \textbf{REF}). A single field uniform dose plan (SFUD) was optimized on the FTV in the end-inhale reference phase of the 4D-CT. 
 Dose was then calculated on end-inhale (3D-0\%) and end-exhale (3D-50\%) phases. 4D dose delivery was simulated over the whole breathing cycle with two different breathing periods (3.6 and 5 s) and two different 
-starting phases (0° and 90°). Simulations without motion compensation (interplay) and with slice-by-slice rescanning were performed. Five rescans were used for the majority of targets (n=24), whereas 20 rescans 
+starting phases (0° and 90°). Simulations without motion compensation (4D-interplay) and with slice-by-slice rescanning were performed (4D-rescans). Five rescans were used for the majority of targets (n=24), whereas 20 rescans 
 were used for targets (n=2) where the interplay effects were too big to achieve a satisfactory target coverage. 
 
 Dose was computed considering the relative biological effectiveness (RBE) following the local effect model (LEM) IV \cite{Elsaesser2010}. The Alpha beta ratio was chosen conservatively, withion a ratio of 10 Gy
-and 2 Gy for target and OARs, respectively. This led to RBE of approximately 1.1 in target tissue and approximately 1.1 to 3 in OARs.
+and 2 Gy for target and OARs, respectively. This led to RBE of approximately 1.1 in target tissue and approximately 1.1 to 3 in OARs. An example RBE distribution is shown in Fig.~\ref{Fig:RBE}
 
 Most targets (n=20) were planned with two fields. For remaining targets, one (n=1), three (n=3) or four (n=2) fields were used due to proximity of OARs.
 A beam spot spacing of 2 mm, a focal size of approximately 6 mm (FWHM), a 3 mm ripple filter and in most cases a bolus of a 80 mm width were used.
@@ -173,8 +133,8 @@ A beam spot spacing of 2 mm, a focal size of approximately 6 mm (FWHM), a 3 mm r
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.9\textwidth]{./Images/RBE.png}
-\caption{TEXT}
-\label{RegistrationCompare}
+\caption{RBE distribution in a patient (a) depends on a actual dose profile (b).}
+\label{Fig:RBE}
 \end{center}
 \end{figure}
 
@@ -188,6 +148,52 @@ For 4D CiT dose calculations, mean and standard deviation were calculated for di
 
 Paired t-tests were performed to compare the dose metrics and for post-hoc exploratory analysis between groups a two-sided t-test with Welch correction for different variances
 as carried out. A p-value < 0.05 was considered significant. Dose differences are always reported such that higher dose levels for SDRT result in positive values.
+
+\section{Results}
+
+Examples of two SDRT and 4D-rescan CiT treatment plans are shown in Figure \textbf{REF}. Patient A has two lesions in close proximity to the spinal cord. 
+Patient B has a small lesion (0.87 cc) in the superior position of the left lung wing. $V_{100}\%$ is 100\% for SDRT and CiT in all CTVs for Patient A and B; 
+average OAR difference between SDRT and CiT in $D_{Max}$ is 5.3 Gy and 1.5 Gy and in $D_{Mean}$ 1.2 Gy and 0.6 Gy, respectively for patient A and B.
+
+\subsection{Target Coverage}
+
+Difference in PTV definition resulted in 1.5 (1.3 – 2.1) times bigger FTV than SPTV. There was no significant difference in CTV $D_{95\%}$ between SBRT and any CiT calculation. 
+For CTV $V_{100}\%$ there was a significant difference between SDRT and 4D-interplay, 3.8 (0 – 6.1)\% and no significant difference between SDRT and 3D-0\%, 3D-50\% or 4D-rescan. 
+Difference in V100\% between 4D-rescan and 4D-interplay with respect to CTV peak-to-peak motion and average CTV range change in water is plotted in Figure 3. Range change was a 
+better predictor of the  $V_{100}\%$ difference than geometric motion (r=0.75 vs. r=0.48).
+There was a significant difference in  $V_{100}\%$ standard deviation between 4D-interplay and 4D-rescans, 1.8 (0 – 2.9)\%, i.e. interplay simulation showed a larger variability in dose coverage in addition to the difference in averages.
+
+\subsection{Dose in OARs}
+
+There was no significant difference in dose to OAR between the different CiT dose calculations. The dose metrics for SDRT and 4D-rescan CiT for 
+OARs heart, spinal cord, smaller airway esophagus, trachea, aorta, ipsi- and contralateral lung are presented in Table 2. 
+In almost all patients CiT deposited less dose in all OARs, except ipsilateral lung, where there was no statistical significant difference between SDRT and CiT. 
+The average OAR difference between SDRT and CiT was significant, 2.5 (0.3– 4.8) Gy for $D_{Max}$ and 0.6 (0.2– 1.7) Gy for $D_{Mean}$. 
+The contralateral lung did not receive any dose in 12 (71\%) patients with CiT.
+
+\begin{table}[H]
+  \centering
+%   \footnotesize
+  \caption{Dose metrics for OARs. First value at each organ is from SDRT and the second from 4D-rescan. All values are shown as median and 25-75\% in brackets.}
+  \begin{tabular}{l|c|c|c|c|}
+    \cline{2-5}
+     & \multicolumn{2}{|c|}{$D_{Max}$ (Gy)} & \multicolumn{2}{|c|}{$D_{Mean}$ (Gy)} \\
+     \hline
+    \multicolumn{1}{|l|}{OAR} & Photon & Carbon & Photon & Carbon	\\
+    \hline
+\multicolumn{1}{|l|}{Heart} & 6.0 (0.3 – 11.6) & 0 (0 – 7.3) & 1.3 (0.1 – 2.2) & 0 (0 – 0.2)	\\
+\multicolumn{1}{|l|}{Spinal Cord} & 5.5 (3.3 – 8.5) & 0 (0 – 0) & 0 (0 – 0.3) & 0 (0 – 0)	\\
+\multicolumn{1}{|l|}{Smaller Airways} & 13.0 (9.8 – 17.1) & 11.0 (1.1 – 16.3) & 2.8 (1.5 – 5.8) & 0.7 (0 – 1.9)	\\
+\multicolumn{1}{|l|}{Esophagus} & 8.0 (3.9 – 8.4) & 0 (0 – 0.3) & 1.1 (0.6 – 1.5) & 0 (0 – 0)	\\
+\multicolumn{1}{|l|}{Trachea} & 4.3 (2.5 – 6.0) & 0 (0 – 0) & 1 (0.5 – 1.5) & 0 (0 – 0)	\\
+\multicolumn{1}{|l|}{Aorta} & 8.0 (5.1 – 21.9) & 1.0 (0 – 16.8) & 1.4 (0.7 – 1.6) & 0 (0 – 0.1)	\\
+\multicolumn{1}{|l|}{Ipsilateral Lung} & 26.3 (26.0 – 26.5) & 26.3 (25.8 – 26.8) & 2.3 (1.5 – 3.1) & 2.5 (1.6 – 3.4)	\\
+\multicolumn{1}{|l|}{Contralateral Lung} & 4.8 (3.5 – 6.8) & 0 (0 – 0.3) & 0.4 (0.2 – 0.6) & 0 (0 – 0)	\\
+    \hline\hline
+  \end{tabular}
+  \label{tab:results}
+\end{table}
+
 
 \bibliographystyle{apalike}
 \bibliography{../ref.bib}{}
