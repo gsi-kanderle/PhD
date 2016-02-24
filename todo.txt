@@ -6,3 +6,6 @@ Patient 11 CTV2 missing from table characteristic
 
 Image of alpha beta ratio distribution in patient.
 Perhaps comparison between alpha beta 10 and 6?
+
+grade 3 was observed 
+in up to 28\% of patients check if it's the same for this reference
