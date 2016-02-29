@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 12.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 51448)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
+	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+	<!ENTITY st0 "font-size:10;">
+	<!ENTITY st1 "fill:none;stroke:#FFFFFF;">
+	<!ENTITY st2 "font-family:'DejaVu Sans','Lucida Sans',sans-serif; font-weight:bold;">
+	<!ENTITY st3 "fill:none;stroke:#993333;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;">
+	<!ENTITY st4 "fill:#993333;">
+	<!ENTITY st5 "fill:none;stroke:#993333;stroke-width:2;">
+	<!ENTITY st6 "fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;">
+	<!ENTITY st7 "fill:none;stroke:#993333;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;">
+	<!ENTITY st8 "fill:none;stroke:#666633;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;">
+	<!ENTITY st9 "fill:none;">
+	<!ENTITY st10 "fill:#666633;">
+	<!ENTITY st11 "fill:#CCCC99;">
+	<!ENTITY st12 "fill:none;stroke:#666633;stroke-width:2;">
+	<!ENTITY st13 "fill:none;stroke:#666633;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;">
+	<!ENTITY st14 "font-size:9;">
+	<!ENTITY st15 "font-size:10;">
+	<!ENTITY st16 "font-family:'DejaVu Sans','Lucida Sans',sans-serif;">
+]>
+<svg  version="1.1" id="Layer_2" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="326" height="318" viewBox="0 0 326 318"
+	 style="overflow:visible;enable-background:new 0 0 326 318;" xml:space="preserve">
+<rect style="&st9;" width="326" height="318"/>
+<g>
+	<rect x="61" y="29.3" style="&st11;" width="217" height="252.6"/>
+	<g>
+		<line style="&st1;" x1="61" y1="29.3" x2="61" y2="282"/>
+		<line style="&st1;" x1="115.3" y1="29.3" x2="115.3" y2="282"/>
+		<line style="&st1;" x1="169.5" y1="29.3" x2="169.5" y2="282"/>
+		<line style="&st1;" x1="223.8" y1="29.3" x2="223.8" y2="282"/>
+		<line style="&st1;" x1="278" y1="29.3" x2="278" y2="282"/>
+	</g>
+	<line style="&st8;" x1="61" y1="254.2" x2="73.5" y2="254.2"/>
+	<line style="&st8;" x1="61" y1="92.2" x2="169.6" y2="92.2"/>
+	<g>
+		<line style="&st3;" x1="204.4" y1="119.2" x2="278" y2="119.2"/>
+		<line style="&st3;" x1="191.6" y1="173.3" x2="278" y2="173.3"/>
+		<line style="&st3;" x1="174.4" y1="227.5" x2="278" y2="227.5"/>
+	</g>
+	<line style="&st8;" x1="61" y1="146.2" x2="148.5" y2="146.2"/>
+	<line style="&st8;" x1="61" y1="200.2" x2="108.7" y2="200.2"/>
+	<polyline style="&st13;" points="63.2,282 63.2,262.8 86.5,243.2 101,223.8 112.9,187.2 130.4,169.5 159.3,132.3 170.7,88 
+		183.4,76.1 195.8,82.6 	"/>
+	<polyline style="&st7;" points="109,282 109,274.2 128.2,274.2 156.2,261.2 180.2,216.8 192.5,170 206.3,111.1 224,87.7 247,79.3 
+		259,83.7 	"/>
+	<text transform="matrix(1 0 0 1 88.9312 106.958)"><tspan x="0" y="0" style="&st10; &st2; &st15;">Cigarette</tspan><tspan x="-11.9" y="15" style="&st10; &st2; &st15;">Consumption</tspan><tspan x="9.9" y="30" style="&st10; &st2; &st15;">(men)</tspan></text>
+	<text transform="matrix(1 0 0 1 4.1265 16.8335)" style="&st2; &st0;">20-Year Lag Time Between Smoking and Lung Cancer</text>
+	<text transform="matrix(1 0 0 1 222.9336 134.8062)"><tspan x="0" y="0" style="&st4; &st2; &st15;">Lung</tspan><tspan x="-5.4" y="15" style="&st4; &st2; &st15;">Cancer</tspan><tspan x="-2" y="30" style="&st4; &st2; &st15;">(men)</tspan></text>
+	<text transform="matrix(1 0 0 1 283.4844 36.3062)"><tspan x="0" y="0" style="&st4; &st16; &st14;">Lung</tspan><tspan x="0" y="12" style="&st4; &st16; &st14;">Cancer</tspan><tspan x="0" y="24" style="&st4; &st16; &st14;">Deaths</tspan><tspan x="0" y="36" style="&st4; &st16; &st14;">(Per</tspan><tspan x="0" y="48" style="&st4; &st16; &st14;">100,000</tspan><tspan x="0" y="60" style="&st4; &st16; &st14;">People)</tspan></text>
+	<g>
+		<text transform="matrix(1 0 0 1 283.0273 122.168)" style="&st4; &st16; &st15;">150</text>
+		<text transform="matrix(1 0 0 1 283.0273 176.3345)" style="&st4; &st16; &st15;">100</text>
+		<text transform="matrix(1 0 0 1 283.0273 230.5015)" style="&st4; &st16; &st15;">50</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 28.2046 257.1685)" style="&st10; &st16; &st15;">1000</text>
+		<text transform="matrix(1 0 0 1 28.2046 203.1675)" style="&st10; &st16; &st15;">2000</text>
+		<text transform="matrix(1 0 0 1 28.2046 149.168)" style="&st10; &st16; &st15;">3000</text>
+		<text transform="matrix(1 0 0 1 28.2046 95.168)" style="&st10; &st16; &st15;">4000</text>
+	</g>
+	<text transform="matrix(1 0 0 1 157.7485 309.9536)" style="&st16; &st15;">Year</text>
+	<g>
+		<text transform="matrix(1 0 0 1 47.1162 293.9536)" style="&st16; &st15;">1900</text>
+		<text transform="matrix(1 0 0 1 101.3662 293.9536)" style="&st16; &st15;">1920</text>
+		<text transform="matrix(1 0 0 1 155.6162 293.9536)" style="&st16; &st15;">1940</text>
+		<text transform="matrix(1 0 0 1 209.8662 293.9536)" style="&st16; &st15;">1960</text>
+		<text transform="matrix(1 0 0 1 264.1162 293.9536)" style="&st16; &st15;">1980</text>
+	</g>
+	<text transform="matrix(1 0 0 1 6.1045 36.3062)"><tspan x="0" y="0" style="&st10; &st16; &st14;">Cigarettes</tspan><tspan x="10.8" y="12" style="&st10; &st16; &st14;">Smoked</tspan><tspan x="-1.6" y="24" style="&st10; &st16; &st14;">Per Person</tspan><tspan x="9.6" y="36" style="&st10; &st16; &st14;">Per Year</tspan></text>
+	<line style="&st12;" x1="55" y1="77.8" x2="15.5" y2="77.8"/>
+	<line style="&st5;" x1="283" y1="102.3" x2="319.5" y2="102.3"/>
+	<line style="&st6;" x1="53" y1="305.3" x2="156.5" y2="305.3"/>
+	<line style="&st6;" x1="182.5" y1="305.3" x2="286" y2="305.3"/>
+</g>
+</svg>
