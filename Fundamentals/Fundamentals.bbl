@@ -1,5 +1,10 @@
 \begin{thebibliography}{}
 
+\bibitem[Wor, ]{Worldwide2012}
+Worldwide data.
+\newblock http://www.wcrf.org/int/cancer-facts-figures/worldwide-data.
+\newblock Accessed: Februar 2016.
+
 \bibitem[Ahlen, 1980]{Ahlen1980}
 Ahlen, S. (1980).
 \newblock Theoretical and experimental aspects of the enery loss of
@@ -15,6 +20,17 @@ Alpen, E.~L. (1998).
 Barkas, H. (1963).
 \newblock {\em Nuclear Research Emulsions}, volume~1.
 \newblock Academic Press, New York, USA and London, UK.
+
+\bibitem[Bert et~al., 2008]{Bert2008}
+Bert, C., Groezinger, S.~O., and Rietzel, E. (2008).
+\newblock Quantification of interplay effects of scanned particle beams and
+  moving targets.
+\newblock {\em Phys. Med. Biol.}, 53(9):2253--2265.
+
+\bibitem[Bert and Rietzel, 2007]{Bert2007}
+Bert, C. and Rietzel, E. (2007).
+\newblock {4D} treatment planning for scanned ion beams.
+\newblock {\em Radiat. Oncol.}, 2(24).
 
 \bibitem[Bethe, 1930]{Bethe1930}
 Bethe, H. (1930).
@@ -32,21 +48,156 @@ Bohr, N. (1940).
 \newblock Scattering and stopping of fission fragments.
 \newblock {\em Phys . Rev.}, 58(7):654 -- 655.
 
+\bibitem[Brock, 2010]{Brock2010}
+Brock, K.~K. (2010).
+\newblock Results of a multi-institution deformable registration accuracy study
+  (midras).
+\newblock {\em Int. J. Radiat. Oncol. Biol. Phys.}, 76(2):583--596.
+
+\bibitem[Brock et~al., 2006]{Brock2006}
+Brock, K.~K., Dawson, L.~A., Sharpe, M.~B., Moseley, D.~J., and Jaffray, D.~A.
+  (2006).
+\newblock Feasibility of a novel deformable image registration technique to
+  facilitate classification, targeting and monitoring of tumor and normal
+  tissue.
+\newblock {\em Int. J. Radiat. Oncol. Biol. Phys.}, 64(4):1245--1254.
+
+\bibitem[Brown et~al., 2007]{Brown2007a}
+Brown, W.~T., Wu, X., Fayad, F., Fowler, J.~F., Amendola, B.~E., Garcia, S.,
+  Han, H., de~la, Z.~A., Bossart, E., Huang, Z., and Schwade, J.~G. (2007).
+\newblock Cyberknife radiosurgery for stage {I} lung cancer: results at 36
+  months.
+\newblock {\em Clin. Lung Cancer.}, 8(8):488--492.
+
+\bibitem[Chheang and Brown, 2013]{Chheang2013}
+Chheang, S. and Brown, K. (2013).
+\newblock Lung cancer staging: Clinical and radiologic perspective.
+\newblock {\em Semin Intervent Radiol}, 30(2).
+
+\bibitem[Chu et~al., 1993]{Chu1993}
+Chu, W.~T., Ludewigt, B.~A., and Renner, T.~R. (1993).
+\newblock Instrumentation for treatment of cancer using proton and light-ion
+  beams.
+\newblock {\em Rev. Sci. Instrum.}, 64(8):2055--2122.
+
+\bibitem[CRUK, 2016]{CancerStage}
+CRUK (2016).
+\newblock Cancer research uk (original email from cruk) [cc by-sa 4.0
+  (http://creativecommons.org/licenses/by-sa/4.0)], via wikimedia commons.
+
+\bibitem[Elsaesser et~al., 2009]{Elsaesser2009}
+Elsaesser, T., Gemmel, A., Scholz, M., Schardt, D., and Kr\"{a}mer, M. (2009).
+\newblock Relevance of very low energy ions for heavy ion therapy.
+\newblock {\em Phys. Med. Biol.}, 54(7):N101--N106.
+
+\bibitem[Elsaesser and Scholz, 2006]{Elsaesser2006}
+Elsaesser, T. and Scholz, M. (2006).
+\newblock Improvement of the local effect model ({LEM})--implications of
+  clustered {DNA} damage.
+\newblock {\em Radiat. Prot. Dosimetry.}, 122(1-4):475--477.
+
+\bibitem[Elsaesser and Scholz, 2007]{Elsaesser2007}
+Elsaesser, T. and Scholz, M. (2007).
+\newblock Cluster effects within the local effect model.
+\newblock {\em Radiat. Res.}, 167(3):319--329.
+
+\bibitem[Furukawa et~al., 2007]{Furukawa2007}
+Furukawa, T., Inaniwa, T., Sato, S., Tomitani, T., Minohara, S., Noda, K., and
+  Kanai, T. (2007).
+\newblock Design study of a raster scanning system for moving target
+  irradiation in heavy-ion radiotherapy.
+\newblock {\em Med. Phys.}, 34(3):1085--1097.
+
+\bibitem[Geiss et~al., 1999]{Geiss1999}
+Geiss, O.~B., Schardt, D., Voss, B., Kr\"{a}mer, M., and Kraft, G. (1999).
+\newblock Correlation between {CT} number and water equivalent thickness.
+\newblock Report.
+
 \bibitem[Groezinger, 2004]{Groezinger2004}
 Groezinger, S.~O. (2004).
 \newblock {\em Volume Conformal Irradiation of Moving Target Volumes with
   Scanned Ion Beams}.
 \newblock Thesis/dissertation, TU Darmstadt.
 
-\bibitem[{ICRU}, 1993]{ICRU1993}
-{ICRU} (1993).
+\bibitem[Haberer et~al., 1993]{Haberer1993}
+Haberer, T., Becher, W., Schardt, D., and Kraft, G. (1993).
+\newblock Magnetic scanning system for heavy ion therapy.
+\newblock {\em Nucl. Instrum. Meth. A}, 330:296--305.
+
+\bibitem[Hecht, 2012]{Hecht2012}
+Hecht, S.~S. (2012).
+\newblock Lung carcinogenesis by tobacco smoke.
+\newblock {\em International Journal of Cancer}, 131(12).
+
+\bibitem[Hill et~al., 2001]{Hill2001}
+Hill, D.~L., Batchelor, P.~G., Holden, M., and Hawkes, D.~J. (2001).
+\newblock Medical image registration.
+\newblock {\em Phys. Med. Biol.}, 46(3):R1--45.
+
+\bibitem[{ICRU}, 1993a]{ICRU50}
+{ICRU} (1993a).
+\newblock Prescribing, recording and reporting photon beam therapy.
+\newblock {ICRU} report no. 50.
+
+\bibitem[{ICRU}, 1993b]{ICRU1993}
+{ICRU} (1993b).
 \newblock Report 50.
 \newblock Report.
+
+\bibitem[{ICRU}, 1999]{ICRU62}
+{ICRU} (1999).
+\newblock Prescribing, recording and reporting photon beam therapy, supplement
+  to {ICRU} report 50.
+\newblock {ICRU} report no. 62.
+
+\bibitem[{ICRU}, 2007]{ICRU2007}
+{ICRU} (2007).
+\newblock {ICRU} report 78: Prescribing, recording and reporting proton-beam
+  therapy.
+\newblock {\em Journal of the {ICRU}}, 7(2).
+
+\bibitem[J. and M., 2010]{Alberg2010}
+J., A.~A. and M., S.~J. (2010).
+\newblock {\em Murray \& Nadel's Textbook of Respiratory Medicine (5th ed.)}.
+\newblock Saunders Elsevier, Philadelphia, USA.
+
+\bibitem[J{\"a}kel et~al., 2001]{Jaekel2001}
+J{\"a}kel, O., Jacob, C., Schardt, D., Karger, C.~P., and Hartmann, G.~H.
+  (2001).
+\newblock Relation between carbon ion ranges and x-ray ct numbers.
+\newblock {\em Med Phys}, 28:701--703.
+
+\bibitem[Kaatsch et~al., 2014]{Kaatsch2014}
+Kaatsch, P., Spix, C., Hentschel, S., Katalinic, A., Luttmann, S., Stegmaier,
+  C., Caspritz, S., Cernaj, J., Ernst, A., Folkerts, J., Hansmann, J.,
+  Kranzhofer, K., Krieghoff-Henning, E., Kunz, B., Penzkofer, A., Treml, K.,
+  Wittenberg, K., Baras, N., Barnes, B., Bertz, J., Buttmann-Schweiger, N.,
+  Dahm, S., Franke, M., Haberland, J., Kraywinkel, K., Wienecke, A., and Wolf,
+  U. (2014).
+\newblock Cancer in germany 2009/2012.
+\newblock Report.
+
+\bibitem[Kasper et~al., 2015]{Kasper2015}
+Kasper, D.~L., Hauser, S.~L., Jameson, J.~L., Fauci, A.~S., Longo, D.~L., and
+  Loscalzo, J. (2015).
+\newblock {\em Harrison's Principles of Internal Medicine (19th ed.)}.
+\newblock McGraw-Hill, Columbus, USA.
+
+\bibitem[Keall et~al., 2001]{Keall2001}
+Keall, P.~J., Kini, V.~R., Vedam, S.~S., and Mohan, R. (2001).
+\newblock Motion adaptive x-ray therapy: a feasibility study.
+\newblock {\em Phys. Med. Biol.}, 46(1):1--10.
 
 \bibitem[Kiefer and Straaten, 1986]{Kiefer1986}
 Kiefer, J. and Straaten, H. (1986).
 \newblock A model of ion track structure based on classical collision dynamics.
 \newblock {\em Phys. Med. Biol.}, 31(11):1201--1209.
+
+\bibitem[Kilby et~al., 2010]{Kilby2010}
+Kilby, W., Dooley, J.~R., Kuduvalli, G., Sayeh, S., and C.~R.~Maurer, J.
+  (2010).
+\newblock The cyberknife robotic radiosurgery system in 2010.
+\newblock {\em Technol. Cancer Res. Treat.}, 9(5):433--452.
 
 \bibitem[Kraft, 2000]{Kraft2000}
 Kraft, G. (2000).
@@ -54,10 +205,58 @@ Kraft, G. (2000).
 \newblock {\em Progress in Particle and Nuclear Physics}, 45(Supplement
   2):S473--S544.
 
+\bibitem[Kr\"{a}mer et~al., 2000]{Kraemer2000}
+Kr\"{a}mer, M., J\"{a}kel, O., Haberer, T., Kraft, G., Schardt, D., and Weber,
+  U. (2000).
+\newblock Treatment planning for heavy-ion radiotherapy: physical beam model
+  and dose optimization.
+\newblock {\em Phys. Med. Biol.}, 45(11):3299--3317.
+
+\bibitem[Kr\"{a}mer and Scholz, 2000]{Kraemer2000a}
+Kr\"{a}mer, M. and Scholz, M. (2000).
+\newblock Treatment planning for heavy-ion radiotherapy: calculation and
+  optimization of biologically effective dose.
+\newblock {\em Phys. Med. Biol.}, 45(11):3319--3330.
+
+\bibitem[Kr\"{a}mer et~al., 2003]{Kraemer2003}
+Kr\"{a}mer, M., Wang, J.~F., and Weyrather, W. (2003).
+\newblock Biological dosimetry of complex ion radiation fields.
+\newblock {\em Phys. Med. Biol.}, 48(14):2063--2070.
+
+\bibitem[Langen and Jones, 2001]{Langen2001}
+Langen, K.~M. and Jones, D. T.~L. (2001).
+\newblock Organ motion and its management.
+\newblock {\em Int. J. Radiat. Oncol. Biol. Phys.}, 50(1):265--278.
+
 \bibitem[Lilley, 2006]{Lilley2006}
 Lilley, J. (2006).
 \newblock {\em Nuclear Physics - Principles and Applications}.
 \newblock Wiley, Manchester, UK.
+
+\bibitem[Liu et~al., 2007]{Liu2007}
+Liu, H.~H., Balter, P., Tutt, T., Choi, B., Zhang, J., Wang, C., Chi, M., Luo,
+  D., Pan, T., Hunjan, S., Starkschall, G., Rosen, I., Prado, K., Liao, Z.,
+  Chang, J., Komaki, R., Cox, J.~D., Mohan, R., and Dong, L. (2007).
+\newblock Assessing respiration-induced tumor motion and internal target volume
+  using four-dimensional computed tomography for radiotherapy of lung cancer.
+\newblock {\em Int. J. Radiat. Oncol. Biol. Phys.}, 68(2):531--540.
+
+\bibitem[Lu et~al., 2006]{Lu2006}
+Lu, H.~M., Safai, S., Schneider, R., Adams, J.~A., Chen, Y.~L., Wolfgang,
+  J.~A., Sharp, G.~C., Brett, R.~C., Kirch, D.~G., Hong, T.~S., Delaney, T.~F.,
+  Jiang, S.~B., Kooy, H.~M., and Chen, G. T.~Y. (2006).
+\newblock Respiratory-gated proton therapy treatment.
+\newblock In {\em Abstract Book PTCOG 44}.
+
+\bibitem[Minohara et~al., 2000]{Minohara2000}
+Minohara, S., Kanai, T., Endo, M., Noda, K., and Kanazawa, M. (2000).
+\newblock Respiratory gated irradiation system for heavy-ion radiotherapy.
+\newblock {\em Int. J. Radiat. Oncol. Biol. Phys.}, 47(4):1097--1103.
+
+\bibitem[Mitaroff et~al., 1998]{Mitaroff1998}
+Mitaroff, A., Kraft-Weyrather, W., Geiss, O.~B., and Kraft, G. (1998).
+\newblock Biological verification of heavy ion treatment planning.
+\newblock {\em Radiat. Environ. Biophys.}, 37(1):47--51.
 
 \bibitem[Moli\`{e}re, 1948]{Moliere1948}
 Moli\`{e}re, G. (1948).
@@ -65,15 +264,125 @@ Moli\`{e}re, G. (1948).
   vielfachstreuung.
 \newblock {\em Zeitschrift f\"{u}r Naturforschung}, 3a:78--97.
 
+\bibitem[Munro, 1970]{Munro1970}
+Munro, T.~R. (1970).
+\newblock The relative radiosensitivity of the nucleus and cytoplasm of chinese
+  hamster fibroblasts.
+\newblock {\em Radiat. Res.}, 42(3):451--470.
+
+\bibitem[NCI, 1988]{LungCancer}
+NCI (1988).
+\newblock https://visualsonline.cancer.gov/details.cfm?imageid=2348.
+
+\bibitem[Paganetti et~al., 2002]{Paganetti2002}
+Paganetti, H., Niemierko, A., Ancukiewicz, M., Gerweck, L.~E., Goitein, M.,
+  Loeffler, J.~S., and Suit, H.~D. (2002).
+\newblock Relative biological effectiveness ({RBE}) values for proton beam
+  therapy.
+\newblock {\em Int. J. Radiat. Oncol. Biol. Phys.}, 53(2):407--421.
+
+\bibitem[Phillips et~al., 1992]{Phillips1992}
+Phillips, M.~H., Pedroni, E., Blattmann, H., Boehringer, T., Coray, A., and
+  Scheib, S. (1992).
+\newblock Effects of respiratory motion on dose uniformity with a charged
+  particle scanning method.
+\newblock {\em Phys. Med. Biol.}, 37(1):223--233.
+
+\bibitem[Rami-Porta et~al., 2009]{Rami2009}
+Rami-Porta, R., Crowley, J.~J., and Goldstraw, P. (2009).
+\newblock The revised tnm staging system for lung cancer.
+\newblock {\em Ann Thorac Cardiovasc Surg}, 15(1).
+
+\bibitem[Richter, 2012]{Richter2012}
+Richter, D. (2012).
+\newblock {\em Treatment planning for tumors with residual motion in scanned
+  ion beam therapys}.
+\newblock Thesis/dissertation, TU Darmstadt.
+
+\bibitem[Richter et~al., 2013]{Richter2013}
+Richter, D., Schwarzkopf, A., Trautmann, J., Kramer, M., Durante, M., Jakel,
+  O., and Bert, C. (2013).
+\newblock Upgrade and benchmarking of a 4d treatment planning system for
+  scanned ion beam therapy.
+\newblock {\em Medical Physics}, 40(5):051722.
+
+\bibitem[Rietzel and Chen, 2006]{Rietzel2006a}
+Rietzel, E. and Chen, G. T.~Y. (2006).
+\newblock Deformable registration of {4D} computed tomography data.
+\newblock {\em Med. Phys.}, 33(11):4423--4430.
+
+\bibitem[Rietzel et~al., 2005]{Rietzel2005}
+Rietzel, E., Chen, G. T.~Y., Choi, N.~C., and Willet, C.~G. (2005).
+\newblock Four-dimensional image-based treatment planning: Target volume
+  segmentation and dose calculation in the presence of respiratory motion.
+\newblock {\em Int. J. Radiat. Oncol., Biol., Phys.}, 61(5):1535--1550.
+
+\bibitem[Rietzel et~al., 2007]{Rietzel2007}
+Rietzel, E., Schardt, D., and Haberer, T. (2007).
+\newblock Range accuracy in carbon ion treatment planning based on
+  ct-calibration with real tissue samples.
+\newblock {\em Radiat. Oncol.}, 2(1):14.
+
+\bibitem[Saito et~al., 2009]{Saito2009}
+Saito, N., Bert, C., Chaudhri, N., Durante, M., Gemmel, A., L\"{u}chtenborg,
+  R., Schardt, D., and Rietzel, E. (2009).
+\newblock Technical status of the real-time beam tracking system.
+\newblock Report.
+
 \bibitem[Schardt et~al., 2010]{Schardt2010}
 Schardt, D., Elsaesser, T., and Schulz-Ertner, D. (2010).
 \newblock Heavy-ion tumor therapy: Physical and radiobiological benefits.
 \newblock {\em Rev. Mod. Phys.}, 82(1):383.
 
+\bibitem[Scholz and Kraft, 1994]{Scholz1994}
+Scholz, M. and Kraft, G. (1994).
+\newblock Calculation of heavy ion inactivation probabilities based on track
+  structure, x ray sensitivity and target size.
+\newblock {\em Radiat. Prot. Dosim.}, 52(1--4):29--33.
+
+\bibitem[Sonke et~al., 2008]{Sonke2008}
+Sonke, J.~J., Lebesque, J., and van, H.~M. (2008).
+\newblock Variability of four-dimensional computed tomography patient models.
+\newblock {\em Int. J. Radiat. Oncol. Biol. Phys.}, 70(2):590--598.
+
+\bibitem[Tashkin, 2013]{Tasckin2013}
+Tashkin, D.~P. (2013).
+\newblock Effects of marijuana smoking on the lung.
+\newblock {\em Annals of the American Thoracic Society}, 10(3).
+
+\bibitem[Taylor et~al., 2007]{Taylor2007}
+Taylor, R., F., N., and A., D. (2007).
+\newblock Meta-analysis of studies of passive smoking and lung cancer: effects
+  of study type and continent.
+\newblock 36(5).
+
+\bibitem[Tsao, ]{Tsao2008}
+Tsao, A.~S.
+\newblock Lung carcinoma.
+\newblock Merck Manual Professional Edition.
+\newblock Accessed: Februar 2016.
+
+\bibitem[Underner et~al., 2014]{Underner2014}
+Underner, M., Urban, T., and Perriot, J. (2014).
+\newblock Cannabis smoking and lung cancer.
+\newblock {\em Revue des Maladies Respiratoires}, 31(6).
+
+\bibitem[van~de Water et~al., 2009]{Water2009}
+van~de Water, S., Kreuger, R., Zenklusen, S., Hug, E., and Lomax, A.~J. (2009).
+\newblock Tumour tracking with scanned proton beams: assessing the accuracy and
+  practicalities.
+\newblock {\em Phys. Med. Biol.}, 54(21):6549--6563.
+
 \bibitem[Varma et~al., 1977]{Varma1977}
 Varma, M.~N., Baum, J.~W., and Kuehner, A.~V. (1977).
-\newblock Radial dose, {LET}, and {W} for 160 ions in {N2} and
-  tissue-equivalent gases.
+\newblock Radial dose, {LET} and {W} for 160 ions in {N2} and tissue-equivalent
+  gases.
 \newblock {\em Radiat. Res.}, 70(3):511--518.
+
+\bibitem[Zenklusen et~al., 2010]{Zenklusen2010}
+Zenklusen, S.~M., Pedroni, E., and Meer, D. (2010).
+\newblock A study on repainting strategies for treating moderately moving
+  targets with proton pencil beam scanning at the new gantry 2 at {PSI}.
+\newblock {\em Phys. Med. Biol.}, 55(17):5103--5121.
 
 \end{thebibliography}

@@ -1,48 +1,56 @@
-This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Fundamentals.aux
 The style file: apalike.bst
 Database file #1: ../ref.bib.bib
 Warning--I didn't find a database entry for "!!"
-You've used 14 entries,
+Warning--I didn't find a database entry for "Sch10"
+Warning--I didn't find a database entry for "Eng11"
+Warning--I didn't find a database entry for "Bert2009"
+Warning--I didn't find a database entry for "Bert09"
+Warning--to sort, need author or key in Worldwide2012
+Warning--empty year in Worldwide2012
+Warning--empty journal in Taylor2007
+Warning--empty year in Tsao2008
+You've used 67 entries,
             1935 wiz_defined-function locations,
-            579 strings with 5416 characters,
-and the built_in function-call counts, 4749 in all, are:
-= -- 475
-> -- 126
-< -- 13
-+ -- 40
-- -- 38
-* -- 387
-:= -- 848
-add.period$ -- 42
-call.type$ -- 14
-change.case$ -- 87
-chr.to.int$ -- 14
-cite$ -- 14
-duplicate$ -- 190
-empty$ -- 367
-format.name$ -- 54
-if$ -- 919
-int.to.chr$ -- 1
+            906 strings with 14675 characters,
+and the built_in function-call counts, 27659 in all, are:
+= -- 2650
+> -- 1416
+< -- 33
++ -- 507
+- -- 496
+* -- 2543
+:= -- 4957
+add.period$ -- 200
+call.type$ -- 67
+change.case$ -- 579
+chr.to.int$ -- 66
+cite$ -- 72
+duplicate$ -- 890
+empty$ -- 1734
+format.name$ -- 582
+if$ -- 5194
+int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 15
-newline$ -- 73
-num.names$ -- 42
-pop$ -- 61
+missing$ -- 60
+newline$ -- 337
+num.names$ -- 198
+pop$ -- 453
 preamble$ -- 1
-purify$ -- 89
+purify$ -- 583
 quote$ -- 0
-skip$ -- 147
+skip$ -- 676
 stack$ -- 0
-substring$ -- 371
-swap$ -- 14
+substring$ -- 1841
+swap$ -- 57
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 78
-warning$ -- 0
-while$ -- 43
+type$ -- 392
+warning$ -- 4
+while$ -- 209
 width$ -- 0
-write$ -- 185
-(There was 1 warning)
+write$ -- 859
+(There were 9 warnings)
