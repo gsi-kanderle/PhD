@@ -1,0 +1,86 @@
+\documentclass[type=dr, dr=rernat, accentcolor=tud7b,colorbacktitle, bigchapter, openright, twoside, 12pt ]{tudthesis}
+%\documentclass[11pt,twoside,a4paper]{article}
+\usepackage[english]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{pstricks}
+\usepackage{psfrag}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{epsfig}
+\usepackage{geometry}
+\usepackage{subfigure}
+\usepackage{rotating}
+\usepackage{minitoc}
+%\usepackage{appendix}
+
+%%%% 1 1/2 facher Zeilenabstand:	
+\usepackage{setspace}
+\onehalfspacing
+
+
+
+
+\begin{document}
+\chapter{Motion Managment in Treatment Planning}
+\label{chapter:intro}
+\minitoc
+
+\section{Introduction}
+
+\section{Implementation}
+
+\subsection{3D Slicer}
+
+3D Slicer (Slicer) is a software platform for analysis and visualization of medical images \cite{Slicer, Fedorov2012}. Slicer is a free, open-source software (BSD-style license) available on Windows, MacOSX and Linux operating systems. Among other, Slicer can:
+
+\begin{itemize}
+	\item Handle a vriety of image formats, including DICOM, NRRD and MHA
+	\item Visualize voxel images, polygonal meshes and volume renderings
+	\item Perform registration (rigid and non-rigid) and display results
+	\item Automatic image segmentation
+	\item Analyse and visualize diffusion tensor image data
+	\item Track devices for image-guided procedures
+\end{itemize}
+
+
+Quantitative analysis has tremendous but mostly unrealized potential in healthcare to support objective and accurate interpretation of the clinical imaging. 
+In 2008, the National Cancer Institute began building the Quantitative Imaging Network (QIN) initiative with the goal of advancing quantitative imaging in 
+the context of personalized therapy and evaluation of treatment response.
+
+ Computerized analysis is an important component contributing to reproducibility and efficiency of the quantitative imaging techniques. 
+ The success of quantitative imaging is contingent on robust analysis methods and software tools to bring these methods from bench to bedside. 
+ 3D Slicer is a free open-source software application for medical image computing. As a clinical research tool, 3D Slicer is similar to a radiology workstation that supports versatile visualizations but also provides advanced functionality such as automated segmentation and registration for a variety of application domains. Unlike a typical radiology workstation, 3D Slicer is free and is not tied to specific hardware. As a programming platform, 3D Slicer facilitates translation and evaluation of the new quantitative methods by allowing the biomedical researcher to focus on the implementation of the algorithm and providing abstractions for the common tasks of data communication, visualization and user interface development. Compared to other tools that provide aspects of this functionality, 3D Slicer is fully open source and can be readily extended and redistributed. In addition, 3D Slicer is designed to facilitate the development of new functionality in the form of 3D Slicer extensions. In this paper, we present an overview of 3D Slicer as a platform for prototyping, development and evaluation of image analysis tools for clinical research applications. To illustrate the utility of the platform in the scope of QIN, we discuss several use cases of 3D Slicer by the existing QIN teams, and we elaborate on the future directions that can further facilitate development and validation of imaging biomarkers using 3D Slicer.
+
+Slicer's capabilities include:[2]
+
+Interactive visualization of volumetric Voxel images, polygonal meshes, and volume renderings
+Manual editing
+Fusion and co-registering of data using rigid and non-rigid algorithms
+Automatic image segmentation
+Analysis and visualization of diffusion tensor imaging data
+Tracking of devices for image-guided procedures.
+
+
+
+\subsection{Registration}
+
+\subsection{Registration Quality Assurance}
+
+\subsection{Visualization}
+
+\subsection{Motion assesment}
+
+\subsubsection{Generation of mid-ventilation phase}
+
+
+\section{Verification}
+
+\section{Summary and Discussion}
+
+
+\bibliographystyle{apalike}
+\bibliography{../ref.bib}{}
+% \bibliographystyle{plain}
+
+\end{document}
