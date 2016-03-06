@@ -242,27 +242,28 @@ photon dose to the dose level of a specific ion radiation at the same biological
 \end{equation}
 
 It is important to note at this point that RBE values are valid only for the same effect, the same biological endpoint and the same reference radiation. The most interesting biological endpoint in radiotherapy is cell survival and
-side effects. RBE values are usually obtained from the cell survival curves (see Fig. ??). Cell survival curves, S, are commonly described by an exponential linear-quadratic model:
+side effects. RBE values are usually obtained from the cell survival curves (see Fig.~\ref{dosedep}). Cell survival curves, S, are commonly described by an exponential linear-quadratic model:
 
 \begin{equation}
- S(D) = exp(-\alpha D - \beta D^2)
+ S(D) = e^{-\alpha D - \beta D^2}
  \label{lq}
 \end{equation}
 
-characteristic of a tissue (cell) type is written in the $\alpha / \beta$ ratio, namely the tissue capacity to repair radiation damage. A small $\alpha / \beta$ ratio means cell is radioresistive (high repair capacity) and vice versa.
+$\alpha$ is a coefficient related to a single event cell killing and $\beta$ coefficient related to a double event cell killing. Characteristic  of a tissue (cell) type is written in the $\alpha / \beta$ ratio, namely the tissue 
+capacity to repair radiation damage. A small $\alpha / \beta$ ratio means cell is radioresistive (high repair capacity) and vice versa.
 As seen in Figure \ref{dosedep} and Eq. \ref{lq} RBE values are dependent on dose level. Hence in ion radiotherapy, beside the physical absorbed dose, a photo-equivalent or biological dose incorporating the RBE also plays an important role. 
 The unit for biological dose is Gy (RBE) \cite{ICRU2007}. 
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.5]{./Images/dose_dependence.pdf}
+\includegraphics[width=0.9\textwidth]{./Images/dose_dependence.pdf}
 \caption{Typical cell survival curve for photons (black solid line) and heavy ions (red dashed line). Photon line shows typical shouldered form, described by linear-quadratic model.
 Heavy ions show a much steeper decrease with dose. The RBE value can be calculated by looking at the points at the same survival value - same biological effect. Figure taken from \cite{Schardt2010}}
 \label{dosedep}
 \end{center}
 \end{figure}
 
-Beside dose level, RBE among other depends also on the LET, the particle species and the tissue type \cite{Kraft2000}. Therefore RBE modeling is a very complex issue.
+Besides a dose level, RBE, among others, also depends on the LET, the particle species and the tissue type \cite{Kraft2000}. Therefore RBE modeling is a very complex issue.
 At GSI RBE is calculated using \textit{local effect model} (LEM) developed by Scholz et al \cite{Scholz1994}. The main assumption in LEM model is that biological 
 effects are independent on the radiation type. The difference between different radiation types comes from the dose deposition in a small volume in the cell nucleus.
 At the same total dose, photons have a homogeneous dose distribution over a cell nucleus, while ions have a highly localized dose distribution (around ion track).
@@ -272,6 +273,35 @@ photon response at the high local dose level. LEM has received several revisions
 the Bragg peak \cite{Kraft2000}. The highest RBE for carbon ions is right around Bragg peak, which gives carbon ions a great advantage, since there is an increased 
 biological effectiveness at target tissue compared to the normal tissue in the entrance channel. In proton therapy a constant RBE value of 1.1 across the treatment field
 is used \cite{Paganetti2002}.
+
+\subsubsection{Fractination}
+
+Radiotherapy applies a basic principle of radiobiology that dose fractionation spares all cell types. For a given total dose
+more cells will survive with dose delievered across multiple fractions, compared to a single dose. Cells have time to repair
+radiation induced sublethal damage between fractions, therefore more cell survive.
+With dose $d$ delivered over $n$ fractions, equation~\ref{lq} can be rewritten as \cite{Shrieve2011}
+
+\begin{equation}
+ S = (e^{-\alpha d - \beta d^2})^n
+\end{equation}
+
+The biologically effective dose (BED) is defined as:
+
+\begin{equation}
+ BED(Gy_{\alpha/\beta}=nd\left[1 + \frac{d}{\alpha/\beta} \right]
+\end{equation}
+
+with the total dose $D$ equal to $n \times d$, we can define fractionation factor $F$ as
+
+\begin{equation}
+ F = \left[1 + \frac{d}{\alpha / \beta} \right]
+\end{equation}
+
+so that BED = $D \times F$. F increases with $d$, but decreases with $\alpha / \beta$. Lower $\alpha / \beta$ (late-responding tissue)
+means higher $F$ and a higher $\alpha / \beta$ (early responding tissue) moves $F$ towards 1.
+
+\subsubsection{Single dose treatment}
+
 
 
 \subsection{Application technique}
@@ -308,7 +338,7 @@ The general idea of passive beam shaping is to transform a beam into the shape o
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.4]{./Images/deliverypassive.png}
+\includegraphics[width=0.9\textwidth]{./Images/deliverypassive.png}
 \caption{Schematic presentation of a passive beam shaping. A scattering system is used to broaden the beam. afterwards a range modulator spreads out Bragg Peak to the required energy range.
 The spread out Bragg peak is then shifted to a fixed range with a range modulator. Finally patient specific collimator and conformator serve for lateral and longitudinal conformity, respectively.
 The proximal edge of the tumor cannot be shaped, as shown with hatched area. Figure taken from \cite{Sch10}.}
@@ -340,7 +370,7 @@ There also should be enough overlap between individual Bragg peaks. However, the
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.4]{./Images/therapy.png}
+\includegraphics[width=0.9\textwidth]{./Images/therapy.png}
 \caption{Schematics of GSI's active beam shaping. Tumor is divided into isoenergy slices, which are further overlayed with a 2 dimensional grid. 
 Longitudinal direction (in beam's eye view) is varied with particle energy from accelerator, while lateral is via a magnetic scanning system. Figure taken from REFERENCE!}
 \label{scanning}
@@ -350,7 +380,7 @@ Longitudinal direction (in beam's eye view) is varied with particle energy from 
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.45]{./Images/active.png}
+\includegraphics[width=0.9\textwidth]{./Images/active.png}
 \caption{Schematic presentation of how target dose homogeneity is achieved at active beam shaping. a) To provide sufficient homogeneity in lateral direction (in beam's eye view) full width
 half maximum of beam is three times the spacing between raster points. b) Bragg peaks are boradended in depth with a ripple filther and then stack to provide longitudinal dose homogeneity. 
 Figure taken from \cite{Richter2012}}
@@ -385,7 +415,7 @@ in the anterior-posterior (AP) or left-right (LR) directions.
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.43]{./Images/motion_examples.png}
+\includegraphics[width=0.9\textwidth]{./Images/motion_examples.png}
 \caption{Examples of the three major motion categories. On the left side (a) a lung tumor is displayed, which moves due to the respiration 
 of the patient (intrafractional motion). Interfractional position changes are examplary shown in the middle (b), where two CT scans of a 
 prostate patient are compared. Density variations between two CT scans are shown in (c). Figure taken from \cite{Eng11}}
