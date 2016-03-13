@@ -43,27 +43,15 @@
 	\item Track devices for image-guided procedures
 \end{itemize}
 
+The fundation of Slicer is written in C++ and it's functions can be accessed also with Python to provide rapid, iterative development. Graphical user interface is built in Qt. Visualization is based on VTK, a graphical library commonly used in scientific research.
 
-Quantitative analysis has tremendous but mostly unrealized potential in healthcare to support objective and accurate interpretation of the clinical imaging. 
-In 2008, the National Cancer Institute began building the Quantitative Imaging Network (QIN) initiative with the goal of advancing quantitative imaging in 
-the context of personalized therapy and evaluation of treatment response.
+Slicer is a research tool and as such offers tools to implement new functionalities in the form of 3D Slicer extensions. That can either be execution of external command-line programs, writing modules with new features or automate Slicer processes in form of scripted modules. 
 
- Computerized analysis is an important component contributing to reproducibility and efficiency of the quantitative imaging techniques. 
- The success of quantitative imaging is contingent on robust analysis methods and software tools to bring these methods from bench to bedside. 
- 3D Slicer is a free open-source software application for medical image computing. As a clinical research tool, 3D Slicer is similar to a radiology workstation that supports versatile visualizations but also provides advanced functionality such as automated segmentation and registration for a variety of application domains. Unlike a typical radiology workstation, 3D Slicer is free and is not tied to specific hardware. As a programming platform, 3D Slicer facilitates translation and evaluation of the new quantitative methods by allowing the biomedical researcher to focus on the implementation of the algorithm and providing abstractions for the common tasks of data communication, visualization and user interface development. Compared to other tools that provide aspects of this functionality, 3D Slicer is fully open source and can be readily extended and redistributed. In addition, 3D Slicer is designed to facilitate the development of new functionality in the form of 3D Slicer extensions. In this paper, we present an overview of 3D Slicer as a platform for prototyping, development and evaluation of image analysis tools for clinical research applications. To illustrate the utility of the platform in the scope of QIN, we discuss several use cases of 3D Slicer by the existing QIN teams, and we elaborate on the future directions that can further facilitate development and validation of imaging biomarkers using 3D Slicer.
-
-Slicer's capabilities include:[2]
-
-Interactive visualization of volumetric Voxel images, polygonal meshes, and volume renderings
-Manual editing
-Fusion and co-registering of data using rigid and non-rigid algorithms
-Automatic image segmentation
-Analysis and visualization of diffusion tensor imaging data
-Tracking of devices for image-guided procedures.
-
-
+In the Sections \textbf{Ref} different Slicer modules will be presented, which were all developed in the scope of this thesis. The purpose of the module is to quantify and visualize patient motion as well as provide quality assurance of the the obtained results.
 
 \subsection{Registration}
+
+In order to get vector fields between different phases of 4DCT deformable registration has to be made. There are many different techniques and softwares to preforme registration. Plastimatch is comonlly used in medical research \textbf{Ref}. It is free, open-source and is integrated in Slicer as a downloadble extension called SlicerRT.
 
 \subsection{Registration Quality Assurance}
 
