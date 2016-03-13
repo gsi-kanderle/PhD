@@ -242,7 +242,7 @@ photon dose to the dose level of a specific ion radiation at the same biological
 \end{equation}
 
 It is important to note at this point that RBE values are valid only for the same effect, the same biological endpoint and the same reference radiation. The most interesting biological endpoint in radiotherapy is cell survival and
-side effects. RBE values are usually obtained from the cell survival curves (see Fig.~\ref{dosedep}). Cell survival curves, S, are commonly described by an exponential linear-quadratic model:
+side effects. RBE values are usually obtained from the cell survival curves (see Fig.~\ref{dosedep}). Cell survival curves, S, are commonly described by an exponential linear-quadratic (LQ) model:
 
 \begin{equation}
  S(D) = e^{-\alpha D - \beta D^2}
@@ -274,7 +274,7 @@ the Bragg peak \cite{Kraft2000}. The highest RBE for carbon ions is right around
 biological effectiveness at target tissue compared to the normal tissue in the entrance channel. In proton therapy a constant RBE value of 1.1 across the treatment field
 is used \cite{Paganetti2002}.
 
-\subsubsection{Fractination}
+\subsubsection{Fractionation}
 
 Radiotherapy applies a basic principle of radiobiology that dose fractionation spares all cell types. For a given total dose
 more cells will survive with dose delievered across multiple fractions, compared to a single dose. Cells have time to repair
@@ -300,11 +300,19 @@ with the total dose $D$ equal to $n \times d$, we can define fractionation facto
 so that BED = $D \times F$. F increases with $d$, but decreases with $\alpha / \beta$. Lower $\alpha / \beta$ (late-responding tissue)
 means higher $F$ and a higher $\alpha / \beta$ (early responding tissue) moves $F$ towards 1.
 
-\textbf{figure of BED for different alpha beta and for different fractions}
+\textbf{figure of BED for different alpha beta and for different fractions in TCD50}
+
 
 \subsubsection{Single dose treatment}
 
-Neki v smislu, da je 20 Gy premal po standardnem modelu, ampak da vse deluje. Toj pa (mogoce) zaradi two targeted model.
+Standard LQ model predicts total doses around 50 - 60 Gy for tumor control, which results in 1.5 - 2 Gy per fraction. In recent years hypofractionation has showed promising results over wide range of tumors \cite{Yamada2008, Greco2011, Halasz2013}. 
+Hypofractionation consist of 1-3 fractions and of very high doses, up to 24 Gy in a single fraction (single-dose) regieme. According to LQ model such doses should be too low to achieve any tumor control.
+However, clinical results suggest otherwise, which indicates different mechanisems at work. The topic is under careful research and no consesus has yet been made regarding the theory behind it.
+
+Garcia-Barros et al. proposed a two target model \cite{Garcia2003}, which suggest that tumor response to irradiation is defined not only by tumor cell type (as in LQ model) but also by microvascular
+sensitivity. With excluding targeted enzymes from mice, they showed that tumors with reduced microvascular endothelial apoptosis grew 200-400 \% faster than control group. The study, however, was challanged
+and an accurate theory of single dose treatment is still amiss.
+  
 
 \subsection{Application technique}
 
