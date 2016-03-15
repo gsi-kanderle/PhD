@@ -308,9 +308,25 @@ Neki v smislu, da je 20 Gy premal po standardnem modelu, ampak da vse deluje. To
 
 \subsection{Application technique}
 
-Introduction
+
 
 \subsubsection{Photon therapy}
+
+Clinical linear accelerators are used to produce high-energy (MV) photons. Electrons are accelerated in linear accelerators. Afterwards they are stopped in a heavy metal target where photons are produced via bremsstrahlung.
+In the next step photons are shaped at the exit of the machine to the shape of the tumor. Exit beam is then directed to patient. The shaping of the beam is done with either blocks at the head of the machine or by a 
+multileaf collimator. Multileaf collimator is a device made of individual leaves (usually from tungsten or other high-atomic number material), which can be moved to get the shape of the tumor in beam's eye view, see Fig.~\ref{MLC}. 
+
+Linear accelerators are usually placed on a gantry, which can be rotated around the patient. This allows beams to enter the patient from any angle. In 3-dimensional conformal radiotherapy variable number of beams is used. 
+Each beam is then shaped with multileaf collimators. Even more precise technique is intensity-modulated radiotherapy (IMRT). IMRT allows treating of a complex tumor shapes, e.g. when tumor is wraped around a critical structure. IMRT is
+in clinical use since the late 1990s and is undergoing constant improvement with better optimization algorithms, computer power and hardware modifications. 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{./Images/MLC.png}
+\caption{A picture of a multileaf collimator. Individual leaves are positioned so that exit beam from linear accelerator has conformal shape to patient tumor in a beam's eye view. Picture taken from  \cite{MLC}.}
+\label{MLC}
+\end{center}
+\end{figure}
 
 
 \subsubsection{Ion therapy}
@@ -329,7 +345,7 @@ can be used - passive and active beam shaping. In the next two sections both wil
 
 \subsubsection{Passive beam shaping}
 
-The general idea of passive beam shaping is to transform a beam into the shape of the tumor. This is done in several steps as schematically shown in Fig. \ref{passive}. Firstly, the beam is broadened using a scattering device (passive double scattering systems or magnetic wobbler)
+The general idea of passive beam shaping is to transform a beam into the shape of the tumor (analogous to multileaf collimator). This is done in several steps as schematically shown in Fig. \ref{passive}. Firstly, the beam is broadened using a scattering device (passive double scattering systems or magnetic wobbler)
  in order to obtain a broad, flat profile. In the next step, the beam is spread out over the required energy range with a range modulator. Usually range modulator are a rotating wheels of various thickness or a ridge filter \cite{Chu1993}.
  A single Bragg Peak is thus spread out into so-called \textit{spread-out Bragg peak (SOBP)}, which is moved to the required depth using a range shifter. The final two devices in beam's path are built for each patient individually. Collimator
  shapes beam in a lateral direction, while compensator adjusts SOBP to the distal edge of the tumor. However, compensator cannot adjust dose in the proximal edge of the tumor, resulting in an access dose to the healthy tissue (hatched area in
