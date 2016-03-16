@@ -1,0 +1,74 @@
+\documentclass[type=dr, dr=rernat, accentcolor=tud7b,colorbacktitle, bigchapter, openright, twoside, 12pt ]{tudthesis}
+%\documentclass[11pt,twoside,a4paper]{article}
+\usepackage[english]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{pstricks}
+\usepackage{psfrag}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{epsfig}
+\usepackage{geometry}
+\usepackage{subfigure}
+\usepackage{rotating}
+\usepackage{minitoc}
+%\usepackage{appendix}
+
+%%%% 1 1/2 facher Zeilenabstand:	
+\usepackage{setspace}
+\onehalfspacing
+
+
+
+
+\begin{document}
+\chapter{Motion Managment in Treatment Planning}
+\label{chapter:intro}
+\minitoc
+
+\section{Introduction}
+
+\section{Implementation}
+
+\subsection{3D Slicer}
+
+3D Slicer (Slicer) is a software platform for analysis and visualization of medical images \cite{Slicer, Fedorov2012}. Slicer is a free, open-source software (BSD-style license) available on Windows, MacOSX and Linux operating systems. Among other, Slicer can:
+
+\begin{itemize}
+	\item Handle a vriety of image formats, including DICOM, NRRD and MHA
+	\item Visualize voxel images, polygonal meshes and volume renderings
+	\item Perform registration (rigid and non-rigid) and display results
+	\item Automatic image segmentation
+	\item Analyse and visualize diffusion tensor image data
+	\item Track devices for image-guided procedures
+\end{itemize}
+
+The fundation of Slicer is written in C++ and it's functions can be accessed also with Python to provide rapid, iterative development. Graphical user interface is built in Qt. Visualization is based on VTK, a graphical library commonly used in scientific research.
+
+Slicer is a research tool and as such offers tools to implement new functionalities in the form of 3D Slicer extensions. That can either be execution of external command-line programs, writing modules with new features or automate Slicer processes in form of scripted modules. 
+
+In the Sections \textbf{Ref} different Slicer modules will be presented, which were all developed in the scope of this thesis. The purpose of the module is to quantify and visualize patient motion as well as provide quality assurance of the the obtained results.
+
+\subsection{Registration}
+
+In order to get vector fields between different phases of 4DCT deformable registration has to be made. There are many different techniques and softwares to preforme registration. Plastimatch is comonlly used in medical research \textbf{Ref}. It is free, open-source and is integrated in Slicer as a downloadble extension called SlicerRT.
+
+\subsection{Registration Quality Assurance}
+
+\subsection{Visualization}
+
+\subsection{Motion assesment}
+
+\subsubsection{Generation of mid-ventilation phase}
+
+
+\section{Verification}
+
+\section{Summary and Discussion}
+
+
+\bibliographystyle{apalike}
+\bibliography{../ref.bib}{}
+% \bibliographystyle{plain}
+
+\end{document}

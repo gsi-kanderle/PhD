@@ -242,27 +242,28 @@ photon dose to the dose level of a specific ion radiation at the same biological
 \end{equation}
 
 It is important to note at this point that RBE values are valid only for the same effect, the same biological endpoint and the same reference radiation. The most interesting biological endpoint in radiotherapy is cell survival and
-side effects. RBE values are usually obtained from the cell survival curves (see Fig. ??). Cell survival curves, S, are commonly described by an exponential linear-quadratic model:
+side effects. RBE values are usually obtained from the cell survival curves (see Fig.~\ref{dosedep}). Cell survival curves, S, are commonly described by an exponential linear-quadratic (LQ) model:
 
 \begin{equation}
- S(D) = exp(-\alpha D - \beta D^2)
+ S(D) = e^{-\alpha D - \beta D^2}
  \label{lq}
 \end{equation}
 
-characteristic of a tissue (cell) type is written in the $\alpha / \beta$ ratio, namely the tissue capacity to repair radiation damage. A small $\alpha / \beta$ ratio means cell is radioresistive (high repair capacity) and vice versa.
+$\alpha$ is a coefficient related to a single event cell killing and $\beta$ coefficient related to a double event cell killing. Characteristic  of a tissue (cell) type is written in the $\alpha / \beta$ ratio, namely the tissue 
+capacity to repair radiation damage. A small $\alpha / \beta$ ratio means cell is radioresistive (high repair capacity) and vice versa.
 As seen in Figure \ref{dosedep} and Eq. \ref{lq} RBE values are dependent on dose level. Hence in ion radiotherapy, beside the physical absorbed dose, a photo-equivalent or biological dose incorporating the RBE also plays an important role. 
 The unit for biological dose is Gy (RBE) \cite{ICRU2007}. 
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.5]{./Images/dose_dependence.pdf}
+\includegraphics[width=0.9\textwidth]{./Images/dose_dependence.pdf}
 \caption{Typical cell survival curve for photons (black solid line) and heavy ions (red dashed line). Photon line shows typical shouldered form, described by linear-quadratic model.
 Heavy ions show a much steeper decrease with dose. The RBE value can be calculated by looking at the points at the same survival value - same biological effect. Figure taken from \cite{Schardt2010}}
 \label{dosedep}
 \end{center}
 \end{figure}
 
-Beside dose level, RBE among other depends also on the LET, the particle species and the tissue type \cite{Kraft2000}. Therefore RBE modeling is a very complex issue.
+Besides a dose level, RBE, among others, also depends on the LET, the particle species and the tissue type \cite{Kraft2000}. Therefore RBE modeling is a very complex issue.
 At GSI RBE is calculated using \textit{local effect model} (LEM) developed by Scholz et al \cite{Scholz1994}. The main assumption in LEM model is that biological 
 effects are independent on the radiation type. The difference between different radiation types comes from the dose deposition in a small volume in the cell nucleus.
 At the same total dose, photons have a homogeneous dose distribution over a cell nucleus, while ions have a highly localized dose distribution (around ion track).
@@ -273,12 +274,67 @@ the Bragg peak \cite{Kraft2000}. The highest RBE for carbon ions is right around
 biological effectiveness at target tissue compared to the normal tissue in the entrance channel. In proton therapy a constant RBE value of 1.1 across the treatment field
 is used \cite{Paganetti2002}.
 
+\subsubsection{Fractionation}
+
+Radiotherapy applies a basic principle of radiobiology that dose fractionation spares all cell types. For a given total dose
+more cells will survive with dose delievered across multiple fractions, compared to a single dose. Cells have time to repair
+radiation induced sublethal damage between fractions, therefore more cell survive.
+With dose $d$ delivered over $n$ fractions, equation~\ref{lq} can be rewritten as \cite{Shrieve2011}
+
+\begin{equation}
+ S = (e^{-\alpha d - \beta d^2})^n
+\end{equation}
+
+The biologically effective dose (BED) is defined as:
+
+\begin{equation}
+ BED(Gy_{\alpha/\beta}=nd\left[1 + \frac{d}{\alpha/\beta} \right]
+\end{equation}
+
+with the total dose $D$ equal to $n \times d$, we can define fractionation factor $F$ as
+
+\begin{equation}
+ F = \left[1 + \frac{d}{\alpha / \beta} \right]
+\end{equation}
+
+so that BED = $D \times F$. F increases with $d$, but decreases with $\alpha / \beta$. Lower $\alpha / \beta$ (late-responding tissue)
+means higher $F$ and a higher $\alpha / \beta$ (early responding tissue) moves $F$ towards 1.
+
+\textbf{figure of BED for different alpha beta and for different fractions in TCD50}
+
+
+\subsubsection{Single dose treatment}
+
+Standard LQ model predicts total doses around 50 - 60 Gy for tumor control, which results in 1.5 - 2 Gy per fraction. In recent years hypofractionation has showed promising results over wide range of tumors \cite{Yamada2008, Greco2011, Halasz2013}. 
+Hypofractionation consist of 1-3 fractions and of very high doses, up to 24 Gy in a single fraction (single-dose) regieme. According to LQ model such doses should be too low to achieve any tumor control.
+However, clinical results suggest otherwise, which indicates different mechanisems at work. The topic is under careful research and no consesus has yet been made regarding the theory behind it.
+
+Garcia-Barros et al. proposed a two target model \cite{Garcia2003}, which suggest that tumor response to irradiation is defined not only by tumor cell type (as in LQ model) but also by microvascular
+sensitivity. With excluding targeted enzymes from mice, they showed that tumors with reduced microvascular endothelial apoptosis grew 200-400 \% faster than control group. The study, however, was challanged
+and an accurate theory of single dose treatment is still amiss.
+  
 
 \subsection{Application technique}
 
-Introduction
+
 
 \subsubsection{Photon therapy}
+
+Clinical linear accelerators are used to produce high-energy (MV) photons. Electrons are accelerated in linear accelerators. Afterwards they are stopped in a heavy metal target where photons are produced via bremsstrahlung.
+In the next step photons are shaped at the exit of the machine to the shape of the tumor. Exit beam is then directed to patient. The shaping of the beam is done with either blocks at the head of the machine or by a 
+multileaf collimator. Multileaf collimator is a device made of individual leaves (usually from tungsten or other high-atomic number material), which can be moved to get the shape of the tumor in beam's eye view, see Fig.~\ref{MLC}. 
+
+Linear accelerators are usually placed on a gantry, which can be rotated around the patient. This allows beams to enter the patient from any angle. In 3-dimensional conformal radiotherapy variable number of beams is used. 
+Each beam is then shaped with multileaf collimators. Even more precise technique is intensity-modulated radiotherapy (IMRT). IMRT allows treating of a complex tumor shapes, e.g. when tumor is wraped around a critical structure. IMRT is
+in clinical use since the late 1990s and is undergoing constant improvement with better optimization algorithms, computer power and hardware modifications. 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{./Images/MLC.png}
+\caption{A picture of a multileaf collimator. Individual leaves are positioned so that exit beam from linear accelerator has conformal shape to patient tumor in a beam's eye view. Picture taken from  \cite{MLC}.}
+\label{MLC}
+\end{center}
+\end{figure}
 
 
 \subsubsection{Ion therapy}
@@ -297,7 +353,7 @@ can be used - passive and active beam shaping. In the next two sections both wil
 
 \subsubsection{Passive beam shaping}
 
-The general idea of passive beam shaping is to transform a beam into the shape of the tumor. This is done in several steps as schematically shown in Fig. \ref{passive}. Firstly, the beam is broadened using a scattering device (passive double scattering systems or magnetic wobbler)
+The general idea of passive beam shaping is to transform a beam into the shape of the tumor (analogous to multileaf collimator). This is done in several steps as schematically shown in Fig. \ref{passive}. Firstly, the beam is broadened using a scattering device (passive double scattering systems or magnetic wobbler)
  in order to obtain a broad, flat profile. In the next step, the beam is spread out over the required energy range with a range modulator. Usually range modulator are a rotating wheels of various thickness or a ridge filter \cite{Chu1993}.
  A single Bragg Peak is thus spread out into so-called \textit{spread-out Bragg peak (SOBP)}, which is moved to the required depth using a range shifter. The final two devices in beam's path are built for each patient individually. Collimator
  shapes beam in a lateral direction, while compensator adjusts SOBP to the distal edge of the tumor. However, compensator cannot adjust dose in the proximal edge of the tumor, resulting in an access dose to the healthy tissue (hatched area in
@@ -308,7 +364,7 @@ The general idea of passive beam shaping is to transform a beam into the shape o
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.4]{./Images/deliverypassive.png}
+\includegraphics[width=0.9\textwidth]{./Images/deliverypassive.png}
 \caption{Schematic presentation of a passive beam shaping. A scattering system is used to broaden the beam. afterwards a range modulator spreads out Bragg Peak to the required energy range.
 The spread out Bragg peak is then shifted to a fixed range with a range modulator. Finally patient specific collimator and conformator serve for lateral and longitudinal conformity, respectively.
 The proximal edge of the tumor cannot be shaped, as shown with hatched area. Figure taken from \cite{Sch10}.}
@@ -340,7 +396,7 @@ There also should be enough overlap between individual Bragg peaks. However, the
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.4]{./Images/therapy.png}
+\includegraphics[width=0.9\textwidth]{./Images/therapy.png}
 \caption{Schematics of GSI's active beam shaping. Tumor is divided into isoenergy slices, which are further overlayed with a 2 dimensional grid. 
 Longitudinal direction (in beam's eye view) is varied with particle energy from accelerator, while lateral is via a magnetic scanning system. Figure taken from REFERENCE!}
 \label{scanning}
@@ -350,7 +406,7 @@ Longitudinal direction (in beam's eye view) is varied with particle energy from 
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.45]{./Images/active.png}
+\includegraphics[width=0.9\textwidth]{./Images/active.png}
 \caption{Schematic presentation of how target dose homogeneity is achieved at active beam shaping. a) To provide sufficient homogeneity in lateral direction (in beam's eye view) full width
 half maximum of beam is three times the spacing between raster points. b) Bragg peaks are boradended in depth with a ripple filther and then stack to provide longitudinal dose homogeneity. 
 Figure taken from \cite{Richter2012}}
@@ -385,7 +441,7 @@ in the anterior-posterior (AP) or left-right (LR) directions.
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.43]{./Images/motion_examples.png}
+\includegraphics[width=0.9\textwidth]{./Images/motion_examples.png}
 \caption{Examples of the three major motion categories. On the left side (a) a lung tumor is displayed, which moves due to the respiration 
 of the patient (intrafractional motion). Interfractional position changes are examplary shown in the middle (b), where two CT scans of a 
 prostate patient are compared. Density variations between two CT scans are shown in (c). Figure taken from \cite{Eng11}}
@@ -525,7 +581,7 @@ so that the RBE can be calculated according to LEM.
 \begin{center}
 \includegraphics[scale=0.35]{./Images/4DtreatmentPlanning.png}
 \caption{Experimental validation of TRiP4D dose calculation on film response. On images a)-e) the individual dose deposition for the five motion state is showed.
-Image f) shows accumulated 4D dose and image g) a homogeneous dose on a statonary film. Figure taken from \cite{Richter12}}
+Image f) shows accumulated 4D dose and image g) a homogeneous dose on a statonary film. Figure taken from \cite{Richter2012}}
 \label{TRiP4Ddose}
 \end{center}
 \end{figure}
@@ -545,11 +601,98 @@ assest and usually the registration results are checked by eye. To improve image
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.9\textwidth]{./Images/RegistrationCompare.png}
-\caption{Overlap of two CT scans of one patient before (a) and after (b) registration. Inverse colors are used in both CTs so that the overlayed image should be gray colored,
-if the registration was successful.}
+\caption{Overlap of two CT scans of one patient before (a) and after (b) registration. Inverse colors are used in both CTs so that the overlayed image should be gray
+where the images overlap perfectly.}
 \label{RegistrationCompare}
 \end{center}
 \end{figure}
+
+\section{Lung cancer}
+
+There were 1.8 milion new lung cancer cases diagnosed worldwide in 2012 \cite{Worldwide2012}. With a very poor prognosis (5-year survival rates in Germany is 
+16\% for men and 21\% for women \cite{Kaatsch2014}), lung cancer is one of the most frequent and most deadly cancer types. Usually lung cancer is distiguised
+into small-cell lung cancer (SCLC) and non-small cell lung cancer (NSCLC). Around 14\% of lung cancer cases are SCLC \cite{Tsao2008}, which is normally treated with chemotherapy and radiotherapy, while for the NSCLC the traditional course of treatment
+is surgery and radiotherapy.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{./Images/LungCancer.png}
+		\caption{Cross section of a human lung. The white area in the upper lobe is cancer, the black areas indicate the patient was a smoker. Figure taken from \cite{LungCancer}}
+		\label{Fig:Stages}
+	\end{center}
+\end{figure}
+
+
+\subsection{Causes}
+
+The main cause for lung cancer is a long-term exposure to tobacco smoke \cite{Tsao2008}, with 85\% of cases contributed to smoking. There are over 70 known carciongens in cigarette smoke, such as benzo[a]pyrene, 1,3-butadiene and a radioactive isotope of polonium, polonium-210 \cite{Hecht2012}.
+Studies have shown that passive smokers have an increased risk of lung cancer as well, with more then 20\% increase in risk for those who live with someone who smoke and 16-19\% increase for someone working with a smoker \cite{Taylor2007}.
+There is some controversy wheater smoking cannabis increases risk of lung cancer - two reviews from 2013 and 2014 have found contradicting results \cite{Tasckin2013, Underner2014}.
+
+The other 15\% of lung cancer cases is attributed to a combination of genetic factors, exposure to radon gas, asbestos or other forms of air pollution \cite{Alberg2010}.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{./Images/Smoking.png}
+		\caption{Correlation between sales of tobacco products and the rate of the lung cancer in the USA between 1900 - 1970. Data released from National Cancer Institute.}
+		\label{Fig:Stages}
+	\end{center}
+\end{figure}
+
+
+\subsection{Non-small cell lung cancer}
+
+The NSCLC is divided into three main groups: adenocarcinoma, squamous-cell carcinoma and large-cell (undifferentiated) carcinoma \cite{Kasper2015}.
+Between 25-35\% of all lung cancer cases are adenocarcinoma, squamous-cell carcinoma contributes to around 30\% of lung cases and 10-15\% are lare-cell carcinoma. The SCLC contribuites to the rest. 
+
+Lung cancer staging is used to asses the degree of spread of the lung cancer and to establish treatment and prognosis \cite{Chheang2013}. For NSCLC TNM classification is used, which depends on
+size of the primary tumor (T), involement of the lymph node (N) and distant metastasis (M) \cite{Kasper2015}. According to TNM class a group is assigned, from stage 0, IA, IB, IIA, IIB, IIIA, IIIB to IV. 
+A schematic presentation of some stages is shown on Fig.~\ref{Fig:Stages}. Prognosis is highly dependent on stage, as shown in Table~\ref{tab:prognosis}.
+
+\begin{table}[H]
+  \centering
+%   \footnotesize
+  \caption{Five-year survival rates for different stage of NSCLC. Data taken from \cite{Rami2009}}
+  \begin{tabular}{|c|c|}
+   \hline
+   \hline
+Clinical stage & Five-year survival (\%) \\
+IA & 50 \\
+IB & 47 \\
+IIA & 36 \\
+IIB & 26 \\
+IIIA & 19 \\
+IIIB & 7 \\
+IV & 2 \\
+\hline
+\hline
+  \end{tabular}
+  \label{tab:prognosis}
+\end{table}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{./Images/Stages.png}
+\caption{Schematic presentation of three NSCLC stages. (a) Stages IA and IB; (b) Stage IV. Figure taken from \cite{CancerStage}}
+\label{Fig:Stages}
+\end{center}
+\end{figure}
+
+\subsubsection{Treatment}
+
+The treatment for NSCLC can consist of surgery, chemotherapy, radiadtion therapy, or a combination of modalities. The treamtent course depends on tumor type and stage and on patient overall condintion.
+The typical treatment is surgery for stage I and II disease \cite{Tsao2008}. Surgery resection consist of either lobectomy or pneumonectomy, together with sampling lymph node or even a complete lymph node
+dissection. Surgery can only be performed, if NSCLC patients will have enough lung reserve after lobe or lung is removed. The 5-year survival rate for NSCLC patients undergoing surgery is about 55 to 70\% 
+and 35-55\% for stage I and II disease, respectively.
+
+For unresectable stage III lung cancer the treatment consist of either chemotherapy or radiation therapy or a combination of both. The median survival for patients with unresectable stage IIIA disease is 10-14 months \cite{Tsao2008}.
+For all treated stage IIIB disease the median survival is 7-15 months \cite{Srisam2005}.
+
+Rather than treating the stage IV disease, the palliation of symptoms is the goal. With chemotherapy, targed drugs and radiation therapy the tumor burden can be lessend and improve the quality of life. The prognosis is poor, with
+median survival only 9 months and less then 25\% survive the first year after the disease is diagnosed \cite{Tsao2008}.
+
+\textbf{Compare with SBRT survival}
+
 
 \bibliographystyle{apalike}
 \bibliography{../ref.bib}{}

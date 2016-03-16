@@ -14,7 +14,7 @@
    height="939.95123"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.3.1 r9886"
+   inkscape:version="0.48.4 r9939"
    sodipodi:docname="PTV.svg">
   <defs
      id="defs4">
@@ -1333,10 +1333,10 @@
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1015"
-     inkscape:window-x="-2"
-     inkscape:window-y="-3"
+     inkscape:window-width="2495"
+     inkscape:window-height="1416"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
      inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -1377,7 +1377,7 @@
        transform="translate(-307.79164,43.841861)"
        id="path2987-5-2-7-4-0"
        sodipodi:nodetypes="cccscscccscscsccc"
-       inkscape:export-filename="/u/kanderle/Documents/Ptv/PTV.png"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/PatientStudy/Images/PTV_definition.png"
        inkscape:export-xdpi="299.99329"
        inkscape:export-ydpi="299.99329" />
     <path
@@ -1390,7 +1390,7 @@
        sodipodi:ry="217.68787"
        d="m 733.37074,121.2226 c 0,120.22569 -100.17574,217.68787 -223.74879,217.68787 -123.57305,0 -223.7488,-97.46218 -223.7488,-217.68787 0,-120.22568589 100.17575,-217.687863 223.7488,-217.687863 123.57305,0 223.74879,97.46217711 223.74879,217.687863 z"
        transform="matrix(1.0738519,0,0,1.1037503,-248.18173,114.41995)"
-       inkscape:export-filename="/u/kanderle/Documents/Ptv/PTV.png"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/PatientStudy/Images/PTV_definition.png"
        inkscape:export-xdpi="299.99329"
        inkscape:export-ydpi="299.99329" />
     <flowRoot
@@ -1398,7 +1398,7 @@
        xml:space="preserve"
        id="flowRoot3166-2-8-8"
        style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#800000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       inkscape:export-filename="/u/kanderle/Documents/Ptv/PTV.png"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/PatientStudy/Images/PTV_definition.png"
        inkscape:export-xdpi="299.99329"
        inkscape:export-ydpi="299.99329"><flowRegion
          id="flowRegion3168-1-3-7"><rect
@@ -1418,7 +1418,7 @@
        sodipodi:ry="134.64285"
        d="m 569.99998,282.71933 c 0,74.36119 -67.63698,134.64285 -151.07142,134.64285 -83.43445,0 -151.07143,-60.28166 -151.07143,-134.64285 0,-74.36119 67.63698,-134.64285 151.07143,-134.64285 83.43444,0 151.07142,60.28166 151.07142,134.64285 z"
        transform="matrix(0.7464007,0,0,0.83747349,-13.337352,482.73744)"
-       inkscape:export-filename="/u/kanderle/Documents/Ptv/PTV.png"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/PatientStudy/Images/PTV_definition.png"
        inkscape:export-xdpi="299.99329"
        inkscape:export-ydpi="299.99329" />
     <path
@@ -1426,7 +1426,7 @@
        d="M 607.15625 515.375 C 596.5392 515.375 586.21338 517.0144 576.34375 520.03125 L 576.28125 519.71875 L 573.96875 520.78125 C 566.31696 523.3152 558.92777 526.68628 551.90625 530.84375 L 484.375 561.65625 L 496.5 593.6875 C 485.00805 617.67458 478.40625 645.69751 478.40625 675.65625 C 478.40625 755.82231 525.67089 822.24058 587.40625 834.0625 L 593.46875 850.0625 L 645.125 828.875 L 645.4375 828.75 C 646.72314 828.25217 647.98199 827.70246 649.25 827.15625 L 652.5625 825.8125 L 652.53125 825.6875 C 701.23525 802.83692 735.875 744.28373 735.875 675.65625 C 735.875 587.13677 678.25881 515.375 607.15625 515.375 z "
        transform="translate(-307.79164,43.841861)"
        id="path2987-5-2-7-7"
-       inkscape:export-filename="/u/kanderle/Documents/Ptv/PTV.png"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/PatientStudy/Images/PTV_definition.png"
        inkscape:export-xdpi="299.99329"
        inkscape:export-ydpi="299.99329" />
     <path
@@ -1439,7 +1439,7 @@
        sodipodi:ry="134.64285"
        d="m 569.99998,282.71933 c 0,74.36119 -67.63698,134.64285 -151.07142,134.64285 -83.43445,0 -151.07143,-60.28166 -151.07143,-134.64285 0,-74.36119 67.63698,-134.64285 151.07143,-134.64285 83.43444,0 151.07142,60.28166 151.07142,134.64285 z"
        transform="matrix(0.85219669,0,0,1.1903988,-135.07565,418.69812)"
-       inkscape:export-filename="/u/kanderle/Documents/Ptv/PTV.png"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/PatientStudy/Images/PTV_definition.png"
        inkscape:export-xdpi="299.99329"
        inkscape:export-ydpi="299.99329" />
     <flowRoot
@@ -1447,7 +1447,7 @@
        id="flowRoot3166-0"
        style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
        transform="matrix(0.91162639,0,0,0.91162639,-17.188482,575.48162)"
-       inkscape:export-filename="/u/kanderle/Documents/Ptv/PTV.png"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/PatientStudy/Images/PTV_definition.png"
        inkscape:export-xdpi="299.99329"
        inkscape:export-ydpi="299.99329"><flowRegion
          id="flowRegion3168-19"><rect
@@ -1462,7 +1462,7 @@
        xml:space="preserve"
        id="flowRoot3166-2-0"
        style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#003380;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       inkscape:export-filename="/u/kanderle/Documents/Ptv/PTV.png"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/PatientStudy/Images/PTV_definition.png"
        inkscape:export-xdpi="299.99329"
        inkscape:export-ydpi="299.99329"><flowRegion
          id="flowRegion3168-1-4"><rect
@@ -1477,7 +1477,7 @@
        d="m -116.71414,609.97277 0,70.44747 -190.375,0 0,111.65493 190.375,0 0,70.38579 55.374996,-63.10663 55.375,-63.10662 -55.375,-63.16832 -55.374996,-63.10662 z"
        id="path3121"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="/u/kanderle/Documents/Ptv/PTV.png"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/PatientStudy/Images/PTV_definition.png"
        inkscape:export-xdpi="299.99329"
        inkscape:export-ydpi="299.99329" />
     <flowRoot
@@ -1485,7 +1485,7 @@
        xml:space="preserve"
        id="flowRoot3166-2-8-8-1"
        style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       inkscape:export-filename="/u/kanderle/Documents/Ptv/PTV.png"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/PatientStudy/Images/PTV_definition.png"
        inkscape:export-xdpi="299.99329"
        inkscape:export-ydpi="299.99329"><flowRegion
          id="flowRegion3168-1-3-7-4"><rect
@@ -1503,9 +1503,9 @@
        sodipodi:cy="282.71933"
        sodipodi:rx="151.07143"
        sodipodi:ry="134.64285"
-       d="m 569.99998,282.71933 a 151.07143,134.64285 0 1 1 -302.14285,0 151.07143,134.64285 0 1 1 302.14285,0 z"
+       d="m 569.99998,282.71933 c 0,74.36119 -67.63698,134.64285 -151.07142,134.64285 -83.43445,0 -151.07143,-60.28166 -151.07143,-134.64285 0,-74.36119 67.63698,-134.64285 151.07143,-134.64285 83.43444,0 151.07142,60.28166 151.07142,134.64285 z"
        transform="matrix(1.2795838,0,0,1.4357134,-236.97747,-157.6845)"
-       inkscape:export-filename="/u/kanderle/Documents/Ptv/PTV.png"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/PatientStudy/Images/PTV_definition.png"
        inkscape:export-xdpi="299.99329"
        inkscape:export-ydpi="299.99329" />
     <flowRoot
@@ -1513,7 +1513,7 @@
        xml:space="preserve"
        id="flowRoot3166-2-8-8-5"
        style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#800000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       inkscape:export-filename="/u/kanderle/Documents/Ptv/PTV.png"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/PatientStudy/Images/PTV_definition.png"
        inkscape:export-xdpi="299.99329"
        inkscape:export-ydpi="299.99329"><flowRegion
          id="flowRegion3168-1-3-7-7"><rect
@@ -1533,7 +1533,7 @@
        sodipodi:ry="134.64285"
        d="m 569.99998,282.71933 c 0,74.36119 -67.63698,134.64285 -151.07142,134.64285 -83.43445,0 -151.07143,-60.28166 -151.07143,-134.64285 0,-74.36119 67.63698,-134.64285 151.07143,-134.64285 83.43444,0 151.07142,60.28166 151.07142,134.64285 z"
        transform="matrix(0.7464007,0,0,0.83747349,-13.611832,11.449494)"
-       inkscape:export-filename="/u/kanderle/Documents/Ptv/PTV.png"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/PatientStudy/Images/PTV_definition.png"
        inkscape:export-xdpi="299.99329"
        inkscape:export-ydpi="299.99329" />
     <flowRoot
@@ -1541,7 +1541,7 @@
        id="flowRoot3166-0-1"
        style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
        transform="matrix(0.91162639,0,0,0.91162639,118.21149,65.469082)"
-       inkscape:export-filename="/u/kanderle/Documents/Ptv/PTV.png"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/PatientStudy/Images/PTV_definition.png"
        inkscape:export-xdpi="299.99329"
        inkscape:export-ydpi="299.99329"><flowRegion
          id="flowRegion3168-19-9"><rect
@@ -1555,7 +1555,7 @@
        style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow2Lstart);marker-end:url(#Arrow2Lend)"
        d="m 470.18153,151.5894 35.56976,-20.99467"
        id="path4329"
-       inkscape:export-filename="/u/kanderle/Documents/Ptv/PTV.png"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/PatientStudy/Images/PTV_definition.png"
        inkscape:export-xdpi="299.99329"
        inkscape:export-ydpi="299.99329" />
     <text
@@ -1580,14 +1580,14 @@
        sodipodi:ry="134.64285"
        d="m 569.99998,282.71933 c 0,74.36119 -67.63698,134.64285 -151.07142,134.64285 -83.43445,0 -151.07143,-60.28166 -151.07143,-134.64285 0,-74.36119 67.63698,-134.64285 151.07143,-134.64285 83.43444,0 151.07142,60.28166 151.07142,134.64285 z"
        transform="matrix(0.7464007,0,0,0.83747349,-90.754689,518.4769)"
-       inkscape:export-filename="/u/kanderle/Documents/Ptv/PTV.png"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/PatientStudy/Images/PTV_definition.png"
        inkscape:export-xdpi="299.99329"
        inkscape:export-ydpi="299.99329" />
     <path
        style="color:#000000;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;marker-start:url(#Arrow2Lstart);marker-end:url(#Arrow2Lend);visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        d="m 397.61729,192.23403 70.31234,-39.2958"
        id="path5489"
-       inkscape:export-filename="/u/kanderle/Documents/Ptv/PTV.png"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/PatientStudy/Images/PTV_definition.png"
        inkscape:export-xdpi="299.99329"
        inkscape:export-ydpi="299.99329" />
     <flowRoot
@@ -1595,7 +1595,7 @@
        id="flowRoot5524"
        style="font-size:12px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
        transform="matrix(0.85720847,-0.51496956,0.51496956,0.85720847,-307.59589,425.14153)"
-       inkscape:export-filename="/u/kanderle/Documents/Ptv/PTV.png"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/PatientStudy/Images/PTV_definition.png"
        inkscape:export-xdpi="299.99329"
        inkscape:export-ydpi="299.99329"><flowRegion
          id="flowRegion5526"><rect
@@ -1614,14 +1614,14 @@
        style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow2Lstart);marker-end:url(#Arrow2Lend)"
        d="m 220.77977,639.93609 2e-5,-42.99663"
        id="path4329-7"
-       inkscape:export-filename="/u/kanderle/Documents/Ptv/PTV.png"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/PatientStudy/Images/PTV_definition.png"
        inkscape:export-xdpi="299.99329"
        inkscape:export-ydpi="299.99329" />
     <path
        style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow2Lend-3);marker-end:url(#Arrow2Lstart-3)"
        d="m 92.143139,747.72039 17.633921,-0.0874"
        id="path4329-7-5"
-       inkscape:export-filename="/u/kanderle/Documents/Ptv/PTV.png"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/PatientStudy/Images/PTV_definition.png"
        inkscape:export-xdpi="299.99329"
        inkscape:export-ydpi="299.99329" />
     <flowRoot
@@ -1629,7 +1629,7 @@
        id="flowRoot3166-0-1-4"
        style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
        transform="matrix(0.91162639,0,0,0.91162639,41.068629,572.49649)"
-       inkscape:export-filename="/u/kanderle/Documents/Ptv/PTV.png"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/PatientStudy/Images/PTV_definition.png"
        inkscape:export-xdpi="299.99329"
        inkscape:export-ydpi="299.99329"><flowRegion
          id="flowRegion3168-19-9-0"><rect
@@ -1644,7 +1644,7 @@
        id="flowRoot3105"
        style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
        transform="translate(-164.41552,168.1486)"
-       inkscape:export-filename="/u/kanderle/Documents/Ptv/PTV.png"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/PatientStudy/Images/PTV_definition.png"
        inkscape:export-xdpi="299.99329"
        inkscape:export-ydpi="299.99329"><flowRegion
          id="flowRegion3107"><rect
@@ -1660,7 +1660,7 @@
        id="flowRoot3105-2"
        style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
        transform="translate(-328.42669,271.09709)"
-       inkscape:export-filename="/u/kanderle/Documents/Ptv/PTV.png"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/PatientStudy/Images/PTV_definition.png"
        inkscape:export-xdpi="299.99329"
        inkscape:export-ydpi="299.99329"><flowRegion
          id="flowRegion3107-9"><rect
@@ -1676,7 +1676,7 @@
        id="flowRoot3150"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
        transform="matrix(0.85924466,-0.51156486,0.51156486,0.85924466,-158.33701,616.17541)"
-       inkscape:export-filename="/u/kanderle/Documents/Ptv/PTV.png"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/PatientStudy/Images/PTV_definition.png"
        inkscape:export-xdpi="299.99329"
        inkscape:export-ydpi="299.99329"><flowRegion
          id="flowRegion3152"><rect
@@ -1691,7 +1691,7 @@
        xml:space="preserve"
        id="flowRoot3166-2-0-0"
        style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#003380;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       inkscape:export-filename="/u/kanderle/Documents/Ptv/PTV.png"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/PatientStudy/Images/PTV_definition.png"
        inkscape:export-xdpi="299.99329"
        inkscape:export-ydpi="299.99329"><flowRegion
          id="flowRegion3168-1-4-1"><rect
