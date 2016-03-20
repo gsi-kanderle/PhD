@@ -46,14 +46,46 @@
 The fundation of Slicer is written in C++ and it's functions can be accessed also with Python to provide rapid, iterative development. Graphical user interface is built in Qt. Visualization is based on VTK, a graphical library commonly used in scientific research.
 
 Slicer is a research tool and as such offers tools to implement new functionalities in the form of 3D Slicer extensions. That can either be execution of external command-line programs, writing modules with new features or automate Slicer processes in form of scripted modules. 
-
 In the Sections \textbf{Ref} different Slicer modules will be presented, which were all developed in the scope of this thesis. The purpose of the module is to quantify and visualize patient motion as well as provide quality assurance of the the obtained results.
 
 \subsection{Registration}
 
-In order to get vector fields between different phases of 4DCT deformable registration has to be made. There are many different techniques and softwares to preforme registration. Plastimatch is comonlly used in medical research \textbf{Ref}. It is free, open-source and is integrated in Slicer as a downloadble extension called SlicerRT.
+The changes in patient anatomy can be seen on CT (4DCT) or MRI scan. To assest this changes a registration must be preformed. Registration can be made between different imaging modaleteis, scans from different days or phases in 4DCT. Different algorithms and software is avaliable
+for image registration. However, the result is always a transformation map \cite{Richter2012}. 
 
+\begin{equation}
+\label{df}
+x' = x + u_{ri}(x)
+\end{equation} 
+
+Here, $x$ and $x'$ are points in states $r$ and $i$, respectively and $u_{ri}$ is a vector field representation of the transformation map. $u_{ri}$ can among others be used for assesing motion amplitudes, contour propagation and 4D dose reconstruction. It is important to note
+that for certain steps in 4D treatment planning require also inverse registration, from state $i$ to $r$ \cite{Richter2012}.
+
+A comonlly used software for registration in medical research is Plastimatch \cite{Shackleford2010}. It is free and open-source software, avaliable as a command-line executable program. It is also available in Slicer as an external module, SlicerRT \cite{Pinter2012}.  
+The integration of Plastimatch in Slicer brings the advantage of a graphic user interface and hence a quick modification of parameters. However, the disadvantage comes when a large number of registrations is required, since a user presence is required. In a 4DCT registration
+there are $2(N-1)$ registrations required - from reference phase to each of $N$ states of 4DCT and vice versa, except for the reference phase itself. Typical 4DCT consist of 10 phases, therefore a automatic registration of a 4DCT is a necessity, since each registration takes from 15-30 minutes.
+
+Rather than just automatically loading different phases and registering them in Slicer a patient hierarchy concept was introduced. Patient hierarchy enabled clear overview of all patient images and their corresponding transformation maps. Registration process could then easily be followed
+and could be easily applied to different patients.
+
+\subsubsection{Patient hierarchy} 
+
+Patient hierarchy followed a subject hierarchy principle in Slicer. It was desigened for a clear overview of registration process, DIRQA and all resulting files. There are several levels in patient hierarchy. Each level also has different attributes,
+where details such as file path or reference phase are written.
+
+\begin{itemize}
+	\item Level 1: \textbf{Patient name} - seperates different patients.
+	\item Level 2: \textbf{Registration node} - seperates between different registration, e.g. registration between 4DCT phases, between CT and 4DCT, MRI and CT... 
+	\subitem The file directory of image, vector field and registration quality files is stored as an attribute. Additionaly, there are number of phases to be registered and which phase is the reference one.
+	\item Level 3: \textbf{Registration phase} - specific registration phase. Registration is done between all phases and the reference one. There have to be at least two phases
+	\item Level 4: \textbf{Node} - can be either an image, a vector field, an inverse vector field or any of DIRQA nodes (see Section~\ref{DIRQA}).
+	\subitem Exact file paths to specific node is stored as an attribute.
+\end{itemize}
+
+Patient hierarchy can be constructed in two ways. First option is to manually crate the whole patient hierarchy, from top to bottom level, with necesarry attributes. 
 \subsection{Registration Quality Assurance}
+\label{DIRQA}
+
 
 \subsection{Visualization}
 
