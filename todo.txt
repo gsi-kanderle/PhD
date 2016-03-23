@@ -13,3 +13,7 @@ in up to 28\% of patients check if it's the same for this reference
 VMM:
 
 Par izrazov je treba razlozit: warped, moving image, inverse registration
+
+Fundamentals:
+
+Citati na uvodu

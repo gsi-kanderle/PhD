@@ -28,33 +28,27 @@
 
 \section{Radiotherapy}
 
-Since the discovery of X-rays in 1895 the radiation has been used by physicians for treating patients. 
-In the beginning only superficial diseases could be cured, but as time and technology progressed X-ray tubes gained on voltage
-and allowing treatment of deeper suited tumors.
+Radiatian was used for treating tumors since the discovery of X-rays in 1895. In the beginning only superficial diseases would be treated, but as time and technology progressed X-ray tubes gained on voltage, allowing treatment of deeper suited tumors.
 
 The radiation from linear accelerator was first used in medicine in 1953. Because the beam is more collimated and energies are
-higher than X-ray tube the cure rates improved tremendously. The next big milestone was introduction of computers in the field
+higher than X-ray tubes the cure rates improved tremendously. The next big milestone was introduction of computers in the field
 of radiotherapy. This led to better diagnostic tools, such as computed tomography scans (CT), magnetic resonance imaging (MRI) and
-positron emission tomography (PET). With those tools the location of the tumor could be much better estimated and hence the physicians
-could easier prescribe treatment. The potential of computers were afterwards exploited also in treatment planning with intensity modulated
+positron emission tomography (PET). With these tools the location of the tumor could be better estimated and hence the physicians
+could prescribe better treatment. The potential of computers was afterwards exploited also in treatment planning process, resulting in intensity modulated
 radiation therapy (IMRT) which, together with diagnostic tools, provides an exact dose shaping in accordance to patient specific tumors.
 
-In 1946 it was discovered that protons could be used alongside photons for cancer treatment. Furthermore it was shown that protons have preferable depth dose profile 
-compared to photons. First patient treatment soon followed in the early 1950's at Lawrence Berkeley Laboratory, USA. Heavier ions, such as 
-He$^{2+}$, $^{20}$Ne and $^6$C were also used later on for treatment. In the beginning only passive beam delivery was used for treatment 
-and in the 1990's active beam solutions were developed at Paul Scherrer Institute (PSI), Villigen (Switzerland) for protons and at GSI, Darmstadt 
-(Germany) for carbon ions.
-
-Both treatment modalities (photons and ions) use the same principle to eliminate cancer cells. The physical and biological mechanism behind 
-it will be explained in detail in the following sections.
+In 1946 it was discovered that protons could be used alongside photons for cancer treatment. Furthermore it was shown that protons have preferable depth dose profile compared to photons. First patient treatment soon followed in the early 1950's at Lawrence Berkeley Laboratory, USA. Heavier ions, such as 
+He$^{2+}$, $^{20}$Ne and $^6$C were later also used for treatment. In the beginning only passive beam delivery (see Section \ref{Sec::Passive}) was used for treatment and in the 1990's active beam solutions (see Section \ref{Sec::Active}) were developed at Paul Scherrer Institute (PSI), Villigen (Switzerland) for protons and at GSI, Darmstadt (Germany) for carbon ions.
 
 
 \section{Physical and biological basics of radiotherapy}
 
+Both radiotherapy modalities (photons and ions) use the same principle to eliminate cancer cells. The physical and biological mechanism behind 
+both will be explained in detail in the following section.
+
 \subsection{Interaction of radiation with matter}
 
-The interactions between photons and ions with matter are quite different, as can be seen from depth dose distributions in Figure \ref{ddp}.  Photons deposit highest local dose shortly after entering the matter 
-(at the energies used in radiotherapy). Ions deposit most of their dose right before they stop in the Bragg Peak region. The position of the Bragg Peak depends on the energy of the ions, which is exploited in the treatment
+The interactions between photons and ions with matter are quite different, as can be seen from depth dose distributions in Fig.~\ref{ddp}. Photons deposit highest local dose shortly after entering the matter (at the energies used in radiotherapy). Ions deposit most of their dose right before they stop in the Bragg Peak region. The position of the Bragg Peak depends on the energy of the ions, which is exploited in the treatment
 of deep suited tumors.
 
 \newpage
@@ -109,7 +103,7 @@ possible Interaction processes.
 
 The energy range of photons used in radiotherapy is between 100 keV and 25 MeV. The dominating process in this energy range is Compton scattering \cite{Alpen1998}.
 The electrons resulting from Compton interaction scatter mostly in a forward direction. Therefore a maximum of the depth-dose profile occurs when electrons stop at a certain depth, 
-the mean electron range. After this build up the dose deposition decreases exponentially (see Figure \ref{ddp} and Equation \ref{expdecrease}).
+the mean electron range. After this build up the dose deposition decreases exponentially (see Fig.~\ref{ddp} and Equation \ref{expdecrease}).
 
 
 \subsubsection{Interaction of ions with matter}
@@ -135,7 +129,7 @@ Barkas formula \cite{Barkas1963} can be used for the approximation of the effect
 
 where $\beta$ is the projectile speed in units of $c$.
 
-The energy loss of ions is proportional to $z_{eff}$ and inversely proportional to $v^2$. The shape of the curve in Figure \ref{ddp} can now be understood. Ions enter the matter with a high velocity,
+The energy loss of ions is proportional to $z_{eff}$ and inversely proportional to $v^2$. The shape of the curve in Fig.~\ref{ddp} can now be understood. Ions enter the matter with a high velocity,
 resulting in a small energy deposition. Their velocity gradually decreases, which in turn increases the energy deposition. The maximum of the energy loss is called Bragg peak or particle range.
 
 \subsubsection{Lateral scattering and range straggling of ions}
@@ -158,7 +152,7 @@ where $R$ is the mean range of ions and $M$ the ion mass. Thus, the heavier the 
 \label{nuclfrag}
 
 When transversing through matter ions (except protons) can be fragmented into ions with lower Z. The lower Z fragments travel in the same direction as projectile ions and 
-have a significant contribution to the dose deposited (see Figure \ref{iondd}). It is essential that this fragments are included in the treatment planning, so that the accurate dose can be assessed
+have a significant contribution to the dose deposited (see Fig.~\ref{iondd}). It is essential that this fragments are included in the treatment planning, so that the accurate dose can be assessed
 
 After colliding with target projectile fragments enter in a excited state. De-excitation occurs through
 emission of nucleons, nucleon clusters and photons. Two of the possible fragments of projectile $^{12}$C ions are isotopes $^{11}C$ and $^{10}C$, which are both $\beta^+$ emmiters \cite{Kraft2000}.
@@ -188,7 +182,7 @@ this experimentally \cite{Varma1977}. The maximum radial distance $r_{max}$ is d
  r_{max} = E^{1.7}
 \end{equation}
 
-Following equation \ref{bethe}, $E$ is correlated to $Z^2$ and $1/\beta^2$, which means track structure is highly dependent on the projectile ion species and energy. This is well demonstrated on Figure \ref{track}:
+Following equation \ref{bethe}, $E$ is correlated to $Z^2$ and $1/\beta^2$, which means track structure is highly dependent on the projectile ion species and energy. This is well demonstrated on Fig.~\ref{track}:
 Carbon ions have much more dense ionization structure compared to protons \cite{!!}. $\delta$-electrons have low energies, and thus the $r$ is on nanometer scale. As the energy of projectile ions decreases, their
 stopping power increases and causes significantly larger number of $\delta$-electrons The energy deposited by $\delta$-electrons in medium is described using the Linear Energy Transfer (LET), which is closely related to 
 $dE/dx$. Fast ions, with little ionization, have thus small LET, while slow ions, with large ionization, have a high LET.
@@ -209,11 +203,11 @@ A molecule of DNA is displayed for size comparison. Figure courtesy of Michael K
 
 The aim of radiotherapy is to kill tumor cells and prevent further growth, while sparring healthy tissue. Ionizing radiation (photons and ions) causes damage throughout the cell. However the most susceptible part to radiation is the
 carrier of genetic information, the deoxyribonucleic acid (DNA), located in the cell nucleus \cite{Munro1970}. Radiation can destroy DNA in two ways - directly or indirectly Ionization and consequent destruction of DNA molecular bonds
-via radiation is a direct effect (see Figure \ref{ida}b) and is typical for high-LET radiation. On the other hand, an indirect effect is when radiation hydrolysis water around DNA and produce highly reactive hydroxyl-radicals, OH 
-(see Figure \ref{ida}a). Even though their lifetime is short, it's enough to cause severe damage to DNA. The formation of OH is typical for low-LET radiation, like photons. The two processes, direct and indirect, are not 
+via radiation is a direct effect (see Fig.~\ref{ida}b) and is typical for high-LET radiation. On the other hand, an indirect effect is when radiation hydrolysis water around DNA and produce highly reactive hydroxyl-radicals, OH 
+(see Fig.~\ref{ida}a). Even though their lifetime is short, it's enough to cause severe damage to DNA. The formation of OH is typical for low-LET radiation, like photons. The two processes, direct and indirect, are not 
 excluding and can damage DNA in parallel.
 
-Damage to DNA can result in either single strand breaks (SSB) or double strand breaks (DSB) as  shown in Figure \ref{ida}b). When one of the double strands in the DNA helix is destroyed (SSB), it can be usually easily repaired by cell 
+Damage to DNA can result in either single strand breaks (SSB) or double strand breaks (DSB) as  shown in Fig.~\ref{ida}b). When one of the double strands in the DNA helix is destroyed (SSB), it can be usually easily repaired by cell 
 repair-mechanisms, since the complementary base is intact. If bases on both stands are destroyed (DSB) the DNA damage is much more complex and can lead to the breakage of the chromatin. The cell repair-mechanisms can handle DSB as well, 
 albeit not that efficient as SSB. However if there are clustered DSBs, the damage is usually too severe for repair-mechanisms to undo it. The changes in damaged DNA can lead to carcinogenesis or cell death. The aim of radiotherapy is to 
 cause apotheosis - a controlled self-inactivation of the cell due to DNA damage. Beside apotheosis, there is necrosis, an uncontrolled cell death. Cell necrosis often cause response from the immune system, leading to inflammation, which
@@ -232,7 +226,7 @@ Figure taken from \cite{Richter2012}}
 \subsubsection{Relative Biological Effectiveness}
 \label{RBE}
 
-Figure \ref{track} shows the size of DNA molecule in comparison with proton and carbon ion distribution of $\delta$-electrons around their track. Clustered DSB occur around ions Bragg peak due to the large ionization densities As mentioned
+Fig.~\ref{track} shows the size of DNA molecule in comparison with proton and carbon ion distribution of $\delta$-electrons around their track. Clustered DSB occur around ions Bragg peak due to the large ionization densities As mentioned
 this poses a too large of a difficulty for cell repair-mechanisms, leading to cell death. The large ionization density is typical for ions and is one of the main advantages over photons in radio therapeutic sense. Since most of the research about
 cell response to radiation was done for photons, the biological effect of ions is usually described relative to a reference photon response. Relative biological effectiveness (RBE) is therefore defined as the ratio of the reference 
 photon dose to the dose level of a specific ion radiation at the same biological effect (isoeffect):
@@ -251,7 +245,7 @@ side effects. RBE values are usually obtained from the cell survival curves (see
 
 $\alpha$ is a coefficient related to a single event cell killing and $\beta$ coefficient related to a double event cell killing. Characteristic  of a tissue (cell) type is written in the $\alpha / \beta$ ratio, namely the tissue 
 capacity to repair radiation damage. A small $\alpha / \beta$ ratio means cell is radioresistive (high repair capacity) and vice versa.
-As seen in Figure \ref{dosedep} and Eq. \ref{lq} RBE values are dependent on dose level. Hence in ion radiotherapy, beside the physical absorbed dose, a photo-equivalent or biological dose incorporating the RBE also plays an important role. 
+As seen in Fig.~\ref{dosedep} and Eq. \ref{lq} RBE values are dependent on dose level. Hence in ion radiotherapy, beside the physical absorbed dose, a photo-equivalent or biological dose incorporating the RBE also plays an important role. 
 The unit for biological dose is Gy (RBE) \cite{ICRU2007}. 
 
 \begin{figure}[H]
@@ -352,6 +346,7 @@ can be used - passive and active beam shaping. In the next two sections both wil
 
 
 \subsubsection{Passive beam shaping}
+\label{Sec::Passive}
 
 The general idea of passive beam shaping is to transform a beam into the shape of the tumor (analogous to multileaf collimator). This is done in several steps as schematically shown in Fig. \ref{passive}. Firstly, the beam is broadened using a scattering device (passive double scattering systems or magnetic wobbler)
  in order to obtain a broad, flat profile. In the next step, the beam is spread out over the required energy range with a range modulator. Usually range modulator are a rotating wheels of various thickness or a ridge filter \cite{Chu1993}.
@@ -373,6 +368,7 @@ The proximal edge of the tumor cannot be shaped, as shown with hatched area. Fig
 \end{figure}
 
 \subsubsection{Active beam shaping}
+\label{Sec::Active}
 
 In contrast to passive beam shaping, active beam shaping works by dividing tumor into small points, which are then irradiated using a thin pencil beam. Tumor is first segmented into iso-energy slices (IES) and each of IES
 is then covered with 2 dimensional grid. A thin pencil beam travels from point to point on this grid, irradiating each point with designated dose. This technique allows irradiation of arbitrary shape, without introducing additional, patient specific 
