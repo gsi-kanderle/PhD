@@ -43,12 +43,11 @@ He$^{2+}$, $^{20}$Ne and $^6$C were later also used for treatment. In the beginn
 
 \section{Physical and biological basics of radiotherapy}
 
-Both radiotherapy modalities (photons and ions) use the same principle to eliminate cancer cells. The physical and biological mechanism behind 
-both will be explained in detail in the following section.
+Both radiotherapy modalities (photons and ions) use the same principle to eliminate cancer cells - they aim to destroy the cell genetic material through ionization. The actual physical and biological mechanism behind both modalities will be explained in detail in the following section.
 
 \subsection{Interaction of radiation with matter}
 
-The interactions between photons and ions with matter are quite different, as can be seen from depth dose distributions in Fig.~\ref{ddp}. Photons deposit highest local dose shortly after entering the matter (at the energies used in radiotherapy). Ions deposit most of their dose right before they stop in the Bragg Peak region. The position of the Bragg Peak depends on the energy of the ions, which is exploited in the treatment
+The interactions between photons with matter and ions with matter are quite different, as can be seen from depth dose distributions in Fig.~\ref{ddp}. Photons deposit highest local dose shortly after entering the matter (at the energies used in radiotherapy). Ions, on the other hand, deposit most of their dose right before they stop in the so-called Bragg Peak region. The position of the Bragg Peak depends on the energy of the ions, which is exploited in the treatment
 of deep suited tumors.
 
 \newpage
@@ -58,9 +57,8 @@ of deep suited tumors.
 \begin{figure}[H]
 \begin{center}
 % \includegraphics[scale=1]{depthdose.eps}
-\includegraphics[scale=1]{./Images/depthdose.png}
-\caption{Photon and carbon ions depth dose distributions at different energies. Photons start with a build up, which is followed by an exponential decrease after.
-Ions deposit most of the dose at the end of the particle track, the Bragg peak. Figure taken from \cite{Schardt2010} }
+\includegraphics[width=0.9\textwidth]{./Images/depthdose.png}
+\caption{Photon and carbon ions depth dose distributions at different energies. Photons start with a build up, which is then followed by an exponential decrease. Ions deposit most of the dose at the end of the particle track - the Bragg peak. Figure taken from \cite{Schardt2010} }
 \label{ddp}
 \end{center}
 \end{figure}
@@ -79,23 +77,19 @@ Usually we can describe energy loss of a beam in a thin layer of material, $dE/d
  D = \frac{dE}{dx} \times \frac{1}{F} \times \frac{1}{\rho}
 \end{equation}
 
-where $F$ is fluence and $\rho$ the material density
-
+where $F$ is the fluence and $\rho$ the material density.
 
 
 \subsubsection{Interaction of photons with matter}
 
-Photons mostly interact with matter in one of the following ways: coherent or Rayleigh scattering, photoelectric effect, Compton scattering and pair production. The cross section, $\sigma$, for each of these processes depends
-as well on the energy of the incident photons as on the atomic number of the absorbing material \cite{Lilley2006}. The decreasing photon intensity in matter, $I$, can be described as:
-
+Photons mostly interact with matter in one of the following ways: coherent or Rayleigh scattering, photoelectric effect, Compton scattering and pair production. The cross section, $\sigma$, for each of these processes depends as well on the energy of the incident photons as on the atomic number of the absorbing material \cite{Lilley2006}. The decreasing photon intensity in matter, $I$, can be described as:
 
 \begin{equation}
  I = I_{0} \cdot e^{- N \sigma x} = I_{0} \cdot e^{-\mu x}
  \label{expdecrease}
 \end{equation} 
 
-where $I_{0}$ stands for the initial intensity of the photons, $x$ the depth of the material in units of length, $N$ the atomic density of the material and $\mu$ is the attenuation coefficient. The cross section, $sigma$ is the sum of all
-possible Interaction processes.
+where $I_{0}$ stands for the initial intensity of the photons, $x$ the depth of the material in units of length, $N$ the atomic density of the material and $\mu$ the attenuation coefficient. The cross section, $sigma$ is the sum of all possible Interaction processes:
 
 \begin{equation}
 {\sigma} = \sigma_{rayleigh} + \sigma_{photoelectric} + Z\sigma_{compton} + \sigma_{pairproduction} 
@@ -108,17 +102,17 @@ the mean electron range. After this build up the dose deposition decreases expon
 
 \subsubsection{Interaction of ions with matter}
 \label{iion}
-Ions can interact with matter either with elastic columb scattering from target nuclei (nuclear stopping) or with inelastic collision with target electrons (electronic stopping).
-At the ion energies used in radiotherapy, which are less then 500$\mathrm{MeV}/\mathrm{u}$, the electronic stopping is the dominated interaction. This results in ionization and excitation of the atoms in target.
+Ions can interact with matter either with elastic Coloumb scattering from target nuclei (nuclear stopping) or with inelastic collision with target electrons (electronic stopping).
+At the ion energies used in radiotherapy, which are less then 500$\mathrm{MeV}/\mathrm{u}$, the electronic stopping is the dominating interaction. The result is ionization and excitation of the target atoms.
 
-The mean rate of ions energy loss in matter is described by the Bethe-Bloch formula \cite{Bethe1930, Bloch1933}. Since we are interested in low ion energies, we can make the following approximation:
+The mean rate of the ions energy loss in matter is described by the Bethe-Bloch formula \cite{Bethe1930, Bloch1933}. Since we are interested in low ion energies, a non-relativistic approximation ca be made:
 
 \begin{equation}
 - \left \langle \frac{dE}{dx} \right \rangle = \frac{ 4 \pi N_{e} z_{eff}^{2} }{ m_{e} v^{2} } \left( \frac{e^{2}}{4\pi \epsilon_{0}} \right) ^{2} \left[ln \left( \frac{2m_{e}v^{2}}{I} \right)+correction \right]
  \label{bethe}
 \end{equation}
 
-here $N_{e}$ is the materials electron density, $e$ and $m_{e}$ are the charge and mass 
+here $N_{e}$ is the material's electron density, $e$ and $m_{e}$ are the charge and mass 
 of an electron, $\epsilon_{0}$ the electrical field constant and $I$ the mean excitation energy of the absorber material. 
 Barkas formula \cite{Barkas1963} can be used for the approximation of the effective projectile charge $z_{eff}$: 
 
@@ -129,14 +123,13 @@ Barkas formula \cite{Barkas1963} can be used for the approximation of the effect
 
 where $\beta$ is the projectile speed in units of $c$.
 
-The energy loss of ions is proportional to $z_{eff}$ and inversely proportional to $v^2$. The shape of the curve in Fig.~\ref{ddp} can now be understood. Ions enter the matter with a high velocity,
-resulting in a small energy deposition. Their velocity gradually decreases, which in turn increases the energy deposition. The maximum of the energy loss is called Bragg peak or particle range.
+The energy loss of the ions is proportional to $z_{eff}$ and inversely proportional to $v^2$. The shape of the curve in Fig.~\ref{ddp} can be explained as following: Ions enter the matter with a high velocity, resulting in a small energy deposition. Their velocity gradually decreases, which in turn increases the energy deposition. The maximum of the energy loss occurs right when the ions stop and it is called Bragg peak or particle range.
 
 \subsubsection{Lateral scattering and range straggling of ions}
 \label{scat}
-As mentioned in section \ref{iion} ions interact mostly via electronic stopping at energies used in radiotherapy. However, nuclear stopping still occurs and it is the main reason for lateral scattering.
+As mentioned in section \ref{iion} ions interact with matter mostly via electronic stopping at energies used in radiotherapy. However, nuclear stopping still occurs and it is the main reason for lateral scattering.
 The angular spread of ions is dependent on the mass of the target nuclei and on the momentum of the incident ions \cite{Moliere1948}. The lateral scattering is proportional to mass of the target nuclei and inversely proportional
-on the momentum of incident ions. Carbon ions have thus less lateral scatter then protons. Experiments have shown that carbon ions have three times smaller angular spread compared to protons at the same range in water 
+on the momentum of incident ions. Carbon ions have thus less lateral scattering then protons. Experiments have shown that carbon ions have three times smaller angular spread compared to protons at the same range in water 
 (15.6 cm, 150 MeV/u protons and 285 MeV/u $^{12}$C ions) \cite{Schardt2010}.
 
 Statistical fluctuations of specific electronic stopping events cause range straggling of ions. If the number of collisions is high or the material is thick enough these fluctuations can be approximated by
@@ -151,17 +144,16 @@ where $R$ is the mean range of ions and $M$ the ion mass. Thus, the heavier the 
 \subsubsection{Nuclear fragmentation}
 \label{nuclfrag}
 
-When transversing through matter ions (except protons) can be fragmented into ions with lower Z. The lower Z fragments travel in the same direction as projectile ions and 
-have a significant contribution to the dose deposited (see Fig.~\ref{iondd}). It is essential that this fragments are included in the treatment planning, so that the accurate dose can be assessed
+When transversing through matter ions (except protons) can be fragmented into ions with lower atomic number. The lower Z fragments travel in the same direction as projectile ions and 
+have a significant contribution to the dose deposited (see Fig.~\ref{iondd}). It is thus essential that fragments are included in the treatment planning, so that the accurate dose can be calculated.
 
 After colliding with target projectile fragments enter in a excited state. De-excitation occurs through
 emission of nucleons, nucleon clusters and photons. Two of the possible fragments of projectile $^{12}$C ions are isotopes $^{11}C$ and $^{10}C$, which are both $\beta^+$ emmiters \cite{Kraft2000}.
-The resulting positron is annihilated with electrons in matter, resulting in two photons traveling in opposite direction. This can be used in PET (Positron Emission Tomography) without exposing patient
-to additional radiation.. 
+The resulting positron is annihilated with electrons in matter, creating two photons, which travel in opposite direction. PET (Positron Emission Tomography) can take advantage of the process without exposing patient to additional radiation.
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.3]{./Images/iondepthdosesum.png}
+\includegraphics[width=0.9\textwidth]{./Images/iondepthdosesum.png}
 \caption{Impact of fragmentation on a depth dose distribution of carbon ions. Main contribution to the overall deposited dose (black line) comes from the primary ions (red line). The produced fragments 
 (blue line) have a smaller impact, but non-negligible especially in the dose tail behind the Bragg peak. Figure taken from \cite{Groezinger2004}}
 \label{iondd}
@@ -215,7 +207,7 @@ radiotherapy tends to avoid.
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.5]{./Images/SSB_DSB.png}
+\includegraphics[width=0.9\textwidth]{./Images/SSB_DSB.png}
 \caption{Types of DNA damage caused by radiation (a) Indirect damage occurs, when radiation forms free radicals hydroxyl radicals (OH), which can damage DNA. (b) Direct effects of radiation can cause single or double-strand breaks. 
 Figure taken from \cite{Richter2012}}
 \label{ida}
