@@ -87,11 +87,15 @@ is possible only, if some conventions are used regarding file names and location
 \subsection{Registration Quality Checks}
 \label{DIRQA}
 
-In order to provide visual and quantitative assessment of the registration quality a \textbf{Deformable Image Registration Quality Assurance} (DIRQA) module was created. It provides different image checks (false color, absolute difference, flicker, movie and landmark positions) and vector checks (jacobian and inverse consistency error). Details on all different checks will be explained in this section. Reference image, warped image, vector and inverse vector (vector from reference to moving phase) are used as inputs for DIRQA module. Additionaly landmarks and region of interest (ROI) can be used as an input.
+In order to provide visual and quantitative assessment of the registration quality a \textbf{Deformable Image Registration Quality Assurance} (DIRQA) module was created. It provides different image checks (false color, checkerboard, absolute difference, flicker, movie and landmark positions) and vector checks (jacobian and inverse consistency error). Details on all different checks will be explained in this section. Reference image, warped image, vector and inverse vector (vector from reference to moving phase) are used as inputs for DIRQA module. Additionaly landmarks and region of interest (ROI) can be used as an input.
 
 \subsubsection{False color}
 
 A good way to see difference between two images is to overlay them. However, since CT scans are usually displayed in grayscale color code, the differences can become indistinguishable. Especially if the images are quite similar, as reference and warped image usually are. With applying opposite color code to overlaying images two things are achieved. Firstly, regions were the registration was successful will be in grayscale. Next, the differences will be in color of image they belong to. In the module we used (?) red and green color code for reference and warped image respectively. 
+
+\subsubsection{Checkerboard}
+
+As the name suggests, checkerboard creates an image of tiles. Each tile alternates between reference and warped image. The differences between two images become apparent if there is no smooth transition from one tile to the next. The number of tiles can be manually selected. While the checkerboard offers clear indication of differences, it requires user to spot them - similar to false color.
 
 \subsubsection{Absolute difference} 
 
@@ -103,7 +107,13 @@ To spare computational time or to focus on a specific region, absolute differenc
 
 \subsubsection{Movie}
 
+Medical images are usually quite large - typical CT image consist of $512 \times 512 \times 100$ pixels, which makes inspecting image checks (false color, checkerboard, absolute difference) a time-consuming task. Movie feature allows for smoother display of different image slices. User selects, which view he would like to inspect (axial, sagital or coronal) and presses start. Selected views then start scrolling from one limit to the other. It allows user to focus on registration details, rather than scrolling through slices.
+
+Movie and flicker (explained below) do not offer any specific registration check, but improve the process of registration quality assurance.
+
 \subsubsection{Flicker}
+
+While it is possible to display two images side by side in Slicer, it can sometimes be hard to see fine differences between the two images. Flicker alternates between reference and warped image on a single display. Flicker changes image each 0.5 s.
 
 \subsubsection{Landmark positions}
 
@@ -135,7 +145,9 @@ Points $x'$ and $x''$ can have an arbitrary position in space, while vector fiel
 As in Jacobian, ICE image is calculated and displayed, along with values for average, standard deviation, minimum and maximum values. ROI feature is also implemented.
 
 
-\subsection{Visualization}
+\subsection{Contour visualization}
+
+TRiP4D (see Section \textbf{REF}) introduced volume datasets for contour representation \cite{Richter2012}. It enabled necessary tasks for 4D calculations, such as the shape of contour in different 4D states, contour propagation, etc. However, there was a lack of proper contour visualization. 
 
 \subsection{Motion assesment}
 
