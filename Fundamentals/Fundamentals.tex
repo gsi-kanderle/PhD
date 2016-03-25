@@ -155,26 +155,25 @@ The resulting positron is annihilated with electrons in matter, creating two pho
 \begin{center}
 \includegraphics[width=0.9\textwidth]{./Images/iondepthdosesum.png}
 \caption{Impact of fragmentation on a depth dose distribution of carbon ions. Main contribution to the overall deposited dose (black line) comes from the primary ions (red line). The produced fragments 
-(blue line) have a smaller impact, but non-negligible especially in the dose tail behind the Bragg peak. Figure taken from \cite{Groezinger2004}}
+(blue line) have a smaller impact, but non-negligible, especially in the dose tail behind the Bragg peak. Figure taken from \cite{Groezinger2004}}
 \label{iondd}
 \end{center}
 \end{figure}
 
 \subsubsection{Secondary electrons and track structure}
 
-As mentioned in section \ref{iion} ions used in radiotherapy lose most of their energy via inelastic Coulomb scattering on target electrons. Such electrons can be liberated from target atoms and are called
-secondary electrons, also $\delta$-electrons. $\delta$-electrons also travel through matter, further scattering and may even cause secondary ionization of the target atoms. When $\delta$-electrons energies are larger than $>$50 eV,
+Ions used in radiotherapy lose most of their energy via inelastic Coulomb scattering on target electrons (see Section~\ref{iion}). Electrons in collision with ions can be liberated from target atoms and are called secondary electrons, also $\delta$-electrons. $\delta$-electrons also travel through matter, scatter further and may even cause secondary ionization of the target atoms. When $\delta$-electrons energies are larger than $>$50 eV,
 ionization becomes dominant process, which produces a large number of additional electrons \cite{Kraft2000,Schardt2010}.
 
 The radial dose profile and track diameter is defined by the energy spectrum of the $\delta$-electrons. Most of the $\delta$-electrons are concentrated around the projectile ions path, since they receive small energy transfers 
-or are scattered in the direction of incident ions. Different models \cite{!!}, Monte Carlo simulations \cite{!!} predict radial dose fall-off approximately with $1/r^2$ for radial distances $r$. Varma et. al. have confirmed 
+or are scattered in the direction of incident ions. Different models \cite{!!}, Monte Carlo simulations \cite{!!} predict radial dose fall-off approximately with $1/r^2$ for radial distance $r$. Varma et. al. have confirmed 
 this experimentally \cite{Varma1977}. The maximum radial distance $r_{max}$ is defined by the most energetic $\delta$-electrons, which are related to energy, $E$, of the projectile ions \cite{Kiefer1986}.
 
 \begin{equation}
  r_{max} = E^{1.7}
 \end{equation}
 
-Following equation \ref{bethe}, $E$ is correlated to $Z^2$ and $1/\beta^2$, which means track structure is highly dependent on the projectile ion species and energy. This is well demonstrated on Fig.~\ref{track}:
+Following equation \ref{bethe}, $E$ is correlated to $Z^2$ and $1/\beta^2$, meaning that track structure is highly dependent on the projectile ion species and energy as demonstrated in Fig.~\ref{track}:
 Carbon ions have much more dense ionization structure compared to protons \cite{!!}. $\delta$-electrons have low energies, and thus the $r$ is on nanometer scale. As the energy of projectile ions decreases, their
 stopping power increases and causes significantly larger number of $\delta$-electrons The energy deposited by $\delta$-electrons in medium is described using the Linear Energy Transfer (LET), which is closely related to 
 $dE/dx$. Fast ions, with little ionization, have thus small LET, while slow ions, with large ionization, have a high LET.
@@ -183,7 +182,7 @@ $dE/dx$. Fast ions, with little ionization, have thus small LET, while slow ions
 \begin{figure}[H]
 \begin{center}
 % \includegraphics[scale=0.75]{trackstructure.eps}
-\includegraphics[scale=0.25]{./Images/trackstructure.png}
+\includegraphics[width=0.9\textwidth]{./Images/trackstructure.png}
 \caption{Track structure of ions in water at different energies. The distribution of $\delta$-electrons is highly dependent on ion species and their energy.
 A molecule of DNA is displayed for size comparison. Figure courtesy of Michael Kr\"amer.}
 \label{track}
