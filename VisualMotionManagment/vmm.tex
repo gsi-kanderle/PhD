@@ -61,12 +61,11 @@ x' = x + u_{ri}(x)
 Here, $x$ and $x'$ are points in states $r$ and $i$, respectively and $u_{ri}$ is a vector field representation of the transformation map. $u_{ri}$ can among others be used for assesing motion amplitudes, contour propagation and 4D dose reconstruction. It is important to note
 that for certain steps in 4D treatment planning require also inverse registration, from state $i$ to $r$ \cite{Richter2012}.
 
-A comonlly used software for registration in medical research is Plastimatch \cite{Shackleford2010}. It is free and open-source software, avaliable as a command-line executable program. It is also available in Slicer as an external module, SlicerRT \cite{Pinter2012}.  
+A comonlly used software for registration in medical research is Plastimatch \cite{Shackleford2010}. It is free and open-source software, avaliable as a command-line executable program. Plastimatch B-spline registration is also available in Slicer as an external module, SlicerRT \cite{Pinter2012}.  
 The integration of Plastimatch in Slicer brings the advantage of a graphic user interface and hence a quick modification of parameters. However, the disadvantage comes when a large number of registrations is required, since a user presence is required. In a 4DCT registration
 there are $2(N-1)$ registrations required - from reference phase to each of $N$ states of 4DCT and vice versa, except for the reference phase itself. Typical 4DCT consist of 10 phases, therefore a automatic registration of a 4DCT is a necessity, since each registration takes from 15-30 minutes.
 
-Rather than just automatically loading different phases and registering them in Slicer a patient hierarchy concept was introduced. Patient hierarchy enabled clear overview of all patient images and their corresponding transformation maps. Registration process could then easily be followed
-and could be easily applied to different patients.
+Rather than just automatically loading different phases and registering them in Slicer a patient hierarchy concept was introduced and is explained in next section. After patient hierarchy is created, registration is then done from reference phase to all other phases and vice versa. 
 
 \subsubsection{Patient hierarchy} 
 
@@ -76,18 +75,79 @@ where details such as file path or reference phase are written.
 \begin{itemize}
 	\item Level 1: \textbf{Patient name} - seperates different patients.
 	\item Level 2: \textbf{Registration node} - seperates between different registration, e.g. registration between 4DCT phases, between CT and 4DCT, MRI and CT... 
-	\subitem The file directory of image, vector field and registration quality files is stored as an attribute. Additionaly, there are number of phases to be registered and which phase is the reference one.
+	\subitem The file directory of image, vector field and registration quality files is stored as an attribute. Additionally, there are number of phases to be registered and which phase is the reference one.
 	\item Level 3: \textbf{Registration phase} - specific registration phase. Registration is done between all phases and the reference one. There have to be at least two phases
 	\item Level 4: \textbf{Node} - can be either an image, a vector field, an inverse vector field or any of DIRQA nodes (see Section~\ref{DIRQA}).
-	\subitem Exact file paths to specific node is stored as an attribute.
+	\subitem Exact file paths for specific node is stored as an attribute.
 \end{itemize}
 
-Patient hierarchy can be constructed in two ways. First option is to manually crate the whole patient hierarchy, from top to bottom level, with necesarry attributes. 
-\subsection{Registration Quality Assurance}
+Patient hierarchy can be constructed in two ways. First option is to manually crate the whole patient hierarchy, from top to bottom level, with necessary attributes. Second option is using automatic script to look for files on hard drive and create corresponding levels in patient hierarchy. This
+is possible only, if some conventions are used regarding file names and locations.
+
+\subsection{Registration Quality Checks}
 \label{DIRQA}
 
+In order to provide visual and quantitative assessment of the registration quality a \textbf{Deformable Image Registration Quality Assurance} (DIRQA) module was created. It provides different image checks (false color, checkerboard, absolute difference, flicker, movie and landmark positions) and vector checks (jacobian and inverse consistency error). Details on all different checks will be explained in this section. Reference image, warped image, vector and inverse vector (vector from reference to moving phase) are used as inputs for DIRQA module. Additionaly landmarks and region of interest (ROI) can be used as an input.
 
-\subsection{Visualization}
+\subsubsection{False color}
+
+A good way to see difference between two images is to overlay them. However, since CT scans are usually displayed in grayscale color code, the differences can become indistinguishable. Especially if the images are quite similar, as reference and warped image usually are. With applying opposite color code to overlaying images two things are achieved. Firstly, regions were the registration was successful will be in grayscale. Next, the differences will be in color of image they belong to. In the module we used (?) red and green color code for reference and warped image respectively. 
+
+\subsubsection{Checkerboard}
+
+As the name suggests, checkerboard creates an image of tiles. Each tile alternates between reference and warped image. The differences between two images become apparent if there is no smooth transition from one tile to the next. The number of tiles can be manually selected. While the checkerboard offers clear indication of differences, it requires user to spot them - similar to false color.
+
+\subsubsection{Absolute difference} 
+
+To stress the difference between reference and warped image an absolute difference between voxel values is calculated and displayed. New image is generated, with voxels populated as the absolute difference between reference and warped image voxel values. Furthermore, average, standard deviation, minimum and maximum of absolute differneces are calulcated for quantitative assessment of registration quality (in ideal case all values would be 0).
+
+The absolute difference feature is similar to false color, but it displays differences clearer and it also provides quantitative values. In contrast to false color which only relies on user examination.
+
+To spare computational time or to focus on a specific region, absolute difference can also be calculated just on a specific ROI (if used as an input). Usually ROI around patient body is selected, rather than calculating on a whole patient CT.
+
+\subsubsection{Movie}
+
+Medical images are usually quite large - typical CT image consist of $512 \times 512 \times 100$ pixels, which makes inspecting image checks (false color, checkerboard, absolute difference) a time-consuming task. Movie feature allows for smoother display of different image slices. User selects, which view he would like to inspect (axial, sagital or coronal) and presses start. Selected views then start scrolling from one limit to the other. It allows user to focus on registration details, rather than scrolling through slices.
+
+Movie and flicker (explained below) do not offer any specific registration check, but improve the process of registration quality assurance.
+
+\subsubsection{Flicker}
+
+While it is possible to display two images side by side in Slicer, it can sometimes be hard to see fine differences between the two images. Flicker alternates between reference and warped image on a single display. Flicker changes image each 0.5 s.
+
+\subsubsection{Landmark positions}
+
+Landmark positions are often used to determine registration spatial accuracy \cite{Castillo2009}. Landmark can either be a specific feature in patient anatomy, or an external marker. The position of the landmark in the warped image would ideally be at the same position as in reference image. The module measures the Euclidean norm between the landmark position in reference and warped image.
+
+User has to manually select landmarks in reference and moving image. For landmarks based on patient anatomy a physician is required. Landmark from moving image can then be automatically transformed with transformation vector field to obtain position in warped image or it can be manually selected in warped image.
+
+
+\subsubsection{Jacobian}
+
+Jacobian determinant (Jacobian) of the vector field is used to validate physical behavior of registration \cite{Leow2007}. Jacobian of vector field should be positive, since negative Jacobian values correspond to folding, which is physically unrealistic for patient anatomy (organs can not be folded) \cite{Chen2008, Rey2002}. Expansions and contractions around a point are indicated by Jacobian values of greater and less than 1, respectively. 
+
+DIRQA module calculates and displays the Jacobian of the vector field. Average, standard deviation, minimum and maximum values of Jacobian are also displayed. Similar to absolute difference it also has ROI feature implemented.
+
+\subsubsection{Inverse Consistency Error}
+
+Inverse consistency error (ICE) is consistently used in literature as one of the main vector field checks \textbf{citati}. The principle is as followed. Suppose we have two vector fields - $u_{AB}$ obtained from registration of image A to B and $u_{BA}$ from registration of image B to A. The two registrations
+should be preformed seperately. In ideal scenario, $u_{AB}$ would be a direct inverse of $u_{BA}$. However, deformable image registration algorithems do not yield perfectly inverse consistent vector field.
+
+To check for ICE, an algorithm was created that first transforms point $x$ using $u_{AB}$. Newly obtained point $x'$ is then transformed with inverse vector
+field, $u_{BA}$ which yields $x''$. The ICE is defined as Euclidean norm between $x$ and $x''$:
+
+\begin{equation}
+ICE = x - x'' = x - u_{BA}(x') = x - u_{BA}(u_{AB}(x))
+\end{equation}
+
+Points $x'$ and $x''$ can have an arbitrary position in space, while vector fields $u_{AB}$ and $u_{BA}$ are positioned on a grid. To apply transformation $u_{BA}(x')$ a interpolation has to be made to put $x'$ on a $u_{BA}$ grid. A tri-linear interpolation is used in this module.
+
+As in Jacobian, ICE image is calculated and displayed, along with values for average, standard deviation, minimum and maximum values. ROI feature is also implemented.
+
+
+\subsection{Contour visualization}
+
+TRiP4D (see Section \textbf{REF}) introduced volume datasets for contour representation \cite{Richter2012}. It enabled necessary tasks for 4D calculations, such as the shape of contour in different 4D states, contour propagation, etc. However, there was a lack of proper contour visualization. 
 
 \subsection{Motion assesment}
 
