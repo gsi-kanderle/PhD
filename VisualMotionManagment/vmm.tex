@@ -90,6 +90,7 @@ is possible only, if some conventions are used regarding file names and location
 In order to provide visual and quantitative assessment of the registration quality a \textbf{Deformable Image Registration Quality Assurance} (DIRQA) module was created. It provides different image checks (false color, checkerboard, absolute difference, flicker, movie and landmark positions) and vector checks (jacobian and inverse consistency error). Details on all different checks will be explained in this section. Reference image, warped image, vector and inverse vector (vector from reference to moving phase) are used as inputs for DIRQA module. Additionaly landmarks and region of interest (ROI) can be used as an input.
 
 \subsubsection{False color}
+\label{Sec:FalseColor}
 
 A good way to see difference between two images is to overlay them. However, since CT scans are usually displayed in grayscale color code, the differences can become indistinguishable. Especially if the images are quite similar, as reference and warped image usually are. With applying opposite color code to overlaying images two things are achieved. Firstly, regions were the registration was successful will be in grayscale. Next, the differences will be in color of image they belong to. In the module we used (?) red and green color code for reference and warped image respectively. 
 
@@ -144,6 +145,16 @@ Points $x'$ and $x''$ can have an arbitrary position in space, while vector fiel
 
 As in Jacobian, ICE image is calculated and displayed, along with values for average, standard deviation, minimum and maximum values. ROI feature is also implemented.
 
+\begin{figure}[H]
+\begin{center}
+% \includegraphics[scale=1]{depthdose.eps}
+\includegraphics[width=0.9\textwidth]{./Images/dirqa.png}
+\caption{Different registration quality image checks of reference (a) and warped image (b). While there is not trivial to spot differences when images are side by side, the task is much easier if they are overlayed in
+opposite colors (c), as explained in Sec.~\ref{Sec:FalseColor}. False color is made by using red color code on reference (d) and blue on warped image (e). Arrows point to areas in false color where there are differences between
+the two images. The differences are also clearly see on checkerboard image (f) and are stressed on root mean square \textbf{?} image (g).}
+\label{Imagedirqa}
+\end{center}
+\end{figure}
 
 \subsection{Contour visualization}
 
