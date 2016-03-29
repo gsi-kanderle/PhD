@@ -22,15 +22,26 @@
 
 
 \begin{document}
-\chapter{Motion Managment in Treatment Planning}
-\label{chapter:intro}
+\chapter{Motion Management in Treatment Planning}
+\label{chapter:vmm}
 \minitoc
 
 \section{Introduction}
 
+Effects of motion can have a significant impact on a radiation treatment (see Section \textbf{ref!}). Therefore a proper investigation is necessary for each specific treatment and patient. There are several motion mitigation techniques available ranging from beam delivery, patient immobilization to treatment planning \textbf{Ref!}.
+
+One of the steps for motion mitigation is proper and frequent imaging. While most commercial treatment planning software provide rigid registration between different images, deformable image registration (DIR) is currently rarely used. Even though it better quantifies anatomical and biological variations \textbf{Cite 1 varadhan). DIR is essential as well in photon as in ion radiotherapy, with usage in adaptive radiotherapy (2,3 vradhan), 4D optimization and dose calculation, contour propagation (1-11 wu) and in other categories besides radiotherapy as well (4-10 vardhan). Several different DIR algorithms are avaliable, such as B-spline, Deamons, linear elastic finite element, optical flow, viscous fluid (11-15 vardhan), etc.
+	
+One of the reasons for the lack of DIR in commercial software is due to unavailable validation methods. While several exist, none of them are definitive and most of them are time consuming. It is possible to evaluate DIR with deformable phantoms, where the type and size of deformation is known \textbf{25-27 varadhan}. However such quality assurance is time consuming and cannot be used in everyday clinical workflow. 
+
+DIR validation can also be based on landmark positions, specifically their location before and after registration. In absence of externally planted markers, locating landmarks in patient anatomy can be time consuming and difficult to identify in low-contrast regions \textbf{cite varadhan}. Another option is to compare delineated contours with propagated ones. It is more efficient technique than landmark checks, however it is also time consuming and it also does not address region within the contour.
+
+In this chapter tools to handle motion management, DIR and DIR validation will be presented. Tools were constructed for open-source software 3D Slicer, described in Section~\ref{Slicer}. In Section~\ref{Registration} details on DIR procedures will be explained. Next, Section~\ref{DIRQA} will address the issue of DIR validation - an extensive tool with various feature to tackle DIR validation will be presented. Section~\ref{Contour} will be about contour visualization. Last two sections in implementation part will be about a tool to display organ motion amplitude and generation of a mid-ventilation CT. Validation of DIR and DIR quality assurance will be presented in the Section~\ref{Verification}. Summary and discussion will be given last to sum up.
+
 \section{Implementation}
 
 \subsection{3D Slicer}
+\label{Slicer}
 
 3D Slicer (Slicer) is a software platform for analysis and visualization of medical images \cite{Slicer, Fedorov2012}. Slicer is a free, open-source software (BSD-style license) available on Windows, MacOSX and Linux operating systems. Among other, Slicer can:
 
@@ -49,6 +60,7 @@ Slicer is a research tool and as such offers tools to implement new functionalit
 In the Sections \textbf{Ref} different Slicer modules will be presented, which were all developed in the scope of this thesis. The purpose of the module is to quantify and visualize patient motion as well as provide quality assurance of the the obtained results.
 
 \subsection{Registration}
+\label{Registration}
 
 The changes in patient anatomy can be seen on CT (4DCT) or MRI scan. To assest this changes a registration must be preformed. Registration can be made between different imaging modaleteis, scans from different days or phases in 4DCT. Different algorithms and software is avaliable
 for image registration. However, the result is always a transformation map \cite{Richter2012}. 
@@ -157,16 +169,21 @@ the two images. The differences are also clearly see on checkerboard image (f) a
 \end{figure}
 
 \subsection{Contour visualization}
+\label{Contour}
 
-TRiP4D (see Section \textbf{REF}) introduced volume datasets for contour representation \cite{Richter2012}. It enabled necessary tasks for 4D calculations, such as the shape of contour in different 4D states, contour propagation, etc. However, there was a lack of proper contour visualization. 
+TRiP4D (see Section \textbf{REF}) introduced volume datasets for contour representation \cite{Richter2012}. It enabled necessary tasks for 4D calculations, such as the storing contour in different 4D states, contour propagation, etc. However, there was a lack of a proper visualization tool. In order to provide a contour visualization tool, a Slicer module was created. 
 
-\subsection{Motion assesment}
+Contours are saved as volumetric boolean masks. A single bit per ROI contour representation marks each voxel inside volume dataset \cite{Richter2012}. To properly display contour, first a whole volume dataset was imported in Slicer. User selects which motion state he would like to inspect. The corresponding bit is then selected on the imported volume dataset. Lastly the contour is converted into 3D model shape. 
+
+\subsection{Motion amplitude}
+
+In
 
 \subsubsection{Generation of mid-ventilation phase}
 
 
 \section{Verification}
-
+\label{Verification}
 \section{Summary and Discussion}
 
 
