@@ -14,6 +14,10 @@ VMM:
 
 Par izrazov je treba razlozit: warped, moving image, inverse registration
 
+Output file
+
+V discusion omenit, da ni za clinical use
+
 Fundamentals:
 
 Citati na uvodu

@@ -168,6 +168,10 @@ the two images. The differences are also clearly see on checkerboard image (f) a
 \end{center}
 \end{figure}
 
+\subsubsection{Output file}
+
+With all different features to validate DIR it can be time consuming to go through them all. A special option was created to automatically go through all different validation steps. Furthermore it can also run through different phases, if there are more phases (i.e. in 4DCT). All produced data from DIR validation is stored on disk and can be reexamined by user upon request. Furthermore, images are created and data is summed up and displayed in a separate file. Users can then preview file for first validation of DIR and then open necessary files, if required.
+
 \subsection{Contour visualization}
 \label{Contour}
 
@@ -175,11 +179,19 @@ TRiP4D (see Section \textbf{REF}) introduced volume datasets for contour represe
 
 Contours are saved as volumetric boolean masks. A single bit per ROI contour representation marks each voxel inside volume dataset \cite{Richter2012}. To properly display contour, first a whole volume dataset was imported in Slicer. User selects which motion state he would like to inspect. The corresponding bit is then selected on the imported volume dataset. Lastly the contour is converted into 3D model shape. 
 
-\subsection{Motion amplitude}
+\subsection{Motion estimation and ITV creation}
 
-In
+ITV is often created by an eye investigation of all 4DCT phases, where the extent of motion is estimated. Automatic creation of ITV is scarce in commercial system, since it requires DIR on all 4DCT phases. A Slicer module was created to assist with the motion estimation and automatic ITV creation using DIR. 
+
+Module is able to estimate and display motion of a user selected contour in three axis (left-right, anterior-posterior, superior-inferior) based on DIR vector fields. Module also performs DIR on 4DCT with patient hierarchy, if it has not been done yet.
+
+Beside motion estimation, module can also propagate selected contour (usually CTV) and propagate it to all 4DCT and make a convolution of all propagated contours, resulting in automatic generated ITV.
 
 \subsubsection{Generation of mid-ventilation phase}
+
+
+
+
 
 
 \section{Verification}
