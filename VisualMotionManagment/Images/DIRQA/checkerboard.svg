@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="checkerboard.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="-52.142857"
+     inkscape:cy="520"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <image
+       sodipodi:absref="C:\Users\Kristjan\Documents\GitHub\PhD\VisualMotionManagment\Images\DIRQA\Lung004_05_red.png"
+       xlink:href="Lung004_05_red.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:export-filename="C:\Users\Kristjan\Documents\GitHub\PhD\VisualMotionManagment\Images\falseColor.png"
+       width="917.5"
+       height="443.75"
+       preserveAspectRatio="none"
+       id="image4155"
+       x="532.67859"
+       y="103.34435" />
+    <image
+       sodipodi:absref="C:\Users\Kristjan\Documents\GitHub\PhD\VisualMotionManagment\Images\DIRQA\Lung004_CB_after.png"
+       xlink:href="Lung004_CB_after.png"
+       width="917.5"
+       height="443.75"
+       preserveAspectRatio="none"
+       id="image4237"
+       x="532.67859"
+       y="103.34435" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:64.74604797px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-658.08331"
+       y="156.35458"
+       id="text4180"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0369484,0.96436813)"
+       inkscape:export-filename="C:\Users\Kristjan\Documents\GitHub\PhD\VisualMotionManagment\Images\falseColor.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4182"
+         x="-658.08331"
+         y="156.35458">(a)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:62.43902588px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="395.23059"
+       y="150.78337"
+       id="text4180-9"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="C:\Users\Kristjan\Documents\GitHub\PhD\VisualMotionManagment\Images\falseColor.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4182-3"
+         x="395.23059"
+         y="150.78337">(b)</tspan></text>
+    <image
+       sodipodi:absref="C:\Users\Kristjan\Documents\GitHub\PhD\VisualMotionManagment\Images\DIRQA\Lung004_CB_before.png"
+       xlink:href="Lung004_CB_before.png"
+       width="917.5"
+       height="443.75"
+       preserveAspectRatio="none"
+       id="image4226"
+       x="-564.46429"
+       y="103.34435" />
+    <image
+       y="144.21935"
+       x="1548.5714"
+       id="image4248"
+       xlink:href="data:image/png;base64,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
+RK5CYII=
+"
+       preserveAspectRatio="none"
+       height="662"
+       width="80" />
+  </g>
+</svg>

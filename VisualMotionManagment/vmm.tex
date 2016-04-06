@@ -104,19 +104,46 @@ In order to provide visual and quantitative assessment of the registration quali
 \subsubsection{False color}
 \label{Sec:FalseColor}
 
-A good way to see difference between two images is to overlay them. However, since CT scans are usually displayed in grayscale color code, the differences can become indistinguishable. Especially if the images are quite similar, as reference and warped image usually are. With applying opposite color code to overlaying images two things are achieved. Firstly, regions were the registration was successful will be in grayscale. Next, the differences will be in color of image they belong to. In the module we used (?) red and green color code for reference and warped image respectively. 
+A good way to see difference between two images is to overlay them. However, since CT scans are usually displayed in grayscale color code, the differences can become indistinguishable. Especially if the images are quite similar, as reference and warped image usually are. With applying opposite color code to overlaying images two things are achieved. Firstly, regions were the registration was successful will be in grayscale. Furthermore the differences will be in color of image they belong to. In the module we used red and cyan color code for reference and warped image respectively. See Fig.~\ref{falseColor} for details.
+
+\begin{figure}[H]
+	\begin{center}
+		% \includegraphics[scale=1]{depthdose.eps}
+		\includegraphics[width=0.9\textwidth]{./Images/falseColor.png}
+		\caption{Example of false color overlay. Images (a) and (b) show red and cyan color code, respectively, for CT scan. (c) displays overlayed false colored images before and (d) after registration.}
+		\label{falseColor}
+	\end{center}
+\end{figure}
 
 \subsubsection{Checkerboard}
 
-As the name suggests, checkerboard creates an image of tiles. Each tile alternates between reference and warped image. The differences between two images become apparent if there is no smooth transition from one tile to the next. The number of tiles can be manually selected. While the checkerboard offers clear indication of differences, it requires user to spot them - similar to false color.
+As the name suggests, checkerboard creates an image of tiles. Each tile alternates between reference and warped image, as shown in Fig.~\ref{checkerboard}. The differences between two images become apparent if there is no smooth transition from one tile to the next. The number of tiles can be manually selected. While the checkerboard offers clear indication of differences, it requires user to spot them - similar to false color.
+
+\begin{figure}[H]
+	\begin{center}
+		% \includegraphics[scale=1]{depthdose.eps}
+		\includegraphics[width=0.9\textwidth]{./Images/checkerboard.png}
+		\caption{Example of checkerboard image. Image consist of tiles alternating between two images. Tiles in image (a) alternate between scans before registration and in image (b) after registration.}
+		\label{checkerboard}
+	\end{center}
+\end{figure}
 
 \subsubsection{Absolute difference} 
 
-To stress the difference between reference and warped image an absolute difference between voxel values is calculated and displayed. New image is generated, with voxels populated as the absolute difference between reference and warped image voxel values. Furthermore, average, standard deviation, minimum and maximum of absolute differneces are calulcated for quantitative assessment of registration quality (in ideal case all values would be 0).
+To stress the difference between reference and warped image an absolute difference between voxel values is calculated and displayed. New image is generated, with voxels populated as the absolute difference between reference and warped image voxel values, as shown in Fig.~\ref{absDiff}. Furthermore, average, standard deviation, minimum and maximum of absolute differneces are calulcated for quantitative assessment of registration quality (in ideal case all values would be 0).
 
 The absolute difference feature is similar to false color, but it displays differences clearer and it also provides quantitative values. In contrast to false color which only relies on user examination.
 
 To spare computational time or to focus on a specific region, absolute difference can also be calculated just on a specific ROI (if used as an input). Usually ROI around patient body is selected, rather than calculating on a whole patient CT.
+
+\begin{figure}[H]
+	\begin{center}
+		% \includegraphics[scale=1]{depthdose.eps}
+		\includegraphics[width=0.9\textwidth]{./Images/abs.png}
+		\caption{Absolute difference image before (a) and after registration (b).  Image consist of tiles alternating between two images. Tiles in image (a) alternate between scans before registration and in image (b) after registration. The difference before registration is 350 HU and 100 HU after registration \textbf{CHECK!}}
+		\label{absDiff}
+	\end{center}
+\end{figure}
 
 \subsubsection{Movie}
 
@@ -141,6 +168,15 @@ Jacobian determinant (Jacobian) of the vector field is used to validate physical
 
 DIRQA module calculates and displays the Jacobian of the vector field. Average, standard deviation, minimum and maximum values of Jacobian are also displayed. Similar to absolute difference it also has ROI feature implemented.
 
+\begin{figure}[H]
+	\begin{center}
+		% \includegraphics[scale=1]{depthdose.eps}
+		\includegraphics[width=0.9\textwidth]{./Images/jacobian.png}
+		\caption{Image of Jacobian overlayed on CT scan. The average value of displayed Jacobian is 1.0 with 0.7 STD. \textbf{CHECK!}}
+		\label{jacobian}
+	\end{center}
+\end{figure}
+
 \subsubsection{Inverse Consistency Error}
 
 Inverse consistency error (ICE) is consistently used in literature as one of the main vector field checks \textbf{citati}. The principle is as followed. Suppose we have two vector fields - $u_{AB}$ obtained from registration of image A to B and $u_{BA}$ from registration of image B to A. The two registrations
@@ -155,18 +191,17 @@ ICE = x - x'' = x - u_{BA}(x') = x - u_{BA}(u_{AB}(x))
 
 Points $x'$ and $x''$ can have an arbitrary position in space, while vector fields $u_{AB}$ and $u_{BA}$ are positioned on a grid. To apply transformation $u_{BA}(x')$ a interpolation has to be made to put $x'$ on a $u_{BA}$ grid. A tri-linear interpolation is used in this module.
 
-As in Jacobian, ICE image is calculated and displayed, along with values for average, standard deviation, minimum and maximum values. ROI feature is also implemented.
+As in Jacobian, ICE image is calculated and displayed, along with values for average, standard deviation, minimum and maximum values. ROI feature is also implemented. An example is shown in Fig.~\ref{inv}
 
 \begin{figure}[H]
-\begin{center}
-% \includegraphics[scale=1]{depthdose.eps}
-\includegraphics[width=0.9\textwidth]{./Images/dirqa.png}
-\caption{Different registration quality image checks of reference (a) and warped image (b). While there is not trivial to spot differences when images are side by side, the task is much easier if they are overlayed in
-opposite colors (c), as explained in Sec.~\ref{Sec:FalseColor}. False color is made by using red color code on reference (d) and blue on warped image (e). Arrows point to areas in false color where there are differences between
-the two images. The differences are also clearly see on checkerboard image (f) and are stressed on root mean square \textbf{?} image (g).}
-\label{Imagedirqa}
-\end{center}
+	\begin{center}
+		% \includegraphics[scale=1]{depthdose.eps}
+		\includegraphics[width=0.9\textwidth]{./Images/inv.png}
+		\caption{Image of inverse consistency error (ICE) overlayed on CT scan. The average value of displayed ICE is 1.0 with 0.7 STD. \textbf{CHECK!}}
+		\label{inv}
+	\end{center}
 \end{figure}
+
 
 \subsubsection{Output file}
 
