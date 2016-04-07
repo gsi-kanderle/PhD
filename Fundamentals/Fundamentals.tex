@@ -172,7 +172,7 @@ this experimentally \cite{Varma1977}. The maximum radial distance $r_{max}$ is d
 \end{equation}
 
 Following equation \ref{bethe}, $E$ is correlated to $Z^2$ and $1/\beta^2$, meaning that track structure is highly dependent on the projectile ion species and energy as demonstrated in Fig.~\ref{track}:
-Carbon ions have much more dense ionization structure compared to protons \cite{!!}. $\delta$-electrons have low energies, and thus the $r$ is on nanometer scale. As the energy of projectile ions decreases, their
+Carbon ions have much more dense ionization structure compared to protons \cite{Kraemer2010}. $\delta$-electrons have low energies, and thus the $r$ is on nanometer scale. As the energy of projectile ions decreases, their
 stopping power increases and causes significantly larger number of $\delta$-electrons The energy deposited by $\delta$-electrons in medium is described using the Linear Energy Transfer (LET), which is closely related to 
 $dE/dx$. Fast ions, with little ionization, have thus small LET, while slow ions, with large ionization, have a high LET.
 
@@ -272,7 +272,7 @@ With dose $d$ delivered over $n$ fractions, equation~\ref{lq} can be rewritten a
 The biologically effective dose (BED) is defined as:
 
 \begin{equation}
- BED(Gy_{\alpha/\beta}=nd\left[1 + \frac{d}{\alpha/\beta} \right]
+ BED(Gy_{\alpha/\beta})=nd\left[1 + \frac{d}{\alpha/\beta} \right]
 \end{equation}
 
 with the total dose $D$ equal to $n \times d$, we can define fractionation factor $F$ as
@@ -291,11 +291,10 @@ means higher $F$ and a higher $\alpha / \beta$ (early responding tissue) moves $
 
 In recent years hypo-fractionation has showed promising results over wide range of tumors \cite{Yamada2008, Greco2011, Halasz2013}. 
 Hypo-fractionation consist of 1-3 fractions of very high doses, up to 24 Gy in a single fraction (single-dose). According to LQ model such doses should be too low to achieve any tumor control, since standard total doses are around 50 - 60 Gy with 1.5 - 2 Gy per fraction. 
-However, clinical results show good tumor local control otherwise, which indicates different mechanisms at work. The topic is under careful research and no consensus has yet been made regarding the theory behind it.
+However, clinical results show othewise with good tumor local control, which indicates different mechanisms at work. The topic is still under research and no consensus has yet been made regarding the theory behind it.
 
 Garcia-Barros et al. proposed a two target model \cite{Garcia2003}, which suggest that tumor response to irradiation is defined not only by tumor cell type (as in LQ model) but also by micro-vascular
-sensitivity. With excluding targeted enzymes from mice, they showed that tumors with reduced micro-vascular endothelial apotheosis grew 200-400 \% faster than control group. The study, however, was challenged
-and an accurate theory of single dose treatment is still amiss.
+sensitivity. With excluding targeted enzymes from mice, they showed that tumors with reduced micro-vascular endothelial apotheosis grew 200-400 \% faster than control group. The study, however, was challenged on several grounds and is controversal.
   
 
 \subsection{Application technique}
@@ -305,18 +304,28 @@ more patients being treated every year. In the following sections an overview wi
 
 \subsubsection{Photon therapy}
 
-Clinical linear accelerators are used to produce high-energy (MV) photons. First, electrons are accelerated in linear accelerators. Next they are stopped in a heavy metal target where photons are produced via bremsstrahlung.
-In the next step photons are shaped at the exit of the machine to the shape of the tumor. Exit beam is then directed to patient. The shaping of the beam is done with either blocks at the head of the machine or by a 
+The aim of photon therapy is to direct high-energy (MV) photons to target. To achieve that, electrons are first accelerated in linear accelerators. Next, they are stopped in a heavy metal target where photons are produced via bremsstrahlung.
+In the following step photons are shaped at the exit of the machine to the shape of the tumor. Exit beam is then directed to patient. The shaping of the beam is done with either blocks at the head of the machine or by a 
 multileaf collimator. Multileaf collimator is a device made of individual leaves (usually from tungsten or other high-atomic number material), which can be moved to get the shape of the tumor in beam's eye view, see Fig.~\ref{MLC}. 
 
-Linear accelerators are usually placed on a gantry, which can be rotated around the patient. This allows beams to enter the patient from any angle. In 3-dimensional conformal radiotherapya  variable number of beams is used. 
-Each beam is then shaped with multileaf collimator. Even more precise technique is intensity-modulated radiotherapy (IMRT). IMRT allows treating of a complex tumor shapes, e.g. when tumor is warped around a critical structure.
+Linear accelerators are usually placed on a gantry, which can be rotated around the patient, see Fig.~\ref{gantry}. This allows beams to enter the patient from any angle. The arbitrary choice of beam angle is used in a 3-dimensional conformal radiotherapy,
+where a variable number of beams is used. Each beam is then shaped with a multileaf collimator. Even more precise technique is intensity-modulated radiotherapy (IMRT). IMRT allows treating of a complex tumor shapes, e.g. when tumor is warped around a critical structure.
+
+\newpage
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.9\textwidth]{./Images/MLC.png}
+\includegraphics[width=0.7\textwidth]{./Images/MLC.png}
 \caption{A picture of a multileaf collimator. Individual leaves are positioned so that exit beam from linear accelerator has conformal shape to patient tumor in a beam's eye view. Picture taken from \cite{MLC}.}
 \label{MLC}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{./Images/gantry.png}
+\caption{A picture of a modern photon delivery system with gantry at two angles. Gantry can rotate 360 degrees around the patient. Picture taken from \cite{MLC}.}
+\label{gantry}
 \end{center}
 \end{figure}
 
@@ -326,8 +335,8 @@ Each beam is then shaped with multileaf collimator. Even more precise technique 
 In order for ion therapy be successful, ions must be accelerated to appropriate energies (several hundred MeV/u), the beam must be transported to target area and guided
 onto the target with high accuracy (around 1 mm). The delivery system is therefore extremely complex and it is one of the reasons ion radiotherapy is not as common as photon radiotherapy.
 
-Two types of particle accelerators are used in ion therapy - cyclotrons and synchrotrons. \textbf{Cyclotrons} can be built in a compact design and offer a continuous beam with
-stable intensities. Particle energy, however, can not be regulated and therefore passive energy degraders are needed. Active energy variation is possible with \textbf{synchrotrons}, where a linear
+There are two types of particle accelerators used in ion therapy - cyclotrons and synchrotrons. \textbf{Cyclotrons} can be built in a compact design and offer a continuous beam with
+stable intensities. Particle energies, however, can not be regulated and therefore passive energy degraders are needed. Active energy variation is possible with \textbf{synchrotrons}, where a linear
 accelerator is used to inject ions into the synchrotron and then the beam is regulated with ion optics. Synchrotrons are used in all heavy ion therapy centers, while cyclotrons are most
 commonly used for proton therapy.
 
@@ -349,7 +358,7 @@ Passive beam shaping offers more robust and faster treatment delivery in contras
 \includegraphics[width=0.9\textwidth]{./Images/deliverypassive.png}
 \caption{Schematic presentation of a passive beam shaping. A scattering system is used to broaden the beam. Afterwards a range modulator spreads out Bragg Peak to the required energy range.
 The spread out Bragg peak is then shifted to a specific energy with a range modulator. Finally, patient specific collimator and conformator serve for lateral and longitudinal conformity, respectively.
-The proximal edge of the tumor cannot be shaped, as shown with hatched area. Figure taken from \cite{Sch10}.}
+The proximal edge of the tumor cannot be shaped, as shown with hatched area. Figure taken from \cite{Schardt2010}.}
 \label{passive}
 \end{center}
 \end{figure}
@@ -380,7 +389,7 @@ There also should be enough overlap between individual Bragg peaks. However, the
 \begin{center}
 \includegraphics[width=0.9\textwidth]{./Images/therapy.png}
 \caption{Schematics of GSI's active beam shaping. Tumor is divided into isoenergy slices, which are further overlayed with a 2 dimensional grid. 
-Longitudinal direction (in beam's eye view) is varied with particle energy from accelerator, while lateral is via a magnetic scanning system. Figure taken from REFERENCE!}
+Longitudinal direction (in beam's eye view) is varied with particle energy from accelerator, while lateral is via a magnetic scanning system. Figure taken from \cite{Kraemer2009}}
 \label{scanning}
 \end{center}
 \end{figure}
@@ -411,7 +420,7 @@ A brief introduction will be given here, for an in-depth explanation reader is p
 There are three main types of motion: patient positioning, inter- and intra-fractional motion. All three motion types are shown in Fig. \ref{motion}.
 \newline
 \textbf{Patient motion} is difference in patient position between image acquisition (e.g. CT) used for treatment planning and actual delivery. Patient motion introduces changes in tumor shape and tumor position. To overcome patient 
-position uncertainties, patient immobilization and dedicated protocols are used \textbf{Referenca iz motiona}.
+position uncertainties, patient immobilization and dedicated protocols are used.
 \newline
 \textbf{Interfractional motion} happens between two treatment sessions (fractions) and results in anatomical changes in a patient. It occurs on a time scale of hours and days. For lung cancer patients, tumor ca shrinks and lung density can change between fractions MORI2009. 
 Also changes in breathing pattern can impact treatment delivery. While the breathing motion trajectory has a good reproducibility, the tumor baseline drifts significantly \cite{Sonke2008}. Repeated imaging and replanning reduces the impact of the interfractional motion, but requires additional time.
@@ -420,13 +429,14 @@ Also changes in breathing pattern can impact treatment delivery. While the breat
 it is responsible for tumor motion from a mm range to a couple of cm. Tumor size and T-staging are also correlated to tumor motion \cite{Liu2007}. The respiratory-induced motion is largest in superior-inferior (SI) direction rather than 
 in the anterior-posterior (AP) or left-right (LR) directions.
 
+\newpage
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.9\textwidth]{./Images/motion_examples.png}
 \caption{Examples of the three major motion categories. On the left side (a) a lung tumor is displayed, which moves due to the respiration 
 of the patient (intrafractional motion). Interfractional position changes are exemplary shown in the middle (b), where two CT scans of a 
-prostate patient are compared. Density variations between two CT scans are shown in (c). Figure taken from \cite{Eng11}}
+prostate patient are compared. Density variations between two CT scans are shown in (c). Figure taken from \cite{Engelsman2011}}
 \label{motion}
 \end{center}
 \end{figure}
@@ -438,12 +448,21 @@ use larger safety margins to encompass the whole tumor motion as explained in Se
 sequence and target motion interfere with one another, resulting in over- and underdosages in patients. Effect is called interplay and it has been thoroughly reviewed elsewhere \cite{Phillips1992,Bert2008}. The effect of interplay depends
 on many factors, such as motion amplitude, beam direction, starting breathing phase etc. Three main techniques are currently established as counteract interplay: rescanning, gating and beam tracking. Several others techniques exist
 to reduce the effect of tumor motion, such as abdominal pressure, jet ventilation, apneic oxygenation etc., but will not be described here, since they are far from the scope of this thesis.
-\newline
-\textbf{Rescanning} or repainting, is a technique that uses advantage of statistical averaging of different interplay patterns \cite{Phillips1992}. Instead of applying the whole dose $D$ at once, the target is scanned $N$ times, each
+
+
+\textbf{Rescanning} is a technique that uses advantage of statistical averaging of different interplay patterns \cite{Phillips1992}. Instead of applying the whole dose $D$ at once, the target is scanned $N$ times, each
 time irradiated with $\mathrm{D}/\mathrm{N}$. The result is a Gaussian distribution of $D$ around the $D$ with no interplay (static case), as shown in Fig. \ref{rescanning}. With more rescanns (larger $N$), better dose homogeneity is achieved, because variance is proportional
 to $\mathrm{1}/\mathrm{N}$. Technically the method is the easiest to implement of the three mentioned, since no real-time motion monitoring is necessary. However, it introduces additional dosage to normal tissue. Rescanning has not yet be
 implemented clinically, but should be in the near future in several centers worldwide \cite{Furukawa2007, Zenklusen2010}.
 \newline
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{./Images/rescanning.png}
+\caption{Film irradiation with rescanning. With statistical averaging of multiple interplay patterns dose in the target (solid red square) becomes homogeneous. Figure taken from \cite{Bert2009}.}
+\label{rescanning}
+\end{center}
+\end{figure}
+
 \textbf{Gating} applies irradiation only in a selected part of the breathing cycle in a so-called gating window (GW) \cite{Minohara2000,Lu2006}. Usually exhale position is used as the center of the GW, as highlighted in Fig.~\ref{gating}.
 Motion monitoring signal is used to control beam extraction. While there is no additional normal tissue irradiation, the treatment time is prolonged due to the frequent beam interruptions as shown in Fig. \ref{gating}.
 Conventional radiotherapy and passive beam shaping also use advantage of gating to reduce the effects of motion on treatment delivery.
@@ -457,17 +476,12 @@ change the relative distance between the wedges and therefore introduces more or
 
 The three motion mitigation techniques mentioned are not exclusive and can be used in parallel. Furukawa et al. made a study on a combination between rescaning and gating \cite{Furukawa2007} and Water et al. presented a combination
 between rescanning and tracking \cite{Water2009}.
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.9\textwidth]{./Images/rescanning.png}
-\caption{Film irradiation with rescanning. With statistical averaging of multiple interplay patterns dose in the target (solid red square) becomes homogeneous. Figure taken from \cite{Bert09}.}
-\label{rescanning}
-\end{center}
-\end{figure}
+
+\newpage
 
 \begin{figure}[tbp]
   \centering
-  \includegraphics[width=0.9\textwidth]{./Images/gatingscheme}
+  \includegraphics[width=0.9\textwidth]{./Images/gatingscheme.pdf}
   \caption{Gating delivery with a synchrotron accelerator. The irradiation is only possible, when the gate signal is active and the beam is available. The gate signal
   depends on gating window and motion monitoring signal. Figure taken from \cite{Richter2012}.}
   \label{gating}
@@ -481,6 +495,8 @@ PMMA wedges are mounted on step motors, enabling to change the depth the particl
 \label{tracking}
 \end{center}
 \end{figure}
+
+\newpage
 
 \subsection{Treatment planning}
 \label{treatmentPlanning}
@@ -520,6 +536,7 @@ The International Commission on Radiation Units (ICRU) recommends the following 
 \begin{center}
 \includegraphics[scale=0.3]{./Images/volumes.png}
 \caption{ICRU treatment planning volumes definitions. Figure taken from \cite{Richter2012}}
+\label{targets}
 \end{center}
 \end{figure}
 
@@ -590,31 +607,33 @@ where the images overlap perfectly.}
 There were 1.8 million new lung cancer cases diagnosed worldwide in 2012 \cite{Worldwide2012}. With a very poor prognosis (5-year survival rates in Germany are
 16\% for men and 21\% for women \cite{Kaatsch2014}) lung cancer is one of the most frequent and most deadly cancer types. Usually lung cancer is distiguised
 into small-cell lung cancer (SCLC) and non-small cell lung cancer (NSCLC). Around 14\% of lung cancer cases are SCLC \cite{Tsao2008}, which is normally treated with chemotherapy and radiotherapy, while for the NSCLC the traditional course of treatment
-are surgery and radiotherapy.
+are surgery and radiotherapy. An example of cancerous lung tissue is shown in Fig.~\ref{Fig:Cancer}.
 
 \begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=0.6\textwidth]{./Images/LungCancer.png}
-		\caption{Cross section of a human lung. The white area in the upper lobe is cancer, the black areas indicate the patient was a smoker. Figure taken from \cite{LungCancer}}
-		\label{Fig:Stages}
-	\end{center}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{./Images/LungCancer.png}
+\caption{Cross section of a human lung. The white area in the upper lobe is cancer, the black areas indicate the patient was a smoker. Figure taken from \cite{LungCancer}}
+\label{Fig:Cancer}
+\end{center}
 \end{figure}
 
 
 \subsection{Causes}
 
-The main cause for lung cancer is a long-term exposure to tobacco smoke \cite{Tsao2008}, with 85\% of cases contributed to smoking. There are over 70 known carcinogens in cigarette smoke, such as benzo[a]pyrene, 1,3-butadiene and a radioactive isotope of polonium, polonium-210 \cite{Hecht2012}. See Fig.~\ref{FigStagets} for correlation between sales of tobacco products and rate of the lung cancer.
+The main cause for lung cancer is a long-term exposure to tobacco smoke \cite{Tsao2008}, with 85\% of cases contributed to smoking. There are over 70 known carcinogens in cigarette smoke, such as benzo[a]pyrene, 1,3-butadiene and a radioactive isotope of polonium, polonium-210 \cite{Hecht2012}. See Fig.~\ref{Fig:Smoking} for correlation between sales of tobacco products and rate of the lung cancer.
 
 Studies have shown that passive smokers have an increased risk of lung cancer as well, with more then 20\% increase in risk for those who live with someone who smokes and 16-19\% increase for someone working with a smoker \cite{Taylor2007}.
 There is some controversy weather smoking cannabis increases risk of lung cancer - two reviews from 2013 and 2014 have found contradicting results \cite{Tasckin2013, Underner2014}.
 
 The other 15\% of lung cancer cases is attributed to a combination of genetic factors, exposure to radon gas, asbestos or other forms of air pollution \cite{Alberg2010}.
 
+\newpage
+
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.5\textwidth]{./Images/Smoking.png}
+		\includegraphics[width=0.7\textwidth]{./Images/Smoking.png}
 		\caption{Correlation between sales of tobacco products and the rate of the lung cancer in the USA between 1900 - 1970. Data released from National Cancer Institute.}
-		\label{Fig:Stages}
+		\label{Fig:Smoking}
 	\end{center}
 \end{figure}
 
