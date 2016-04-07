@@ -220,13 +220,34 @@ ITV is often created by an eye investigation of all 4DCT phases, where the exten
 
 Module is able to estimate and display motion of a user selected contour in three axis (left-right, anterior-posterior, superior-inferior) based on DIR vector fields. Module also performs DIR on 4DCT with patient hierarchy, if it has not been done yet.
 
-Beside motion estimation, module can also propagate selected contour (usually CTV) and propagate it to all 4DCT and make a convolution of all propagated contours, resulting in automatic generated ITV.
+Beside motion estimation, module can also propagate selected contour (usually CTV) and propagate it to all 4DCT and make a convolution of all propagated contours, resulting in automatically generated ITV.
 
-\subsubsection{Generation of mid-ventilation phase}
+\subsubsection{Generation of mid-position phase}
+
+Most commercial software calculates treatment plan on a single 3D CT scan, using 4DCT only for motion estimation. To incorporate patient-specific motion information, a 3D CT scan was created from 4DCT in the time averaged position, also known as mid-position scan (midP scan) \cite{Wolthaus2008}. With midP scan commercial software can still be used. Additionally, it also enabled smaller error margins for PTV generation and midP scan has less noise as individual 4DCT scans, because it uses more data. 
+
+Construction of a midP begins with registration of whole 4DCT. The resulting vector fields from reference position to 4DCT phases are then averaged to obtain mean vector field, see Fig. Afterwards, for each vector field the mean vector field was subtracted, yielding a set of mean-corrected vector fields pointing from mean position to corresponding 4DCT phase. The mean-corrected vector fields were finally inverted and applied to each 4DCT phase, resulting in each phase being in the same, time-averaged position. In the end the set of transformed 4DCT phase was averaged to obtain midP scan.
+
+\begin{figure}[H]
+	\begin{center}
+		% \includegraphics[scale=1]{depthdose.eps}
+		\includegraphics[width=0.9\textwidth]{./Images/midPgeneration.png}
+		\caption{Image of inverse consistency error (ICE) overlayed on CT scan. The average value of displayed ICE is 1.0 with 0.7 STD. \textbf{CHECK!}}
+		\label{midPgeneration}
+	\end{center}
+\end{figure}
 
 
 
-
+Figure 5‑2. Explanation of the computation of the mean motion vector. Since all vectors have the same
+starting point, vectors can be averaged resulting in the mean vector. To compute the vectors to the frames
+with respect to the mean position, the mean vector needs to be subtracted (using a numerical inversion
+step since the vector space is not a continuum) from the original vector to the frame with respect to the
+reference (exhale) frame.
+Image quality optimization | 85
+to obtain the MidP CT scan, where all the internal structures, including the tumor,
+were in their exact time-weighted mean position of the respiratory motion. Arithmetic
+averaging (MidPmean) as well as median averaging (MidPmedian) were investigated.
 
 
 \section{Verification}
