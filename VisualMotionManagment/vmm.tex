@@ -28,9 +28,9 @@
 
 \section{Introduction}
 
-Effects of motion can have a significant impact on a radiation treatment (see Section \textbf{ref!}). Therefore a proper investigation is necessary for each specific treatment and patient. There are several motion mitigation techniques available ranging from beam delivery, patient immobilization to treatment planning \textbf{Ref!}.
+Effects of motion can have a significant impact on a radiation treatment (see Section \textbf{ref!}). Therefore a proper investigation is necessary for each specific treatment and patient. There are several motion mitigation techniques available ranging from beam delivery, patient immobilization to treatment planning.
 
-One of the steps for motion mitigation is proper and frequent imaging. While most commercial treatment planning software provide rigid registration between different images, deformable image registration (DIR) is currently rarely used. Even though it better quantifies anatomical and biological variations \textbf{Cite 1 varadhan). DIR is essential as well in photon as in ion radiotherapy, with usage in adaptive radiotherapy (2,3 vradhan), 4D optimization and dose calculation, contour propagation (1-11 wu) and in other categories besides radiotherapy as well (4-10 vardhan). Several different DIR algorithms are avaliable, such as B-spline, Deamons, linear elastic finite element, optical flow, viscous fluid (11-15 vardhan), etc.
+One of the steps for motion mitigation is proper and frequent imaging. While most commercial treatment planning software provide rigid registration between different images, deformable image registration (DIR) is currently rarely used. Even though it better quantifies anatomical and biological variations \cite{Sarrut2006}. DIR is essential as well in photon as in ion radiotherapy, with usage in adaptive radiotherapy \cite{Yan1997,Yan2010}, 4D optimization \cite{Trofimov2005}, 4D dose calculation \cite{Flampouri2006}, contour propagation \cite{Lu2006b} and in other categories besides radiotherapy as well \cite{Cleary2010} (4-10 vardhan). Several different DIR algorithms are avaliable, such as B-spline, Deamons, linear elastic finite element, optical flow, viscous fluid (11-15 vardhan), etc.
 	
 One of the reasons for the lack of DIR in commercial software is due to unavailable validation methods. While several exist, none of them are definitive and most of them are time consuming. It is possible to evaluate DIR with deformable phantoms, where the type and size of deformation is known \textbf{25-27 varadhan}. However such quality assurance is time consuming and cannot be used in everyday clinical workflow. 
 
@@ -161,6 +161,14 @@ Landmark positions are often used to determine registration spatial accuracy \ci
 
 User has to manually select landmarks in reference and moving image. For landmarks based on patient anatomy a physician is required. Landmark from moving image can then be automatically transformed with transformation vector field to obtain position in warped image or it can be manually selected in warped image.
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{./Images/landmark.png}
+\caption{3D display of landmarks in three phases - T00 and T50 (end-inhale and end-exhale, respectively) and T50 warped to T00 (T50-warped). Average distance of corresponding landmarks between T00 and T50 is 0.1 and between T00 and T50-warped is 0.1.}
+\label{inv}
+\end{center}
+\end{figure}
+
 
 \subsubsection{Jacobian}
 
@@ -194,12 +202,11 @@ Points $x'$ and $x''$ can have an arbitrary position in space, while vector fiel
 As in Jacobian, ICE image is calculated and displayed, along with values for average, standard deviation, minimum and maximum values. ROI feature is also implemented. An example is shown in Fig.~\ref{inv}
 
 \begin{figure}[H]
-	\begin{center}
-		% \includegraphics[scale=1]{depthdose.eps}
-		\includegraphics[width=0.9\textwidth]{./Images/inv.png}
-		\caption{Image of inverse consistency error (ICE) overlayed on CT scan. The average value of displayed ICE is 1.0 with 0.7 STD. \textbf{CHECK!}}
-		\label{inv}
-	\end{center}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{./Images/inv.png}
+\caption{Image of inverse consistency error (ICE) overlayed on CT scan. The average value of displayed ICE is 1.0 with 0.7 STD. \textbf{CHECK!}}
+\label{inv}
+\end{center}
 \end{figure}
 
 
@@ -226,28 +233,19 @@ Beside motion estimation, module can also propagate selected contour (usually CT
 
 Most commercial software calculates treatment plan on a single 3D CT scan, using 4DCT only for motion estimation. To incorporate patient-specific motion information, a 3D CT scan was created from 4DCT in the time averaged position, also known as mid-position scan (midP scan) \cite{Wolthaus2008}. With midP scan commercial software can still be used. Additionally, it also enabled smaller error margins for PTV generation and midP scan has less noise as individual 4DCT scans, because it uses more data. 
 
-Construction of a midP begins with registration of whole 4DCT. The resulting vector fields from reference position to 4DCT phases are then averaged to obtain mean vector field, see Fig. Afterwards, for each vector field the mean vector field was subtracted, yielding a set of mean-corrected vector fields pointing from mean position to corresponding 4DCT phase. The mean-corrected vector fields were finally inverted and applied to each 4DCT phase, resulting in each phase being in the same, time-averaged position. In the end the set of transformed 4DCT phase was averaged to obtain midP scan.
+Construction of a midP begins with registration of whole 4DCT. The resulting vector fields from reference position to 4DCT phases are then averaged to obtain mean vector field, see Fig.~\ref{midPgeneration}. Afterwards, for each vector field the mean vector field was subtracted, yielding a set of mean-corrected vector fields pointing from mean position to corresponding 4DCT phase. The mean-corrected vector fields were finally inverted and applied to each 4DCT phase, resulting in each phase being in the same, time-averaged position. In the end the set of transformed 4DCT phase was averaged to obtain midP scan.
 
 \begin{figure}[H]
-	\begin{center}
-		% \includegraphics[scale=1]{depthdose.eps}
-		\includegraphics[width=0.9\textwidth]{./Images/midPgeneration.png}
-		\caption{Image of inverse consistency error (ICE) overlayed on CT scan. The average value of displayed ICE is 1.0 with 0.7 STD. \textbf{CHECK!}}
-		\label{midPgeneration}
-	\end{center}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{./Images/midPgeneration.png}
+\caption{Computation of the midP scan. All vectors have the same starting point (reference phase, maximume exhale in the this example), therefore they can be averaged, resulting in the mean vector.
+	Next vectors from mean position to 4DCT phases have to be computed, which is achieved by substracting original vectors and mean vector. Figure taken from \cite{Wolthaus2008}}
+\label{midPgeneration}
+\end{center}
 \end{figure}
 
 
 
-Figure 5‑2. Explanation of the computation of the mean motion vector. Since all vectors have the same
-starting point, vectors can be averaged resulting in the mean vector. To compute the vectors to the frames
-with respect to the mean position, the mean vector needs to be subtracted (using a numerical inversion
-step since the vector space is not a continuum) from the original vector to the frame with respect to the
-reference (exhale) frame.
-Image quality optimization | 85
-to obtain the MidP CT scan, where all the internal structures, including the tumor,
-were in their exact time-weighted mean position of the respiratory motion. Arithmetic
-averaging (MidPmean) as well as median averaging (MidPmedian) were investigated.
 
 
 \section{Verification}
