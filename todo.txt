@@ -1,23 +1,65 @@
 TODO:
 
-Patient Study:
+1. PrufungsKomitee:
+ 1a Vprasat Marcota
+ 1b Najdt co-referenta
+ 1c Vprasat ostale dva
+ 
+2. Izpolnit: http://www.physik.tu-darmstadt.de/media/fachbereich_physik/formulare_3/promotionen/Antrag_auf_Eroeffnung_Formular.pdf
 
-Patient 11 CTV2 missing from table characteristic
+3. Vse okrog - motivation, abstract, summary, acknowledment
 
-Image of alpha beta ratio distribution in patient.
-Perhaps comparison between alpha beta 10 and 6?
+4. Fundametals:
+ 4a Poslat Christianu
+ 4b Poslat se komu
+ 
+5. VMM:
+ 5a Pogledat, kaj naredit Metric v Slicerju
+ 5b Zracunat:
+   - Vseh 23 (19?) pacientov vector, image checks. Pol pa naredit statistiko skoz 4DCT faze: AbsDiff, Jacobian, Inverse Consistency
+   - En worst case demonstrirat - Oscar je ze registriran, zj pa pokazat, kako bi ga ujel. Torej zracunat cel DIRQA.
+   - Pokazat midP kaj lahko z njim dosezes. Zment se s Joepom za ccc13670.
+   - Tut pig data vkljucit? Vprasat Christiana
+ 5c Napisat pol vse v Results
+ 5d Napisat zakljucek
+ 5e Reference v uvodu?
+ 5f Par izrazov je treba razlozit: warped, moving image, inverse registration
+ 5g Output file. Ustvar enga pa nared example.
+ 
+ Poslat Christianu
 
-grade 3 was observed 
-in up to 28\% of patients check if it's the same for this reference
+ 
+6. Patient Study:
 
-VMM:
+ 6a Patient 11 CTV2 missing from table characteristic
+ 6b Image of alpha beta ratio distribution in patient.
+ 6c Perhaps comparison between alpha beta 10 and 6?
+ 6d Zdruzt s paper
+ 
+ Poslat Christianu
+ 
+7. Patient with complex geometry
+ 7a Napisat uvodu
+ 7b Materials and methods
+  - Multiple targets
+  - 4D optimize
+  - OAR removal
+  
+ 7c Zracunat:
+  - Vse paciente najprej obicno z ab = 6
+   -- manjka se 3, 17, 21, 22, 23
+  - Vse paciente z 4D opt
+   -- Christiana vprasat, kako zracunat 4Ddose in zakaj 1 ma tko zanic dozo
+   
+ 7d Primerjat pol te dva med sabo in z SBRT
+ 
+ 7e Zapisat vse v results in se pokomentirat v discusion
+ 
+ Poslat Christianu
+ 
+ 
+8. Poslat se ostalim
+9. Poslat Marcotu
 
-Par izrazov je treba razlozit: warped, moving image, inverse registration
+10. Oddat (konec maja) - 40 dni.
 
-Output file
-
-V discusion omenit, da ni za clinical use
-
-Fundamentals:
-
-Citati na uvodu
