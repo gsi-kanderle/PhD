@@ -28,36 +28,36 @@
 
 \section{Introduction}
 
-Effects of motion can have a significant impact on a radiation treatment (see Section \textbf{ref!}). Therefore a proper investigation is necessary for each specific treatment and patient. There are several motion mitigation techniques available ranging from beam delivery, patient immobilization to treatment planning.
+Effects of motion can have a significant impact on a radiation treatment (see Section \textbf{ref!}). Therefore a proper investigation is necessary for each specific treatment and patient. There are several motion mitigation techniques available that can operate on beam delivery, patient immobilization or treatment planning level.
 
-One of the steps for motion mitigation is proper and frequent imaging. While most commercial treatment planning software provide rigid registration between different images, deformable image registration (DIR) is currently rarely used. Even though it better quantifies anatomical and biological variations \cite{Sarrut2006}. DIR is essential as well in photon as in ion radiotherapy, with usage in adaptive radiotherapy \cite{Yan1997,Yan2010}, 4D optimization \cite{Trofimov2005}, 4D dose calculation \cite{Flampouri2006}, contour propagation \cite{Lu2006b} and in other categories besides radiotherapy as well \cite{Cleary2010, Herrell2012, Nithiananthan2011, Naini2010}. Several different DIR algorithms are avaliable, such as B-spline, Deamons, linear elastic finite element, optical flow, viscous fluid (11-15 vardhan), etc.
+One of the steps for motion mitigation is proper and frequent imaging. While most commercial treatment planning software provide rigid registration between different images, deformable image registration (DIR) is currently rarely used. Even though DIR better quantifies anatomical and biological variations \cite{Sarrut2006} compared to rigid registration. DIR is essential as well in photon as in ion radiotherapy, with usage in adaptive radiotherapy \cite{Yan1997,Yan2010}, 4D optimization \cite{Trofimov2005}, 4D dose calculation \cite{Flampouri2006}, contour propagation \cite{Lu2006b} and in even in other categories besides radiotherapy as well \cite{Cleary2010, Herrell2012, Nithiananthan2011, Naini2010}. Several different DIR algorithms are avaliable, such as B-spline, Deamons, linear elastic finite element, optical flow, viscous fluid (11-15 vardhan), etc.
 	
-One of the reasons for the lack of DIR in commercial software is due to unavailable validation methods. While several exist, none of them are definitive and most of them are time consuming. It is possible to evaluate DIR with deformable phantoms, where the type and size of deformation is known \textbf{25-27 varadhan}. However such quality assurance is time consuming and cannot be used in everyday clinical workflow. 
+One of the reasons for the DIR is not used in commercial software is lack of proper validation methods. While several different DIR validation methods exist, none of them are definitive and most of them are time consuming. It is possible to evaluate DIR with deformable phantoms, where the type and size of deformation is known \textbf{25-27 varadhan}. However such quality assurance is time consuming and cannot be used in everyday clinical workflow. 
 
-DIR validation can also be based on landmark positions, specifically their location before and after registration. In absence of externally planted markers, locating landmarks in patient anatomy can be time consuming and difficult to identify in low-contrast regions \textbf{cite varadhan}. Another option is to compare delineated contours with propagated ones. It is more efficient technique than landmark checks, however it is also time consuming and it also does not address region within the contour.
+DIR validation can also be based on landmark positions, specifically their location before and after registration. In absence of externally planted markers, locating landmarks in patient anatomy can be time consuming and difficult to identify in low-contrast regions \textbf{cite varadhan}. Another option is to compare delineated contours with the propagated ones. It is more efficient technique than landmark checks, however it is also time consuming and it does not address the region within the contour.
 
-In this chapter tools to handle motion management, DIR and DIR validation will be presented. Tools were constructed for open-source software 3D Slicer, described in Section~\ref{Slicer}. In Section~\ref{Registration} details on DIR procedures will be explained. Next, Section~\ref{DIRQA} will address the issue of DIR validation - an extensive tool with various feature to tackle DIR validation will be presented. Section~\ref{Contour} will be about contour visualization. Last two sections in implementation part will be about a tool to display organ motion amplitude and generation of a mid-ventilation CT. Validation of DIR and DIR quality assurance will be presented in the Section~\ref{Verification}. Summary and discussion will be given last to sum up.
+In this chapter tools to handle motion management, DIR and DIR validation will be presented. Tools were constructed for open-source software 3D Slicer, described in Section~\ref{Slicer}. In Section~\ref{Registration} details on how DIR was performed will be explained. Next, Section~\ref{DIRQA} will address the DIR validation - an extensive tool was created with various features to tackle DIR validation. Section~\ref{Contour} will be about contour visualization. Last two sections in implementation part will be about a tool to display organ motion amplitude and generation of a mid-ventilation CT. Tools were tested on real patient data and results will be presented in the Section~\ref{Verification}. Summary and discussion will be given last to sum up.
 
 \section{Implementation}
 
 \subsection{3D Slicer}
 \label{Slicer}
 
-3D Slicer (Slicer) is a software platform for analysis and visualization of medical images \cite{Slicer, Fedorov2012}. Slicer is a free, open-source software (BSD-style license) available on Windows, MacOSX and Linux operating systems. Among other, Slicer can:
+3D Slicer (Slicer) is a software platform for analysis and visualization of medical images \cite{Slicer, Fedorov2012}. Slicer is a free, open-source software (BSD-style license) available on Windows, MacOSX and Linux operating systems. Slicer provides a vast variety of tools, such as:
 
 \begin{itemize}
-	\item Handle a vriety of image formats, including DICOM, NRRD and MHA
-	\item Visualize voxel images, polygonal meshes and volume renderings
-	\item Perform registration (rigid and non-rigid) and display results
+	\item Handling a variety of image formats, including DICOM, NRRD and MHA
+	\item Visualization of voxel images, polygonal meshes and volume renderings
+	\item Registration tool (rigid and non-rigid) and display of vector fields
 	\item Automatic image segmentation
-	\item Analyse and visualize diffusion tensor image data
-	\item Track devices for image-guided procedures
+	\item Analysis and visualization of diffusion tensor image data
+	\item Device tracking for image-guided procedures
 \end{itemize}
 
-The fundation of Slicer is written in C++ and it's functions can be accessed also with Python to provide rapid, iterative development. Graphical user interface is built in Qt. Visualization is based on VTK, a graphical library commonly used in scientific research.
+The foundation of Slicer is written in C++ and it's functions can be accessed also with Python to provide rapid, iterative development. Graphical user interface is built in Qt. Visualization is based on VTK, a graphical library commonly used in scientific research.
 
-Slicer is a research tool and as such offers tools to implement new functionalities in the form of 3D Slicer extensions. That can either be execution of external command-line programs, writing modules with new features or automate Slicer processes in form of scripted modules. 
-In the Sections \textbf{Ref} different Slicer modules will be presented, which were all developed in the scope of this thesis. The purpose of the module is to quantify and visualize patient motion as well as provide quality assurance of the the obtained results.
+Slicer is a research tool and as such offers tools to implement new functionalities in the form of 3D Slicer extensions. They can either be as execution of external command-line programs or writing modules with new features or automate Slicer processes in form of scripted modules. 
+In the next sections different Slicer modules will be presented, which were all developed in the scope of this thesis. The purpose of modules is to quantify and visualize patient motion as well as to provide quality assurance of the the obtained results.
 
 \subsection{Registration}
 \label{Registration}
