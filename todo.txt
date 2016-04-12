@@ -24,7 +24,7 @@ TODO:
  5d Napisat zakljucek
  5e Reference v uvodu?
  5f Par izrazov je treba razlozit: warped, moving image, inverse registration
- 5g Output file. Ustvar enga pa nared example.
+ 5g Output file. Ustvar enga pa nared example. (optional=
  
  Poslat Christianu
 
