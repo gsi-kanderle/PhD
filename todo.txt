@@ -14,6 +14,7 @@ TODO:
  4b Poslat se komu
  
 5. VMM:
+ hed2nrrd?
  5a Pogledat, kaj naredit Metric v Slicerju
  5b Zracunat:
    - Vseh 23 (19?) pacientov vector, image checks. Pol pa naredit statistiko skoz 4DCT faze: AbsDiff, Jacobian, Inverse Consistency
