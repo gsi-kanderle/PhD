@@ -39,6 +39,7 @@ DIR validation can also be based on landmark positions, specifically their locat
 In this chapter tools to handle motion management, DIR and DIR validation will be presented. Tools were constructed for open-source software 3D Slicer, described in Section~\ref{Slicer}. In Section~\ref{Registration} details on how DIR was performed will be explained. Next, Section~\ref{DIRQA} will address the DIR validation - an extensive tool was created with various features to tackle DIR validation. Section~\ref{Contour} will be about contour visualization. Last two sections in implementation part will be about a tool to display organ motion amplitude and generation of a mid-ventilation CT. Tools were tested on real patient data and results will be presented in the Section~\ref{Verification}. Summary and discussion will be given last to sum up.
 
 \section{Implementation}
+\label{Implementation}
 
 \subsection{3D Slicer}
 \label{Slicer}
@@ -171,6 +172,7 @@ User has to manually select landmarks in reference and moving image. For landmar
 
 
 \subsubsection{Jacobian}
+\label{Jacobian}
 
 Jacobian determinant (Jacobian) of the vector field is used to validate physical behavior of registration \cite{Leow2007}. Jacobian of vector field should be positive, since negative Jacobian values correspond to folding, which is physically unrealistic for patient anatomy (organs can not be folded) \cite{Chen2008, Rey2002}. Expansions and contractions around a point are indicated by Jacobian values of greater and less than 1, respectively. 
 
@@ -186,6 +188,7 @@ DIRQA module calculates and displays the Jacobian of the vector field. Average, 
 \end{figure}
 
 \subsubsection{Inverse Consistency Error}
+\label{ICE}
 
 Inverse consistency error (ICE) is consistently used in literature as one of the main vector field checks \textbf{citati}. The principle is as followed. Suppose we have two vector fields - $u_{AB}$ obtained from registration of image A to B and $u_{BA}$ from registration of image B to A. The two registrations
 should be preformed seperately. In ideal scenario, $u_{AB}$ would be a direct inverse of $u_{BA}$. However, deformable image registration algorithems do not yield perfectly inverse consistent vector field.
@@ -246,8 +249,6 @@ Construction of a midP begins with registration of whole 4DCT. The resulting vec
 
 
 
-
-
 \section{Verification}
 \label{Verification}
 
@@ -257,12 +258,81 @@ DIR and DIR validation was done on lung 4DCT patient data. As part of a GSI pig-
 
 \subsection{Registration of lung 4DCT patient data}
 
+Chapter \textbf{REF} and \textbf{REF} present studies on simulating active scanning carbon ion treatment (CiT) for lung cancer patient. The effects of interplay can drastically chage the dose distribution for CiT and it is necessary to quantify effects of motion with DIR and transfer results into
+treatment planning software (TRiP4D in this case). An automatic procedure is required to preform DIR and DIR validation on a large number of patients. This was achieved with Slicer modules described in Section~\ref{Implementation}.
+
+\subsubsection{Materials and Methods}
+
+Two computed tomographies (CT) were made for 23 patients. First was a planning CT with resolution (AVERAGE), that was used for contour delineation. Second CT was a time-resolved CT (4DCT), consisting of 10 motion phases (0\% - 90\%) with resolution.
+Phase 0\% corresponds to an end-exhale phase. Phase 0\% was chosen as a reference phase in 4DCT due to being the closest to lung position in planning CT. (CHECK)
+
+Two sets of DIR were preformed for each patient. Firstly, planning CT and 4DCT reference phase were registered upon one another (planning DIR and inverse DIR) \textbf{EXPLAIN}. Secondly, registration was preformed between each phase in 4DCT
+(except reference phase) and 4DCT reference phase. For each patient 20 registrations were made, leading to 460 registrations in total.
+
+DIRs were done with B-Spline Plastimatch module in Slicer (see Section~\ref{Registration}). Two stages were used with details given in Table~\ref{tab:stages}. For each patient it took around 1 h for all 20 DIR on Linux computer with 8 clusters and 16 GB RAM.
+
+\begin{table}[H]
+  \centering
+%   \footnotesize
+  \caption{Parameters used for Plastimatch registration. Details for each parameter can be found here \cite{Plastimatch}.}
+  \begin{tabular}{c|c|c}
+      Parameter & Stage 1 & Stage 2 \\
+      \hline
+      Resolution & 4,4,2 & 1,1,1 \\
+      Grid size & 50 & 15 \\
+      Regularization lamda & 0.005 & 0.005 \\
+      Iterations & 200 & 100 \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:stages}
+\end{table}
+
+Jacobian and inverse consistency error checks (see Section~\ref{Jacobian} and \ref{ICE}) were done on all 460 vector fields. To save memory usage all vector fields were rescaled by a factor of 2. ROI around patient body was manually created to
+get better results - area outside of patient is the same in all states and does not contribute to DIR.
+
+\subsubsection{Results}
+
+
+
+
+
 \subsection{Registration of pig heart 4DCT data}
+
+\subsubsection{Materials and Methods}
+
+A 4DCT, consisting of 10 motion phases (0\% - 90\%) with resolution was made on ??? Pigs. .
+Phase 0\% corresponds to an end-exhale phase. Phase 0\% was chosen as a reference phase in 4DCT due to being the closest to lung position in planning CT. (CHECK)
+
+Two sets of DIR were preformed for each patient. Firstly, planning CT and 4DCT reference phase were registered upon one another (planning DIR and inverse DIR) \textbf{EXPLAIN}. Secondly, registration was preformed between each phase in 4DCT
+(except reference phase) and 4DCT reference phase. For each patient 20 registrations were made, leading to 460 registrations in total.
+
+DIRs were done with Plastimatch module in Slicer (see Section~\ref{Registration}). Two stages were used with details given in Table~\ref{tab:stages2}. For each patient it took around 1 h for all 20 DIR on Linux computer with 8 clusters and 16 GB RAM.
+
+\begin{table}[H]
+  \centering
+%   \footnotesize
+  \caption{Parameters used for Plastimatch registration. Details for each parameter can be found here \cite{Plastimatch}.}
+  \begin{tabular}{c|c|c}
+      Parameter & Stage 1 & Stage 2 \\
+      \hline
+      Resolution & 4,4,2 & 2,2,1 \\
+      Grid size & 50 & 15 \\
+      Regularization lamda & 0.005 & 0.005 \\
+      Iterations & 200 & 100 \\
+    \hline\hline
+  \end{tabular}
+  \label{tab:stages2}
+\end{table}
+
+Jacobian and inverse consistency error checks (see Section~\ref{Jacobian} and \ref{ICE}) were done on all 460 vector fields. To save memory usage all vector fields were rescaled by a factor of 2. ROI around patient body was manually created to
+get better results - area outside of patient is the same in all states and does not contribute to DIR.
 
 \subsection{Mid-Position patient example}
 
 
 \section{Summary and Discussion}
+
+
 
 
 \bibliographystyle{apalike}
