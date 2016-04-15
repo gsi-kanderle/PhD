@@ -30,6 +30,7 @@ TODO:
  ICE narisat z vektorji
  ROI example figure
  Vectorje mors absolutne vrednosti zracunat s Slicerjem. Tm pol sprintej tut prispevke.
+ Se planning vectorje dirqa.
  
  Poslat Christianu
 

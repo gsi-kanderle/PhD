@@ -108,8 +108,7 @@ In order to provide visual and quantitative assessment of the registration quali
 A good way to see difference between two images is to overlay them. However, since CT scans are usually displayed in grayscale color code, the differences can become indistinguishable. Especially if the images are quite similar, as reference and warped image usually are. With applying opposite color code to overlaying images two things are achieved. Firstly, regions were the registration was successful will be in grayscale. Furthermore the differences will be in color of image they belong to. In the module we used red and cyan color code for reference and warped image respectively. See Fig.~\ref{falseColor} for details.
 
 \begin{figure}[H]
-	\begin{center}
-		% \includegraphics[scale=1]{depthdose.eps}
+	\begin{center}		
 		\includegraphics[width=0.9\textwidth]{./Images/falseColor.png}
 		\caption{Example of false color overlay. Images (a) and (b) show red and cyan color code, respectively, for CT scan. (c) displays overlayed false colored images before and (d) after registration.}
 		\label{falseColor}
@@ -121,8 +120,7 @@ A good way to see difference between two images is to overlay them. However, sin
 As the name suggests, checkerboard creates an image of tiles. Each tile alternates between reference and warped image, as shown in Fig.~\ref{checkerboard}. The differences between two images become apparent if there is no smooth transition from one tile to the next. The number of tiles can be manually selected. While the checkerboard offers clear indication of differences, it requires user to spot them - similar to false color.
 
 \begin{figure}[H]
-	\begin{center}
-		% \includegraphics[scale=1]{depthdose.eps}
+	\begin{center}		
 		\includegraphics[width=0.9\textwidth]{./Images/checkerboard.png}
 		\caption{Example of checkerboard image. Image consist of tiles alternating between two images. Tiles in image (a) alternate between scans before registration and in image (b) after registration.}
 		\label{checkerboard}
@@ -138,8 +136,7 @@ The absolute difference feature is similar to false color, but it displays diffe
 To spare computational time or to focus on a specific region, absolute difference can also be calculated just on a specific ROI (if used as an input). Usually ROI around patient body is selected, rather than calculating on a whole patient CT.
 
 \begin{figure}[H]
-	\begin{center}
-		% \includegraphics[scale=1]{depthdose.eps}
+	\begin{center}		
 		\includegraphics[width=0.9\textwidth]{./Images/abs.png}
 		\caption{Absolute difference image before (a) and after registration (b).  Image consist of tiles alternating between two images. Tiles in image (a) alternate between scans before registration and in image (b) after registration. The difference before registration is 350 HU and 100 HU after registration \textbf{CHECK!}}
 		\label{absDiff}
@@ -180,7 +177,7 @@ DIRQA module calculates and displays the Jacobian of the vector field. Average, 
 
 \begin{figure}[H]
 	\begin{center}
-		% \includegraphics[scale=1]{depthdose.eps}
+		
 		\includegraphics[width=0.9\textwidth]{./Images/Jacobian.png}
 		\caption{Image of Jacobian overlayed on CT scan. The average value of displayed Jacobian is 1.0 with 0.7 STD. \textbf{CHECK!}}
 		\label{Jacobian}
@@ -292,8 +289,8 @@ get better results - area outside of patient is the same in all states and does 
 
 \subsubsection{Results}
 
-For each DIR mean, standard deviation (STD), maximum and minimum were collected for vector field, Jacobian and ICE. Data is presented on Figures \textbf{REF} for vector and inverse vector field, Jacobian of vector and inverse vector field and ICE, respectively.
-For 4DCT mean value of Jacobian was 1.0 (mean, range 0.96 - 1.03), 
+For each DIR mean, standard deviation (STD), maximum and minimum were collected for vector field, Jacobian and ICE. Data is presented on Figures \ref{jacobian_data, ice} for vector and inverse vector field, Jacobian of vector and inverse vector field and ICE, respectively.
+Actual numbers are summarized in Table~\ref{tab:dirdata_lung}.
 
 \begin{table}[H]
   \centering
@@ -308,13 +305,26 @@ For 4DCT mean value of Jacobian was 1.0 (mean, range 0.96 - 1.03),
       Min & 200 & 100 & 0.63 (0.02 - 0.97) & 0.68 (0.05 - 0.98) & 0.0 (0.0 - 0.0) \\
     \hline\hline
   \end{tabular}
-  \label{tab:stages}
+  \label{tab:dirdata_lung}
 \end{table}
 
-Mean: 0.43 (0.01 - 1.16)
-STD: 0.47 (0.01 - 1.47)
-Max: 4.31 (0.07 - 23.07)
-Min: 0.0 (0.0 - 0.0)
+\newpage
+
+\begin{figure}[H]
+	\begin{center}		
+		\includegraphics[width=0.9\textwidth]{./Images/Jacobian_data.png}
+		\caption{Data for Jacobian of vector fields (top) and inverse vector fields (bottom) for 9 4DCT phases (reference phase 0 is excluded) for 23 lung cancer patients. Mean, STD, maximum and minimum are represented as (a), (b), (c) and (d), respectively.}
+		\label{jacobian_data}
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}		
+		\includegraphics[width=0.9\textwidth]{./Images/ICE.png}
+		\caption{Data for ICE for 9 4DCT phases (reference phase 0 is excluded) for 23 lung cancer patients. Mean, STD, maximum are represented as (a), (b) and (c), respectively. ICE Minimum is 0 throughout all phases and patients.}
+		\label{ice}
+	\end{center}
+\end{figure}
 
 \subsection{Registration of pig heart 4DCT data}
 
