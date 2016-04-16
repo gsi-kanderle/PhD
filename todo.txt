@@ -31,6 +31,8 @@ TODO:
  ROI example figure
  Vectorje mors absolutne vrednosti zracunat s Slicerjem. Tm pol sprintej tut prispevke.
  
+ Vectorji so verjetno odvisni od spacing (image resolution). Zaenkrat to spustimo?
+ 
  Poslat Christianu
 
  
