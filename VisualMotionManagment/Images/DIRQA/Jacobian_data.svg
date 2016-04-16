@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="Jacobian_data.svg"
+   inkscape:export-filename="C:\Users\Kristjan\Documents\GitHub\PhD\VisualMotionManagment\Images\Jacobian_data.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="268.0202"
+     inkscape:cy="651.13595"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <image
+       sodipodi:absref="C:\Users\Kristjan\Documents\GitHub\PhD\VisualMotionManagment\Images\Jac.png"
+       y="51.776482"
+       x="55.078579"
+       id="image4144"
+       xlink:href="file:///C:/Users/Kristjan/Documents/GitHub/PhD/VisualMotionManagment/Images/Jac.png"
+       preserveAspectRatio="none"
+       height="437.77679"
+       width="619.8429" />
+    <image
+       sodipodi:absref="C:\Users\Kristjan\Documents\GitHub\PhD\VisualMotionManagment\Images\InvJac.png"
+       y="505.55328"
+       x="55.921474"
+       id="image4155"
+       xlink:href="file:///C:/Users/Kristjan/Documents/GitHub/PhD/VisualMotionManagment/Images/InvJac.png"
+       preserveAspectRatio="none"
+       height="437.18152"
+       width="619" />
+    <rect
+       style="fill:none;fill-opacity:0.11764706;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4158"
+       width="619.8429"
+       height="437.77679"
+       x="60.078552"
+       y="55.776482" />
+    <rect
+       style="fill:none;fill-opacity:0.11764706;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4158-3"
+       width="619.8429"
+       height="437.77679"
+       x="60.078552"
+       y="510.61667" />
+  </g>
+</svg>

@@ -12,6 +12,7 @@
 \usepackage{subfigure}
 \usepackage{rotating}
 \usepackage{minitoc}
+\usepackage{multirow}
 %\usepackage{appendix}
 
 %%%% 1 1/2 facher Zeilenabstand:	
@@ -32,9 +33,9 @@ Effects of motion can have a significant impact on a radiation treatment (see Se
 
 One of the steps for motion mitigation is proper and frequent imaging. While most commercial treatment planning software provide rigid registration between different images, deformable image registration (DIR) is currently rarely used. Even though DIR better quantifies anatomical and biological variations \cite{Sarrut2006} compared to rigid registration. DIR is essential as well in photon as in ion radiotherapy, with usage in adaptive radiotherapy \cite{Yan1997,Yan2010}, 4D optimization \cite{Trofimov2005}, 4D dose calculation \cite{Flampouri2006}, contour propagation \cite{Lu2006b} and in even in other categories besides radiotherapy as well \cite{Cleary2010, Herrell2012, Nithiananthan2011, Naini2010}. Several different DIR algorithms are avaliable, such as B-spline, Deamons, linear elastic finite element, optical flow, viscous fluid \cite{Rueckert1999,Venugopal2005,Zhong2007,Thirion1998,Christensen1996}, etc.
 	
-One of the reasons for the DIR is not used in commercial software is lack of proper validation methods. While several different DIR validation methods exist, none of them are definitive and most of them are time consuming. It is possible to evaluate DIR with deformable phantoms, where the type and size of deformation is known \textbf{25-27 varadhan}. However such quality assurance is time consuming and cannot be used in everyday clinical workflow. 
+One of the reasons for the DIR is not used in commercial software is lack of proper validation methods. While several different DIR validation methods exist, none of them are definitive and most of them are time consuming. It is possible to evaluate DIR with deformable phantoms, where the type and size of deformation is known \cite{Kashani2007, Kirby2011}. However such quality assurance is time consuming and cannot be used in everyday clinical workflow. 
 
-DIR validation can also be based on landmark positions, specifically their location before and after registration. In absence of externally planted markers, locating landmarks in patient anatomy can be time consuming and difficult to identify in low-contrast regions \textbf{cite varadhan}. Another option is to compare delineated contours with the propagated ones. It is more efficient technique than landmark checks, however it is also time consuming and it does not address the region within the contour.
+DIR validation can also be based on landmark positions, specifically their location before and after registration. In absence of externally planted markers, locating landmarks in patient anatomy can be time consuming and difficult to identify in low-contrast regions \cite{Varadhan2013}. Another option is to compare delineated contours with the propagated ones. It is more efficient technique than landmark checks, however it is also time consuming and it does not address the region within the contour.
 
 In this chapter tools to handle motion management, DIR and DIR validation will be presented. Tools were constructed for open-source software 3D Slicer, described in Section~\ref{Slicer}. In Section~\ref{Registration} details on how DIR was performed will be explained. Next, Section~\ref{DIRQA} will address the DIR validation - an extensive tool was created with various features to tackle DIR validation. Section~\ref{Contour} will be about contour visualization. Last two sections in implementation part will be about a tool to display organ motion amplitude and generation of a mid-ventilation CT. Tools were tested on real patient data and results will be presented in the Section~\ref{Verification}. Summary and discussion will be given last to sum up.
 
@@ -108,8 +109,7 @@ In order to provide visual and quantitative assessment of the registration quali
 A good way to see difference between two images is to overlay them. However, since CT scans are usually displayed in grayscale color code, the differences can become indistinguishable. Especially if the images are quite similar, as reference and warped image usually are. With applying opposite color code to overlaying images two things are achieved. Firstly, regions were the registration was successful will be in grayscale. Furthermore the differences will be in color of image they belong to. In the module we used red and cyan color code for reference and warped image respectively. See Fig.~\ref{falseColor} for details.
 
 \begin{figure}[H]
-	\begin{center}
-		% \includegraphics[scale=1]{depthdose.eps}
+	\begin{center}		
 		\includegraphics[width=0.9\textwidth]{./Images/falseColor.png}
 		\caption{Example of false color overlay. Images (a) and (b) show red and cyan color code, respectively, for CT scan. (c) displays overlayed false colored images before and (d) after registration.}
 		\label{falseColor}
@@ -121,8 +121,7 @@ A good way to see difference between two images is to overlay them. However, sin
 As the name suggests, checkerboard creates an image of tiles. Each tile alternates between reference and warped image, as shown in Fig.~\ref{checkerboard}. The differences between two images become apparent if there is no smooth transition from one tile to the next. The number of tiles can be manually selected. While the checkerboard offers clear indication of differences, it requires user to spot them - similar to false color.
 
 \begin{figure}[H]
-	\begin{center}
-		% \includegraphics[scale=1]{depthdose.eps}
+	\begin{center}		
 		\includegraphics[width=0.9\textwidth]{./Images/checkerboard.png}
 		\caption{Example of checkerboard image. Image consist of tiles alternating between two images. Tiles in image (a) alternate between scans before registration and in image (b) after registration.}
 		\label{checkerboard}
@@ -138,8 +137,7 @@ The absolute difference feature is similar to false color, but it displays diffe
 To spare computational time or to focus on a specific region, absolute difference can also be calculated just on a specific ROI (if used as an input). Usually ROI around patient body is selected, rather than calculating on a whole patient CT.
 
 \begin{figure}[H]
-	\begin{center}
-		% \includegraphics[scale=1]{depthdose.eps}
+	\begin{center}		
 		\includegraphics[width=0.9\textwidth]{./Images/abs.png}
 		\caption{Absolute difference image before (a) and after registration (b).  Image consist of tiles alternating between two images. Tiles in image (a) alternate between scans before registration and in image (b) after registration. The difference before registration is 350 HU and 100 HU after registration \textbf{CHECK!}}
 		\label{absDiff}
@@ -180,7 +178,7 @@ DIRQA module calculates and displays the Jacobian of the vector field. Average, 
 
 \begin{figure}[H]
 	\begin{center}
-		% \includegraphics[scale=1]{depthdose.eps}
+		
 		\includegraphics[width=0.9\textwidth]{./Images/Jacobian.png}
 		\caption{Image of Jacobian overlayed on CT scan. The average value of displayed Jacobian is 1.0 with 0.7 STD. \textbf{CHECK!}}
 		\label{Jacobian}
@@ -292,29 +290,44 @@ get better results - area outside of patient is the same in all states and does 
 
 \subsubsection{Results}
 
-For each DIR mean, standard deviation (STD), maximum and minimum were collected for vector field, Jacobian and ICE. Data is presented on Figures \textbf{REF} for vector and inverse vector field, Jacobian of vector and inverse vector field and ICE, respectively.
-For 4DCT mean value of Jacobian was 1.0 (mean, range 0.96 - 1.03), 
+For each DIR mean, standard deviation (STD), maximum and minimum were collected for vector field, Jacobian and ICE. Data is presented on Figures \ref{jacobian_data, ice} for vector and inverse vector field, Jacobian of vector and inverse vector field and ICE, respectively.
+Actual numbers are summarized in Table~\ref{tab:dirdata_lung}.
 
 \begin{table}[H]
   \centering
 %   \footnotesize
   \caption{Parameters used for Plastimatch registration. Details for each parameter can be found here \cite{Plastimatch}.}
-  \begin{tabular}{c|c|c|c|c|c}
-       & VF & IVF & Jacobian & Inverse VF Jacobian & ICE \\
+  \begin{tabular}{c|c|c|c|c|c|c|c|c|c}
+       & \multicolumn{3}{|c|}{VF} & \multicolumn{3}{|c|}{IVF} & Jacobian & Inverse VF Jacobian & ICE \\
+       & x & y & z & x & y & z & & & \\
+        
       \hline
-      Mean &  & & 0.99 (0.96 - 1.01) & 1.01 (0.99 - 1.03) & 0.43 (0.01 - 1.16)\\
+      Mean & 1 & 2 &3 & 1  & 2 & 3 & 0.99 (0.96 - 1.01) & 1.01 (0.99 - 1.03) & 0.43 (0.01 - 1.16)\\
       STD & 50 & 15 & 0.05 (0.0 - 0.13) & 0.05 (0.0 - 0.12) &  0.47 (0.01 - 1.47)\\
       Max & 0.005 & 0.005 & 1.47 (1.02 - 7.46) & 1.55 (1.03 - 4.26) & 4.31 (0.07 - 23.07)\\
       Min & 200 & 100 & 0.63 (0.02 - 0.97) & 0.68 (0.05 - 0.98) & 0.0 (0.0 - 0.0) \\
     \hline\hline
   \end{tabular}
-  \label{tab:stages}
+  \label{tab:dirdata_lung}
 \end{table}
 
-Mean: 0.43 (0.01 - 1.16)
-STD: 0.47 (0.01 - 1.47)
-Max: 4.31 (0.07 - 23.07)
-Min: 0.0 (0.0 - 0.0)
+\newpage
+
+\begin{figure}[H]
+	\begin{center}		
+		\includegraphics[width=0.9\textwidth]{./Images/Jacobian_data.png}
+		\caption{Data for Jacobian of vector fields (top) and inverse vector fields (bottom) for 9 4DCT phases (reference phase 0 is excluded) for 23 lung cancer patients. Mean, STD, maximum and minimum are represented as (a), (b), (c) and (d), respectively.}
+		\label{jacobian_data}
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}		
+		\includegraphics[width=0.9\textwidth]{./Images/ICE.png}
+		\caption{Data for ICE for 9 4DCT phases (reference phase 0 is excluded) for 23 lung cancer patients. Mean, STD, maximum are represented as (a), (b) and (c), respectively. ICE Minimum is 0 throughout all phases and patients.}
+		\label{ice}
+	\end{center}
+\end{figure}
 
 \subsection{Registration of pig heart 4DCT data}
 
