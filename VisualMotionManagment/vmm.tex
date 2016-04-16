@@ -12,6 +12,7 @@
 \usepackage{subfigure}
 \usepackage{rotating}
 \usepackage{minitoc}
+\usepackage{multirow}
 %\usepackage{appendix}
 
 %%%% 1 1/2 facher Zeilenabstand:	
@@ -296,10 +297,12 @@ Actual numbers are summarized in Table~\ref{tab:dirdata_lung}.
   \centering
 %   \footnotesize
   \caption{Parameters used for Plastimatch registration. Details for each parameter can be found here \cite{Plastimatch}.}
-  \begin{tabular}{c|c|c|c|c|c}
-       & VF & IVF & Jacobian & Inverse VF Jacobian & ICE \\
+  \begin{tabular}{c|c|c|c|c|c|c|c|c|c}
+       & \multicolumn{3}{|c|}{VF} & \multicolumn{3}{|c|}{IVF} & Jacobian & Inverse VF Jacobian & ICE \\
+       & x & y & z & x & y & z & & & \\
+        
       \hline
-      Mean &  & & 0.99 (0.96 - 1.01) & 1.01 (0.99 - 1.03) & 0.43 (0.01 - 1.16)\\
+      Mean & 1 & 2 &3 & 1  & 2 & 3 & 0.99 (0.96 - 1.01) & 1.01 (0.99 - 1.03) & 0.43 (0.01 - 1.16)\\
       STD & 50 & 15 & 0.05 (0.0 - 0.13) & 0.05 (0.0 - 0.12) &  0.47 (0.01 - 1.47)\\
       Max & 0.005 & 0.005 & 1.47 (1.02 - 7.46) & 1.55 (1.03 - 4.26) & 4.31 (0.07 - 23.07)\\
       Min & 200 & 100 & 0.63 (0.02 - 0.97) & 0.68 (0.05 - 0.98) & 0.0 (0.0 - 0.0) \\
