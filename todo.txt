@@ -31,6 +31,8 @@ TODO:
  ROI example figure
  Vectorje mors absolutne vrednosti zracunat s Slicerjem. Tm pol sprintej tut prispevke.
  Se planning vectorje dirqa.
+ Use DIRQA consistently
+ Absolute difference -> mean square error
  
  Vectorji so verjetno odvisni od spacing (image resolution). Zaenkrat to spustimo?
  

@@ -285,13 +285,13 @@ DIRs were done with B-Spline Plastimatch module in Slicer (see Section~\ref{Regi
   \label{tab:stages}
 \end{table}
 
-Jacobian and inverse consistency error checks (see Section~\ref{Jacobian} and \ref{ICE}) were done on all 460 vector fields. To save memory usage all vector fields were rescaled by a factor of 2. ROI around patient body was manually created to
-get better results - area outside of patient is the same in all states and does not contribute to DIR.
+Absolute difference was computed for three image pairs: reference and moving image (default case), reference and moving warped image (DIR case), moving and reference warped image (inverse DIR case).
+Jacobian and ICE checks (see Section~\ref{Jacobian} and \ref{ICE}) were done on all 460 vector fields. To save memory usage all vector fields were rescaled by a factor of 2. 
+ROI around patient body was manually created to get better results - area outside of patient is the same in all states and does not contribute to DIR. ROI was then used in absolute difference, jacobian and ICE.
 
 \subsubsection{Results}
 
-Data for all 460 \textbf{(?)} vector fields is presented in Table~\ref{tab:vectordata_lung}. DIRQA was preformed on each vector field with ROI. Data is presented on Figures \ref{jacobian_data, ice} for vector and inverse vector field, Jacobian of vector and inverse vector field and ICE, respectively.
-Actual numbers are summarized in Table~\ref{tab:dirdata_lung}.
+DIR was successfully performed on all 23 patients. An example of planning and 4D DIR is shown on Fig. \textbf{DO IT}. Vector fields resulting from all DIR were analyzed and data is shown in Table~\ref{tab:vectordata_lung}.
 
 \begin{table}[H]
   \centering
@@ -305,18 +305,24 @@ Actual numbers are summarized in Table~\ref{tab:dirdata_lung}.
         \hline
 	Mean & 0.0 (-0.07 - 0.05) & 0.03 (-0.09 - 0.2) & 0.07 (-0.13 - 0.59) \\ 
 	STD & 0.21 (0.01 - 0.81) & 0.31 (0.03 - 0.97) & 0.61 (0.02 - 1.74) \\ 
-	Max & 4.27 (0.32 - 13.63) & 5.7 (0.46 - 21.74) & 9.13 (0.54 - 24.58) \\ 
+	A. Max & 4.27 (0.32 - 13.63) & 5.7 (0.46 - 21.74) & 9.13 (0.54 - 24.58) \\ 
 	\hline
 	&\multicolumn{3}{|c}{IVF}  \\
 	\hline
 	Mean & -0.0 (-0.08 - 0.09) & -0.05 (-0.22 - 0.05) & -0.07 (-0.66 - 0.21) \\ 
 	STD & 0.22 (0.01 - 0.69) & 0.32 (0.03 - 0.95) & 0.63 (0.02 - 1.89) \\ 
-	Max & 4.46 (0.3 - 15.4) & 5.84 (0.47 - 18.97) & 9.7 (0.54 - 33.94) \\ 
+	A. Max & 4.46 (0.3 - 15.4) & 5.84 (0.47 - 18.97) & 9.7 (0.54 - 33.94) \\ 
 
     \hline\hline
   \end{tabular}
   \label{tab:vectordata_lung}
 \end{table}
+
+Data for absolute difference is shown in Figure and summerized in Table \textbf{DO IT}.
+
+Jacobian and ICE results are shown on Figures \ref{jacobian_data, ICE} and summarized in Table~\ref{tab:dirdata_lung}. Maximum values of jacobian, inverse jacobian and ICE were tested against maximum vector values in superior-inferior direction
+and fitted with linear function. Resulting coeficents were \textbf{YES?} for jacobian, inverse jacobian and ICE, respectively and were all statistically significant, with $p < 0.05$. 
+
 
 
 \begin{table}[H]
@@ -353,6 +359,25 @@ Actual numbers are summarized in Table~\ref{tab:dirdata_lung}.
 		\label{ice}
 	\end{center}
 \end{figure}
+
+\begin{figure}[H]
+	\begin{center}		
+		\includegraphics[width=0.9\textwidth]{./Images/MaxVf.png}
+		\caption{Maximum values of jacobian (a), inverse jacobian (b) and ICE (c) versus maximum vector value in superior-inferior direction. Linear fit is displayed with black line. Dashed line shows $y(x)= x$ figure.}
+		\label{maxvf}
+	\end{center}
+\end{figure}
+
+\subsubsection{Discussion}
+
+Data in Table~\ref{tab:vectordata_lung} confirms previously published data that the biggest motion for lungs is in superior-inferior direction \cite{Seppenwoolde2002, Britton2007, Liu2007}. Mean values in all directions are small (in submilimiter range), 
+because the ROI included the whole patient body, not just the lungs where most of the motion occurs. There is little difference between values for vectors and inverse vectors, which was expected.
+
+Values for Jacobian and inverse Jacobian were close to 1 with small STD.
+
+
+
+
 
 \subsection{Registration of pig heart 4DCT data}
 
