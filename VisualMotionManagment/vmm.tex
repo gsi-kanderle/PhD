@@ -12,6 +12,7 @@
 \usepackage{subfigure}
 \usepackage{rotating}
 \usepackage{minitoc}
+% \usepackage{dominitoc}
 \usepackage{multirow}
 %\usepackage{appendix}
 
@@ -177,9 +178,8 @@ Jacobian determinant (Jacobian) of the vector field is used to validate physical
 DIRQA module calculates and displays the Jacobian of the vector field. Average, standard deviation, minimum and maximum values of Jacobian are also displayed. Similar to absolute difference it also has ROI feature implemented.
 
 \begin{figure}[H]
-	\begin{center}
-		
-		\includegraphics[width=0.9\textwidth]{./Images/Jacobian.png}
+	\begin{center}		
+		\includegraphics[width=0.9\textwidth]{./Images/jacobian.png}
 		\caption{Image of Jacobian overlayed on CT scan. The average value of displayed Jacobian is 1.0 with 0.7 STD. \textbf{CHECK!}}
 		\label{Jacobian}
 	\end{center}
@@ -272,7 +272,7 @@ DIRs were done with B-Spline Plastimatch module in Slicer (see Section~\ref{Regi
 \begin{table}[H]
   \centering
 %   \footnotesize
-  \caption{Parameters used for Plastimatch registration. Details for each parameter can be found here \cite{Plastimatch}.}
+  \caption{Parameters used for Plastimatch registration. Details for each parameter can be found in \cite{Plastimatch}.}
   \begin{tabular}{c|c|c}
       Parameter & Stage 1 & Stage 2 \\
       \hline
@@ -290,22 +290,47 @@ get better results - area outside of patient is the same in all states and does 
 
 \subsubsection{Results}
 
-For each DIR mean, standard deviation (STD), maximum and minimum were collected for vector field, Jacobian and ICE. Data is presented on Figures \ref{jacobian_data, ice} for vector and inverse vector field, Jacobian of vector and inverse vector field and ICE, respectively.
+Data for all 460 \textbf{(?)} vector fields is presented in Table~\ref{tab:vectordata_lung}. DIRQA was preformed on each vector field with ROI. Data is presented on Figures \ref{jacobian_data, ice} for vector and inverse vector field, Jacobian of vector and inverse vector field and ICE, respectively.
 Actual numbers are summarized in Table~\ref{tab:dirdata_lung}.
 
 \begin{table}[H]
   \centering
 %   \footnotesize
   \caption{Parameters used for Plastimatch registration. Details for each parameter can be found here \cite{Plastimatch}.}
-  \begin{tabular}{c|c|c|c|c|c|c|c|c|c}
-       & \multicolumn{3}{|c|}{VF} & \multicolumn{3}{|c|}{IVF} & Jacobian & Inverse VF Jacobian & ICE \\
-       & x & y & z & x & y & z & & & \\
-        
+  \begin{tabular}{c|c|c|c}
+  
+       & L-R & A-P & I-S  \\
+       \hline
+        & \multicolumn{3}{|c}{VF} \\ 
+        \hline
+	Mean & 0.0 (-0.07 - 0.05) & 0.03 (-0.09 - 0.2) & 0.07 (-0.13 - 0.59) \\ 
+	STD & 0.21 (0.01 - 0.81) & 0.31 (0.03 - 0.97) & 0.61 (0.02 - 1.74) \\ 
+	Max & 4.27 (0.32 - 13.63) & 5.7 (0.46 - 21.74) & 9.13 (0.54 - 24.58) \\ 
+	\hline
+	&\multicolumn{3}{|c}{IVF}  \\
+	\hline
+	Mean & -0.0 (-0.08 - 0.09) & -0.05 (-0.22 - 0.05) & -0.07 (-0.66 - 0.21) \\ 
+	STD & 0.22 (0.01 - 0.69) & 0.32 (0.03 - 0.95) & 0.63 (0.02 - 1.89) \\ 
+	Max & 4.46 (0.3 - 15.4) & 5.84 (0.47 - 18.97) & 9.7 (0.54 - 33.94) \\ 
+
+    \hline\hline
+  \end{tabular}
+  \label{tab:vectordata_lung}
+\end{table}
+
+
+\begin{table}[H]
+  \centering
+%   \footnotesize
+  \caption{Parameters used for Plastimatch registration. Details for each parameter can be found here \cite{Plastimatch}.}
+  \begin{tabular}{c|c|c|c}
+       & Jacobian & Inverse Jacobian & ICE \\
+       \hline
+       Mean  & 0.99 (0.96 - 1.01) & 1.01 (0.99 - 1.03) & 0.43 (0.01 - 1.16)\\
+       STD   & 0.05 (0.0 - 0.13)  & 0.05 (0.0 - 0.12)  &  0.47 (0.01 - 1.47)\\
+       Max   & 1.47 (1.02 - 7.46) & 1.55 (1.03 - 4.26) & 4.31 (0.07 - 23.07)\\
+       Min   & 0.63 (0.02 - 0.97) & 0.68 (0.05 - 0.98) & 0.0 (0.0 - 0.0) \\       
       \hline
-      Mean & 1 & 2 &3 & 1  & 2 & 3 & 0.99 (0.96 - 1.01) & 1.01 (0.99 - 1.03) & 0.43 (0.01 - 1.16)\\
-      STD & 50 & 15 & 0.05 (0.0 - 0.13) & 0.05 (0.0 - 0.12) &  0.47 (0.01 - 1.47)\\
-      Max & 0.005 & 0.005 & 1.47 (1.02 - 7.46) & 1.55 (1.03 - 4.26) & 4.31 (0.07 - 23.07)\\
-      Min & 200 & 100 & 0.63 (0.02 - 0.97) & 0.68 (0.05 - 0.98) & 0.0 (0.0 - 0.0) \\
     \hline\hline
   \end{tabular}
   \label{tab:dirdata_lung}
