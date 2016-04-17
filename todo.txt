@@ -33,6 +33,7 @@ TODO:
  Se planning vectorje dirqa.
  Use DIRQA consistently
  Absolute difference -> mean square error
+ ITK oment v Implementation
  
  Vectorji so verjetno odvisni od spacing (image resolution). Zaenkrat to spustimo?
  
