@@ -195,6 +195,7 @@ To check for ICE, an algorithm was created that first transforms point $x$ using
 field, $u_{BA}$ which yields $x''$. The ICE is defined as Euclidean norm between $x$ and $x''$:
 
 \begin{equation}
+\label{eq:ice}
 ICE = x - x'' = x - u_{BA}(x') = x - u_{BA}(u_{AB}(x))
 \end{equation}
 
@@ -262,7 +263,7 @@ treatment planning software (TRiP4D in this case). An automatic procedure is req
 \subsubsection{Materials and Methods}
 
 Two computed tomographies (CT) were made for 23 patients. First was a planning CT with resolution (AVERAGE), that was used for contour delineation. Second CT was a time-resolved CT (4DCT), consisting of 10 motion phases (0\% - 90\%) with resolution.
-Phase 0\% corresponds to an end-exhale phase. Phase 0\% was chosen as a reference phase in 4DCT due to being the closest to lung position in planning CT. (CHECK)
+Phase 0\% corresponds to an end-inhale phase. Phase 0\% was chosen as a reference phase in 4DCT due to being the closest to lung position in planning CT. (CHECK)
 
 Two sets of DIR were preformed for each patient. Firstly, planning CT and 4DCT reference phase were registered upon one another (planning DIR and inverse DIR) \textbf{EXPLAIN}. Secondly, registration was preformed between each phase in 4DCT
 (except reference phase) and 4DCT reference phase (4DCT DIR and inverse DIR). For each patient 20 registrations were made, leading to 460 registrations in total.
@@ -320,7 +321,7 @@ DIR was successfully performed on all 23 patients. An example of planning and 4D
 
 Data for absolute difference is shown in Figure and summerized in Table \textbf{DO IT}.
 
-Jacobian and ICE results are shown on Figures \ref{jacobian_data, ICE} and summarized in Table~\ref{tab:dirdata_lung}. Maximum values of jacobian, inverse jacobian and ICE were tested against maximum vector values in superior-inferior direction
+Jacobian and ICE results are shown on Fig. \ref{jacobian_data} and \ref{ICE} and summarized in Table~\ref{tab:dirdata_lung}. Maximum values of jacobian, inverse jacobian and ICE were tested against maximum vector values in superior-inferior direction
 and fitted with linear function. Resulting coeficents were \textbf{YES?} for jacobian, inverse jacobian and ICE, respectively and were all statistically significant, with $p < 0.05$. 
 
 
@@ -373,10 +374,11 @@ and fitted with linear function. Resulting coeficents were \textbf{YES?} for jac
 Data in Table~\ref{tab:vectordata_lung} confirms previously published data that the biggest motion for lungs is in superior-inferior direction \cite{Seppenwoolde2002, Britton2007, Liu2007}. Mean values in all directions are small (in submilimiter range), 
 because the ROI included the whole patient body, not just the lungs where most of the motion occurs. There is little difference between values for vectors and inverse vectors, which was expected.
 
-Values for Jacobian and inverse Jacobian were close to 1 with small STD.
+Values for Jacobian and inverse Jacobian were close to 1 with small STD, which indicates that most of the patient body does not change during the 4DCT scan. Mean values of maximum and minimum Jacobian were around 1.50 and 0.65 respectively, because there were expansions and contractions present. There were some extremely large values (7.46 the largest), that were result of an artifact present on a 4DCT scan, as shown on Fig \textbf{make that figure}. \textbf{Extremly low Jacobian?}. There is also a linear correlation between maximum and minimum (inverse) Jacobian and maximum vector field values as shown in Fig.~\ref{maxvf}. Large vector field values point to either expansion or contraction and resulting in large or small Jacobian values.
 
+Following ICE definition in Eq.~\ref{eq:ice} there should be a correlation between vector field and ICE values. As such ICE mean and STD ICE are also in submilimeter range. The maximum ICE values can be large, with up to 2.3 cm, but still smaller as average maximum vector values. As shown in Fig.~\ref{maxvf}c a linear fit is a good approximation for maximum ICE dependence on maximum vector (inverse vector) field values. Furthermore, for first DIR check, ICE should always be lower as maximum vector field values. Cases above dashed lines in Fig~\ref{maxvf}c all have poor DIR, usually pointing to an artifact in the image.
 
-
+As shown in Fig.~\ref{jacobian_data} and \ref{ice} Jacobian, inverse Jacobian and ICE values follow motion curve for lungs (\textbf{PUT IT IN SECTION MID P}). The biggest difference for motion as well for Jacobian, inverse Jacobian and ICE is between extreme breathing positions, end-inhale (0\%) and end-exhale (50\%,60\%). 
 
 
 \subsection{Registration of pig heart 4DCT data}
