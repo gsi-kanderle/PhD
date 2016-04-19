@@ -394,14 +394,21 @@ As shown in Fig.~\ref{jacobian_data} and \ref{ice} Jacobian, inverse Jacobian an
 
 \subsubsection{Materials and Methods}
 
-A detailed description of pig preparation and irradiation is given here \textbf{Ref}. A cardiac gated contrast enhanced CT scans (4DCT-cardiac) were made on 15 pigs with a multidetector 64 row Siemens Somatom Definition Flash scanner 
+\subsubsection{Pig irradiation experiment}
+
+A detailed description of pig irradiation experiment is given here \textbf{Ref}. Here DIR and DIRQA used in the experiment will be presented. A cardiac gated contrast enhanced CT scans (4DCT-cardiac) were made on 15 pigs with a multidetector 64 row Siemens Somatom Definition Flash scanner 
 (Siemens Healthcare, Forchheim, Germany). 1 mm voxel and 1 mm slice spacing were used. Cardiac motion was divided into 10 sequential phases (0-10\%) and a field of view of 400 mm for skin-to-skin images was used.
 
-After CT acquisition, DIR on 4DCT-cardiac phase was made using B-Spline Plastimatch module and patient hierarchy in Slicer (see Section~\ref{Registration} and \ref{PatHierarchy}). Phase 0\% was chosen as a reference phase. All other phases were registered to reference phase with
-inverse registration as well.
+After CT acquisition, DIR on 4DCT-cardiac phase was made using B-Spline Plastimatch module and patient hierarchy in Slicer (see Section~\ref{Registration} and \ref{PatHierarchy}). Details on parameters can be found in Table~\ref{tab:stages2}. 
+Phase 0\% was chosen as a reference phase. All other phases were registered to reference phase with inverse registration as well. An example of checklist for users to follow the right procedure is shown in Fig.~\ref{checkList}a.
 
+Based on lung patient DIR and because of the time pressure, DIRQA was made only on DIR from one phase, phase 50\%. DIRQA consisted of absolute difference\footnote{Relative difference between moving and warped image absolute difference was displayed in DIRQA file rather than just absolute values.} 
+, Jacobian and ICE. DIRQA results were stored in a text file (example shown in Fig.~\ref{checkList}b) and users checked if the values did not exceed excpected ones: Absolute difference
+mean should be positive; Jacobian mean should be 1 with not too high extreme values; ICE mean should be smaller than 2 mm with not too high extreme values. ROI was manually created to encompass pig body and then used in all DIRQA checks.
 
-DIRs were done with Plastimatch module in Slicer ( Two stages were used with details given in Table~\ref{tab:stages2}. For each patient it took around 1 h for all 20 DIR on Linux computer with 8 clusters and 16 GB RAM.
+After successful DIR and DIRQA vector fields were used in treatment planning and the resulting plans were used in pig irradiation experiment.
+
+\textit{For each patient it took around 1 h for all 20 DIR on Linux computer with 8 clusters and 16 GB RAM.}
 
 \begin{table}[H]
   \centering
@@ -419,10 +426,28 @@ DIRs were done with Plastimatch module in Slicer ( Two stages were used with det
   \label{tab:stages2}
 \end{table}
 
-Jacobian and inverse consistency error checks (see Section~\ref{Jacobian} and \ref{ICE}) were done on all 460 vector fields. To save memory usage all vector fields were rescaled by a factor of 2. ROI around patient body was manually created to
-get better results - area outside of patient is the same in all states and does not contribute to DIR.
+\subsubsection{Post-experiment analysis}
 
-\subsection{Mid-Position patient example}
+After pig irradiation experiment, a more detailed DIRQA was made, with all phases included in DIRQA. In addition to original checks explained in previous section, absolute difference checks were made on inverse warped image, 
+Jacobian was made on inverse vector field and vector magnitudes were analyzed.
+
+
+\newpage
+\begin{figure}[H]
+	\begin{center}		
+		\includegraphics[width=0.9\textwidth]{./Images/checkList.png}
+		\caption{(a) Part of the checklist for quality assurance during pig irradiation. DIR and DIRQA is highlited in red and consisted of two steps. First DIR was made on 4DCT-cardiac and afterwards DIRQA was made on
+		DIR on phase 50\%. End result was presented as text shown in (b).}
+		\label{checkList}
+	\end{center}
+\end{figure}
+\newpage
+
+\subsubsection{Results}
+
+\subsubsection{Discussion}
+
+% \subsection{Mid-Position patient example}
 
 
 \section{Summary and Discussion}
