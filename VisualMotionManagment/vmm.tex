@@ -270,7 +270,7 @@ Phase 0\% corresponds to an end-inhale phase. Phase 0\% was chosen as a referenc
 Two sets of DIR were preformed for each patient. Firstly, planning CT and 4DCT reference phase were registered upon one another (planning DIR and inverse DIR) \textbf{EXPLAIN}. Secondly, registration was preformed between each phase in 4DCT
 (except reference phase) and 4DCT reference phase (4DCT DIR and inverse DIR). For each patient 20 registrations were made, leading to 460 registrations in total.
 
-DIRs were done with B-Spline Plastimatch module in Slicer (see Section~\ref{Registration}). Two stages were used with details given in Table~\ref{tab:stages}. For each patient it took around 1 h for all 20 DIR on Linux computer with 8 clusters and 16 GB RAM.
+DIRs were done with B-Spline Plastimatch module in Slicer (see Section~\ref{Registration}). Two stages were used with details given in Table~\ref{tab:stages}. 
 
 \begin{table}[H]
   \centering
@@ -291,6 +291,9 @@ DIRs were done with B-Spline Plastimatch module in Slicer (see Section~\ref{Regi
 Absolute difference was computed for three image pairs: reference and moving image (default case), reference and moving warped image (DIR case), moving and reference warped image (inverse DIR case).
 Jacobian and ICE checks (see Section~\ref{Jacobian} and \ref{ICE}) were done on all 460 vector fields. To save memory usage all vector fields were rescaled by a factor of 2. 
 ROI around patient body was manually created to get better results - area outside of patient is the same in all states and does not contribute to DIR. ROI was then used in absolute difference, jacobian and ICE.
+
+For each patient it took around 1 h for all 20 DIR and \textbf{30 min} for complete DIRQA on all 20 DIR  on Linux computer with 8 clusters and 16 GB RAM.
+
 
 \subsubsection{Results}
 
@@ -390,11 +393,14 @@ As shown in Fig.~\ref{jacobian_data} and \ref{ice} Jacobian, inverse Jacobian an
 
 \subsubsection{Materials and Methods}
 
-A 4DCT, consisting of 10 motion phases (0\% - 90\%) with resolution was made on \textbf{HOW MANY + MACHINE?} Pigs. Phase 0\% was chosen as a reference phase in 4DCT.
+A detailed description of pig preparation and irradiation is given here \textbf{Ref}. A cardiac gated contrast enhanced CT scans (4DCT-cardiac) were made on 15 pigs with a multidetector 64 row Siemens Somatom Definition Flash scanner 
+(Siemens Healthcare, Forchheim, Germany). 1 mm voxel and 1 mm slice spacing were used. Cardiac motion was divided into 10 sequential phases (0-10\%) and a field of view of 400 mm for skin-to-skin images was used.
 
-DIR was preformed between each 4DCT phase and reference phase and vice versa. L
+After CT acquisition, DIR on 4DCT-cardiac phase was made using B-Spline Plastimatch module in Slicer (see Section~\ref{Registration}). Phase 0\% was chosen as a reference phase. All other phases were registered to reference phase with
+inverse registration as well.
 
-DIRs were done with Plastimatch module in Slicer (see Section~\ref{Registration}). Two stages were used with details given in Table~\ref{tab:stages2}. For each patient it took around 1 h for all 20 DIR on Linux computer with 8 clusters and 16 GB RAM.
+
+DIRs were done with Plastimatch module in Slicer ( Two stages were used with details given in Table~\ref{tab:stages2}. For each patient it took around 1 h for all 20 DIR on Linux computer with 8 clusters and 16 GB RAM.
 
 \begin{table}[H]
   \centering
