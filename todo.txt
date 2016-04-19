@@ -1,5 +1,16 @@
 TODO:
 
+Plan za ponedeljek, 17.4:
+1. Christiana vprasat kaj je z 4Dopt. Pa pol dat racunat vse. Zrihtej si tut pig paper. Zmen se za introduction, kdaj ti ga bo pogledov.
+ - Kako je blo s prasici. Najprej CT, pol DIR in DIRQA, pol plan pol pa obsevanje. Kok hitr?
+2. Datum z dekanatom uskladit
+3. Vectorje mors absolutne vrednosti zracunat s Slicerjem. Tm pol sprintej tut prispevke. Se enkrat vse preracunej, pa kr direkt zamenjej v dirqafile, ne novga delat.
+4. Pogledat min in max Jacobian, kva so to za eni pacienti. Primer!
+5. Pogledat za vse ICE, ki so nad y=x, kaj so to za eni pacienti. Primer!
+6. Bad example poglej in zrithej (oscar nekje).
+6. Opcijsko MidP zrihtat pa motion curve. Nared nov dicomdatabase in ga loadej not. Mogoce ga kopirej k seb?
+7. Pejt domov.
+
 1. PrufungsKomitee:
  1a Vprasat Marcota
  1b Najdt co-referenta
@@ -29,7 +40,7 @@ TODO:
  
  ICE narisat z vektorji
  ROI example figure
- Vectorje mors absolutne vrednosti zracunat s Slicerjem. Tm pol sprintej tut prispevke.
+ 
  Se planning vectorje dirqa.
  Use DIRQA consistently
  Absolute difference -> mean square error

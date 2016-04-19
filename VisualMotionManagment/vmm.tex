@@ -83,6 +83,7 @@ there are $2(N-1)$ registrations required - from reference phase to each of $N$ 
 Rather than just automatically loading different phases and registering them in Slicer a patient hierarchy concept was introduced and is explained in next section. After patient hierarchy is created, registration is then done from reference phase to all other phases and vice versa. 
 
 \subsubsection{Patient hierarchy} 
+\label{PatHierarchy}
 
 Patient hierarchy followed a subject hierarchy principle in Slicer. It was desigened for a clear overview of registration process, DIRQA and all resulting files. There are several levels in patient hierarchy. Each level also has different attributes,
 where details such as file path or reference phase are written.
@@ -103,6 +104,8 @@ is possible only, if some conventions are used regarding file names and location
 \label{DIRQA}
 
 In order to provide visual and quantitative assessment of the registration quality a \textbf{Deformable Image Registration Quality Assurance} (DIRQA) module was created. It provides different image checks (false color, checkerboard, absolute difference, flicker, movie and landmark positions) and vector checks (Jacobian and inverse consistency error). Details on all different checks will be explained in this section. Reference image, warped image, vector and inverse vector (vector from reference to moving phase) are used as inputs for DIRQA module. Additionaly landmarks and region of interest (ROI) can be used as an input.
+
+All check that use some kind of mathematical operation on or between images (absolute difference, Jacobian and inverse consistency error) were build using tools from ITK library \cite{Yoo2002}.
 
 \subsubsection{False color}
 \label{Sec:FalseColor}
@@ -268,7 +271,7 @@ Phase 0\% corresponds to an end-inhale phase. Phase 0\% was chosen as a referenc
 Two sets of DIR were preformed for each patient. Firstly, planning CT and 4DCT reference phase were registered upon one another (planning DIR and inverse DIR) \textbf{EXPLAIN}. Secondly, registration was preformed between each phase in 4DCT
 (except reference phase) and 4DCT reference phase (4DCT DIR and inverse DIR). For each patient 20 registrations were made, leading to 460 registrations in total.
 
-DIRs were done with B-Spline Plastimatch module in Slicer (see Section~\ref{Registration}). Two stages were used with details given in Table~\ref{tab:stages}. For each patient it took around 1 h for all 20 DIR on Linux computer with 8 clusters and 16 GB RAM.
+DIRs were done with B-Spline Plastimatch module and patient hierarchy in Slicer (see Section~\ref{Registration} and \ref{PatHierarchy}). Two stages were used with details given in Table~\ref{tab:stages}. 
 
 \begin{table}[H]
   \centering
@@ -289,6 +292,9 @@ DIRs were done with B-Spline Plastimatch module in Slicer (see Section~\ref{Regi
 Absolute difference was computed for three image pairs: reference and moving image (default case), reference and moving warped image (DIR case), moving and reference warped image (inverse DIR case).
 Jacobian and ICE checks (see Section~\ref{Jacobian} and \ref{ICE}) were done on all 460 vector fields. To save memory usage all vector fields were rescaled by a factor of 2. 
 ROI around patient body was manually created to get better results - area outside of patient is the same in all states and does not contribute to DIR. ROI was then used in absolute difference, jacobian and ICE.
+
+For each patient it took around 1 h for all 20 DIR and \textbf{30 min} for complete DIRQA on all 20 DIR  on Linux computer with 8 clusters and 16 GB RAM.
+
 
 \subsubsection{Results}
 
@@ -329,14 +335,14 @@ and fitted with linear function. Resulting coeficents were 0.04 and -0.03 for ma
 \begin{table}[H]
   \centering
 %   \footnotesize
-  \caption{Parameters used for Plastimatch registration. Details for each parameter can be found here \cite{Plastimatch}.}
+  \caption{Mean, STD, maximum and minimum values for Jacobian, inverse Jacobian and ICE. Values are presented as average (range).}
   \begin{tabular}{c|c|c|c}
        & Jacobian & Inverse Jacobian & ICE \\
        \hline
        Mean  & 0.99 (0.96 - 1.01) & 1.01 (0.99 - 1.03) & 0.43 (0.01 - 1.16)\\
        STD   & 0.05 (0.0 - 0.13)  & 0.05 (0.0 - 0.12)  &  0.47 (0.01 - 1.47)\\
-       Max   & 1.47 (1.02 - 7.46) & 1.55 (1.03 - 4.26) & 4.31 (0.07 - 23.07)\\
-       Min   & 0.63 (0.02 - 0.97) & 0.68 (0.05 - 0.98) & 0.0 (0.0 - 0.0) \\       
+       Maximum   & 1.47 (1.02 - 7.46) & 1.55 (1.03 - 4.26) & 4.31 (0.07 - 23.07)\\
+       Minimum   & 0.63 (0.02 - 0.97) & 0.68 (0.05 - 0.98) & 0.0 (0.0 - 0.0) \\       
       \hline
     \hline\hline
   \end{tabular}
@@ -364,7 +370,8 @@ and fitted with linear function. Resulting coeficents were 0.04 and -0.03 for ma
 \begin{figure}[H]
 	\begin{center}		
 		\includegraphics[width=0.9\textwidth]{./Images/MaxVf.png}
-		\caption{Maximum values of jacobian (a), inverse jacobian (b) and ICE (c) versus maximum vector value in superior-inferior direction. Linear fit is displayed with black line. Dashed line shows $y(x)= x$ figure.}
+		\caption{Maximum values of maximum jacobian (a), minimum jacobian (b) and ICE (c) versus maximum vector values (red squares) and maximum inverse vector values (green circles) in superior-inferior direction. Linear fit is 
+		displayed with red and green line for vector and inverse vector field, respectively. Dashed line in (c) shows $y(x)= x$ plot.}
 		\label{maxvf}
 	\end{center}
 \end{figure}
@@ -383,15 +390,18 @@ As shown in Fig.~\ref{jacobian_data} and \ref{ice} Jacobian, inverse Jacobian an
 
 \subsection{Registration of pig heart 4DCT data}
 
+
+
 \subsubsection{Materials and Methods}
 
-A 4DCT, consisting of 10 motion phases (0\% - 90\%) with resolution was made on ??? Pigs. .
-Phase 0\% corresponds to an end-exhale phase. Phase 0\% was chosen as a reference phase in 4DCT due to being the closest to lung position in planning CT. (CHECK)
+A detailed description of pig preparation and irradiation is given here \textbf{Ref}. A cardiac gated contrast enhanced CT scans (4DCT-cardiac) were made on 15 pigs with a multidetector 64 row Siemens Somatom Definition Flash scanner 
+(Siemens Healthcare, Forchheim, Germany). 1 mm voxel and 1 mm slice spacing were used. Cardiac motion was divided into 10 sequential phases (0-10\%) and a field of view of 400 mm for skin-to-skin images was used.
 
-Two sets of DIR were preformed for each patient. Firstly, planning CT and 4DCT reference phase were registered upon one another (planning DIR and inverse DIR) \textbf{EXPLAIN}. Secondly, registration was preformed between each phase in 4DCT
-(except reference phase) and 4DCT reference phase. For each patient 20 registrations were made, leading to 460 registrations in total.
+After CT acquisition, DIR on 4DCT-cardiac phase was made using B-Spline Plastimatch module and patient hierarchy in Slicer (see Section~\ref{Registration} and \ref{PatHierarchy}). Phase 0\% was chosen as a reference phase. All other phases were registered to reference phase with
+inverse registration as well.
 
-DIRs were done with Plastimatch module in Slicer (see Section~\ref{Registration}). Two stages were used with details given in Table~\ref{tab:stages2}. For each patient it took around 1 h for all 20 DIR on Linux computer with 8 clusters and 16 GB RAM.
+
+DIRs were done with Plastimatch module in Slicer ( Two stages were used with details given in Table~\ref{tab:stages2}. For each patient it took around 1 h for all 20 DIR on Linux computer with 8 clusters and 16 GB RAM.
 
 \begin{table}[H]
   \centering
