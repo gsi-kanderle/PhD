@@ -83,6 +83,7 @@ there are $2(N-1)$ registrations required - from reference phase to each of $N$ 
 Rather than just automatically loading different phases and registering them in Slicer a patient hierarchy concept was introduced and is explained in next section. After patient hierarchy is created, registration is then done from reference phase to all other phases and vice versa. 
 
 \subsubsection{Patient hierarchy} 
+\label{PatHierarchy}
 
 Patient hierarchy followed a subject hierarchy principle in Slicer. It was desigened for a clear overview of registration process, DIRQA and all resulting files. There are several levels in patient hierarchy. Each level also has different attributes,
 where details such as file path or reference phase are written.
@@ -270,7 +271,7 @@ Phase 0\% corresponds to an end-inhale phase. Phase 0\% was chosen as a referenc
 Two sets of DIR were preformed for each patient. Firstly, planning CT and 4DCT reference phase were registered upon one another (planning DIR and inverse DIR) \textbf{EXPLAIN}. Secondly, registration was preformed between each phase in 4DCT
 (except reference phase) and 4DCT reference phase (4DCT DIR and inverse DIR). For each patient 20 registrations were made, leading to 460 registrations in total.
 
-DIRs were done with B-Spline Plastimatch module in Slicer (see Section~\ref{Registration}). Two stages were used with details given in Table~\ref{tab:stages}. 
+DIRs were done with B-Spline Plastimatch module and patient hierarchy in Slicer (see Section~\ref{Registration} and \ref{PatHierarchy}). Two stages were used with details given in Table~\ref{tab:stages}. 
 
 \begin{table}[H]
   \centering
@@ -396,7 +397,7 @@ As shown in Fig.~\ref{jacobian_data} and \ref{ice} Jacobian, inverse Jacobian an
 A detailed description of pig preparation and irradiation is given here \textbf{Ref}. A cardiac gated contrast enhanced CT scans (4DCT-cardiac) were made on 15 pigs with a multidetector 64 row Siemens Somatom Definition Flash scanner 
 (Siemens Healthcare, Forchheim, Germany). 1 mm voxel and 1 mm slice spacing were used. Cardiac motion was divided into 10 sequential phases (0-10\%) and a field of view of 400 mm for skin-to-skin images was used.
 
-After CT acquisition, DIR on 4DCT-cardiac phase was made using B-Spline Plastimatch module in Slicer (see Section~\ref{Registration}). Phase 0\% was chosen as a reference phase. All other phases were registered to reference phase with
+After CT acquisition, DIR on 4DCT-cardiac phase was made using B-Spline Plastimatch module and patient hierarchy in Slicer (see Section~\ref{Registration} and \ref{PatHierarchy}). Phase 0\% was chosen as a reference phase. All other phases were registered to reference phase with
 inverse registration as well.
 
 
