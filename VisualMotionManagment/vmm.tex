@@ -104,6 +104,8 @@ is possible only, if some conventions are used regarding file names and location
 
 In order to provide visual and quantitative assessment of the registration quality a \textbf{Deformable Image Registration Quality Assurance} (DIRQA) module was created. It provides different image checks (false color, checkerboard, absolute difference, flicker, movie and landmark positions) and vector checks (Jacobian and inverse consistency error). Details on all different checks will be explained in this section. Reference image, warped image, vector and inverse vector (vector from reference to moving phase) are used as inputs for DIRQA module. Additionaly landmarks and region of interest (ROI) can be used as an input.
 
+All check that use some kind of mathematical operation on or between images (absolute difference, Jacobian and inverse consistency error) were build using tools from ITK library \cite{Yoo2002}.
+
 \subsubsection{False color}
 \label{Sec:FalseColor}
 
@@ -329,14 +331,14 @@ and fitted with linear function. Resulting coeficents were 0.04 and -0.03 for ma
 \begin{table}[H]
   \centering
 %   \footnotesize
-  \caption{Parameters used for Plastimatch registration. Details for each parameter can be found here \cite{Plastimatch}.}
+  \caption{Mean, STD, maximum and minimum values for Jacobian, inverse Jacobian and ICE. Values are presented as average (range).}
   \begin{tabular}{c|c|c|c}
        & Jacobian & Inverse Jacobian & ICE \\
        \hline
        Mean  & 0.99 (0.96 - 1.01) & 1.01 (0.99 - 1.03) & 0.43 (0.01 - 1.16)\\
        STD   & 0.05 (0.0 - 0.13)  & 0.05 (0.0 - 0.12)  &  0.47 (0.01 - 1.47)\\
-       Max   & 1.47 (1.02 - 7.46) & 1.55 (1.03 - 4.26) & 4.31 (0.07 - 23.07)\\
-       Min   & 0.63 (0.02 - 0.97) & 0.68 (0.05 - 0.98) & 0.0 (0.0 - 0.0) \\       
+       Maximum   & 1.47 (1.02 - 7.46) & 1.55 (1.03 - 4.26) & 4.31 (0.07 - 23.07)\\
+       Minimum   & 0.63 (0.02 - 0.97) & 0.68 (0.05 - 0.98) & 0.0 (0.0 - 0.0) \\       
       \hline
     \hline\hline
   \end{tabular}
@@ -364,7 +366,8 @@ and fitted with linear function. Resulting coeficents were 0.04 and -0.03 for ma
 \begin{figure}[H]
 	\begin{center}		
 		\includegraphics[width=0.9\textwidth]{./Images/MaxVf.png}
-		\caption{Maximum values of jacobian (a), inverse jacobian (b) and ICE (c) versus maximum vector value in superior-inferior direction. Linear fit is displayed with black line. Dashed line shows $y(x)= x$ figure.}
+		\caption{Maximum values of maximum jacobian (a), minimum jacobian (b) and ICE (c) versus maximum vector values (red squares) and maximum inverse vector values (green circles) in superior-inferior direction. Linear fit is 
+		displayed with red and green line for vector and inverse vector field, respectively. Dashed line in (c) shows $y(x)= x$ plot.}
 		\label{maxvf}
 	\end{center}
 \end{figure}
@@ -383,13 +386,13 @@ As shown in Fig.~\ref{jacobian_data} and \ref{ice} Jacobian, inverse Jacobian an
 
 \subsection{Registration of pig heart 4DCT data}
 
+
+
 \subsubsection{Materials and Methods}
 
-A 4DCT, consisting of 10 motion phases (0\% - 90\%) with resolution was made on ??? Pigs. .
-Phase 0\% corresponds to an end-exhale phase. Phase 0\% was chosen as a reference phase in 4DCT due to being the closest to lung position in planning CT. (CHECK)
+A 4DCT, consisting of 10 motion phases (0\% - 90\%) with resolution was made on \textbf{HOW MANY + MACHINE?} Pigs. Phase 0\% was chosen as a reference phase in 4DCT.
 
-Two sets of DIR were preformed for each patient. Firstly, planning CT and 4DCT reference phase were registered upon one another (planning DIR and inverse DIR) \textbf{EXPLAIN}. Secondly, registration was preformed between each phase in 4DCT
-(except reference phase) and 4DCT reference phase. For each patient 20 registrations were made, leading to 460 registrations in total.
+DIR was preformed between each 4DCT phase and reference phase and vice versa. L
 
 DIRs were done with Plastimatch module in Slicer (see Section~\ref{Registration}). Two stages were used with details given in Table~\ref{tab:stages2}. For each patient it took around 1 h for all 20 DIR on Linux computer with 8 clusters and 16 GB RAM.
 
