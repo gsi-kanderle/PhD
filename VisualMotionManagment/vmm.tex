@@ -85,8 +85,11 @@ Rather than just automatically loading different phases and registering them in 
 \subsubsection{Patient hierarchy} 
 \label{PatHierarchy}
 
-Patient hierarchy followed a subject hierarchy principle in Slicer. It was desigened for a clear overview of registration process, DIRQA and all resulting files. There are several levels in patient hierarchy. Each level also has different attributes,
-where details such as file path or reference phase are written.
+Patient hierarchy followes a subject hierarchy principle in Slicer. It was desigened for a clear overview of the registration process, DIRQA and all resulting files. Another reason is to track DIR
+and DIRQA in case if they are interupted by Slicer crash. DIR and DIRQA files can be quite large and can cause Slicer to run out of memory. Patient hierarhy enables then to continue work
+from where it was interupted.
+
+There are several levels in patient hierarchy. Each level also has different attributes, where details such as file path or reference phase are written.
 
 \begin{itemize}
 	\item Level 1: \textbf{Patient name} - seperates different patients.
@@ -389,6 +392,12 @@ As shown in Fig.~\ref{jacobian_data} and \ref{ice} Jacobian, inverse Jacobian an
 
 
 \subsection{Registration of pig heart 4DCT data}
+
+Atrial fibrillation is an unorganized atrial activity, causing a quivering motion of the heart. Heart is therefore not able to sustain a healthy pumping rhythm. Atrial fibrillation is not a
+deadly desease, however it worsens the patients quality of life and increses the risk of a stroke \cite{Benjamin1998}. A common method for treating atrial fibrillation is catheter ablation \cite{January2014}, 
+where the success rate is still limited and can even lead to major complications or even death of a patient \cite{Cappato2005,Cappato2010}.
+
+As an alternative treatment, a carbon-ion therapy was proposed \cite{Bert2012} and later also feasability with experiment was made 
 
 
 
