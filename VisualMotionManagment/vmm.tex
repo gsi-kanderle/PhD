@@ -337,8 +337,7 @@ difference between true and inverse vector field. The biggest contribution to ve
 
 Data for absolute difference is shown in Figure and summerized in Table \textbf{DO IT}.
 
-Jacobian and ICE results are shown on Fig. \ref{jacobian_data} and \ref{ICE}. Maximum values of jacobian, inverse jacobian and ICE were tested against maximum vector values in superior-inferior direction
-and fitted with linear function. Resulting coeficents were 0.04 and -0.03 for maximum and minimum Jacobian, 0.04 and -0.02 for maximum and minimum inverse Jacobian and 0.4 for maximum ICE, respectively \textbf{Raj v tabelo?}. and were all statistically significant, with $p < 0.05$. 
+Jacobian and ICE results are shown on Fig. \ref{jacobian_data} and \ref{ICE}. Maximum values of true and inverse maximum and minimum jacobian and ICE were tested against maximum vector magnitudes and fitted with linear function. Resulting coeficents were 0.04 and -0.03 for maximum and minimum Jacobian, 0.04 and -0.02 for maximum and minimum inverse Jacobian and 0.4 for maximum ICE, respectively \textbf{Raj v tabelo?}. and were all statistically significant, with $p < 0.05$. 
 
 
 
@@ -467,11 +466,53 @@ Jacobian was made on inverse vector field and vector magnitudes were analyzed.
 \subsubsection{Results}
 
 
-An example of DIR is shown in Fig.~\textbf{MAKEIT}. All DIR were successful and during experiment all DIRQA checks were positive.
+An example of DIR is shown in Fig.~\textbf{MAKEIT}. All DIR were successful and during experiment all DIRQA checks were positive. A vector field analysis is shown in Table~\ref{tab:vectordata_pig}. No statistical difference was
+observed between true and inverse vector field. Contributions to vector field magnitudes from three axis were equal. 
+
+
+\begin{table}[H]
+  \centering
+%   \footnotesize
+  \caption{Data of vector magintudes. Values are presented as average (range).}
+  \begin{tabular}{c|c|c|c}
+  
+       & True vector field & Inverse vector field  \\
+       \hline
+       Mean & 0.07 (0.0 - 0.18) & 0.07 (0.0 - 0.17) \\ 
+      STD & 0.35 (0.05 - 0.78) & 0.32 (0.04 - 0.71) \\ 
+      Max & 7.13 (0.97 - 17.33) & 6.57 (0.7 - 17.76) \\ 
+
+    \hline\hline
+  \end{tabular}
+  \label{tab:vectordata_pig}
+\end{table}
+
+Data for absolute difference is shown in Figure and summerized in Table \textbf{DO IT}.
+
+Jacobian and ICE results are shown on Fig. \ref{jacobian_data2} and \ref{ICE2}. Maximum values of true and inverse maximum and minimum Jacobian and ICE were tested against maximum vector magnitudes. Linear fit was also obtained for results.
+and fitted with linear function. Resulting coeficents were 0.15 and -0.04 for maximum and minimum Jacobian, 0.08 and -0.05 for maximum and minimum inverse Jacobian and 0.9 and 0.95 for maximum ICE vs true and inverse vector field, respectively. 
+All linear fits were statistically significant, with $p < 0.05$. 
+
+TJMax    IJMax
+IJMin    TJMin
+k = 1.63 1.8 1.71
+n = -0.04 -0.07 -0.05
+r = 0.90  0.80 0.90
 
 
 
 \subsubsection{Discussion}
+
+
+Vector field magintudes confirms previously published data that the biggest motion for lungs is in superior-inferior direction \cite{Seppenwoolde2002, Britton2007, Liu2007}. The mean vector field magnitude is small (in submilimiter range), 
+because the ROI included the whole patient body, not just the lungs where most of the motion occurs. There is little difference between values for vectors and inverse vectors, which was expected.
+
+Values for Jacobian and inverse Jacobian were close to 1 with small STD, which indicates that most of the patient body does not change during the 4DCT scan. Mean values of maximum and minimum Jacobian were around 1.50 and 0.65 respectively, because there were expansions and contractions present. There were some extremely large values (7.46 the largest), that were result of an artifact present on a 4DCT scan, as shown on Fig \textbf{make that figure}. \textbf{Extremly low Jacobian?}. There is also a linear correlation between maximum and minimum (inverse) Jacobian and maximum vector field values as shown in Fig.~\ref{maxvf}. Large vector field values point to either expansion or contraction and resulting in large or small Jacobian values.
+
+Following ICE definition in Eq.~\ref{eq:ice} there should be a correlation between vector field and ICE values. As such ICE mean and STD ICE are also in submilimeter range. The maximum ICE values can be large, with up to 2.3 cm, but still smaller as average maximum vector values. As shown in Fig.~\ref{maxvf}c a linear fit is a good approximation for maximum ICE dependence on maximum vector (inverse vector) field values. Furthermore, for first DIR check, ICE should always be lower as maximum vector field values. Cases above dashed lines in Fig~\ref{maxvf}c all have poor DIR, usually pointing to an artifact in the image.
+
+As shown in Fig.~\ref{jacobian_data} and \ref{ice} Jacobian, inverse Jacobian and ICE values follow motion curve for lungs (\textbf{PUT IT IN SECTION MID P}). The biggest difference for motion as well for Jacobian, inverse Jacobian and ICE is between extreme breathing positions, end-inhale (0\%) and end-exhale (50\%,60\%). 
+
 
 % \subsection{Mid-Position patient example}
 
