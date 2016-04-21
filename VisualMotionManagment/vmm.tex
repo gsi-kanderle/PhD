@@ -284,11 +284,10 @@ treatment planning software (TRiP4D in this case). An automatic procedure is req
 
 \subsubsection{Materials and Methods}
 
-Two computed tomographies (CT) were made for 23 patients. First was a planning CT with resolution (AVERAGE), that was used for contour delineation. Second CT was a time-resolved CT (4DCT), consisting of 10 motion phases (0\% - 90\%) with resolution.
-Phase 0\% corresponds to an end-inhale phase. Phase 0\% was chosen as a reference phase in 4DCT due to being the closest to lung position in planning CT. (CHECK)
+A a time-resolved CT (4DCT), consisting of 10 motion phases (0\% - 90\%) with resolution \textbf{?} was aquired for 23 patients.
+Phase 0\% corresponds to an end-inhale phase and was chosen as a reference phase.
 
-Two sets of DIR were preformed for each patient. Firstly, planning CT and 4DCT reference phase were registered upon one another (planning DIR and inverse DIR) \textbf{EXPLAIN}. Secondly, registration was preformed between each phase in 4DCT
-(except reference phase) and 4DCT reference phase (4DCT DIR and inverse DIR). For each patient 20 registrations were made, leading to 460 registrations in total.
+DIR was preformed for each patient between each phase and reference phase and vice verse (true DIR and inverse DIR). For each patient 18 registrations were made, leading to 414 registrations in total.
 
 DIRs were done with B-Spline Plastimatch module and patient hierarchy in Slicer (see Section~\ref{Registration} and \ref{PatHierarchy}). Two stages were used with details given in Table~\ref{tab:stages}. 
 
@@ -317,7 +316,7 @@ For each patient it took around 1 h for all 20 DIR and \textbf{30 min} for compl
 
 \subsubsection{Results}
 
-DIR was successfully performed on all 23 patients. An example of planning and 4D DIR is shown on Fig. \textbf{DO IT}. Vector fields resulting from all DIR were analyzed and data is shown in Table~\ref{tab:vectordata_lung}. There was no statistical
+DIR was successfully performed on all 23 patients. An example of DIR is shown on Fig. \textbf{DO IT}. Vector fields resulting from all DIR were analyzed and data is shown in Table~\ref{tab:vectordata_lung}. There was no statistical
 difference between true and inverse vector field. The biggest contribution to vector field magnitude was from superior-inferior direction (around 50\%), then anterior-posterior direction (around 30\%) and the smallest contribution was from left-right direction (around 20\%).
 
 \begin{table}[H]
