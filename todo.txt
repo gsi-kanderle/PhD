@@ -24,6 +24,7 @@ Plan za ponedeljek, 17.4:
 5. VMM:
  hed2nrrd?
  Small big roi pigs?
+ Spust planning CT for now.
  5a Pogledat, kaj naredit Metric v Slicerju
  5b Zracunat:
    - Vseh 23 (19?) pacientov vector, image checks. Pol pa naredit statistiko skoz 4DCT faze: AbsDiff, Jacobian, Inverse Consistency

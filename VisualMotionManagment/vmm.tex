@@ -34,7 +34,7 @@ Effects of motion can have a significant impact on a radiation treatment (see Se
 
 One of the steps for motion mitigation is proper and frequent imaging. While most commercial treatment planning software provide rigid registration between different images, deformable image registration (DIR) is currently rarely used. Even though DIR better quantifies anatomical and biological variations \cite{Sarrut2006} compared to rigid registration. DIR is essential as well in photon as in ion radiotherapy, with usage in adaptive radiotherapy \cite{Yan1997,Yan2010}, 4D optimization \cite{Trofimov2005}, 4D dose calculation \cite{Flampouri2006}, contour propagation \cite{Lu2006b} and in even in other categories besides radiotherapy as well \cite{Cleary2010, Herrell2012, Nithiananthan2011, Naini2010}. Several different DIR algorithms are avaliable, such as B-spline, Deamons, linear elastic finite element, optical flow, viscous fluid \cite{Rueckert1999,Venugopal2005,Zhong2007,Thirion1998,Christensen1996}, etc.
 	
-One of the reasons for the DIR is not used in commercial software is lack of proper validation methods. While several different DIR validation methods exist, none of them are definitive and most of them are time consuming. It is possible to evaluate DIR with deformable phantoms, where the type and size of deformation is known \cite{Kashani2007, Kirby2011}. However such quality assurance is time consuming and cannot be used in everyday clinical workflow. 
+One of the reasons for the DIR is not used in commercial software is lack of proper DIR quality assurance (DIRQA). While several different DIRQA methods exist, none of them are definitive and most of them are time consuming. It is possible to evaluate DIR with deformable phantoms, where the type and size of deformation is known \cite{Kashani2007, Kirby2011}. However such quality assurance is time consuming and cannot be used in everyday clinical workflow. 
 
 DIR validation can also be based on landmark positions, specifically their location before and after registration. In absence of externally planted markers, locating landmarks in patient anatomy can be time consuming and difficult to identify in low-contrast regions \cite{Varadhan2013}. Another option is to compare delineated contours with the propagated ones. It is more efficient technique than landmark checks, however it is also time consuming and it does not address the region within the contour.
 
@@ -62,6 +62,9 @@ The foundation of Slicer is written in C++ and it's functions can be accessed al
 Slicer is a research tool and as such offers tools to implement new functionalities in the form of 3D Slicer extensions. They can either be as execution of external command-line programs or writing modules with new features or automate Slicer processes in form of scripted modules. 
 In the next sections different Slicer modules will be presented, which were all developed in the scope of this thesis. The purpose of modules is to quantify and visualize patient motion as well as to provide quality assurance of the the obtained results.
 
+
+
+
 \subsection{Registration}
 \label{Registration}
 
@@ -80,7 +83,20 @@ A comonlly used software for registration in medical research is Plastimatch \ci
 The integration of Plastimatch in Slicer brings the advantage of a graphic user interface and hence a quick modification of parameters. However, the disadvantage comes when a large number of registrations is required, since a user presence is required. In a 4DCT registration
 there are $2(N-1)$ registrations required - from reference phase to each of $N$ states of 4DCT and vice versa, except for the reference phase itself. Typical 4DCT consist of 10 phases, therefore a automatic registration of a 4DCT is a necessity, since each registration takes from 15-30 minutes.
 
-Rather than just automatically loading different phases and registering them in Slicer a patient hierarchy concept was introduced and is explained in next section. After patient hierarchy is created, registration is then done from reference phase to all other phases and vice versa. 
+Rather than just automatically loading different phases and registering them in Slicer a patient hierarchy concept was introduced and is explained in Section~\ref{PatHierarchy}.
+
+\subsubsection{Registration nomenclature}
+
+In order to be able to provide a clear description of methods and procedures used, an overview of the expresions used will be given here.
+
+\begin{itemize}
+ \item \textbf{Reference image} - image that serves as a reference position.
+ \item \textbf{Moving image} - image that is being registered to the reference image.
+ \item \textbf{Warped image} - image resulting from registration. It should be as closed to the image being registered to as possible.
+ \item \textbf{True registration} - registration from moving to reference image. Similar, everything connected to true registration will use \"true\" (true vector field, true warped image, true absolute difference, true Jacobian, etc.).
+ \item \textbf{Inverse registration} - registration from reference to moving image (oposite or inverse of true registration. As in true registration, term inverse can be used for everything connected to it (inverse vector field, inverse warped image, inverse absolute difference, inverse Jacobian, etc.).
+\end{itemize}
+
 
 \subsubsection{Patient hierarchy} 
 \label{PatHierarchy}
@@ -106,7 +122,7 @@ is possible only, if some conventions are used regarding file names and location
 \subsection{Registration Quality Checks}
 \label{DIRQA}
 
-In order to provide visual and quantitative assessment of the registration quality a \textbf{Deformable Image Registration Quality Assurance} (DIRQA) module was created. It provides different image checks (false color, checkerboard, absolute difference, flicker, movie and landmark positions) and vector checks (Jacobian and inverse consistency error). Details on all different checks will be explained in this section. Reference image, warped image, vector and inverse vector (vector from reference to moving phase) are used as inputs for DIRQA module. Additionaly landmarks and region of interest (ROI) can be used as an input.
+In order to provide visual and quantitative assessment of the registration quality a \textbf{Deformable Image Registration Quality Assurance} module was created. It provides different image checks (false color, checkerboard, absolute difference, flicker, movie and landmark positions) and vector checks (Jacobian and inverse consistency error). Details on all different checks will be explained in this section. Reference image, warped image, vector and inverse vector (vector from reference to moving phase) are used as inputs for DIRQA module. Additionaly landmarks and region of interest (ROI) can be used as an input.
 
 All check that use some kind of mathematical operation on or between images (absolute difference, Jacobian and inverse consistency error) were build using tools from ITK library \cite{Yoo2002}.
 
@@ -301,28 +317,20 @@ For each patient it took around 1 h for all 20 DIR and \textbf{30 min} for compl
 
 \subsubsection{Results}
 
-DIR was successfully performed on all 23 patients. An example of planning and 4D DIR is shown on Fig. \textbf{DO IT}. Vector fields resulting from all DIR were analyzed and data is shown in Table~\ref{tab:vectordata_lung}.
+DIR was successfully performed on all 23 patients. An example of planning and 4D DIR is shown on Fig. \textbf{DO IT}. Vector fields resulting from all DIR were analyzed and data is shown in Table~\ref{tab:vectordata_lung}. There was no statistical
+difference between true and inverse vector field. The biggest contribution to vector field magnitude was from superior-inferior direction (around 50\%), then anterior-posterior direction (around 30\%) and the smallest contribution was from left-right direction (around 20\%).
 
 \begin{table}[H]
   \centering
 %   \footnotesize
-  \caption{Parameters used for Plastimatch registration. Details for each parameter can be found here \cite{Plastimatch}.}
+  \caption{Data of vector magintudes. Values are presented as average (range).}
   \begin{tabular}{c|c|c|c}
   
-       & L-R & A-P & I-S  \\
+       & True vector field & Inverse vector field  \\
        \hline
-        & \multicolumn{3}{|c}{VF} \\ 
-        \hline
-	Mean & 0.0 (-0.07 - 0.05) & 0.03 (-0.09 - 0.2) & 0.07 (-0.13 - 0.59) \\ 
-	STD & 0.21 (0.01 - 0.81) & 0.31 (0.03 - 0.97) & 0.61 (0.02 - 1.74) \\ 
-	A. Max & 4.27 (0.32 - 13.63) & 5.7 (0.46 - 21.74) & 9.13 (0.54 - 24.58) \\ 
-	\hline
-	&\multicolumn{3}{|c}{IVF}  \\
-	\hline
-	Mean & -0.0 (-0.08 - 0.09) & -0.05 (-0.22 - 0.05) & -0.07 (-0.66 - 0.21) \\ 
-	STD & 0.22 (0.01 - 0.69) & 0.32 (0.03 - 0.95) & 0.63 (0.02 - 1.89) \\ 
-	A. Max & 4.46 (0.3 - 15.4) & 5.84 (0.47 - 18.97) & 9.7 (0.54 - 33.94) \\ 
-
+       Mean & 0.38 (0.01 - 1.28) & 0.38 (0.01 - 1.3) \\ 
+       STD & 0.95 (0.04 - 3.17) & 0.98 (0.04 - 3.55) \\ 
+       Max & 9.67 (0.61 - 28.56) & 10.17 (0.56 - 37.11) \\
     \hline\hline
   \end{tabular}
   \label{tab:vectordata_lung}
@@ -330,27 +338,27 @@ DIR was successfully performed on all 23 patients. An example of planning and 4D
 
 Data for absolute difference is shown in Figure and summerized in Table \textbf{DO IT}.
 
-Jacobian and ICE results are shown on Fig. \ref{jacobian_data} and \ref{ICE} and summarized in Table~\ref{tab:dirdata_lung}. Maximum values of jacobian, inverse jacobian and ICE were tested against maximum vector values in superior-inferior direction
+Jacobian and ICE results are shown on Fig. \ref{jacobian_data} and \ref{ICE}. Maximum values of jacobian, inverse jacobian and ICE were tested against maximum vector values in superior-inferior direction
 and fitted with linear function. Resulting coeficents were 0.04 and -0.03 for maximum and minimum Jacobian, 0.04 and -0.02 for maximum and minimum inverse Jacobian and 0.4 for maximum ICE, respectively \textbf{Raj v tabelo?}. and were all statistically significant, with $p < 0.05$. 
 
 
 
-\begin{table}[H]
-  \centering
-%   \footnotesize
-  \caption{Mean, STD, maximum and minimum values for Jacobian, inverse Jacobian and ICE. Values are presented as average (range).}
-  \begin{tabular}{c|c|c|c}
-       & Jacobian & Inverse Jacobian & ICE \\
-       \hline
-       Mean  & 0.99 (0.96 - 1.01) & 1.01 (0.99 - 1.03) & 0.43 (0.01 - 1.16)\\
-       STD   & 0.05 (0.0 - 0.13)  & 0.05 (0.0 - 0.12)  &  0.47 (0.01 - 1.47)\\
-       Maximum   & 1.47 (1.02 - 7.46) & 1.55 (1.03 - 4.26) & 4.31 (0.07 - 23.07)\\
-       Minimum   & 0.63 (0.02 - 0.97) & 0.68 (0.05 - 0.98) & 0.0 (0.0 - 0.0) \\       
-      \hline
-    \hline\hline
-  \end{tabular}
-  \label{tab:dirdata_lung}
-\end{table}
+% \begin{table}[H]
+%   \centering
+% %   \footnotesize
+%   \caption{Mean, STD, maximum and minimum values for Jacobian, inverse Jacobian and ICE. Values are presented as average (range).}
+%   \begin{tabular}{c|c|c|c}
+%        & Jacobian & Inverse Jacobian & ICE \\
+%        \hline
+%        Mean  & 0.99 (0.96 - 1.01) & 1.01 (0.99 - 1.03) & 0.43 (0.01 - 1.16)\\
+%        STD   & 0.05 (0.0 - 0.13)  & 0.05 (0.0 - 0.12)  &  0.47 (0.01 - 1.47)\\
+%        Maximum   & 1.47 (1.02 - 7.46) & 1.55 (1.03 - 4.26) & 4.31 (0.07 - 23.07)\\
+%        Minimum   & 0.63 (0.02 - 0.97) & 0.68 (0.05 - 0.98) & 0.0 (0.0 - 0.0) \\       
+%       \hline
+%     \hline\hline
+%   \end{tabular}
+%   \label{tab:dirdata_lung}
+% \end{table}
 
 \newpage
 
@@ -381,7 +389,7 @@ and fitted with linear function. Resulting coeficents were 0.04 and -0.03 for ma
 
 \subsubsection{Discussion}
 
-Data in Table~\ref{tab:vectordata_lung} confirms previously published data that the biggest motion for lungs is in superior-inferior direction \cite{Seppenwoolde2002, Britton2007, Liu2007}. Mean values in all directions are small (in submilimiter range), 
+Vector field magintudes confirms previously published data that the biggest motion for lungs is in superior-inferior direction \cite{Seppenwoolde2002, Britton2007, Liu2007}. The mean vector field magnitude is small (in submilimiter range), 
 because the ROI included the whole patient body, not just the lungs where most of the motion occurs. There is little difference between values for vectors and inverse vectors, which was expected.
 
 Values for Jacobian and inverse Jacobian were close to 1 with small STD, which indicates that most of the patient body does not change during the 4DCT scan. Mean values of maximum and minimum Jacobian were around 1.50 and 0.65 respectively, because there were expansions and contractions present. There were some extremely large values (7.46 the largest), that were result of an artifact present on a 4DCT scan, as shown on Fig \textbf{make that figure}. \textbf{Extremly low Jacobian?}. There is also a linear correlation between maximum and minimum (inverse) Jacobian and maximum vector field values as shown in Fig.~\ref{maxvf}. Large vector field values point to either expansion or contraction and resulting in large or small Jacobian values.
@@ -397,16 +405,21 @@ Atrial fibrillation is an unorganized atrial activity, causing a quivering motio
 deadly desease, however it worsens the patients quality of life and increses the risk of a stroke \cite{Benjamin1998}. A common method for treating atrial fibrillation is catheter ablation \cite{January2014}, 
 where the success rate is still limited and can even lead to major complications or even death of a patient \cite{Cappato2005,Cappato2010}.
 
-As an alternative treatment, a carbon-ion therapy was proposed \cite{Bert2012} and later also feasability with experiment was made 
+As an alternative treatment, a carbon-ion therapy was proposed \cite{Bert2012} and later feasability was shown experimentally \cite{Lehmann2015b}. In 2014 \textbf{?} a pilot experiment was performed at GSI using large animal model (pigs) and
+scanned carbon-ion to verify treatment in vivo.
+
+To estimate and compensate motion of the heart during irradiation DIR of 4DCT data was required. Furthermore, because of the actual irradiation of live pigs a DIRQA had to be made, to ensure validity of DIR. Description of procedure will be here,
+along with the results.
 
 
 
 \subsubsection{Materials and Methods}
 
+
 \subsubsection{Pig irradiation experiment}
 
-A detailed description of pig irradiation experiment is given here \textbf{Ref}. Here DIR and DIRQA used in the experiment will be presented. A cardiac gated contrast enhanced CT scans (4DCT-cardiac) were made on 15 pigs with a multidetector 64 row Siemens Somatom Definition Flash scanner 
-(Siemens Healthcare, Forchheim, Germany). 1 mm voxel and 1 mm slice spacing were used. Cardiac motion was divided into 10 sequential phases (0-10\%) and a field of view of 400 mm for skin-to-skin images was used.
+A detailed description of pig irradiation experiment is given here \cite{Lehmann2015}. Here DIR and DIRQA used in the experiment will be presented. A cardiac gated contrast enhanced CT scans (4DCT-cardiac) were made on 15 pigs with a multidetector 64 row Siemens Somatom Definition Flash scanner 
+(Siemens Healthcare, Forchheim, Germany). 1 mm voxel and 1 mm slice spacing were used. There was no breathing motion present, since a breath-hold technique was used. Cardiac motion was divided into 10 sequential phases (0-10\%) and a field of view of 400 mm for skin-to-skin images was used.
 
 After CT acquisition, DIR on 4DCT-cardiac phase was made using B-Spline Plastimatch module and patient hierarchy in Slicer (see Section~\ref{Registration} and \ref{PatHierarchy}). Details on parameters can be found in Table~\ref{tab:stages2}. 
 Phase 0\% was chosen as a reference phase. All other phases were registered to reference phase with inverse registration as well. An example of checklist for users to follow the right procedure is shown in Fig.~\ref{checkList}a.
@@ -453,6 +466,11 @@ Jacobian was made on inverse vector field and vector magnitudes were analyzed.
 \newpage
 
 \subsubsection{Results}
+
+
+An example of DIR is shown in Fig.~\textbf{MAKEIT}. All DIR were successful and during experiment all DIRQA checks were positive.
+
+
 
 \subsubsection{Discussion}
 
