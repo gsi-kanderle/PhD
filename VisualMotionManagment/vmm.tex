@@ -363,7 +363,8 @@ Jacobian and ICE results are shown on Fig. \ref{jacobian_data} and \ref{ICE}. Ma
 \begin{figure}[H]
 	\begin{center}		
 		\includegraphics[width=0.9\textwidth]{./Images/Jacobian_data.png}
-		\caption{Data for Jacobian of vector fields (top) and inverse vector fields (bottom) for 9 4DCT phases (reference phase 0 is excluded) for 23 lung cancer patients. Mean, STD, maximum and minimum are represented as (a), (b), (c) and (d), respectively.}
+		\caption{Box plots for data of true Jacobian (top) and inverse Jacobian (bottom) for 9 4DCT phases (reference phase 0 is excluded) of 23 lung cancer patients. Mean, STD, maximum and minimum are represented as (a), (b), (c) and (d), respectively.
+		Boxes represent 25 - 75\%, whiskers 10 - 90 \% of data, outlires are marked with crosses, median with solid line and mean with square.}
 		\label{jacobian_data}
 	\end{center}
 \end{figure}
@@ -504,8 +505,12 @@ r = 0.90  0.80 0.90
 \subsubsection{Discussion}
 
 
-Vector field magintudes confirms previously published data that the biggest motion for lungs is in superior-inferior direction \cite{Seppenwoolde2002, Britton2007, Liu2007}. The mean vector field magnitude is small (in submilimiter range), 
-because the ROI included the whole patient body, not just the lungs where most of the motion occurs. There is little difference between values for vectors and inverse vectors, which was expected.
+The mean vector field magnitude is almost zero, since the only motion is in the heart. The motion there is around 5 mm. There was no direction, that was dominant in terms of contribution to vector field magnitude.
+
+Absolute difference?
+
+On average the vector fields were almost zero, which results in mean Jacobian being 1. However, the extreme values of Jacobian deviated significantelly from excpected values - maximum Jacobian was \textbf{Fill in} 17 and there were even 43141 cases
+of negative minimum Jacobian. This points to physically unrealistic scenarios (organ folding) which indicates invalidity of DIR. Furthermore the correlations on Fig.~\textbf{YEH} and \textbf{DSE} are weak, supporting the 
 
 Values for Jacobian and inverse Jacobian were close to 1 with small STD, which indicates that most of the patient body does not change during the 4DCT scan. Mean values of maximum and minimum Jacobian were around 1.50 and 0.65 respectively, because there were expansions and contractions present. There were some extremely large values (7.46 the largest), that were result of an artifact present on a 4DCT scan, as shown on Fig \textbf{make that figure}. \textbf{Extremly low Jacobian?}. There is also a linear correlation between maximum and minimum (inverse) Jacobian and maximum vector field values as shown in Fig.~\ref{maxvf}. Large vector field values point to either expansion or contraction and resulting in large or small Jacobian values.
 
