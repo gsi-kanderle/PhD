@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   id="svg3228"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="MaxVf.svg">
+  <defs
+     id="defs3">
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;">
+      <path
+         id="path4526"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3739">
+      <rect
+         style="color:#000000;fill:#ff5555;fill-opacity:0.31277538;fill-rule:nonzero;stroke:#000000;stroke-width:0.25654081;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         id="rect3741"
+         width="380.254"
+         height="251.42857"
+         x="1479.8649"
+         y="1950.2192" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3743">
+      <rect
+         style="color:#000000;fill:#ff5555;fill-opacity:0.31277538;fill-rule:nonzero;stroke:#000000;stroke-width:0.25654081;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         id="rect3745"
+         width="380.254"
+         height="251.42857"
+         x="108.43633"
+         y="1967.3621" />
+    </clipPath>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-3"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4526-8"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     inkscape:document-units="mm"
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="377.15594"
+     inkscape:cy="339.92852"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1015"
+     inkscape:window-x="-2"
+     inkscape:window-y="-3"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <image
+       y="-32.621422"
+       x="-167.0226"
+       id="image3315"
+       xlink:href="file:///u/kanderle/PhD/VisualMotionManagment/Images/JacSum.png"
+       height="788.17157"
+       width="1128.0891" />
+    <image
+       y="1914.1479"
+       x="1056.0714"
+       id="image3620"
+       xlink:href="file:///u/kanderle/PhD/VisualMotionManagment/Images/CalcJac/Lung006_ref_calcJac.png"
+       height="905"
+       width="1225"
+       clip-path="url(#clipPath3739)"
+       transform="matrix(0.93182639,0,0,0.93182639,-1390.0975,-1020.2467)"
+       inkscape:export-filename="/u/kanderle/PhD/VisualMotionManagment/Images/jacSum_lung.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <image
+       y="1931.2908"
+       x="-315.35715"
+       id="image3718"
+       xlink:href="file:///u/kanderle/PhD/VisualMotionManagment/Images/CalcJac/Lung006_falsecolor.png"
+       height="905"
+       width="1225"
+       clip-path="url(#clipPath3743)"
+       transform="matrix(0.93182639,0,0,0.93182639,455.46528,-1036.2208)"
+       inkscape:export-filename="/u/kanderle/PhD/VisualMotionManagment/Images/jacSum_lung.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="color:#000000;fill:#0000ff;fill-opacity:0.31277538;fill-rule:nonzero;stroke:#000000;stroke-width:0.10467087;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect3747"
+       width="28.900501"
+       height="29.605391"
+       x="250.39363"
+       y="577.13647"
+       inkscape:export-filename="/u/kanderle/PhD/VisualMotionManagment/Images/jacSum_lung.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:#000080;stroke:#0000c2;stroke-width:0.99921260000000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
+       d="m 259.60921,595.26815 -93.9442,217.68788"
+       id="path3749"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/u/kanderle/PhD/VisualMotionManagment/Images/jacSum_lung.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:#000080;stroke:#0000c2;stroke-width:0.97637105;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
+       d="M 269.19424,596.01435 726.20341,820.5707"
+       id="path3749-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/u/kanderle/PhD/VisualMotionManagment/Images/jacSum_lung.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+  </g>
+</svg>
