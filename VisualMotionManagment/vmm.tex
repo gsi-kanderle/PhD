@@ -316,7 +316,7 @@ For each patient it took around 1 h for all 20 DIR and \textbf{30 min} for compl
 
 \subsubsection{Results}
 
-DIR was successfully performed on all 23 patients. An example of DIR is shown on Fig. \textbf{DO IT}. Vector fields resulting from all DIR were analyzed and data is shown in Table~\ref{tab:vectordata_lung}. There was no statistical
+DIR was successfully performed on all 23 patients. An example of DIR is shown on Fig.~\ref{exampleReg_lung}. Vector fields resulting from all DIR were analyzed and data is shown in Table~\ref{tab:vectordata_lung}. There was no statistical
 difference between true and inverse vector field. The biggest contribution to vector field magnitude was from superior-inferior direction (around 50\%), then anterior-posterior direction (around 30\%) and the smallest contribution was from left-right direction (around 20\%).
 
 \begin{table}[H]
@@ -335,9 +335,17 @@ difference between true and inverse vector field. The biggest contribution to ve
   \label{tab:vectordata_lung}
 \end{table}
 
+\begin{figure}[H]
+	\begin{center}		
+		\includegraphics[width=0.9\textwidth]{./Images/exampleReg.png}
+		\caption{False color overlay of two phases before (a) and after (b) DIR. Vector field is displayed on image (a) as arrows.}
+		\label{exampleReg_lung}
+	\end{center}
+\end{figure}
+
 Data for absolute difference is shown in Figure and summerized in Table \textbf{DO IT}.
 
-Jacobian and ICE results are shown on Fig. \ref{jacobian_data} and \ref{ICE}. Maximum values of true and inverse maximum and minimum jacobian and ICE were tested against maximum vector magnitudes and fitted with linear function. Resulting coeficents were 0.04 and -0.03 for maximum and minimum Jacobian, 0.04 and -0.02 for maximum and minimum inverse Jacobian and 0.4 for maximum ICE, respectively \textbf{Raj v tabelo?}. and were all statistically significant, with $p < 0.05$. 
+Jacobian and ICE results are shown on Fig. \ref{jacobian_data} and \ref{ICE}. Maximum values of true and inverse maximum and minimum Jacobian and ICE were tested against maximum vector magnitudes and fitted with linear function. All fits were statistically significant (p < 0.05). Results are plotted in Fig.~\ref{Contour}. 
 
 
 
@@ -378,10 +386,18 @@ Jacobian and ICE results are shown on Fig. \ref{jacobian_data} and \ref{ICE}. Ma
 
 \begin{figure}[H]
 	\begin{center}		
-		\includegraphics[width=0.9\textwidth]{./Images/MaxVf.png}
-		\caption{Maximum values of maximum jacobian (a), minimum jacobian (b) and ICE (c) versus maximum vector values (red squares) and maximum inverse vector values (green circles) in superior-inferior direction. Linear fit is 
-		displayed with red and green line for vector and inverse vector field, respectively. Dashed line in (c) shows $y(x)= x$ plot.}
+		\includegraphics[width=0.9\textwidth]{./Images/maxVf_lung.png}
+		\caption{Values of maximum Jacobian (a), minimum jacobian (b) and ICE (c) plotted against maximum vector magnitudes. Linear fit is displayed with solid line. Dashed line in (c) shows $y(x)= x$ plot. Values resulting from patient on image (d) are highlighted with blue squares in (a)-(c).
+			ICE is displayed on (d) using color table as displayed in legend.}
 		\label{maxvf}
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}		
+		\includegraphics[width=0.9\textwidth]{./Images/CalcJac.png}
+		\caption{(a) Plot of negative natural logarithm of minimum Jacobian versus maximum Jacobian. Linear fit is displayed with solid line and it's parameters are given in the corner. (b) Shows part of the image of modifed Jacobian (see text) overlayed on patient CT scan. (c) shows the CT scan of phases where Jacobian patient in (b) was calculated in false color.}
+		\label{calcJac_lung}
 	\end{center}
 \end{figure}
 
@@ -493,11 +509,6 @@ Jacobian and ICE results are shown on Fig. \ref{jacobian_data2} and \ref{ICE2}. 
 and fitted with linear function. Resulting coeficents were 0.15 and -0.04 for maximum and minimum Jacobian, 0.08 and -0.05 for maximum and minimum inverse Jacobian and 0.9 and 0.95 for maximum ICE vs true and inverse vector field, respectively. 
 All linear fits were statistically significant, with $p < 0.05$. 
 
-TJMax    IJMax
-IJMin    TJMin
-k = 1.63 1.8 1.71
-n = -0.04 -0.07 -0.05
-r = 0.90  0.80 0.90
 
 
 
