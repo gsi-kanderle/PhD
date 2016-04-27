@@ -155,14 +155,19 @@ As the name suggests, checkerboard creates an image of tiles. Each tile alternat
 
 To stress the difference between reference and warped image an absolute difference between voxel values is calculated and displayed. New image is generated, with voxels populated as the absolute difference between reference and warped image voxel values, as shown in Fig.~\ref{absDiff}. Furthermore, average, standard deviation, minimum and maximum of absolute differneces are calulcated for quantitative assessment of registration quality (in ideal case all values would be 0).
 
-The absolute difference feature is similar to false color, but it displays differences clearer and it also provides quantitative values. In contrast to false color which only relies on user examination.
+The absolute difference feature is similar to false color, but it displays differences clearer and it also provides quantitative values. In contrast to false color which only relies on user examination. 
+
+Absoulte difference can be computed between reference and moving image, named default absolute difference, to provide initial estimate of difference between images. After the registration it can be done on
+true and inverse warped images (true and inverse absolute difference) to show registration results. Usually, registration works on minimizing absolute difference, so it is a direct indicatior
+of registration success.
 
 To spare computational time or to focus on a specific region, absolute difference can also be calculated just on a specific ROI (if used as an input). Usually ROI around patient body is selected, rather than calculating on a whole patient CT.
+
 
 \begin{figure}[H]
 	\begin{center}		
 		\includegraphics[width=0.9\textwidth]{./Images/abs.png}
-		\caption{Absolute difference image before (a) and after registration (b).  Image consist of tiles alternating between two images. Tiles in image (a) alternate between scans before registration and in image (b) after registration. The difference before registration is 350 HU and 100 HU after registration \textbf{CHECK!}}
+		\caption{Absolute difference image before (a) and after registration (b). The mean absolute difference before registration (default absolute difference) is 62 HU and 31 HU after registration (true absolute difference).}
 		\label{absDiff}
 	\end{center}
 \end{figure}
@@ -234,39 +239,39 @@ As in Jacobian, ICE image is calculated and displayed, along with values for ave
 \end{figure}
 
 
-\subsubsection{Output file}
+% \subsubsection{Output file}
+% 
+% With all different features to validate DIR it can be time consuming to go through them all. A special option was created to automatically go through all different validation steps. Furthermore it can also run through different phases, if there are more phases (i.e. in 4DCT). All produced data from DIR validation is stored on disk and can be reexamined by user upon request. Furthermore, images are created and data is summed up and displayed in a separate file. Users can then preview file for first validation of DIR and then open necessary files, if required.
 
-With all different features to validate DIR it can be time consuming to go through them all. A special option was created to automatically go through all different validation steps. Furthermore it can also run through different phases, if there are more phases (i.e. in 4DCT). All produced data from DIR validation is stored on disk and can be reexamined by user upon request. Furthermore, images are created and data is summed up and displayed in a separate file. Users can then preview file for first validation of DIR and then open necessary files, if required.
-
-\subsection{Contour visualization}
-\label{Contour}
-
-TRiP4D (see Section \textbf{REF}) introduced volume datasets for contour representation \cite{Richter2012}. It enabled necessary tasks for 4D calculations, such as the storing contour in different 4D states, contour propagation, etc. However, there was a lack of a proper visualization tool. In order to provide a contour visualization tool, a Slicer module was created. 
-
-Contours are saved as volumetric boolean masks. A single bit per ROI contour representation marks each voxel inside volume dataset \cite{Richter2012}. To properly display contour, first a whole volume dataset was imported in Slicer. User selects which motion state he would like to inspect. The corresponding bit is then selected on the imported volume dataset. Lastly the contour is converted into 3D model shape. 
-
-\subsection{Motion estimation and ITV creation}
-
-ITV is often created by an eye investigation of all 4DCT phases, where the extent of motion is estimated. Automatic creation of ITV is scarce in commercial system, since it requires DIR on all 4DCT phases. A Slicer module was created to assist with the motion estimation and automatic ITV creation using DIR. 
-
-Module is able to estimate and display motion of a user selected contour in three axis (left-right, anterior-posterior, superior-inferior) based on DIR vector fields. Module also performs DIR on 4DCT with patient hierarchy, if it has not been done yet.
-
-Beside motion estimation, module can also propagate selected contour (usually CTV) and propagate it to all 4DCT and make a convolution of all propagated contours, resulting in automatically generated ITV.
-
-\subsubsection{Generation of mid-position phase}
-
-Most commercial software calculates treatment plan on a single 3D CT scan, using 4DCT only for motion estimation. To incorporate patient-specific motion information, a 3D CT scan was created from 4DCT in the time averaged position, also known as mid-position scan (midP scan) \cite{Wolthaus2008}. With midP scan commercial software can still be used. Additionally, it also enabled smaller error margins for PTV generation and midP scan has less noise as individual 4DCT scans, because it uses more data. 
-
-Construction of a midP begins with registration of whole 4DCT. The resulting vector fields from reference position to 4DCT phases are then averaged to obtain mean vector field, see Fig.~\ref{midPgeneration}. Afterwards, for each vector field the mean vector field was subtracted, yielding a set of mean-corrected vector fields pointing from mean position to corresponding 4DCT phase. The mean-corrected vector fields were finally inverted and applied to each 4DCT phase, resulting in each phase being in the same, time-averaged position. In the end the set of transformed 4DCT phase was averaged to obtain midP scan.
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.9\textwidth]{./Images/midPgeneration.png}
-\caption{Computation of the midP scan. All vectors have the same starting point (reference phase, maximume exhale in the this example), therefore they can be averaged, resulting in the mean vector.
-	Next vectors from mean position to 4DCT phases have to be computed, which is achieved by substracting original vectors and mean vector. Figure taken from \cite{Wolthaus2008}}
-\label{midPgeneration}
-\end{center}
-\end{figure}
+% \subsection{Contour visualization}
+% \label{Contour}
+% 
+% TRiP4D (see Section \textbf{REF}) introduced volume datasets for contour representation \cite{Richter2012}. It enabled necessary tasks for 4D calculations, such as the storing contour in different 4D states, contour propagation, etc. However, there was a lack of a proper visualization tool. In order to provide a contour visualization tool, a Slicer module was created. 
+% 
+% Contours are saved as volumetric boolean masks. A single bit per ROI contour representation marks each voxel inside volume dataset \cite{Richter2012}. To properly display contour, first a whole volume dataset was imported in Slicer. User selects which motion state he would like to inspect. The corresponding bit is then selected on the imported volume dataset. Lastly the contour is converted into 3D model shape. 
+% 
+% \subsection{Motion estimation and ITV creation}
+% 
+% ITV is often created by an eye investigation of all 4DCT phases, where the extent of motion is estimated. Automatic creation of ITV is scarce in commercial system, since it requires DIR on all 4DCT phases. A Slicer module was created to assist with the motion estimation and automatic ITV creation using DIR. 
+% 
+% Module is able to estimate and display motion of a user selected contour in three axis (left-right, anterior-posterior, superior-inferior) based on DIR vector fields. Module also performs DIR on 4DCT with patient hierarchy, if it has not been done yet.
+% 
+% Beside motion estimation, module can also propagate selected contour (usually CTV) and propagate it to all 4DCT and make a convolution of all propagated contours, resulting in automatically generated ITV.
+% 
+% \subsubsection{Generation of mid-position phase}
+% 
+% Most commercial software calculates treatment plan on a single 3D CT scan, using 4DCT only for motion estimation. To incorporate patient-specific motion information, a 3D CT scan was created from 4DCT in the time averaged position, also known as mid-position scan (midP scan) \cite{Wolthaus2008}. With midP scan commercial software can still be used. Additionally, it also enabled smaller error margins for PTV generation and midP scan has less noise as individual 4DCT scans, because it uses more data. 
+% 
+% Construction of a midP begins with registration of whole 4DCT. The resulting vector fields from reference position to 4DCT phases are then averaged to obtain mean vector field, see Fig.~\ref{midPgeneration}. Afterwards, for each vector field the mean vector field was subtracted, yielding a set of mean-corrected vector fields pointing from mean position to corresponding 4DCT phase. The mean-corrected vector fields were finally inverted and applied to each 4DCT phase, resulting in each phase being in the same, time-averaged position. In the end the set of transformed 4DCT phase was averaged to obtain midP scan.
+% 
+% \begin{figure}[H]
+% \begin{center}
+% \includegraphics[width=0.9\textwidth]{./Images/midPgeneration.png}
+% \caption{Computation of the midP scan. All vectors have the same starting point (reference phase, maximume exhale in the this example), therefore they can be averaged, resulting in the mean vector.
+% 	Next vectors from mean position to 4DCT phases have to be computed, which is achieved by substracting original vectors and mean vector. Figure taken from \cite{Wolthaus2008}}
+% \label{midPgeneration}
+% \end{center}
+% \end{figure}
 
 
 
@@ -294,7 +299,7 @@ DIRs were done with B-Spline Plastimatch module and patient hierarchy in Slicer 
 \begin{table}[H]
   \centering
 %   \footnotesize
-  \caption{Parameters used for Plastimatch registration. Details for each parameter can be found in \cite{Plastimatch}.}
+  \caption{Parameters used for Plastimatch registration. A mean squared error metric was used. Details for each parameter can be found in \cite{Plastimatch}.}
   \begin{tabular}{c|c|c}
       Parameter & Stage 1 & Stage 2 \\
       \hline
@@ -307,9 +312,10 @@ DIRs were done with B-Spline Plastimatch module and patient hierarchy in Slicer 
   \label{tab:stages}
 \end{table}
 
-Absolute difference was computed for three image pairs: reference and moving image (default case), reference and moving warped image (DIR case), moving and reference warped image (inverse DIR case).
-Jacobian and ICE checks (see Section~\ref{Jacobian} and \ref{ICE}) were done on all 460 vector fields. To save memory usage all vector fields were rescaled by a factor of 2. 
-ROI around patient body was manually created to get better results - area outside of patient is the same in all states and does not contribute to DIR. ROI was then used in absolute difference, jacobian and ICE.
+Absolute difference was computed for three image pairs: reference and moving image (default absolute difference), reference and moving warped image (true absolute difference), moving and reference warped image (inverse absolute difference). In total 621 absolute differences were caluclated and a downsampling by a factor of 2 was
+done on all images before calculation to save computer time. Similarly, 414 vector fields were also downsampled by a factor of 2 before calculating Jacobian and ICE checks.
+
+ROI around patient body was manually created to get better results - area outside of patient is roughly the same in all states (air) and does not contribute to DIR. ROI was then used in absolute difference, jacobian and ICE.
 
 For each patient it took around 1 h for all 20 DIR and \textbf{30 min} for complete DIRQA on all 20 DIR  on Linux computer with 8 clusters and 16 GB RAM.
 
@@ -317,7 +323,7 @@ For each patient it took around 1 h for all 20 DIR and \textbf{30 min} for compl
 \subsubsection{Results}
 
 DIR was successfully performed on all 23 patients. An example of DIR is shown on Fig.~\ref{exampleReg_lung}. Vector fields resulting from all DIR were analyzed and data is shown in Table~\ref{tab:vectordata_lung}. There was no statistical
-difference between true and inverse vector field. The biggest contribution to vector field magnitude was from superior-inferior direction (around 50\%), then anterior-posterior direction (around 30\%) and the smallest contribution was from left-right direction (around 20\%).
+difference between true and inverse vector fields. The biggest contribution to vector field magnitude was from superior-inferior direction (around 50\%), next was anterior-posterior direction (around 30\%) and the smallest contribution was from left-right direction (around 20\%).
 
 \begin{table}[H]
   \centering
@@ -343,35 +349,31 @@ difference between true and inverse vector field. The biggest contribution to ve
 	\end{center}
 \end{figure}
 
-Data for absolute difference is shown in Figure and summerized in Table \textbf{DO IT}.
+Dependence of true and inverse absolute difference on default absolute difference is shown in Fig.~\ref{absDiff_lung}. Fig.~\ref{absDiff_lung} also shows default absolute difference distribution accross 9 phases. 
 
-Jacobian and ICE results are shown on Fig. \ref{jacobian_data} and \ref{ICE}. Maximum values of true and inverse maximum and minimum Jacobian and ICE were tested against maximum vector magnitudes and fitted with linear function. All fits were statistically significant (p < 0.05). Results are plotted in Fig.~\ref{Contour}. 
+Distribuition of Jacobian and ICE results are shown in Fig. \ref{jacobian_data} and \ref{ICE}. Maximum values of true and inverse maximum and minimum Jacobian and ICE were tested against maximum vector magnitudes and fitted with linear function. Results are plotted in Fig.~\ref{maxvf}.
+Additionally, dependence of maximum true Jacobian on minimum inverse Jacobian was tested and results are display in Fig~\ref{calcJac_lung}.
 
+All linear fits were statistically significant (p < 0.05).
 
+\begin{figure}[H]
+	\begin{center}		
+		\includegraphics[width=0.9\textwidth]{./Images/absDiff.png}
+		\caption{Natural logarithm of true and inverse absolute difference (AbsDiff) plotted against default absolute difference (DefAbsDiff). Solid line shows linear fit, with parameters
+		writen in corner. Dashed line shows $y(x)=x$ plot. Inset shows box plots of mean distribution of default absolute difference across nine 4DCT phases. Boxes represent 25-75\%, whiskers 10-90\%
+		of data, median is shown with solid line, mean with square and outliers with crosses.}
+		\label{absDiff_lung}
+	\end{center}
+\end{figure}
 
-% \begin{table}[H]
-%   \centering
-% %   \footnotesize
-%   \caption{Mean, STD, maximum and minimum values for Jacobian, inverse Jacobian and ICE. Values are presented as average (range).}
-%   \begin{tabular}{c|c|c|c}
-%        & Jacobian & Inverse Jacobian & ICE \\
-%        \hline
-%        Mean  & 0.99 (0.96 - 1.01) & 1.01 (0.99 - 1.03) & 0.43 (0.01 - 1.16)\\
-%        STD   & 0.05 (0.0 - 0.13)  & 0.05 (0.0 - 0.12)  &  0.47 (0.01 - 1.47)\\
-%        Maximum   & 1.47 (1.02 - 7.46) & 1.55 (1.03 - 4.26) & 4.31 (0.07 - 23.07)\\
-%        Minimum   & 0.63 (0.02 - 0.97) & 0.68 (0.05 - 0.98) & 0.0 (0.0 - 0.0) \\       
-%       \hline
-%     \hline\hline
-%   \end{tabular}
-%   \label{tab:dirdata_lung}
-% \end{table}
 
 \newpage
 
 \begin{figure}[H]
 	\begin{center}		
 		\includegraphics[width=0.9\textwidth]{./Images/Jacobian_data.png}
-		\caption{Data for Jacobian of vector fields (top) and inverse vector fields (bottom) for 9 4DCT phases (reference phase 0 is excluded) for 23 lung cancer patients. Mean, STD, maximum and minimum are represented as (a), (b), (c) and (d), respectively.}
+		\caption{Data for Jacobian of vector fields (top) and inverse vector fields (bottom) for 9 4DCT phases (reference phase 0 is excluded) for 23 lung cancer patients. Mean, STD, maximum and minimum are represented as (a), (b), (c) and (d), respectively.
+		Boxes represent 25-75\%, whiskers 10-90\% of data, median is shown with solid line, mean with square and outliers with crosses.}
 		\label{jacobian_data}
 	\end{center}
 \end{figure}
@@ -379,8 +381,17 @@ Jacobian and ICE results are shown on Fig. \ref{jacobian_data} and \ref{ICE}. Ma
 \begin{figure}[H]
 	\begin{center}		
 		\includegraphics[width=0.9\textwidth]{./Images/ICE.png}
-		\caption{Data for ICE for 9 4DCT phases (reference phase 0 is excluded) for 23 lung cancer patients. Mean, STD, maximum are represented as (a), (b) and (c), respectively. ICE Minimum is 0 throughout all phases and patients.}
+		\caption{Data for ICE for 9 4DCT phases (reference phase 0 is excluded) for 23 lung cancer patients. Mean, STD, maximum are represented as (a), (b) and (c), respectively. ICE Minimum is 0 throughout all phases and patients.
+		Boxes represent 25-75\%, whiskers 10-90\% of data, median is shown with solid line, mean with square and outliers with crosses.}
 		\label{ice}
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}		
+		\includegraphics[width=0.9\textwidth]{./Images/jacSum_lung.png}
+		\caption{(a) Plot of negative natural logarithm of minimum Jacobian versus maximum Jacobian. Linear fit is displayed with solid line and it's parameters are given in the corner. (b) Shows part of the image of modifed Jacobian (see text) overlayed on patient CT scan. (c) shows the CT scan of phases where Jacobian patient in (b) was calculated in false color.}
+		\label{calcJac_lung}
 	\end{center}
 \end{figure}
 
@@ -393,24 +404,29 @@ Jacobian and ICE results are shown on Fig. \ref{jacobian_data} and \ref{ICE}. Ma
 	\end{center}
 \end{figure}
 
-\begin{figure}[H]
-	\begin{center}		
-		\includegraphics[width=0.9\textwidth]{./Images/CalcJac.png}
-		\caption{(a) Plot of negative natural logarithm of minimum Jacobian versus maximum Jacobian. Linear fit is displayed with solid line and it's parameters are given in the corner. (b) Shows part of the image of modifed Jacobian (see text) overlayed on patient CT scan. (c) shows the CT scan of phases where Jacobian patient in (b) was calculated in false color.}
-		\label{calcJac_lung}
-	\end{center}
-\end{figure}
+
 
 \subsubsection{Discussion}
 
 Vector field magintudes confirms previously published data that the biggest motion for lungs is in superior-inferior direction \cite{Seppenwoolde2002, Britton2007, Liu2007}. The mean vector field magnitude is small (in submilimiter range), 
-because the ROI included the whole patient body, not just the lungs where most of the motion occurs. There is little difference between values for vectors and inverse vectors, which was expected.
+because the ROI included the whole patient body, not just the lungs where most of the motion occurs. Vectors and inverse vectors are similar, which was expected.
 
-Values for Jacobian and inverse Jacobian were close to 1 with small STD, which indicates that most of the patient body does not change during the 4DCT scan. Mean values of maximum and minimum Jacobian were around 1.50 and 0.65 respectively, because there were expansions and contractions present. There were some extremely large values (7.46 the largest), that were result of an artifact present on a 4DCT scan, as shown on Fig \textbf{make that figure}. \textbf{Extremly low Jacobian?}. There is also a linear correlation between maximum and minimum (inverse) Jacobian and maximum vector field values as shown in Fig.~\ref{maxvf}. Large vector field values point to either expansion or contraction and resulting in large or small Jacobian values.
+There was a good correlation (Pearsons's r = 0.91) between absolute difference before and after DIR. The greater the difference between reference and moving image, the better DIR can match them. Few cases
+have sligthly higher absolute difference after DIR, which should not occour, since DIR was minimizing absolute difference metric. The reason lies in construction of warped images. Vector field is used to transform
+moving image to warped image. If the vector field is large on edges, an empty space will be left there in warped image. Absolute difference will therefore seem larger after DIR. A future modification of absolute difference
+module should handle empty spaces at edges.
 
-Following ICE definition in Eq.~\ref{eq:ice} there should be a correlation between vector field and ICE values. As such ICE mean and STD ICE are also in submilimeter range. The maximum ICE values can be large, with up to 2.3 cm, but still smaller as average maximum vector values. As shown in Fig.~\ref{maxvf}c a linear fit is a good approximation for maximum ICE dependence on maximum vector (inverse vector) field values. Furthermore, for first DIR check, ICE should always be lower as maximum vector field values. Cases above dashed lines in Fig~\ref{maxvf}c all have poor DIR, usually pointing to an artifact in the image.
+Due to small mean vector field magnitudes, values for true and inverse Jacobian were close to 1 with small STD, which indicates that most of the patient body does not change during the 4DCT scan.
+However, patient expansions and contractions can be seen on maximum and minimum Jacobian, which were around 1.50 and 0.65 respectively. If a part of a patient body contracts from reference to moving image, 
+then it expands in inverse direction and vice versa. The correlation was confirmed in Fig.~\ref{calcJac_lung}a, with a high Pearsons's r (0.90). Furthermore outliers from linear fit spot inconsistencies
+in DIR as shown in Fig.~\ref{calcJac_lung}a and b, where a small artefact was found in one patient phase solely from the deviation from linear fit in Fig.~\ref{calcJac_lung}.
 
-As shown in Fig.~\ref{jacobian_data} and \ref{ice} Jacobian, inverse Jacobian and ICE values follow motion curve for lungs (\textbf{PUT IT IN SECTION MID P}). The biggest difference for motion as well for Jacobian, inverse Jacobian and ICE is between extreme breathing positions, end-inhale (0\%) and end-exhale (50\%,60\%). 
+Mean and STD ICE are in submilimeter range, which confirms correlation between vector field and ICE (see Eq.~\ref{eq:ice}). The maximum ICE values can be large, with up to 2.3 cm, 
+but still smaller as average maximum vector values. 
+
+Large vector field magnitudes will produce more errors in DIR as shown in Fig~\ref{maxvf}. Linear fit was used for estimation on increase (decrease) of Jacobian and ICE. Additionally, ICE
+should always be lower as maximum vector field values. Cases above dashed lines in Fig~\ref{maxvf}c all have poor DIR, confirming the hypotesis. An extreme case (highlighted in Fig.~\ref{maxvf}a-c)
+had an image artifact present in one phase (shown in Fig.~\ref{maxvf}d) leading to inconsistencies in DIR.
 
 
 \subsection{Registration of pig heart 4DCT data}
@@ -424,7 +440,6 @@ scanned carbon-ion to verify treatment in vivo.
 
 To estimate and compensate motion of the heart during irradiation DIR of 4DCT data was required. Furthermore, because of the actual irradiation of live pigs a DIRQA had to be made, to ensure validity of DIR. Description of procedure will be here,
 along with the results.
-
 
 
 \subsubsection{Materials and Methods}
@@ -522,7 +537,7 @@ Values for Jacobian and inverse Jacobian were close to 1 with small STD, which i
 
 Following ICE definition in Eq.~\ref{eq:ice} there should be a correlation between vector field and ICE values. As such ICE mean and STD ICE are also in submilimeter range. The maximum ICE values can be large, with up to 2.3 cm, but still smaller as average maximum vector values. As shown in Fig.~\ref{maxvf}c a linear fit is a good approximation for maximum ICE dependence on maximum vector (inverse vector) field values. Furthermore, for first DIR check, ICE should always be lower as maximum vector field values. Cases above dashed lines in Fig~\ref{maxvf}c all have poor DIR, usually pointing to an artifact in the image.
 
-As shown in Fig.~\ref{jacobian_data} and \ref{ice} Jacobian, inverse Jacobian and ICE values follow motion curve for lungs (\textbf{PUT IT IN SECTION MID P}). The biggest difference for motion as well for Jacobian, inverse Jacobian and ICE is between extreme breathing positions, end-inhale (0\%) and end-exhale (50\%,60\%). 
+As shown in Fig.~\ref{ice} and \ref{ice} Jacobian, inverse Jacobian and ICE values follow motion curve for lungs (\textbf{PUT IT IN SECTION MID P}). The biggest difference for motion as well for Jacobian, inverse Jacobian and ICE is between extreme breathing positions, end-inhale (0\%) and end-exhale (50\%,60\%). 
 
 
 % \subsection{Mid-Position patient example}
