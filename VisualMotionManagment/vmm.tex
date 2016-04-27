@@ -526,12 +526,6 @@ observed between true and inverse vector field. However, significant diference w
 	\end{center}
 \end{figure}
 
-
-Jacobian and ICE results are shown on Fig. \ref{jacobian_data2} and \ref{ICE2}. Maximum values of true and inverse maximum and minimum Jacobian and ICE were tested against maximum vector magnitudes. Linear fit was also obtained for results.
-and fitted with linear function. Resulting coeficents were 0.15 and -0.04 for maximum and minimum Jacobian, 0.08 and -0.05 for maximum and minimum inverse Jacobian and 0.9 and 0.95 for maximum ICE vs true and inverse vector field, respectively. 
-All linear fits were statistically significant, with $p < 0.05$. 
-
-
 Dependence of true and inverse absolute difference on default absolute difference with a linear fit is shown in Fig.~\ref{absDiff_pigs}. Default absolute difference distribution accross 9 phases can be seen in inset in Fig.~\ref{absDiff_pigs}.
 
 Distribuition of Jacobian and ICE results are shown in Fig. \ref{jacobian_data_pigs} and \ref{ice_pigs}. Maximum values of true and inverse maximum and minimum Jacobian and ICE were tested 
@@ -600,6 +594,29 @@ Values for Jacobian and inverse Jacobian were close to 1 with small STD, which i
 Following ICE definition in Eq.~\ref{eq:ice} there should be a correlation between vector field and ICE values. As such ICE mean and STD ICE are also in submilimeter range. The maximum ICE values can be large, with up to 2.3 cm, but still smaller as average maximum vector values. As shown in Fig.~\ref{maxvf}c a linear fit is a good approximation for maximum ICE dependence on maximum vector (inverse vector) field values. Furthermore, for first DIR check, ICE should always be lower as maximum vector field values. Cases above dashed lines in Fig~\ref{maxvf}c all have poor DIR, usually pointing to an artifact in the image.
 
 As shown in Fig.~\ref{ice} and \ref{ice} Jacobian, inverse Jacobian and ICE values follow motion curve for lungs (\textbf{PUT IT IN SECTION MID P}). The biggest difference for motion as well for Jacobian, inverse Jacobian and ICE is between extreme breathing positions, end-inhale (0\%) and end-exhale (50\%,60\%). 
+
+
+Vector field magintudes confirms previously published data that the biggest motion for lungs is in superior-inferior direction \cite{Seppenwoolde2002, Britton2007, Liu2007}. The mean vector field magnitude is small (in submilimiter range), 
+because the ROI included the whole patient body, not just the lungs where most of the motion occurs. Vectors and inverse vectors are similar, which was expected.
+
+There was a good correlation (Pearsons's r = 0.91) between absolute difference before and after DIR. The greater the difference between reference and moving image, the better DIR can match them. Few cases
+have sligthly higher absolute difference after DIR, which should not occour, since DIR was minimizing absolute difference metric. The reason lies in construction of warped images. Vector field is used to transform
+moving image to warped image. If the vector field is large on edges, an empty space will be left there in warped image. Absolute difference will therefore seem larger after DIR. A future modification of absolute difference
+module should handle empty spaces at edges.
+
+Due to small mean vector field magnitudes, values for true and inverse Jacobian were close to 1 with small STD, which indicates that most of the patient body does not change during the 4DCT scan.
+However, patient expansions and contractions can be seen on maximum and minimum Jacobian, which were around 1.50 and 0.65 respectively. If a part of a patient body contracts from reference to moving image, 
+then it expands in inverse direction and vice versa. The correlation was confirmed in Fig.~\ref{calcJac_lung}a, with a high Pearsons's r (0.90). Furthermore outliers from linear fit spot inconsistencies
+in DIR as shown in Fig.~\ref{calcJac_lung}a and b, where a small artefact was found in one patient phase solely from the deviation from linear fit in Fig.~\ref{calcJac_lung}.
+
+Mean and STD ICE are in submilimeter range, which confirms correlation between vector field and ICE (see Eq.~\ref{eq:ice}). The maximum ICE values can be large, with up to 2.3 cm, 
+but still smaller as average maximum vector values. 
+
+Large vector field magnitudes will produce more errors in DIR as shown in Fig~\ref{maxvf}. Linear fit was used for estimation on increase (decrease) of Jacobian and ICE. Additionally, ICE
+should always be lower as maximum vector field values. Cases above dashed lines in Fig~\ref{maxvf}c all have poor DIR, confirming the hypotesis. An extreme case (highlighted in Fig.~\ref{maxvf}a-c)
+had an image artifact present in one phase (shown in Fig.~\ref{maxvf}d) leading to inconsistencies in DIR.
+
+
 
 
 % \subsection{Mid-Position patient example}
