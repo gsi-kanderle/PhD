@@ -87,9 +87,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="377.15594"
-     inkscape:cy="339.92852"
+     inkscape:zoom="0.24748738"
+     inkscape:cx="544.83817"
+     inkscape:cy="40.784691"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
@@ -121,21 +121,27 @@
        height="920"
        width="1235"
        clip-path="url(#clipPath5446)"
-       transform="translate(-844.48753,589.92909)" />
+       transform="translate(-844.48753,589.92909)"
+       inkscape:export-filename="/u/kanderle/PhD/VisualMotionManagment/Images/maxVf_lung.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
     <image
        y="-414.28067"
        x="-408.21426"
        id="image5128"
        xlink:href="file:///u/kanderle/PhD/VisualMotionManagment/Images/MaxVf.png"
        height="997.44678"
-       width="1427.6193" />
+       width="1427.6193"
+       inkscape:export-filename="/u/kanderle/PhD/VisualMotionManagment/Images/maxVf_lung.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
     <path
        style="fill:#000080;stroke:#0000c2;stroke-width:0.97637105;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
        d="M 877.89906,-291.02698 60.095746,1234.6058"
        id="path3749-8"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc"
-       inkscape:export-filename="/u/kanderle/PhD/VisualMotionManagment/Images/jacSum_lung.png"
+       inkscape:export-filename="/u/kanderle/PhD/VisualMotionManagment/Images/maxVf_lung.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <rect
@@ -144,20 +150,29 @@
        width="32.857143"
        height="32.857143"
        x="-78.214287"
-       y="-327.10211" />
+       y="-327.10211"
+       inkscape:export-filename="/u/kanderle/PhD/VisualMotionManagment/Images/maxVf_lung.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
     <rect
        style="color:#000000;fill:#000080;fill-opacity:0.31277538;fill-rule:nonzero;stroke:none;stroke-width:0.99921262;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        id="rect5131-4"
        width="32.857143"
        height="32.857143"
        x="879.28571"
-       y="-326.92352" />
+       y="-326.92352"
+       inkscape:export-filename="/u/kanderle/PhD/VisualMotionManagment/Images/maxVf_lung.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
     <rect
        style="color:#000000;fill:#000080;fill-opacity:0.31277538;fill-rule:nonzero;stroke:none;stroke-width:0.99921262;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        id="rect5131-7"
        width="32.857143"
        height="32.857143"
        x="333.57141"
-       y="298.79074" />
+       y="298.79074"
+       inkscape:export-filename="/u/kanderle/PhD/VisualMotionManagment/Images/maxVf_lung.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
   </g>
 </svg>
