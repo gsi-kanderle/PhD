@@ -283,6 +283,7 @@ Several extensions for Slicer were created to tackle the issue of motion in trea
 DIR and DIR validation was done on lung 4DCT patient data. As part of a GSI pig-irradiation project (?) DIR and DIR validation was integrated in clinical workflow. Finally an example of midP scan on a liver cancer patient and it's usage will be presented.
 
 \subsection{Registration of lung 4DCT patient data}
+\label{lungDIR}
 
 Chapter \textbf{REF} and \textbf{REF} present studies on simulating active scanning carbon ion treatment (CiT) for lung cancer patient. The effects of interplay can drastically chage the dose distribution for CiT and it is necessary to quantify effects of motion with DIR and transfer results into
 treatment planning software (TRiP4D in this case). An automatic procedure is required to preform DIR and DIR validation on a large number of patients. This was achieved with Slicer modules described in Section~\ref{Implementation}.
@@ -585,9 +586,13 @@ All linear fits were statistically significant (p < 0.05).
 
 \subsubsection{Discussion}
 
+Mean vector field magnitudes were small (approx. 0.1 mm), since pigs were in a breath-hold position and the only motion was the beating of the heart. Despite the small mean vector magnitude it was still enough to observe statistical difference between the PM and noPM. Consequently, the difference between two groups is then consistent through all DIRQA.
 
-Vector field magintudes confirms previously published data that the biggest motion for lungs is in superior-inferior direction \cite{Seppenwoolde2002, Britton2007, Liu2007}. The mean vector field magnitude is small (in submilimiter range), 
-because the ROI included the whole patient body, not just the lungs where most of the motion occurs. There is little difference between values for vectors and inverse vectors, which was expected.
+Since the vector fields were small on average, the mean Jacobian was 1 almost in all cases. However there were large deviations present in true and inverse Jacobian as can be seen on Fig.~\ref{jacobian_data_pigs}. Similar holds true for ICE, with the mean value being 0. The most extreme cases even show negative minimum Jacobian, which would mean organ folding. Since organ folding did not occur during a heart beat, negative Jacobian points to a bad DIR. Unfortunately, the negative Jacobian did not show in phase 5, which was tested for DIRQA during experiment.
+
+As in Section~\ref{lungDIR} extreme Jacobian and ICE values were plotted against maximum vector field magnitudes. 
+
+
 
 Values for Jacobian and inverse Jacobian were close to 1 with small STD, which indicates that most of the patient body does not change during the 4DCT scan. Mean values of maximum and minimum Jacobian were around 1.50 and 0.65 respectively, because there were expansions and contractions present. There were some extremely large values (7.46 the largest), that were result of an artifact present on a 4DCT scan, as shown on Fig \textbf{make that figure}. \textbf{Extremly low Jacobian?}. There is also a linear correlation between maximum and minimum (inverse) Jacobian and maximum vector field values as shown in Fig.~\ref{maxvf}. Large vector field values point to either expansion or contraction and resulting in large or small Jacobian values.
 
