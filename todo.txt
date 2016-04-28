@@ -16,6 +16,8 @@ Plan za ponedeljek, 17.4:
  4b Poslat se komu
  
 5. VMM:
+ A lahko dodas ranking based on ICE and jacobian?
+ Show PM and noPM example?
  hed2nrrd?
  Small big roi pigs?
  Spust planning CT for now.

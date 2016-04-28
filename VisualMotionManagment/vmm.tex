@@ -274,7 +274,7 @@ As in Jacobian, ICE image is calculated and displayed, along with values for ave
 % \end{figure}
 
 
-
+\newpage
 \section{Verification}
 \label{Verification}
 
@@ -342,14 +342,6 @@ difference between true and inverse vector fields. The biggest contribution to v
   \label{tab:vectordata_lung}
 \end{table}
 
-\begin{figure}[H]
-	\begin{center}		
-		\includegraphics[width=0.9\textwidth]{./Images/exampleReg.png}
-		\caption{False color overlay of two phases before (a) and after (b) DIR. Vector field is displayed on image (a) as arrows.}
-		\label{exampleReg_lung}
-	\end{center}
-\end{figure}
-
 Dependence of true and inverse absolute difference on default absolute difference is shown in Fig.~\ref{absDiff_lung}. Fig.~\ref{absDiff_lung} also shows default absolute difference distribution accross 9 phases. 
 
 Distribuition of Jacobian and ICE results are shown in Fig. \ref{jacobian_data} and \ref{ice}. Maximum values of true and inverse maximum and minimum Jacobian and ICE were tested against maximum vector magnitudes and fitted with linear function. Results are plotted in Fig.~\ref{maxvf}.
@@ -359,7 +351,17 @@ All linear fits were statistically significant (p < 0.05).
 
 \begin{figure}[H]
 	\begin{center}		
-		\includegraphics[width=0.9\textwidth]{./Images/absDiff.png}
+		\includegraphics[width=0.6\textwidth]{./Images/exampleReg.png}
+		\caption{False color overlay of two phases before (a) and after (b) DIR. Vector field is displayed on image (a) as arrows.}
+		\label{exampleReg_lung}
+	\end{center}
+\end{figure}
+
+
+
+\begin{figure}[H]
+	\begin{center}		
+		\includegraphics[width=0.7\textwidth]{./Images/absDiff.png}
 		\caption{Natural logarithm of true and inverse absolute difference (AbsDiff) plotted against default absolute difference (DefAbsDiff). Solid line shows linear fit, with parameters
 		writen in corner. Dashed line shows $y(x)=x$ plot. Inset shows box plots of mean distribution of default absolute difference across nine 4DCT phases. Boxes represent 25-75\%, whiskers 10-90\%
 		of data, median is shown with solid line, mean with square and outliers with crosses.}
@@ -372,12 +374,14 @@ All linear fits were statistically significant (p < 0.05).
 
 \begin{figure}[H]
 	\begin{center}		
-		\includegraphics[width=0.9\textwidth]{./Images/Jacobian_data.png}
+		\includegraphics[width=0.75\textwidth]{./Images/Jacobian_data.png}
 		\caption{Data for Jacobian of vector fields (top) and inverse vector fields (bottom) for 9 4DCT phases (reference phase 0 is excluded) for 23 lung cancer patients. Mean, STD, maximum and minimum are represented as (a), (b), (c) and (d), respectively.
 		Boxes represent 25-75\%, whiskers 10-90\% of data, median is shown with solid line, mean with square and outliers with crosses.}
 		\label{jacobian_data}
 	\end{center}
 \end{figure}
+
+\newpage
 
 \begin{figure}[H]
 	\begin{center}		
@@ -388,13 +392,17 @@ All linear fits were statistically significant (p < 0.05).
 	\end{center}
 \end{figure}
 
+
+
 \begin{figure}[H]
 	\begin{center}		
-		\includegraphics[width=0.9\textwidth]{./Images/jacSum_lung.png}
+		\includegraphics[width=0.8\textwidth]{./Images/jacSum_lung.png}
 		\caption{(a) Plot of negative natural logarithm of minimum Jacobian versus maximum Jacobian. Linear fit is displayed with solid line and it's parameters are given in the corner. (b) Shows part of the image of modifed Jacobian (see text) overlayed on patient CT scan. (c) shows the CT scan of phases where Jacobian patient in (b) was calculated in false color.}
 		\label{calcJac_lung}
 	\end{center}
 \end{figure}
+
+\newpage
 
 \begin{figure}[H]
 	\begin{center}		
@@ -405,7 +413,7 @@ All linear fits were statistically significant (p < 0.05).
 	\end{center}
 \end{figure}
 
-
+\newpage
 
 \subsubsection{Discussion}
 
@@ -430,6 +438,7 @@ should always be lower as maximum vector field values. Cases above dashed lines 
 had an image artifact present in one phase (shown in Fig.~\ref{maxvf}d) leading to inconsistencies in DIR.
 
 
+\newpage
 \subsection{Registration of pig heart 4DCT data}
 
 Atrial fibrillation is an unorganized atrial activity, causing a quivering motion of the heart. Heart is therefore not able to sustain a healthy pumping rhythm. Atrial fibrillation is not a
@@ -498,7 +507,7 @@ Jacobian was made on inverse vector field and vector magnitudes were analyzed.
 \subsubsection{Results}
 
 
-All DIRs were successful and during experiment all DIRQA checks were positive. An example of DIR is shown in Fig.~\textbf{MAKEIT}. A vector field analysis is shown in Table~\ref{tab:vectordata_pig}. No statistical difference was
+All DIRs were successful and during experiment all DIRQA checks were positive. An example of DIR is shown in Fig.~\ref{exampleReg_pigs}. A vector field analysis is shown in Table~\ref{tab:vectordata_pig}. No statistical difference was
 observed between true and inverse vector field. However, significant diference was observed between vector field magnitudes of PM and noPM. Contributions to vector field magnitudes from three axis were equal. 
 
 
@@ -521,7 +530,7 @@ observed between true and inverse vector field. However, significant diference w
 
 \begin{figure}[H]
 	\begin{center}		
-		\includegraphics[width=0.9\textwidth]{./Images/exampleReg.png}
+		\includegraphics[width=0.9\textwidth]{./Images/exampleReg_pigs.png}
 		\caption{False color overlay of two phases before (a) and after (b) DIR. Vector field is displayed on image (a) as arrows.}
 		\label{exampleReg_pigs}
 	\end{center}
@@ -550,12 +559,14 @@ All linear fits were statistically significant (p < 0.05).
 
 \begin{figure}[H]
 	\begin{center}		
-		\includegraphics[width=0.9\textwidth]{./Images/Jacobian_data_pigs.png}
+		\includegraphics[width=0.75\textwidth]{./Images/Jacobian_data_pigs.png}
 		\caption{Data for Jacobian of vector fields (top) and inverse vector fields (bottom) for 9 4DCT phases (reference phase 0 is excluded) for 23 lung cancer patients. Mean, STD, maximum and minimum are represented as (a), (b), (c) and (d), respectively.
 		Boxes represent 25-75\%, whiskers 10-90\% of data, median is shown with solid line, mean with square and outliers with crosses.}
 		\label{jacobian_data_pigs}
 	\end{center}
 \end{figure}
+
+\newpage
 
 \begin{figure}[H]
 	\begin{center}		
@@ -586,42 +597,22 @@ All linear fits were statistically significant (p < 0.05).
 
 \subsubsection{Discussion}
 
-Mean vector field magnitudes were small (approx. 0.1 mm), since pigs were in a breath-hold position and the only motion was the beating of the heart. Despite the small mean vector magnitude it was still enough to observe statistical difference between the PM and noPM. Consequently, the difference between two groups is then consistent through all DIRQA.
+Mean vector field magnitudes were small (approx. 0.1 mm), since pigs were in a breath-hold position and the only motion was the beating of the heart. 
+Despite the small mean vector magnitude it was still enough to observe statistical difference between the PM and noPM.
+Consequently, the difference between the two groups is consistent throughout the DIRQA.
 
-Since the vector fields were small on average, the mean Jacobian was 1 almost in all cases. However there were large deviations present in true and inverse Jacobian as can be seen on Fig.~\ref{jacobian_data_pigs}. Similar holds true for ICE, with the mean value being 0. The most extreme cases even show negative minimum Jacobian, which would mean organ folding. Since organ folding did not occur during a heart beat, negative Jacobian points to a bad DIR. Unfortunately, the negative Jacobian did not show in phase 5, which was tested for DIRQA during experiment.
+The DIR did well in terms of lowering the absolute difference metric. There was a strong correlation between default versus true and inverse absolute difference. The shape of default absolute difference
+distribution persist then in other DIRQA check as well.
 
-As in Section~\ref{lungDIR} extreme Jacobian and ICE values were plotted against maximum vector field magnitudes. 
+A good result in absolute difference does not necessary mean a good DIR, as can be seen from Jacobian and ICE checks. The mean Jacobian and ICE were 1 and 0, respectively, since the
+vector fields were small on average. However there were large deviations present in Jacobian and ICE. Most notably, there were a few cases of negative minimum Jacobian which would suggest 
+organ folding. Since organ folding did not occur during a heart beat, negative minimum Jacobian points to inconsistencies in DIR. The inconsistencies in DIR can be also seen on Fig~\ref{calcJac_pigs},
+with a poor correlation between minimum inverse and maximum true Jacobian. The correlation is better for noPM, however there are still cases that deviate from linear fit.
 
-
-
-Values for Jacobian and inverse Jacobian were close to 1 with small STD, which indicates that most of the patient body does not change during the 4DCT scan. Mean values of maximum and minimum Jacobian were around 1.50 and 0.65 respectively, because there were expansions and contractions present. There were some extremely large values (7.46 the largest), that were result of an artifact present on a 4DCT scan, as shown on Fig \textbf{make that figure}. \textbf{Extremly low Jacobian?}. There is also a linear correlation between maximum and minimum (inverse) Jacobian and maximum vector field values as shown in Fig.~\ref{maxvf}. Large vector field values point to either expansion or contraction and resulting in large or small Jacobian values.
-
-Following ICE definition in Eq.~\ref{eq:ice} there should be a correlation between vector field and ICE values. As such ICE mean and STD ICE are also in submilimeter range. The maximum ICE values can be large, with up to 2.3 cm, but still smaller as average maximum vector values. As shown in Fig.~\ref{maxvf}c a linear fit is a good approximation for maximum ICE dependence on maximum vector (inverse vector) field values. Furthermore, for first DIR check, ICE should always be lower as maximum vector field values. Cases above dashed lines in Fig~\ref{maxvf}c all have poor DIR, usually pointing to an artifact in the image.
-
-As shown in Fig.~\ref{ice} and \ref{ice} Jacobian, inverse Jacobian and ICE values follow motion curve for lungs (\textbf{PUT IT IN SECTION MID P}). The biggest difference for motion as well for Jacobian, inverse Jacobian and ICE is between extreme breathing positions, end-inhale (0\%) and end-exhale (50\%,60\%). 
-
-
-Vector field magintudes confirms previously published data that the biggest motion for lungs is in superior-inferior direction \cite{Seppenwoolde2002, Britton2007, Liu2007}. The mean vector field magnitude is small (in submilimiter range), 
-because the ROI included the whole patient body, not just the lungs where most of the motion occurs. Vectors and inverse vectors are similar, which was expected.
-
-There was a good correlation (Pearsons's r = 0.91) between absolute difference before and after DIR. The greater the difference between reference and moving image, the better DIR can match them. Few cases
-have sligthly higher absolute difference after DIR, which should not occour, since DIR was minimizing absolute difference metric. The reason lies in construction of warped images. Vector field is used to transform
-moving image to warped image. If the vector field is large on edges, an empty space will be left there in warped image. Absolute difference will therefore seem larger after DIR. A future modification of absolute difference
-module should handle empty spaces at edges.
-
-Due to small mean vector field magnitudes, values for true and inverse Jacobian were close to 1 with small STD, which indicates that most of the patient body does not change during the 4DCT scan.
-However, patient expansions and contractions can be seen on maximum and minimum Jacobian, which were around 1.50 and 0.65 respectively. If a part of a patient body contracts from reference to moving image, 
-then it expands in inverse direction and vice versa. The correlation was confirmed in Fig.~\ref{calcJac_lung}a, with a high Pearsons's r (0.90). Furthermore outliers from linear fit spot inconsistencies
-in DIR as shown in Fig.~\ref{calcJac_lung}a and b, where a small artefact was found in one patient phase solely from the deviation from linear fit in Fig.~\ref{calcJac_lung}.
-
-Mean and STD ICE are in submilimeter range, which confirms correlation between vector field and ICE (see Eq.~\ref{eq:ice}). The maximum ICE values can be large, with up to 2.3 cm, 
-but still smaller as average maximum vector values. 
-
-Large vector field magnitudes will produce more errors in DIR as shown in Fig~\ref{maxvf}. Linear fit was used for estimation on increase (decrease) of Jacobian and ICE. Additionally, ICE
-should always be lower as maximum vector field values. Cases above dashed lines in Fig~\ref{maxvf}c all have poor DIR, confirming the hypotesis. An extreme case (highlighted in Fig.~\ref{maxvf}a-c)
-had an image artifact present in one phase (shown in Fig.~\ref{maxvf}d) leading to inconsistencies in DIR.
-
-
+The large deviations in Jacobian and ICE can in part be explained with large maximum vector field values, as shown in Fig.~\ref{maxvf_pigs}. All linear fits have good correlation, with no
+difference between PM and noPM in the quality of the fits. The actual linear fit parameters, however, further show the inconsistencies in DIR. The clearest example of inconsistencies in
+DIR is with linear fit from maximum ICE PM, which lies above $y(x)=x$ function. This basicaly means that tere were points further away from starting point after true and inverse transformation, 
+then by just after true transformation. The linear fit for maximum ICE showed better results in this terms, since it layed below $y(x)=x$ function.
 
 
 % \subsection{Mid-Position patient example}

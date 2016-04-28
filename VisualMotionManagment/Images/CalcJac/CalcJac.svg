@@ -77,8 +77,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.49497475"
-     inkscape:cx="377.15594"
-     inkscape:cy="339.92852"
+     inkscape:cx="161.62027"
+     inkscape:cy="695.83737"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
@@ -103,12 +103,12 @@
      inkscape:groupmode="layer"
      id="layer1">
     <image
-       y="-32.621422"
-       x="-167.0226"
-       id="image3315"
+       y="200.89511"
+       x="-41.651112"
+       id="image3144"
        xlink:href="file:///u/kanderle/PhD/VisualMotionManagment/Images/JacSum.png"
-       height="788.17157"
-       width="1128.0891"
+       height="286.65967"
+       width="826.73969"
        inkscape:export-filename="/u/kanderle/PhD/VisualMotionManagment/Images/jacSum_lung.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
@@ -120,7 +120,7 @@
        height="905"
        width="1225"
        clip-path="url(#clipPath3739)"
-       transform="matrix(0.93182639,0,0,0.93182639,-1390.0975,-1020.2467)"
+       transform="matrix(0.93182639,0,0,0.93182639,-1357.7726,-1288.9879)"
        inkscape:export-filename="/u/kanderle/PhD/VisualMotionManagment/Images/jacSum_lung.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
@@ -132,23 +132,23 @@
        height="905"
        width="1225"
        clip-path="url(#clipPath3743)"
-       transform="matrix(0.93182639,0,0,0.93182639,455.46528,-1036.2208)"
+       transform="matrix(0.93182639,0,0,0.93182639,303.79016,-1304.962)"
        inkscape:export-filename="/u/kanderle/PhD/VisualMotionManagment/Images/jacSum_lung.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <rect
-       style="color:#000000;fill:#0000ff;fill-opacity:0.31277538;fill-rule:nonzero;stroke:#000000;stroke-width:0.10467087;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       style="color:#000000;fill:#0000ff;fill-opacity:0.31277538;fill-rule:nonzero;stroke:#000000;stroke-width:0.07621957;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        id="rect3747"
-       width="28.900501"
-       height="29.605391"
-       x="250.39363"
-       y="577.13647"
+       width="21.044859"
+       height="21.558147"
+       x="264.95169"
+       y="415.92093"
        inkscape:export-filename="/u/kanderle/PhD/VisualMotionManagment/Images/jacSum_lung.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <path
-       style="fill:#000080;stroke:#0000c2;stroke-width:0.99921260000000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
-       d="m 259.60921,595.26815 -93.9442,217.68788"
+       style="fill:#000080;stroke:#0000c2;stroke-width:0.54556197;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
+       d="m 264.92705,437.1796 -66.4679,111.39915"
        id="path3749"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc"
@@ -157,12 +157,54 @@
        inkscape:export-ydpi="300" />
     <path
        style="fill:#000080;stroke:#0000c2;stroke-width:0.97637105;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
-       d="M 269.19424,596.01435 726.20341,820.5707"
+       d="m 285.72869,437.19325 290.40548,117.5181"
        id="path3749-8"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc"
        inkscape:export-filename="/u/kanderle/PhD/VisualMotionManagment/Images/jacSum_lung.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
-  </g>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3004"
+       style="font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       transform="matrix(1.9785226,0,0,1.9785226,307.24957,183.48738)"
+       inkscape:export-filename="/u/kanderle/PhD/VisualMotionManagment/Images/jacSum_lung.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><flowRegion
+         id="flowRegion3006"><rect
+           id="rect3008"
+           width="142.4315"
+           height="143.44167"
+           x="-160.61426"
+           y="7.8644576" /></flowRegion><flowPara
+         id="flowPara3010">(a)</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3004-1"
+       style="font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       transform="matrix(1.9785226,0,0,1.9785226,345.63536,513.89977)"
+       inkscape:export-filename="/u/kanderle/PhD/VisualMotionManagment/Images/jacSum_lung.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><flowRegion
+         id="flowRegion3006-0"><rect
+           id="rect3008-7"
+           width="142.4315"
+           height="143.44167"
+           x="-160.61426"
+           y="7.8644576" /></flowRegion><flowPara
+         id="flowPara3010-7">(b)</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3004-1-1"
+       style="font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       transform="matrix(1.9785226,0,0,1.9785226,730.50347,513.89977)"
+       inkscape:export-filename="/u/kanderle/PhD/VisualMotionManagment/Images/jacSum_lung.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><flowRegion
+         id="flowRegion3006-0-9"><rect
+           id="rect3008-7-7"
+           width="142.4315"
+           height="143.44167"
+           x="-160.61426"
+           y="7.8644576" /></flowRegion><flowPara
+         id="flowPara3010-7-8">(c)</flowPara></flowRoot>  </g>
 </svg>
