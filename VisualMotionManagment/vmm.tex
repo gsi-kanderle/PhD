@@ -26,13 +26,13 @@
 
 
 \begin{document}
-\chapter{Motion Management in Treatment Planning}
+\chapter{Deformable Image Registration and Validation}
 \label{chapter:vmm}
 \minitoc
 
 \section{Introduction}
 
-Effects of motion can have a significant impact on a radiation treatment (see Section \textbf{ref!}). Therefore a proper investigation is necessary for each specific treatment and patient. There are several motion mitigation techniques available that can operate on beam delivery, patient immobilization or treatment planning level.
+As explained in Section \textbf{ref!}) effects of motion can have a significant impact on a radiation treatment. Therefore a proper investigation is necessary for each specific patient. There are several motion mitigation techniques available that can operate on beam delivery, patient immobilization or treatment planning level.
 
 One of the steps for motion mitigation is proper and frequent imaging. While most commercial treatment planning software provide rigid registration between different images, deformable image registration (DIR) is currently rarely used. Even though DIR better quantifies anatomical and biological variations \cite{Sarrut2006} compared to rigid registration. DIR is essential as well in photon as in ion radiotherapy, with usage in adaptive radiotherapy \cite{Yan1997,Yan2010}, 4D optimization \cite{Trofimov2005}, 4D dose calculation \cite{Flampouri2006}, contour propagation \cite{Lu2006b} and in even in other categories besides radiotherapy as well \cite{Cleary2010, Herrell2012, Nithiananthan2011, Naini2010}. Several different DIR algorithms are avaliable, such as B-spline, Deamons, linear elastic finite element, optical flow, viscous fluid \cite{Rueckert1999,Venugopal2005,Zhong2007,Thirion1998,Christensen1996}, etc.
 	
@@ -623,7 +623,7 @@ then by just after true transformation. The linear fit for maximum ICE showed be
 \section{Summary and Discussion}
 
 Tools to preform DIR and DIRQA were presented in this chapter. Different modules were written for an open-source software Slicer, that can handle large DIR problems, such as registering whole 4DCT. In addition to DIR the modules can also make DIRQA on the same set as DIR was made with several different
-checks. The main objective of this work was to provide systematic approach to DIR and to give parameters on DIRQA that can estimate the quality of DIR.
+checks. The main objective of this work was to provide systematic approach to DIR and to give parameters on DIRQA that can estimate the quality of DIR. A first analysis of DIRQA checks was done on a large DIR database - 684 DIR were checked in total.
 
 Most of the work was based on Slicer, which is well-established software in medical research. To date, there are more than 500 publications that have used Slicer in their research \cite{SlicerCitation}, with topic ranging from 
 teaching \cite{Pujol2016}, disease staging \cite{Liu2016, Liu2015}, motion tracking \cite{Behringer2015} to image reconstruction \cite{Meyer2015}, image registration \cite{Li2015, Fedorov2015, Li2015}
@@ -637,10 +637,15 @@ between B-Spline and demons DIR for lung case \cite{Varadhan2013} and showed tha
 metric, to account for differences in contrast. Images used in this chapter were either all without (lung case) or all with (pig case) contrast agent, therefore there was no difference in contrast
 between images. Mutual information metric was tested as well for DIR, however the results were much worse than mean square error metric.
 
-The evaluation of DIR was made by DIRQA module. The techniques used can be divided into non-quantative (false color, checkerboard) and quantative (absollute difference, Jacobian and ICE). The main
-advantage of the DIRQA module is that all different tecniques are gathered in a single place and can be used on a specific case. The ease of use is also essential, for DIRQA to find it's way into clinical workflow.
+The evaluation of DIR was made by DIRQA module. The main advantage of the DIRQA module is that all different tecniques are gathered in a single place and can be used on a specific case. The ease of use is also essential, for DIRQA to find it's way into clinical workflow.
 A test of using DIRQA in potential clinical workflow was done at GSI during pig experiment, where different users had to use both DIR and DIRQA modules. The experiment was also under time pressure, since there is
 a scheduled beam time and it cannot be shifted. There were already prepositions for frameworks for DIRQA in clinical workflow \cite{Varadhan2013}, however none were actually tested.
+
+The techniques used in DIRQA can be divided into visible (false color, checkerboard) and quantitative (absolute difference, Jacobian and ICE). While the quantitative can be used to pinpoint errors in DIR, the visible can be used to actually see the error and how does it affect
+end result, as shown in Fig.~\ref{calcJac_lung})c. All three quantative checks have been used in literature as a possible DIRQA \cite{Varadhan2013, Leow2007, Christensen2001, Bender2009}. They all share the same flaw, however, that they are a necessary condition for a successful
+DIR but not sufficient. 
+
+
 
 
 
