@@ -15,6 +15,8 @@
 % \usepackage{dominitoc}
 \usepackage{multirow}
 %\usepackage{appendix}
+%\usepackage[breaklinks=true]{hyperref}
+%\usepackage{breakcites}
 
 %%%% 1 1/2 facher Zeilenabstand:	
 \usepackage{setspace}
@@ -79,7 +81,7 @@ x' = x + u_{ri}(x)
 Here, $x$ and $x'$ are points in states $r$ and $i$, respectively and $u_{ri}$ is a vector field representation of the transformation map. $u_{ri}$ can among others be used for assesing motion amplitudes, contour propagation and 4D dose reconstruction. It is important to note
 that for certain steps in 4D treatment planning require also inverse registration, from state $i$ to $r$ \cite{Richter2012}.
 
-A comonlly used software for registration in medical research is Plastimatch \cite{Shackleford2010}. It is free and open-source software, avaliable as a command-line executable program. Plastimatch B-spline registration is also available in Slicer as an external module, SlicerRT \cite{Pinter2012}.  
+Plastimatch \cite{Shackleford2010} is a comonlly used software for registration in medical research. It is free and open-source software, avaliable as a command-line executable program. Plastimatch B-spline registration is also available in Slicer as an external module, SlicerRT \cite{Pinter2012}.  
 The integration of Plastimatch in Slicer brings the advantage of a graphic user interface and hence a quick modification of parameters. However, the disadvantage comes when a large number of registrations is required, since a user presence is required. In a 4DCT registration
 there are $2(N-1)$ registrations required - from reference phase to each of $N$ states of 4DCT and vice versa, except for the reference phase itself. Typical 4DCT consist of 10 phases, therefore a automatic registration of a 4DCT is a necessity, since each registration takes from 15-30 minutes.
 
@@ -622,6 +624,25 @@ then by just after true transformation. The linear fit for maximum ICE showed be
 
 Tools to preform DIR and DIRQA were presented in this chapter. Different modules were written for an open-source software Slicer, that can handle large DIR problems, such as registering whole 4DCT. In addition to DIR the modules can also make DIRQA on the same set as DIR was made with several different
 checks. The main objective of this work was to provide systematic approach to DIR and to give parameters on DIRQA that can estimate the quality of DIR.
+
+Most of the work was based on Slicer, which is well-established software in medical research. To date, there are more than 500 publications that have used Slicer in their research \cite{SlicerCitation}, with topic ranging from 
+teaching \cite{Pujol2016}, disease staging \cite{Liu2016, Liu2015}, motion tracking \cite{Behringer2015} to image reconstruction \cite{Meyer2015}, image registration \cite{Li2015, Fedorov2015, Li2015}
+and others. Slicer offers a lot of different functionalities and is especially good for research, since it can be modified to specific needs. However, it is important to stress that Slicer 
+is not a medical application and can be used only for research. Additionally, Slicer can sometimes be unstable with unexpected crashes. It is constantely under development and more and more errors
+are fix with each new release. New releases also bring new functionalities, but there can be problems with backtrack compability. Even though there are some disadvantages to using Slicer, it's advantages
+defenetily outweigh them and make Slicer a useful tool, as was showed in this chapter.
+
+Results shown in this chapter were obtained with DIR made by B-Spline algorithm. Several other algorithms exist, demons most commonly used alongside B-Spline \cite{Thirion1998}. Varadhan et al. made comparison
+between B-Spline and demons DIR for lung case \cite{Varadhan2013} and showed that B-Spline is superior to demons, especially if there is difference in contrast between images. They used mutual information
+metric, to account for differences in contrast. Images used in this chapter were either all without (lung case) or all with (pig case) contrast agent, therefore there was no difference in contrast
+between images. Mutual information metric was tested as well for DIR, however the results were much worse than mean square error metric.
+
+The evaluation of DIR was made by DIRQA module. The techniques used can be divided into non-quantative (false color, checkerboard) and quantative (absollute difference, Jacobian and ICE). The main
+advantage of the DIRQA module is that all different tecniques are gathered in a single place and can be used on a specific case. The ease of use is also essential, for DIRQA to find it's way into clinical workflow.
+A test of using DIRQA in potential clinical workflow was done at GSI during pig experiment, where different users had to use both DIR and DIRQA modules. The experiment was also under time pressure, since there is
+a scheduled beam time and it cannot be shifted. There were already prepositions for frameworks for DIRQA in clinical workflow \cite{Varadhan2013}, however none were actually tested.
+
+
 
 
 \bibliographystyle{apalike}
