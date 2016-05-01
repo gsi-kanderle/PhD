@@ -1,17 +1,11 @@
 TODO:
 
 Plan za ponedeljek, 17.4:
-2. Datum z dekanatom uskladit
-4. Pogledat min in max Jacobian, kva so to za eni pacienti. Primer!
-5. Pogledat za vse ICE, ki so nad y=x, kaj so to za eni pacienti. Primer!
 6. Bad example poglej in zrithej (oscar nekje).
 6. Opcijsko MidP zrihtat pa motion curve. Nared nov dicomdatabase in ga loadej not. Mogoce ga kopirej k seb?
 7. Pejt domov.
 
 1. PrufungsKomitee:
- 1a Vprasat Marcota
- 1b Najdt co-referenta
- 1c Vprasat ostale dva
  
 2. Izpolnit: http://www.physik.tu-darmstadt.de/media/fachbereich_physik/formulare_3/promotionen/Antrag_auf_Eroeffnung_Formular.pdf
 
@@ -22,6 +16,8 @@ Plan za ponedeljek, 17.4:
  4b Poslat se komu
  
 5. VMM:
+ A lahko dodas ranking based on ICE and jacobian?
+ Show PM and noPM example?
  hed2nrrd?
  Small big roi pigs?
  Spust planning CT for now.
