@@ -644,7 +644,7 @@ between images. Mutual information metric was tested as well for DIR, however th
 
 The evaluation of DIR was made by DIRQA module. The main advantage of the DIRQA module is that all different tecniques are gathered in a single place and can be used on a specific case. The ease of use is also essential, for DIRQA to find it's way into clinical workflow.
 A test of using DIRQA in potential clinical workflow was done at GSI during pig experiment, where different users had to use both DIR and DIRQA modules. The experiment was also under time pressure, since there is
-a scheduled beam time and it cannot be shifted. There were already prepositions for frameworks for DIRQA in clinical workflow \cite{Varadhan2013}, however none were actually tested.
+a scheduled beam time and it cannot be shifted. There were already prepositions for frameworks for DIRQA in clinical workflow \cite{Varadhan2013}, however none were tested in an actual clinical enviroment.
 
 The techniques used in DIRQA can be divided into visible (false color, checkerboard) and quantitative (absolute difference, Jacobian and ICE). While the quantitative can be used to pinpoint errors in DIR, the visible can be used to actually see the error and how does it affect the
 end result, as shown in Fig.~\ref{calcJac_lung})c. All three quantitative checks have been used in literature as a possible DIRQA \cite{Varadhan2013, Leow2007, Christensen2001, Bender2009}. They all share the same flaw, however, that they are a necessary condition for a successful
@@ -652,7 +652,17 @@ DIR but not sufficient. One common DIRQA check in literature that our module is 
 dice similarity coefficient \cite{Varadhan2013} and Hausdorff distance \cite{Huttenlocher1993}. Slicer already has functionalities for both contour comparison checks, so they could be used. The biggest disadvantage of anatomical correspondence check is that contour delineation is required in both, reference and moving phase, which is almost never done by physicians, since it takes too much time. Lack of contour in both, reference and moving phase, was also the reason the anatomical correspondence check was not used.
 
 Studies on DIRQA so far have focused on a small number of DIR cases, weather it is phantom \cite{Mutic2001,Moore2004} or patient studies \cite{Wu2008, Varadhan2013}. With small number of DIR it is possible to thourgouly examine each DIR, so that DIRQA can be explained. In this chapter a different approach was
-used. Rather than examining each DIR individually, a large dataset was analyzed and common traits for DIR were found.
+used. Rather than examining each DIR individually, a large dataset was analyzed and common traits for DIR were found. Due to differences in anatomical sites, DIRQA parameters have to be found for each anatomical site individually, since they
+deviate can significantely, as seen by two different cases presented here. 
+
+DIR of lung 4DCT can be considered relativelly easy, since the changes between phases are small and the contrast between lungs and other tissue is high. This is supported by Fig.~\ref{calcJac_lung} and \ref{maxvf}. The correlation between expansion of 
+tissue in reference phase should directly correlate to tissue contraction in moving phase. Even though Fig.~\ref{calcJac_lung}a shows only plot between maximum and minimum Jacobian in two phases, the correlation is still apparent (Pearsons's r = 0.9). With calculation
+of difference between maximum and minimum Jacobian in each individual voxel, it is possible to pinpoint the position of outliers, as shown in Fig.~\ref{calcJac_lung}, where a small artefact in one phase was responsible for deviation. In a similar fashion,
+deviation from linear fit in Fig.~\ref{maxvf}a-c, was attributed to lung artefact in one phase.
+
+If the DIR of lung 4DCT was considered relativelly easy, opposite hold true for DIR of 4DCT-cardiac. The motion of the heart during a heartbeat is complex, with muscels streching \textbf{REF} and contracting in different direction. Furhtermore,
+the volume of blood shifts from one ventricle to the other. Because blood carries a contrast agent, different phases in 4DCT-cardiac have different distribuition of HU in heart. Additionally pacemakers cause several complications in CT scan \cite{Mak2012},
+incresing the complexity of DIR.
 
 
 
