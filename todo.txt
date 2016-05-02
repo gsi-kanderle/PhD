@@ -16,33 +16,17 @@ Plan za ponedeljek, 17.4:
  4b Poslat se komu
  
 5. VMM:
+
+Landmarks
+DIRQA and DIR time
+
+
  A lahko dodas ranking based on ICE and jacobian?
  Show PM and noPM example?
- hed2nrrd?
- Small big roi pigs?
- Spust planning CT for now.
- 5a Pogledat, kaj naredit Metric v Slicerju
  5b Zracunat:
-   - Vseh 23 (19?) pacientov vector, image checks. Pol pa naredit statistiko skoz 4DCT faze: AbsDiff, Jacobian, Inverse Consistency
-   - En worst case demonstrirat - Oscar je ze registriran, zj pa pokazat, kako bi ga ujel. Torej zracunat cel DIRQA.
-   - Pokazat midP kaj lahko z njim dosezes. Zment se s Joepom za ccc13670.
-   - Tut pig data vkljucit? Vprasat Christiana
- 5c Napisat pol vse v Results
- 5d Napisat zakljucek
- 5e Reference v uvodu?
- 5f Par izrazov je treba razlozit: warped, moving image, inverse registration
- 5g Output file. Ustvar enga pa nared example. (optional=
- 
  ICE narisat z vektorji
- ROI example figure
- 
- Se planning vectorje dirqa.
- Use DIRQA consistently
- Absolute difference -> mean square error
- ITK oment v Implementation
- 
- Vectorji so verjetno odvisni od spacing (image resolution). Zaenkrat to spustimo?
- 
+ ROI example figure 
+ Absolute difference -> mean square error 
  Poslat Christianu
 
  
