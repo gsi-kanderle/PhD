@@ -582,12 +582,22 @@ Image f) shows accumulated 4D dose and image g) a homogeneous dose on a stationa
 \subsubsection{Image registration}
 \label{sec:registration}
 
-Image registration is used to quantitatively asses the temporal changes of the anatomy. It requires two images: a fixed and a moving one. Result from registration is deformation map originating from moving and pointing to fixed image. If deformation map is applied to the moving image, the new image is called warped image and it should be as close to fixed image as possible. Fixed, moving and warped image are shown in Fig.~\ref{RegistrationCompare}. 
 
-Registration is used to obtain deformation maps between different motion phases of 4DCT
-as well as between different consecutive CTs or even between different imaging modalities, e.g. between PET and CT or MRI and CT. There are different possible types of
-registration and can be placed in two groups. First groups consist of linear registration that include translation, rotation and scaling. The most common used linear transformation used
-in medical imaging is translation or rigid registration. Other group are elastic or deformable registrations. The actual algorithms for performing registration are complex and reader can
+To assess temporal changes in patient anatomy a registration must be preformed. Registration can be made between different imaging modalities (CT, MRI, PET), between scans from different days or between
+different phases in 4DCT. It requires two images: a fixed and a moving one. Result from registration is deformation map originating from moving and pointing to fixed image. Registration can be written as:
+
+
+\begin{equation}
+\label{df}
+x' = x + u_{ri}(x)
+\end{equation} 
+
+Here, $x$ and $x'$ are points in states $r$ and $i$, respectively and $u_{ri}$ is a vector field representation of the transformation map. $u_{ri}$ can be used to assess motion amplitude, propagete contours and calculate 4D dose.
+It is important to note that certain steps in 4D treatment planning require also inverse registration, from state $i$ to $r$ \cite{Richter2012}. If deformation map is applied to the moving image, 
+the new image is called warped image and it should be as close to the fixed image as possible. Fixed, moving and warped image are shown in Fig.~\ref{RegistrationCompare}. 
+
+There are different possible types of registration and can be placed in two groups. First group consist of linear registrations: translation, rotation and scaling. In medical imaging the most commonly used linear transformation 
+is translation or rigid registration. The other group of registrations are elastic or deformable registrations. The actual algorithms for performing registration are complex and reader can
 find detailed review elsewhere \cite{Hill2001,Brock2006,Rietzel2006a}. A multi-institutional study has shown that the accuracy for the majority of the algorithms is at the order of image voxel
 size, i.e. millimeters \cite{Brock2010}. The study further states that the registration quality depends on image contrast. The quality of image registration is actually hard to quantitatively
 asses and usually the registration results are checked by eye. To improve image registration quality assurance a special software was developed and is described in detail in chapter \textbf{REF}.

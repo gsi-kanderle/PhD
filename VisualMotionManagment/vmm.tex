@@ -14,6 +14,7 @@
 \usepackage{minitoc}
 % \usepackage{dominitoc}
 \usepackage{multirow}
+\usepackage{listings}
 %\usepackage{appendix}
 %\usepackage[breaklinks=true]{hyperref}
 %\usepackage{breakcites}
@@ -34,11 +35,20 @@
 
 As explained in Section \textbf{ref!}) effects of motion can have a significant impact on a radiation treatment. Therefore a proper investigation is necessary for each specific patient. There are several motion mitigation techniques available that can operate on beam delivery, patient immobilization or treatment planning level.
 
-An important part of motion mitigation is proper and frequent imaging. While most commercial treatment planning software provide rigid registration between different images, deformable image registration (DIR) is currently rarely used. DIR ca quantify anatomical and biological variations better compared to rigid registration \cite{Sarrut2006} and is essential as well in photon as in ion radiotherapy, with usage in adaptive radiotherapy \cite{Yan1997,Yan2010}, 4D optimization \cite{Trofimov2005}, 4D dose calculation \cite{Flampouri2006}, contour propagation \cite{Lu2006b}. DIR usage spreads even into other categories, besides radiotherapy \cite{Cleary2010, Herrell2012, Nithiananthan2011, Naini2010}. Several different DIR algorithms are available, such as B-spline \cite{Rueckert1999}, Demons \cite{Thirion1998}, linear elastic finite element \cite{Venugopal2005}, optical flow \cite{Zhong2007}, viscous fluid \cite{Christensen1996}, etc.
+An important part of motion mitigation is proper and frequent imaging. While most commercial treatment planning software provide rigid registration between different images, deformable image registration (DIR) is currently rarely used. 
+DIR ca quantify anatomical and biological variations better compared to rigid registration \cite{Sarrut2006} and is essential as well in photon as in ion radiotherapy, with usage in adaptive radiotherapy \cite{Yan1997,Yan2010}, 
+4D optimization \cite{Trofimov2005}, 4D dose calculation \cite{Flampouri2006}, contour propagation \cite{Lu2006b}. DIR usage spreads even into other categories, besides radiotherapy \cite{Cleary2010, Herrell2012, Nithiananthan2011, Naini2010}.
+Several different DIR algorithms are available, such as B-spline \cite{Rueckert1999}, Demons \cite{Thirion1998}, linear elastic finite element \cite{Venugopal2005}, optical flow \cite{Zhong2007}, viscous fluid \cite{Christensen1996}, etc.
 	
-One of the reasons for the DIR is not used in commercial software is the lack of proper DIR quality assurance (DIRQA). While several different DIRQA methods exist, none of them are definitive and most of them are time consuming. It is possible to evaluate DIR with deformable phantoms, where the type and size of deformation is known \cite{Kashani2007, Kirby2011}. However such quality assurance is time consuming and it would be hard to use it in everyday clinical work flow DIR validation can also be based on landmark positions, specifically their location before and after registration. In absence of externally planted markers, locating landmarks in patient anatomy can be take a fair amount of time and it can be difficult to identify landmarks in low-contrast regions \cite{Varadhan2013}. Another option is to compare delineated contours with the propagated ones. It is more efficient technique than landmark checks, however it is even more time consuming and it does not address the region within the contour.
+One of the reasons for the DIR is not used in commercial software is the lack of proper DIR quality assurance (DIRQA). While several different DIRQA methods exist, none of them are definitive and most of them are time consuming. 
+It is possible to evaluate DIR with deformable phantoms, where the type and size of deformation is known \cite{Kashani2007, Kirby2011}. However such quality assurance is time consuming and it would be hard to use it 
+in everyday clinical work flow DIR validation can also be based on landmark positions, specifically their location before and after registration. In absence of externally planted markers, locating landmarks in patient 
+anatomy can be take a fair amount of time and it can be difficult to identify landmarks in low-contrast regions \cite{Varadhan2013}. Another option is to compare delineated contours with the propagated ones. 
+It is more efficient technique than landmark checks, however it is even more time consuming and it does not address the region within the contour.
 
-In this chapter tools to handle motion management, DIR and DIR validation will be presented. Tools were constructed for open-source software 3D Slicer, described in Section~\ref{Slicer}. In Section~\ref{Registration} details on how DIR was performed will be explained. Next, Section~\ref{DIRQA} will address the DIR validation - an extensive tool was created with various features to tackle DIR validation. Section~\ref{Contour} will be about contour visualization. Last two sections in implementation part will be about a tool to display organ motion amplitude and generation of a mid-ventilation CT. Tools were tested on real patient data and results will be presented in the Section~\ref{Verification}. Summary and discussion will be given last to sum up.
+In this chapter tools to handle DIR and DIRQA will be presented. Tools were constructed for open-source software 3D Slicer, described in Section~\ref{Slicer}. 
+In Section~\ref{Registration} details on how DIR was performed will be explained. Next, Section~\ref{DIRQA} will address the DIR validation - an extensive tool was created with various functionalities to tackle DIRQA.
+DIR and DIRQA tools were tested on a real patient data and results will be presented in the Section~\ref{Verification}. Lastly, everything will be summed up in Section~\ref{Summary}.
 
 \section{Implementation}
 \label{Implementation}
@@ -46,7 +56,8 @@ In this chapter tools to handle motion management, DIR and DIR validation will b
 \subsection{3D Slicer}
 \label{Slicer}
 
-3D Slicer (Slicer) is a software platform for analysis and visualization of medical images \cite{Slicer, Fedorov2012}. Slicer is a free, open-source software (BSD-style license) available on Windows, MacOSX and Linux operating systems. Slicer provides a vast variety of tools, such as:
+3D Slicer (Slicer) is a software platform for analysis and visualization of medical images \cite{Slicer, Fedorov2012}. Slicer is a free, open-source software (BSD-style license) available on Windows, MacOSX and Linux operating systems. 
+It comes with a vast variety of tools, such as:
 
 \begin{itemize}
 	\item Handling a variety of image formats, including DICOM, NRRD and MHA
@@ -57,67 +68,66 @@ In this chapter tools to handle motion management, DIR and DIR validation will b
 	\item Device tracking for image-guided procedures
 \end{itemize}
 
-The foundation of Slicer is written in C++ and it's functions can be accessed also with Python to provide rapid, iterative development. Graphical user interface is built in Qt. Visualization is based on VTK, a graphical library commonly used in scientific research.
+The foundation of Slicer is written in C++ and it's functions can be accessed also with Python to provide rapid, iterative development. Graphical user interface is built in Qt. Visualization is based on VTK, a graphical library commonly
+used in scientific research.
 
-Slicer is a research tool and as such offers tools to implement new functionalities in the form of 3D Slicer extensions. They can either be as execution of external command-line programs or writing modules with new features or automate Slicer processes in form of scripted modules. 
-In the next sections different Slicer modules will be presented, which were all developed in the scope of this thesis. The purpose of modules is to quantify and visualize patient motion as well as to provide quality assurance of the the obtained results.
+Slicer is a research tool and as such offers tools to implement new functionalities in the form of extensions (modules). They can either be execution of external command-line program, or writing modules with new features,
+or automate Slicer processes in form of scripted modules. In the next sections different Slicer modules will be presented, which were all developed in the scope of this thesis. 
+The purpose of modules is to perform DIR and provide validation of the the obtained results.
 
+\subsubsection{Registration nomenclature}
 
+To provide a clear and consistent description of methods used, an overview of the expressions is given here.
+
+\begin{itemize}
+ \item \textbf{Reference image} - image that serves as a reference position in registration (image that is registered to).
+ \item \textbf{Moving image} - image that is being registered to the reference image (image that is registered from).
+ \item \textbf{Warped image} - result of applying transformation map of registration to moving image. It should be as close to the reference image as possible.
+ \item \textbf{True registration} - registration from moving to reference image. Similar, everything connected to true registration will use \"true\" (true vector field, true warped image, true absolute difference, true Jacobian, etc.).
+ \item \textbf{Inverse registration} - registration from reference to moving image (opposite or inverse of true registration. As in true registration, term inverse can be used for everything connected to it (inverse vector field, inverse warped image, inverse absolute difference, inverse Jacobian, etc.).
+\end{itemize}
 
 
 \subsection{Registration}
 \label{Registration}
 
-The changes in patient anatomy can be seen on CT (4DCT) or MRI scan. To asset this changes a registration must be preformed. Registration can be made between different imaging modalities, scans from different days or phases in 4DCT. Different algorithms and software is available
-for image registration. However, the result is always a transformation map \cite{Richter2012}. 
+A commonly used software for registration in medical research is Plastimatch \cite{Shackleford2010}. It is free and open-source software, available as a command-line executable program. 
+Plastimatch B-spline registration is also available in Slicer as part of an extension SlicerRT \cite{Pinter2012}.
+The integration of Plastimatch in Slicer brings the advantage of a graphical user interface and hence a quick modification of parameters and display of results. However, the disadvantage comes when a large number of registrations is required,
+since a user presence is required. In a complete 4DCT registration there are $2(N-1)$ registrations required - from reference phase to each of $N$ phases of 4DCT and vice versa, except for the reference phase itself. 
+Typical 4DCT consist of 10 phases, therefore a automatic registration of a 4DCT is a necessity.
 
-\begin{equation}
-\label{df}
-x' = x + u_{ri}(x)
-\end{equation} 
+Automatic DIR was constructed from two parts. First, a DIR Python class was written to handle image locations, to preform DIR in the Plastimatch module, to use right naming conventions and to store all output files (vector fields and warped images). 
+DIR Python class is shown in Appendix~\ref{RegHierarchy}.
 
-Here, $x$ and $x'$ are points in states $r$ and $i$, respectively and $u_{ri}$ is a vector field representation of the transformation map. $u_{ri}$ can among others be used for assessing motion amplitudes, contour propagation and 4D dose reconstruction. It is important to note
-that for certain steps in 4D treatment planning require also inverse registration, from state $i$ to $r$ \cite{Richter2012}.
-
-Plastimatch \cite{Shackleford2010} is a commonly used software for registration in medical research. It is free and open-source software, available as a command-line executable program. Plastimatch B-spline registration is also available in Slicer as an external module, SlicerRT \cite{Pinter2012}.  
-The integration of Plastimatch in Slicer brings the advantage of a graphic user interface and hence a quick modification of parameters. However, the disadvantage comes when a large number of registrations is required, since a user presence is required. In a 4DCT registration
-there are $2(N-1)$ registrations required - from reference phase to each of $N$ states of 4DCT and vice versa, except for the reference phase itself. Typical 4DCT consist of 10 phases, therefore a automatic registration of a 4DCT is a necessity, since each registration takes from 15-30 minutes.
-
-Rather than just automatically loading different phases and registering them in Slicer a patient hierarchy concept was introduced and is explained in Section~\ref{PatHierarchy}.
-
-\subsubsection{Registration nomenclature}
-
-In order to be able to provide a clear description of methods and procedures used, an overview of the expressions used will be given here.
-
-\begin{itemize}
- \item \textbf{Reference image} - image that serves as a reference position.
- \item \textbf{Moving image} - image that is being registered to the reference image.
- \item \textbf{Warped image} - image resulting from registration. It should be as closed to the image being registered to as possible.
- \item \textbf{True registration} - registration from moving to reference image. Similar, everything connected to true registration will use \"true\" (true vector field, true warped image, true absolute difference, true Jacobian, etc.).
- \item \textbf{Inverse registration} - registration from reference to moving image (opposite or inverse of true registration. As in true registration, term inverse can be used for everything connected to it (inverse vector field, inverse warped image, inverse absolute difference, inverse Jacobian, etc.).
-\end{itemize}
+Beside DIR Python Class a patient hierarchy concept was introduced to handle loading of different phases in Slicer and track progress of DIR and DIRQA. It is explained in Section~\ref{PatHierarchy}.
 
 
 \subsubsection{Patient hierarchy} 
 \label{PatHierarchy}
 
 Patient hierarchy follows a subject hierarchy principle in Slicer. It was designed for a clear overview of the registration process, DIRQA and all resulting files. Another reason is to track DIR
-and DIRQA in case if they are interrupted by Slicer crash. DIR and DIRQA files can be quite large and can cause Slicer to run out of memory. Patient hierarchy enables then to continue work
-from where it was interrupted
+and DIRQA in case if they are interrupted by Slicer crash. DIR and DIRQA files can be quite large and can cause Slicer to run out of memory. With patient hierarchy Slicer is able to continue work
+from where it was interrupted rather than starting anew.
 
-There are several levels in patient hierarchy. Each level also has different attributes, where details such as file path or reference phase are written.
+There are several levels in patient hierarchy. Each level also has different attributes, where details regarding each level can be written.
 
 \begin{itemize}
 	\item Level 1: \textbf{Patient name} - separates different patients.
 	\item Level 2: \textbf{Registration node} - separates between different registration, e.g. registration between 4DCT phases, between CT and 4DCT, MRI and CT... 
-	\subitem The file directory of image, vector field and registration quality files is stored as an attribute. Additionally, there are number of phases to be registered and which phase is the reference one.
+	\subitem \textit{Attributes:}
+	\subitem - The file directory of images, vector fields and registration quality files.
+	\subitem - Number of phases to be registered.
+	\subitem - Reference phase
 	\item Level 3: \textbf{Registration phase} - specific registration phase. Registration is done between all phases and the reference one. There have to be at least two phases
 	\item Level 4: \textbf{Node} - can be either an image, a vector field, an inverse vector field or any of DIRQA nodes (see Section~\ref{DIRQA}).
-	\subitem Exact file paths for specific node is stored as an attribute.
+	\subitem \textit{Attributes:}
+	\subitem - Exact file paths for specific node.
+	\subitem - Statistical values if node is absolute difference, Jacobian or inverse consistency (see Section~\ref{DIRQA}).
 \end{itemize}
 
-Patient hierarchy can be constructed in two ways. First option is to manually crate the whole patient hierarchy, from top to bottom level, with necessary attributes. Second option is using automatic script to look for files on hard drive and create corresponding levels in patient hierarchy. This
-is possible only, if some conventions are used regarding file names and locations.
+Patient hierarchy can be constructed in two ways. First option is to manually crate the whole patient hierarchy, from top to bottom level, with necessary attributes. Second option is to use a automatic script to look 
+for files on hard drive and create corresponding levels. The second option is possible only by using proper naming conventions are file names and locations.
 
 \subsection{Registration Quality Checks}
 \label{DIRQA}
@@ -626,6 +636,7 @@ then by just after true transformation. The linear fit for maximum ICE showed be
 
 
 \section{Summary and Discussion}
+\label{Summary}
 
 Tools to preform DIR and DIRQA were presented in this chapter. Different modules were written for an open-source software Slicer, that can handle large DIR problems, such as registering whole 4DCT. In addition to DIR the modules can also make DIRQA on the same set as DIR was made with several different
 checks. The main objective of this work was to provide systematic approach to DIR and to give parameters on DIRQA that can estimate the quality of DIR. A first analysis of DIRQA checks was done on a large DIR database - 684 DIR were checked in total.
@@ -668,6 +679,10 @@ during experiment, so all DIRQA during experiment was positive. The DIR of 4DCT-
 In the future DIRQA module should undergo further testing. In addition to checking DIRQA on different anatomical sites and between different modalities, it should be investigated how good is DIRQA at spotting inconsistencies in DIR, i.e. what is the number of false negatives. Furthermore, with more
 data analyzed, the parameters in DIRQA checks should get more precise and outliers would be easier spotted.
 
+
+\section{Appendix}
+\label{RegHierarchy}
+\lstinputlisting[language=Python, firstline=1602, lastline=1803]{./RegistrationHierarchy.py}
 
 \bibliographystyle{apalike}
 \bibliography{../ref.bib}{}
