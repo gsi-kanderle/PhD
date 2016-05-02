@@ -132,46 +132,46 @@ for files on hard drive and create corresponding levels. The second option is po
 \subsection{Registration Quality Checks}
 \label{DIRQA}
 
-In order to provide visual and quantitative assessment of the registration quality a \textbf{Deformable Image Registration Quality Assurance} module was created. It provides different image checks (false color, checkerboard, absolute difference, flicker, movie and landmark positions) and vector checks (Jacobian and inverse consistency error). Details on all different checks will be explained in this section. Reference image, warped image, vector and inverse vector (vector from reference to moving phase) are used as inputs for DIRQA module. Additional landmarks and region of interest (ROI) can be used as an input.
+In order to provide visual and quantitative assessment of the registration quality a \textbf{Deformable Image Registration Quality Assurance} module was created. It provides different image checks (false color, checkerboard, absolute difference, flicker, movie and landmark positions) and vector checks (Jacobian and inverse consistency error). Details on all different checks will be explained in this section. Reference and warped image, true and inverse vector are used as inputs for DIRQA module. Additionally, landmarks and region of interest (ROI) can also be used as an input.
 
-All check that use some kind of mathematical operation on or between images (absolute difference, Jacobian and inverse consistency error) were build using tools from ITK library \cite{Yoo2002}.
+Absolute difference, Jacobian and inverse consistency error were build using tools from the ITK library \cite{Yoo2002}.
 
 \subsubsection{False color}
 \label{Sec:FalseColor}
 
-A good way to see difference between two images is to overlay them. However, since CT scans are usually displayed in grayscale color code, the differences can become indistinguishable. Especially if the images are quite similar, as reference and warped image usually are. With applying opposite color code to overlaying images two things are achieved. Firstly, regions were the registration was successful will be in grayscale. Furthermore the differences will be in color of image they belong to. In the module we used red and cyan color code for reference and warped image respectively. See Fig.~\ref{falseColor} for details.
+A good way to see difference between two images is to overlay them. However, since CT scans are usually displayed in grayscale color code, the differences can be indistinguishable. Especially if the images are quite similar, as reference and warped image usually are. With applying opposite color codes to overlaying images two things are achieved. First, regions were the registration was successful will be in grayscale. And second, the differences between images will be in the color of the image they originate from. In the module we used red and cyan color code for reference and warped image, respectively. See Fig.~\ref{falseColor} for details.
 
 \begin{figure}[H]
 	\begin{center}		
 		\includegraphics[width=0.9\textwidth]{./Images/falseColor.png}
-		\caption{Example of false color overlay. Images (a) and (b) show red and cyan color code, respectively, for CT scan. (c) displays overlayed false colored images before and (d) after registration.}
+		\caption{Example of a false color overlay. Images (a) and (b) show red and cyan color code, respectively, for a CT scan. (c) displays overlayed false colored images before and (d) after registration.}
 		\label{falseColor}
 	\end{center}
 \end{figure}
 
 \subsubsection{Checkerboard}
 
-As the name suggests, checkerboard creates an image of tiles. Each tile alternates between reference and warped image, as shown in Fig.~\ref{checkerboard}. The differences between two images become apparent if there is no smooth transition from one tile to the next. The number of tiles can be manually selected. While the checkerboard offers clear indication of differences, it requires user to spot them - similar to false color.
+As the name suggests, checkerboard creates an image of tiles. Each tile alternates between reference and warped image, as shown in Fig.~\ref{checkerboard}. The differences between two images become apparent if there is no smooth transition from one tile to the next. The number of tiles can be manually selected. While the checkerboard offers clear indication of differences, it requires a user to spot them - similar to false color.
 
 \begin{figure}[H]
 	\begin{center}		
 		\includegraphics[width=0.9\textwidth]{./Images/checkerboard.png}
-		\caption{Example of checkerboard image. Image consist of tiles alternating between two images. Tiles in image (a) alternate between scans before registration and in image (b) after registration.}
+		\caption{Example of a checkerboard image. It consists of tiles alternating between two images. Tiles in image (a) alternate between scans before registration and in image (b) after registration.}
 		\label{checkerboard}
 	\end{center}
 \end{figure}
 
 \subsubsection{Absolute difference} 
 
-To stress the difference between reference and warped image an absolute difference between voxel values is calculated and displayed. New image is generated, with voxels populated as the absolute difference between reference and warped image voxel values, as shown in Fig.~\ref{absDiff}. Furthermore, average, standard deviation, minimum and maximum of absolute differences are calculated for quantitative assessment of registration quality (in ideal case all values would be 0).
+To stress the difference between reference and warped image an absolute difference between voxel values is calculated and displayed. New image is generated with voxels populated as the absolute difference between reference and warped image voxel values, as shown in Fig.~\ref{absDiff}. Furthermore, statistical values of absolute differences are calculated (mean, standard deviation, minimum and maximum) for quantitative assessment of registration quality (in ideal case all values would be 0).
 
-The absolute difference feature is similar to false color, but it displays differences clearer and it also provides quantitative values. In contrast to false color which only relies on user examination. 
+The absolute difference feature is similar to false color, but it displays differences clearer and it also provides quantitative values. In contrast to false color which only relies on user examination. However it does require computational time to generate absolute difference, whereas false color is instant.
 
-Absolute difference can be computed between reference and moving image, named default absolute difference, to provide initial estimate of difference between images. After the registration it can be done on
-true and inverse warped images (true and inverse absolute difference) to show registration results. Usually, registration works on minimizing absolute difference, so it is a direct indicator
+Absolute difference can be computed between reference and moving image, called default absolute difference, to provide initial difference between images. After the registration it can be done on
+true and inverse warped images (true and inverse absolute difference) to show registration results. Usually, registration works on minimizing absolute difference (mean square error metric), so it is a direct indicator
 of registration success.
 
-To spare computational time or to focus on a specific region, absolute difference can also be calculated just on a specific ROI (if used as an input). Usually ROI around patient body is selected, rather than calculating on a whole patient CT.
+To spare computational time or to focus on a specific region, absolute difference can also be calculated just on a specific ROI (if used as an input). Usually ROI around patient body is selected, rather than calculating on a whole patient image.
 
 
 \begin{figure}[H]
@@ -184,19 +184,19 @@ To spare computational time or to focus on a specific region, absolute differenc
 
 \subsubsection{Movie}
 
-Medical images are usually quite large - typical CT image consist of $512 \times 512 \times 100$ pixels, which makes inspecting image checks (false color, checkerboard, absolute difference) a time-consuming task. Movie feature allows for smoother display of different image slices. User selects, which view he would like to inspect (axial, sagital or coronal) and presses start. Selected views then start scrolling from one limit to the other. It allows user to focus on registration details, rather than scrolling through slices.
+Medical images are usually quite large - typical CT image consist of $512 \times 512 \times 100$ pixels, which makes inspecting image checks (false color, checkerboard, absolute difference) a time-consuming task. Movie feature allows for smoother display of different image slices. User selects which view he would like to inspect (axial, sagital or coronal) and presses start. Selected views then start scrolling from one limit to the other. It allows user to focus on registration details, rather than scrolling through slices.
 
-Movie and flicker (explained below) do not offer any specific registration check, but improve the process of registration quality assurance.
+Movie and flicker (explained in the next section) do not offer any specific registration checks, but improve the process of DIRQA.
 
 \subsubsection{Flicker}
 
-While it is possible to display two images side by side in Slicer, it can sometimes be hard to see fine differences between the two images. Flicker alternates between reference and warped image on a single display. Flicker changes image each 0.5 s.
+While it is possible to display two images side by side in Slicer, it can sometimes be hard to see fine differences between the two images. Flicker alternates between reference and warped image on a single display at a 0.5 s rate.
 
-\subsubsection{Landmark positions}
+\subsubsection{Landmark distances}
 
-Landmark positions are often used to determine registration spatial accuracy \cite{Castillo2009}. Landmark can either be a specific feature in patient anatomy, or an external marker. The position of the landmark in the warped image would ideally be at the same position as in reference image. The module measures the Euclidean norm between the landmark position in reference and warped image.
+Distances between landmark before and after registration are often used to determine registration spatial accuracy \cite{Castillo2009}. Landmarks can either be a specific feature in patient anatomy or an external marker. The position of landmarks in the warped image would ideally be at the same position as in reference image. The module measures the Euclidean norm between the landmark positions in reference and warped image.
 
-User has to manually select landmarks in reference and moving image. For landmarks based on patient anatomy a physician is required. Landmark from moving image can then be automatically transformed with transformation vector field to obtain position in warped image or it can be manually selected in warped image.
+User has to manually select landmarks in reference and moving image. For landmarks based on patient anatomy a selection from physician is required. Landmarks from moving image can then be automatically transformed to warped image with registration vector field or they can be manually selected in warped image itself.
 
 \begin{figure}[H]
 \begin{center}
@@ -207,12 +207,12 @@ User has to manually select landmarks in reference and moving image. For landmar
 \end{figure}
 
 
-\subsubsection{Jacobian}
+\subsubsection{Jacobian determinant}
 \label{Jacobian}
 
-Jacobian determinant (Jacobian) of the vector field is used to validate physical behavior of registration \cite{Leow2007}. Jacobian of vector field should be positive, since negative Jacobian values correspond to folding, which is physically unrealistic for patient anatomy (organs can not be folded) \cite{Chen2008, Rey2002}. Expansions and contractions around a point are indicated by Jacobian values of greater and less than 1, respectively. 
+Jacobian determinant (Jacobian) of vector field is used to validate physical behavior of registration \cite{Leow2007}. Jacobian of vector field should be positive, since negative Jacobian values correspond to folding, which is physically unrealistic for patient anatomy (organs can not be folded) \cite{ Rey2002, Chen2008}. Expansions and contractions around a point are indicated by Jacobian values of greater and less than 1, respectively. 
 
-DIRQA module calculates and displays the Jacobian of the vector field. Average, standard deviation, minimum and maximum values of Jacobian are also displayed. Similar to absolute difference it also has ROI feature implemented.
+DIRQA module calculates and displays the Jacobian of the vector field. Jacobian statistical values of Jacobian are also calculated. Similar to absolute difference, Jacobian can be calculated inside a ROI rather than on a whole image.
 
 \begin{figure}[H]
 	\begin{center}		
@@ -225,20 +225,20 @@ DIRQA module calculates and displays the Jacobian of the vector field. Average, 
 \subsubsection{Inverse Consistency Error}
 \label{ICE}
 
-Inverse consistency error (ICE) is consistently used in literature as one of the main vector field checks \textbf{citati}. The principle is as followed. Suppose we have two vector fields - $u_{AB}$ obtained from registration of image A to B and $u_{BA}$ from registration of image B to A. The two registrations
-should be preformed separately In ideal scenario, $u_{AB}$ would be a direct inverse of $u_{BA}$. However, deformable image registration algorithms do not yield perfectly inverse consistent vector field.
+Inverse consistency error (ICE) is consistently used in literature as one of the main vector field checks \cite{Christensen2001, Bender2009}. The principle is as follows. Suppose we have two vector fields - $u_{AB}$ obtained from registration of image $A$ to $B$ and $u_{BA}$ from registration of image $B$ to $A$. The two registrations
+should be preformed separately. In an ideal scenario, $u_{AB}$ would be a direct inverse of $u_{BA}$. However, DIR algorithms do not yield perfectly inverse consistent vector fields. Therefore, the differences between true and inverse vector fields have to be examined.
 
-To check for ICE, an algorithm was created that first transforms point $x$ using $u_{AB}$. Newly obtained point $x'$ is then transformed with inverse vector
+To check for ICE, an algorithm was created that first transforms point in image $A$, $x$ using $u_{AB}$. Newly obtained point $x'$ is then transformed with inverse vector
 field, $u_{BA}$ which yields $x''$. The ICE is defined as Euclidean norm between $x$ and $x''$:
 
 \begin{equation}
 \label{eq:ice}
-ICE = x - x'' = x - u_{BA}(x') = x - u_{BA}(u_{AB}(x))
+ICE = |x - x''| = |x - u_{BA}(x')| = |x - u_{BA}(u_{AB}(x))|
 \end{equation}
 
 Points $x'$ and $x''$ can have an arbitrary position in space, while vector fields $u_{AB}$ and $u_{BA}$ are positioned on a grid. To apply transformation $u_{BA}(x')$ a interpolation has to be made to put $x'$ on a $u_{BA}$ grid. A tri-linear interpolation is used in this module.
 
-As in Jacobian, ICE image is calculated and displayed, along with values for average, standard deviation, minimum and maximum values. ROI feature is also implemented. An example is shown in Fig.~\ref{inv}
+As in Jacobian, ICE image is calculated and displayed, along with statistical values and ROI feature. An example is shown in Fig.~\ref{inv}
 
 \begin{figure}[H]
 \begin{center}
