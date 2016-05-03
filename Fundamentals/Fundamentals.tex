@@ -176,6 +176,16 @@ Carbon ions have much more dense ionization structure compared to protons \cite{
 stopping power increases and causes significantly larger number of $\delta$-electrons The energy deposited by $\delta$-electrons in medium is described using the Linear Energy Transfer (LET), which is closely related to 
 $dE/dx$. Fast ions, with little ionization, have thus small LET, while slow ions, with large ionization, have a high LET.
 
+
+\subsection{Radiobiology}
+
+The aim of radiotherapy is to kill tumor cells and prevent further growth, while sparring healthy tissue. Ionizing radiation (photons and ions) causes damage throughout the cell. However the most susceptible part to radiation is the
+carrier of genetic information, the deoxyribonucleic acid (DNA), located in the cell nucleus \cite{Munro1970}. Radiation can destroy DNA in two ways - directly or indirectly.
+
+Ionization and consequent destruction of DNA molecular bonds via radiation is a direct effect (see Fig.~\ref{ida}b) and is typical for high-LET radiation. On the other hand, an indirect effect is when radiation hydrolysis water around DNA and produce highly reactive hydroxyl-radicals, OH 
+(see Fig.~\ref{ida}a). Even though OH radicals decay fast, they are still able to cause severe damage to DNA. The formation of OH is typical for low-LET radiation like photons. The two processes, direct and indirect, are not excluding and can damage DNA in parallel.
+
+
 \newpage
 
 \begin{figure}[H]
@@ -198,13 +208,6 @@ Figure taken from \cite{Richter2012}}
 \end{center}
 \end{figure}
 
-\subsection{Radiobiology}
-
-The aim of radiotherapy is to kill tumor cells and prevent further growth, while sparring healthy tissue. Ionizing radiation (photons and ions) causes damage throughout the cell. However the most susceptible part to radiation is the
-carrier of genetic information, the deoxyribonucleic acid (DNA), located in the cell nucleus \cite{Munro1970}. Radiation can destroy DNA in two ways - directly or indirectly.
-
-Ionization and consequent destruction of DNA molecular bonds via radiation is a direct effect (see Fig.~\ref{ida}b) and is typical for high-LET radiation. On the other hand, an indirect effect is when radiation hydrolysis water around DNA and produce highly reactive hydroxyl-radicals, OH 
-(see Fig.~\ref{ida}a). Even though OH radicals decay fast, they are still able to cause severe damage to DNA. The formation of OH is typical for low-LET radiation like photons. The two processes, direct and indirect, are not excluding and can damage DNA in parallel.
 
 Damage to DNA can result in either single strand breaks (SSB) or double strand breaks (DSB) as shown in Fig.~\ref{ida}b). When one of the double strands in the DNA helix is destroyed (SSB), it can usually be easily repaired by cell 
 repair-mechanisms, since the complementary base is intact. If the bases on both stands are destroyed (DSB) the DNA damage is much more complex and can lead to the breakage of the chromatin. The cell repair-mechanisms can handle DSB as well, 
@@ -238,6 +241,13 @@ capacity to repair radiation damage. A small $\alpha / \beta$ ratio means cell i
 As seen in Fig.~\ref{dosedep} and Eq. \ref{lq} RBE values are dependent on the dose level. Hence in ion radiotherapy, beside the physical absorbed dose, a photo-equivalent or biological dose incorporating the RBE also plays an important role. 
 The unit for biological dose is Gy (RBE) \cite{ICRU2007}. 
 
+Besides a dose level, RBE also depends on the LET, the particle species and the tissue type \cite{Kraft2000}. Therefore RBE modeling is a very complex issue.
+At GSI RBE is calculated using \textit{local effect model} (LEM) developed by Scholz et al \cite{Scholz1994}. The main assumption of LEM model is that biological 
+effects are independent on the radiation type. The difference between different radiation types comes from the dose deposition in a small volume in the cell nucleus.
+At the same total dose, photons have a homogeneous dose distribution over a cell nucleus, while ions have a highly localized dose distribution (around ion track).
+
+\newpage
+
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.9\textwidth]{./Images/dose_dependence.pdf}
@@ -247,10 +257,8 @@ Heavy ions show a much steeper decrease with dose. The RBE value can be calculat
 \end{center}
 \end{figure}
 
-Besides a dose level, RBE also depends on the LET, the particle species and the tissue type \cite{Kraft2000}. Therefore RBE modeling is a very complex issue.
-At GSI RBE is calculated using \textit{local effect model} (LEM) developed by Scholz et al \cite{Scholz1994}. The main assumption of LEM model is that biological 
-effects are independent on the radiation type. The difference between different radiation types comes from the dose deposition in a small volume in the cell nucleus.
-At the same total dose, photons have a homogeneous dose distribution over a cell nucleus, while ions have a highly localized dose distribution (around ion track).
+ 
+
 Next assumption of the LEM is that the photon response is the same at these high local doses. With this assumption ion dose response can be predicted, by comparing
 photon response at the high local dose level. LEM has received several revisions \cite{Elsaesser2006, Elsaesser2007, Elsaesser2009} and experimental verifications
 \cite{Mitaroff1998, Kraemer2000a, Kraemer2003}, making it valid for clinical use. RBE for carbon ions ranges from 1 in the entrance channel, to a value around 5 at 
@@ -284,8 +292,6 @@ with the total dose $D$ equal to $n \times d$, we can define fractionation facto
 so that BED = $D \times F$. $F$ increases with $d$, but decreases with $\alpha / \beta$. Lower $\alpha / \beta$ (late-responding tissue)
 means higher $F$ and a higher $\alpha / \beta$ (early responding tissue) moves $F$ towards 1.
 
-\textbf{figure of BED for different alpha beta and for different fractions in TCD50}
-
 
 \subsubsection{Single dose treatment}
 
@@ -311,6 +317,11 @@ multileaf collimator. Multileaf collimator is a device made of individual leaves
 Linear accelerators are usually placed on a gantry, which can be rotated around the patient, see Fig.~\ref{gantry}. This allows beams to enter the patient from any angle. The arbitrary choice of beam angle is used in a 3-dimensional conformal radiotherapy,
 where a variable number of beams is used. Each beam is then shaped with a multileaf collimator. Even more precise technique is intensity-modulated radiotherapy (IMRT). IMRT allows treating of a complex tumor shapes, e.g. when tumor is warped around a critical structure.
 
+\subsubsection{Ion therapy}
+
+In order for ion therapy be successful, ions must be accelerated to appropriate energies (several hundred MeV/u), the beam must be transported to target area and guided
+onto the target with high accuracy (around 1 mm). The delivery system is therefore extremely complex and it is one of the reasons ion radiotherapy is not as common as photon radiotherapy.
+
 \newpage
 
 \begin{figure}[H]
@@ -330,10 +341,7 @@ where a variable number of beams is used. Each beam is then shaped with a multil
 \end{figure}
 
 
-\subsubsection{Ion therapy}
 
-In order for ion therapy be successful, ions must be accelerated to appropriate energies (several hundred MeV/u), the beam must be transported to target area and guided
-onto the target with high accuracy (around 1 mm). The delivery system is therefore extremely complex and it is one of the reasons ion radiotherapy is not as common as photon radiotherapy.
 
 There are two types of particle accelerators used in ion therapy - cyclotrons and synchrotrons. \textbf{Cyclotrons} can be built in a compact design and offer a continuous beam with
 stable intensities. Particle energies, however, can not be regulated and therefore passive energy degraders are needed. Active energy variation is possible with \textbf{synchrotrons}, where a linear
@@ -353,6 +361,8 @@ in order to obtain a broad, flat profile. In the next step, the beam is spread o
 Passive beam shaping offers more robust and faster treatment delivery in contrast to active beam shaping. However, it lacks tumor conformity, dose cannot be modulated and each patient needs individually tailored devices for each beam used in treatment.
  Furthermore beam travels through some material, exposing patient to additional dose due to fragmentation
 
+ \newpage
+ 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.9\textwidth]{./Images/deliverypassive.png}
@@ -379,7 +389,11 @@ Fig. \ref{active}a displays how dose homogeneity in target is achieved. In typic
 There also should be enough overlap between individual Bragg peaks. However, there the number of IES should be kept low, since the changing of the beam energy takes most of the time and hence prolongs the treatment. Instead of using high number of
  IES, Bragg peaks are broadened in longitudinal direction by using ripple filter (RiFi) - device similar to ridge filters used in passive beam shaping. 
 
+\subsection{Motion in radiotherapy}
+\label{sec:motion}
 
+Patient motion can have a profound effect on the radiotherapy. It can cause large deviations from the planned dose, resulting in under- or over-dosage in target and excess dose in OAR. Motion types, it's extent and origin is therefore a vast topic of research. 
+A brief introduction will be given here, for an in-depth explanation reader is pointed to review by Langen and Jones \cite{Langen2001}.
 
 \newpage
 
@@ -408,11 +422,7 @@ Figure taken from \cite{Richter2012}}
 
 \newpage
 
-\subsection{Motion in radiotherapy}
-\label{sec:motion}
 
-Patient motion can have a profound effect on the radiotherapy. It can cause large deviations from the planned dose, resulting in under- or over-dosage in target and excess dose in OAR. Motion types, it's extent and origin is therefore a vast topic of research. 
-A brief introduction will be given here, for an in-depth explanation reader is pointed to review by Langen and Jones \cite{Langen2001}.
 
 
 \subsubsection{Motion types}
@@ -477,8 +487,6 @@ change the relative distance between the wedges and therefore introduces more or
 The three motion mitigation techniques mentioned are not exclusive and can be used in parallel. Furukawa et al. made a study on a combination between rescaning and gating \cite{Furukawa2007} and Water et al. presented a combination
 between rescanning and tracking \cite{Water2009}.
 
-\newpage
-
 \begin{figure}[tbp]
   \centering
   \includegraphics[width=0.9\textwidth]{./Images/gatingscheme.pdf}
@@ -487,6 +495,7 @@ between rescanning and tracking \cite{Water2009}.
   \label{gating}
 \end{figure}
 
+\newpage
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.9\textwidth]{./Images/tracking.png}
@@ -495,8 +504,6 @@ PMMA wedges are mounted on step motors, enabling to change the depth the particl
 \label{tracking}
 \end{center}
 \end{figure}
-
-\newpage
 
 \subsection{Treatment planning}
 \label{treatmentPlanning}
@@ -508,7 +515,7 @@ done by physician. Additional imaging, such as magnetic resonance (MRI) or posit
 \subsubsection{Target definition}
 The definition of target volume is crucial, since it has to cover the whole tumor, prevent further tumor spreading, while at the same time it should not be too big to spare normal tissue. 
 The International Commission on Radiation Units (ICRU) recommends the following definitions for volumes used in treatment planning, which will also be used in this work, see Fig.~\ref{targets} \cite{ICRU50, ICRU62}.
-
+\newpage
 \begin{description}
 \item[Gross Tumor volume:] \emph{The GTV is the gross
     palpable or visible/demonstrable extent and location of malignant
@@ -596,13 +603,6 @@ Here, $x$ and $x'$ are points in states $r$ and $i$, respectively and $u_{ri}$ i
 It is important to note that certain steps in 4D treatment planning require also inverse registration, from state $i$ to $r$ \cite{Richter2012}. If deformation map is applied to the moving image, 
 the new image is called warped image and it should be as close to the fixed image as possible. Fixed, moving and warped image are shown in Fig.~\ref{RegistrationCompare}. 
 
-There are different possible types of registration and can be placed in two groups. First group consist of linear registrations: translation, rotation and scaling. In medical imaging the most commonly used linear transformation 
-is translation or rigid registration. The other group of registrations are elastic or deformable registrations. The actual algorithms for performing registration are complex and reader can
-find detailed review elsewhere \cite{Hill2001,Brock2006,Rietzel2006a}. A multi-institutional study has shown that the accuracy for the majority of the algorithms is at the order of image voxel
-size, i.e. millimeters \cite{Brock2010}. The study further states that the registration quality depends on image contrast. The quality of image registration is actually hard to quantitatively
-asses and usually the registration results are checked by eye. To improve image registration quality assurance a special software was developed and is described in detail in chapter \textbf{REF}.
-
-
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.9\textwidth]{./Images/RegistrationCompare.png}
@@ -611,6 +611,15 @@ where the images overlap perfectly.}
 \label{RegistrationCompare}
 \end{center}
 \end{figure}
+
+There are different possible types of registration and can be placed in two groups. First group consist of linear registrations: translation, rotation and scaling. In medical imaging the most commonly used linear transformation 
+is translation or rigid registration. The other group of registrations are elastic or deformable registrations. The actual algorithms for performing registration are complex and reader can
+find detailed review elsewhere \cite{Hill2001,Brock2006,Rietzel2006a}. A multi-institutional study has shown that the accuracy for the majority of the algorithms is at the order of image voxel
+size, i.e. millimeters \cite{Brock2010}. The study further states that the registration quality depends on image contrast. The quality of image registration is actually hard to quantitatively
+asses and usually the registration results are checked by eye. To improve image registration quality assurance a special software was developed and is described in detail in chapter \textbf{REF}.
+
+
+
 
 \section{Lung cancer}
 
