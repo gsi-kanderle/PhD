@@ -629,7 +629,7 @@ difference between PM and noPM in the quality of the fits. The actual linear fit
 DIR is with linear fit from maximum ICE PM, which lies above $y(x)=x$ function. This basically means that there were points further away from starting point after true and inverse transformation, 
 then just after true transformation. The linear fit for noPM maximum ICE showed better results in this terms, since it lied below $y(x)=x$ function.
 
-It was also displayed that DIRQA should be made on all DIR not just on one phase, since DIRQA from one DIR does not guaranty the quality of the other DIR from 4DCT. Each DIR is performed individually and should be treated as such. However, deviations in DIR from single 4DCT could be used to
+DIRQA during experiment on phase 5 did not show any inconsitencies in DIR.  A complete analysis should be made from the start, since DIRQA from one phase does not guaranty the DIR quality of the other 4DCT phases. Each DIR is performed individually and should be treated as such. However, deviations in DIR from single 4DCT could be used to
 spot inconsistencies.
 
 
@@ -640,25 +640,24 @@ spot inconsistencies.
 \label{Summary}
 
 Tools to preform DIR and DIRQA were presented in this chapter. Different modules were written for an open-source software Slicer, that can handle large DIR problems, such as registering whole 4DCT. In addition to DIR the modules can also make DIRQA on the same set as DIR was made with several different
-checks. The main objective of this work was to provide systematic approach to DIR and to give parameters on DIRQA that can estimate the quality of DIR. A first analysis of DIRQA checks was done on a large DIR database - 684 DIR were checked in total.
+checks. The main objective of this work was to provide systematic approach to DIR and DIRQA. Additionally, parameters for DIRQA were calculated on a large database – two different sets (human lung 4DCT and pig heart 4DCT) with 684 DIR in total. Parameters obtained could be used as an estimate of the quality of DIR.
 
-Most of the work was based on Slicer, which is well-established software in medical research. To date, there are more than 500 publications that have used Slicer in their research \cite{SlicerCitation}, with topic ranging from 
+Most of the work was based on Slicer, which is well-established software in medical research. To date, there are more than 500 publications that have used Slicer in their research \cite{SlicerCitation}, with topics ranging from 
 teaching \cite{Pujol2016}, disease staging \cite{Liu2016, Liu2015}, motion tracking \cite{Behringer2015} to image reconstruction \cite{Meyer2015}, image registration \cite{Li2015, Fedorov2015, Li2015b}
-and others. Slicer offers a lot of different functionalities and is especially good for research, since it can be modified to specific needs. However, it is important to stress that Slicer 
-is not a medical application and can be used only for research. Additionally, Slicer can sometimes be unstable with unexpected crashes. It is constantly under development and more and more errors
-are fix with each new release. New releases also bring new functionalities, but there can be problems with backtrack compatibility Even though there are some disadvantages to using Slicer, it's advantages
+and others. Slicer offers a lot of different functionalities and is especially good for research, since it can be modified to specific needs. However, it is important to note that Slicer 
+is not a clinical application and can be used only for research. Additionally, Slicer can sometimes be unstable with unexpected crashes. It is constantly under development and more and more errors
+are fixed with each new release. New releases also bring new functionalities, and sometimes problems with backtrack compatibility can occour. Even though there are some disadvantages to using Slicer, it's advantages
 definetelly outweigh them and make Slicer a useful tool, as was showed in this chapter.
 
-Results shown in this chapter were obtained with DIR made by B-Spline algorithm. Several other algorithms exist, demons most commonly used alongside B-Spline \cite{Thirion1998}. Varadhan et al. made comparison
+Results shown in this chapter were obtained with DIR made by B-Spline algorithm. Several other algorithms exist, demons most commonly used in meidcal research alongside B-Spline \cite{Thirion1998}. Varadhan et al. made comparison
 between B-Spline and demons DIR for lung case \cite{Varadhan2013} and showed that B-Spline is superior to demons, especially if there is difference in contrast between images. They used mutual information
-metric, to account for differences in contrast. Images used in this chapter were either all without (lung case) or all with (pig case) contrast agent, therefore there was no difference in contrast
-between images. Mutual information metric was tested as well for DIR, however the results were much worse than mean square error metric.
+metric, to account for differences in contrast. Images used in this chapter were either all without (lung case) or all with (pig heart case) contrast agent, therefore there was no difference in contrast
+between images. Mutual information metric was tested as well for the two sets mentioned, however the results were  worse than mean square error metric.
 
-The evaluation of DIR was made by DIRQA module. The main advantage of the DIRQA module is that all different techniques are gathered in a single place and can be used on a specific case. The ease of use is also essential, for DIRQA to find it's way into clinical work flow
-A test of using DIRQA in potential clinical work flow was done at GSI during pig experiment, where different users had to use both DIR and DIRQA modules. The experiment was also under time pressure, since there is
-a scheduled beam time and it cannot be shifted. There were already prepositions for frameworks for DIRQA in clinical work flow \cite{Varadhan2013}, however none were tested in an actual clinical environment
+The evaluation of DIR was made by DIRQA module. The main advantage of the DIRQA module is that all different techniques are gathered in a single place and can be used on a specific case. The ease of use is also essential, for DIRQA to find it's way into clinical work flow.
+A test of using DIRQA in potential clinical work flow was done at GSI during pig experiment, where different users had to use both DIR and DIRQA modules. The experiment was also under time pressure, since there was a limited amount of beam time. There were already prepositions for frameworks for DIRQA in clinical work flow \cite{Varadhan2013}, however none were tested in an actual clinical environment
 
-The techniques used in DIRQA can be divided into visible (inverse color, checkerboard) and quantitative (absolute difference, Jacobian and ICE). While the quantitative can be used to pinpoint errors in DIR, the visible can be used to actually see the error and how does it affect the
+The techniques used in DIRQA can be divided into visible (inverse color, checkerboard) and quantitative (absolute difference, Jacobian and ICE). While the quantitative can be used to pinpoint errors in DIR, the visible can be used to actually see the errors and how does it affect the
 end result, as shown in Fig.~\ref{calcJac_lung})c. All three quantitative checks have been used in literature as a possible DIRQA \cite{Varadhan2013, Leow2007, Christensen2001, Bender2009}. They all share the same flaw, however, that they are a necessary condition for a successful
 DIR but not sufficient. One common DIRQA check in literature that our module is currently missing, is comparison of anatomical correspondence - comparison between reference, moving and warped contours. Ideally warped and reference contour should be the same. Two metrics are used in contour comparison -
 dice similarity coefficient \cite{Varadhan2013} and Hausdorff distance \cite{Huttenlocher1993}. Slicer already has functionalities for both contour comparison checks, so they could be used. The biggest disadvantage of anatomical correspondence check is that contour delineation is required in both, reference and moving phase, which is almost never done by physicians, since it takes too much time. Lack of contour in both, reference and moving phase, was also the reason the anatomical correspondence check was not used.
