@@ -42,6 +42,13 @@ DIRQA and DIR time
 7. Patient with complex geometry
  7a Napisat uvodu
  7b Materials and methods
+ 1 - Fertig
+ 3 - Prevert vse in dat 4D racunat 
+ 11 - Prevert
+ 21 - Prevert L, Prevert w85 4DITV in dat 4D vse racunat
+ 22 - Ne dela, zment se s Christianm
+ 23 - Ne dela, ugotovi zakaj. Ko najdes parametre pa sfud in 4D.
+ 
   - Multiple targets
   - 4D optimize
   - OAR removal
@@ -50,13 +57,11 @@ DIRQA and DIR time
  7c Zracunat:
   - Vse paciente najprej obicno z ab = 6
    -- manjka se 3, 17, 21, 22, 23
-  - Vse paciente z 4D opt
-   -- Christiana vprasat, kako zracunat 4Ddose in zakaj 1 ma tko zanic dozo
-  - 21 si zmutil kot 45, pa ful zajebava poglej sfud. Lung003 vse CTV_c_g nardit.
+
    
  7d Primerjat pol te dva med sabo in z SBRT
  
- 7e Zapisat vse v results in se pokomentirat v discusion
+ 7e Zapisat vse v results in se pokomentirat v discusion (discusion lahko omenis se field optimization, pa tripfly)
  
  Poslat Christianu
  
