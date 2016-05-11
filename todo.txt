@@ -43,11 +43,11 @@ DIRQA and DIR time
  7a Napisat uvodu
  7b Materials and methods
  1 - Fertig
- 3 - Prevert vse in dat 4D racunat 
- 11 - Prevert
- 21 - Prevert L, Prevert w85 4DITV in dat 4D vse racunat
- 22 - Ne dela, zment se s Christianm
- 23 - Ne dela, ugotovi zakaj. Ko najdes parametre pa sfud in 4D.
+ 3 - 4D racuna 
+ 11 - 4D racuna, mITV CTV2 ne dela. Mogoce samo CTV1 dat racunat_
+ 21 - racuna 4D
+ 22 - Heart mors dat margin in 4DITV racunat - zaenkrat ma 100% dozo
+ 23 - racuna nohup 4DITV. Pol pa se 4D dat racunat.
  
   - Multiple targets
   - 4D optimize
