@@ -46,7 +46,7 @@ DIRQA and DIR time
  3 - 4D racuna 
  11 - 4DITV racuna, mITV CTV2 ne dela. Mogoce samo CTV1 dat racunat_
  21 - racuna 4D
- 22 - Heart mors dat margin in 4DITV racunat - zaenkrat ma 100% dozo
+ 22 - 4DITV Heart ne jebe kot OAR.
  23 - racuna nohup 4DITV_L. Pol pa se 4D dat racunat.
  
   - Multiple targets
