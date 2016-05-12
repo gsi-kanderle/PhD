@@ -35,6 +35,8 @@
 
 Lung cancer in late stages has poor prognosis, with lots of metastases.
 
+A simple geometrical union of target contour in different CT states, geo-ITV, leads to poor 4D dose distribution, when treating moving tumors with particle therapy \cite{Rietzel2010}.
+
 \section{Materials and Methods}
 
 For creation of treatment plans 4D extension of GSI's treatment planning system TRiP98 \cite{Kraemer2000a, Richter2013} was used and modified. A description of modifications and tools used will be given here, 
@@ -42,16 +44,103 @@ alongside with patient data and analysis description.
 
 \subsection{Multiple targets}
 
-TRiP98 optmization works on minimizing residual of a nonlinear equation system \cite{Kraemer2000a}. The cost fuction $E(N)$ for particle number $\vec{N}$ goes as:
+TRiP98 optimization works on minimizing residual of a nonlinear equation system \cite{Kraemer2000a}. The minimizing function $E(N)$ for particle number $\vec{N}$ goes as:
 \begin{equation}
+\label{eq-costFunc}
  E(\vec{N}) = \sum_{i\in target} \left( D_{pre}^{i} - D_{act}^{i}(\vec{N})\right) = \sum_{i\in target} \left( D_{pre}^{i} -\sum_{j=1}^n c_{ij}N\right)
 \end{equation}
 
-For a CT voxel $i$, $ D_{pre}$ and $D_{act}$ are the prescribed and actual dose, respectively. The coefficient $c_{ij}$ stands for correlation between dose deposition and field position $j$ at a voxel $i$. The number of fields is denoted with $n$.
+For a CT voxel $i$, $ D_{pre}$ and $D_{act}$ are the prescribed and the actual dose, respectively. The coefficient $c_{ij}$ stands for correlation between dose deposition and field position $j$ at a voxel $i$, with $n$ the number of fields. There is not restriction for the number of targets or fields in the minimizing function, so it can be expanded to:
+
+\begin{equation}
+\label{eq-multiCost}
+ E(\vec{N}) = \sum_{targets} \sum_{i\in target} \left( D_{pre}^{i} -\sum_{j=1}^n c_{ij}N\right)
+\end{equation}
+
+However, the setup of raster points in TRiP98 allowed only one target. This setup was expanded in a way that field was designated to a specific target \textbf{Fig?}. Raster points for each field are still created only around designated target. Contribution from all fields are then calculated in optimization. So, when a field from one target contributes dose to some other target this is taken into account in optimization function, specifically in coefficient $c_{ij}$ in Eq.~\ref{eq-costFunc}. Because the optimization function was not changed, all TRiP98 4D functionalities could be used, as explained in next sections.
+
+\subsection{Optimization techniques}
+
+Investigation of different optimization techniques to handle range changes in moving tumors was made. For each patient, three sets of plans were created: single-field uniform optimization (SFUD), field-independent ITV (indITV) and 4D optimization (4Dopt). 
+
+\begin{itemize}
+\item \textbf{Single-field uniform optimization:} A water-equivalent path length ITV (WEPL-ITV) was created for each field and each target specifically \cite{Rietzel2012}. Afterwards each field was individually optimized on a reference phase (end-inhale) to deliver full dose to target. In the end the particle number in each field was divided by number of fields.
+
+\item \textbf{Field-independet ITV:} WEPL-ITV are different for each field, creating unnecessary margins when combining WEPL-ITV from different fields (see Fig.~\textbf{!}a). Graeff et. al proposed a solution to include range margin into the field description itself, instead of creating bigger PTV \cite{Graeff2012}. Thus, no unnecessary margins are created. Treatment plans were made for all targets with intensity modulated particle therapy (IMPT) on a WEPL-ITV in reference phase.
+
+\item \textbf{4D Optimization:} IMPT with indITV produces inhomogeneous fields that yield homogeneous dose, but only in reference phase. The WEPL can change in different motion phases, leading to inhomogeneous dose. 4D optimization uses WEPL-ITV for raster setup, however the actual optimization is performed on each target voxel in each motion state $k$. The optimization function changes then to \cite{Graeff2012}:
+\begin{equation}
+\label{eq-multiCost}
+E(\vec{N}) = \sum_{k=1}^{m}\sum_{targets(k)} \sum_{i\in target(k)} \left( D_{pre}^{i} -\sum_{j=1}^n c_{ijk}N\right)
+\end{equation}
+All targets were treated with IMPT and 4D optimization. 
 
 
+\end{itemize}
+
+Finally, fields, resulting from three optimization techniques mentioned, were used to calculate 4D doses. For a fair comparison, the same number of fields and the same field angles were used in all three techniques.
 
 \subsection{Patient data}
+
+Treatment plans were created for 8 patients with 2 - 5 lung metastases, !! metastases in total. Most of the patients had an OAR in a close proximity to one or more tumors. Details are given in Table~\ref{tab:patdata2}.
+
+Patients were treated with SBRT at Fundacao Chamaplimaud (\textbf{REF}), with 21 - 27 Gy and 1 - 5 fractions. Protocol for each target is given in Table~\ref{tab:patdata2}. The objective for target was that  99\% of each tumor volume should receive at least 100\% of the planned dose (V99\% $\geq$ 100\%).
+Furthermore, doses to OAR should be under the limit as given here \cite{Benedict2010}.
+
+\begin{table}[H]
+	\centering
+	%   \footnotesize
+	\caption{Lesion characteristics, with lesion locations, stages, peak-to-peak motions and volumes of corresponding CTV, SPTV and FTV. Abberevations for lesion location are: 
+		RSL, right superior lung; IRL, inferior right lung; LSL, left superior lung; ILL, inferior left lung; RCS, right cardiophrenic space.}
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline\hline
+		& & & & \multicolumn{3}{|c|}{Volume (cm$^3$)} \\ \cline{5-7}
+		\multirow{2}{*}{Number} & \multirow{2}{*}{Location} & \multirow{2}{*}{Stage} &
+		Peak-to-peak & \multirow{2}{*}{CTV} & \multirow{2}{*}{SPTV} & \multirow{2}{*}{FTV}\\
+		&  & & motion [mm] & & & \\
+		\hline
+		1 & LSL & IIa & 4.8 & 35.9 & 100 & 179 \\
+		2 & LSL & Ia & 3.1 & 1.6 & 7.7 & 40.6 \\
+		3 & IRL & IV & 12 & 2.3 & 11.6 & 32 \\
+		4 & RSL & Ia & 0.5 & 6.9 & 25.2 & 38 \\
+		5 & ILL & IV & 4.4 & 2.5 & 15 & 20.5 \\
+		6 & ILL & IV & 7.5 & 1.4 & 7.7 & 26.5 \\
+		7 & RSL & IV & 3.9 & 16 & 40 & 72.5 \\
+		8 & ILL & IV & 0.6 & 139 & 261 & 255 \\
+		9 & LSL & IV & 2 & 9.2 & 35 & 46.5 \\
+		10 & IRL & IV & 3.4 & 10.2 & 38 & 45.5 \\
+		11 & ILL & IV & 2.8 & 14.4 & 46.4 & 57.2 \\
+		12 & ILL & IV & 5.8 & 3.8 & 17.4 & 23.4 \\
+		13 & RSL & IV & 0.8 & 4.3 & 17.7 & 26.3 \\
+		14 & LSL & IV & 3.4 & 2.7 & 14.5 & 23.1 \\
+		15 & RSL & IV & 2.1 & 3.1 & 15.4 & 33.5 \\
+		16 & LSL & IV & 0.5 & 0.5 & 5.4 & 6.7 \\
+		17 & ILL & IV & 7.8 & 0.8 & 6.1 & 23.5 \\
+		18 & LSL & IV & 0.1 & 1.7 & 15 & 23.5 \\
+		19 & IRL & IIIb & 11.4 & 27 & 137 & 118.5 \\
+		20 & RSL & Ia & 2.2 & 1.7 & 10 & 23.4 \\
+		21 & RSL & IV & 0.2 & 0.9 & 3.2 & 14.9 \\
+		22 & RSL & IV & 2.2 & 3.9 & 22.1 & 27.5 \\
+		23 & LSL & IV & 3.1 & 9.8 & 28 & 51 \\
+		24 & RSL & IV & 8.1 & 0.6 & 3.3 & 4.1 \\
+		25 & LSL & IV & 1.4 & 0.8 & 5.9 & 10 \\
+		26 & RCS & IV & 11.8 & 0.4 & 6.6 & 8.6 \\
+		
+		\hline\hline
+	\end{tabular}
+	\label{tab:patdata2}
+\end{table}
+
+
+\subsection{Treatment planning}
+
+
+
+
+
+
+
+
 
 
 
