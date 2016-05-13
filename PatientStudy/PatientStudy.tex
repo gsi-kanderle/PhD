@@ -50,7 +50,7 @@ In this section input data will be presented as well as treatment planning param
 Study included 19 patients with in total 26 lesions that were actually treated with SDRT at the Funda\c{c}ao Champalimaud. The lesion size was 2.9 cm$^3$ (median, 25-75\% 1.4 - 9.7) and peak-to-peak motion was 3.1 mm (1.6 - 5.6).
 Three patients had two targets, one had five and the rest one. 13 lesions were right-sided and 12 were left-sided and one was located in right cardiophrenic space. An overview of tumor characteristics can be found in Table~\ref{tab:paddata}.
 Two computed tomographies (CT) were available for all patients. A planning CT was used for OAR delineation and SDRT planning. Target motion was estimated on a second, time-resolved CT (4D-CT), consisting of 10 motion phases. 
-Clinical target volumes (CTV) were delineated using a registered positron emission tomography (PET) scan. The planning objectives were that 99 \% of planning target volume (PTV) must receive at least 24 Gy (V99\% $\geq$ 24 Gy) 
+Clinical target volumes (CTV) were delineated using a registered positron emission tomography (PET) scan. The planning objectives were that 99 \% of planning target volume (PTV) must receive at least 24 Gy (D_{99}\% $\geq$ 24 Gy) 
 in a single fraction, while all OAR constraints as defined in the AAPM task group 101 report on stereotactic radiotherapy had to be respected \cite{Benedict2010}. Different PTV definitions were used in SDRT and CiT, due to CiT sensitivity
 to range changes. The definitions are described in next section.
 
@@ -104,7 +104,7 @@ To acm$^3$ount for range changes relevant for particles only, different PTV defi
 Within this thesis they will be named SPTV and FTV (field-specific target volume) for SDRT and CiT, respectively.
 In SDRT, the responsible clinician determined the maximum breathing motion of the CTV from the 4DCT, hence creating an ITV. This ITV plus an additional 3 mm for setup uncertainty yielded the SPTV.
 
-FTV was constructed following principles from Graeff et al \cite{Graeff2012}. Each beam has a unique FTV. For setup uncertainty margins of 3 mm laterally and 1 mm in beam’s eyes view (BEV) were used on the CTV. 
+FTV was constructed following principles from Graeff et al \cite{Graeff2012}. Each beam has a unique FTV. For setup uncertainty margins of 3 mm laterally and 1 mm in beam's eyes view (BEV) were used on the CTV. 
 Afterwards a water-equivalent path length ITV (WEPL-ITV) was build, using transformation maps from the B-Spline deformable registration of the 4DCT data \cite{Shackleford2010}. Additional 2 mm + 2 \% proximal and distal margins 
 were added in BEV to acm$^3$ount for uncertainty from Hounsfield units to water equivalent path length conversion.
 
@@ -152,7 +152,7 @@ A beam spot spacing of 2 mm, a focal size of approximately 6 mm (FWHM), a 3 mm r
 \subsection{Dose metrics and analysis}
 
 
-For comparison between SDRT and CiT the following dose metrics were used – relative volume of the CTV receiving 100 \% of prescribed dose ($V_{100\%}$), 
+For comparison between SDRT and CiT the following dose metrics were used: a relative volume of the CTV receiving 100 \% of prescribed dose ($V_{100\%}$), 
 the minimum dose in 95\% of the volume ($D_{95\%}$), the maximum point dose ($D_{Max}$), and the mean dose ($D_{Mean}$). The first two metrics, $V_{100\%}$ and $D_{95\%}$ were used 
 
 to compare target coverage, whereas OAR dose was compared with DMax and DMean.
