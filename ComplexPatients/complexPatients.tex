@@ -178,15 +178,12 @@ Patients were treated with SBRT at Fundacao Chamaplimaud (\textbf{REF}), with di
 \subsection{Treatment planning}
 
 An isotropic margin of 3 mm was added to each CTV to account for uncertaneties in treatment delivery. An WEPL-ITV was constructed on the CTV with margins for each individual field. 
-SFUD and indITV used WEPL-ITV as target for optimization, whereas 4Dopt did optimization on CTV with margins in each motion state.
+SFUD and indITV used WEPL-ITV as target for optimization, whereas 4Dopt used WEPL-ITV only for raster setup and did the optimization on CTV with margins in each motion state.
   
+The objective for target was 99\% of each target volume should receive at least 100\% of the planned dose (D$_{99}$\% $\geq$ 100\%). Furthermore, the doses to the OARs should be under the limits given by AAPM task group \cite{Benedict2010}. 
 
-The objective for target was 99\% of each tumor volume should receive at least 100\% of the planned dose (D_{99}\% $\geq$ 100\%).
-
-
-Furthermore, doses to OAR should be under the limits given here \cite{Benedict2010}. 
-
-If the PTV and an OAR (e.g. small airways) overlaped then an OAR with or without margin (1-2 mm) was subtracted from PTV or FTV, to satisfy OAR constraints.
+If an OAR was in close proximity to target and the OAR dose limits could not be respected, then the OAR was subtracted from the target. In some cases it was necessary to add margins to the OAR and then subtract from target to satisfy OAR dose constraints.
+An algorithm was introduced into TRiP98 to automatically find the margins needed for an acceptable treatment plan.
 
 \section{Results}
 
