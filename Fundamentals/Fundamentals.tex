@@ -28,31 +28,31 @@
 
 \section{Radiotherapy}
 
-Radiation was used for treating tumors since the discovery of X-rays in 1895. In the beginning only superficial diseases would be treated, but as time and technology progressed X-ray tubes gained on voltage, allowing treatment of deeper suited tumors.
+An ionizing radiation was used for treating tumors since the discovery of X-rays in 1895. In the beginning only superficial diseases would be treated, but as time and technology progressed X-ray tubes gained on voltage, allowing treatment of deeper seated tumors.
 
 The radiation from linear accelerator was first used in medicine in 1953. Because the beam is more collimated and energies are
-higher than X-ray tubes the cure rates improved tremendously. The next big milestone was introduction of computers in the field
+higher compared to X-ray tubes, the cure rates improved tremendously. The next big milestone was introduction of computers in the field
 of radiotherapy. This led to better diagnostic tools, such as computed tomography scans (CT), magnetic resonance imaging (MRI) and
 positron emission tomography (PET). With these tools the location of the tumor could be better estimated and hence the physicians
-could prescribe better treatment. The potential of computers was afterwards exploited also in treatment planning process, resulting in intensity modulated
+could prescribe better treatment. The potential of computers was afterwards exploited also in the treatment planning process, resulting in intensity modulated
 radiation therapy (IMRT) which, together with diagnostic tools, provides an exact dose shaping in accordance to patient specific tumors.
 
-In 1946 it was discovered that protons could be used alongside photons for cancer treatment. Furthermore it was shown that protons have preferable depth dose profile compared to photons. First patient treatment soon followed in the early 1950's at Lawrence Berkeley Laboratory, USA. Heavier ions, such as 
+In 1946, a paper from R. Wilson first described the application of protons for cancer treatment \cite{Wilson1946}. It was shown that protons have preferable depth dose profile compared to photons. First patient treatment soon followed in the early 1950's at Lawrence Berkeley Laboratory, USA. Heavier ions, such as 
 He$^{2+}$, $^{20}$Ne and $^6$C were later also used for treatment. In the beginning only passive beam delivery (see Section \ref{Sec::Passive}) was used for treatment and in the 1990's active beam solutions (see Section \ref{Sec::Active}) were developed at Paul Scherrer Institute (PSI), Villigen (Switzerland) for protons and at GSI, Darmstadt (Germany) for carbon ions.
 
 
 \section{Physical and biological basics of radiotherapy}
 
-Both radiotherapy modalities (photons and ions) use the same principle to eliminate cancer cells - they aim to destroy the cell genetic material through ionization. The actual physical and biological mechanism behind both modalities will be explained in detail in the following section.
+Both radiotherapy modalities (photons and ions) use the same principle to eliminate cancer cells - they aim to damage the cell genetic material through ionization. The actual physical and biological mechanism behind both modalities will be explained in detail in the following section.
 
 \subsection{Interaction of radiation with matter}
 
-The interactions between photons with matter and ions with matter are quite different, as can be seen from depth dose distributions in Fig.~\ref{ddp}. Photons deposit highest local dose shortly after entering the matter (at the energies used in radiotherapy). Ions, on the other hand, deposit most of their dose right before they stop in the so-called Bragg Peak region. The position of the Bragg Peak depends on the energy of the ions, which is exploited in the treatment
+The interactions between photons with matter and ions with matter are quite different, as can be seen from depth dose distributions in Fig.~\ref{ddp}. Photons deposit the highest local dose shortly after entering the matter (at the energies used in radiotherapy). Ions, on the other hand, deposit most of their dose right before they stop in the so-called Bragg Peak region. The position of the Bragg Peak depends on the energy of the ions, which is exploited in the treatment
 of deep suited tumors.
 
-\subsection{Dose definition}
+\subsubsection{Dose definition}
 
-Physics in radiotherapy revolves around dose, $D$, which is defined as the ratio of the absorbed energy $dE$ per mass element $dm$ \cite{ICRU1993}:
+An important quantity in radiotherapy is dose, $D$, defined as the ratio of the absorbed energy $dE$ per mass element $dm$ \cite{ICRU1993}:
 
 \begin{equation}
  D = \frac{dE}{dm} \quad \left[ Gy = \frac{J}{kg} \right]
@@ -80,14 +80,14 @@ where $F$ is the fluence and $\rho$ the material density.
 
 \subsubsection{Interaction of photons with matter}
 
-Photons mostly interact with matter in one of the following ways: coherent or Rayleigh scattering, photoelectric effect, Compton scattering and pair production. The cross section, $\sigma$, for each of these processes depends as well on the energy of the incident photons as on the atomic number of the absorbing material \cite{Lilley2006}. The decreasing photon intensity in matter, $I$, can be described as:
+Photons mostly interact with matter in one of the following ways: coherent or Rayleigh scattering, photoelectric effect, Compton scattering and pair production. The cross section $\sigma$, for each of these processes depends as well on the energy of the incident photons as on the atomic number of the absorbing material \cite{Lilley2006}. The decreasing photon intensity in matter, $I$, can be described as:
 
 \begin{equation}
  I = I_{0} \cdot e^{- N \sigma x} = I_{0} \cdot e^{-\mu x}
  \label{expdecrease}
 \end{equation} 
 
-where $I_{0}$ stands for the initial intensity of the photons, $x$ the depth of the material in units of length, $N$ the atomic density of the material and $\mu$ the attenuation coefficient. The cross section, $sigma$ is the sum of all possible Interaction processes:
+where $I_{0}$ stands for the initial intensity of the photons, $x$ the depth of the material in units of length, $N$ the atomic density of the material and $\mu$ the attenuation coefficient. The cross section, $\sigma$ is the sum of all possible Interaction processes:
 
 \begin{equation}
 {\sigma} = \sigma_{rayleigh} + \sigma_{photoelectric} + Z\sigma_{compton} + \sigma_{pairproduction} 
@@ -121,13 +121,13 @@ Barkas formula \cite{Barkas1963} can be used for the approximation of the effect
 
 where $\beta$ is the projectile speed in units of $c$.
 
-The energy loss of the ions is proportional to $z_{eff}$ and inversely proportional to $v^2$. The shape of the curve in Fig.~\ref{ddp} can be explained as following: Ions enter the matter with a high velocity, resulting in a small energy deposition. Their velocity gradually decreases, which in turn increases the energy deposition. The maximum of the energy loss occurs right when the ions stop and it is called Bragg peak or particle range.
+The energy loss of the ions is proportional to $z_{eff}$ and inversely proportional to $v^2$. The shape of the curve in Fig.~\ref{ddp} can be explained as following: Ions enter the matter with a high velocity, resulting in a small energy deposition. Their velocity gradually decreases, which in turn increases the energy deposition. The maximum of the energy loss occurs right when the ions stop and it is called Bragg peak.
 
 \subsubsection{Lateral scattering and range straggling of ions}
 \label{scat}
-As mentioned in section \ref{iion} ions interact with matter mostly via electronic stopping at energies used in radiotherapy. However, nuclear stopping still occurs and it is the main reason for lateral scattering.
-The angular spread of ions is dependent on the mass of the target nuclei and on the momentum of the incident ions \cite{Moliere1948}. The lateral scattering is proportional to mass of the target nuclei and inversely proportional
-on the momentum of incident ions. Carbon ions have thus less lateral scattering then protons. Experiments have shown that carbon ions have three times smaller angular spread compared to protons at the same range in water 
+As mentioned in ions interact with matter mostly via electronic stopping at energies used in radiotherapy. However, nuclear stopping still occurs and it is the main reason for lateral scattering.
+The angular spread of ions is dependent on the mass of the target nuclei and on the momentum of the incident ions \cite{Moliere1948}. The lateral scattering is proportional to the mass of the target nuclei and inversely proportional
+to the momentum of incident ions. Carbon ions have thus less lateral scattering then protons. Experiments have shown that carbon ions have three times smaller angular spread compared to protons at the same range in water 
 (15.6 cm, 150 MeV/u protons and 285 MeV/u $^{12}$C ions) \cite{Schardt2010}.
 
 Statistical fluctuations of specific electronic stopping events cause range straggling of ions. If the number of collisions is high or the material is thick enough these fluctuations can be approximated by
@@ -143,10 +143,10 @@ where $R$ is the mean range of ions and $M$ the ion mass. Thus, the heavier the 
 \label{nuclfrag}
 
 When transversing through matter ions (except protons) can be fragmented into ions with lower atomic number. The lower Z fragments travel in the same direction as projectile ions and 
-have a significant contribution to the dose deposited (see Fig.~\ref{iondd}). It is thus essential that fragments are included in the treatment planning, so that the accurate dose can be calculated.
+have a significant contribution to the deposited dose (see Fig.~\ref{iondd}). It is thus essential that fragments are included in the treatment planning, so that an accurate dose can be calculated.
 
-After colliding with target projectile fragments enter in a excited state. De-excitation occurs through
-emission of nucleons, nucleon clusters and photons. Two of the possible fragments of projectile $^{12}$C ions are isotopes $^{11}C$ and $^{10}C$, which are both $\beta^+$ emmiters \cite{Kraft2000}.
+After colliding with the target projectile fragments enter excited state. A de-excitation occurs through
+emission of nucleons, nucleon clusters and photons. Two of the possible fragments of projectile $^{12}$C ions are isotopes $^{11}C$ and $^{10}C$, which are both $\beta^+$ emitters \cite{Kraft2000}.
 The resulting positron is annihilated with electrons in matter, creating two photons, which travel in opposite direction. PET (Positron Emission Tomography) can take advantage of the process without exposing patient to additional radiation.
 
 \begin{figure}[H]
@@ -160,7 +160,7 @@ The resulting positron is annihilated with electrons in matter, creating two pho
 
 \subsubsection{Secondary electrons and track structure}
 
-Ions used in radiotherapy lose most of their energy via inelastic Coulomb scattering on target electrons (see Section~\ref{iion}). Electrons in collision with ions can be liberated from target atoms and are called secondary electrons, also $\delta$-electrons. $\delta$-electrons also travel through matter, scatter further and may even cause secondary ionization of the target atoms. When $\delta$-electrons energies are larger than $>$50 eV,
+Ions used in radiotherapy loose most of their energy via inelastic Coulomb scattering on target electrons (see Section~\ref{iion}). Electrons in collision with ions can be liberated from target atoms and are called secondary electrons, also $\delta$-electrons. $\delta$-electrons also travel through matter, scatter further and may even cause secondary ionization of the target atoms. When $\delta$-electrons energies are larger than $>$50 eV,
 ionization becomes dominant process, which produces a large number of additional electrons \cite{Kraft2000,Schardt2010}.
 
 The radial dose profile and track diameter is defined by the energy spectrum of the $\delta$-electrons. Most of the $\delta$-electrons are concentrated around the projectile ions path, since they receive small energy transfers 
