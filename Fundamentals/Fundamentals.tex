@@ -219,9 +219,9 @@ radiotherapy strives to avoid.
 \subsubsection{Relative Biological Effectiveness}
 \label{RBE}
 
-Fig.~\ref{track} shows the size of DNA molecule in comparison with proton and carbon ion distribution of $\delta$-electrons around their track. Clustered DSB occur around Bragg peak due to the large ionization densities As mentioned
-clustered DSB pose a too complex task for cell repair-mechanisms to handle, leading eventually to cell death. The large ionization density is typical for ions and is one of the main advantages over photons in radiotherapeutic sense. Since most of the research about
-cell response to radiation was done for photons, the biological effect of ions is usually described relative to a reference photon response. Relative biological effectiveness (RBE) is therefore defined as the ratio of the reference 
+Fig.~\ref{track} shows the size of DNA molecule in comparison with proton and carbon ion distribution of $\delta$-electrons around their track. A clustered DSB occurs preferably around Bragg peak due to large ionization densities. As mentioned
+clustered DSB pose a too complex task for cell repair-mechanisms to handle, leading eventually to cell death. Ions have large ionization density and is one of the main advantages over photons in the radiotherapeutic sense. Since most of the clinical experience about
+cell response to radiation comes from photons, the biological effect of ions is usually described relative to a reference photon response. Relative biological effectiveness (RBE) is therefore defined as the ratio of the reference 
 photon dose to the dose level of a specific ion radiation at the same biological effect (isoeffect):
 
 \begin{equation}
@@ -229,22 +229,22 @@ photon dose to the dose level of a specific ion radiation at the same biological
 \end{equation}
 
 It is important to note at this point that RBE values are valid only for the same effect - the same biological endpoint and the same reference radiation. The most interesting biological endpoints in radiotherapy are cell survival and
-side effects. RBE values are usually obtained from the cell survival curves (see Fig.~\ref{dosedep}). Cell survival curves, S, are commonly described by an exponential linear-quadratic (LQ) model \cite{Fowler1989}:
+side effects. RBE values are usually obtained from cell survival curves (see Fig.~\ref{dosedep}). Cell survival curves, S, are commonly modeled by an exponential linear-quadratic (LQ) model \cite{Fowler1989}:
 
 \begin{equation}
  S(D) = e^{-\alpha D - \beta D^2}
  \label{lq}
 \end{equation}
 
-$\alpha$ is a coefficient related to a single event cell killing and $\beta$ coefficient related to a double event cell killing. Characteristic of a tissue (cell) type is written in the $\alpha / \beta$ ratio, namely the tissue 
+$\alpha$ is a coefficient related to a single event cell killing and $\beta$ coefficient related to a double event cell killing. The ratio of $\alpha / \beta$ is a characteristic of the cell type, namely the tissue 
 capacity to repair radiation damage. A small $\alpha / \beta$ ratio means cell is radioresistive (high repair capacity) and vice versa.
-As seen in Fig.~\ref{dosedep} and Eq. \ref{lq} RBE values are dependent on the dose level. Hence in ion radiotherapy, beside the physical absorbed dose, a photo-equivalent or biological dose incorporating the RBE also plays an important role. 
+As seen in Fig.~\ref{dosedep} and Eq. \ref{lq}, RBE values are dependent on the dose level. Hence in ion radiotherapy, beside the physical absorbed dose, a photo-equivalent or biological dose incorporating the RBE also plays an important role. 
 The unit for biological dose is Gy (RBE) \cite{ICRU2007}. 
 
-Besides a dose level, RBE also depends on the LET, the particle species and the tissue type \cite{Kraft2000}. Therefore RBE modeling is a very complex issue.
-At GSI RBE is calculated using \textit{local effect model} (LEM) developed by Scholz et al \cite{Scholz1994}. The main assumption of LEM model is that biological 
+Besides a dose level, RBE also depends on the LET, the particle species and the tissue type \cite{Kraft2000}. Therefore RBE modeling is a complex topic.
+At GSI, RBE is calculated using the \textit{local effect model} (LEM) developed by Scholz et al. \cite{Scholz1994}. The main assumption of the LEM model is that localized biological 
 effects are independent on the radiation type. The difference between different radiation types comes from the dose deposition in a small volume in the cell nucleus.
-At the same total dose, photons have a homogeneous dose distribution over a cell nucleus, while ions have a highly localized dose distribution (around ion track).
+At the same total dose, many photons create a homogeneous dose distribution over a cell nucleus, while few ions cause a highly localized dose distribution around their track.
 
 \newpage
 
@@ -261,7 +261,7 @@ Heavy ions show a much steeper decrease with dose. The RBE value can be calculat
 
 Next assumption of the LEM is that the photon response is the same at these high local doses. With this assumption ion dose response can be predicted, by comparing
 photon response at the high local dose level. LEM has received several revisions \cite{Elsaesser2006, Elsaesser2007, Elsaesser2009} and experimental verifications
-\cite{Mitaroff1998, Kraemer2000a, Kraemer2003}, making it valid for clinical use. RBE for carbon ions ranges from 1 in the entrance channel, to a value around 5 at 
+\cite{Mitaroff1998, Kraemer2000a, Kraemer2003} and it was used in clinic. RBE for carbon ions ranges from 1 in the entrance channel, to a value around 5 at 
 the Bragg peak \cite{Kraft2000}. The highest RBE for carbon ions is right around Bragg peak, which gives carbon ions a great advantage, since there is an increased 
 biological effectiveness at target tissue compared to the normal tissue in the entrance channel. In proton therapy a constant RBE value of 1.1 across the treatment field
 is used \cite{Paganetti2002}.
@@ -297,37 +297,37 @@ means higher $F$ and a higher $\alpha / \beta$ (early responding tissue) moves $
 
 In recent years hypo-fractionation has showed promising results over wide range of tumors \cite{Yamada2008, Greco2011, Halasz2013}. 
 Hypo-fractionation consist of 1-3 fractions of very high doses, up to 24 Gy in a single fraction (single-dose). According to LQ model such doses should be too low to achieve any tumor control, since standard total doses are around 50 - 60 Gy with 1.5 - 2 Gy per fraction. 
-However, clinical results show othewise with good tumor local control, which indicates different mechanisms at work. The topic is still under research and no consensus has yet been made regarding the theory behind it.
+However, clinical results show othewise with good tumor local control, which indicates different mechanisms at work. The topic is still under research and no consensus has yet been reached regarding the theory behind it.
 
 Garcia-Barros et al. proposed a two target model \cite{Garcia2003}, which suggest that tumor response to irradiation is defined not only by tumor cell type (as in LQ model) but also by micro-vascular
-sensitivity. With excluding targeted enzymes from mice, they showed that tumors with reduced micro-vascular endothelial apoptosis grew 200-400 \% faster than control group. The study, however, was challenged on several grounds and is controversal.
+sensitivity. With excluding targeted enzymes from knock-out mice, they showed that tumors with reduced micro-vascular endothelial apoptosis grew 200-400 \% faster than a control group. The study, however, was challenged on several grounds and is controversal.
   
 
 \subsection{Application technique}
 
 The use of X-rays for treating patients has more than a century long history. There is a lot of research and practical knowledge regarding the clinical usage of X-rays. Particle therapy, on the other hand, is a more novel technique, with
-more patients being treated every year. In the following sections an overview will be given of how the irradiation is actually delievered to the patient for both modalities with the emphasis on ion therapy.
+more patients being treated every year. In the following sections an overview will be given of how the irradiation is actually delivered to the patient for both modalities with the emphasis on ion therapy.
 
 \subsubsection{Photon therapy}
 
-The aim of photon therapy is to direct high-energy (MV) photons to target. To achieve that, electrons are first accelerated in linear accelerators. Next, they are stopped in a heavy metal target where photons are produced via bremsstrahlung.
+A photon therapy directs high-energy (MV) photons to target. To achieve that, electrons are first accelerated in linear accelerators. Next, they are stopped in a heavy metal target where photons are produced via bremsstrahlung.
 In the following step photons are shaped at the exit of the machine to the shape of the tumor. Exit beam is then directed to patient. The shaping of the beam is done with either blocks at the head of the machine or by a 
 multileaf collimator. Multileaf collimator is a device made of individual leaves (usually from tungsten or other high-atomic number material), which can be moved to get the shape of the tumor in beam's eye view, see Fig.~\ref{MLC}. 
 
 Linear accelerators are usually placed on a gantry, which can be rotated around the patient, see Fig.~\ref{gantry}. This allows beams to enter the patient from any angle. The arbitrary choice of beam angle is used in a 3-dimensional conformal radiotherapy,
-where a variable number of beams is used. Each beam is then shaped with a multileaf collimator. Even more precise technique is intensity-modulated radiotherapy (IMRT). IMRT allows treating of a complex tumor shapes, e.g. when tumor is warped around a critical structure.
+where a variable number of beams is used. Each beam is then shaped with a multileaf collimator. Even more precise technique is intensity-modulated radiotherapy (IMRT). IMRT allows treating complex tumor shapes, e.g. when the tumor is in proximity of a critical structure.
 
 \subsubsection{Ion therapy}
 
 In order for ion therapy be successful, ions must be accelerated to appropriate energies (several hundred MeV/u), the beam must be transported to target area and guided
-onto the target with high accuracy (around 1 mm). The delivery system is therefore extremely complex and it is one of the reasons ion radiotherapy is not as common as photon radiotherapy.
+onto the target with high accuracy (around 1 mm). Both, complex delivery system and the cost of the accelerator make ion radiotherapy not as common as photon radiotherapy.
 
 \newpage
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{./Images/MLC.png}
-\caption{A picture of a multileaf collimator. Individual leaves are positioned so that exit beam from linear accelerator has conformal shape to patient tumor in a beam's eye view. Picture taken from \cite{MLC}.}
+\caption{A picture of a multileaf collimator. Individual leaves are positioned so that exit beam from linear accelerator conforms to the patient tumor in a beam's eye view. Picture taken from \cite{MLC}.}
 \label{MLC}
 \end{center}
 \end{figure}
@@ -344,22 +344,22 @@ onto the target with high accuracy (around 1 mm). The delivery system is therefo
 
 
 There are two types of particle accelerators used in ion therapy - cyclotrons and synchrotrons. \textbf{Cyclotrons} can be built in a compact design and offer a continuous beam with
-stable intensities. Particle energies, however, can not be regulated and therefore passive energy degraders are needed. Active energy variation is possible with \textbf{synchrotrons}, where a linear
+stable intensities. Cyclotrons and only be used for protons and particle energies can not be regulated and therefore passive energy degraders are needed. Active energy variation is possible with \textbf{synchrotrons}, where a linear
 accelerator is used to inject ions into the synchrotron and then the beam is regulated with ion optics. Synchrotrons are used in all heavy ion therapy centers, while cyclotrons are most
 commonly used for proton therapy.
 
 Each tumor has a unique shape, size and position in patient. Therefore a single Bragg peak would not provide adequate dose and a beam has to be properly shaped. Two beam shaping systems
-are in usage - passive and active beam shaping. In the next two sections both will be explained.
+are in use - passive and active beam shaping. In the next two sections both will be explained.
 
 
 \subsubsection{Passive beam shaping}
 \label{Sec::Passive}
 
-The general idea of passive beam shaping is to transform a beam into the shape of the tumor (analogous to multileaf collimator). This is done in several steps as schematically shown in Fig. \ref{passive}. Firstly, the beam is broadened using a scattering device (passive double scattering systems or magnetic wobbler)
-in order to obtain a broad, flat profile. In the next step, the beam is spread out over the required energy range with a range modulator. Usually a range modulator consist of rotating wheels of various thickness or a ridge filter \cite{Chu1993}. A single Bragg Peak is thus spread out into so-called \textit{spread-out Bragg peak (SOBP)}, which is moved to the required depth using a range shifter. The final two devices in beam's path are built for each patient individually. Collimator shapes beam in a lateral direction, while compensator adjusts SOBP to the distal edge of the tumor. However, compensator cannot adjust dose in the proxima ledge of the tumor, resulting in an access dose to the healthy tissue (hatched area in Fig. \ref{passive}).
+The general idea of passive beam shaping is to transform a beam of a fixed single energy into the shape of the tumor. This is done in several steps as schematically shown in Fig. \ref{passive}. Firstly, the beam is broadened using a scattering device (passive double scattering systems or magnetic wobbler)
+in order to obtain a broad, flat profile. In the next step, the beam is spread out over the required energy range with a range modulator. Usually a range modulator consist of rotating wheels of various thickness or a ridge filter \cite{Chu1993}. A beam of fixed energy is thus expanded into so-called \textit{spread-out Bragg peak (SOBP)}, which is moved to the required depth using a range shifter. The final two devices in beam's path are built for each patient individually. Collimator shapes beam in a lateral direction, while compensator adjusts SOBP to the distal edge of the tumor. However, compensator cannot adjust dose in the proxima ledge of the tumor, resulting in an access dose to the healthy tissue (hatched area in Fig. \ref{passive}).
  
-Passive beam shaping offers more robust and faster treatment delivery in contrast to active beam shaping. However, it lacks tumor conformity, dose cannot be modulated and each patient needs individually tailored devices for each beam used in treatment.
- Furthermore beam travels through some material, exposing patient to additional dose due to fragmentation
+Passive beam shaping offers more robust and faster treatment delivery in contrast to active beam shaping. However, it lacks tumor conformity, the dose cannot be modulated and each patient needs individually tailored devices for each beam used in the treatment.
+ Furthermore, the beam travels through some material, exposing patient to additional dose due to fragmentation
 
  \newpage
  
@@ -377,22 +377,22 @@ The proximal edge of the tumor cannot be shaped, as shown with hatched area. Fig
 \label{Sec::Active}
 
 In contrast to passive beam shaping, active beam shaping works by dividing tumor into small points, which are then irradiated using a thin pencil beam. Tumor is first segmented into iso-energy slices (IES) and each of IES
-is then covered with 2 dimensional grid. A thin pencil beam travels from point to point on this grid, irradiating each point with designated dose. The technique allows irradiation of arbitrary shape, without introducing any additional, patient specific 
+is covered with a 2 dimensional grid (raster points). A thin pencil beam is deflected from raster to raster point, irradiating each one with designated dose. The technique allows irradiation of arbitrary shape, without introducing any additional patient specific 
 hardware. The lack of additional material in front of the patient also means less dose due to lesser neutron flux. Furthermore with the option to modulate dose in each point, dose in tumor is very conformal with less dose to healthy tissue.
 
-There are differences in specifics of active beam shaping and the GSI system of three-dimensional scanning system will be presented here \cite{Haberer1993,Kraft2000,Schardt2010} and a schematic presentation in Fig. \ref{scanning} and Fig. \ref{active}.
-Synchrotron provides a thin pencil beam of $^{12}$C ions with selected energy. The energy defines the position of the Bragg peak in depth. Fig. \ref{active}b shows how the Bragg peaks are stacked in depth to cover longitudinal extension of the tumor.
-IES is covered with 2 dimensional grid of target points (raster points). The thin pencil beam travels continuously over raster points. It is guided by two magnetic deflection units. In treatment planing each raster point is designated a specific dose. 
-During treatment the beam stays on each raster point until intensity monitoring system measures the designated dose. Then it moves to the next raster point. When the whole IES is irradiated, the treatment halts until next beam energy for next IES comes from accelerator.
+There are differences in specifics of active beam shaping and the GSI system of three-dimensional scanning system will be given here \cite{Haberer1993,Kraft2000,Schardt2010} and a schematic presentation is shown in Fig.~\ref{scanning} and Fig.~\ref{active}.
+A synchrotron provides a thin pencil beam of $^{12}$C ions with a variable energy in the range of 30 - 400 MeV/u. The energy defines the position of the Bragg peak in depth. Fig. \ref{active}b shows how the Bragg peaks are stacked in depth to cover longitudinal extension of the tumor.
+The thin pencil is guided by two magnetic deflection units to irradiate each raster point. The specific dose in each raster point is calculated in the treatment planing.
+During treatment the beam stays on each raster point until intensity monitoring system measures the designated dose. Then it is moved to the next raster point. When the whole IES is irradiated, the treatment waits for the next IES comes from accelerator.
 
-Fig. \ref{active}a displays how dose homogeneity in target is achieved. In typical configuration beam's full width half maximum is three times the lateral raster spacing. Such configuration offers robustness for uncertainties of the beam spots.
-There also should be enough overlap between individual Bragg peaks. However, there the number of IES should be kept low, since the changing of the beam energy takes most of the time and hence prolongs the treatment. Instead of using high number of
- IES, Bragg peaks are broadened in longitudinal direction by using ripple filter (RiFi) - device similar to ridge filters used in passive beam shaping. 
+Fig.~\ref{active}a displays how dose homogeneity in the target is achieved. To achieve flat dose distribution with Gaussian beam profile, beam's full width half maximum is three times the lateral raster spacing. Such configuration offers robustness for uncertainties of the beam spots.
+The spacing between individual IES is usually 3 mm, providing enough overlap between individual Bragg peaks. However, the number of IES should be kept low, since the changing of the beam energy takes most of the time and hence prolongs the treatment. Instead of using high number of
+ IES, Bragg peaks are broadened in longitudinal direction by a using ripple filter (RiFi) - a device similar to ridge filters used in passive beam shaping. 
 
 \subsection{Motion in radiotherapy}
 \label{sec:motion}
 
-Patient motion can have a profound effect on the radiotherapy. It can cause large deviations from the planned dose, resulting in under- or over-dosage in target and excess dose in OAR. Motion types, it's extent and origin is therefore a vast topic of research. 
+Patient motion can have a profound effect on the radiotherapy. It can cause large deviations from the planned dose, resulting in under- or over-dosage in target and excess dose in OAR. Motion types, its extent and origin is therefore a vast topic of research. 
 A brief introduction will be given here, for an in-depth explanation reader is pointed to review by Langen and Jones \cite{Langen2001}.
 
 \newpage
@@ -432,10 +432,10 @@ There are three main types of motion: patient positioning, inter- and intra-frac
 \textbf{Patient motion} is difference in patient position between image acquisition (e.g. CT) used for treatment planning and actual delivery. Patient motion introduces changes in tumor shape and tumor position. To overcome patient 
 position uncertainties, patient immobilization and dedicated protocols are used.
 \newline
-\textbf{Interfractional motion} happens between two treatment sessions (fractions) and results in anatomical changes in a patient. It occurs on a time scale of hours and days. For lung cancer patients, tumor ca shrinks and lung density can change between fractions MORI2009. 
-Also changes in breathing pattern can impact treatment delivery. While the breathing motion trajectory has a good reproducibility, the tumor baseline drifts significantly \cite{Sonke2008}. Repeated imaging and replanning reduces the impact of the interfractional motion, but requires additional time.
+\textbf{Interfractional motion} happens between two treatment sessions (fractions) and results in anatomical changes in a patient. It occurs on a time scale of hours and days. For lung cancer patients, tumor shrinks and lung density can change between fractions \cite{Mori2009}. 
+Also changes in breathing pattern can impact treatment delivery. Additionally, the tumor baseline drifts significantly \cite{Sonke2008}. Repeated imaging and replanning reduces the impact of the interfractional motion, but requires additional time.
 \newline
-\textbf{Intrafractional motion} usually stands for respiration and heart beat. The time scale ranges from seconds to minutes. In this thesis there will be focus on respiratory motion, due to research intrest of lung cancer. Respiratory motion varies from patient to patient and 
+\textbf{Intrafractional motion} is mainly caused by respiration and heart beat, but also pristalsis. The time scale ranges from seconds to minutes. In this thesis we investigated treatment of lung cancer, so focus lies on respiratory motion. Respiratory motion varies from patient to patient and 
 it is responsible for tumor motion from a mm range to a couple of cm \cite{Shirato2004a}. Tumor size and T-staging are also correlated to tumor motion \cite{Liu2007}. The respiratory-induced motion is largest in superior-inferior (SI) direction rather than 
 in the anterior-posterior (AP) or left-right (LR) directions \cite{Seppenwoolde2002, Britton2007, Liu2007}.
 
@@ -453,15 +453,15 @@ prostate patient are compared. Density variations between two CT scans are shown
 
 \subsubsection{Motion mitigation techniques}
 
-While all three motion types have to be addressed in treatment planning, special focus will be given on the intrafractional motion mitigation. Photon radiotherapy or particle radiotherapy with passive beam shaping 
+While all three motion types have to be addressed in treatment planning, special focus will be given on intrafractional motion mitigation. Photon radiotherapy or particle radiotherapy with passive beam shaping 
 use larger safety margins to encompass the whole tumor motion as explained in Section~\ref{treatmentPlanning}. However, larger safety margins are not enough to mitigate motion when active beam shaping is used. The beam delivery 
-sequence and target motion interfere with one another, resulting in over- and underdosages in patients. Effect is called interplay and it has been thoroughly reviewed elsewhere \cite{Phillips1992,Bert2008}. The effect of interplay depends
-on many factors, such as motion amplitude, beam direction, starting breathing phase etc. Three main techniques are currently established as counteract interplay: rescanning, gating and beam tracking. Several others techniques exist
-to reduce the effect of tumor motion, such as abdominal pressure, jet ventilation, apneic oxygenation etc., but will not be described here, since they are far from the scope of this thesis.
+sequence and target motion interfere with one another, resulting in over- and underdosages in patients. This effect is called interplay and it has been thoroughly reviewed elsewhere \cite{Phillips1992,Bert2008}. The effect of interplay depends
+on many factors, such as motion amplitude, beam direction, starting breathing phase etc. Three main techniques are currently established to counteract interplay: rescanning, gating and beam tracking. Several others techniques exist
+to reduce the effect of tumor motion, such as abdominal compression, jet ventilation, apneic oxygenation etc., but will not be described here, since the scope of this thesis is on free-breathing patients.
 
 
-\textbf{Rescanning} is a technique that uses advantage of statistical averaging of different interplay patterns \cite{Phillips1992}. Instead of applying the whole dose $D$ at once, the target is scanned $N$ times, each
-time irradiated with $\mathrm{D}/\mathrm{N}$. The result is a Gaussian distribution of $D$ around the $D$ with no interplay (static case), as shown in Fig. \ref{rescanning}. With more rescanns (larger $N$), better dose homogeneity is achieved, because variance is proportional
+\textbf{Rescanning} is a technique that uses statistical averaging of different interplay patterns \cite{Phillips1992}. Instead of applying the whole dose $D$ at once, the target is scanned $N$ times, each
+time irradiated with $\mathrm{D}/\mathrm{N}$. The result is a Gaussian dose distribution around $D$ with no interplay (static case), as shown in Fig. \ref{rescanning}. With more rescans (larger $N$), better dose homogeneity is achieved, because the variance is proportional
 to $\mathrm{1}/\mathrm{N}$. Technically the method is the easiest to implement of the three mentioned, since no real-time motion monitoring is necessary. However, it introduces additional dosage to normal tissue. Rescanning has not yet be
 implemented clinically, but should be in the near future in several centers worldwide \cite{Furukawa2007, Zenklusen2010}.
 \newline
@@ -473,18 +473,18 @@ implemented clinically, but should be in the near future in several centers worl
 \end{center}
 \end{figure}
 
-\textbf{Gating} applies irradiation only in a selected part of the breathing cycle in a so-called gating window (GW) \cite{Minohara2000,Lu2006}. Usually exhale position is used as the center of the GW, as highlighted in Fig.~\ref{gating}.
-Motion monitoring signal is used to control beam extraction. While there is no additional normal tissue irradiation, the treatment time is prolonged due to the frequent beam interruptions as shown in Fig. \ref{gating}.
-Conventional radiotherapy and passive beam shaping also use advantage of gating to reduce the effects of motion on treatment delivery.
+\textbf{Gating} applies irradiation only in a selected part of the breathing cycle in a so-called gating window (GW) \cite{Minohara2000,Lu2006}. Usually, the end-exhale position is used as the center of the GW, as highlighted in Fig.~\ref{gating}.
+A motion monitoring signal is used to control beam extraction. While there is limited additional normal tissue irradiation, the treatment time is prolonged due to frequent beam interruptions as shown in Fig. \ref{gating}.
+Conventional radiotherapy and passive beam shaping also employ gating to reduce the effects of motion on treatment delivery.
 \newline
-\textbf{Beam tracking} is a method, where the tumor is followed by beam throughout different motion phases in real time. Similar to gating, beam tracking is not limited to active beam shaping. It was even proposed originally 
-for photons \cite{Keall2001} and later implemented clinically in x-ray radiosurgery in the robotic Cyberknife Synchrony system (Accuray Inc., Sunnyvale, Ca., USA) \cite{Brown2007a,Kilby2010}. Regardless of radiation type, 
+\textbf{Beam tracking} is a method where the tumor is followed by the beam throughout different motion phases in real time. Similar to gating, beam tracking is not limited to active beam shaping. It was even proposed originally 
+for photons \cite{Keall2001} and later implemented clinically in x-ray radiosurgery in the robotic Cyberknife Synchrony system (Accuray Inc., Sunnyvale, Ca., USA) \cite{Brown2007a,Kilby2010}. Regardless of radiation type, a
 fast beam delivery system is required for beam tracking. In contrast to photon radiotherapy, beam tracking with particles need to pay special consideration to longitudinal changes. At GSI beam tracking system has been implemented.
-The solution for longitudinal changes was carried out by two polymethyl methacrylate (PMMA) wedges close to the target, that are operated via linear stepmotor \cite{Saito2009}, as shown in Fig.~\ref{tracking}. Linear stepmotor can
-change the relative distance between the wedges and therefore introduces more or less material that beam travels through and consequently changes beam energy (range). The beam tracking system at GSI was able ta achieve high precisions \cite{Bert2007, Bert2009, Saito2009}. Clinical implementation, however, is not yet feasible, since internal motion monitoring that includes range change information in real-time is not fast enough.
+The solution for longitudinal changes was carried out by two polymethyl methacrylate (PMMA) wedges close to the target, that are operated via linear stepmotor \cite{Saito2009}, as shown in Fig.~\ref{tracking}. The stepmotor can
+change the relative distance between the wedges and therefore introduces more or less material the beam travels through and consequently changes the effective beam energy (range). The beam tracking system at GSI is able to achieve high precision \cite{Bert2007, Bert2009, Saito2009}. Clinical implementation, however, is not yet feasible due to several reasons, i. e. the precision and speed of motion monitoring, complexity of ion-beam tracking system, inverse interplay.
 
 
-The three motion mitigation techniques mentioned are not exclusive and can be used in parallel. Furukawa et al. made a study on a combination between rescaning and gating \cite{Furukawa2007} and Water et al. presented a combination
+The three motion mitigation techniques mentioned are not exclusive and can be used in parallel. Furukawa et al. made a study on a combination between rescanning and gating \cite{Furukawa2007} and Water et al. presented a combination
 between rescanning and tracking \cite{Water2009}.
 
 \begin{figure}[tbp]
