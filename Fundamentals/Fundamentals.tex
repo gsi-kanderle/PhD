@@ -509,11 +509,11 @@ PMMA wedges are mounted on step motors, enabling to change the depth the particl
 \label{treatmentPlanning}
 
 The task of treatment planning is to determine machine parameters in order to deliver prescribed dose to the target, while not violating maximum allowed dose to critical organs, also known as organs at risk (OARs) \cite{Richter2012}.
-Treatment planning thus revolves around dose optimization process and it is highly dependent on delivery type used for treatment. The basis of treatment planning is computed tomography (CT), where delineation of target volume and OARs is
-done by physician. Additional imaging, such as magnetic resonance (MRI) or positron emission tomography (PET), is often used as a supplement to CT for even better delineation. In the following sections target definition will be explained and the basics of scanned ion beam treatment planning. Afterwards an explanation on dose calculation for moving targets will be given.
+Treatment planning thus revolves around dose optimization process and it is highly dependent on delivery type used for treatment. The basis of treatment planning is a computed tomography (CT), where target volume and OARs are delineated
+done by physician. Additional imaging, such as magnetic resonance (MRI) or positron emission tomography (PET), is often used as a supplement to CT for enhanced contrast of it. In the following sections, the target definition will be explained and the basics of scanned ion beam treatment planning. Afterwards an explanation on dose calculation for moving targets will be given.
 
 \subsubsection{Target definition}
-The definition of target volume is crucial, since it has to cover the whole tumor, prevent further tumor spreading, while at the same time it should not be too big to spare normal tissue. 
+The definition of the target volume is crucial, since it has to cover the whole tumor, prevent further tumor spreading, while at the same time it should not be too big to spare normal tissue. 
 The International Commission on Radiation Units (ICRU) recommends the following definitions for volumes used in treatment planning, which will also be used in this work, see Fig.~\ref{targets} \cite{ICRU50, ICRU62}.
 \newpage
 \begin{description}
@@ -547,13 +547,13 @@ The International Commission on Radiation Units (ICRU) recommends the following 
 \end{center}
 \end{figure}
 
-Further recommendations by ICRU state that 100\% of the PTV volume should receive between 95\% and 100\% of the planned dose \cite{ICRU50}.
+Further recommendations of the ICRU state that 100\% of the PTV volume should receive between 95\% and 100\% of the planned dose \cite{ICRU50}.
 
 
 \subsubsection{Treatment planning for scanned ion beams}
 
-Treatment planning system (TPS) for active shaping ion beams has to incorporate active beam delivery system and the beam interactions with the tissue. Furthermore, for ions heavier than protons
-the biological effectiveness and fragmantation must also be considered, which add additional complexity to the TPS. A TPS for beam scanning was developed at GSI, called TRiP98. The basic concepts of TRiP98 will be
+A treatment planning system (TPS) for active shaping ion beams has to model the active beam delivery system and the beam interactions with the tissue. Furthermore, for ions heavier than protons
+the biological effectiveness and fragmentation must also be considered, which add additional complexity to the TPS. A TPS for beam scanning was developed at GSI, called TRiP98. The basic concepts of TRiP98 will be
 presented here, further reading can be found elsewhere \cite{Kraemer2000,Kraemer2000a}.
 
 TRiP98 divides PTV into energy slices, which are further divided into raster points in a defined order that the beam will follow. In the optimization step, using the least square minimization
@@ -564,18 +564,18 @@ geometry and tissue inhomogeneities are accounted for using a transformation fro
 
 \subsubsection{GSI's 4D treatment planning system}
 
-As mentioned in section \ref{sec:motion} tumor motion can cause severe deficiency in treatment plan. To asses does deficiencies and to overcome them TRiP98 was expanded to be able to calculate time-resolved (4D) treatment plans. The new software was named TRiP4D and a detailed description is given by Richter et al \cite{Richter2013}.
+As mentioned in section \ref{sec:motion} tumor motion can cause severe dosimetric errors. To asses dose deficiencies and to overcome them, TRiP98 was expanded to be able to calculate time-resolved (4D) treatment plans. The new software was named TRiP4D and a detailed description is given by Richter et al \cite{Richter2013}.
 
-A static CT is not sufficient for 4D treatment planning. A time-resolved CT scans (4DCT) therefore have to be used. 4DCT consist of several quasi-stationary sections, called motion phases. Data is
+A static CT is not sufficient for 4D treatment planning. Time-resolved CT scans (4DCT) therefore have to be used. 4DCT consist of several quasi-stationary sections, called motion phases. Data is
 recorded in each slice throughout the whole motion and is then sorted to appropriate motion phases, according to motion signal \cite{Rietzel2005}.
 
-Beside a 4DCT a vital part of 4D treatment planning is the \textbf{image registration}. It provides quantification of motion with deformation maps between different 4DCT motion states. Image registration principles are described in Section~\ref{sec:registration}. The image registration is not included in TRiP4D, so an external software must provide the necessary
+Besides a 4DCT, a vital part of 4D treatment planning is \textbf{image registration}. It provides quantification of motion with deformation maps between different 4DCT motion states. Image registration principles are described in Section~\ref{sec:registration}. The image registration is not included in TRiP4D, so an external software must provide the necessary
 deformation maps.
 
 The calculation of 4D dose starts with the division of the treatment plan into sub-plans, according to the motion phase it will irradiate. The number of sub-plans is the same as number of motion phases (or number of motion phases
-in gating window, if gating is used). Afterwards the dose is calculated in each of the motion phases used. Finally, dose in each voxel is transformed with the deformation maps
-obtained from registration, to the reference phase, resulting in accumulated dose, see Fig. \ref{TRiP4Ddose}. If biological dose is calculated, then instead of the dose, particle number and energy spectra is accumulated, 
-so that the RBE can be calculated according to LEM.
+in gating window, if gating is used). Afterwards the number of particles is calculated in each voxel of all of the motion phases used. Finally, the particle number in each voxel is transformed with the deformation maps
+obtained from registration, to the reference phase, where the accumulated dose from summed particle numbers is calculated (see Fig.~\ref{TRiP4Ddose}). If biological dose is calculated, then instead beside particle numbers, energy spectra is also accumulated, 
+so that the RBE can be calculated according to LEM for the total dose to each CT voxel.
 
 \begin{figure}[H]
 \begin{center}
@@ -590,8 +590,8 @@ Image f) shows accumulated 4D dose and image g) a homogeneous dose on a stationa
 \label{sec:registration}
 
 
-To assess temporal changes in patient anatomy a registration must be preformed. Registration can be made between different imaging modalities (CT, MRI, PET), between scans from different days or between
-different phases in 4DCT. It requires two images: a fixed and a moving one. Result from registration is deformation map originating from moving and pointing to fixed image. Registration can be written as:
+Temporal changes in patient anatomy are assessed with image registration. Registration can be made between different imaging modalities (CT, MRI, PET), between scans from different days or between
+different phases in 4DCT. It requires two images: a fixed and a moving one. The result of the registration is a deformation map originating from the moving and pointing to the fixed image. Registration can be written as:
 
 
 \begin{equation}
@@ -599,7 +599,7 @@ different phases in 4DCT. It requires two images: a fixed and a moving one. Resu
 x' = x + u_{ri}(x)
 \end{equation} 
 
-Here, $x$ and $x'$ are points in states $r$ and $i$, respectively and $u_{ri}$ is a vector field representation of the transformation map. $u_{ri}$ can be used to assess motion amplitude, propagete contours and calculate 4D dose.
+Here, $x$ and $x'$ are points in states $r$ and $i$, respectively and $u_{ri}$ is a vector field representation of the transformation map. $u_{ri}$ can be used to assess motion amplitude, propagate contours and calculate 4D dose.
 It is important to note that certain steps in 4D treatment planning require also inverse registration, from state $i$ to $r$ \cite{Richter2012}. If deformation map is applied to the moving image, 
 the new image is called warped image and it should be as close to the fixed image as possible. Fixed, moving and warped image are shown in Fig.~\ref{RegistrationCompare}. 
 
@@ -613,10 +613,12 @@ where the images overlap perfectly.}
 \end{figure}
 
 There are different possible types of registration and can be placed in two groups. First group consist of linear registrations: translation, rotation and scaling. In medical imaging the most commonly used linear transformation 
-is translation or rigid registration. The other group of registrations are elastic or deformable registrations. The actual algorithms for performing registration are complex and reader can
-find detailed review elsewhere \cite{Hill2001,Brock2006,Rietzel2006a}. A multi-institutional study has shown that the accuracy for the majority of the algorithms is at the order of image voxel
+is translation or rigid registration. The other group of registrations are elastic or deformable registrations. The actual algorithms for performing registration are complex and the reader can
+find detailed review elsewhere \cite{Hill2001,Brock2006,Rietzel2006a}. A multi-institutional study has shown that the accuracy for the majority of the algorithms is in the order of image voxel
 size, i.e. millimeters \cite{Brock2010}. The study further states that the registration quality depends on image contrast. The quality of image registration is actually hard to quantitatively
-asses and usually the registration results are checked by eye. To improve image registration quality assurance a special software was developed and is described in detail in chapter \textbf{REF}.
+asses and usually the registration results are checked visually. To improve image registration quality assurance a dedicated software was developed and is described in detail in chapter \textbf{REF}.
+
+\newpage
 
 
 
@@ -625,7 +627,7 @@ asses and usually the registration results are checked by eye. To improve image 
 
 There were 1.8 million new lung cancer cases diagnosed worldwide in 2012 \cite{Worldwide2012}. With a very poor prognosis (5-year survival rates in Germany are
 16\% for men and 21\% for women \cite{Kaatsch2014}) lung cancer is one of the most frequent and most deadly cancer types. Usually lung cancer is distiguised
-into small-cell lung cancer (SCLC) and non-small cell lung cancer (NSCLC). Around 14\% of lung cancer cases are SCLC \cite{Tsao2008}, which is normally treated with chemotherapy and radiotherapy, while for the NSCLC the traditional course of treatment
+into small-cell lung cancer (SCLC) and non-small cell lung cancer (NSCLC). Around 14\% of lung cancer cases are SCLC \cite{Tsao2008}, which is normally treated with chemotherapy and radiotherapy, while for NSCLC the traditional course of treatment
 are surgery and radiotherapy. An example of cancerous lung tissue is shown in Fig.~\ref{Fig:Cancer}.
 
 \begin{figure}[H]
@@ -637,7 +639,7 @@ are surgery and radiotherapy. An example of cancerous lung tissue is shown in Fi
 \end{figure}
 
 
-\subsection{Causes}
+\subsection{Epidemiology}
 
 The main cause for lung cancer is a long-term exposure to tobacco smoke \cite{Tsao2008}, with 85\% of cases contributed to smoking. There are over 70 known carcinogens in cigarette smoke, such as benzo[a]pyrene, 1,3-butadiene and a radioactive isotope of polonium, polonium-210 \cite{Hecht2012}. See Fig.~\ref{Fig:Smoking} for correlation between sales of tobacco products and rate of the lung cancer.
 
@@ -660,10 +662,10 @@ The other 15\% of lung cancer cases is attributed to a combination of genetic fa
 \subsection{Non-small cell lung cancer}
 
 The NSCLC is divided into three main groups: adenocarcinoma, squamous-cell carcinoma and large-cell (undifferentiated) carcinoma \cite{Kasper2015}.
-Between 25-35\% of all lung cancer cases are adenocarcinoma, squamous-cell carcinoma contributes to around 30\% of lung cases and 10-15\% are lare-cell carcinoma. The SCLC contributes to the rest. 
+Between 25-35\% of all lung cancer cases are adenocarcinoma, squamous-cell carcinoma contributes to around 30\% of lung cases and 10-15\% are large-cell carcinoma. The SCLC contributes the rest. 
 
-Lung cancer staging is used to asses the degree of spread of the lung cancer and to establish treatment and prognosis \cite{Chheang2013}. For NSCLC TNM classification is used, which depends on
-size of the primary tumor (T), involvement of the lymph node (N) and distant metastasis (M) \cite{Kasper2015}. According to TNM class a group is assigned, from stage 0, IA, IB, IIA, IIB, IIIA, IIIB to IV. 
+Lung cancer staging is used to refers to the extent to which the lung cancer has to spread from it's original source. Additionally, staging is used to establish treatment and prognosis \cite{Chheang2013}. For NSCLC, the TNM classification is used, which depends on
+size of the primary tumor (T), involvement of the lymph node (N) and distant metastasis (M) \cite{Kasper2015}. According to the TNM class a group is assigned, from stage 0, IA, IB, IIA, IIB, IIIA, IIIB to IV. 
 A schematic presentation of some stages is shown on Fig.~\ref{Fig:Stages}. Prognosis is highly dependent on stage, as shown in Table~\ref{tab:prognosis}.
 
 \begin{table}[H]
@@ -699,15 +701,15 @@ IV & 2 \\
 
 The treatment for NSCLC can consist of surgery, chemotherapy, radiation therapy, or a combination of modalities. The treatment course depends on tumor type and stage and on patient overall condition
 The typical treatment is surgery for stage I and II disease \cite{Tsao2008}. Surgery resection consist of either lobectomy or pneumonectomy, together with sampling lymph node or even a complete lymph node
-dissection. Surgery can only be performed, if NSCLC patients will have enough lung reserve after lobe or lung is removed. The 5-year survival rate for NSCLC patients undergoing surgery is about 55 to 70\% 
+dissection. Surgery will only be performed if NSCLC patients have enough lung reserve after lobe or lung is removed. The 5-year survival rate for NSCLC patients undergoing surgery is about 55 to 70\% 
 and 35-55\% for stage I and II disease, respectively.
 
 For unresectable stage III lung cancer the treatment consist of either chemotherapy or radiation therapy or a combination of both. The median survival for patients with unresectable stage IIIA disease is 10-14 months \cite{Tsao2008}.
 For all treated stage IIIB disease the median survival is 7-15 months \cite{Srisam2005}.
 
-Rather than treating the stage IV disease, the palliation of symptoms is the goal. With chemotherapy, targeted drugs and radiation therapy the tumor burden can be lessened and improve the quality of life. The prognosis is poor, with
+Rather than treating stage IV disease, palliation of symptoms is the goal. With chemotherapy, targeted drugs and radiation therapy the tumor burden can be lessened and the quality of life can be improved. The prognosis is poor, with
 median survival only 9 months and less then 25\% survive the first year after the disease is diagnosed \cite{Tsao2008}. Recent phase II trial combined chemotherapy with stereotactic body radiation therapy and 
-showed promising results with 20 months overall survival \cite{Ivengar2014}.
+showed promising results with 20 months overall survival \cite{Iyengar2014}.
 
 
 \bibliographystyle{apalike}
