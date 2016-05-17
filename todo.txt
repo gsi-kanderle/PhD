@@ -1,12 +1,6 @@
 TODO:
 
-Plan za ponedeljek, 17.4:
-6. Bad example poglej in zrithej (oscar nekje).
-6. Opcijsko MidP zrihtat pa motion curve. Nared nov dicomdatabase in ga loadej not. Mogoce ga kopirej k seb?
-7. Pejt domov.
-
-1. PrufungsKomitee:
- 
+P
 2. Izpolnit: http://www.physik.tu-darmstadt.de/media/fachbereich_physik/formulare_3/promotionen/Antrag_auf_Eroeffnung_Formular.pdf
 
 3. Vse okrog - motivation, abstract, summary, acknowledment
@@ -55,10 +49,16 @@ DIRQA and DIR time
   - OAR creation for multiple targets
   
  7c Zracunat:
-  - Vse paciente najprej obicno z ab = 6
-   -- manjka se 3, 17, 21, 22, 23
+ 
+  Results:
 
-   
+Sliko - pat3?
+Between three methods: how many cases below target?
+Do OAR doses differ between three?
+Comparision to sbrt? - oar and ctv
+Special cases? Do different motion patterns worsen plan?
+
+
  7d Primerjat pol te dva med sabo in z SBRT
  
  7e Zapisat vse v results in se pokomentirat v discusion (discusion lahko omenis se field optimization, pa tripfly)
