@@ -66,10 +66,7 @@ For a CT voxel $i$, $ D_{pre}$ and $D_{act}$ are the prescribed and the actual d
  E(\vec{N}) = \sum_{targets} \sum_{i\in target} \left( D_{pre}^{i} -\sum_{j=1}^n c_{ij}N\right)
 \end{equation}
 
-However, the setup of raster points in TRiP98 allowed only one target. This setup was expanded in a way that field was designated to a specific target \textbf{Fig?}. 
-Raster points for each field are still created only around designated target. Contribution from all fields are then calculated in optimization. So, when a field from one target contributes 
-dose to some other target this is taken into account in optimization function, specifically in coefficient $c_{ij}$ in Eq.~\ref{eq-costFunc}. Because the optimization function was not changed, 
-all TRiP98 4D functionalities could be used, as explained in next sections. 
+However, the setup of raster points in TRiP98 allowed only one target. This setup was expanded in a way that field was designated to a specific target \textbf{Fig?}. Raster points for each field are still created only around designated target. Contribution from all fields are then calculated in optimization. So, when a field from one target contributes dose to some other target this is taken into account in optimization function, specifically in coefficient $c_{ij}$ in Eq.~\ref{eq-costFunc}. Because the optimization function was not changed, all TRiP98 4D functionalities could be used, as explained in next sections.
 
 \subsection{Optimization techniques}
 
@@ -191,7 +188,7 @@ Patients were treated with SBRT at Chamaplimaud Center for the Unknown, Lisbon (
 \subsection{Treatment planning}
 
 An isotropic margin of 3 mm was added to each CTV to account for uncertanties in treatment delivery. An WEPL-ITV was constructed on the CTV with margins for each individual field, which was than used for optimization (SFUD
-and inITV) or for raster setup (4Dopt). SFUD and indITV plans were made on an end-inhale phase of a 4D-CT. Due to large memory demands, targets in each lung were optimized seperately. 
+and inITV) or for raster setup (4Dopt). SFUD and indITV plans were made on an end-inhale phase of a 4D-CT. 
   
 The objective for target was 99\% of each target volume should receive at least 100\% of the planned dose (D$_{99}$\% $\geq$ 100\%). Furthermore, the doses to the OARs should be under the limits given by AAPM task group \cite{Benedict2010}. 
 Each plan after had to meet target and OAR objectives. 
@@ -201,7 +198,7 @@ slice-by-slice rescanns that were applied to each plan.
 
 Detailed explanation of SBRT treatment planning is given is Section~\ref{SBRTTP}.
 
-For patients 6 - 8 the dose limits to the OARs (stated in Table~\ref{tab:patdata2}) could not be respected by including them in optimization. It was necessary to add margins to the OAR and then 
+For patients 6, 7 and 8 the dose limits to the OARs (stated in Table~\ref{tab:patdata2}) could not be respected by including them in optimization. It was necessary to add margins to the OAR and then 
 subtract OAR plus margins from the target. An algorithm was introduced into TRiP98 to automatically find the margins needed for an acceptable treatment plan.
 
 \section{Results}
@@ -210,8 +207,7 @@ Example of different treatment plans for a single patient is shown in Fig.~\text
 
 \subsection{Target Coverage}
 
-All SBRT plans were approved by a physician, even though the prescription dose for patients  6 - 8 was not met, due to the OAR proximity. Excluding patients 6 -8, there were 3, 5 and 8 cases of target underdose accross different
-motion types for SFUD, indITV and 4Dopt, respectively.
+All SBRT plans were approved by a physician, even though the prescription dose for patients  
 
 
 All SBRT plans were clinically acceptable, though in one case the D99% was reduced to 16.8 Gy due to proximity of an OAR. 3D-Dose0% and 3D-Dose50%plans provided sufficient target coverage in all patients. For 4D-Doseinterplay and 4D-Doserescan there was 63% and 2% cases of insufficient target coverage, respectively, across all targets and different breathing patterns. Details are shown in Figure 3. For the patient with reduced dose in SBRT, PT could increase the D99% from 16.8 Gy in SBRT to 20.3 Gy while adhering to OAR constraints. 

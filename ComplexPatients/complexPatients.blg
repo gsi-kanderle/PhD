@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: complexPatients.aux
+White space in argument---line 12 of file complexPatients.aux
+ : \citation{Rusthoven2009.
+ :                          Villaruz2012}
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: tableTarget.aux
+A level-1 auxiliary file: tableOAR.aux
+The style file: apalike.bst
+Database file #1: ../ref.bib.bib
+I was expecting a `,' or a `}'---line 1882 of file ../ref.bib.bib
+ : 
+ : Pages = "328-336"}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "PatStudy"
+Warning--I didn't find a database entry for "Rietzel2012"
+You've used 16 entries,
+            1935 wiz_defined-function locations,
+            605 strings with 8819 characters,
+and the built_in function-call counts, 9914 in all, are:
+= -- 882
+> -- 763
+< -- 3
++ -- 288
+- -- 286
+* -- 1044
+:= -- 1769
+add.period$ -- 48
+call.type$ -- 16
+change.case$ -- 223
+chr.to.int$ -- 16
+cite$ -- 16
+duplicate$ -- 224
+empty$ -- 492
+format.name$ -- 308
+if$ -- 1814
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 16
+newline$ -- 83
+num.names$ -- 48
+pop$ -- 188
+preamble$ -- 1
+purify$ -- 223
+quote$ -- 0
+skip$ -- 164
+stack$ -- 0
+substring$ -- 615
+swap$ -- 16
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 96
+warning$ -- 0
+while$ -- 61
+width$ -- 0
+write$ -- 210
+(There were 2 error messages)
