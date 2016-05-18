@@ -6,8 +6,12 @@ P
 3. Vse okrog - motivation, abstract, summary, acknowledment
 
 4. Fundametals:
- 4a Poslat Christianu
- 4b Poslat se komu
+ 12C dose tail
+ clonogenic survival
+ all statistical progress (Page 9)
+ Hypo-fractionations - BED doesn't work, why?
+ Langen and Jones 2001, p17
+ Cite rescanning NIRS?
  
 5. VMM:
 
@@ -52,6 +56,8 @@ DIRQA and DIR time
  
   Results:
 
+Napis, target prescription could not be meet 3, 5, 6 and 8 times for sfud, indITV and 4DITD and sBRT, respectively.
+  
 Sliko - pat3?
 Between three methods: how many cases below target?
 Do OAR doses differ between three?
