@@ -123,6 +123,7 @@ breathing were used on the CTV; For FTV margins of 3 mm laterally and 1 mm in be
 
 
 \subsection{SDRT treatment planning}
+\label{SBRTTP}
 
 The clinical plans were calculated with the Eclipse v10 planning system (Varian Medical Systems, Palo Alto, Ca, USA) using the AAA algorithm. All plans delivered 24 Gy, 
 generally using 4 VMAT partial arcs. For tumor sizes $>$ 2.5 cm a calculation grid of 2.5 mm was used, otherwise it was 1 mm. During optimization, a first iteration included the 
@@ -130,13 +131,14 @@ SPTV only, after which the OARs were added. In order to lower OAR dose and impro
 Finally, an intermediate dose calculation with AAA was mandatory to get an adequate SPTV coverage after optimization.
 
 \subsection{CiT treatment planning}
+\label{CiTTP}
 
 For CiT, state of the art 4D treatment planning software TRiP4D was used (see section \textbf{REF}). A single field uniform dose plan (SFUD) was optimized on the FTV in the end-inhale reference phase of the 4D-CT. 
 Dose was then calculated on end-inhale (3D-0\%) and end-exhale (3D-50\%) phases. 4D dose delivery was simulated over the whole breathing cycle with two different breathing periods (3.6 and 5 s) and two different 
 starting phases (0° and 90°). Simulations without motion compensation (4D-interplay) and with slice-by-slice rescanning were performed (4D-rescans). Five rescans were used for the majority of targets (n=24), whereas 20 rescans 
 were used for targets (n=2) where the interplay effects were too big to achieve a satisfactory target coverage. 
 
-Dose was computed considering the relative biological effectiveness (RBE) following the local effect model (LEM) IV \cite{Elsaesser2010}. The Alpha beta ratio was chosen conservatively, withion a ratio of 10 Gy
+Dose was computed considering the relative biological effectiveness (RBE) following the local effect model (LEM) IV \cite{Elsaesser2010}. The Alpha beta ratio was chosen conservatively, within a ratio of 10 Gy
 and 2 Gy for target and OARs, respectively. This led to RBE of approximately 1.1 in target tissue and approximately 1.1 to 3 in OARs. An example RBE distribution is shown in Fig.~\ref{Fig:RBE}
 
 Most targets (n=20) were planned with two fields. For remaining targets, one (n=1), three (n=3) or four (n=2) fields were used due to proximity of OARs.
@@ -179,6 +181,8 @@ Patient A (top row) might be better suited for CiT and patient B (lower row) for
 \end{figure}
 
 \subsection{Target Coverage}
+
+
 
 Difference in PTV definition resulted in 1.5 (1.3 – 2.1) times bigger FTV than SPTV. There was no significant difference in CTV $D_{95\%}$ between SBRT and any CiT calculation. 
 For CTV $V_{100\%}$ there was a significant difference between SDRT and 4D-interplay, 3.8 (0 – 6.1)\% and no significant difference between SDRT and 3D-0\%, 3D-50\% or 4D-rescan. 
