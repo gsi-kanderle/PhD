@@ -43,11 +43,13 @@ He$^{2+}$, $^{20}$Ne and $^6$C were later also used for treatment. In the beginn
 
 \section{Physical and biological basics of radiotherapy}
 
-Both radiotherapy modalities (photons and ions) use the same principle to eliminate cancer cells - they aim to damage the cell genetic material through ionization. The actual physical and biological mechanism behind both modalities will be explained in detail in the following section.
+The aim of radiotherapy is to kill tumor cells and prevent further growth, while sparing healthy tissue. Both radiotherapy modalities (photons and ions) use the same principle to eliminate cancer cells - 
+they aim to damage the cell genetic material through ionization. The actual physical and biological mechanism behind both modalities will be explained in detail in the following section.
 
 \subsection{Interaction of radiation with matter}
 
-The interactions between photons with matter and ions with matter are quite different, as can be seen from depth dose distributions in Fig.~\ref{ddp}. Photons deposit the highest local dose shortly after entering the matter (at the energies used in radiotherapy). Ions, on the other hand, deposit most of their dose right before they stop in the so-called Bragg Peak region. The position of the Bragg Peak depends on the energy of the ions, which is exploited in the treatment
+The interactions between photons with matter and ions with matter are quite different, as can be seen from depth dose distributions in Fig.~\ref{ddp}. Photons deposit the highest local dose shortly after entering the matter 
+(at the energies used in radiotherapy). Ions, on the other hand, deposit most of their dose right before they stop in the so-called Bragg Peak region. The position of the Bragg Peak depends on the energy of the ions, which is exploited in the treatment
 of deep suited tumors.
 
 \subsubsection{Dose definition}
@@ -125,7 +127,7 @@ The energy loss of the ions is proportional to $z_{eff}$ and inversely proportio
 
 \subsubsection{Lateral scattering and range straggling of ions}
 \label{scat}
-As mentioned in ions interact with matter mostly via electronic stopping at energies used in radiotherapy. However, nuclear stopping still occurs and it is the main reason for lateral scattering.
+As mentioned ions interact with matter mostly via electronic stopping at energies used in radiotherapy. However, nuclear stopping still occurs and it is the main reason for lateral scattering.
 The angular spread of ions is dependent on the mass of the target nuclei and on the momentum of the incident ions \cite{Moliere1948}. The lateral scattering is proportional to the mass of the target nuclei and inversely proportional
 to the momentum of incident ions. Carbon ions have thus less lateral scattering then protons. Experiments have shown that carbon ions have three times smaller angular spread compared to protons at the same range in water 
 (15.6 cm, 150 MeV/u protons and 285 MeV/u $^{12}$C ions) \cite{Schardt2010}.
@@ -151,7 +153,7 @@ The resulting positron is annihilated with electrons in matter, creating two pho
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.9\textwidth]{./Images/iondepthdosesum.png}
+\includegraphics[width=0.7\textwidth]{./Images/iondepthdosesum.png}
 \caption{Impact of fragmentation on a depth dose distribution of carbon ions. Main contribution to the overall deposited dose (black line) comes from the primary ions (red line). The produced fragments 
 (blue line) have a smaller impact, but non-negligible, especially in the dose tail behind the Bragg peak. Figure taken from \cite{Groezinger2004}}
 \label{iondd}
@@ -160,7 +162,8 @@ The resulting positron is annihilated with electrons in matter, creating two pho
 
 \subsubsection{Secondary electrons and track structure}
 
-Ions used in radiotherapy loose most of their energy via inelastic Coulomb scattering on target electrons. Electrons liberated from target by ions are called secondary electrons or $\delta$-electrons. $\delta$-electrons travel through matter, scatter further and may produce secondary ionization of the target atoms. When $\delta$-electrons energies are larger than $>$50 eV,
+Ions used in radiotherapy loose most of their energy via inelastic Coulomb scattering on target electrons. Electrons liberated from target by ions are called secondary electrons or $\delta$-electrons. 
+$\delta$-electrons travel through matter, scatter further and may produce secondary ionization of the target atoms. When $\delta$-electrons energies are larger than $>$50 eV,
 ionization becomes the dominant process, which produces a large number of additional electrons \cite{Kraft2000,Schardt2010}.
 
 The radial dose profile and track diameter is defined by the energy spectrum of the $\delta$-electrons. Most of the $\delta$-electrons are concentrated around the projectile ions path, since they receive small energy transfers 
@@ -179,7 +182,7 @@ $dE/dx$. Fast ions, with little ionization, have thus small LET, while slow ions
 
 \subsection{Radiobiology}
 
-The aim of radiotherapy is to kill tumor cells and prevent further growth, while sparing healthy tissue. Ionizing radiation (photons and ions) causes damage throughout the cell. However the most susceptible part to radiation is the
+Ionizing radiation (photons and ions) causes damage throughout the cell. However the most susceptible part to radiation is the
 carrier of genetic information, the deoxyribonucleic acid (DNA), located in the cell nucleus \cite{Munro1970}. Radiation can damage DNA directly or indirectly.
 
 Ionization and consequent destruction of DNA molecular bonds via radiation is a direct effect (see Fig.~\ref{ida}b) and is typical for high-LET radiation. On the other hand, an indirect effect is when radiation hydrolysis water around DNA and produce highly reactive hydroxyl-radicals, OH 
@@ -242,15 +245,16 @@ As seen in Fig.~\ref{dosedep} and Eq. \ref{lq}, RBE values are dependent on the 
 The unit for biological dose is Gy (RBE) \cite{ICRU2007}. 
 
 Besides a dose level, RBE also depends on the LET, the particle species and the tissue type \cite{Kraft2000}. Therefore RBE modeling is a complex topic.
-At GSI, RBE is calculated using the \textit{local effect model} (LEM) developed by Scholz et al. \cite{Scholz1994}. The main assumption of the LEM model is that localized biological 
-effects are independent on the radiation type. The difference between different radiation types comes from the dose deposition in a small volume in the cell nucleus.
+At GSI, RBE is calculated using the \textit{local effect model} (LEM) developed by Scholz et al. \cite{Scholz1994}. There are two main assumptions in the LEM model. First is that localized biological 
+effects are independent on the radiation type. Second assumption is that the photon response is the same for all dose levels (high and low).
+The difference between different radiation types comes from the dose deposition in a small volume in the cell nucleus.
 At the same total dose, many photons create a homogeneous dose distribution over a cell nucleus, while few ions cause a highly localized dose distribution around their track.
 
 \newpage
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.9\textwidth]{./Images/dose_dependence.pdf}
+\includegraphics[width=0.6\textwidth]{./Images/dose_dependence.pdf}
 \caption{Typical cell survival curve for photons (black solid line) and heavy ions (red dashed line). Photon line shows typical shouldered form, described by linear-quadratic model.
 Heavy ions show a much steeper decrease with dose. The RBE value can be calculated by looking at the points at the same survival value - same biological effect. Figure taken from \cite{Schardt2010}}
 \label{dosedep}
@@ -258,10 +262,11 @@ Heavy ions show a much steeper decrease with dose. The RBE value can be calculat
 \end{figure}
 
  
+LEM can thus predict dose response, by comparing
+photon response at the high local dose level. LEM was used clinically as well in GSI pilot project from 1998 - 2007 \cite{Kraemer2000, Kraemer2000a} as in HIT since 2009. LEM has received several revisions \cite{Elsaesser2006, Elsaesser2007, Elsaesser2009} and experimental verifications
+\cite{Mitaroff1998, Kraemer2000a, Kraemer2003}. 
 
-Next assumption of the LEM is that the photon response is the same at these high local doses. With this assumption ion dose response can be predicted, by comparing
-photon response at the high local dose level. LEM has received several revisions \cite{Elsaesser2006, Elsaesser2007, Elsaesser2009} and experimental verifications
-\cite{Mitaroff1998, Kraemer2000a, Kraemer2003} and it was used in clinic. RBE for carbon ions ranges from 1 in the entrance channel, to a value around 5 at 
+RBE for carbon ions ranges from 1 in the entrance channel, to a value around 5 at 
 the Bragg peak \cite{Kraft2000}. The highest RBE for carbon ions is right around Bragg peak, which gives carbon ions a great advantage, since there is an increased 
 biological effectiveness at target tissue compared to the normal tissue in the entrance channel. In proton therapy a constant RBE value of 1.1 across the treatment field
 is used \cite{Paganetti2002}.
@@ -296,7 +301,7 @@ means higher $F$ and a higher $\alpha / \beta$ (early responding tissue) moves $
 \subsubsection{Single dose treatment}
 
 In recent years hypo-fractionation has showed promising results over wide range of tumors \cite{Yamada2008, Greco2011, Halasz2013}. 
-Hypo-fractionation consist of 1-3 fractions of very high doses, up to 24 Gy in a single fraction (single-dose). According to LQ model such doses should be too low to achieve any tumor control, since standard total doses are around 50 - 60 Gy with 1.5 - 2 Gy per fraction. 
+Hypo-fractionation consists of 1-3 fractions of very high doses, up to 24 Gy in a single fraction (single-dose). According to LQ model such doses should be too low to achieve any tumor control, since standard total doses are around 50 - 60 Gy with 1.5 - 2 Gy per fraction. 
 However, clinical results show othewise with good tumor local control, which indicates different mechanisms at work. The topic is still under research and no consensus has yet been reached regarding the theory behind it.
 
 Garcia-Barros et al. proposed a two target model \cite{Garcia2003}, which suggest that tumor response to irradiation is defined not only by tumor cell type (as in LQ model) but also by micro-vascular
@@ -310,40 +315,42 @@ more patients being treated every year. In the following sections an overview wi
 
 \subsubsection{Photon therapy}
 
-A photon therapy directs high-energy (MV) photons to target. To achieve that, electrons are first accelerated in linear accelerators. Next, they are stopped in a heavy metal target where photons are produced via bremsstrahlung.
-In the following step photons are shaped at the exit of the machine to the shape of the tumor. Exit beam is then directed to patient. The shaping of the beam is done with either blocks at the head of the machine or by a 
-multileaf collimator. Multileaf collimator is a device made of individual leaves (usually from tungsten or other high-atomic number material), which can be moved to get the shape of the tumor in beam's eye view, see Fig.~\ref{MLC}. 
+In photon therapy high energy x-rays (MV) are used for tumor irradiation. X-rays are produced in a linear accelerator (LINAC). Electrons are accelerated with energies from 2-25 MeV and collided with a high-density target (tungsten), where
+x-rays are produced via bremsstrahlung. The beam is then directed to the patient and conformed to the tumor shape. The beam is shaped either by blocks at the head of the machine or by a multileaf collimator. A multileaf collimator is made of
+individual leaves, that can be moved to represent the tumor's shape in the beam's eye view, see Fig.~\ref{MLC}.
 
-Linear accelerators are usually placed on a gantry, which can be rotated around the patient, see Fig.~\ref{gantry}. This allows beams to enter the patient from any angle. The arbitrary choice of beam angle is used in a 3-dimensional conformal radiotherapy,
-where a variable number of beams is used. Each beam is then shaped with a multileaf collimator. Even more precise technique is intensity-modulated radiotherapy (IMRT). IMRT allows treating complex tumor shapes, e.g. when the tumor is in proximity of a critical structure.
+Linear accelerators are usually placed on a gantry, which can be rotated around the patient. This allows beams to enter the patient from any angle. 
+The arbitrary choice of beam angle is used in a 3-dimensional conformal radiotherapy, where a variable number of beams is used. 
+Each beam is then shaped with a multileaf collimator. Even more precise technique is intensity-modulated radiotherapy (IMRT). IMRT allows treating complex tumor shapes, e.g. when the tumor is in proximity of a critical structure.
+Volumetric modulatec arc therapy (VMAT) uses continuous irradiation together with continous gantry rotation and multileaf collimator shaping. VMAT is able to produce even more conformal dose shapes than IMRT.
 
 \subsubsection{Ion therapy}
 
 In order for ion therapy be successful, ions must be accelerated to appropriate energies (several hundred MeV/u), the beam must be transported to target area and guided
-onto the target with high accuracy (around 1 mm). Both, complex delivery system and the cost of the accelerator make ion radiotherapy not as common as photon radiotherapy.
+onto the target with the required accuracy.
 
 \newpage
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{./Images/MLC.png}
-\caption{A picture of a multileaf collimator. Individual leaves are positioned so that exit beam from linear accelerator conforms to the patient tumor in a beam's eye view. Picture taken from \cite{MLC}.}
+\caption{A schematic picture of a multileaf collimator. Individual leaves (marked with numbers) are positioned so that exit beam from linear accelerator conforms to the patient tumor in a beam's eye view. Picture taken from \cite{MLC}.}
 \label{MLC}
 \end{center}
 \end{figure}
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.9\textwidth]{./Images/gantry.png}
-\caption{A picture of a modern photon delivery system with gantry at two angles. Gantry can rotate 360 degrees around the patient. Picture taken from \cite{MLC}.}
-\label{gantry}
-\end{center}
-\end{figure}
+% \begin{figure}[H]
+% \begin{center}
+% \includegraphics[width=0.9\textwidth]{./Images/gantry.png}
+% \caption{A picture of a modern photon delivery system with gantry at two angles. Gantry can rotate 360 degrees around the patient. Picture taken from \cite{MLC}.}
+% \label{gantry}
+% \end{center}
+% \end{figure}
 
 
 
 
-There are two types of particle accelerators used in ion therapy - cyclotrons and synchrotrons. \textbf{Cyclotrons} can be built in a compact design and offer a continuous beam with
+Ion are accelerated either with cyclotrons or synchrotrons accelerators. \textbf{Cyclotrons} can be built in a compact design and offer a continuous beam with
 stable intensities. Cyclotrons and only be used for protons and particle energies can not be regulated and therefore passive energy degraders are needed. Active energy variation is possible with \textbf{synchrotrons}, where a linear
 accelerator is used to inject ions into the synchrotron and then the beam is regulated with ion optics. Synchrotrons are used in all heavy ion therapy centers, while cyclotrons are most
 commonly used for proton therapy.
@@ -365,7 +372,7 @@ Passive beam shaping offers more robust and faster treatment delivery in contras
  
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.9\textwidth]{./Images/deliverypassive.png}
+\includegraphics[width=0.7\textwidth]{./Images/deliverypassive.png}
 \caption{Schematic presentation of a passive beam shaping. A scattering system is used to broaden the beam. Afterwards a range modulator spreads out Bragg Peak to the required energy range.
 The spread out Bragg peak is then shifted to a specific energy with a range modulator. Finally, patient specific collimator and conformator serve for lateral and longitudinal conformity, respectively.
 The proximal edge of the tumor cannot be shaped, as shown with hatched area. Figure taken from \cite{Schardt2010}.}
@@ -435,7 +442,7 @@ position uncertainties, patient immobilization and dedicated protocols are used.
 \textbf{Interfractional motion} happens between two treatment sessions (fractions) and results in anatomical changes in a patient. It occurs on a time scale of hours and days. For lung cancer patients, tumor shrinks and lung density can change between fractions \cite{Mori2009}. 
 Also changes in breathing pattern can impact treatment delivery. Additionally, the tumor baseline drifts significantly \cite{Sonke2008}. Repeated imaging and replanning reduces the impact of the interfractional motion, but requires additional time.
 \newline
-\textbf{Intrafractional motion} is mainly caused by respiration and heart beat, but also pristalsis. The time scale ranges from seconds to minutes. In this thesis we investigated treatment of lung cancer, so focus lies on respiratory motion. Respiratory motion varies from patient to patient and 
+\textbf{Intrafractional motion} is mainly caused by respiration and heart beat, but also peristalsis. The time scale ranges from seconds to minutes. In this thesis we investigated treatment of lung cancer, so focus lies on respiratory motion. Respiratory motion varies from patient to patient and 
 it is responsible for tumor motion from a mm range to a couple of cm \cite{Shirato2004a}. Tumor size and T-staging are also correlated to tumor motion \cite{Liu2007}. The respiratory-induced motion is largest in superior-inferior (SI) direction rather than 
 in the anterior-posterior (AP) or left-right (LR) directions \cite{Seppenwoolde2002, Britton2007, Liu2007}.
 
@@ -462,12 +469,12 @@ to reduce the effect of tumor motion, such as abdominal compression, jet ventila
 
 \textbf{Rescanning} is a technique that uses statistical averaging of different interplay patterns \cite{Phillips1992}. Instead of applying the whole dose $D$ at once, the target is scanned $N$ times, each
 time irradiated with $\mathrm{D}/\mathrm{N}$. The result is a Gaussian dose distribution around $D$ with no interplay (static case), as shown in Fig. \ref{rescanning}. With more rescans (larger $N$), better dose homogeneity is achieved, because the variance is proportional
-to $\mathrm{1}/\mathrm{N}$. Technically the method is the easiest to implement of the three mentioned, since no real-time motion monitoring is necessary. However, it introduces additional dosage to normal tissue. Rescanning has not yet be
-implemented clinically, but should be in the near future in several centers worldwide \cite{Furukawa2007, Zenklusen2010}.
+to $\mathrm{1}/\mathrm{N}$. Technically the method is the easiest to implement of the three mentioned, since no real-time motion monitoring is necessary. The treated volume must be enlarged to at least encompass target in all motions states (in
+contrast to gating), which introduces additional dosage to normal tissue. Rescanning is currently used at NIRS, Tokyo (Japan) and at \textit{some proton centers}.
 \newline
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.9\textwidth]{./Images/rescanning.png}
+\includegraphics[width=0.7\textwidth]{./Images/rescanning.png}
 \caption{Film irradiation with rescanning. With statistical averaging of multiple interplay patterns dose in the target (solid red square) becomes homogeneous. Figure taken from \cite{Bert2009}.}
 \label{rescanning}
 \end{center}
@@ -479,9 +486,11 @@ Conventional radiotherapy and passive beam shaping also employ gating to reduce 
 \newline
 \textbf{Beam tracking} is a method where the tumor is followed by the beam throughout different motion phases in real time. Similar to gating, beam tracking is not limited to active beam shaping. It was even proposed originally 
 for photons \cite{Keall2001} and later implemented clinically in x-ray radiosurgery in the robotic Cyberknife Synchrony system (Accuray Inc., Sunnyvale, Ca., USA) \cite{Brown2007a,Kilby2010}. Regardless of radiation type, a
-fast beam delivery system is required for beam tracking. In contrast to photon radiotherapy, beam tracking with particles need to pay special consideration to longitudinal changes. At GSI beam tracking system has been implemented.
-The solution for longitudinal changes was carried out by two polymethyl methacrylate (PMMA) wedges close to the target, that are operated via linear stepmotor \cite{Saito2009}, as shown in Fig.~\ref{tracking}. The stepmotor can
-change the relative distance between the wedges and therefore introduces more or less material the beam travels through and consequently changes the effective beam energy (range). The beam tracking system at GSI is able to achieve high precision \cite{Bert2007, Bert2009, Saito2009}. Clinical implementation, however, is not yet feasible due to several reasons, i. e. the precision and speed of motion monitoring, complexity of ion-beam tracking system, inverse interplay.
+fast beam delivery system is required for beam tracking. In contrast to photon radiotherapy, beam tracking with particles need to pay special consideration to range changes. At GSI beam tracking system has been implemented.
+The solution for fast longitudinal range changes was carried out by two polymethyl methacrylate (PMMA) wedges close to the target, that are operated via linear stepmotor \cite{Saito2009}, as shown in Fig.~\ref{tracking}. The stepmotor can
+change the relative distance between the wedges and therefore introduces more or less material the beam travels through and consequently changes the effective beam energy (range). The beam position is corrected acording to the motion monitoring
+signal and pre-calculated look-up tables for the required compenstation parameters. The beam tracking system at GSI is able to achieve high precision \cite{Bert2007, Bert2009, Saito2009}.
+Clinical implementation, however, is not yet feasible due to several reasons, such as the precision and speed of the motion monitoring, the ion-beam tracking system complexity and inverse interplay.
 
 
 The three motion mitigation techniques mentioned are not exclusive and can be used in parallel. Furukawa et al. made a study on a combination between rescanning and gating \cite{Furukawa2007} and Water et al. presented a combination
@@ -509,7 +518,15 @@ PMMA wedges are mounted on step motors, enabling to change the depth the particl
 \label{treatmentPlanning}
 
 The task of treatment planning is to determine machine parameters in order to deliver prescribed dose to the target, while not violating maximum allowed dose to critical organs, also known as organs at risk (OARs) \cite{Richter2012}.
-Treatment planning thus revolves around dose optimization process and it is highly dependent on delivery type used for treatment. The basis of treatment planning is a computed tomography (CT), where target volume and OARs are delineated
+Treatment planning thus revolves around dose optimization process and it is highly dependent on delivery type used for treatment. The optimization problem for tumors can be written as:
+
+\begin{equation}
+  \min_{x} \sum_{i} \left( f(x,A_i) - D_{pre} \right)^2 
+\end{equation}
+
+Here $i$ is a CT voxel, function $f$ is a dose deposition model, $x$ intensity of the radiation beams, $A$ patient geometry and beam parameters and $D_{pre}$ is the prescribed dose.
+
+The basis of treatment planning is a computed tomography (CT), where target volume and OARs are delineated
 done by physician. Additional imaging, such as magnetic resonance (MRI) or positron emission tomography (PET), is often used as a supplement to CT for enhanced contrast of it. In the following sections, the target definition will be explained and the basics of scanned ion beam treatment planning. Afterwards an explanation on dose calculation for moving targets will be given.
 
 \subsubsection{Target definition}
@@ -554,10 +571,10 @@ Further recommendations of the ICRU state that 100\% of the PTV volume should re
 
 A treatment planning system (TPS) for active shaping ion beams has to model the active beam delivery system and the beam interactions with the tissue. Furthermore, for ions heavier than protons
 the biological effectiveness and fragmentation must also be considered, which add additional complexity to the TPS. A TPS for beam scanning was developed at GSI, called TRiP98. The basic concepts of TRiP98 will be
-presented here, further reading can be found elsewhere \cite{Kraemer2000,Kraemer2000a}.
+presented here, further reading can be found elsewhere \cite{Kraemer2000,Kraemer2000a, Richter2013}.
 
-TRiP98 divides PTV into energy slices, which are further divided into raster points in a defined order that the beam will follow. In the optimization step, using the least square minimization
-algorithm, TRiP98 defines particle number for each raster point, so that the optimal target dose is achieved. Dose can either be physical or biological, using LEM biological effectiveness (see Section~\ref{RBE}).
+TRiP98 divides PTV into energy slices, which are further divided into raster points in a defined order that the beam will follow. In the optimization step, a gradient-decent algorithm iteratively optimizes particle number
+for each raster point, so that the optimal target dose is achieved. Dose can either be physical or biological, using LEM biological effectiveness (see Section~\ref{RBE}).
 Physical characteristic of the beam include lateral scattering as proposed by Moli\`ere \cite{Moliere1948} and nuclear fragmentation that yield secondary particles. The patient specific
 geometry and tissue inhomogeneities are accounted for using a transformation from CT HU to water-equivalent path length (WEPL) \cite{Geiss1999,Jaekel2001,Rietzel2007}.
 
@@ -632,7 +649,7 @@ are surgery and radiotherapy. An example of cancerous lung tissue is shown in Fi
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.9\textwidth]{./Images/LungCancer.png}
+\includegraphics[width=0.7\textwidth]{./Images/LungCancer.png}
 \caption{Cross section of a human lung. The white area in the upper lobe is cancer, the black areas indicate the patient was a smoker. Figure taken from \cite{LungCancer}}
 \label{Fig:Cancer}
 \end{center}
