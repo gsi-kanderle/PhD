@@ -33,22 +33,21 @@
 
 \section{Introduction}
 
-As explained in Section \textbf{ref!} effects of motion can have a significant impact on a radiation treatment. Therefore a proper investigation is necessary for each specific patient. There are several motion mitigation techniques available that can operate on beam delivery, patient immobilization or treatment planning level.
+%As explained in Section \textbf{ref!}, effects of motion can have a significant impact on a radiation treatment. There are several motion mitigation techniques available that can operate on beam delivery, patient immobilization or treatment planning level.
 
-An important part of motion mitigation is proper and frequent imaging. While most commercial treatment planning software provide rigid registration between different images, deformable image registration (DIR) is currently rarely used. 
-DIR ca quantify anatomical and biological variations better compared to rigid registration \cite{Sarrut2006} and is essential as well in photon as in ion radiotherapy, with usage in adaptive radiotherapy \cite{Yan1997,Yan2010}, 
-4D optimization \cite{Trofimov2005}, 4D dose calculation \cite{Flampouri2006}, contour propagation \cite{Lu2006b}. DIR usage spreads even into other categories, besides radiotherapy \cite{Cleary2010, Herrell2012, Nithiananthan2011, Naini2010}.
-Several different DIR algorithms are available, such as B-spline \cite{Rueckert1999}, Demons \cite{Thirion1998}, linear elastic finite element \cite{Venugopal2005}, optical flow \cite{Zhong2007}, viscous fluid \cite{Christensen1996}, etc.
+Most modern clinics today regularly use different imaging techniques including CT, 4D-CT, cone-beam CT, MRI and PET. Registration is needed to overlay different image acquisitions, such as image taken at different days or between imaging modalities or to quantify anatomical changes in a time-resolved image aquisition (4D-CT). While most commercial treatment planning software provide rigid registration between different images, deformable image registration (DIR) is currently rarely used. 
+DIR can quantify anatomical and biological variations better compared to rigid registration \cite{Sarrut2006}. It opens exciting new options, such as 4D optimization \cite{Trofimov2005}, 4D dose calculation \cite{Flampouri2006} or contour propagation \cite{Lu2006b}. DIR usage spreads even into other categories, besides radiotherapy \cite{Cleary2010, Herrell2012, Nithiananthan2011, Naini2010}.
+Several different DIR algorithms are available, such as B-spline \cite{Rueckert1999}, Demons \cite{Thirion1998}, linear elastic finite element \cite{Venugopal2005}, optical flow \cite{Zhong2007} or viscous fluid \cite{Christensen1996}.
 	
-One of the reasons for the DIR is not used in commercial software is the lack of proper DIR quality assurance (DIRQA). While several different DIRQA methods exist, none of them are definitive and most of them are time consuming. 
-It is possible to evaluate DIR with deformable phantoms, where the type and size of deformation is known \cite{Kashani2007, Kirby2011}. However such quality assurance is time consuming and it would be hard to use it 
-in everyday clinical work flow DIR validation can also be based on landmark positions, specifically their location before and after registration. In absence of externally planted markers, locating landmarks in patient 
-anatomy can be take a fair amount of time and it can be difficult to identify landmarks in low-contrast regions \cite{Varadhan2013}. Another option is to compare delineated contours with the propagated ones. 
-It is more efficient technique than landmark checks, however it is even more time consuming and it does not address the region within the contour.
+One of the reasons why DIR is not used in commercial software is the lack of proper DIR quality assurance (DIRQA). While several different DIRQA methods exist, none of them are definitive and most of them are time consuming. 
+It is possible to evaluate DIR with deformable phantoms, where the type and size of deformation is known \cite{Kashani2007, Kirby2011}. However this effort is prohibitive 
+in everyday clinical work flow. DIR validation can also be based on landmark positions, specifically their location before and after registration. In absence of externally planted markers, locating landmarks in patient 
+anatomy can be time-consuming and it can be difficult to identify landmarks in low-contrast regions \cite{Varadhan2013}. Another option is to compare delineated contours with the propagated ones with dice similarity coefficient \cite{Varadhan2013} or Hausdorff distance \cite{Huttenlocher1993}. 
+It is more efficient technique than landmark checks, however it requires additional delineation and it does not address the region within the contour.
 
-In this chapter tools to handle DIR and DIRQA will be presented. Tools were constructed for open-source software 3D Slicer, described in Section~\ref{Slicer}. 
+In this chapter tools to handle DIR and DIRQA will be presented. Tools were constructed for the open-source software 3D Slicer, described in Section~\ref{Slicer}. 
 In Section~\ref{RegistrationImplement} details on how DIR was performed will be explained. Next, Section~\ref{DIRQA} will address the DIR validation - an extensive tool was created with various functionalities to tackle DIRQA.
-DIR and DIRQA tools were tested on a real patient data and results will be presented in the Section~\ref{Verification}. Lastly, everything will be summed up in Section~\ref{Summary}.
+DIR and DIRQA tools were tested on a real patient data and results will be presented in the Section~\ref{Verification}.
 
 \section{Implementation}
 \label{Implementation}
@@ -60,20 +59,19 @@ DIR and DIRQA tools were tested on a real patient data and results will be prese
 It comes with a vast variety of tools, such as:
 
 \begin{itemize}
-	\item Handling a variety of image formats, including DICOM, NRRD and MHA
+	\item Handling of a variety of image formats, including DICOM, NRRD and MHA
 	\item Visualization of voxel images, polygonal meshes and volume renderings
-	\item Registration tool (rigid and non-rigid) and display of vector fields
+	\item Image registration (rigid and non-rigid) and display of vector fields
 	\item Automatic image segmentation
 	\item Analysis and visualization of diffusion tensor image data
 	\item Device tracking for image-guided procedures
 \end{itemize}
 
-The foundation of Slicer is written in C++ and it's functions can be accessed also with Python to provide rapid, iterative development. Graphical user interface is built in Qt. Visualization is based on VTK, a graphical library commonly
+The source code of Slicer is written in C++ and it's wrapped with Python to provide rapid, iterative development. The graphical user interface is based on Qt. Visualization is based on VTK, a graphical library commonly
 used in scientific research.
 
-Slicer is a research tool and as such offers tools to implement new functionalities in the form of extensions (modules). They can either be execution of external command-line program, or writing modules with new features,
-or automate Slicer processes in form of scripted modules. In the next sections different Slicer modules will be presented, which were all developed in the scope of this thesis. 
-The purpose of modules is to perform DIR and provide validation of the the obtained results.
+Slicer is a research tool and as such allows implementation of new functionalities in the form of extensions (modules). They can either be as external command-line programs, as scripts to automate Slicer processes or as unique modules with new features. In the next sections, different Slicer modules will be presented, which were all developed in the scope of this thesis. 
+The purpose of these modules is to perform DIR and provide validation of the obtained results.
 
 \newpage
 \subsubsection{Registration nomenclature}
@@ -82,10 +80,10 @@ To provide a clear and consistent description of methods used, an overview of th
 
 \begin{itemize}
  \item \textbf{Reference image} - image that serves as a reference position in registration (image that is registered to).
- \item \textbf{Moving image} - image that is being registered to the reference image (image that is registered from).
- \item \textbf{Warped image} - result of applying transformation map of registration to moving image. It should be as close to the reference image as possible.
- \item \textbf{True registration} - registration from moving to reference image. Similar, everything connected to true registration will use \"true\" (true vector field, true warped image, true absolute difference, true Jacobian, etc.).
- \item \textbf{Inverse registration} - registration from reference to moving image (opposite or inverse of true registration. As in true registration, term inverse can be used for everything connected to it (inverse vector field, inverse warped image, inverse absolute difference, inverse Jacobian, etc.).
+ \item \textbf{Moving image} - image that is matched to the reference image (image that is registered from).
+ \item \textbf{Warped image} - result of applying a transformation map from registration to the moving image. It should be as close to the reference image as possible.
+ \item \textbf{True registration} - registration from moving to reference image. Similar, everything connected to true registration will use \'true\' (true vector field, true warped image, true absolute difference, true Jacobian, etc.).
+ \item \textbf{Inverse registration} - registration from reference to moving image (opposite or inverse of true registration). As in true registration, the term inverse can be used for everything connected to it (inverse vector field, inverse warped image, inverse absolute difference, inverse Jacobian, etc.).
 \end{itemize}
 
 
