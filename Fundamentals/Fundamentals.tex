@@ -38,7 +38,7 @@ could prescribe better treatment. The potential of computers was afterwards expl
 radiation therapy (IMRT) which, together with diagnostic tools, provides an exact dose shaping in accordance to patient specific tumors.
 
 In 1946, a paper from R. Wilson first described the application of protons for cancer treatment \cite{Wilson1946}. It was shown that protons have preferable depth dose profile compared to photons. First patient treatment soon followed in the early 1950's at Lawrence Berkeley Laboratory, USA. Heavier ions, such as 
-He$^{2+}$, $^{20}$Ne and $^6$C were later also used for treatment. In the beginning only passive beam delivery (see Section \ref{Sec::Passive}) was used for treatment and in the 1990's active beam solutions (see Section \ref{Sec::Active}) were developed at Paul Scherrer Institute (PSI), Villigen (Switzerland) for protons and at GSI, Darmstadt (Germany) for carbon ions.
+$^{2}$He, $^{20}$Ne and $^6$C were later also used for treatment. In the beginning only passive beam delivery (see Section \ref{Sec::Passive}) was used for treatment and in the 1990's active beam solutions (see Section \ref{Sec::Active}) were developed at Paul Scherrer Institute (PSI), Villigen (Switzerland) for protons and at GSI, Darmstadt (Germany) for carbon ions.
 
 
 \section{Physical and biological basics of radiotherapy}
@@ -155,7 +155,7 @@ The resulting positron is annihilated with electrons in matter, creating two pho
 \begin{center}
 \includegraphics[width=0.7\textwidth]{./Images/iondepthdosesum.png}
 \caption{Impact of fragmentation on a depth dose distribution of carbon ions. Main contribution to the overall deposited dose (black line) comes from the primary ions (red line). The produced fragments 
-(blue line) have a smaller impact, but non-negligible, especially in the dose tail behind the Bragg peak. Figure taken from \cite{Groezinger2004}}
+(blue line) have a smaller impact, but non-negligible. The most profound effect is seen in the dose tail behind the Bragg peak, where dose comes only from fragments. Figure taken from \cite{Groezinger2004}}
 \label{iondd}
 \end{center}
 \end{figure}
@@ -216,14 +216,14 @@ Damage to DNA can result in either single strand breaks (SSB) or double strand b
 repair-mechanisms, since the complementary base is intact. If the bases on both stands are destroyed (DSB) the DNA damage is much more complex and can lead to the breakage of the chromatin. The cell repair-mechanisms can handle DSB as well, 
 albeit not as efficient as SSB. However if there are clustered DSBs, the damage is usually too severe for repair-mechanisms to undo it. The changes in damaged DNA can lead to carcinogenesis or cell death. The aim of radiotherapy is to 
 cause an apoptosis - a controlled self-inactivation of the cell due to the DNA damage. Beside apoptosis, cell can also undergo necrosis, an uncontrolled cell death. Cell necrosis often causes response from the immune system, leading to inflammation, which
-radiotherapy strives to avoid.
+radiotherapy strives to avoid. DNA can also be damaged to such extent, that cell cannot proliferate indefinitely - a effect known as clonogenic cell death.
 
 
 \subsubsection{Relative Biological Effectiveness}
 \label{RBE}
 
-Fig.~\ref{track} shows the size of DNA molecule in comparison with proton and carbon ion distribution of $\delta$-electrons around their track. A clustered DSB occurs preferably around Bragg peak due to large ionization densities. As mentioned
-clustered DSB pose a too complex task for cell repair-mechanisms to handle, leading eventually to cell death. Ions have large ionization density and is one of the main advantages over photons in the radiotherapeutic sense. Since most of the clinical experience about
+Fig.~\ref{track} shows the size of DNA molecule in comparison with proton and carbon ion distribution of $\delta$-electrons around their track. 
+A clustered DSB occurs preferably around Bragg peak due to large ionization densities. Less cells will survive a clustered DSB, compared to DSB or SSB. Ions have large ionization density and is one of the main advantages over photons in the radiotherapeutic sense. Since most of the clinical experience about
 cell response to radiation comes from photons, the biological effect of ions is usually described relative to a reference photon response. Relative biological effectiveness (RBE) is therefore defined as the ratio of the reference 
 photon dose to the dose level of a specific ion radiation at the same biological effect (isoeffect):
 
@@ -298,13 +298,12 @@ so that BED = $D \times F$. $F$ increases with $d$, but decreases with $\alpha /
 means higher $F$ and a higher $\alpha / \beta$ (early responding tissue) moves $F$ towards 1.
 
 
-\subsubsection{Single dose treatment}
+\subsubsection{Hypo-fractionation}
 
 In recent years hypo-fractionation has showed promising results over wide range of tumors \cite{Yamada2008, Greco2011, Halasz2013}. 
-Hypo-fractionation consists of 1-3 fractions of very high doses, up to 24 Gy in a single fraction (single-dose). According to LQ model such doses should be too low to achieve any tumor control, since standard total doses are around 50 - 60 Gy with 1.5 - 2 Gy per fraction. 
-However, clinical results show othewise with good tumor local control, which indicates different mechanisms at work. The topic is still under research and no consensus has yet been reached regarding the theory behind it.
-
-Garcia-Barros et al. proposed a two target model \cite{Garcia2003}, which suggest that tumor response to irradiation is defined not only by tumor cell type (as in LQ model) but also by micro-vascular
+Hypo-fractionation consists of 1-3 fractions of very high doses, up to 24 Gy in a single fraction (single-dose). The theory behind hypo-fractionation is still under research
+and no consensus has yet been reached. On one hand, LQ model predicts higher BED for hypo-fractionation. On the other hand, Garcia-Barros et al. proposed additional mechanism at work \cite{Garcia2003}.
+They presented a two target model, which suggest that tumor response to irradiation is defined not only by tumor cell type (as in LQ model) but also by micro-vascular
 sensitivity. With excluding targeted enzymes from knock-out mice, they showed that tumors with reduced micro-vascular endothelial apoptosis grew 200-400 \% faster than a control group. The study, however, was challenged on several grounds and is controversal.
   
 
@@ -366,7 +365,7 @@ The general idea of passive beam shaping is to transform a beam of a fixed singl
 in order to obtain a broad, flat profile. In the next step, the beam is spread out over the required energy range with a range modulator. Usually a range modulator consist of rotating wheels of various thickness or a ridge filter \cite{Chu1993}. A beam of fixed energy is thus expanded into so-called \textit{spread-out Bragg peak (SOBP)}, which is moved to the required depth using a range shifter. The final two devices in beam's path are built for each patient individually. Collimator shapes beam in a lateral direction, while compensator adjusts SOBP to the distal edge of the tumor. However, compensator cannot adjust dose in the proxima ledge of the tumor, resulting in an access dose to the healthy tissue (hatched area in Fig. \ref{passive}).
  
 Passive beam shaping offers more robust and faster treatment delivery in contrast to active beam shaping. However, it lacks tumor conformity, the dose cannot be modulated and each patient needs individually tailored devices for each beam used in the treatment.
- Furthermore, the beam travels through some material, exposing patient to additional dose due to fragmentation
+ Furthermore, the beam travels through some material, exposing patient to additional dose due to fragmentation.
 
  \newpage
  
@@ -532,7 +531,6 @@ done by physician. Additional imaging, such as magnetic resonance (MRI) or posit
 \subsubsection{Target definition}
 The definition of the target volume is crucial, since it has to cover the whole tumor, prevent further tumor spreading, while at the same time it should not be too big to spare normal tissue. 
 The International Commission on Radiation Units (ICRU) recommends the following definitions for volumes used in treatment planning, which will also be used in this work, see Fig.~\ref{targets} \cite{ICRU50, ICRU62}.
-\newpage
 \begin{description}
 \item[Gross Tumor volume:] \emph{The GTV is the gross
     palpable or visible/demonstrable extent and location of malignant
@@ -664,8 +662,6 @@ Studies have shown that passive smokers have an increased risk of lung cancer as
 There is some controversy weather smoking cannabis increases risk of lung cancer - two reviews from 2013 and 2014 have found contradicting results \cite{Tasckin2013, Underner2014}.
 
 The other 15\% of lung cancer cases is attributed to a combination of genetic factors, exposure to radon gas, asbestos or other forms of air pollution \cite{Alberg2010}.
-
-\newpage
 
 \begin{figure}[H]
 	\begin{center}
