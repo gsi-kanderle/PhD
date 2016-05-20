@@ -80,12 +80,14 @@ Investigation of different optimization techniques to handle range changes in mo
 
 \item \textbf{Field-independet ITV:} WEPL-ITV are different for each field, creating unnecessary margins when combining WEPL-ITV from different fields (see Fig.~\textbf{!}a). Graeff et. al proposed a solution to include range margin into the field description itself, instead of creating bigger PTV \cite{Graeff2012}. Thus, no unnecessary margins are created. Treatment plans were made for all targets with intensity modulated particle therapy (IMPT) on a WEPL-ITV in reference phase.
 
-\item \textbf{4D Optimization:} IMPT with indITV produces inhomogeneous fields that yield homogeneous dose, but only in reference phase. The WEPL can change in different motion phases, leading to inhomogeneous dose. 4D optimization uses WEPL-ITV for raster setup, however the actual optimization is performed on each target voxel in each motion state $k$. The optimization function changes then to \cite{Graeff2012}:
+\item \textbf{4D Optimization:} IMPT with indITV produces inhomogeneous fields that yield homogeneous dose, but only in reference phase. The WEPL can change in different motion phases, leading to inhomogeneous dose.
+4D optimization uses WEPL-ITV for raster setup, however the actual optimization is performed on each target voxel in each motion state $k$. The optimization function changes then to \cite{Graeff2012}:
 \begin{equation}
 \label{eq-multiCost}
 E(\vec{N}) = \sum_{k=1}^{m}\sum_{targets(k)} \sum_{i\in target(k)} \left( D_{pre}^{i} -\sum_{j=1}^n c_{ijk}N\right)
 \end{equation}
-All targets were treated with IMPT and 4D optimization. 
+All targets were treated with IMPT and 4D optimization. A subset of motion states 0, 50 and 70\% was used for targets 7a, 7b and 8b (see Table~\ref{tab:patdata2}) due to large optimization problem - beside target, OAR was also included
+in motion states \cite{Graeff2012}.
 
 
 \end{itemize}
@@ -210,19 +212,28 @@ Example of different treatment plans for a single patient is shown in Fig.~\text
 
 \subsection{Target Coverage}
 
-All SBRT plans were approved by a physician, even though the prescription dose for patients  6 - 8 was not met, due to the OAR proximity. Excluding patients 6 -8, there were 3, 5 and 8 cases of target underdose accross different
-motion types for SFUD, indITV and 4Dopt, respectively.
-
-
-All SBRT plans were clinically acceptable, though in one case the D99% was reduced to 16.8 Gy due to proximity of an OAR. 3D-Dose0% and 3D-Dose50%plans provided sufficient target coverage in all patients. For 4D-Doseinterplay and 4D-Doserescan there was 63% and 2% cases of insufficient target coverage, respectively, across all targets and different breathing patterns. Details are shown in Figure 3. For the patient with reduced dose in SBRT, PT could increase the D99% from 16.8 Gy in SBRT to 20.3 Gy while adhering to OAR constraints. 
+Results for D$_{99\%}$ CTV and CTV with 3 mm margins for all patients are shown in Table~\ref{tab:resultsComplex} and \ref{tab:resultsComplex2}. All SBRT plans were approved by a physician, 
+even though the prescription dose for patients 6 - 8 was not met, due to the OAR proximity. Excluding patients 6 -8, there were 3, 5, 8  cases of too low CTV dose accross different
+motion types for SFUD, indITV and 4Dopt, respectively. For CTV with 3 mm margins, there were 10, 14, 19 cases of perscription dose not being met for SFUD, indITV and 4Dopt, respectively.
 
 \include{tableTarget}
+
+\subsection{Dose in OARs}
+
+D$_{Max}$ and D$_{Mean}$ for 8 OARs are shown in Table~\ref{tab:OARComplex}. There was significant difference for \textbf{???} between PT and SBRT. No significant difference was observed for dose to OAR between different motion types.
+
+DVHs for patients 6 - 8 are shown in Fig.~\texbf{Do it!}. SA, Es were substracted from for substracion from target were ...
+SA D$_{Max}$ limit was exceeded for patients 6 and 8 in all cases. Heart D$_{Max}$ limit was exceeded in 1, 2 and 0 different motion cases for SFUD, indITV and 4Dopt, respectively.
+
 
 \include{tableOAR}
 
 
 
 \section{Summary and Discussion}
+
+
+Carbon ions ne rabjo dose volume constraints, so vse vedno spodej.
 
 Omen reirradiation, k bi bil lazji s PT. (http://ro-journal.biomedcentral.com/articles/10.1186/1748-717X-9-210)
 
