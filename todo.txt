@@ -36,10 +36,10 @@ DIRQA and DIR time
  7a Napisat uvodu
  7b Materials and methods
  1 - Fertig
- 3 - 4D racuna 
- 11 - 4DITV racuna, mITV CTV2 ne dela. Mogoce samo CTV1 dat racunat_
+ 3  
+ 11 -
  21 - racuna 4D
- 22 - 4DITV Heart ne jebe kot OAR.
+ 22 - 4DITV Heart ne jebe kot OAR. Mogoce se enkrat z oar80?
  23 - racuna nohup 4DITV_L. Pol pa se 4D dat racunat.
  
   - Multiple targets
