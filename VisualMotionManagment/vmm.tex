@@ -86,47 +86,22 @@ To provide a clear and consistent description of methods used, an overview of th
  \item \textbf{Inverse registration} - registration from reference to moving image (opposite or inverse of true registration). As in true registration, the term inverse can be used for everything connected to it (inverse vector field, inverse warped image, inverse absolute difference, inverse Jacobian, etc.).
 \end{itemize}
 
+In radiotherapy true registration is used for dose propagation and consequential 4D Dose calculation, whereas with inverse registration contours can be propagated from reference to moving phase.
 
 \subsection{Registration}
 \label{RegistrationImplement}
 
-Plastimatch \cite{Shackleford2010} is a commonly used software for registration in medical research. It is free and open-source software, available as a command-line executable program. 
+Plastimatch \cite{Shackleford2010} is a commonly used software for registration in medical research. It is a free and open-source software, available as a command-line executable program. 
 Plastimatch B-spline registration is also available in Slicer as part of an extension SlicerRT \cite{Pinter2012}.
-The integration of Plastimatch in Slicer brings the advantage of a graphical user interface and hence a quick modification of parameters and display of results. However, the disadvantage comes when a large number of registrations is required,
-since a user presence is required. In a complete 4DCT registration there are $2(N-1)$ registrations required - from reference phase to each of $N$ phases of 4DCT and vice versa, except for the reference phase itself. 
-Typical 4DCT consist of 10 phases, therefore a automatic registration of a 4DCT is a necessity.
+The integration of Plastimatch in Slicer brings the advantage of a graphical user interface and hence a quick modification of parameters and display of results. 
+However, for a large number of registration an automatic process is needed. For a complete 4DCT registration there are $2(N-1)$ registrations required - from reference phase to each of $N$ phases of 4DCT and vice versa, except for the reference phase itself. 
+Typical 4DCTs consist of 10 phases, therefore a automatic registration of a 4DCT is a necessity.
 
-Automatic DIR was constructed from two parts. First, a DIR Python class was written to handle image locations, store DIR parameters, to preform DIR in the Plastimatch module, to use right naming conventions and to store all output files (vector fields and warped images). 
-DIR Python class is shown in Appendix~\ref{RegHierarchy}.
-
-Beside DIR Python Class a patient hierarchy concept was introduced to handle loading of different phases in Slicer and track progress of DIR and DIRQA. It is explained in the next Section.
+Automatic DIR was achieved with a Python class to handle image locations, store DIR parameters, to perform DIR in the Plastimatch module, to use correct naming conventions and to store all output files (vector fields and warped images). 
+The Python class is shown in Appendix~\ref{RegHierarchy}.
 
 
-\subsubsection{Patient hierarchy} 
-\label{PatHierarchy}
 
-Patient hierarchy follows a subject hierarchy principle in Slicer. It was designed for a clear overview of the registration process, DIRQA and all resulting files. Another reason is to track DIR
-and DIRQA in case if they are interrupted by Slicer crash. DIR and DIRQA files can be quite large and can cause Slicer to run out of memory. With patient hierarchy Slicer is able to continue work
-from where it was interrupted rather than starting anew.
-
-There are several levels in patient hierarchy. Each level also has different attributes, where details regarding each level can be written.
-
-\begin{itemize}
-	\item Level 1: \textbf{Patient name} - separates different patients.
-	\item Level 2: \textbf{Registration node} - separates between different registration, e.g. registration between 4DCT phases, between CT and 4DCT, MRI and CT... 
-	\subitem \textit{Attributes:}
-	\subitem - The file directory of images, vector fields and registration quality files.
-	\subitem - Number of phases to be registered.
-	\subitem - Reference phase
-	\item Level 3: \textbf{Registration phase} - specific registration phase. Registration is done between all phases and the reference one. There have to be at least two phases
-	\item Level 4: \textbf{Node} - can be either an image, a vector field, an inverse vector field or any of DIRQA nodes (see Section~\ref{DIRQA}).
-	\subitem \textit{Attributes:}
-	\subitem - Exact file paths for specific node.
-	\subitem - Statistical values if node is absolute difference, Jacobian or inverse consistency (see Section~\ref{DIRQA}).
-\end{itemize}
-
-Patient hierarchy can be constructed in two ways. First option is to manually crate the whole patient hierarchy, from top to bottom level, with necessary attributes. Second option is to use a automatic script to look 
-for files on hard drive and create corresponding levels. The second option is possible only by using proper naming conventions are file names and locations.
 
 \subsection{Registration Quality Checks}
 \label{DIRQA}
@@ -138,7 +113,7 @@ Absolute difference, Jacobian and inverse consistency error were build using too
 \subsubsection{Inverse color}
 \label{Sec:FalseColor}
 
-A good way to see difference between two images is to overlay them. However, since CT scans are usually displayed in grayscale color code, the differences can be indistinguishable. Especially if the images are quite similar, as reference and warped image usually are. With applying opposite color codes to overlaying images two things are achieved. First, regions were the registration was successful will be in grayscale. And second, the differences between images will be in the color of the image they originate from. In the module we used red and cyan color code for reference and warped image, respectively. See Fig.~\ref{falseColor} for details.
+Overlaying two different images will highlight the difference between them. However, since CT scans are usually displayed in grayscale color code, the differences can be indistinguishable. Especially if the images are quite similar, as reference and warped image should be. With applying opposite color codes to overlaying images two things are achieved. First, regions were the registration was successful will be in grayscale. And second, the differences between images will be in the color of the image they originate from. In the module we used red and cyan color code for reference and warped image, respectively. See Fig.~\ref{falseColor} for details.
 
 \begin{figure}[H]
 	\begin{center}		
@@ -150,7 +125,7 @@ A good way to see difference between two images is to overlay them. However, sin
 \newpage
 \subsubsection{Checkerboard}
 
-As the name suggests, checkerboard creates an image of tiles. Each tile alternates between reference and warped image, as shown in Fig.~\ref{checkerboard}. The differences between two images become apparent if there is no smooth transition from one tile to the next. The number of tiles can be manually selected. While the checkerboard offers clear indication of differences, it requires a user to spot them - similar to inverse color.
+As the name suggests, checkerboard creates an image of tiles. Each tile alternates between reference and warped image, as shown in Fig.~\ref{checkerboard}. The differences between two images become apparent if there is no smooth transition from one tile to the next. The number of tiles can be manually selected. While the checkerboard offers clear indication of differences, it requires a user to spot them.
 
 \begin{figure}[H]
 	\begin{center}		
@@ -162,15 +137,13 @@ As the name suggests, checkerboard creates an image of tiles. Each tile alternat
 
 \subsubsection{Absolute difference} 
 
-To stress the difference between reference and warped image an absolute difference between voxel values is calculated and displayed. New image is generated with voxels populated as the absolute difference between reference and warped image voxel values, as shown in Fig.~\ref{absDiff}. Furthermore, statistical values of absolute differences are calculated (mean, standard deviation, minimum and maximum) for quantitative assessment of registration quality (in ideal case all values would be 0).
+To stress the difference between reference and warped image an absolute difference between voxel values is calculated and displayed. A new image is generated with voxels populated as the absolute difference between reference and warped image voxel values, as shown in Fig.~\ref{absDiff}. Furthermore, statistical values of absolute differences are calculated (mean, standard deviation, minimum and maximum) for quantitative assessment of registration quality (in the ideal case all values would be 0).
 
-The absolute difference feature is similar to inverse color, but it displays differences clearer and it also provides quantitative values (see Fig.~\ref{absDiff}. In contrast to inverse color which only relies on user examination. However it does require computational time to generate absolute difference, whereas inverse color is instant.
-
-Absolute difference can be computed between reference and moving image, called default absolute difference, to provide initial difference between images. After the registration it can be done on
-true and inverse warped images (true and inverse absolute difference) to show registration results. Usually, registration works on minimizing absolute difference (mean square error metric), so it is a direct indicator
+Three absolute differences can be calculated: between reference and moving image, called default absolute difference; between true warped and reference image, called true absolute difference; between inverse and moving image, called
+inverse absolute difference. Usually, registration works on minimizing absolute difference (mean square error metric), so it is a direct indicator
 of registration success.
 
-To spare computational time or to focus on a specific region, absolute difference can also be calculated just on a specific ROI (if used as an input). Usually ROI around patient body is selected, rather than calculating on a whole patient image.
+To spare computational time or to focus on a specific region, absolute difference can also be calculated just on a specific ROI (if used as an input). Usually the patient body is selected as ROI, without air and couch.
 
 
 \begin{figure}[H]
@@ -213,17 +186,28 @@ Landmarks from moving image can then be automatically transformed to warped imag
 \subsubsection{Jacobian determinant}
 \label{Jacobian}
 
-Jacobian determinant (Jacobian) of vector field is used to validate physical behavior of registration \cite{Leow2007}. 
-Jacobian of vector field should be positive, since negative Jacobian values correspond to folding, 
+The Jacobian determinant or Jacobian ($J$) of the vector field $u$ is calculated as:
+
+\begin{equation}
+J =
+\begin{vmatrix}
+\frac{\partial u_x}{\partial x} & \frac{\partial u_x}{\partial y} & \frac{\partial u_x}{\partial z} \\
+\frac{\partial u_y}{\partial x} & \frac{\partial u_y}{\partial y} & \frac{\partial u_y}{\partial z} \\
+\frac{\partial u_z}{\partial x} & \frac{\partial u_z}{\partial y} & \frac{\partial u_z}{\partial z} \\
+\end{vmatrix}
+\end{equation}
+
+The Jacobian is used to validate physical behavior of the registration \cite{Leow2007}. 
+The Jacobian of vector field should be positive, since negative Jacobian values correspond to organ folding, 
 which is physically unrealistic for patient anatomy (organs can not be folded) \cite{ Rey2002, Chen2008}. 
 Expansions and contractions around a point are indicated by Jacobian values of greater and less than 1, respectively. 
 
-DIRQA module calculates and displays the Jacobian of the vector field, as shown in Fig.~\ref{JacobianImage}. Jacobian statistical values of Jacobian are also calculated. Similar to absolute difference, Jacobian can be calculated inside a ROI rather than on a whole image.
+DIRQA module calculates and displays the Jacobian of the vector field, as shown in Fig.~\ref{JacobianImage}. Statistical values of Jacobian are also calculated. Similar to absolute difference, Jacobian can be calculated inside a ROI rather than on a whole image.
 
 \begin{figure}[H]
 	\begin{center}		
 		\includegraphics[width=0.8\textwidth]{./Images/jacobian.png}
-		\caption{Image of Jacobian overlayed on CT scan. The average value of displayed Jacobian is 0.98 with 0.09 standard deviation.}
+		\caption{Image of Jacobian overlayed on a CT scan. The average value of the displayed Jacobian is 0.98 with 0.09 standard deviation.}
 		\label{JacobianImage}
 	\end{center}
 \end{figure}
@@ -231,11 +215,11 @@ DIRQA module calculates and displays the Jacobian of the vector field, as shown 
 \subsubsection{Inverse Consistency Error}
 \label{ICE}
 
-Inverse consistency error (ICE) is consistently used in literature as one of the main vector field checks \cite{Christensen2001, Bender2009}. The principle is as follows. Suppose we have two vector fields - $u_{AB}$ obtained from registration of image $A$ to $B$ and $u_{BA}$ from registration of image $B$ to $A$. The two registrations
+Inverse consistency error (ICE) is consistently used in literature as one of the main vector field checks \cite{Christensen2001, Bender2009}. The principle is as follows. Suppose we have two vector fields: $u_{AB}$ obtained from registration of image $A$ to $B$ and $u_{BA}$ from registration of image $B$ to $A$. The two registrations
 should be preformed separately. In an ideal scenario, $u_{AB}$ would be a direct inverse of $u_{BA}$. However, DIR algorithms do not yield perfectly inverse consistent vector fields. Therefore, the differences between true and inverse vector fields have to be examined.
 
 
-To check for ICE, an algorithm was created that first transforms point in image $A$, $x$ using $u_{AB}$. Newly obtained point $x'$ is then transformed with inverse vector
+To check for ICE, an algorithm was created that first transforms a point $x$ in image $A$, using $u_{AB}$. The newly obtained point $x'$ is then transformed with the inverse vector
 field, $u_{BA}$ which yields $x''$. The ICE is defined as Euclidean norm between $x$ and $x''$:
 
 \begin{equation}
@@ -243,7 +227,7 @@ field, $u_{BA}$ which yields $x''$. The ICE is defined as Euclidean norm between
 ICE = |x - x''| = |x - u_{BA}(x')| = |x - u_{BA}(u_{AB}(x))|
 \end{equation}
 
-Points $x'$ and $x''$ can have an arbitrary position in space, while vector fields $u_{AB}$ and $u_{BA}$ are positioned on a grid. To apply transformation $u_{BA}(x')$ a interpolation has to be made to put $x'$ on a $u_{BA}$ grid. A tri-linear interpolation is used in this module.
+Points $x'$ and $x''$ can have an arbitrary position in space, while vector fields $u_{AB}$ and $u_{BA}$ are positioned on a grid. To apply transformation $u_{BA}(x')$, $x'$ is interpolated on a $u_{BA}$ grid. A tri-linear interpolation is used in this module.
 
 As in Jacobian, ICE image is calculated and displayed, along with statistical values and ROI feature. An example is shown in Fig.~\ref{inv}.
 
@@ -253,7 +237,7 @@ As in Jacobian, ICE image is calculated and displayed, along with statistical va
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.8\textwidth]{./Images/inv.png}
-\caption{Image of inverse consistency error (ICE) overlayed on CT scan. The average value of displayed ICE is 1.0 mm with 0.8 mm standard deviation.}
+\caption{Image of the inverse consistency error (ICE) overlayed on a CT scan. The average value of displayed ICE is 1.0 mm with 0.8 mm standard deviation.}
 \label{inv}
 \end{center}
 \end{figure}
@@ -298,9 +282,10 @@ As in Jacobian, ICE image is calculated and displayed, along with statistical va
 \section{Verification}
 \label{Verification}
 
-Several extensions for Slicer were created to preform DIR and DIRQA. All extensions have to undergo testing to prove their functionalities. Furthermore it is necessary to verify if extensions could be used in a typical clinical work flow. Especially DIRQA, which could bring the use of DIR in everyday clinical work flow.
+Several extensions for Slicer were created to preform DIR and DIRQA. All extensions have to undergo testing to prove their functionalities. Furthermore it is necessary to verify if extensions could be used in a typical clinical work flow.
+Especially DIRQA, which could facilitate the transition of DIR in everyday clinical work flow.
 
-DIR and DIRQA were done on lung 4DCT patient data. As part of a GSI pig-irradiation project \cite{Lehmann2015} DIR and DIRQA were integrated in a simulated clinical work flow. 
+DIR and DIRQA were done on lung 4DCT patient data. As part of an animal study \cite{Lehmann2015} DIR and DIRQA were integrated in a simulated clinical work flow. 
 
 \subsection{Registration of lung 4DCT patient data}
 \label{lungDIR}
@@ -711,6 +696,32 @@ data analyzed, the parameters in DIRQA checks should get more precise, so outlie
 \section{Appendix}
 \label{RegHierarchy}
 % \lstinputlisting[language=Python, firstline=1602, lastline=1803]{./RegistrationHierarchy.py}
+
+\subsubsection{Patient hierarchy} 
+\label{PatHierarchy}
+
+Patient hierarchy follows a subject hierarchy principle in Slicer. It was designed for a clear overview of the registration process, DIRQA and all resulting files. Another reason is to track DIR
+and DIRQA in case if they are interrupted by Slicer crash. DIR and DIRQA files can be quite large and can cause Slicer to run out of memory. With patient hierarchy Slicer is able to continue work
+from where it was interrupted rather than starting anew.
+
+There are several levels in patient hierarchy. Each level also has different attributes, where details regarding each level can be written.
+
+\begin{itemize}
+	\item Level 1: \textbf{Patient name} - separates different patients.
+	\item Level 2: \textbf{Registration node} - separates between different registrations, e.g. between different imaging modalities or between 4DCT phases. 
+	\subitem \textit{Attributes:}
+	\subitem - The file directory of images, vector fields and registration quality files.
+	\subitem - Number of phases to be registered.
+	\subitem - Reference phase
+	\item Level 3: \textbf{Registration set} - specific registration phase. Registration is done between all phases and the reference one. There have to be at least two phases
+	\item Level 4: \textbf{Node} - can be either an image, a vector field, an inverse vector field or any of DIRQA nodes (see Section~\ref{DIRQA}).
+	\subitem \textit{Attributes:}
+	\subitem - Exact file paths for specific node.
+	\subitem - Statistical analysis if node is absolute difference, Jacobian or inverse consistency (see Section~\ref{DIRQA}).
+\end{itemize}
+
+The patient hierarchy can be constructed in two ways. The first option is to manually create the whole patient hierarchy, from top to bottom level, with necessary attributes. Second option is to use an automatic script to look 
+for files on hard drive and create corresponding levels. The second option is possible only by using proper naming conventions for file names and locations.
 
 \bibliographystyle{apalike}
 \bibliography{../ref.bib}{}
