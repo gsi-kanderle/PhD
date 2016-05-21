@@ -581,10 +581,10 @@ geometry and tissue inhomogeneities are accounted for using a transformation fro
 
 As mentioned in section \ref{sec:motion} tumor motion can cause severe dosimetric errors. To asses dose deficiencies and to overcome them, TRiP98 was expanded to be able to calculate time-resolved (4D) treatment plans. The new software was named TRiP4D and a detailed description is given by Richter et al \cite{Richter2013}.
 
-A static CT is not sufficient for 4D treatment planning. Time-resolved CT scans (4DCT) therefore have to be used. 4DCT consist of several quasi-stationary sections, called motion phases. Data is
+A static CT is not sufficient for 4D treatment planning. Time-resolved CT scans (4D-CT) therefore have to be used. 4D-CT consist of several quasi-stationary sections, called motion phases. Data is
 recorded in each slice throughout the whole motion and is then sorted to appropriate motion phases, according to motion signal \cite{Rietzel2005}.
 
-Besides a 4DCT, a vital part of 4D treatment planning is \textbf{image registration}. It provides quantification of motion with deformation maps between different 4DCT motion states. Image registration principles are described in Section~\ref{sec:registration}. The image registration is not included in TRiP4D, so an external software must provide the necessary
+Besides a 4D-CT, a vital part of 4D treatment planning is \textbf{image registration}. It provides quantification of motion with deformation maps between different 4D-CT motion states. Image registration principles are described in Section~\ref{sec:registration}. The image registration is not included in TRiP4D, so an external software must provide the necessary
 deformation maps.
 
 The calculation of 4D dose starts with the division of the treatment plan into sub-plans, according to the motion phase it will irradiate. The number of sub-plans is the same as number of motion phases (or number of motion phases
@@ -606,7 +606,7 @@ Image f) shows accumulated 4D dose and image g) a homogeneous dose on a stationa
 
 
 Temporal changes in patient anatomy are assessed with image registration. Registration can be made between different imaging modalities (CT, MRI, PET), between scans from different days or between
-different phases in 4DCT. It requires two images: a fixed and a moving one. The result of the registration is a deformation map originating from the moving and pointing to the fixed image. Registration can be written as:
+different phases in 4D-CT. It requires two images: a fixed and a moving one. The result of the registration is a deformation map originating from the moving and pointing to the fixed image. Registration can be written as:
 
 
 \begin{equation}
