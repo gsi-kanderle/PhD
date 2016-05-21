@@ -10,17 +10,18 @@ P
  
 5. VMM:
 
-Landmarks
-DIRQA and DIR time
+1. Discussion Lung:
+Lung011 si ponovil registration. Ce najdes, zakaj, si car.
+ What happenes with contours, 4Ddose in areas with poor DIR?
+ How many cases were above dashed line, what happened in each of them?
+ How about Jacobian values in fit? Were any used for investigation?
+ There were some 0 in abs diff. Why?
+ Number of voxels povezat z abs diff. nima veze
+ 
+Najmanjsa value za absdiff je 7. Kako to lohk z noise razlozis?
 
-
- A lahko dodas ranking based on ICE and jacobian?
- Show PM and noPM example?
- 5b Zracunat:
- ICE narisat z vektorji
- ROI example figure 
- Absolute difference -> mean square error 
- Poslat Christianu
+A fuknemo DIRQA med pig irradiation ven?
+Investigate abs diff pig.
 
  
 6. Patient Study:
