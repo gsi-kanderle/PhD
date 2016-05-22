@@ -37,7 +37,13 @@
 %As explained in Section \textbf{ref!}, effects of motion can have a significant impact on a radiation treatment. There are several motion mitigation techniques available that can operate on beam delivery, patient immobilization or treatment planning level.
 
 Most modern clinics today regularly use different imaging techniques including CT, 4D-CT, cone-beam CT, MRI and PET. Registration is needed to overlay different image acquisitions, such as image taken at different days or between imaging modalities or to quantify anatomical changes in a time-resolved image aquisition (4D-CT). While most commercial treatment planning software provide rigid registration between different images, deformable image registration (DIR) is currently rarely used. 
-DIR can quantify anatomical and biological variations better compared to rigid registration \cite{Sarrut2006}. It opens exciting new options, such as 4D optimization \cite{Trofimov2005}, 4D dose calculation \cite{Flampouri2006} or contour propagation \cite{Lu2006b}. DIR usage spreads even into other categories, besides radiotherapy \cite{Cleary2010, Herrell2012, Nithiananthan2011, Naini2010}.
+DIR can quantify anatomical and biological variations better compared to rigid registration \cite{Sarrut2006}. It opens exciting new options in radiotherapy, such as 4D optimization \cite{Trofimov2005}, 
+4D dose calculation \cite{Flampouri2006} or contour propagation \cite{Lu2006b}. 4D dose calculation has been well established for photons \cite{Ong2016}, protons \cite{Paganetti2005} and carbon-ions \cite{Gemmel2011} and has received
+several experimental verifications \cite{Vinogradskiy2009, Perrin2016, Bert2012a}. 4D dose calculation requires DIR for deformation of dose distributions in each motion state
+to the reference phase, where the dose from all motion states is accumulated. Special consideration has to paid for calculation of biological 4D doses \cite{Gemmel2011}. Contour propagation can be done with DIR \cite{Lu2006a, Rietzel2005a} or
+with deformable model driven techniques \cite{McInerney1996, Montagnat2005}, which uses a physical model to iterativelly match the contour to image features. 4D dose calculation is usually more complex, since it depends on tissue density,
+alpha-beta ratio and it requires accurate DIR at every voxel, wheares contour propagation needs accurate DIR at contour boundries.
+Besides radiotherapy, DIR usage spreads even into other categories \cite{Cleary2010, Herrell2012, Nithiananthan2011, Naini2010}.
 Several different DIR algorithms are available, such as B-spline \cite{Rueckert1999}, Demons \cite{Thirion1998}, linear elastic finite element \cite{Venugopal2005}, optical flow \cite{Zhong2007} or viscous fluid \cite{Christensen1996}.
 	
 One of the reasons why DIR is not used in commercial software is the lack of proper DIR quality assurance (DIRQA). While several different DIRQA methods exist, none of them are definitive and most of them are time consuming. 
@@ -652,35 +658,41 @@ spot inconsistencies.
 \section{Summary and Discussion}
 \label{Summary}
 
-Tools to preform DIR and DIRQA were presented in this chapter. Different modules were written for an open-source software Slicer, that can handle large DIR problems, such as registering whole 4D-CT. In addition to DIR the modules can also make DIRQA on the same set as DIR was made with several different
-checks. The main objective of this work was to provide systematic approach to DIR and to give parameters on DIRQA that can estimate the quality of DIR. A first analysis of DIRQA checks was done on a large DIR database - 684 DIR were checked in total.
+Tools to preform DIR and DIRQA were presented in this chapter. Different modules were written for an open-source software Slicer that can handle large DIR problems, such as registering whole 4D-CTs. 
+In addition to DIR, the modules can also calculate DIRQA on DIR warped images and vector fields with several different checks.
+The main objective of this work was to provide systematic approach to DIR and to give parameters on DIRQA that can estimate the quality of DIR. A first analysis of DIRQA checks was done on a large DIR database - 684s DIR were checked in total.
 
 Most of the work was based on Slicer, which is well-established software in medical research. To date, there are more than 500 publications that have used Slicer in their research \cite{SlicerCitation}, with topic ranging from 
-teaching \cite{Pujol2016}, disease staging \cite{Liu2016, Liu2015}, motion tracking \cite{Behringer2015} to image reconstruction \cite{Meyer2015}, image registration \cite{Li2015, Fedorov2015, Li2015b}
-and others. Slicer offers a lot of different functionalities and is especially good for research, since it can be modified to specific needs. However, it is important to stress that Slicer 
-is not a medical application and can be used only for research. Additionally, Slicer can sometimes be unstable with unexpected crashes. It is constantly under development and more and more errors
+teaching \cite{Pujol2016}, disease staging \cite{Liu2015, Liu2016}, motion tracking \cite{Behringer2015} to image reconstruction \cite{Meyer2015}, image registration \cite{Li2015, Fedorov2015, Li2015b}
+and others. Slicer offers different functionalities and is especially suited for research, since it can be modified to specific needs. However, it is important to stress that Slicer 
+is not a medical application. Additionally, Slicer can sometimes be unstable with unexpected crashes. It is constantly under development and more and more errors
 are fix with each new release. New releases also bring new functionalities, but there can be problems with backtrack compatibility Even though there are some disadvantages to using Slicer, it's advantages
-definetelly outweigh them and make Slicer a useful tool, as was showed in this chapter.
+outweigh them and make Slicer a useful tool, as was shown in this chapter.
 
-Results shown in this chapter were obtained with DIR made by B-Spline algorithm. Several other algorithms exist, demons most commonly used alongside B-Spline \cite{Thirion1998}. Varadhan et al. made comparison
-between B-Spline and demons DIR for lung case \cite{Varadhan2013} and showed that B-Spline is superior to demons, especially if there is difference in contrast between images. They used mutual information
-metric, to account for differences in contrast. Images used in this chapter were either all without (lung case) or all with (pig case) contrast agent, therefore there was no difference in contrast
-between images. Mutual information metric was tested as well for DIR, however the results were much worse than mean square error metric.
+Results shown in this chapter were obtained with B-Spline DIR algorithm. Several other algorithms exist, demons most commonly used alongside B-Spline \cite{Thirion1998}. Varadhan et al. compared B-Spline and demons DIR
+for lung case \cite{Varadhan2013} and showed that B-Spline is superior to demons, especially if there is difference in contrast between images. They used a mutual information
+metric, to account for differences in contrast. Images used in this chapter were either all without (lung 4D-CTs) or all with (animal study 4D-CTs) contrast agent, therefore there was no difference in contrast
+between images and mutual metric could not be used.
+% . Mutual information metric was tested as well for DIR. For lung 4D-CT it could not complete DIR, because the phases are too similar, however for the results were worse than mean square error metric. For lung 4D-CTs 
 
-The evaluation of DIR was made by DIRQA module. The main advantage of the DIRQA module is that all different techniques are gathered in a single place and can be used on a specific case. The ease of use is also essential, for DIRQA to find it's way into clinical work flow
-A test of using DIRQA in potential clinical work flow was done at GSI during pig experiment, where different users had to use both DIR and DIRQA modules. The experiment was also under time pressure, since there is
-a scheduled beam time and it cannot be shifted. There were already prepositions for frameworks for DIRQA in clinical work flow \cite{Varadhan2013}, however none were tested in an actual clinical environment
+A designated module was made for DIRQA. The main advantage of the DIRQA module is that all different techniques are gathered in a single place and can be used on a specific case. 
+The ease of use is also essential, for DIRQA to find its way into clinical work flow.
+A test of using DIRQA in potential clinical work flow was done at GSI during animal study, where different users had to use both DIR and DIRQA modules. The experiment was also under time pressure, since there was
+a scheduled beam time. 4D-CTs were acquired approximatelly two weeks, before scheduled irradiation. During this two weeks contour delineation, DIR, DIRQA, treatment planing and treatment planning QA had to be done.
+There were already propositions for frameworks for DIRQA in clinical work flow \cite{Varadhan2013}, however none were tested in an actual clinical environment
 
-The techniques used in DIRQA can be divided into visible (inverse color, checkerboard) and quantitative (absolute difference, Jacobian and ICE). While the quantitative can be used to pinpoint errors in DIR, the visible can be used to actually see the error and how does it affect the
-end result, as shown in Fig.~\ref{calcJac_lung}c. All three quantitative checks have been used in literature as a possible DIRQA \cite{Varadhan2013, Leow2007, Christensen2001, Bender2009}. They all share the same flaw, however, that they are a necessary condition for a successful
-DIR but not sufficient. One common DIRQA check in literature that our module is currently missing, is comparison of anatomical correspondence - 
+The techniques used in DIRQA can be divided into visual qualitative (inverse color, checkerboard) and quantitative (absolute difference, Jacobian and ICE). While the quantitative can be used to pinpoint errors in DIR, the visual qualitative
+can be used to actually locate the error as shown in Fig.~\ref{calcJac_lung}c. The location and size of DIR error also determines, if a repatition of DIR is necessary.
+All three quantitative checks have been used in literature as a possible DIRQA \cite{Varadhan2013, Leow2007, Christensen2001, Bender2009}. They all share the same flaw, however, that they are a necessary condition but not sufficient
+for a successful DIR. One common DIRQA check in literature that our module is currently missing, is comparison of anatomical correspondence - 
 comparison between reference, moving and warped contours. Ideally warped and reference contour should be the same. Two metrics are usually used in contour comparison -
 dice similarity coefficient \cite{Varadhan2013} and Hausdorff distance \cite{Huttenlocher1993}. Slicer already has functionalities for both contour comparison checks, so they could be used. 
 The biggest disadvantage of anatomical correspondence check is that contour delineation is required in both, reference and moving phase, which is scarcely done by physicians, 
-since it takes too much time. Lack of contour in both, reference and moving phase, was also the reason the anatomical correspondence check was not used.
+since it takes too much time. Additionally, the anatomical correspondence check does not judge the vector field quality inside contour.
+Lack of contours in both reference and moving phase was the reason the anatomical correspondence check was not used.
 
-Studies on DIRQA so far have focused on a small number of DIR cases, weather it is phantom \cite{Mutic2001,Moore2004} or patient studies \cite{Wu2008, Varadhan2013}. With small number of DIRs
-it is possible to thoroughly examine each DIR and hence now what to excpect from the DIRQA. In this chapter a different approach was
+Studies on DIRQA so far have focused on a small number of DIR cases, wheater it is phantom \cite{Mutic2001,Moore2004} or patient studies \cite{Wu2008, Varadhan2013}. With a small number of DIRs,
+it is possible to thoroughly examine each DIR and hence understand DIRQA. In this chapter a different approach was
 used. Rather than examining each DIR individually, a large dataset was analyzed and common traits for DIR were found. Due to differences in anatomical sites, 
 DIRQA parameters have to be found for each anatomical site individually, since they can
 deviate significantly, as seen by two different cases presented here. However there may be parameters that persist throughout different anatomical sites, scaled Jacobian in particular.
@@ -689,18 +701,18 @@ DIR of lung 4D-CT can be considered relatively easy, since the changes between p
 This is supported by Fig.~\ref{calcJac_lung} and \ref{maxvf}. The correlation between expansion of tissue in reference phase should directly correlate to tissue contraction in moving phase. 
 Even though Fig.~\ref{calcJac_lung}a shows only plot between maximum and minimum Jacobian in two phases, the correlation is still apparent (Pearson's r = 0.9). With calculation
 of difference between maximum and minimum Jacobian in each individual voxel, it is possible to pinpoint the position of DIR inconsistencies, as shown in Fig.~\ref{calcJac_lung}. A small
-artifact was found in one phase and it was responsible for deviation from linear fit. Deviation from linear fit in Fig.~\ref{maxvf}a-c, was also used to spot DIR inconsistencies
+artifact was found in one phase and it was responsible for deviation from linear fit. Deviation from linear fit in Fig.~\ref{maxvf}a-c was also used to spot DIR inconsistencies
 and a lung image artifact was found in a different patient.
 
-If the DIR of lung 4D-CT was considered relatively easy, opposite holds true for DIR of 4D-CT-cardiac. The motion of the heart during a heartbeat is complex, 
-with muscles stretching \cite{Seeley2007} and contracting in different directions. Furthermore,
+If the DIR of lung 4D-CT was considered relatively easy, opposite holds true for DIR of animal study 4D-CT. The motion of the heart during a heartbeat is complex, 
+with muscles stretching and contracting in different directions \cite{Seeley2007}. Furthermore,
 the volume of blood shifts from one ventricle to the other. In the case of 4D-CT-cardiac blood carried a contrast agent, therefore different phases in 4D-CT-cardiac 
-had different distribution of HU in different parts of the heart. Additionally, it was well established that pacemakers cause several complications in a CT scan \cite{Mak2012}. This was
-confirmed by the differences observed between PM and noPM. Clearest example is the PM linear fit of maximum ICE in Fig.~ \ref{maxvf_pigs}, which is above $y(x) = x$ curve. 
+had different distribution of HU in different parts of the heart. Additionally, it is well established that pacemakers cause several complications in a CT scan \cite{Mak2012}. This was
+confirmed by the differences observed between PM and noPM. Clearest example is the PM linear fit of maximum ICE in Fig.~\ref{maxvf_pigs}, which is above $y(x) = x$. 
 The complexity of DIR is further seen in the negative values of Jacobian, which should not occur. The DIR of 4D-CT-cardiac is currently under careful investigation
 and several different solutions, such as artifact removal and different registration order are being tested.
 
-In the future DIRQA module should undergo further testing. In addition to checking DIRQA on different anatomical sites and between different modalities, 
+In the future, the DIRQA module should undergo further testing. In addition to checking DIRQA on different anatomical sites and between different modalities, 
 it should be investigated how good is DIRQA at spotting inconsistencies in DIR, i.e. what is the number of false negatives. Furthermore, with more
 data analyzed, the parameters in DIRQA checks should get more precise, so outliers could be easier spotted.
 

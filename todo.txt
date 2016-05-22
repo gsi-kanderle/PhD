@@ -17,6 +17,7 @@ Lung011 si ponovil registration. Ce najdes, zakaj, si car.
  How about Jacobian values in fit? Were any used for investigation?
  There were some 0 in abs diff. Why?
  Number of voxels povezat z abs diff. nima veze
+ true into original
  
 Najmanjsa value za absdiff je 7. Kako to lohk z noise razlozis?
 
