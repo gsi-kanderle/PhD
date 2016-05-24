@@ -212,9 +212,13 @@ Example of different treatment plans for a single patient is shown in Fig.~\text
 
 \subsection{Target Coverage}
 
-Results for D$_{99\%}$ CTV and CTV with 3 mm margins for all patients are shown in Table~\ref{tab:resultsComplex} and \ref{tab:resultsComplex2}. All SBRT plans were approved by a physician, 
-even though the prescription dose for patients 6 - 8 was not met, due to the OAR proximity. Excluding patients 6 -8, there were 3, 5, 8  cases of too low CTV dose accross different
-motion types for SFUD, indITV and 4Dopt, respectively. For CTV with 3 mm margins, there were 10, 14, 19 cases of perscription dose not being met for SFUD, indITV and 4Dopt, respectively.
+Results for CTV D$_{99\%}$ for all patients are shown in Table~\ref{tab:resultsComplex}. All SBRT plans were approved by a physician, 
+even though the prescription dose for patients 6 - 8 was not met, due to the OAR proximity. Excluding patients 6 - 8, there were 8  cases of too low CTV dose accross different
+motion types for SFUD, indITV and 4Dopt, respectively, but not for the same targets.
+For patients 6 - 8 treatment plans with SFUD were clinically unacceptable, due to violation of OAR constraints. Both indITV and 4Dopt had higher CTV D$_{99\%}$ than SBRT, while still adhearing
+to OAR constraints. 
+
+Range of CTV D$_{99\%}$ accross different motion types was 2, 1 and 2 Gy for SFUD, indITV and 4Dopt, respectively, \textbf{Statistical difference?}
 
 \include{tableTarget}
 
@@ -222,20 +226,40 @@ motion types for SFUD, indITV and 4Dopt, respectively. For CTV with 3 mm margins
 
 D$_{Max}$ and D$_{Mean}$ for 8 OARs are shown in Table~\ref{tab:OARComplex}. There was significant difference for \textbf{???} between PT and SBRT. No significant difference was observed for dose to OAR between different motion types.
 
-DVHs for patients 6 - 8 are shown in Fig.~\textbf{Do it!}. SA, Es were substracted from for substracion from target were ...
+DVHs for patients 6 - 8 are shown in Fig.~\textbf{Do it!}. SA, Es were substracted from for substracion from target were ..., compared to 2 mm in SBRT
 SA D$_{Max}$ limit was exceeded for patients 6 and 8 in all cases. Heart D$_{Max}$ limit was exceeded in 1, 2 and 0 different motion cases for SFUD, indITV and 4Dopt, respectively.
 
 
 \include{tableOAR}
 
 
-
 \section{Summary and Discussion}
+
+Clinically valid SBRT plans have been compared to PT treatment plans for NSCLC patients with multiple metastases. Novel approch was used to handle multiple targets, together
+with state of the are 4D PT treatment planning. Furthermore, 4D doses were calculated for PT treatment plans. PT on average delievered less dose to OAR, while there were no
+significant difference in target coverage. The most apperent difference is in lung V_${20\%}$, which was 3333\% lower in PT, due to the narrow entry channel PT use.
+
+Patients 1 - 5 did not require any OARs in optimization and no OAR constraint was violated. Eventhough patient 2 and 4 had 5 metastases each. For patient 6 - 8 the optimization problem
+was more complex, especially in 4Dopt case. Patient 7 had 4 metastases in left lung, two of them (7c and 7d) closer than 1 mm to the heart. 
+\textit{Too many voxels, show Mathias work with small voxel number?}
+
+Currently, TRiP98 handles only OAR D_${Max}$ in optimization. While this is sufficient for most patients (patient 1 - 5 and patients in Chapter~\textbf{?}) it can fall short 
+in complex geometry.
+
+%http://www.birpublications.org/doi/full/10.1259/bjr.20120288 - roboust planning
+
+
+
+
+
+A recent review showed good local control rates between 66 - 92\% for patients treated
+with SBRT in reoccurent tumors in previous irradiation field \cite{Amini2014}. However, there were grade 4 and 5 complications present, i.e. study by Trovo et al showed grade 5 pneumonia in
+6\% of patient treated \cite{Trovo2014}. PT could reduce the number of complications with less dose to OAR.
+
 
 
 Carbon ions ne rabjo dose volume constraints, so vse vedno spodej.
 
-% Omen reirradiation, k bi bil lazji s PT. (http://ro-journal.biomedcentral.com/articles/10.1186/1748-717X-9-210)
 
 
 
