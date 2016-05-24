@@ -38,6 +38,9 @@ Investigate abs diff pig.
  Poslat Christianu
  
 7. Patient with complex geometry
+
+Legend
+
  7a Napisat uvodu
  7b Materials and methods
  1 - Fertig

@@ -66,33 +66,47 @@ For a CT voxel $i$, $ D_{pre}$ and $D_{act}$ are the prescribed and the actual d
  E(\vec{N}) = \sum_{targets} \sum_{i\in target} \left( D_{pre}^{i} -\sum_{j=1}^n c_{ij}N\right)
 \end{equation}
 
-However, the setup of raster points in TRiP98 allowed only one target. This setup was expanded in a way that field was designated to a specific target \textbf{Fig?}. 
-Raster points for each field are still created only around designated target. Contribution from all fields are then calculated in optimization. So, when a field from one target contributes 
-dose to some other target this is taken into account in optimization function, specifically in coefficient $c_{ij}$ in Eq.~\ref{eq-costFunc}. Because the optimization function was not changed, 
-all TRiP98 4D functionalities could be used, as explained in next sections. 
+However, the setup of raster points in TRiP98 allowed only one target. This setup was expanded in a way that field was designated to a specific target, as displayed in Fig~\ref{Fig:multiTargets}. 
+Raster points for each field are created only around designated target. Contribution from all fields are then calculated in optimization. When a field from one target contributes 
+dose to the other target this is taken into account in optimization function, specifically in coefficient $c_{ij}$ in Eq.~\ref{eq-costFunc}. Because the optimization function was not changed, 
+all TRiP98 4D functionalities could be used, as explained in next sections.
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{./Images/multiTargets.png}
+		\caption{Multiple targets irradiation. Fields 1 and 2 are designated to target a and fields 3 and 4 to target b. Optimization takes into account all target voxels and contributions from all fields.}
+		\label{Fig:multiTargets}
+	\end{center}
+\end{figure}
+
+
 
 \subsection{Optimization techniques}
 
-Investigation of different optimization techniques to handle range changes in moving tumors was made. For each patient, three sets of plans were created: SFUD, field-independent ITV (indITV) and 4D optimization (4Dopt). 
+Investigation of two different optimization techniques to handle range changes in moving tumors was made. For each patient, two sets of plans were created: field-independent ITV (indITV) and 4D optimization (4Dopt). 
 
 \begin{itemize}
-\item \textbf{Single-field uniform optimization:} A water-equivalent path length ITV (WEPL-ITV) was created for each field and each target specifically \cite{Rietzel2012}. Afterwards each field was individually optimized on a reference phase (end-inhale) to deliver full dose to target. In the end the particle number in each field was divided by number of fields.
+\item \textbf{Single-field uniform optimization:}  was created for each field and each target specifically \cite{Rietzel2012}. Afterwards each field was individually optimized on a reference phase (end-inhale) to deliver full dose to target. In the end the particle number in each field was divided by number of fields.
 
-\item \textbf{Field-independet ITV:} WEPL-ITV are different for each field, creating unnecessary margins when combining WEPL-ITV from different fields (see Fig.~\textbf{!}a). Graeff et. al proposed a solution to include range margin into the field description itself, instead of creating bigger PTV \cite{Graeff2012}. Thus, no unnecessary margins are created. Treatment plans were made for all targets with intensity modulated particle therapy (IMPT) on a WEPL-ITV in reference phase.
+\item \textbf{Field-independet ITV:} A water-equivalent path length ITV (WEPL-ITV) are different for each field, creating unnecessary margins when combining WEPL-ITV from different fields (see Fig.~\textbf{!}a). Graeff et. al proposed a solution to include range margin into the field description itself, instead of creating a bigger PTV \cite{Graeff2012}. Thus, no unnecessary margins are created. Treatment plans were made for all targets with intensity modulated particle therapy (IMPT) on a indITV in reference phase.
 
-\item \textbf{4D Optimization:} IMPT with indITV produces inhomogeneous fields that yield homogeneous dose, but only in reference phase. The WEPL can change in different motion phases, leading to inhomogeneous dose.
-4D optimization uses WEPL-ITV for raster setup, however the actual optimization is performed on each target voxel in each motion state $k$. The optimization function changes then to \cite{Graeff2012}:
+\item \textbf{4D Optimization:} IMPT with indITV produces inhomogeneous fields that yield homogeneous dose but only in reference phase. The WEPL can change in different motion phases, leading to inhomogeneous dose.
+4Dopt uses WEPL-ITV for raster setup, however the actual optimization is performed on each target voxel in each motion state $k$. The optimization function changes then to \cite{Graeff2012}:
+
 \begin{equation}
 \label{eq-multiCost}
 E(\vec{N}) = \sum_{k=1}^{m}\sum_{targets(k)} \sum_{i\in target(k)} \left( D_{pre}^{i} -\sum_{j=1}^n c_{ijk}N\right)
 \end{equation}
-All targets were treated with IMPT and 4D optimization. A subset of motion states 0, 50 and 70\% was used for targets 7a, 7b and 8b (see Table~\ref{tab:patdata2}) due to large optimization problem - beside target, OAR was also included
+
+All targets were treated with IMPT and 4D optimization. A subset of motion states 0, 50 and 70\% was used for targets 7a, 7b and 8b (see Table~\ref{tab:patdata2}) due to large optimization problem - beside multiple targets, OAR was also included
 in motion states \cite{Graeff2012}.
+
 
 
 \end{itemize}
 
-Finally, fields, resulting from three optimization techniques mentioned, were used to calculate 4D doses. The same number of fields and the same field angles were used in all three techniques.
+Finally, fields, resulting from the two optimization techniques mentioned, were used to calculate 4D doses. The same number of fields and the same field angles were used in both techniques.
 
 \subsection{Patient data}
 
@@ -208,7 +222,15 @@ subtract OAR plus margins from the target. An algorithm was introduced into TRiP
 
 \section{Results}
 
-Example of different treatment plans for a single patient is shown in Fig.~\textbf{DOTI}.
+Example of different treatment plans for a single patient is shown in Fig.~\ref{Fig:multiExample}.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{./Images/multiExample.png}
+		\caption{Treatment plans for indITV (left), 4Dopt (middle) and SBRT (right) for SBRT (solid lines) on a same patients. CTV contours are outlined in white.}
+		\label{Fig:multiExample}
+	\end{center}
+\end{figure}
 
 \subsection{Target Coverage}
 
@@ -249,7 +271,11 @@ in complex geometry.
 %http://www.birpublications.org/doi/full/10.1259/bjr.20120288 - roboust planning
 
 
+TRiP je mel boljse rezultate, ampak je se prostor za improvat. Manj voxelov, doza v OAR proti nic in shell around targets to reduce dose.
 
+Robustness 3D in 4D. V 4D so samo razlicne starting phase, treba je prov vse nekak upostevat.
+
+Gating bo verjetno nujen, ker je OAR prevec rizkantn.
 
 
 A recent review showed good local control rates between 66 - 92\% for patients treated
