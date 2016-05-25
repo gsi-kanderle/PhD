@@ -1,0 +1,70 @@
+\documentclass[type=dr, dr=rernat, accentcolor=tud7b,colorbacktitle, bigchapter, openright, twoside, 12pt ]{tudthesis}
+%\documentclass[11pt,twoside,a4paper]{article}
+\usepackage[english]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{pstricks}
+\usepackage{psfrag}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{epsfig}
+\usepackage{geometry}
+\usepackage{subfigure}
+\usepackage{rotating}
+\usepackage{minitoc}
+% \usepackage{dominitoc}
+\usepackage{multirow}
+\usepackage{listings}
+%\usepackage{appendix}
+%\usepackage[breaklinks=true]{hyperref}
+%\usepackage{breakcites}
+
+%%%% 1 1/2 facher Zeilenabstand:	
+\usepackage{setspace}
+\onehalfspacing
+
+
+\chapter*{Motivation}
+\addcontentsline{toc}{chapter}{Motivation}
+
+
+
+\newpage
+
+\section*{Scope of this work}
+
+This is the first \textit{in silico} survey to study the feasibility of a non-invasive treatment modality for atrial fibrillation with carbon ion 
+radiosurgery \cite{Ber12}. Thereby the irradiation of ablation sites in the junction between pulmonary veins and atria will be studied in human data. 
+Another potential ablation site for atrial fibrillation, the AV node, will be studied in porcine data sets. A single fraction 
+dose of 25Gy will be applied on the cardiac target volumes. \newline
+
+When intending to irradiate non-static targets interference effects between target motion and the actively applied ion 
+beam cause local under and over dosages \cite{Phi92, Ber08}. In order to deposit a homogenous dose in the target area, motion mitigation 
+techniques are needed. Different motion mitigation techniques will be used in this dissertation. The interrupted irradiation during a selected 
+part of the motion cycle (gating) \cite{Kub96} as well as the repeated scanning of the same slice with a reduced dose so that averaging 
+effects cause a homogenous dose deposition in the target volume (rescanning) \cite{Phi92} will be analyzed. 
+% where the irradiation of target areas on and in the heart were studied 
+% in order to determine the feasibility of a non-invasive treatment modality for atrial fibrillation with carbon ions. 
+For the feasibility of a non-invasive treatment modality for atrial fibrillation with carbon ions, two independent 
+motion influences have to be considered. On the one hand the heart beat, a fast but small amplitude motion, and on the other hand the 
+respiration of the patient, a typically slow motion with big amplitude. Respiration and heartbeat gated CTs of human patients 
+will be studied and the resulting treatment planning studies will be presented. In preparation for animal studies planned at GSI in the 
+summer of 2014 treatment plan results for porcine data will also be investigated. \newline
+
+The structure of this dissertation is as follows. Chapter 1 will give an overview over the physical and biological fundamentals of radiotherapy. 
+Different radiotherapy applications will be presented and a special emphasis will be given on the treatment of moving targets. Furthermore, 
+the cause of atrial fibrillation and its resulting risk factors will be presented. Currently existing therapies and the potential 
+benefit of a non-invasive treatment modality will be discussed. In chapter 2 the influence of the respiratory motion on 
+pulmonary veins ablation sites in humans will be discussed. The feasibility to use gating as motion mitigation technique for this case will 
+be investigated. In chapter 3 the displacement of the pulmonary veins ablation site due to heartbeat will be examined in human data. 
+Rescanning will be studied as motion mitigation technique for this motion component. In preparation for the planned animal experiments, 
+which will be carried out as a first experimental feasibility study in the summer of 2014 at GSI, chapter 4 will discuss 
+an AV node ablation with carbon ions in porcine data. The underlying heartbeat motion will be studied and rescanning as motion mitigation 
+technique will be utilized. Discussion of the overall results will be given in chapter 5, while chapter 6 will conclude the findings and 
+give a short outlook on future directions. 
+
+\bibliographystyle{apalike}
+\bibliography{../ref.bib}{}
+% \bibliographystyle{plain}
+
+\end{document}

@@ -15,6 +15,7 @@
 % \usepackage{dominitoc}
 \usepackage{multirow}
 \usepackage{listings}
+\usepackage{amsmath}
 %\usepackage{appendix}
 %\usepackage[breaklinks=true]{hyperref}
 %\usepackage{breakcites}
@@ -33,22 +34,27 @@
 
 \section{Introduction}
 
-As explained in Section \textbf{ref!}) effects of motion can have a significant impact on a radiation treatment. Therefore a proper investigation is necessary for each specific patient. There are several motion mitigation techniques available that can operate on beam delivery, patient immobilization or treatment planning level.
+%As explained in Section \textbf{ref!}, effects of motion can have a significant impact on a radiation treatment. There are several motion mitigation techniques available that can operate on beam delivery, patient immobilization or treatment planning level.
 
-An important part of motion mitigation is proper and frequent imaging. While most commercial treatment planning software provide rigid registration between different images, deformable image registration (DIR) is currently rarely used. 
-DIR ca quantify anatomical and biological variations better compared to rigid registration \cite{Sarrut2006} and is essential as well in photon as in ion radiotherapy, with usage in adaptive radiotherapy \cite{Yan1997,Yan2010}, 
-4D optimization \cite{Trofimov2005}, 4D dose calculation \cite{Flampouri2006}, contour propagation \cite{Lu2006b}. DIR usage spreads even into other categories, besides radiotherapy \cite{Cleary2010, Herrell2012, Nithiananthan2011, Naini2010}.
-Several different DIR algorithms are available, such as B-spline \cite{Rueckert1999}, Demons \cite{Thirion1998}, linear elastic finite element \cite{Venugopal2005}, optical flow \cite{Zhong2007}, viscous fluid \cite{Christensen1996}, etc.
+Most modern clinics today regularly use different imaging techniques including CT, 4D-CT, cone-beam CT, MRI and PET. Registration is needed to overlay different image acquisitions, such as image taken at different days or between imaging modalities or to quantify anatomical changes in a time-resolved image aquisition (4D-CT). While most commercial treatment planning software provide rigid registration between different images, deformable image registration (DIR) is currently rarely used. 
+DIR can quantify anatomical and biological variations better compared to rigid registration \cite{Sarrut2006}. It opens exciting new options in radiotherapy, such as 4D optimization \cite{Trofimov2005}, 
+4D dose calculation \cite{Flampouri2006} or contour propagation \cite{Lu2006b}. 4D dose calculation has been well established for photons \cite{Ong2016}, protons \cite{Paganetti2005} and carbon-ions \cite{Gemmel2011} and has received
+several experimental verifications \cite{Vinogradskiy2009, Perrin2016, Bert2012a}. 4D dose calculation requires DIR for deformation of dose distributions in each motion state
+to the reference phase, where the dose from all motion states is accumulated. Special consideration has to paid for calculation of biological 4D doses \cite{Gemmel2011}. Contour propagation can be done with DIR \cite{Lu2006a, Rietzel2005a} or
+with deformable model driven techniques \cite{McInerney1996, Montagnat2005}, which uses a physical model to iterativelly match the contour to image features. 4D dose calculation is usually more complex, since it depends on tissue density,
+alpha-beta ratio and it requires accurate DIR at every voxel, wheares contour propagation needs accurate DIR at contour boundries.
+Besides radiotherapy, DIR usage spreads even into other categories \cite{Cleary2010, Herrell2012, Nithiananthan2011, Naini2010}.
+Several different DIR algorithms are available, such as B-spline \cite{Rueckert1999}, Demons \cite{Thirion1998}, linear elastic finite element \cite{Venugopal2005}, optical flow \cite{Zhong2007} or viscous fluid \cite{Christensen1996}.
 	
-One of the reasons for the DIR is not used in commercial software is the lack of proper DIR quality assurance (DIRQA). While several different DIRQA methods exist, none of them are definitive and most of them are time consuming. 
-It is possible to evaluate DIR with deformable phantoms, where the type and size of deformation is known \cite{Kashani2007, Kirby2011}. However such quality assurance is time consuming and it would be hard to use it 
-in everyday clinical work flow DIR validation can also be based on landmark positions, specifically their location before and after registration. In absence of externally planted markers, locating landmarks in patient 
-anatomy can be take a fair amount of time and it can be difficult to identify landmarks in low-contrast regions \cite{Varadhan2013}. Another option is to compare delineated contours with the propagated ones. 
-It is more efficient technique than landmark checks, however it is even more time consuming and it does not address the region within the contour.
+One of the reasons why DIR is not used in commercial software is the lack of proper DIR quality assurance (DIRQA). While several different DIRQA methods exist, none of them are definitive and most of them are time consuming. 
+It is possible to evaluate DIR with deformable phantoms, where the type and size of deformation is known \cite{Kashani2007, Kirby2011}. However this effort is prohibitive 
+in everyday clinical work flow. DIR validation can also be based on landmark positions, specifically their location before and after registration. In absence of externally planted markers, locating landmarks in patient 
+anatomy can be time-consuming and it can be difficult to identify landmarks in low-contrast regions \cite{Varadhan2013}. Another option is to compare delineated contours with the propagated ones with dice similarity coefficient \cite{Varadhan2013} or Hausdorff distance \cite{Huttenlocher1993}. 
+It is more efficient technique than landmark checks, however it requires additional delineation and it does not address the region within the contour.
 
-In this chapter tools to handle DIR and DIRQA will be presented. Tools were constructed for open-source software 3D Slicer, described in Section~\ref{Slicer}. 
-In Section~\ref{Registration} details on how DIR was performed will be explained. Next, Section~\ref{DIRQA} will address the DIR validation - an extensive tool was created with various functionalities to tackle DIRQA.
-DIR and DIRQA tools were tested on a real patient data and results will be presented in the Section~\ref{Verification}. Lastly, everything will be summed up in Section~\ref{Summary}.
+A set of tools were created to systematically handle DIR and DIRQA. Tools were constructed for the open-source software 3D Slicer. 
+A presentation will be given on how DIR was calculated with the existing software. Furthermore, new DIRQA tool will be presented. It is an extensive tool,
+with several different checks, to asses DIR. Finally, DIR and DIRQA tools were tested on a large data set and results will be presented in the Section~\ref{Verification}.
 
 \section{Implementation}
 \label{Implementation}
@@ -60,20 +66,20 @@ DIR and DIRQA tools were tested on a real patient data and results will be prese
 It comes with a vast variety of tools, such as:
 
 \begin{itemize}
-	\item Handling a variety of image formats, including DICOM, NRRD and MHA
+	\item Handling of a variety of image formats, including DICOM, NRRD and MHA
 	\item Visualization of voxel images, polygonal meshes and volume renderings
-	\item Registration tool (rigid and non-rigid) and display of vector fields
+	\item Image registration (rigid and non-rigid) and display of vector fields
 	\item Automatic image segmentation
 	\item Analysis and visualization of diffusion tensor image data
 	\item Device tracking for image-guided procedures
 \end{itemize}
 
-The foundation of Slicer is written in C++ and it's functions can be accessed also with Python to provide rapid, iterative development. Graphical user interface is built in Qt. Visualization is based on VTK, a graphical library commonly
+The source code of Slicer is written in C++ and it's wrapped with Python to provide rapid, iterative development. The graphical user interface is based on Qt. Visualization is based on VTK, a graphical library commonly
 used in scientific research.
 
-Slicer is a research tool and as such offers tools to implement new functionalities in the form of extensions (modules). They can either be execution of external command-line program, or writing modules with new features,
-or automate Slicer processes in form of scripted modules. In the next sections different Slicer modules will be presented, which were all developed in the scope of this thesis. 
-The purpose of modules is to perform DIR and provide validation of the the obtained results.
+Slicer is a research tool and as such allows implementation of new functionalities in the form of extensions (modules). They can either be as external command-line programs, 
+as scripts to automate Slicer processes or as unique modules with new features. In the next sections, different Slicer modules will be presented, which were all developed in the scope of this thesis. 
+The purpose of these modules is to perform DIR and provide validation of the obtained results.
 
 \subsubsection{Registration nomenclature}
 
@@ -81,53 +87,26 @@ To provide a clear and consistent description of methods used, an overview of th
 
 \begin{itemize}
  \item \textbf{Reference image} - image that serves as a reference position in registration (image that is registered to).
- \item \textbf{Moving image} - image that is being registered to the reference image (image that is registered from).
- \item \textbf{Warped image} - result of applying transformation map of registration to moving image. It should be as close to the reference image as possible.
- \item \textbf{True registration} - registration from moving to reference image. Similar, everything connected to true registration will use \"true\" (true vector field, true warped image, true absolute difference, true Jacobian, etc.).
- \item \textbf{Inverse registration} - registration from reference to moving image (opposite or inverse of true registration. As in true registration, term inverse can be used for everything connected to it (inverse vector field, inverse warped image, inverse absolute difference, inverse Jacobian, etc.).
+ \item \textbf{Moving image} - image that is matched to the reference image (image that is registered from).
+ \item \textbf{Warped image} - result of applying a transformation map from registration to the moving image. It should be as close to the reference image as possible.
+ \item \textbf{True registration} - registration from moving to reference image. Similar, everything connected to true registration will use ``true'' (true vector field, true warped image, true absolute difference, true Jacobian, etc.).
+ \item \textbf{Inverse registration} - registration from reference to moving image (opposite or inverse of true registration). As in true registration, the term inverse can be used for everything connected to it (inverse vector field, inverse warped image, inverse absolute difference, inverse Jacobian, etc.).
 \end{itemize}
 
+In radiotherapy true registration is used for dose propagation and consequential 4D Dose calculation, whereas with inverse registration contours can be propagated from reference to moving phase.
 
 \subsection{Registration}
-\label{Registration}
+\label{RegistrationImplement}
 
-A commonly used software for registration in medical research is Plastimatch \cite{Shackleford2010}. It is free and open-source software, available as a command-line executable program. 
+Plastimatch \cite{Shackleford2010} is a commonly used software for registration in medical research. It is a free and open-source software, available as a command-line executable program. 
 Plastimatch B-spline registration is also available in Slicer as part of an extension SlicerRT \cite{Pinter2012}.
-The integration of Plastimatch in Slicer brings the advantage of a graphical user interface and hence a quick modification of parameters and display of results. However, the disadvantage comes when a large number of registrations is required,
-since a user presence is required. In a complete 4DCT registration there are $2(N-1)$ registrations required - from reference phase to each of $N$ phases of 4DCT and vice versa, except for the reference phase itself. 
-Typical 4DCT consist of 10 phases, therefore a automatic registration of a 4DCT is a necessity.
+The integration of Plastimatch in Slicer brings the advantage of a graphical user interface and hence a quick modification of parameters and display of results. 
+However, for a large number of registration an automatic process is needed. For a complete 4D-CT registration there are $2(N-1)$ registrations required - from reference phase to each of $N$ phases of 4D-CT and vice versa, except for the reference phase itself. 
+Typical 4D-CTs consist of 10 phases, therefore a automatic registration of a 4D-CT is a necessity.
 
-Automatic DIR was constructed from two parts. First, a DIR Python class was written to handle image locations, store DIR parameters, to preform DIR in the Plastimatch module, to use right naming conventions and to store all output files (vector fields and warped images). 
-DIR Python class is shown in Appendix~\ref{RegHierarchy}.
+Automatic DIR was achieved with a Python class to handle image locations, store DIR parameters, to perform DIR in the Plastimatch module, to use correct naming conventions and to store all output files (vector fields and warped images). 
+The Python class is shown in Appendix~\ref{RegHierarchy}.
 
-Beside DIR Python Class a patient hierarchy concept was introduced to handle loading of different phases in Slicer and track progress of DIR and DIRQA. It is explained in Section~\ref{PatHierarchy}.
-
-
-\subsubsection{Patient hierarchy} 
-\label{PatHierarchy}
-
-Patient hierarchy follows a subject hierarchy principle in Slicer. It was designed for a clear overview of the registration process, DIRQA and all resulting files. Another reason is to track DIR
-and DIRQA in case if they are interrupted by Slicer crash. DIR and DIRQA files can be quite large and can cause Slicer to run out of memory. With patient hierarchy Slicer is able to continue work
-from where it was interrupted rather than starting anew.
-
-There are several levels in patient hierarchy. Each level also has different attributes, where details regarding each level can be written.
-
-\begin{itemize}
-	\item Level 1: \textbf{Patient name} - separates different patients.
-	\item Level 2: \textbf{Registration node} - separates between different registration, e.g. registration between 4DCT phases, between CT and 4DCT, MRI and CT... 
-	\subitem \textit{Attributes:}
-	\subitem - The file directory of images, vector fields and registration quality files.
-	\subitem - Number of phases to be registered.
-	\subitem - Reference phase
-	\item Level 3: \textbf{Registration phase} - specific registration phase. Registration is done between all phases and the reference one. There have to be at least two phases
-	\item Level 4: \textbf{Node} - can be either an image, a vector field, an inverse vector field or any of DIRQA nodes (see Section~\ref{DIRQA}).
-	\subitem \textit{Attributes:}
-	\subitem - Exact file paths for specific node.
-	\subitem - Statistical values if node is absolute difference, Jacobian or inverse consistency (see Section~\ref{DIRQA}).
-\end{itemize}
-
-Patient hierarchy can be constructed in two ways. First option is to manually crate the whole patient hierarchy, from top to bottom level, with necessary attributes. Second option is to use a automatic script to look 
-for files on hard drive and create corresponding levels. The second option is possible only by using proper naming conventions are file names and locations.
 
 \subsection{Registration Quality Checks}
 \label{DIRQA}
@@ -139,8 +118,9 @@ Absolute difference, Jacobian and inverse consistency error were build using too
 \subsubsection{Inverse color}
 \label{Sec:FalseColor}
 
-A good way to see difference between two images is to overlay them. However, since CT scans are usually displayed in grayscale color code, the differences can be indistinguishable. Especially if the images are quite similar, as reference and warped image usually are. With applying opposite color codes to overlaying images two things are achieved. First, regions were the registration was successful will be in grayscale. And second, the differences between images will be in the color of the image they originate from. In the module we used red and cyan color code for reference and warped image, respectively. See Fig.~\ref{falseColor} for details.
+Overlaying two different images will highlight the difference between them. However, since CT scans are usually displayed in grayscale color code, the differences can be indistinguishable. Especially if the images are quite similar, as reference and warped image should be. With applying opposite color codes to overlaying images two things are achieved. First, regions were the registration was successful will be in grayscale. And second, the differences between images will be in the color of the image they originate from. In the module we used red and cyan color code for reference and warped image, respectively. See Fig.~\ref{falseColor} for details.
 
+\newpage
 \begin{figure}[H]
 	\begin{center}		
 		\includegraphics[width=0.9\textwidth]{./Images/falseColor.png}
@@ -151,7 +131,7 @@ A good way to see difference between two images is to overlay them. However, sin
 
 \subsubsection{Checkerboard}
 
-As the name suggests, checkerboard creates an image of tiles. Each tile alternates between reference and warped image, as shown in Fig.~\ref{checkerboard}. The differences between two images become apparent if there is no smooth transition from one tile to the next. The number of tiles can be manually selected. While the checkerboard offers clear indication of differences, it requires a user to spot them - similar to inverse color.
+As the name suggests, checkerboard creates an image of tiles. Each tile alternates between reference and warped image, as shown in Fig.~\ref{checkerboard}. The differences between two images become apparent if there is no smooth transition from one tile to the next. The number of tiles can be manually selected. While the checkerboard offers clear indication of differences, it requires a user to spot them.
 
 \begin{figure}[H]
 	\begin{center}		
@@ -161,17 +141,19 @@ As the name suggests, checkerboard creates an image of tiles. Each tile alternat
 	\end{center}
 \end{figure}
 
-\subsubsection{Absolute difference} 
+\subsubsection{Absolute difference}
+\label{sec:absDiff}
 
-To stress the difference between reference and warped image an absolute difference between voxel values is calculated and displayed. New image is generated with voxels populated as the absolute difference between reference and warped image voxel values, as shown in Fig.~\ref{absDiff}. Furthermore, statistical values of absolute differences are calculated (mean, standard deviation, minimum and maximum) for quantitative assessment of registration quality (in ideal case all values would be 0).
+To stress the difference between reference and warped image an absolute difference between voxel values is calculated and displayed. 
+A new image is generated with voxels populated as the absolute difference between reference and warped image voxel values, as shown in Fig.~\ref{absDiff}. F
+urthermore, statistical values of absolute differences are calculated (mean, standard deviation, minimum and maximum) 
+for quantitative assessment of registration quality (in the ideal case all values would be 0).
 
-The absolute difference feature is similar to inverse color, but it displays differences clearer and it also provides quantitative values. In contrast to inverse color which only relies on user examination. However it does require computational time to generate absolute difference, whereas inverse color is instant.
-
-Absolute difference can be computed between reference and moving image, called default absolute difference, to provide initial difference between images. After the registration it can be done on
-true and inverse warped images (true and inverse absolute difference) to show registration results. Usually, registration works on minimizing absolute difference (mean square error metric), so it is a direct indicator
+Three absolute differences can be calculated: between reference and moving image, called default absolute difference; between true warped and reference image, called true absolute difference; between inverse and moving image, called
+inverse absolute difference. Usually, registration works on minimizing absolute difference (mean square error metric), so it is a direct indicator
 of registration success.
 
-To spare computational time or to focus on a specific region, absolute difference can also be calculated just on a specific ROI (if used as an input). Usually ROI around patient body is selected, rather than calculating on a whole patient image.
+To spare computational time or to focus on a specific region, absolute difference can also be calculated just on a specific ROI (if used as an input). Usually the patient body is selected as ROI, without air and couch.
 
 
 \begin{figure}[H]
@@ -194,41 +176,61 @@ While it is possible to display two images side by side in Slicer, it can someti
 
 \subsubsection{Landmark distances}
 
-Distances between landmark before and after registration are often used to determine registration spatial accuracy \cite{Castillo2009}. Landmarks can either be a specific feature in patient anatomy or an external marker. The position of landmarks in the warped image would ideally be at the same position as in reference image. The module measures the Euclidean norm between the landmark positions in reference and warped image.
+Distances between landmark before and after registration are often used to determine registration spatial accuracy \cite{Castillo2009}. 
+Landmarks can either be a specific feature in patient anatomy or an external marker. The position of landmarks in the warped image would ideally 
+be at the same position as in reference image. The module measures the Euclidean norm between the landmark positions in reference and warped image.
 
-User has to manually select landmarks in reference and moving image. For landmarks based on patient anatomy a selection from physician is required. Landmarks from moving image can then be automatically transformed to warped image with registration vector field or they can be manually selected in warped image itself.
+User has to manually select landmarks in reference and moving image. For landmarks based on patient anatomy a selection from physician is required. 
+Landmarks from moving image can then be automatically transformed to warped image with registration vector field or they can be manually selected in warped image itself. An example is shown in Fig.~\ref{landmark}.
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.9\textwidth]{./Images/landmark.png}
-\caption{3D display of landmarks in three phases - T00 and T50 (end-inhale and end-exhale, respectively) and T50 warped to T00 (T50-warped). Average distance of corresponding landmarks between T00 and T50 is 0.1 and between T00 and T50-warped is 0.1.}
-\label{inv}
+\caption{Display of landmarks in three phases - reference, moving and warped phase. Distance before registration (between reference and moving landmark) is 22 mm and after registration
+(between reference and warped landmark) is 2 mm.}
+\label{landmark}
 \end{center}
 \end{figure}
 
-
+\newpage
 \subsubsection{Jacobian determinant}
 \label{Jacobian}
 
-Jacobian determinant (Jacobian) of vector field is used to validate physical behavior of registration \cite{Leow2007}. Jacobian of vector field should be positive, since negative Jacobian values correspond to folding, which is physically unrealistic for patient anatomy (organs can not be folded) \cite{ Rey2002, Chen2008}. Expansions and contractions around a point are indicated by Jacobian values of greater and less than 1, respectively. 
+The Jacobian determinant or Jacobian ($J$) of the vector field $u$ is calculated as:
 
-DIRQA module calculates and displays the Jacobian of the vector field. Jacobian statistical values of Jacobian are also calculated. Similar to absolute difference, Jacobian can be calculated inside a ROI rather than on a whole image.
+
+
+\begin{equation}
+J = \begin{vmatrix} 
+\frac{\partial u_x}{\partial x} & \frac{\partial u_x}{\partial y} & \frac{\partial u_x}{\partial z} \\
+\frac{\partial u_y}{\partial x} & \frac{\partial u_y}{\partial y} & \frac{\partial u_y}{\partial z} \\
+\frac{\partial u_z}{\partial x} & \frac{\partial u_z}{\partial y} & \frac{\partial u_z}{\partial z} \\
+\end{vmatrix}
+\end{equation}
+
+The Jacobian is used to validate physical behavior of the registration \cite{Leow2007}. 
+The Jacobian of vector field should be positive, since negative Jacobian values correspond to organ folding, 
+which is physically unrealistic for patient anatomy \cite{ Rey2002, Chen2008}. 
+Expansions and contractions around a point are indicated by Jacobian values of greater and less than 1, respectively.
+
+DIRQA module calculates and displays the Jacobian of the vector field, as shown in Fig.~\ref{JacobianImage}. Statistical values of Jacobian are also calculated. Similar to absolute difference, Jacobian can be calculated inside a ROI rather than on a whole image.
 
 \begin{figure}[H]
 	\begin{center}		
-		\includegraphics[width=0.9\textwidth]{./Images/jacobian.png}
-		\caption{Image of Jacobian overlayed on CT scan. The average value of displayed Jacobian is 1.0 with 0.7 STD. \textbf{CHECK!}}
-		\label{Jacobian}
+		\includegraphics[width=0.8\textwidth]{./Images/jacobian.png}
+		\caption{Image of Jacobian overlayed on a CT scan. The average value of the displayed Jacobian is 0.98 with 0.09 standard deviation.}
+		\label{JacobianImage}
 	\end{center}
 \end{figure}
 
 \subsubsection{Inverse Consistency Error}
 \label{ICE}
 
-Inverse consistency error (ICE) is consistently used in literature as one of the main vector field checks \cite{Christensen2001, Bender2009}. The principle is as follows. Suppose we have two vector fields - $u_{AB}$ obtained from registration of image $A$ to $B$ and $u_{BA}$ from registration of image $B$ to $A$. The two registrations
+Inverse consistency error (ICE) is consistently used in literature as one of the main vector field checks \cite{Christensen2001, Bender2009}. The principle is as follows. Suppose we have two vector fields: $u_{AB}$ obtained from registration of image $A$ to $B$ and $u_{BA}$ from registration of image $B$ to $A$. The two registrations
 should be preformed separately. In an ideal scenario, $u_{AB}$ would be a direct inverse of $u_{BA}$. However, DIR algorithms do not yield perfectly inverse consistent vector fields. Therefore, the differences between true and inverse vector fields have to be examined.
 
-To check for ICE, an algorithm was created that first transforms point in image $A$, $x$ using $u_{AB}$. Newly obtained point $x'$ is then transformed with inverse vector
+
+To check for ICE, an algorithm was created that first transforms a point $x$ in image $A$, using $u_{AB}$. The newly obtained point $x'$ is then transformed with the inverse vector
 field, $u_{BA}$ which yields $x''$. The ICE is defined as Euclidean norm between $x$ and $x''$:
 
 \begin{equation}
@@ -236,14 +238,17 @@ field, $u_{BA}$ which yields $x''$. The ICE is defined as Euclidean norm between
 ICE = |x - x''| = |x - u_{BA}(x')| = |x - u_{BA}(u_{AB}(x))|
 \end{equation}
 
-Points $x'$ and $x''$ can have an arbitrary position in space, while vector fields $u_{AB}$ and $u_{BA}$ are positioned on a grid. To apply transformation $u_{BA}(x')$ a interpolation has to be made to put $x'$ on a $u_{BA}$ grid. A tri-linear interpolation is used in this module.
+Points $x'$ and $x''$ can have an arbitrary position in space, while vector fields $u_{AB}$ and $u_{BA}$ are positioned on a grid. To apply transformation $u_{BA}(x')$, $x'$ is interpolated on a $u_{BA}$ grid. A tri-linear interpolation is used in this module.
 
-As in Jacobian, ICE image is calculated and displayed, along with statistical values and ROI feature. An example is shown in Fig.~\ref{inv}
+As in Jacobian, ICE image is calculated and displayed, along with statistical values and ROI feature. An example is shown in Fig.~\ref{inv}.
+
+
+
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.9\textwidth]{./Images/inv.png}
-\caption{Image of inverse consistency error (ICE) overlayed on CT scan. The average value of displayed ICE is 1.0 with 0.7 STD. \textbf{CHECK!}}
+\includegraphics[width=0.8\textwidth]{./Images/inv.png}
+\caption{Image of the inverse consistency error (ICE) overlayed on a CT scan. The average value of displayed ICE is 1.0 mm with 0.8 mm standard deviation.}
 \label{inv}
 \end{center}
 \end{figure}
@@ -251,7 +256,7 @@ As in Jacobian, ICE image is calculated and displayed, along with statistical va
 
 % \subsubsection{Output file}
 % 
-% With all different features to validate DIR it can be time consuming to go through them all. A special option was created to automatically go through all different validation steps. Furthermore it can also run through different phases, if there are more phases (i.e. in 4DCT). All produced data from DIR validation is stored on disk and can be reexamined by user upon request. Furthermore, images are created and data is summed up and displayed in a separate file. Users can then preview file for first validation of DIR and then open necessary files, if required.
+% With all different features to validate DIR it can be time consuming to go through them all. A special option was created to automatically go through all different validation steps. Furthermore it can also run through different phases, if there are more phases (i.e. in 4D-CT). All produced data from DIR validation is stored on disk and can be reexamined by user upon request. Furthermore, images are created and data is summed up and displayed in a separate file. Users can then preview file for first validation of DIR and then open necessary files, if required.
 
 % \subsection{Contour visualization}
 % \label{Contour}
@@ -262,23 +267,23 @@ As in Jacobian, ICE image is calculated and displayed, along with statistical va
 % 
 % \subsection{Motion estimation and ITV creation}
 % 
-% ITV is often created by an eye investigation of all 4DCT phases, where the extent of motion is estimated. Automatic creation of ITV is scarce in commercial system, since it requires DIR on all 4DCT phases. A Slicer module was created to assist with the motion estimation and automatic ITV creation using DIR. 
+% ITV is often created by an eye investigation of all 4D-CT phases, where the extent of motion is estimated. Automatic creation of ITV is scarce in commercial system, since it requires DIR on all 4D-CT phases. A Slicer module was created to assist with the motion estimation and automatic ITV creation using DIR. 
 % 
-% Module is able to estimate and display motion of a user selected contour in three axis (left-right, anterior-posterior, superior-inferior) based on DIR vector fields. Module also performs DIR on 4DCT with patient hierarchy, if it has not been done yet.
+% Module is able to estimate and display motion of a user selected contour in three axis (left-right, anterior-posterior, superior-inferior) based on DIR vector fields. Module also performs DIR on 4D-CT with patient hierarchy, if it has not been done yet.
 % 
-% Beside motion estimation, module can also propagate selected contour (usually CTV) and propagate it to all 4DCT and make a convolution of all propagated contours, resulting in automatically generated ITV.
+% Beside motion estimation, module can also propagate selected contour (usually CTV) and propagate it to all 4D-CT and make a convolution of all propagated contours, resulting in automatically generated ITV.
 % 
 % \subsubsection{Generation of mid-position phase}
 % 
-% Most commercial software calculates treatment plan on a single 3D CT scan, using 4DCT only for motion estimation. To incorporate patient-specific motion information, a 3D CT scan was created from 4DCT in the time averaged position, also known as mid-position scan (midP scan) \cite{Wolthaus2008}. With midP scan commercial software can still be used. Additionally, it also enabled smaller error margins for PTV generation and midP scan has less noise as individual 4DCT scans, because it uses more data. 
+% Most commercial software calculates treatment plan on a single 3D CT scan, using 4D-CT only for motion estimation. To incorporate patient-specific motion information, a 3D CT scan was created from 4D-CT in the time averaged position, also known as mid-position scan (midP scan) \cite{Wolthaus2008}. With midP scan commercial software can still be used. Additionally, it also enabled smaller error margins for PTV generation and midP scan has less noise as individual 4D-CT scans, because it uses more data. 
 % 
-% Construction of a midP begins with registration of whole 4DCT. The resulting vector fields from reference position to 4DCT phases are then averaged to obtain mean vector field, see Fig.~\ref{midPgeneration}. Afterwards, for each vector field the mean vector field was subtracted, yielding a set of mean-corrected vector fields pointing from mean position to corresponding 4DCT phase. The mean-corrected vector fields were finally inverted and applied to each 4DCT phase, resulting in each phase being in the same, time-averaged position. In the end the set of transformed 4DCT phase was averaged to obtain midP scan.
+% Construction of a midP begins with registration of whole 4D-CT. The resulting vector fields from reference position to 4D-CT phases are then averaged to obtain mean vector field, see Fig.~\ref{midPgeneration}. Afterwards, for each vector field the mean vector field was subtracted, yielding a set of mean-corrected vector fields pointing from mean position to corresponding 4D-CT phase. The mean-corrected vector fields were finally inverted and applied to each 4D-CT phase, resulting in each phase being in the same, time-averaged position. In the end the set of transformed 4D-CT phase was averaged to obtain midP scan.
 % 
 % \begin{figure}[H]
 % \begin{center}
 % \includegraphics[width=0.9\textwidth]{./Images/midPgeneration.png}
 % \caption{Computation of the midP scan. All vectors have the same starting point (reference phase, maximum exhale in the this example), therefore they can be averaged, resulting in the mean vector.
-% 	Next vectors from mean position to 4DCT phases have to be computed, which is achieved by subtracting original vectors and mean vector. Figure taken from \cite{Wolthaus2008}}
+% 	Next vectors from mean position to 4D-CT phases have to be computed, which is achieved by subtracting original vectors and mean vector. Figure taken from \cite{Wolthaus2008}}
 % \label{midPgeneration}
 % \end{center}
 % \end{figure}
@@ -288,23 +293,25 @@ As in Jacobian, ICE image is calculated and displayed, along with statistical va
 \section{Verification}
 \label{Verification}
 
-Several extensions for Slicer were created to preform DIR and DIRQA. All extensions have to undergo testing to prove their functionalities. Furthermore it is necessary to verify if extensions could be used in a typical clinical work flow. Especially DIRQA, which could bring the use of DIR in everyday clinical work flow.
+Several extensions for Slicer were created to preform DIR and DIRQA. All extensions have to undergo testing to prove their functionalities. Furthermore it is necessary to verify if extensions could be used in a typical clinical work flow.
+Especially DIRQA, which could facilitate the transition of DIR in everyday clinical work flow.
 
-DIR and DIRQA were done on lung 4DCT patient data. As part of a GSI pig-irradiation project \cite{Lehmann2015} DIR and DIRQA were integrated in a simulated clinical work flow. 
+DIR and DIRQA were done on lung 4D-CT patient data. As part of an animal study \cite{Lehmann2015} DIR and DIRQA were integrated in a simulated clinical work flow. 
 
-\subsection{Registration of lung 4DCT patient data}
+\subsection{Registration of lung 4D-CT patient data}
 \label{lungDIR}
 
-Chapter \textbf{REF} and \textbf{REF} present studies on simulating active scanning carbon ion treatment (CiT) for non-small cell lung cancer patients. The effects of interplay can drastically change the dose distribution for CiT and it is necessary to quantify the effects of motion with DIR and transfer results into treatment planning software (TRiP4D in our case). An automatic procedure is required to preform DIR and DIRQA on a large number of patients. This was achieved with Slicer modules described in Section~\ref{Implementation}.
+Chapters \textbf{REF} and \textbf{REF} present studies on simulating active scanning carbon ion treatment (CiT) for non-small cell lung cancer patients. The effects of interplay can drastically change the dose distribution for CiT and it is necessary to quantify the effects of motion with DIR and transfer results into treatment planning software (TRiP4D in our case). An automatic procedure is required to preform DIR and DIRQA on a large number of patients. This was achieved with Slicer modules described in Section~\ref{Implementation}.
 
 \subsubsection{Materials and Methods}
 
-A time-resolved CT (4DCT), consisting of 10 motion phases (0\% - 90\%) with approx. 1 mm pixel and 2 mm slice spacing was acquired with either Philips Brilliance BigBore 16-slice (Philips Healthcare, Eindhoven, Netherlands) or a Philips Gemini PET-CT 16-slice scanner. 23 4DCTs of lung cancer patients were used in this study.
-Phase 0\% corresponds to an end-inhale phase and was chosen as a reference phase.
+A time-resolved CT (4D-CT), consisting of 10 motion phases (0 - 9) with approx. 1 mm pixel and 2 mm slice spacing was acquired with either Philips Brilliance BigBore 16-slice 
+(Philips Healthcare, Eindhoven, Netherlands) or a Philips Gemini PET-CT 16-slice scanner. 
+Phase 0 and 5 correspond to the max end-inhale and max end-exhale breathing state, respectively. Phase 0 was chosen as a reference phase. 23 4D-CTs of lung cancer patients were used in this study.
 
-DIR was preformed for each patient between each phase and a reference phase and vice verse (true and inverse DIR). For each patient 18 DIRs were made, leading to 414 DIRs in total.
+True and inverse DIR were done for each patient between each phase and the reference phase. Each 4D-CT had 18 DIRs, leading to 414 DIRs in total.
 
-DIRs were done with B-Spline Plastimatch module and patient hierarchy in Slicer (see Section~\ref{Registration} and \ref{PatHierarchy}). B-Spline DIRs were made in two stages with details given in Table~\ref{tab:stages}. 
+B-Spline Plastimatch module in Slicer was used for DIR (see Section~\ref{RegistrationImplement}). DIRs were done in two stages with details given in Table~\ref{tab:stages}. 
 
 \begin{table}[H]
   \centering
@@ -322,23 +329,35 @@ DIRs were done with B-Spline Plastimatch module and patient hierarchy in Slicer 
   \label{tab:stages}
 \end{table}
 
-Absolute difference was computed for three image pairs: reference and moving image (default absolute difference), reference and moving warped image (true absolute difference), moving and reference warped image (inverse absolute difference). In total 621 absolute differences were calculated and a down-sampling by a factor of 2 was
-done on all images before calculation to save computer time. Similarly, 414 vector fields were also down-sampled by a factor of 2 before calculating Jacobian and ICE checks. Jacobian and ICE checks were calculated on all vector fields. Additionally, each vector field was analyzed for mean, standard deviation and maximum values of it's magnitudes.
+\begin{figure}[H]
+	\begin{center}		
+		\includegraphics[width=0.6\textwidth]{./Images/exampleReg.png}
+		\caption{Inverse color overlay of two phases before (a) and after (b) DIR. Vector field is displayed on image (a) as arrows.}
+		\label{exampleReg_lung}
+	\end{center}
+\end{figure}
 
-ROI around patient body was manually created to get better results - area outside of patient is roughly the same in all states (air) and does not contribute to DIR. ROI was then used in absolute difference, Jacobian and ICE.
+A ROI around patient body was manually created in Slicer by visually inspecting each reference phase of a 4D-CT. The ROI was then used for calculation of absolute difference, Jacobian and ICE.
 
-For each patient it took around 1 h for all 20 DIR and \textbf{30 min} for complete DIRQA on all 20 DIR on Linux computer with 8 clusters and 16 GB RAM.
+Default, true and inverse absolute difference were calculated (see Section~\ref{sec:absDiff}). In total 621 absolute differences were calculated. All images were down-sampled by a factor of 2
+before calculation to save computer time. Similarly, 414 vector fields were down-sampled by a factor of 2 before calculating Jacobian and ICE. Jacobian and ICE checks were calculated on all vector fields.
+Additionally, each vector field magnitudes were analyzed for mean, standard deviation (STD) and maximum (max) values. Paired t-tests were performed to compare statistical values of true and inverse vector field magnitudes.
+A p-value < 0.05 was considered significant. 
+
+
+For each patient it took around 20 min for all 18 DIR and around 30 min for complete DIRQA on the 18 DIR. A Linux computer with 8 central process units cores (CPU) and 32 GB RAM was used for DIR and DIRQA.
 
 
 \subsubsection{Results}
 
-DIR was successfully performed on all 23 patients. An example of DIR is displayed in Fig.~\ref{exampleReg_lung}. Vector fields statistical analysis is shown in Table~\ref{tab:vectordata_lung}. There was no statistical
-difference between true and inverse vector fields. The biggest contribution to vector field magnitude was from superior-inferior direction (around 50\%), next was anterior-posterior direction (around 30\%) and the smallest contribution was from left-right direction (around 20\%).
+An example of DIR is displayed in Fig.~\ref{exampleReg_lung}. Vector fields statistical analysis is shown in Table~\ref{tab:vectordata_lung}. There was no statistical
+difference between true and inverse vector field magnitudes. The biggest contribution to vector field magnitude was from superior-inferior direction (around 50\%), followed by anterior-posterior direction (around 30\%)
+by left-right direction (around 20\%).
 
 \begin{table}[H]
   \centering
 %   \footnotesize
-  \caption{Data of vector magintudes. Values are presented as average (range).}
+  \caption{Data of vector magintudes. Values are presented as mean (range).}
   \begin{tabular}{c|c|c}
   
        & True vector field & Inverse vector field  \\
@@ -353,71 +372,55 @@ difference between true and inverse vector fields. The biggest contribution to v
 
 True and inverse absolute difference dependence on default absolute difference is shown in Fig.~\ref{absDiff_lung}. It also shows default absolute difference distribution across 9 phases. 
 
-Distribution of true and inverse Jacobian and ICE data are displayed in Fig. \ref{jacobian_data} and \ref{ice}. Dependence of maximum true Jacobian on minimum inverse Jacobian and vice verse was tested and results are display in Fig.~\ref{calcJac_lung}. Parameters from linear fit in Fig.~\ref{calcJac_lung} were used to calculate so-called scaled Jacobian for points that deviated from linear fit. Each voxel, $x$, in scaled Jacobian, $S$ was calculated from true and inverse Jacobian, $J_{True}$ and $J_{Jacobian}$, as:
-
-\begin{equation}
-S(x) = 1.7 ln(J_{True}(x)) + ln(J_{Inverse}(x))
-\end{equation}
-
-Example of scaled Jacobian is shown in Fig.~\ref{calcJac_lung}.
+Distribution of true and inverse Jacobian and ICE data are displayed in Fig. \ref{jacobian_data}. 
 
 True and inverse maximum and minimum Jacobian and maximum ICE values were plotted against maximum vector magnitudes and fitted with linear function. Results are shown in Fig.~\ref{maxvf}.
 
-All linear fits used in Fig.~\ref{absDiff_lung}, ~\ref{calcJac_lung} and ~\ref{maxvf} were statistically significant (p < 0.05).
-
-\begin{figure}[H]
-	\begin{center}		
-		\includegraphics[width=0.6\textwidth]{./Images/exampleReg.png}
-		\caption{Inverse color overlay of two phases before (a) and after (b) DIR. Vector field is displayed on image (a) as arrows.}
-		\label{exampleReg_lung}
-	\end{center}
-\end{figure}
-
+All linear fits used in Fig.~\ref{absDiff_lung} and ~\ref{maxvf} were statistically significant (p < 0.05).
 
 
 \begin{figure}[H]
 	\begin{center}		
 		\includegraphics[width=0.7\textwidth]{./Images/absDiff.png}
-		\caption{Natural logarithm of true and inverse absolute difference (AbsDiff) plotted against default absolute difference (DefAbsDiff). Solid line shows linear fit, with parameters
-		written in corner. Dashed line shows $y(x)=x$ plot. Inset is a box plots of DefAbsDiff mean distribution across nine 4DCT phases. Boxes represent 25-75\%, whiskers 10-90\%
+		\caption{(a) Mean true and inverse absolute difference plotted against mean default absolute difference. Solid line shows linear fit, with parameters
+		written in corner. Dashed line shows $y(x)=x$. (b) Box plots of mean default absolute difference distribution across nine 4D-CT phases. Boxes represent 25-75\%, whiskers 10-90\%
 		of data, median is shown with solid line, mean with square and outliers with crosses.}
 		\label{absDiff_lung}
 	\end{center}
 \end{figure}
 
-
 \newpage
 
 \begin{figure}[H]
 	\begin{center}		
-		\includegraphics[width=0.75\textwidth]{./Images/Jacobian_data.png}
-		\caption{Data for true (top) and inverse (bottom) Jacobian for 9 4DCT phases (reference phase 0 is excluded) for 23 lung cancer patients. Mean, STD, maximum and minimum are represented as (a), (b), (c) and (d), respectively.
-		Boxes represent 25-75\%, whiskers 10-90\% of data, median is shown with solid line, mean with square and outliers with crosses.}
+		\includegraphics[width=0.9\textwidth]{./Images/Jacobian_data.png}
+		\caption{Data for true (top) and inverse (middle) Jacobian and ICE (bottom) for 9 4D-CT phases (reference phase 0 is excluded) for 23 lung cancer patients. Mean, STD, maximum and minimum are represented as (a), (b), (c) and (d), respectively.
+		Minimum ICE is 0 throughout all phases and patients. Boxes represent 25-75\%, whiskers 10-90\% of data, median is shown with solid line, mean with square and outliers with crosses.}
 		\label{jacobian_data}
 	\end{center}
 \end{figure}
 
 \newpage
 
-\begin{figure}[H]
-	\begin{center}		
-		\includegraphics[width=0.9\textwidth]{./Images/ICE.png}
-		\caption{Data for ICE for 9 4DCT phases (reference phase 0 is excluded) for 23 lung cancer patients. Mean, STD, maximum are represented as (a), (b) and (c), respectively. ICE Minimum is 0 throughout all phases and patients.
-		Boxes represent 25-75\%, whiskers 10-90\% of data, median is shown with solid line, mean with square and outliers with crosses.}
-		\label{ice}
-	\end{center}
-\end{figure}
+% \begin{figure}[H]
+% 	\begin{center}		
+% 		\includegraphics[width=0.9\textwidth]{./Images/ICE.png}
+% 		\caption{Data for ICE for 9 4D-CT phases (reference phase 0 is excluded) for 23 lung cancer patients. Mean, STD, maximum are represented as (a), (b) and (c), respectively. ICE Minimum is 0 throughout all phases and patients.
+% 		Boxes represent 25-75\%, whiskers 10-90\% of data, median is shown with solid line, mean with square and outliers with crosses.}
+% 		\label{ice}
+% 	\end{center}
+% \end{figure}
 
 
 
-\begin{figure}[H]
-	\begin{center}		
-		\includegraphics[width=0.8\textwidth]{./Images/jacSum_lung.png}
-		\caption{(a) Plot of negative natural logarithm of minimum inverse (true) Jacobian versus natural logarithm of maximum true (inverse) Jacobian. Linear fit is displayed with solid line and it's parameters are given in the corner. A deviation from linear fit (highlighted with blue square)
-			was used as an example of scaled Jacobian (see text), shown in (b). (c) shows the CT the phases highlighted in (a) in inverse color, where an artifact is clearly seen in one phase and not the other.}
-		\label{calcJac_lung}
-	\end{center}
-\end{figure}
+% \begin{figure}[H]
+% 	\begin{center}		
+% 		\includegraphics[width=0.8\textwidth]{./Images/jacSum_lung.png}
+% 		\caption{(a) Plot of negative natural logarithm of minimum inverse (true) Jacobian versus natural logarithm of maximum true (inverse) Jacobian. Linear fit is displayed with solid line and it's parameters are given in the corner. A deviation from linear fit (highlighted with blue square)
+% 			was used as an example of scaled Jacobian (see text), shown in (b). (c) shows the CT the phases highlighted in (a) in inverse color, where an artifact is clearly seen in one phase and not the other.}
+% 		\label{calcJac_lung}
+% 	\end{center}
+% \end{figure}
 
 \newpage
 
@@ -431,41 +434,58 @@ All linear fits used in Fig.~\ref{absDiff_lung}, ~\ref{calcJac_lung} and ~\ref{m
 \end{figure}
 
 \newpage
-
 \subsubsection{Discussion}
+A DIR was successfully made for 23 4D-CTs, producing 414 true and inverse vector fields. All 414 DIR underwent a DIRQA consisting of vector field magnitudes, absolute difference, Jacobian and ICE.
 
 Vector field magnitudes confirm previously published data that the biggest motion for lungs is in superior-inferior direction \cite{Seppenwoolde2002, Britton2007, Liu2007}. The mean vector field magnitude is small (in submilimiter range), 
 because the ROI included the whole patient body, not just the lungs where most of the motion occurs. Vectors and inverse vectors are similar, which was expected.
 
-There was a good correlation (Pearson's r = 0.91) between absolute difference before and after DIR. The greater the difference between reference and moving image, the better DIR can lessen it. Few cases
-have slightly higher absolute difference after DIR, which should not occur, since DIR was minimizing absolute difference metric. The reason lies in construction of warped images. Vector field is used to transform
-moving image to warped image. If the vector field is large on the edges, an empty space will be left there in warped image. Absolute difference will therefore seem larger after DIR. A future modification of absolute difference
-module should handle empty spaces at the edges.
+There was a good correlation (Pearson's r = 0.87) between absolute difference before and after DIR. The slope of lineare fit suggests, that B-Spline DIR on average halves the absolute difference. However, there are several outliers from the
+linear fit for default absolute difference bigger than 50 HU. All absolute differences after the DIR are smaller then before, which is a necessary condition in order for DIR to be considered successful.
 
-Due to small mean vector field magnitudes, values for true and inverse Jacobian were close to 1 with small STD, which indicates that most of the patient body does not change during the 4DCT scan. This is also a direct consequence of a small vector field magnitude.
-However, patient expansions and contractions can be seen on maximum and minimum Jacobian, with average values around 1.50 and 0.65 respectively. If a part of a patient body contracts from reference to moving image, 
-then it expands in inverse direction and vice versa. The correlation was confirmed in Fig.~\ref{calcJac_lung}a, with a high Pearson's r (0.90). Furthermore outliers from linear fit spot inconsistencies
-in DIR as shown in Fig.~\ref{calcJac_lung}b and c, where a small artifact was found in one patient phase solely from the deviation from linear fit in Fig.~\ref{calcJac_lung}. A scaled Jacobian could be used as a DIRQA check.
 
-Mean and STD ICE are in submilimeter range, due to the correlation between vector field and ICE (see Eq.~\ref{eq:ice}). The maximum ICE values can be large, with up to 2.3 cm, 
+Due to small mean vector field magnitudes, average values for true and inverse Jacobian were $1\pm0.05$, which indicates that most of the patient body does not change during the 4D-CT
+scan. However, patient expansions and contractions can be seen on maximum and minimum Jacobian, with average values around 1.50 and 0.65 respectively. 
+% If a part of a patient body contracts from reference to moving image, 
+% then it expands in inverse direction and vice versa. The correlation was confirmed in Fig.~\ref{calcJac_lung}a, with a high Pearson's r (0.90). Furthermore outliers from linear fit spot inconsistencies
+% in DIR as shown in Fig.~\ref{calcJac_lung}b and c, where a small artifact was found in one patient phase solely from the deviation from linear fit in Fig.~\ref{calcJac_lung}. A scaled Jacobian could be used as a DIRQA check.
+
+Mean and STD ICE are in submilimeter range, due to the correlation between vector field and ICE (see Eq.~\ref{eq:ice}). The maximum ICE (2.3 cm) was observed in a patient with 
+an artifact present in the state 2 of 4D-CT, as shown in Fig.~\ref{maxvf}.
 but still smaller as average maximum vector values. 
 
-Large vector field magnitudes will produce more errors in DIR as shown in Fig~\ref{maxvf}. Linear fit was used to estimate increase (decrease) of Jacobian and ICE. As a rough DIRQA check, ICE
-should always be smaller as maximum vector field values. To confirm this, all cases above dashed line in Fig~\ref{maxvf}c were investigated and were found to have areas of poor DIR. An extreme case (highlighted in Fig.~\ref{maxvf}a-c)
-had a large image artifact present in one phase (shown in Fig.~\ref{maxvf}d) leading to inconsistencies in DIR.
+Large vector field magnitudes will produce more errors in DIR as shown in Fig~\ref{maxvf}. Linear fit was used to estimate increase (decrease) of Jacobian and ICE. 
+As a rough DIRQA check, ICE should always be smaller than maximum vector field magnitudes. To confirm this, all cases above dashed line in Fig~\ref{maxvf}c 
+were investigated and were found to have areas of poor DIR. An extreme case (highlighted in Fig.~\ref{maxvf}a-c)
+had a large image artifact present in phases 2 and 3 (phase 3 with ICE is shown in Fig.~\ref{maxvf}d) leading to large inconsistencies in DIR. 
+The effect of DIR inconsistency on contour propagation can be seen in Fig.~\ref{contourPropagation},
+where lungs and liver contour were propagated using DIR. The propagated contours clearly differ from the image features.
+
+The 4D-CT DIR investagated here were used in particle therapy treatment planning. All areas that were found to have a poor DIR, were so far away from the target, that it did not effect contour propagation of 4D dose calculation and
+hence a repetition of DIR was not necessary.
+I. e. the patient in Fig.~\ref{contourPropagation} had a tumor in the upper left lung lobe and DIR inconsistencies were found in lower right lung lobe. 
+Therefore all DIRs were considered successful. It should be stressed, however, that in this study only 4D-CTs that had a good contrast and no image artifacts in tumor vicinity were used. For a 
+fair comparision, random 4D-CTs should be used.
+
+\begin{figure}[H]
+	\begin{center}		
+		\includegraphics[width=0.9\textwidth]{./Images/ContourPropagation/contourPropagation.png}
+		\caption{Example of a contour propagation with a inconsistent DIR. Lungs are outlined in brown and liver in red.}
+		\label{contourPropagation}
+	\end{center}
+\end{figure}
 
 
 \newpage
-\subsection{Registration of pig heart 4DCT data}
+\subsection{Registration of pig heart 4D-CT data}
 
-Atrial fibrillation is an unorganized atrial activity, causing a quivering motion of the heart. Heart is therefore not able to sustain a healthy pumping rhythm. Atrial fibrillation is not a
-deadly disease, however it worsens the patients quality of life and increases the risk of a stroke \cite{Benjamin1998}. A common method for treating atrial fibrillation is catheter ablation \cite{January2014}, 
+Atrial fibrillation is the most common type of cardiac arrhythmia, causing a quivering motion of the heart. In itself it is not a life threatening, however it worsens the patients quality of life and increases the risk of a stroke \cite{Benjamin1998}. A common method for treating atrial fibrillation is catheter ablation \cite{January2014}, 
 where the success rate is still limited and can even lead to major complications or even death of a patient \cite{Cappato2005,Cappato2010}.
 
 As an alternative treatment, a carbon-ion therapy was proposed \cite{Bert2012} and later feasibility on a beating heart was shown experimentally \cite{Lehmann2015b}. In 2014 a pilot experiment was performed at GSI using large animal model (pigs) and
 scanned carbon-ion to verify the treatment in vivo \cite{Lehmann2015}.
 
-To estimate and compensate motion of the heart during irradiation DIR of 4DCT data was required. Furthermore, because of the actual irradiation of live pigs a DIRQA had to be made, to ensure the validity of DIR. Description of the procedure will be given here,
+To estimate and compensate motion of the heart during irradiation DIR of 4D-CT data was required. Furthermore, because of the actual irradiation of live pigs a DIRQA had to be made, to ensure the validity of DIR. Description of the procedure will be given here,
 alongside with the results.
 
 
@@ -474,20 +494,23 @@ alongside with the results.
 
 \subsubsection{Pig irradiation experiment}
 
-DIR and DIRQA procedures will be given here, while a detailed description of the whole pig irradiation experiment can be found elsewhere is given here \cite{Lehmann2015}. A cardiac gated contrast enhanced CT scans (4DCT-cardiac) were made on 15 pigs with a multidetector 64 row Siemens Somatom Definition Flash scanner 
-(Siemens Healthcare, Forchheim, Germany) with 1 mm voxel and 1 mm slice spacing. There was no breathing motion present, since a breath-hold technique was used. Cardiac motion was divided into 10 sequential phases (0-10\%) and a field of view of 400 mm for skin-to-skin images was used.
-8 pigs had a pacemaker implemented, because the irradiation was planned to disturb the heart rhythm and a pacemaker should compensate for that. Pigs are therefore divided into two groups, with pacemaker (PM) and without one (noPM).
+DIR and DIRQA procedures will be given here, while a detailed description of the whole pig irradiation experiment can be found elsewhere \cite{Lehmann2015}. Cardiac gated contrast-enhanced CT scans (4D-CT-cardiac) were made on 15 pigs with a multidetector 64 row Siemens Somatom Definition Flash scanner 
+(Siemens Healthcare, Forchheim, Germany) with 1 mm voxel and 1 mm slice spacing. There was no breathing motion present, since a breath-hold technique was used. Cardiac motion was based on electrocardiography (ECG)
+and was divided into 10 sequential phases (0-9). 
+8 pigs had a pacemaker implemented, because the irradiation was planned to disturb the heart rhythm and a pacemaker should compensate for that. Pigs are therefore divided into two groups, with pacemaker (PM), $n=8$, and without one (noPM), $n=7$.
 
-After CT acquisition, DIR on 4DCT-cardiac was made using B-Spline Plastimatch module and patient hierarchy in Slicer (see Section~\ref{Registration} and \ref{PatHierarchy}). Details on parameters used for DIR can be found in Table~\ref{tab:stages2}. 
-Phase 0\% was chosen as a reference phase. All other phases were registered to reference phase with inverse registration as well. A checklist was made to follow DIR and DIRQA for quality assurance. An example of a used checklist is shown in Fig.~\ref{checkList}a.
+After CT acquisition, DIR on 4D-CT-cardiac was made using B-Spline Plastimatch module in Slicer (see Section~\ref{RegistrationImplement}). 
+Details on parameters used for DIR can be found in Table~\ref{tab:stages2}. Phase 0 was chosen as a reference phase. Phase 3 corresponds to a maximum heart contraction with likely
+the biggest motion. All other phases were registered to reference phase with inverse registration as well. 
+A checklist was made to follow DIR and DIRQA for quality assurance. An example of a filled-out checklist is shown in Fig.~\ref{checkList}a.
 
-Based on lung patient DIR and because of the time pressure, DIRQA was made only on DIR from one phase, phase 50\%. DIRQA consisted of true absolute difference\footnote{Relative difference between moving and warped image absolute difference was displayed in DIRQA file rather than just absolute values.} 
-, true Jacobian and ICE. DIRQA results were stored in a text file (example shown in Fig.~\ref{checkList}b) and users checked if the values did not exceed expected ones: Absolute difference
-mean should be smaller than 1; Jacobian mean should be 1 with not too high extreme values; ICE mean should be smaller than 2 mm with not too high extreme values. ROI was manually created to encompass pig body and then used in all DIRQA checks.
+Based on lung patient DIR and because of the time constraints in the study workflow, DIRQA was made only on DIR from phase 5. 
+DIRQA consisted of default and true absolute difference, true Jacobian and ICE. DIRQA results were stored in a text file (example shown in Fig.~\ref{checkList}b) and users checked if the values did not exceed expected ones: Mean absolute difference
+should be smaller than 1; mean Jacobian  should be 1; mean ICE  should be smaller than 2 mm. ROI was manually created in Slicer to encompass the pig body and then used in all DIRQA checks.
 
-After successful DIR and DIRQA vector fields were used in treatment planning and the resulting plans were used in pig irradiation experiment.
+After a successful DIR and DIRQA vector fields were used in a treatment planning and the resulting plans were used in the pig irradiation experiment.
 
-\textit{For each patient it took around 1 h for all 20 DIR on Linux computer with 8 clusters and 16 GB RAM.}
+Around 20 minutes were needed for each pig DIR and additional 20 minutes for pig DIRQA. Calculations were done on a Linux computer with 8 CPU cores and 32 GB RAM.
 
 \begin{table}[H]
   \centering
@@ -507,25 +530,36 @@ After successful DIR and DIRQA vector fields were used in treatment planning and
 
 \subsubsection{Post-experiment analysis}
 
-After pig irradiation experiment, a more detailed DIRQA was made, with all phases included in DIRQA. In addition to original checks explained in previous section, absolute difference checks were made on inverse warped image, 
-inverse Jacobian and vector magnitudes were analyzed.
+After the conclusion of the animal study, a more detailed DIRQA was made, with all motion phases included in DIRQA. In addition to original checks explained in previous section, vector field magnitudes were analyzed, inverse absolute difference
+and Jacobian were calculated. Paired t-tests were used to test statistical significance for vector field magnitudes between true and inverse vector fields and PM and noPM groups.
 
 \newpage
 \begin{figure}[H]
 	\begin{center}		
-		\includegraphics[width=0.9\textwidth]{./Images/checkList.png}
-		\caption{(a) Part of the checklist for quality assurance during pig irradiation. DIR and DIRQA part is highlighted in red and consisted of two steps. First DIR was made on 4DCT-cardiac and afterwards DIRQA was made on
-		DIR from phase 50\%. End result was presented as text shown in (b). Maximum values for absolute difference were disregarded, because there can be large deviations in individual voxels.}
+		\includegraphics[width=0.8\textwidth]{./Images/checkList.png}
+		\caption{(a) Part of the checklist for quality assurance during pig irradiation. DIR and DIRQA part is highlighted in red and consisted of two steps. First DIR was made on 4D-CT-cardiac and afterwards DIRQA was made on
+		DIR from phase 50\%. End result was presented as text shown in (b). Relative absolute difference stands for ratio between true and default absolute difference.}
 		\label{checkList}
 	\end{center}
 \end{figure}
 \newpage
+\begin{figure}[H]
+	\begin{center}		
+		\includegraphics[width=0.9\textwidth]{./Images/AbsDiff_pigs.png}
+		\caption{(a) Mean true and inverse absolute difference plotted against mean default absolute difference. Solid line shows linear fit, with parameters
+		written in corner. Dashed line shows $y(x)=x$. (b) Box plots of mean default absolute difference distribution across nine 4D-CT phases. Boxes represent 25-75\%, whiskers 10-90\%
+		of data, median is shown with solid line, mean with square and outliers with crosses.}
+		\label{absDiff_pigs}
+	\end{center}
+\end{figure}
 
 \subsubsection{Results}
 
+An example of pig DIR is shown in Fig.~\ref{exampleReg_pigs}. One DIRQA during animal study showed higher mean true absolute difference than mean default absolute difference. The registration
+was therefore repeated with three stages instead of 2. Third stage had 100 iterations with resolution size ``1, 1, 1`` and grid size ''10``. All other DIRQA checks were positive.
 
-All DIRs were successful and during experiment all DIRQA checks were positive. An example of DIR is shown in Fig.~\ref{exampleReg_pigs}. Statistical analysis on vector field magnitudes is shown in Table~\ref{tab:vectordata_pig}. No statistical difference was
-observed between true and inverse vector fields. However, significant difference was observed between vector field magnitudes of PM and noPM. Contributions to vector field magnitudes from three axis were equal. 
+Post-experiment statistical analysis on vector field magnitudes is shown in Table~\ref{tab:vectordata_pig}. No statistical difference was
+observed between true and inverse vector fields. However, significant difference was observed between vector field magnitudes of PM and noPM groups. Contributions to vector field magnitudes from three axis were equal. 
 
 
 \begin{table}[H]
@@ -533,7 +567,7 @@ observed between true and inverse vector fields. However, significant difference
 %   \footnotesize
   \caption{Data for vector magnitudes. Values are presented as mean (range).}
   \begin{tabular}{c|c|c|c|c}
-	    & \multicolumn{2}{|c|}{PM} & \multicolumn{2}{|c|}{noPM} \\
+	    & \multicolumn{2}{|c|}{PM} & \multicolumn{2}{|c}{noPM} \\
   
             & True vector field   & Inverse vector field   & True vector field  & Inverse vector field \\
        \hline
@@ -553,21 +587,14 @@ observed between true and inverse vector fields. However, significant difference
 	\end{center}
 \end{figure}
 
-Dependence of true and inverse absolute difference on default absolute difference with a linear fit is shown in Fig.~\ref{absDiff_pigs}. Default absolute difference distribution across 9 phases can be seen in inset in Fig.~\ref{absDiff_pigs}.
+Dependence of true and inverse absolute difference on default absolute difference with a linear fit is shown in Fig.~\ref{absDiff_pigs}a. 
+Default absolute difference distribution across 9 phases can be seen in Fig.~\ref{absDiff_pigs}b.
 
-Distribution of Jacobian and ICE results are shown in Fig. \ref{jacobian_data_pigs} and \ref{ice_pigs}. Maximum true (inverse) Jacobian was plotted against minimum inverse (true) Jacobian and results were fitted with a linear function, see Fig~\ref{calcJac_pigs}. Maximum values of true and inverse Jacobian and maximum ICE were tested against maximum vector magnitudes and fitted with linear function. Results are plotted in Fig.~\ref{maxvf_pigs}.
+Distribution of Jacobian and ICE results are shown in Fig.~\ref{jacobian_data_pigs}. Maximum values of true and inverse Jacobian and maximum ICE were
+tested against maximum vector magnitudes and fitted with linear function. Results are plotted in Fig.~\ref{maxvf_pigs}.
 
-All linear fits in Fig.~\ref{absDiff_pigs}, ~\ref{calcJac_pigs} and ~\ref{maxvf_pigs} were statistically significant (p < 0.05).
+All linear fits in Fig.~\ref{absDiff_pigs} and ~\ref{maxvf_pigs} were statistically significant (p < 0.05).
 
-\begin{figure}[H]
-	\begin{center}		
-		\includegraphics[width=0.9\textwidth]{./Images/AbsDiff_pigs.png}
-		\caption{Natural logarithm of true and inverse absolute difference (AbsDiff) plotted against default absolute difference (DefAbsDiff). Solid line shows linear fit, with parameters
-		written in the corner. Dashed line shows $y(x)=x$ plot. Inset shows box plots of mean distribution of DefAbsDiff across nine 4DCT-cardiac phases. Boxes represent 25-75\%, whiskers 10-90\%
-		of data, median is shown with solid line, mean with square and outliers with crosses.}
-		\label{absDiff_pigs}
-	\end{center}
-\end{figure}
 
 
 \newpage
@@ -575,30 +602,30 @@ All linear fits in Fig.~\ref{absDiff_pigs}, ~\ref{calcJac_pigs} and ~\ref{maxvf_
 \begin{figure}[H]
 	\begin{center}		
 		\includegraphics[width=0.75\textwidth]{./Images/Jacobian_data_pigs.png}
-		\caption{Statistical data for true (top) and inverse (bottom) Jacobian for 9 4DCT-cardiac phases (reference phase 0 is excluded) for 15 pigs. Mean, STD, maximum and minimum are represented as (a), (b), (c) and (d), respectively.
-		Boxes represent 25-75\%, whiskers 10-90\% of data, median is shown with solid line, mean with square and outliers with crosses.}
+		\caption{Statistical data for true (top) and inverse (middle) Jacobian and ICE (bottom) for 9 4D-CT-cardiac phases (reference phase 0 is excluded) for 15 pigs. Mean, STD, maximum and minimum are represented as (a), (b), (c) and (d), respectively.
+		Minimum ICE is 0 throughout all phases and pigs. Boxes represent 25-75\%, whiskers 10-90\% of data, median is shown with solid line, mean with square and outliers with crosses.}
 		\label{jacobian_data_pigs}
 	\end{center}
 \end{figure}
 
 \newpage
 
-\begin{figure}[H]
-	\begin{center}		
-		\includegraphics[width=0.9\textwidth]{./Images/ICE_pigs.png}
-		\caption{Statistical data for ICE for 9 4DCT phases (reference phase 0 is excluded) for 15 pigs. Mean, STD, maximum are represented as (a), (b) and (c), respectively. ICE Minimum is 0 throughout all phases and pigs.
-		Boxes represent 25-75\%, whiskers 10-90\% of data, median is shown with solid line, mean with square and outliers with crosses.}
-		\label{ice_pigs}
-	\end{center}
-\end{figure}
+% \begin{figure}[H]
+% 	\begin{center}		
+% 		\includegraphics[width=0.9\textwidth]{./Images/ICE_pigs.png}
+% 		\caption{Statistical data for ICE for 9 4D-CT phases (reference phase 0 is excluded) for 15 pigs. Mean, STD, maximum are represented as (a), (b) and (c), respectively. 
+% 		Boxes represent 25-75\%, whiskers 10-90\% of data, median is shown with solid line, mean with square and outliers with crosses.}
+% 		\label{ice_pigs}
+% 	\end{center}
+% \end{figure}
 
-\begin{figure}[H]
-	\begin{center}		
-		\includegraphics[width=0.9\textwidth]{./Images/JacSum2.png}
-		\caption{(a) Plot of negative natural logarithm of minimum Jacobian versus natural logarithm of maximum Jacobian. Linear fit is displayed with solid line and it's parameters are given in the corner. PM and noPM are shown with red squares and green circles, respectively.}
-		\label{calcJac_pigs}
-	\end{center}
-\end{figure}
+% \begin{figure}[H]
+% 	\begin{center}		
+% 		\includegraphics[width=0.9\textwidth]{./Images/JacSum2.png}
+% 		\caption{(a) Plot of negative natural logarithm of minimum Jacobian versus natural logarithm of maximum Jacobian. Linear fit is displayed with solid line and it's parameters are given in the corner. PM and noPM are shown with red squares and green circles, respectively.}
+% 		\label{calcJac_pigs}
+% 	\end{center}
+% \end{figure}
 
 \begin{figure}[H]
 	\begin{center}		
@@ -609,28 +636,35 @@ All linear fits in Fig.~\ref{absDiff_pigs}, ~\ref{calcJac_pigs} and ~\ref{maxvf_
 	\end{center}
 \end{figure}
 
-
 \subsubsection{Discussion}
+
+All 15 pig 4D-CTs have been registered, which resulted in 270 DIR. DIRQA was done in two steps - a smaller DIRQA during animal study and a complete DIRQA after it.
 
 Mean vector field magnitudes were small (approx. 0.1 mm), since pigs were in a breath-hold position and the only motion was the beating of the heart. 
 Despite the small mean vector magnitude it was still enough to observe statistical difference between the PM and noPM.
 Consequently, the difference between the two groups is consistent throughout the DIRQA.
 
-The DIR did well in terms of lowering the absolute difference metric. There was a strong correlation between default versus true and inverse absolute difference. The shape of default absolute difference
-distribution persist then in other DIRQA check as well.
+The DIR did well in terms of lowering the absolute difference metric. There was a strong correlation between default versus true and inverse absolute difference. 
+The slope from linear fit on Fig.~\ref{absDiff_pigs} has the same value than the slope from lung 4D-CT (see Fig.~\ref{absDiff_lung}), showing
+the effectivness of B-Spline algorithm. The distribution of default absolute difference across different phases is smaller than in lung 4D-CT (10 HU compared to 35 HU), due to the fact
+there was less motion present in a pig 4D-CT. The shape of default absolute difference
+distribution persist then in the Jacobian and ICE distributions as well. 
 
 A good result in absolute difference does not necessary mean a good DIR, as can be seen from Jacobian and ICE checks. The mean Jacobian and ICE were 1 and 0, respectively, since the
 vector fields were small on average. However there were large deviations present in Jacobian and ICE. Most notably, there were a few cases of negative minimum Jacobian which would suggest 
-organ folding. Since organ folding did not occur during a heart beat, negative minimum Jacobian points to inconsistencies in DIR. The inconsistencies in DIR can be also seen on Fig~\ref{calcJac_pigs},
-with a poor correlation between minimum inverse and maximum true Jacobian. The correlation is better for noPM, however there are still cases that deviate from linear fit.
+organ folding. Since organ folding did not occur during a heart beat, negative minimum Jacobian points to inconsistencies in DIR. 
 
-The large deviations in Jacobian and ICE can in part be explained with large maximum vector field values, as shown in Fig.~\ref{maxvf_pigs}. All linear fits have good correlation, with no
+The large deviations in Jacobian and ICE can in part be explained with large maximum vector field values, as shown in Fig.~\ref{maxvf_pigs}. All linear fits have a good correlation, with no
 difference between PM and noPM in the quality of the fits. The actual linear fit parameters, however, further show the inconsistencies in DIR. The clearest example of inconsistencies in
-DIR is with linear fit from maximum ICE PM, which lies above $y(x)=x$ function. This basically means that there were points further away from starting point after true and inverse transformation, 
+DIR is with linear fit from maximum ICE PM, which lies above $y(x)=x$ function. This means that there were points further away from starting point after true and inverse transformation, 
 then just after true transformation. The linear fit for noPM maximum ICE showed better results in this terms, since it lied below $y(x)=x$ function.
 
-DIRQA during experiment on phase 5 did not show any inconsitencies in DIR.  A complete analysis should be made from the start, since DIRQA from one phase does not guaranty the DIR quality of the other 4DCT phases. Each DIR is performed individually and should be treated as such. However, deviations in DIR from single 4DCT could be used to
-spot inconsistencies.
+
+During animal study only one DIR was repeated because of DIRQA. It was shown in post-experiment analysis, that all DIR should be repeated, pointing out flaws in initial DIRQA procedure.
+Mainly, DIRQA should be made on all DIR and not just on one phase, since DIRQA from one DIR does not guaranty the quality of the other DIRs from the same 4D-CT. 
+Each DIR is performed individually and should be treated as such. Furthermore, instead of mean Jacobian and ICE, maximum and minimum should be investigated, 
+because it points to the worst part of the DIR.
+
 
 
 % \subsection{Mid-Position patient example}
@@ -639,50 +673,106 @@ spot inconsistencies.
 \section{Summary and Discussion}
 \label{Summary}
 
-Tools to preform DIR and DIRQA were presented in this chapter. Different modules were written for an open-source software Slicer, that can handle large DIR problems, such as registering whole 4DCT. In addition to DIR the modules can also make DIRQA on the same set as DIR was made with several different
-checks. The main objective of this work was to provide systematic approach to DIR and DIRQA. Additionally, parameters for DIRQA were calculated on a large database – two different sets (human lung 4DCT and pig heart 4DCT) with 684 DIR in total. Parameters obtained could be used as an estimate of the quality of DIR.
+Tools to preform DIR and DIRQA were presented in this chapter. Different modules were written for an open-source software Slicer that can handle large DIR problems, such as registering whole 4D-CTs. 
+In addition to DIR, the modules can also calculate DIRQA on DIR warped images and vector fields with several different checks.
+The main objective of this work was to provide systematic approach to DIR and to give parameters on DIRQA that can estimate the quality of DIR. A first analysis of DIRQA checks was done on a large DIR database - 684s DIR were checked in total.
 
-Most of the work was based on Slicer, which is well-established software in medical research. To date, there are more than 500 publications that have used Slicer in their research \cite{SlicerCitation}, with topics ranging from 
-teaching \cite{Pujol2016}, disease staging \cite{Liu2016, Liu2015}, motion tracking \cite{Behringer2015} to image reconstruction \cite{Meyer2015}, image registration \cite{Li2015, Fedorov2015, Li2015b}
-and others. Slicer offers a lot of different functionalities and is especially good for research, since it can be modified to specific needs. However, it is important to note that Slicer 
-is not a clinical application and can be used only for research. Additionally, Slicer can sometimes be unstable with unexpected crashes. It is constantly under development and more and more errors
-are fixed with each new release. New releases also bring new functionalities, and sometimes problems with backtrack compatibility can occour. Even though there are some disadvantages to using Slicer, it's advantages
-definetelly outweigh them and make Slicer a useful tool, as was showed in this chapter.
+Most of the work was based on Slicer, which is well-established software in medical research. To date, there are more than 500 publications that have used Slicer in their research \cite{SlicerCitation}, with topic ranging from 
+teaching \cite{Pujol2016}, disease staging \cite{Liu2015, Liu2016}, motion tracking \cite{Behringer2015} to image reconstruction \cite{Meyer2015}, image registration \cite{Li2015, Fedorov2015, Li2015b}
+and others. Slicer offers different functionalities and is especially suited for research, since it can be modified to specific needs. However, it is important to stress that Slicer 
+is not a medical application. Additionally, Slicer can sometimes be unstable with unexpected crashes. It is constantly under development and more and more errors
+are fix with each new release. New releases also bring new functionalities, but there can be problems with backtrack compatibility Even though there are some disadvantages to using Slicer, it's advantages
+outweigh them and make Slicer a useful tool, as was shown in this chapter.
 
-Results shown in this chapter were obtained with DIR made by B-Spline algorithm. Several other algorithms exist, demons most commonly used in meidcal research alongside B-Spline \cite{Thirion1998}. Varadhan et al. made comparison
-between B-Spline and demons DIR for lung case \cite{Varadhan2013} and showed that B-Spline is superior to demons, especially if there is difference in contrast between images. They used mutual information
-metric, to account for differences in contrast. Images used in this chapter were either all without (lung case) or all with (pig heart case) contrast agent, therefore there was no difference in contrast
-between images. Mutual information metric was tested as well for the two sets mentioned, however the results were  worse than mean square error metric.
+Results shown in this chapter were obtained with B-Spline DIR algorithm. Several other algorithms exist, demons most commonly used alongside B-Spline \cite{Thirion1998}. Varadhan et al. compared B-Spline and demons DIR
+for lung case \cite{Varadhan2013} and showed that B-Spline is superior to demons, especially if there is difference in contrast between images. They used a mutual information
+metric, to account for differences in contrast. Images used in this chapter were either all without (lung 4D-CTs) or all with (animal study 4D-CTs) contrast agent, therefore there was no difference in contrast
+between images and mutual metric could not be used.
+% . Mutual information metric was tested as well for DIR. For lung 4D-CT it could not complete DIR, because the phases are too similar, however for the results were worse than mean square error metric. For lung 4D-CTs 
 
-The evaluation of DIR was made by DIRQA module. The main advantage of the DIRQA module is that all different techniques are gathered in a single place and can be used on a specific case. The ease of use is also essential, for DIRQA to find it's way into clinical work flow.
-A test of using DIRQA in potential clinical work flow was done at GSI during pig experiment, where different users had to use both DIR and DIRQA modules. The experiment was also under time pressure, since there was a limited amount of beam time. There were already prepositions for frameworks for DIRQA in clinical work flow \cite{Varadhan2013}, however none were tested in an actual clinical environment
+A designated module was made for DIRQA. The main advantage of the DIRQA module is that all different techniques are gathered in a single place and can be used on a specific case. 
+The ease of use is also essential, for DIRQA to find its way into clinical work flow.
+A test of using DIRQA in potential clinical work flow was done at GSI during the animal study, where different users had to use both DIR and DIRQA modules. The experiment was also under time pressure, since there was
+a scheduled beam time. 4D-CTs were acquired approximatelly two weeks before scheduled irradiation. During this two weeks contour delineation, DIR, DIRQA, treatment planing 
+and treatment planning QA had to be done \cite{Lehmann2015}.
+There were already propositions for frameworks for DIRQA in clinical work flow \cite{Varadhan2013}, however none were tested in an actual clinical environment.
 
-The techniques used in DIRQA can be divided into visible (inverse color, checkerboard) and quantitative (absolute difference, Jacobian and ICE). While the quantitative can be used to pinpoint errors in DIR, the visible can be used to actually see the errors and how does it affect the
-end result, as shown in Fig.~\ref{calcJac_lung})c. All three quantitative checks have been used in literature as a possible DIRQA \cite{Varadhan2013, Leow2007, Christensen2001, Bender2009}. They all share the same flaw, however, that they are a necessary condition for a successful
-DIR but not sufficient. One common DIRQA check in literature that our module is currently missing, is comparison of anatomical correspondence - comparison between reference, moving and warped contours. Ideally warped and reference contour should be the same. Two metrics are used in contour comparison -
-dice similarity coefficient \cite{Varadhan2013} and Hausdorff distance \cite{Huttenlocher1993}. Slicer already has functionalities for both contour comparison checks, so they could be used. The biggest disadvantage of anatomical correspondence check is that contour delineation is required in both, reference and moving phase, which is almost never done by physicians, since it takes too much time. Lack of contour in both, reference and moving phase, was also the reason the anatomical correspondence check was not used.
+The techniques used in DIRQA can be divided into visual qualitative (inverse color, checkerboard) and quantitative (absolute difference, Jacobian and ICE). While the quantitative can be used to pinpoint errors in DIR, the visual qualitative
+can be used to actually locate the error as shown in Fig.~\ref{maxvf}d. The location and size of DIR error also determines if a repatition of DIR is necessary.
+All three quantitative checks have been used in literature as a possible DIRQA \cite{Varadhan2013, Leow2007, Christensen2001, Bender2009}.
+They all share the same flaw, however, that they are a necessary but not sufficient condition for a successful DIR. 
+One common DIRQA check in literature that our module is currently missing, is comparison of anatomical correspondence - 
+comparison between reference, moving and warped contours. Ideally warped and reference contour should be the same. Two metrics are usually used in contour comparison -
+dice similarity coefficient \cite{Varadhan2013} and Hausdorff distance \cite{Huttenlocher1993}. Slicer already has functionalities for both contour comparison checks, so they could be used. 
+The biggest disadvantage of anatomical correspondence check is that contour delineation is required in both, reference and moving phase, which is scarcely done by physicians, 
+since it takes too much time. Additionally, the anatomical correspondence check does not judge the vector field quality inside contour.
+Lack of contours in both reference and moving phase was the reason the anatomical correspondence check was not used.
 
-Studies on DIRQA so far have focused on a small number of DIR cases, weather it is phantom \cite{Mutic2001,Moore2004} or patient studies \cite{Wu2008, Varadhan2013}. With small number of DIR it is possible to thoroughly examine each DIR, so that DIRQA can be explained. In this chapter a different approach was
-used. Rather than examining each DIR individually, a large dataset was analyzed and common traits for DIR were found. Due to differences in anatomical sites, DIRQA parameters have to be found for each anatomical site individually, since they
-deviate can significantly, as seen by two different cases presented here. 
+Studies on DIRQA so far have focused on a small number of DIR cases, wheater it is phantom \cite{Mutic2001,Moore2004} or patient studies \cite{Wu2008, Varadhan2013}. With a small number of DIRs,
+it is possible to thoroughly examine each DIR and hence understand DIRQA. In this chapter a different approach was
+used. Rather than examining each DIR individually, a large dataset was analyzed and common traits for DIR were found. Due to differences in anatomical sites, 
+DIRQA parameters have to be found for each anatomical site individually, since they can
+deviate significantly, as seen by two different cases presented here. However, three checks are independent on anatomical site: mean true and inverse consistency should be higher than 
+default absolute difference, Jacobian should be positive and ICE should be smaller than maximum vector field magnitudes. 
+If any of these checks fails, DIR needs to be investigated and, if necessary, repeated.
+%However there may be parameters that persist throughout different anatomical sites, scaled Jacobian in particular.
 
-DIR of lung 4DCT can be considered relatively easy, since the changes between phases are small and the contrast between lungs and other tissue is high. This is supported by Fig.~\ref{calcJac_lung} and \ref{maxvf}. The correlation between expansion of 
-tissue in reference phase should directly correlate to tissue contraction in moving phase. Even though Fig.~\ref{calcJac_lung}a shows only plot between maximum and minimum Jacobian in two phases, the correlation is still apparent (Pearson's r = 0.9). With calculation
-of difference between maximum and minimum Jacobian in each individual voxel, it is possible to pinpoint the position of outliers, as shown in Fig.~\ref{calcJac_lung}, where a small artifact in one phase was responsible for deviation. In a similar fashion,
-deviation from linear fit in Fig.~\ref{maxvf}a-c, was attributed to lung artifact in one phase.
+DIR of lung 4D-CT can be considered relatively easy, since the changes between phases are small and the contrast between lungs and other tissue is high. 
+This is confirmed by the mean value of Jacobian 1 and mean ICE smaller than 1 mm. The maximum and minimum Jacobian and ICE are more interesting, since they show 
+DIR inconsistencies. All ICE values bigger than maximum vector field magnitudes were found to originate from areas with poor DIR. An effect of poor DIR can be seen in Fig.~\ref{contourPropagation},
+where propagated liver and lung contour do not match features on the image. An image artifact was the reason for the poor DIR. After investigation of poor DIR location and size, 
+it was decided, that DIR does not require repetition, due to large ditance between poor DIR and the tumor.
+%This is supported by Fig.~\ref{calcJac_lung} and \ref{maxvf}. A small
+%artifact was found in one phase and it was responsible for deviation from linear fit. Deviation from linear fit in Fig.~\ref{maxvf}a-c was also used to spot DIR inconsistencies
+%and a lung image artifact was found in a different patient.
 
-If the DIR of lung 4DCT was considered relatively easy, opposite hold true for DIR of 4DCT-cardiac. The motion of the heart during a heartbeat is complex, with muscles stretching \textbf{REF} and contracting in different direction. Furthermore,
-the volume of blood shifts from one ventricle to the other. Because blood carries a contrast agent, different phases in 4DCT-cardiac have different distribution of HU in heart. Additionally, pacemakers cause several complications in CT scan \cite{Mak2012} as could be seen in differences between
-PM and noPM. This can be clearly seen in the PM linear fit of maximum ICE in Fig.~ \ref{maxvf_pigs}, which is above $y(x) = x$ curve. The complexity of DIR is also seen in the negative values of Jacobian, which should not occur. The errors in DIRQA checks did not happen in phase 5, which was investigated 
-during experiment, so all DIRQA during experiment was positive. The DIR of 4DCT-cardiac is currently under careful investigation and several different solutions are being tested.
+If the DIR of lung 4D-CT was considered relatively easy, opposite holds true for DIR of animal study 4D-CT. The motion of the heart during a heartbeat is complex, 
+with muscles stretching and contracting in different directions \cite{Seeley2007}. Furthermore,
+the volume of blood shifts from one ventricle to the other. In the case of 4D-CT-cardiac blood carried a contrast agent, therefore different phases in 4D-CT-cardiac 
+had different distribution of HU in different parts of the heart. Additionally, it is well established that pacemakers cause several complications in a CT scan \cite{Mak2012}. This was
+confirmed by the differences observed between PM and noPM. Clearest example is the PM linear fit of maximum ICE in Fig.~\ref{maxvf_pigs}, which is above $y(x) = x$. For noPM the linear
+fit is below $y(x)=x$, however the slope has still a value of 0.77, compared to 0.38 of a lung 4D-CT fit. Inconsistencies in DIR were further supported by negative minimum Jacobian, which were found for both,
+PM and noPM groups. Negative minimum Jacobian and large ICE values are clear indicators, that DIR in heart can not be 
+accepted for heart treatment planning and needs to be repeated. An effect of DIR on actual irradiation also has to be examined.
+The DIR of cardiac 4D-CT is currently under careful investigation
+and several different solutions, such as artifact removal and different registration parameters are being tested.
 
-In the future DIRQA module should undergo further testing. In addition to checking DIRQA on different anatomical sites and between different modalities, it should be investigated how good is DIRQA at spotting inconsistencies in DIR, i.e. what is the number of false negatives. Furthermore, with more
-data analyzed, the parameters in DIRQA checks should get more precise and outliers would be easier spotted.
+In the future, the DIRQA module should undergo further testing. In addition to checking DIRQA on different anatomical sites and between different modalities, 
+it should be investigated how good is DIRQA at spotting inconsistencies in DIR, i.e. what is the number of false negatives. Furthermore, with more
+data analyzed, the parameters in DIRQA checks should get more precise, so outliers could be easier spotted.
+
+\newpage
 
 
 \section{Appendix}
 \label{RegHierarchy}
-\lstinputlisting[language=Python, firstline=1602, lastline=1803]{./RegistrationHierarchy.py}
+% \lstinputlisting[language=Python, firstline=1602, lastline=1803]{./RegistrationHierarchy.py}
+
+\subsubsection{Patient hierarchy} 
+\label{PatHierarchy}
+
+Patient hierarchy follows a subject hierarchy principle in Slicer. It was designed for a clear overview of the registration process, DIRQA and all resulting files. Another reason is to track DIR
+and DIRQA in case if they are interrupted by Slicer crash. DIR and DIRQA files can be quite large and can cause Slicer to run out of memory. With patient hierarchy Slicer is able to continue work
+from where it was interrupted rather than starting anew.
+
+There are several levels in patient hierarchy. Each level also has different attributes, where details regarding each level can be written.
+
+\begin{itemize}
+	\item Level 1: \textbf{Patient name} - separates different patients.
+	\item Level 2: \textbf{Registration node} - separates between different registrations, e.g. between different imaging modalities or between 4D-CT phases. 
+	\subitem \textit{Attributes:}
+	\subitem - The file directory of images, vector fields and registration quality files.
+	\subitem - Number of phases to be registered.
+	\subitem - Reference phase
+	\item Level 3: \textbf{Registration set} - specific registration phase. Registration is done between all phases and the reference one. There have to be at least two phases
+	\item Level 4: \textbf{Node} - can be either an image, a vector field, an inverse vector field or any of DIRQA nodes (see Section~\ref{DIRQA}).
+	\subitem \textit{Attributes:}
+	\subitem - Exact file paths for specific node.
+	\subitem - Statistical analysis if node is absolute difference, Jacobian or inverse consistency (see Section~\ref{DIRQA}).
+\end{itemize}
+
+The patient hierarchy can be constructed in two ways. The first option is to manually create the whole patient hierarchy, from top to bottom level, with necessary attributes. Second option is to use an automatic script to look 
+for files on hard drive and create corresponding levels. The second option is possible only by using proper naming conventions for file names and locations.
 
 \bibliographystyle{apalike}
 \bibliography{../ref.bib}{}

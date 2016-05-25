@@ -1,33 +1,31 @@
 TODO:
 
-Plan za ponedeljek, 17.4:
-6. Bad example poglej in zrithej (oscar nekje).
-6. Opcijsko MidP zrihtat pa motion curve. Nared nov dicomdatabase in ga loadej not. Mogoce ga kopirej k seb?
-7. Pejt domov.
-
-1. PrufungsKomitee:
- 
+P
 2. Izpolnit: http://www.physik.tu-darmstadt.de/media/fachbereich_physik/formulare_3/promotionen/Antrag_auf_Eroeffnung_Formular.pdf
 
 3. Vse okrog - motivation, abstract, summary, acknowledment
 
 4. Fundametals:
- 4a Poslat Christianu
- 4b Poslat se komu
+ Cite rescanning NIRS?
  
 5. VMM:
 
-Landmarks
-DIRQA and DIR time
+1. Discussion Lung:
+Lung011 si ponovil registration. Ce najdes, zakaj, si car.
+ What happenes with contours, 4Ddose in areas with poor DIR?
+ How many cases were above dashed line, what happened in each of them?
+ How about Jacobian values in fit? Were any used for investigation?
+ There were some 0 in abs diff. Why?
+ Number of voxels povezat z abs diff. nima veze
+ true into original
+ 
+Patient 2 je bil zmuten brez resampled zracunan tazadn inverse abs diff.
+DIRQA
+ 
+Najmanjsa value za absdiff je 7. Kako to lohk z noise razlozis?
 
-
- A lahko dodas ranking based on ICE and jacobian?
- Show PM and noPM example?
- 5b Zracunat:
- ICE narisat z vektorji
- ROI example figure 
- Absolute difference -> mean square error 
- Poslat Christianu
+A fuknemo DIRQA med pig irradiation ven?
+Investigate abs diff pig.
 
  
 6. Patient Study:
@@ -40,23 +38,39 @@ DIRQA and DIR time
  Poslat Christianu
  
 7. Patient with complex geometry
+
+Legend
+
  7a Napisat uvodu
  7b Materials and methods
+ 1 - Fertig
+ 3  
+ 11 -
+ 21 - racuna 4D
+ 22 - 4DITV Heart ne jebe kot OAR. Mogoce se enkrat z oar80?
+ 23 - racuna nohup 4DITV_L. Pol pa se 4D dat racunat.
+ 
   - Multiple targets
   - 4D optimize
   - OAR removal
   - OAR creation for multiple targets
   
  7c Zracunat:
-  - Vse paciente najprej obicno z ab = 6
-   -- manjka se 3, 17, 21, 22, 23
-  - Vse paciente z 4D opt
-   -- Christiana vprasat, kako zracunat 4Ddose in zakaj 1 ma tko zanic dozo
-  - 21 si zmutil kot 45, pa ful zajebava poglej sfud. Lung003 vse CTV_c_g nardit.
-   
+ 
+  Results:
+
+Napis, target prescription could not be meet 3, 5, 6 and 8 times for sfud, indITV and 4DITD and sBRT, respectively.
+  
+Sliko - pat3?
+Between three methods: how many cases below target?
+Do OAR doses differ between three?
+Comparision to sbrt? - oar and ctv
+Special cases? Do different motion patterns worsen plan?
+
+
  7d Primerjat pol te dva med sabo in z SBRT
  
- 7e Zapisat vse v results in se pokomentirat v discusion
+ 7e Zapisat vse v results in se pokomentirat v discusion (discusion lahko omenis se field optimization, pa tripfly)
  
  Poslat Christianu
  
