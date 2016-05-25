@@ -24,17 +24,24 @@
 \onehalfspacing
 
 
-\%chapter*{Motivation}
+%chapter*{Motivation}
 %\addcontentsline{toc}{chapter}{Motivation}
 
-\chapter{Motivation}
+\section*{Motivation}
 
-Cancer is bad, of which lung cancer is the worst.
+In 2013 every fourth death in Germany was due to cancer \cite{Destatis2015} and approximately 45 000 of deaths were from lung and bronchial cancer. In the last 30 years, there was a 180\% increase of deaths due to lung and bronchial cancer for women \cite{Destatis2015}.
+The standard course of treatment for lung cancer is surgery, chemotherapy, radiotherapy or a combination of these. Surgery is usually the first choice of treatment. In recent years, however, state of the art photon radiotherapy, called stereotactic body-radiation therapy (SBRT) showed
+promising results for treating lung cancer \cite{Baumann2009, Greco2011}. SBRT delievers high doses (up to 24 Gy) in few fractions, therefore a careful consideration must be given to dose to critical structures.
 
-Radiotherapy is a possible treatment, hypofractionated SBRT showed promising result.
+In the last twenty years, ion beam therapy has proven to be an alternative to photon radiotherapy. Higher tumor control rates and better dose conformity can be achieved with superior physical and biological properties of ions \cite{Tsujii2008,Durante2010}.
+Review made by Kamada et al reported a high 3-year survival rate for carbon-ions (76.9\%) in single fraction, with no late treatment-related complications \cite{Kamada2016}. The treatment used passive beam scanning, where patient specific absorbers are used to conform the dose
+to the tumor. Active beam scanning can provide better dose shaping, which is essential in hypo-fractionated treatment. However, interaction between tumor and scanned beam motion, called interplay, can severely degrade dose distribution in patient.
 
-Particle therapy is well established, physical & biological advantages. 
-Treatment of moving tumors is challenging with active beam scanning.
+Successful treatment of tumors in abdomen region with scanned ion beams has been done in CNAO and NIRS. None, however, have treated lung cancer patients, where range changes between soft (lung) and dense (tumor) tissue can be substantial, making treatment planning and delivery of 
+scanned ion beam a challenging problems.
+
+In this thesis we will address this challanges and make a comparison between SBRT and scanned carbon-ion therapy. Patients particulary suited for carbon-ion therapy will try to be identified for a possible future treatment at facilities in HIT or Marburg. 
+
 
 
 \newpage
@@ -43,40 +50,21 @@ Treatment of moving tumors is challenging with active beam scanning.
 
 This is the first in silico comparision between SBRT and active scanning carbon-ion for NSCLC. Time-resolved (4D) doses will be studied on a large patient dataset.
 
-In order to create carbon-ion treatment plans and calculate 4D doses, contours have to be propagated from planning to all states 4D computed tomography (CT) and motion between 4D-CT states has to be quantified. This will be achieved with deformable image registration (DIR). Tools to make DIR on large datasets will be presented. Furthermore, a designated 
+In order to create carbon-ion treatment plans and calculate 4D doses, contours have to be propagated from planning to all states 4D computed tomography (CT) and motion between 4D-CT states has to be quantified. 
+This will be achieved with deformable image registration (DIR). 
+Furthermore, a designated tool for DIR quality assurance (DIRQA) will be developed. A verification of DIR and DIRQA has been done on human lung 4D-CT and on pig cardiac 4D-CT.
+
+To show potential of scanned carbon-ions in handling NSCLC, treatment plans for 19 patients, which were treated with SBRT, will be calculated. Furthermore, static and 4D doses with and without motion
+mitigation will be analyzed. Doses to target and organs-at-risk (OAR) will be analyzed and compared between carbon-ions and SBRT.
+
+A special investigation will be made into patients with multiple NSCLC metastases. A treatment planning software will be modified, so it will be able to make treatment plans for multiple targets. 
+Treatment plans for patients with multiple NSCLC metastases will be generated with two different optimization techniques to tackle range changes in moving targets. Comparison to SBRT will be made regarding target coverage and OAR doses.
+
+The structure of this dissertation is as follows. Chapter 1 will present an overview of physical and biological fundamentals of radiotherapy. Photon and particle radiotherapy will be presented, with an emphasis on the treatment of moving targets.
+Additionally, lung cancer, epidemiology and staging used will be presented. Chapter 2 will present tools to handle DIR and DIRQA with their verification. In chapter 3, comparison between SBRT and carbon-ions will be investigated on lung cancer patient.
+Treatment for patients with multiple metastases in lung will be investigated in chapter 4. Overall results will be discussed in chapter 5 and the thesis will be concluded in chapter 6.
 
 
-
-
-This is the first \textit{in silico} survey to study the feasibility of a non-invasive treatment modality for atrial fibrillation with carbon ion 
-radiosurgery \cite{Ber12}. Thereby the irradiation of ablation sites in the junction between pulmonary veins and atria will be studied in human data. 
-Another potential ablation site for atrial fibrillation, the AV node, will be studied in porcine data sets. A single fraction 
-dose of 25Gy will be applied on the cardiac target volumes. \newline
-
-When intending to irradiate non-static targets interference effects between target motion and the actively applied ion 
-beam cause local under and over dosages \cite{Phi92, Ber08}. In order to deposit a homogenous dose in the target area, motion mitigation 
-techniques are needed. Different motion mitigation techniques will be used in this dissertation. The interrupted irradiation during a selected 
-part of the motion cycle (gating) \cite{Kub96} as well as the repeated scanning of the same slice with a reduced dose so that averaging 
-effects cause a homogenous dose deposition in the target volume (rescanning) \cite{Phi92} will be analyzed. 
-% where the irradiation of target areas on and in the heart were studied 
-% in order to determine the feasibility of a non-invasive treatment modality for atrial fibrillation with carbon ions. 
-For the feasibility of a non-invasive treatment modality for atrial fibrillation with carbon ions, two independent 
-motion influences have to be considered. On the one hand the heart beat, a fast but small amplitude motion, and on the other hand the 
-respiration of the patient, a typically slow motion with big amplitude. Respiration and heartbeat gated CTs of human patients 
-will be studied and the resulting treatment planning studies will be presented. In preparation for animal studies planned at GSI in the 
-summer of 2014 treatment plan results for porcine data will also be investigated. \newline
-
-The structure of this dissertation is as follows. Chapter 1 will give an overview over the physical and biological fundamentals of radiotherapy. 
-Different radiotherapy applications will be presented and a special emphasis will be given on the treatment of moving targets. Furthermore, 
-the cause of atrial fibrillation and its resulting risk factors will be presented. Currently existing therapies and the potential 
-benefit of a non-invasive treatment modality will be discussed. In chapter 2 the influence of the respiratory motion on 
-pulmonary veins ablation sites in humans will be discussed. The feasibility to use gating as motion mitigation technique for this case will 
-be investigated. In chapter 3 the displacement of the pulmonary veins ablation site due to heartbeat will be examined in human data. 
-Rescanning will be studied as motion mitigation technique for this motion component. In preparation for the planned animal experiments, 
-which will be carried out as a first experimental feasibility study in the summer of 2014 at GSI, chapter 4 will discuss 
-an AV node ablation with carbon ions in porcine data. The underlying heartbeat motion will be studied and rescanning as motion mitigation 
-technique will be utilized. Discussion of the overall results will be given in chapter 5, while chapter 6 will conclude the findings and 
-give a short outlook on future directions. 
 
 \bibliographystyle{apalike}
 \bibliography{../ref.bib}{}

@@ -1648,7 +1648,7 @@ keywords="outcomes"
 author = {Lehmann, H. Immo and Richter, Daniel and Prokesch, Hannah and Graeff, Christian and Prall, Matthias and Simoniello, Palma and Fournier, Claudia 
 and Bauer, Julia and Kaderka, Robert and Weymann, Alexander and Szab\'{o}, G\'{a}bor and Sonnenberg, Karin and Constantinescu, Anna M. 
 and Johnson, Susan B. and Misiri, Juna and Takami, Mitsuru and Miller, Robert C. and Herman, Michael G. and Asirvatham, Samuel J.
-and Brons, Stephan and J\"{a}kel, Oliver and Haberer, Thomas and Debus, J�rgen and Durante, Marco and Bert, Christoph and Packer, Douglas L.}, 
+and Brons, Stephan and J\"{a}kel, Oliver and Haberer, Thomas and Debus, J�rgen and Durante, Marco and Bert, Christoph and Packer, Douglas L.}, 
 title = {Atrioventricular Node Ablation in Langendorff-Perfused Porcine Hearts Using Carbon Ion Particle Therapy: Methods and an In Vivo Feasibility Investigation for Catheter-Free Ablation of Cardiac Arrhythmias},
 volume = {8}, 
 number = {2}, 
@@ -2296,5 +2296,155 @@ url="http://dx.doi.org/10.1016/j.ijrobp.2014.01.012"
 	
 
 
+@article{Breedveld2007,
+	author={Sebastiaan Breedveld and Pascal R M Storchi and Marleen Keijzer and Arnold W Heemink and Ben J M Heijmen},
+	title={A novel approach to multi-criteria inverse planning for IMRT},
+	journal={Physics in Medicine and Biology},
+	volume={52},
+	number={20},
+	pages={6339},
+	url={http://stacks.iop.org/0031-9155/52/i=20/a=016},
+	year={2007},
+	abstract={Treatment plan optimization is a multi-criteria process. Optimizing solely on one objective or on a sum of a priori weighted objectives may result in inferior treatment plans. Manually adjusting weights or constraints in a trial and error procedure is time consuming. In this paper we introduce a novel multi-criteria optimization approach to automatically optimize treatment constraints (dose–volume and maximum-dose). The algorithm tries to meet these constraints as well as possible, but in the case of conflicts it relaxes lower priority constraints so that higher priority constraints can be met. Afterwards, all constraints are tightened, starting with the highest priority constraints. Applied constraint priority lists can be used as class solutions for patients with similar tumour types. The presented algorithm does iteratively apply an underlying algorithm for beam profile optimization, based on a quadratic objective function with voxel-dependent importance factors. These voxel-dependent importance factors are automatically adjusted to reduce dose–volume and maximum-dose constraint violations.}
+}
 
+@Article{Pflugfelder2008,
+	author="Pflugfelder, D.
+	and Wilkens, J. J.
+	and Oelfke, U.",
+	title="Worst case optimization: a method to account for uncertainties in the optimization of intensity modulated proton therapy",
+	journal="Phys Med Biol",
+	year="2008",
+	month="Mar",
+	day="21",
+	volume="53",
+	number="6",
+	pages="1689--1700",
+}
 
+@Article{Chen2012,
+	author={Chen, Wei
+	and Unkelbach, Jan
+	and Trofimov, Alexei
+	and Madden, Thomas
+	and Kooy, Hanne
+	and Bortfeld, Thomas
+	and Craft, David},
+	title={Including Robustness in Multi-criteria Optimization for Intensity Modulated Proton Therapy},
+	journal={Phys Med Biol},
+	year={2012},
+	month={Feb},
+	day={07},
+	volume={57},
+	number={3},
+	pages={591-608},
+	abstract={We present a method to include robustness into a multi-criteria optimization (MCO) framework for intensity modulated proton therapy (IMPT). The approach allows one to simultaneously explore the tradeoff between different objectives as well as the tradeoff between robustness and nominal plan quality. In MCO, a database of plans, each emphasizing different treatment planning objectives, is pre-computed to approximate the Pareto surface. An IMPT treatment plan that strikes the best balance between the different objectives can be selected by navigating on the Pareto surface. In our approach, robustness is integrated into MCO by adding robustified objectives and constraints to the MCO problem. Uncertainties (or errors) of the robust problem are modeled by pre-calculated dose-influence matrices for a nominal scenario and a number of pre-defined error scenarios (shifted patient positions, proton beam undershoot and overshoot). Objectives and constraints can be defined for the nominal scenario, thus characterizing nominal plan quality. A robustified objective represents the worst objective function value that can be realized for any of the error scenarios and thus provides a measure of plan robustness. The optimization method is based on a linear projection solver and is capable of handling large problem sizes resulting from a fine dose grid resolution, many scenarios, and a large number of proton pencil beams. A base of skull case is used to demonstrate the robust optimization method. It is demonstrated that the robust optimization method reduces the sensitivity of the treatment plan to setup and range errors to a degree that is not achieved by a safety margin approach. A chordoma case is analysed in more detail to demonstrate the involved tradeoffs between target underdose and brainstem sparing as well as robustness and nominal plan quality. The latter illustrates the advantage of MCO in the context of robust planning. For all cases examined, the robust optimization for each Pareto optimal plan takes less than 5 minutes on a standard computer, making a computationally friendly interface possible to the planner. In conclusion, the uncertainty pertinent to the IMPT procedure can be reduced during treatment planning by optimizing plans that emphasize different treatment objectives, including robustness, and then interactively seeking for a most-preferred one from the solution Pareto surface.},
+	note={22222720[pmid]},
+	issn={0031-9155},
+	doi={10.1088/0031-9155/57/3/591},
+	url={http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3360481/}
+}
+
+@Article{Unkelbach2009,
+	author={Unkelbach, Jan
+	and Bortfeld, Thomas
+	and Martin, Benjamin C.
+	and Soukup, Martin},
+	title={Reducing the sensitivity of IMPT treatment plans to setup errors and range uncertainties via probabilistic treatment planning},
+	journal={Med Phys},
+	year={2009},
+	month={Jan},
+	day={12},
+	publisher={American Association of Physicists in Medicine},
+	volume={36},
+	number={1},
+	pages={149-163},
+	abstract={Treatment plans optimized for intensity modulated proton therapy (IMPT) may be very sensitive to setup errors and range uncertainties. If these errors are not accounted for during treatment planning, the dose distribution realized in the patient may by strongly degraded compared to the planned dose distribution. The authors implemented the probabilistic approach to incorporate uncertainties directly into the optimization of an intensity modulated treatment plan. Following this approach, the dose distribution depends on a set of random variables which parameterize the uncertainty, as does the objective function used to optimize the treatment plan. The authors optimize the expected value of the objective function. They investigate IMPT treatment planning regarding range uncertainties and setup errors. They demonstrate that incorporating these uncertainties into the optimization yields qualitatively different treatment plans compared to conventional plans which do not account for uncertainty. The sensitivity of an IMPT plan depends on the dose contributions of individual beam directions. Roughly speaking, steep dose gradients in beam direction make treatment plans sensitive to range errors. Steep lateral dose gradients make plans sensitive to setup errors. More robust treatment plans are obtained by redistributing dose among different beam directions. This can be achieved by the probabilistic approach. In contrast, the safety margin approach as widely applied in photon therapy fails in IMPT and is neither suitable for handling range variations nor setup errors.},
+	note={074812MPH[PII]},
+	note={19235384[pmid]},
+	issn={0094-2405},
+	doi={10.1118/1.3021139},
+	url={http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2673668/}
+}
+
+@article{Fredriksson2011,
+	author = "Fredriksson, Albin and Forsgren, Anders and Hårdemark, Björn",
+	title = "Minimax optimization for handling range and setup uncertainties in proton therapy",
+	journal = "Medical Physics",
+	year = "2011",
+	volume = "38",
+	number = "3", 
+	eid = ,
+	pages = "1672-1684",
+	url = "http://scitation.aip.org/content/aapm/journal/medphys/38/3/10.1118/1.3556559",
+	doi = "http://dx.doi.org/10.1118/1.3556559" 
+}
+
+@Article{Chen2010,
+	author={Chen, Wei
+	and Craft, David
+	and Madden, Thomas M.
+	and Zhang, Kewu
+	and Kooy, Hanne M.
+	and Herman, Gabor T.},
+	title={A fast optimization algorithm for multicriteria intensity modulated proton therapy planning},
+	journal={Med Phys},
+	year={2010},
+	volume={37},
+	number={9},
+	pages={4938-4945},
+	doi={10.1118/1.3481566}
+}
+
+@Article{Liu2016,
+	author={Liu, Wei
+	and Schild, Steven E.
+	and Chang, Joe Y.
+	and Liao, Zhongxing
+	and Chang, Yu-Hui
+	and Wen, Zhifei
+	and Shen, Jiajian
+	and Stoker, Joshua B.
+	and Ding, Xiaoning
+	and Hu, Yanle
+	and Sahoo, Narayan
+	and Herman, Michael G.
+	and Vargas, Carlos
+	and Keole, Sameer
+	and Wong, William
+	and Bues, Martin},
+	title={Exploratory Study of 4D versus 3D Robust Optimization in Intensity Modulated Proton Therapy for Lung Cancer},
+	journal={International Journal of Radiation Oncology},
+	year={2016},
+	volume={95},
+	number={1},
+	pages={523-533}
+}
+
+@misc{Destatis2015,
+	Author = {{German Federal Statistical Office}},
+	Date-Added = {2015-02-02},
+	Date-Modified = {2015-02-02},
+	Howpublished = {{Official {Destatis} press release No. 034}},
+	Title = {Krebs war 2013 die zeith\"{a}ufigste Todesursache},
+	Url = {https://www.destatis.de/DE/PresseService/Presse/Pressemitteilungen/2015/02/PD15_034_232.html},
+	Year = 2015,
+	Bdsk-Url-1 = {https://www.destatis.de/DE/PresseService/Presse/Pressemitteilungen/2015/02/PD15_034_232.html}}
+
+@article{Durante2010,
+	Author = {M. Durante and J. S. Loeffler},
+	Journal = {Nat. Rev. Clin. Oncol.},
+	Number = {1},
+	Pages = {37--43},
+	Title = {Charged particles in radiation oncology},
+	Volume = {7},
+	Year = {2010}}
+
+@article{Tsujii2008,
+	Author = {Hirohiko Tsujii and Tadashi Kamada and Masayuki Baba and Hiroshi Tsuji and Hirotoshi Kato and Shingo Kato and Shigeru Yamada and Shigeo Yasuda and Takeshi Yanagi and Hiroyuki Kato and Ryusuke Hara and Naotaka Yamamoto and Junetsu Mizoe},
+	Journal = {New J. Phys.},
+	Number = {7},
+	Pages = {075009},
+	Title = {Clinical advantages of carbon-ion radiotherapy},
+	Volume = {10},
+	Year = {2008}}
