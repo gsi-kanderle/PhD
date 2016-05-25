@@ -99,7 +99,7 @@ Investigation of two different optimization techniques to handle range changes i
 E(\vec{N}) = \sum_{k=1}^{m}\sum_{targets(k)} \sum_{i\in target(k)} \left( D_{pre}^{i} -\sum_{j=1}^n c_{ijk}N\right)
 \end{equation}
 
-All targets were treated with IMPT and 4D optimization. A subset of motion states 0, 50 and 70\% was used for targets 7a, 7b and 8b (see Table~\ref{tab:patdata2}) due to large optimization problem - beside multiple targets, OAR was also included
+All targets were treated with IMPT and 4D optimization. A subset of motion states 0, 50 and 70\% was used for targets 7a -7d and 8b (see Table~\ref{tab:patdata2}) due to large optimization problem - beside multiple targets, OAR was also included
 in motion states \cite{Graeff2012}.
 
 
@@ -110,8 +110,8 @@ Finally, fields, resulting from the two optimization techniques mentioned, were 
 
 \subsection{Patient data}
 
-Treatment plans were created for 8 patients with 2 - 5 lung metastases summing to 24 metastases in total. Details are given in Table~\ref{tab:patdata2}.
-Most of the patients had one or more OARs in a close proximity to the tumors. 
+Treatment plans were created for 8 patients with 2 - 5 lung metastases summing to 24 metastases in total. \textbf{Average?}. Details are given in Table~\ref{tab:patdata2}.
+Patients 6 - 8 had at least one OAR closer than 10 mm to one or more CTVs. 
 
 Patients were treated with SBRT at Chamaplimaud Center for the Unknown, Lisbon (Portugal), with different fraction schemes. Number of fractions and doses delivered are given in Table~\ref{tab:patdata2}. 
 
@@ -257,34 +257,39 @@ SA D$_{Max}$ limit was exceeded for patients 6 and 8 in all cases. Heart D$_{Max
 
 \section{Summary and Discussion}
 
-Clinically valid SBRT plans have been compared to PT treatment plans for NSCLC patients with multiple metastases. Novel approch was used to handle multiple targets, together
+Clinically valid SBRT plans have been compared to PT treatment plans for NSCLC patients with multiple metastases. To the best of our knowledge, this is the first study of treating multiple NSCLC metastases. Novel approch was used to handle multiple targets, together
 with state of the are 4D PT treatment planning. Furthermore, 4D doses were calculated for PT treatment plans. PT on average delievered less dose to OAR, while there were no
 significant difference in target coverage. The most apperent difference is in lung V_${20\%}$, which was 3333\% lower in PT, due to the narrow entry channel PT use.
 
-Patients 1 - 5 did not require any OARs in optimization and no OAR constraint was violated. Eventhough patient 2 and 4 had 5 metastases each. For patient 6 - 8 the optimization problem
-was more complex, especially in 4Dopt case. Patient 7 had 4 metastases in left lung, two of them (7c and 7d) closer than 1 mm to the heart. 
-\textit{Too many voxels, show Mathias work with small voxel number?}
-
-Currently, TRiP98 handles only OAR D_${Max}$ in optimization. While this is sufficient for most patients (patient 1 - 5 and patients in Chapter~\textbf{?}) it can fall short 
-in complex geometry.
-
-%http://www.birpublications.org/doi/full/10.1259/bjr.20120288 - roboust planning
+Patients 1 - 5 did not require OAR implementation in optimization and nevertheless no OAR constraints were violated. Even though patient 2 and 4 had 5 metastases each. For patients 1 - 5 the OARs were at least 10 mm away from the CTV, whereas for
+patient 6 - 8 they were closer than 10 mm. The optimization problem was therefore more complex, especially in 4Dopt case. Patient 6 had the best target coverage with indITV, however $D_{Max}$ for smaller airways was exceeded. For patient 7 PT and SBRT target
+coverage and heart $D_{Max}$ were similar, but PT delivered less dose to other OAR. Patient 8 ?
 
 
-TRiP je mel boljse rezultate, ampak je se prostor za improvat. Manj voxelov, doza v OAR proti nic in shell around targets to reduce dose.
+\textbf{Comparison between 4dopt and inditv}
 
-Robustness 3D in 4D. V 4D so samo razlicne starting phase, treba je prov vse nekak upostevat.
+Even though carbon-ions exhibit less dose to OAR with the same or even better target coverage, there is still room for improvement in PT treatment planning. An implementation of multi-criteria objective planning should bring
+even better dose distribution and allow physician to choose between trade-offs  \cite{Breedveld2007, Chen2010}. Additionally, multiple target optimization in PT would benefit from a shell around PT where dose would be minimized. Therefore excessive dose
+in healthy tissue would be further reduced. An introduction of a shell, however, would further enlarge the optimization problem, which is large already for complex geometry (patient 6 - 8). A solution for minimizing voxel number in optimization is
+currently being implemented by Prall et al \textbf{Citat, mogoce mal vec napisat.} 
 
-Gating bo verjetno nujen, ker je OAR prevec rizkantn.
+In Chapter~\ref{PatStudy} additional range margins could be used in treatment planning, because a single-field uniform dose (SFUD) optimization was done. Instead of defining margins in PTV, a solution was proposed to include uncertainties, such as range errors, 
+in optimization process itself \cite{Pflugfelder2008, Unkelbach2009, Fredriksson2011, Chen2012}. Chen et al. have shown it is possible to implement robust optimization in multi-criteria optimization as well. 
 
+Patient 7 $D_{Max}$ heart dose was over and under the limit across different motion types. This shows the necessity of making treatment plans robust against motion uncertainty, especially in the hypo-fractionated treatment. A recent treatment planning study by Liu et al. \cite{Liu2016}
+showed a 4D robust optimization had better results than 3D robust optimization for NSCLC patients. However, only breathing starting phase was used as an uncertainty, whereas different motion types should be considered. The disadvantage of 3D and 4D robust optimization is the enlargement of 
+optimization problem.
 
-A recent review showed good local control rates between 66 - 92\% for patients treated
-with SBRT in reoccurent tumors in previous irradiation field \cite{Amini2014}. However, there were grade 4 and 5 complications present, i.e. study by Trovo et al showed grade 5 pneumonia in
-6\% of patient treated \cite{Trovo2014}. PT could reduce the number of complications with less dose to OAR.
+Effect of motion on treatment plan delivery could be reduced by using gating. Gating, together with rescanning, has already been successfully implemented clinically for active beam scanning \cite{Rossi2016, Mori2016} and it might be essential to use it in hypo-fractionated 
+treatment of moving tumors.
 
+A recent review showed good local control rates between 66 - 92\% for patients treated with SBRT in reoccurred tumors in previous irradiation field \cite{Amini2014}. 
+However, there were grade 4 and 5 complications present, i.e. study by Trovo et al showed grade 5 pneumonia in
+6\% of patient treated \cite{Trovo2014}. As shown in our study, PT delivers less dose to the OAR and could hence reduce the number of complications.
 
+\section{Conclusions}
 
-Carbon ions ne rabjo dose volume constraints, so vse vedno spodej.
+PT delivers less dose to OAR compared to SBRT in NSCLC patients with multiple disease sites, while maintaining the same target coverage. Caution has to be taken in patients with OAR in CTV vicinity (less than 10 mm), where doses to OAR differ across different motion types.
 
 
 
