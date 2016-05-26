@@ -1,0 +1,49 @@
+\documentclass[type=dr, dr=rernat, accentcolor=tud7b,colorbacktitle, bigchapter, openright, twoside, 12pt ]{tudthesis}
+%\documentclass[11pt,twoside,a4paper]{article}
+\usepackage[english]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{pstricks}
+\usepackage{psfrag}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{epsfig}
+\usepackage{geometry}
+\usepackage{subfigure}
+\usepackage{rotating}
+\usepackage{minitoc}
+% \usepackage{dominitoc}
+\usepackage{multirow}
+\usepackage{listings}
+%\usepackage{appendix}
+%\usepackage[breaklinks=true]{hyperref}
+%\usepackage{breakcites}
+
+%%%% 1 1/2 facher Zeilenabstand:	
+\usepackage{setspace}
+\onehalfspacing
+
+
+
+
+\begin{document}
+\chapter{Discussion}
+
+
+
+DIR for adaptive radiotherapy - patient specific is neccesary, large DVF large errors %http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4041490/
+
+DIR between different modalities - PET/CT %http://www.tandfonline.com/doi/abs/10.3109/0284186X.2013.813964
+
+RBE
+
+24Gy(RBE) %http://www.sciencedirect.com/science/article/pii/S0360301615005179
+
+Hypo-fractionation of liver cancer %http://ro-journal.biomedcentral.com/articles/10.1186/1748-717X-8-59
+
+
+\bibliographystyle{apalike}
+\bibliography{../ref.bib}{}
+% \bibliographystyle{plain}
+
+\end{document}
