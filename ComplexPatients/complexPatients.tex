@@ -74,7 +74,7 @@ all TRiP98 4D functionalities could be used, as explained in next sections.
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.8\textwidth]{./Images/multiTargets.png}
+		\includegraphics[width=0.7\textwidth]{./Images/multiTarget.png}
 		\caption{Multiple targets irradiation. Fields 1 and 2 are designated to target a and fields 3 and 4 to target b. Optimization takes into account all target voxels and contributions from all fields.}
 		\label{Fig:multiTargets}
 	\end{center}
@@ -119,7 +119,7 @@ Patients were treated with SBRT at Chamaplimaud Center for the Unknown, Lisbon (
 	\centering
 	%   \footnotesize
 	\caption{Target characteristics, with CTV volumes, peak-to-peak motions, fractination schemes and number of fields used for treatment planning. Last column 
-	shows if there was an OAR in target vicinity. SA stands for smaller airways and esoph. for esophagus.}
+	shows an OAR in target vicinity (closer than 10 mm). SA stands for smaller airways and esoph. for esophagus.}
 	\begin{tabular}{c|c|c|c|c|c|c}
 		\hline\hline
 		\multirow{2}{*}{Patient} & \multirow{2}{*}{Target} & \multirow{2}{*}{Volume (cm$^3$)} & Peak-to-peak & Fractination & Number & OAR in \\
@@ -234,22 +234,22 @@ Example of different treatment plans for a single patient is shown in Fig.~\ref{
 
 \subsection{Target Coverage}
 
-Results for CTV D$_{99\%}$ for all patients are shown in Table~\ref{tab:resultsComplex}. All SBRT plans were approved by a physician, 
-even though the prescription dose for patients 6 - 8 was not met, due to the OAR proximity. Excluding patients 6 - 8, there were 8  cases of too low CTV dose accross different
-motion types for SFUD, indITV and 4Dopt, respectively, but not for the same targets.
-For patients 6 - 8 treatment plans with SFUD were clinically unacceptable, due to violation of OAR constraints. Both indITV and 4Dopt had higher CTV D$_{99\%}$ than SBRT, while still adhearing
-to OAR constraints. 
+Results for CTV $D_{99\%}$ for all patients are shown in Table~\ref{tab:resultsComplex}. All SBRT plans were approved by a physician, 
+even though the prescription dose for patients 6 - 8 was not met due to an OAR proximity. Excluding patients 6 - 8, there were 8  cases of too low CTV dose accross different
+motion types for indITV and 4Dopt, respectively, but not for the same targets.
+For patients 6 - 8 treatment plans with SFUD were clinically unacceptable, due to violation of OAR constraints. Both indITV and 4Dopt had higher CTV $D_{99\%}$ than SBRT.
 
-Range of CTV D$_{99\%}$ accross different motion types was 2, 1 and 2 Gy for SFUD, indITV and 4Dopt, respectively, \textbf{Statistical difference?}
+Range of CTV $D_{99\%}$ accross different motion types was 2, 1 and 2 Gy for SFUD, indITV and 4Dopt, respectively, \textbf{Statistical difference?}
 
 \include{tableTarget}
 
 \subsection{Dose in OARs}
 
-D$_{Max}$ and D$_{Mean}$ for 8 OARs are shown in Table~\ref{tab:OARComplex}. There was significant difference for \textbf{???} between PT and SBRT. No significant difference was observed for dose to OAR between different motion types.
+$D_{Max}$ and $D_{Mean}$ for 8 OARs are shown in Table~\ref{tab:OARComplex}. There was significant difference between PT and SBRT in $D_{Max}$ and $D_{Mean}$ for heart, spinal cord, esophagus and aorta and in $D_{Mean}$ for ipsilateral lung.
+No significant difference was observed for dose to OAR between different motion types or between indITV and 4Dopt. $D_{Max}$ to all OARs was \textbf{?} and and for SBRT, indITV and 4Dopt, respectively.
 
 DVHs for patients 6 - 8 are shown in Fig.~\textbf{Do it!}. SA, Es were substracted from for substracion from target were ..., compared to 2 mm in SBRT
-SA D$_{Max}$ limit was exceeded for patients 6 and 8 in all cases. Heart D$_{Max}$ limit was exceeded in 1, 2 and 0 different motion cases for SFUD, indITV and 4Dopt, respectively.
+$D_{Max}$ limit for smaller airways was exceeded for patients 6 and 8 in all cases. Heart $D_{Max}$ limit was exceeded in 1 and 2 different motion cases for indITV and 4Dopt, respectively.
 
 
 \include{tableOAR}
@@ -259,7 +259,7 @@ SA D$_{Max}$ limit was exceeded for patients 6 and 8 in all cases. Heart D$_{Max
 
 Clinically valid SBRT plans have been compared to PT treatment plans for NSCLC patients with multiple metastases. To the best of our knowledge, this is the first study of treating multiple NSCLC metastases. Novel approch was used to handle multiple targets, together
 with state of the are 4D PT treatment planning. Furthermore, 4D doses were calculated for PT treatment plans. PT on average delievered less dose to OAR, while there were no
-significant difference in target coverage. The most apperent difference is in lung V_${20\%}$, which was 3333\% lower in PT, due to the narrow entry channel PT use.
+significant difference in target coverage. The most apperent difference is in lung V${_20\%}$, which was 3333\% lower in PT, due to the narrow entry channel PT use.
 
 Patients 1 - 5 did not require OAR implementation in optimization and nevertheless no OAR constraints were violated. Even though patient 2 and 4 had 5 metastases each. For patients 1 - 5 the OARs were at least 10 mm away from the CTV, whereas for
 patient 6 - 8 they were closer than 10 mm. The optimization problem was therefore more complex, especially in 4Dopt case. Patient 6 had the best target coverage with indITV, however $D_{Max}$ for smaller airways was exceeded. For patient 7 PT and SBRT target

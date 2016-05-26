@@ -61,15 +61,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="739.78767"
-     inkscape:cy="657.65027"
+     inkscape:cx="2048.7506"
+     inkscape:cy="168.93367"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="2560"
-     inkscape:window-height="1377"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:window-width="2495"
+     inkscape:window-height="1416"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata4217">
@@ -79,7 +79,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -88,43 +88,55 @@
      inkscape:groupmode="layer"
      id="layer1">
     <image
-       sodipodi:absref="C:\Users\Kristjan\Documents\GitHub\PhD\ComplexPatients\Images\ExampleLung003\Lung003_multi_mITV.png"
+       sodipodi:absref="/home/kanderle/Documents/PhD/ComplexPatients/Images/ExampleLung003/Lung003_multi_mITV.png"
        xlink:href="Lung003_multi_mITV.png"
-       transform="translate(-286.88332,-230.31478)"
-       clip-path="url(#clipPath4290)"
-       width="1184"
-       height="905"
-       preserveAspectRatio="none"
-       id="image4228"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/ComplexPatients/Images/multiExample.png"
+       y="8.4336243"
        x="-283.42859"
-       y="8.4336243" />
+       id="image4228"
+       preserveAspectRatio="none"
+       height="905"
+       width="1184"
+       clip-path="url(#clipPath4290)"
+       transform="translate(-286.88332,-230.31478)" />
     <image
-       sodipodi:absref="C:\Users\Kristjan\Documents\GitHub\PhD\ComplexPatients\Images\ExampleLung003\Lung003_multi_4DITV.png"
+       sodipodi:absref="/home/kanderle/Documents/PhD/ComplexPatients/Images/ExampleLung003/Lung003_multi_4DITV.png"
        xlink:href="Lung003_multi_4DITV.png"
-       transform="translate(-513.15749,-769.73624)"
-       clip-path="url(#clipPath4286)"
-       width="1184"
-       height="905"
-       preserveAspectRatio="none"
-       id="image4239"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/ComplexPatients/Images/multiExample.png"
+       y="547.8551"
        x="961.07935"
-       y="547.8551" />
-    <image
-       sodipodi:absref="C:\Users\Kristjan\Documents\GitHub\PhD\ComplexPatients\Images\ExampleLung003\Lung003_sbrt.png"
-       xlink:href="Lung003_sbrt.png"
-       transform="translate(565.68543,19.68522)"
-       clip-path="url(#clipPath4282)"
-       width="1184"
-       height="905"
+       id="image4239"
        preserveAspectRatio="none"
-       id="image4250"
+       height="905"
+       width="1184"
+       clip-path="url(#clipPath4286)"
+       transform="translate(-513.15749,-769.73624)" />
+    <image
+       sodipodi:absref="/home/kanderle/Documents/PhD/ComplexPatients/Images/ExampleLung003/Lung003_sbrt.png"
+       xlink:href="Lung003_sbrt.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/ComplexPatients/Images/multiExample.png"
+       y="-241.56638"
        x="906.57141"
-       y="-241.56638" />
+       id="image4250"
+       preserveAspectRatio="none"
+       height="905"
+       width="1184"
+       clip-path="url(#clipPath4282)"
+       transform="translate(565.68543,19.68522)" />
     <flowRoot
        xml:space="preserve"
        id="flowRoot4294"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       transform="translate(-20.203051,179.93622)"><flowRegion
+       transform="translate(-20.203051,179.93622)"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/ComplexPatients/Images/multiExample.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><flowRegion
          id="flowRegion4296"><rect
            id="rect4298"
            width="549.52301"
@@ -135,7 +147,10 @@
        xml:space="preserve"
        id="flowRoot4294-8"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       transform="translate(1004.3057,175.56122)"><flowRegion
+       transform="translate(1004.3057,175.56122)"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/ComplexPatients/Images/multiExample.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><flowRegion
          id="flowRegion4296-7"><rect
            id="rect4298-3"
            width="549.52301"
@@ -146,7 +161,10 @@
        xml:space="preserve"
        id="flowRoot4294-8-9"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       transform="translate(2049.7971,179.58466)"><flowRegion
+       transform="translate(2049.7971,179.58466)"
+       inkscape:export-filename="/home/kanderle/Documents/PhD/ComplexPatients/Images/multiExample.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><flowRegion
          id="flowRegion4296-7-1"><rect
            id="rect4298-3-9"
            width="549.52301"
