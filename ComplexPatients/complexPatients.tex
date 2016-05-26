@@ -111,7 +111,7 @@ Finally, fields, resulting from the two optimization techniques mentioned, were 
 \subsection{Patient data}
 
 Treatment plans were created for 8 patients with 2 - 5 lung metastases summing to 24 metastases in total. \textbf{Average?}. Details are given in Table~\ref{tab:patdata2}.
-Patients 6 - 8 had at least one OAR closer than 10 mm to one or more CTVs. 
+Patients 5 - 8 had at least one OAR closer than 10 mm to one or more CTVs. 
 
 Patients were treated with SBRT at Chamaplimaud Center for the Unknown, Lisbon (Portugal), with different fraction schemes. Number of fractions and doses delivered are given in Table~\ref{tab:patdata2}. 
 
@@ -127,36 +127,36 @@ Patients were treated with SBRT at Chamaplimaud Center for the Unknown, Lisbon (
 		\hline
 		\multirow{2}{*}{1} & a & 10.2 & 3.4  & \multirow{2}{*}{1 x 24 Gy} & \multirow{2}{*}{2} & \multirow{2}{*}{SA} \\
 		 & b & 14.4 & 2.8 &  &  &  \\
-		 
+
 		 \hline
-		 \multirow{5}{*}{2} & a & 136 & 12  & 3 x 9 Gy & \multirow{3}{*}{2} & Heart\\
-		  & b & 12.4 & 2.5  & 1 x 20 Gy &  &\\
-		  & c & 123 & 14  & 3 x 9 Gy &  &Heart \\
-		 & d & 80.7 & 17  & 1 x 20 Gy & 3  &\\
-		 & e & 86.7 & 6.6  & 1 x 20 Gy & 2 & \\
-		 \hline
-		 \multirow{2}{*}{3} & a & 2.3 & 12  & 1 x 24 Gy & \multirow{2}{*}{2} \\
+		 \multirow{2}{*}{2} & a & 2.3 & 12  & 1 x 24 Gy & \multirow{2}{*}{2} \\
 		 & b & 0.4 & 11.8  & 5 x 7 Gy &  \\
 		 \hline
-		 \multirow{5}{*}{4} & a & 3.8 & 5.8  & \multirow{5}{*}{1 x 24 Gy} & \multirow{5}{*}{2} \\
+		 \multirow{5}{*}{3} & a & 3.8 & 5.8  & \multirow{5}{*}{1 x 24 Gy} & \multirow{5}{*}{2} \\
 		  & b & 4.3 & 0.8  &  & \\
 		  & c & 2.7 & 3.4  &  & \\
 		  & d & 3.1 & 2.1  &  & \\
 		  & e & 0.5 & 0.5  &  & \\
 		  \hline
-		  \multirow{2}{*}{5} & a & 139 & 0.6 & \multirow{2}{*}{1 x 24 Gy} & 3 \\
+		  \multirow{2}{*}{4} & a & 139 & 0.6 & \multirow{2}{*}{1 x 24 Gy} & 3 \\
 		 & b & 9.2 & 2.0  &  & 2 \\
 		 \hline
-		 \multirow{2}{*}{6} & a & 4 & 9  & 3 x 9 Gy  & 5 & SA, esoph. \\
+		 \multirow{2}{*}{5} & a & 4 & 9  & 3 x 9 Gy  & 5 & SA, esoph. \\
 		 & b & 0.8 & 7.8  & 1 x 24 Gy & 2 \\
 		 \hline
-		 \multirow{4}{*}{7} & a & 3.4   & 4.4    & \multirow{4}{*}{1 x 24 Gy} & 3  \\
+		 \multirow{4}{*}{6} & a & 3.4   & 4.4    & \multirow{4}{*}{1 x 24 Gy} & 3  \\
 				    & b & 2.4 & 4.4  & & \multirow{3}{*}{2} \\
 				    & c & 2.0 & 6.3  & & & \multirow{2}{*}{Heart}\\
 				    & d & 2.4 & 6.4  & & \\
 		\hline	    
-		\multirow{2}{*}{8} & a & 20.6 & 7.4 & \multirow{2}{*}{1 x 24 Gy} & \multirow{2}{*}{4} & \multirow{2}{*}{SA}  \\
+		\multirow{2}{*}{7} & a & 20.6 & 7.4 & \multirow{2}{*}{1 x 24 Gy} & \multirow{2}{*}{4} & \multirow{2}{*}{SA}  \\
 		 & b & 27.1 & 6.0  &  &   \\
+		 \hline
+		 \multirow{5}{*}{8} & a & 136 & 12  & 3 x 9 Gy & \multirow{3}{*}{2} & Heart\\
+		  & b & 12.4 & 2.5  & 1 x 20 Gy &  &\\
+		  & c & 123 & 14  & 3 x 9 Gy &  &Heart \\
+		 & d & 80.7 & 17  & 1 x 20 Gy & 3  &\\
+		 & e & 86.7 & 6.6  & 1 x 20 Gy & 2 & SA \\
 		 
 		
 		\hline\hline
@@ -217,7 +217,7 @@ slice-by-slice rescanns that were applied to each plan.
 
 Detailed explanation of SBRT treatment planning is given is Section~\ref{SBRTTP}.
 
-For patients 6 - 8 the dose limits to the OARs (stated in Table~\ref{tab:patdata2}) could not be respected by including them in optimization. It was necessary to add margins to the OAR and then 
+For patients 5 - 7 the dose limits to the OARs (stated in Table~\ref{tab:patdata2}) could not be respected by including them in optimization. It was necessary to add margins to the OAR and then 
 subtract OAR plus margins from the target. An algorithm was introduced into TRiP98 to automatically find the margins needed for an acceptable treatment plan.
 
 \section{Results}
@@ -235,7 +235,7 @@ Example of different treatment plans for a single patient is shown in Fig.~\ref{
 \subsection{Target Coverage}
 
 Results for CTV $D_{99\%}$ for all patients are shown in Table~\ref{tab:resultsComplex}. All SBRT plans were approved by a physician, 
-even though the prescription dose for patients 6 - 8 was not met due to an OAR proximity. Excluding patients 6 - 8, there were 8  cases of too low CTV dose accross different
+even though the prescription dose for patients 6 - 8 was not met due to an OAR proximity. Excluding patients 5 - 8, there were 8  cases of too low CTV dose accross different
 motion types for indITV and 4Dopt, respectively, but not for the same targets.
 For patients 6 - 8 treatment plans with SFUD were clinically unacceptable, due to violation of OAR constraints. Both indITV and 4Dopt had higher CTV $D_{99\%}$ than SBRT.
 
