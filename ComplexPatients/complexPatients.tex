@@ -46,7 +46,7 @@ was that patients with multiple metastases would especially benefit from PT comp
 Since patients with multiple metastases can present complex geometry, intensity modulated particle therapy (IMPT) might provide better treatment plan than SFUD.
 
 An investigation of IMPT with state of the art 4D optimization for treating lung cancer patients with multiple metastases was made. Treatment plans were generated with different 4D optimization techniques and compared with
-SBRT plans, which were acctually used for treating patients.
+SBRT plans, which were actually used for treating patients.
 
 
 %A simple geometrical union of target contour in different CT states, geo-ITV, leads to poor 4D dose distribution, when treating moving tumors with particle therapy \cite{Rietzel2010}.
@@ -70,7 +70,7 @@ Patients were treated with SBRT at Chamaplimaud Center for the Unknown, Lisbon (
 \begin{table}[H]
 	\centering
 	%   \footnotesize
-	\caption{Target characteristics, with CTV volumes, peak-to-peak motions, fractination schemes and number of fields used for treatment planning. Last column 
+	\caption{Target characteristics, with CTV volumes, peak-to-peak motions, fractionation schemes and number of fields used for treatment planning. Last column 
 	shows an OAR in target vicinity (closer than 10 mm). SA stands for smaller airways and esoph. for esophagus.}
 	\begin{tabular}{c|c|c|c|c|c|c}
 		\hline\hline
@@ -176,8 +176,8 @@ OAR was also included in motion states \cite{Graeff2012}.
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=0.7\textwidth]{./Images/weplITV.png}
-		\caption{Schematic presentation of the indITV. (a) Dark gray elilipses show margins needed for specific fields to account for range changes in different motion states.
-		When common taret volume for two perpendicular fields is generated (this black contour) it creates unnecessary lateral extension of both fields, as shown by the dark gray
+		\caption{Schematic presentation of the indITV. (a) Dark gray ellipses show margins needed for specific fields to account for range changes in different motion states.
+		When common target volume for two perpendicular fields is generated (this black contour) it creates unnecessary lateral extension of both fields, as shown by the dark gray
 		entry channels. A solution is shown in (b). Rather than using standard, geometric, margins, both fields use the same geometry, however the conversion of geometry to WEPL
 		is altered for each field. The plot in (b) shows the standard (solid line) and an altered conversion (dashed-doted line) for a beam passing a homogeneous CTV. The altered conversion
 		increases the WEPL extent and thus implicitly increasing margins for a single field only. Figure taken from \cite{Graeff2012}}
@@ -191,13 +191,13 @@ The same number of fields and the same field angles were used in both techniques
 
 \subsection{Treatment planning}
 
-An isotropic margin of 3 mm was added to each CTV to account for uncertanties in treatment delivery. An WEPL-ITV was constructed on the CTV with margins for each individual field, which was than used either in optimization (inITV)
-or for raster setup (4Dopt). Due to large memory demands, targets in each lung were optimized seperately. 
+An isotropic margin of 3 mm was added to each CTV to account for uncertainties in treatment delivery. An WEPL-ITV was constructed on the CTV with margins for each individual field, which was than used either in optimization (inITV)
+or for raster setup (4Dopt). Due to large memory demands, targets in each lung were optimized separately. 
   
 The objective for target was 99\% of each target volume should receive at least 100\% of the planned dose (D$_{99}$\% $\geq$ 100\%). Furthermore, the doses to the OARs should be under the limits given by the AAPM task group \cite{Benedict2010}. 
  
-After the optimization 4D-dose was caluculated for two motion periods (3.6 sec and 5.0 sec) and two starting phases (0$^\circ$ and 90$^\circ$) as explained in Section~\ref{PTTP}. Motion was mitigated with five 
-slice-by-slice rescanns that were applied to each plan.
+After the optimization 4D-dose was calculated for two motion periods (3.6 sec and 5.0 sec) and two starting phases (0$^\circ$ and 90$^\circ$) as explained in Section~\ref{PTTP}. Motion was mitigated with five 
+slice-by-slice rescans that were applied to each plan.
 
 Detailed explanation of SBRT treatment planning is given is Section~\ref{SBRTTP}.
 
@@ -219,7 +219,7 @@ Example of different treatment plans for patient 8 is shown in Fig.~\ref{Fig:mul
 \subsection{Target Coverage}
 
 Results for CTV $D_{99\%}$ for all patients are shown in Table~\ref{tab:resultsComplex}. All SBRT plans were approved by a physician, 
-even though the prescription dose for patients 5 - 7 was not met due to an OAR proximity. Excluding patients 5 - 7, there were \textbf{?} cases (out of 20) of too low CTV dose accross different
+even though the prescription dose for patients 5 - 7 was not met due to an OAR proximity. Excluding patients 5 - 7, there were \textbf{?} cases (out of 20) of too low CTV dose across different
 motion types for indITV and 4Dopt, respectively. The lowest CTV $D_{99\%}$ was 98.8\%.
 For patients 6 - 8 treatment plans with SFUD were clinically unacceptable, due to violation of OAR constraints. Both indITV and 4Dopt had higher CTV $D_{99\%}$ than SBRT, except for target 7c.
 There was no significant difference in target coverage between indITV and 4Dopt. \textbf{SBRT?}
@@ -231,7 +231,7 @@ There was no significant difference in target coverage between indITV and 4Dopt.
 $D_{Max}$ and $D_{Mean}$ for 8 OARs are shown in Table~\ref{tab:OARComplex}. There was a significant difference between PT and SBRT in $D_{Max}$ and $D_{Mean}$ for heart, spinal cord, esophagus and aorta and in $D_{Mean}$ for ipsilateral lung.
 No significant difference was observed in dose to OAR between different motion types or between indITV and 4Dopt. $D_{Max}$ to all OARs was \textbf{?} and and for indITV, 4Dopt and SBRT, respectively.
 
-DVHs for patients 5 - 8 are shown in Fig.~\textbf{Do it!}. The margins used for OAR substraction for PT and SBRT, respectively, were:
+DVHs for patients 5 - 8 are shown in Fig.~\textbf{Do it!}. The margins used for OAR subtraction for PT and SBRT, respectively, were:
 0 and 5 mm for smaller airways, 0 and 1 mm for esophagus in patient 5; 
 0 and 2 mm for heart in patient 6; 
 2 and 11 mm for smaller airways in left lung, 0 and 9 mm for smaller airways in right lung.
@@ -246,12 +246,12 @@ due to too large dose to 0.5 cm$^3$ volume of smaller airways (19.6 Gy compared 
 \section{Summary and Discussion}
 
 Clinically valid SBRT plans have been compared to PT treatment plans for NSCLC patients with multiple metastases. 
-To the best of our knowledge, this is the first study of treating multiple NSCLC metastases with PT. Novel approch was used to handle multiple targets, together
+To the best of our knowledge, this is the first study of treating multiple NSCLC metastases with PT. Novel approach was used to handle multiple targets, together
 with the state of the are 4D PT treatment planning. Furthermore, 4D PT doses were calculated for different motion types. 
 
-PT on average delievered less dose to OAR, while still having comparable target coverage.
+PT on average delivered less dose to OAR, while still having comparable target coverage.
 The most apparent difference is in lung $V{_20\%}$, which was 3333\% lower in PT, due to the narrow entry channel PT use.
-For patients 5 - 8, PT maintained or even improved target coverage, while reducing $D_{Mean}$ to OARs. Additionally,  margins used for OAR substraction were smaller in PT.
+For patients 5 - 8, PT maintained or even improved target coverage, while reducing $D_{Mean}$ to OARs. Additionally,  margins used for OAR subtraction were smaller in PT.
 
 There was no significant difference between indITV and 4Dopt in target coverage or in dose to OAR. However, in patients 5 - 8 the 4Dopt was able to have higher target coverage, while respecting the OAR dose limits.
 
@@ -266,7 +266,7 @@ Because we did not use field specific PTVs it was not possible to include range 
 Instead of creating field specific PTVs to include range uncertainties, a solution was proposed to include uncertainties in optimization process itself \cite{Pflugfelder2008, Unkelbach2009, Fredriksson2011, Chen2012}.
 Chen et al. have shown it is possible to implement robust optimization in multi-criteria optimization as well \cite{Chen2012}. Furthermore, in a recent treatment planning study by Liu et al. \cite{Liu2016}
 a 4D robust optimization was demonstrated, with better results over 3D robust optimization for NSCLC patients. However, only breathing starting phase was used as an uncertainty,
-whereas different motion types should be considered. Patient 6 $D_{Max}$ heart dose ranged over 2 Gy accross different motion types in 4Dopt, showing the necessity of making treatment plans robust against motion uncertainty, 
+whereas different motion types should be considered. Patient 6 $D_{Max}$ heart dose ranged over 2 Gy across different motion types in 4Dopt, showing the necessity of making treatment plans robust against motion uncertainty, 
 especially in the hypo-fractionated regiment. The disadvantage of 3D and 4D robust optimization is the enlargement of the optimization problem.
 
 Apart from 4D robust optimization, the effect of motion could be minimized by using other motion mitigation techniques, such as gating. Furthermore, gating could improve the target coverage, where the planned dose was
