@@ -46,7 +46,7 @@ along with different optimization metrics, such as mean square error, cross-corr
 
 The advantage of using open-source software for DIR, as explained in Section~\ref{RegistrationImplement}, is that different DIR algorithms, optimization metrics and image types can be used. Either with using
 existing libraries, such as ITK \cite{Yoo2002}, or by writing designated software \cite{Fedorov2015}. A B-Spline algorithm was used for DIR in this thesis. There are large deformations present in lung and cardiac
-4D-CT, which B-Spline should handle well \cite{Tang2013}. The mean square error metric also gives better results for images of the same modality and same contrast \cite{Varadhan2013}}. 
+4D-CT, which B-Spline should handle well \cite{Tang2013}. The mean square error metric also gives better results for images of the same modality and same contrast \cite{Varadhan2013}. 
 The comparison between different algorithms and optimization metrics is beyond the scope of this thesis.
 
 \subsection{Deformable image registration validation}
@@ -62,11 +62,11 @@ An alternative to visual validation is to evaluate mathematical properties of ve
 which we also implemented. We have shown that bigger deformations yield more deviations in Jacobian and ICE, which was also found by Stanley et al \cite{Stanley2013}. Furthermore, we have confirmed
 that Jacobian should always be positive for a successful DIR \cite{Rey2002}. Additionally, our results show that ICE should be smaller than maximum vector field magnitudes. Any deviation from this checks should be thoroughly examined.
 
-There are additional vector fields validation methods beside Jacobian and ICE, such as vector field curl \cite{Schreibmann2012}, unbalanced energy \cite{Zhong2009}, permutation and analysis of variance (ANOVA) tests \cite{Klein2009}.
+There are additional vector fields validation methods beside Jacobian and ICE, such as vector field curl \cite{Schreibmann2012}, unbalanced energy \cite{Zhong2007}, permutation and analysis of variance (ANOVA) tests \cite{Klein2009}.
 It was demonstrated in a study by Salguero et al that DIR errors greater than 1 mm can lead to large dose errors in high-dose gradient regions. Therefore the DIR accuracy has to be quantified at each image voxel in the high-dose 
 gradient regions. A solution to evaluate at each specific voxel and for patient-specific registration was given by Stanley at al \cite{Stanley2013}. They proposed a computational phantoms and their deformations with a finite element module framework. 
 
-
+\newpage
 \section{Radiation treatment for non-small cell lung cancer}
 
 Surgery is the gold standard in treating NSCLC in the early stages \cite{Roesch2014}. In recent years, however, SBRT showed similar results as surgery and SBRT is recommended for all high-risk surgical patients. In a recent comparison study by Yu et al \cite{Yu2015},

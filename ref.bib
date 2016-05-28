@@ -2653,7 +2653,7 @@ url="http://dx.doi.org/10.1016/j.ijrobp.2014.01.012"
 	year = {2012},
 	keywords = {deformable registration, evaluation, IGRT},
 	abstract = {Deformable registration has migrated from a research topic to a widely used clinical tool that can improve radiotherapeutic treatment accuracy by tracking anatomical changes. Although various mathematical formulations have been reported in the literature and implemented in commercial software, we lack a straightforward method to verify a given solution in routine clinical use. We propose a metric using concepts derived from vector analysis that complements the standard evaluation tools to identify unrealistic wrappings in a displacement field. At the heart of the proposed procedure is identification of vortexes in the displacement field that do not correspond to underlying anatomical changes. Vortexes are detected and their intensity quantified using the CURL operator and presented as a vortex map overlaid on the original anatomy for rapid identification of problematic regions. We show application of the proposed metric on clinical scenarios of adaptive radiotherapy and treatment response assessment, where the CURL operator quantitatively detected errors in the displacement field and identified problematic regions that were invisible to classical voxel-based evaluation methods. Unrealistic warping not visible to standard voxel-based solution assessment can produce erroneous results when the deformable solution is applied on a secondary dataset, such as dose matrix in adaptive therapy or PET data for treatment response assessment. The proposed metric for evaluating deformable registration provides increased usability and accuracy of detecting unrealistic deformable registration solutions when compared to standard intensity-based approaches. It is computationally efficient and provides a valuable platform for the clinical acceptance of image-guided radiotherapy.},
-	issn = {15269914},	url = {http://www.jacmp.org/index.php/jacmp/article/view/3829}
+	issn = {15269914}
 }
 
 @Article{Klein2009,
@@ -2951,3 +2951,16 @@ url="http://dx.doi.org/10.1016/j.ijrobp.2014.01.012"
 }
 
 
+  	
+@article{Zhong2007,
+  author={Hualiang Zhong and Terry Peters and Jeffrey V Siebers},
+  title={FEM-based evaluation of deformable image registration for radiation therapy},
+  journal={Physics in Medicine and Biology},
+  volume={52},
+  number={16},
+  pages={4721},
+  url={http://stacks.iop.org/0031-9155/52/i=16/a=001},
+  year={2007},
+  abstract={This paper presents a new concept to automatically detect the neighborhood in an image where deformable registration is mis-performing. Specifically, the displacement vector field (DVF) from a deformable image registration is substituted into a finite-element-based elastic framework to calculate unbalanced energy in each element. The value of the derived energy indicates the quality of the DVF in its neighborhood. The new voxel-based evaluation approach is compared with three other validation criteria: landmark measurement, a finite element approach and visual comparison, for deformable registrations performed with the optical-flow-based 'demons' algorithm as well as thin-plate spline interpolation. This analysis was performed on three pairs of prostate CT images. The results of the analysis show that the four criteria give mutually comparable quantitative assessments on the six registration instances. As an objective concept, the unbalanced energy presents no requirement on boundary constraints in its calculation, different from traditional mechanical modeling. This method is automatic, and at voxel level suitable to evaluate deformable registration in a clinical setting.}
+}
+	
