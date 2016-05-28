@@ -29,11 +29,67 @@
 \begin{document}
 \chapter{Discussion}
 
+This is a first in silico study directly comparing clinical stereotactic body radiation therapy (SBRT) with scanned carbon-ions (PT) treatment plans for non-small cell lung cancer (NSCLC). 
+Our results show, that carbon-ions could be considered an alternative to SBRT, with the same tumor coverage and less dose to OAR.
+
+Since PT offers a precise dose shaping, it can be more prone to uncertainties and a special consideration must be paid to them. Calculation of time-resolved (4D) doses can be significantly
+affected by errors in deformable image registration (DIR) \textbf{Citat}. Special tools were developed in the scope of this thesis to ensure DIR quality assurance (DIRQA). Additionally, DIRQA
+was tested on a large dataset for a tool verification. Treatment of NSCLC with PT is also influenced by interplay between tumor motion and beam scanning. It was shown that rescanning offers an
+adequate motion mitigation. Additionally, a prospect for treating patients with multiple lung metastases was displayed.
+
+\section{Deformable image registration}
 
 
-DIR for adaptive radiotherapy - patient specific is neccesary, large DVF large errors %http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4041490/
+With features such as adaptive treatment planning \cite{Yan1997}, 4D optimization \cite{Trofimov2005}, 4D dose calculation \cite{Flampouri2006}, contour propagation \cite{Lu2006b} and
+combining different imaging modalities \cite{Leibfarth2013} DIR is slowly entering everyday clinical work-flow. There are various different registration algorithms available \cite{Varadhan2013}
+along with different optimization metrics, such as mean square error, cross-correlation, or normalized mutual information \cite{Glocker2011}.
 
-DIR between different modalities - PET/CT %http://www.tandfonline.com/doi/abs/10.3109/0284186X.2013.813964
+The advantage of using open-source software for DIR, as explained in Section~\ref{RegistrationImplement}, is that different DIR algorithms, optimization metrics and image types can be used. Either with using
+existing libraries, such as ITK \cite{Yoo2002}, or by writing designated software \cite{Fedorov2015}. A B-Spline algorithm was used for DIR in this thesis. There are large deformations present in lung and cardiac
+4D-CT, which B-Spline should handle well \cite{Tang2013}. The mean square error metric also gives better results for images of the same modality and same contrast \cite{Varadhan2013}}. 
+The comparison between different algorithms and optimization metrics is beyond the scope of this thesis.
+
+\subsection{Deformable image registration validation}
+
+Any DIR algorithm must undergo thorough evaluation before it can be used clinically. The most common practice for DIRQA is visual validation \cite{Stanley2013}. Our DIRQA module offers false color, checkerboard and landmarks distance as
+visual validation methods. Contour validation is currently lacking in our DIRQA module. In literature many different attempts have been done to asses DIRQA with landmarks or contours. A study by Hardcastle et al \cite{Hardcastle2012} 
+compared demons and Salient-Feature-Based registration with dice coefficient between propagated and physician drawn contours.
+A multi-institutional study by Brock et al \cite{Brock2010} compared differences in propagated and oncologist drawn landmarks. A method has been developed by Castillo et al \cite{Castillo2009} to automatically identify landmark points
+in lung patients images. However, visual based evaluations are limited in regions of uniform image intensity and by the number of the objects being tracked \cite{Kashani2008, Liu2012}. An example of visual validation disadvantage could be seen in
+pig cardiac 4D-CT, where visual evaluation did not show any errors in DIR, but errors were observed in vector fields resulting from DIR.
+
+An alternative to visual validation is to evaluate mathematical properties of vector fields. The two most common DIR vector fields evaluation metrics are Jacobian determinant (Jacobian) and inverse consistency error (ICE) \cite{Leow2007, Christensen2001},
+which we also implemented. We have shown that bigger deformations yield more deviations in Jacobian and ICE, which was also found by Stanley et al \cite{Stanley2013}. Furthermore, we have confirmed
+that Jacobian should always be positive for a successful DIR \cite{Rey2002}. Additionally, our results show that ICE should be smaller than maximum vector field magnitudes. Any deviation from this checks should be thoroughly examined.
+
+There are additional vector fields validation methods beside Jacobian and ICE, such as vector field curl \cite{Schreibmann2012}, unbalanced energy \cite{Zhong2009}, permutation and analysis of variance (ANOVA) tests \cite{Klein2009}.
+It was demonstrated in a study by Salguero et al that DIR errors greater than 1 mm can lead to large dose errors in high-dose gradient regions. Therefore the DIR accuracy has to be quantified at each image voxel in the high-dose 
+gradient regions. A solution to evaluate at each specific voxel and for patient-specific registration was given by Stanley at al \cite{Stanley2013}. They proposed a computational phantoms and their deformations with a finite element module framework. 
+
+
+\section{Radiation treatment for non-small cell lung cancer}
+
+Surgery is the gold standard in treating NSCLC in the early stages \cite{Roesch2014}. In recent years, however, SBRT showed similar results as surgery and SBRT is recommended for all high-risk surgical patients. In a recent comparison study by Yu et al \cite{Yu2015},
+SBRT had lower intermediate mortality and toxicity, compared to surgery. However, patients with long life expectancies were found to benefit more from surgery. 
+
+There are several clinical scenarios where use of SBRT might be limited. This include treatment of centrally located tumors, tumors close to chest wall, large tumors (radius > 5 cm) and multiple primary tumors \cite{Timmerman2006, Georg2008, Westover2012}.
+The limitation of SBRT could open possibilities to other treatment modalities, such as particle therapy. Interestingly, two of the mentioned scenarios, large tumors and multiple tumors, would benefit the most from particle therapy, according to the results shown
+in this thesis and to the results published by Kadoya et al \cite{Kadoya2010}. In a study done at Francis H. Burr Proton Therapy Center patients who could not be treated with SBRT, due to the scenarios mentioned, were treated with passive proton beam in 3 - 5 fractions, 
+delivering 42 - 50 Gy \cite{Westover2012}. They observed similar tumor local control rates as in SBRT (100\% in a two year follow-up) with limited toxicities. It should be noted, that the patients treated were rejected from SBRT treatment.
+
+While treatment for early stage NSCLC is well established, more than 75\% NSCLC cases present themselves in an advance stage \cite{Jemal2009}, usually due to the lack of detection in the early stages. The standard of care for advanced NSCLC is concurrent chemotherapy \cite{Oshiro2014}.
+Dose escalation studies showed favorable prognosis for doses higher than 70 Gy \cite{Hayman2001, Rosenman2002, Socinski2008}. The results of recent phase 3 randomized trial by Bradley et al \cite{Bradley2010}, however, showed better survival rates for patients delivered 60 Gy,
+instead of 74 Gy. It was speculated that higher doses to heart and esophagus might have contributed to higher mortality rates for patients who were administered higher doses \cite{Cox2012}. Results presented in this thesis show that mean dose to heart and esophagus would be on average 1 Gy
+smaller with PT than with SBRT. Similar results were observed when comparing protons to SBRT \cite{Georg2008}.
+
+Manjka se 
+multiple
+4pi
+Motion
+current status
+future?
+
+
 
 RBE
 
@@ -58,6 +114,16 @@ bio-adaptive particle therapy
 
 SBRT is the lowest for cost per quality of life for early stage, but Protons beams scanning for advanced %http://www.ncbi.nlm.nih.gov/pubmed/26828647
 SBRT limited: large tumors (>5 cm, more tumors, patients with poor lung funtction)
+
+Proton SBRT %http://www.ncbi.nlm.nih.gov/pubmed/22551902
+
+Seattle treated NSCLC with PBS
+
+ABS vs passive?
+
+Small tumor are bad %http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4399385/\
+
+dosimetric study of protons vs sbrt %http://www.ncbi.nlm.nih.gov/pubmed/18405986/
 
 \bibliographystyle{apalike}
 \bibliography{../ref.bib}{}

@@ -29,18 +29,20 @@
 
 \section*{Motivation}
 
-In 2013 every fourth death in Germany was due to cancer \cite{Destatis2015} and approximately 45 000 of deaths were from lung and bronchial cancer. In the last 30 years, there was a 180\% increase of deaths due to lung and bronchial cancer for women \cite{Destatis2015}.
-The standard course of treatment for lung cancer is surgery, chemotherapy, radiotherapy or a combination of these. Surgery is usually the first choice of treatment. In recent years, however, state of the art photon radiotherapy, called stereotactic body-radiation therapy (SBRT) showed
-promising results for treating lung cancer \cite{Baumann2009, Greco2011}. SBRT delievers high doses (up to 24 Gy) in few fractions, therefore a careful consideration must be given to dose to critical structures.
+In 2013 every fourth death in Germany was due to cancer and approximately 45 000 deaths were from lung and bronchial cancer \cite{Destatis2015}. In the last 30 years, there was a 180\% increase of deaths due to lung and bronchial cancer for women \cite{Destatis2015}.
+The standard course of treatment for lung cancer is surgery, chemotherapy, radiotherapy or a combination of these. Surgery is usually the first choice of treatment for early stages of lung cancer. 
+In recent years, however, state of the art photon radiotherapy, called stereotactic body-radiation therapy (SBRT) showed
+promising results for treating lung cancer \cite{Baumann2009, Greco2011}. SBRT delievers high doses (up to 24 Gy) in 1 - 5 fractions, therefore dose to critical structure must be carefully considered.
 
-In the last twenty years, ion beam therapy has proven to be an alternative to photon radiotherapy. Higher tumor control rates and better dose conformity can be achieved with superior physical and biological properties of ions \cite{Tsujii2008,Durante2010}.
-Review made by Kamada et al reported a high 3-year survival rate for carbon-ions (76.9\%) in single fraction, with no late treatment-related complications \cite{Kamada2016}. The treatment used passive beam scanning, where patient specific absorbers are used to conform the dose
-to the tumor. Active beam scanning can provide better dose shaping, which is essential in hypo-fractionated treatment. However, interaction between tumor and scanned beam motion, called interplay, can severely degrade dose distribution in patient.
+In the last twenty years, ion beam therapy has proven to be a promising alternative to photon radiotherapy. Higher tumor control rates and better dose conformity can be achieved with superior physical and biological ion properties, when compared to photons \cite{Tsujii2008,Durante2010}.
+A recent review made by Kamada et al reported a high 3-year survival rate for carbon-ions (76.9\%) for treating lung cancer in single fraction, with no late treatment-related complications \cite{Kamada2016}. 
+The treatment used passive beam scanning, where patient specific absorbers are used to conform the dose to the tumor. Active beam scanning, on the other hand, can provide even better dose shaping, which is essential in hypo-fractionated treatment. 
+However, interaction between tumor and scanned beam motion, called interplay, can severely degrade dose distribution in patient. Therefore designated motion mitigation techniques must be used for successful treatment of lung cancer with active beam scanning \cite{Bert2008}.
 
-Successful treatment of tumors in abdomen region with scanned ion beams has been done in CNAO and NIRS. None, however, have treated lung cancer patients, where range changes between soft (lung) and dense (tumor) tissue can be substantial, making treatment planning and delivery of 
-scanned ion beam a challenging problems.
+Successful treatment of tumors in abdomen region (liver and pancreases tumors) with scanned ion beams has been already done at HIT, CNAO and NIRS \cite{Rossi2016, Mori2016}\textbf{Citat HIT}. Only NIRS, however, has recently started treatment of lung cancer patients.
 
-In this thesis we will address this challanges and make a comparison between SBRT and scanned carbon-ion therapy. Patients particulary suited for carbon-ion therapy will try to be identified for a possible future treatment at facilities in HIT or Marburg. 
+In this thesis we will address this challenges of treating lung cancer patients with active beam scanning and 
+make a comparison between SBRT and scanned carbon-ion therapy. Patients particularly suited for carbon-ion therapy will try to be identified for a possible future treatment at designated facilities in Marburg and Heidelberg. 
 
 
 
@@ -48,20 +50,20 @@ In this thesis we will address this challanges and make a comparison between SBR
 
 \section*{Scope of this work}
 
-This is the first in silico comparision between SBRT and active scanning carbon-ion for NSCLC. Time-resolved (4D) doses will be studied on a large patient dataset.
+This is the first in silico comparision between SBRT and active scanning carbon-ion for non-small cell lung cancer (NSCLC). A time-resolved (4D) doses will be studied on a large patient dataset, including patients with multiple metastases.
 
-In order to create carbon-ion treatment plans and calculate 4D doses, contours have to be propagated from planning to all states 4D computed tomography (CT) and motion between 4D-CT states has to be quantified. 
+In order to create carbon-ion treatment plans and calculate 4D doses, contours have to be propagated from planning computed tomography (CT) to all motion states in 4D-CT. Additionally, motion between 4D-CT states has to be quantified. 
 This will be achieved with deformable image registration (DIR). 
-Furthermore, a designated tool for DIR quality assurance (DIRQA) will be developed. A verification of DIR and DIRQA has been done on human lung 4D-CT and on pig cardiac 4D-CT.
+Furthermore, a designated tool for DIR quality assurance (DIRQA) will be developed. A verification of DIR and DIRQA has been done on a human lung 4D-CT and on pig cardiac 4D-CT dataset.
 
-To show potential of scanned carbon-ions in handling NSCLC, treatment plans for 19 patients, which were treated with SBRT, will be calculated. Furthermore, static and 4D doses with and without motion
-mitigation will be analyzed. Doses to target and organs-at-risk (OAR) will be analyzed and compared between carbon-ions and SBRT.
+To show potential of scanned carbon-ions in handling NSCLC, treatment plans for 19 patients, which were actually treated with SBRT, will be calculated. Afterwards, static and 4D doses with and without motion
+mitigation will be analyzed. Doses to targets and organs-at-risk (OAR) will be analyzed and compared between carbon-ions and SBRT.
 
-A special investigation will be made into patients with multiple NSCLC metastases. A treatment planning software will be modified, so it will be able to make treatment plans for multiple targets. 
+A special investigation will be made into patients with multiple NSCLC metastases. A treatment planning software will be modified, in order to handle multiple targets in a single patient. 
 Treatment plans for patients with multiple NSCLC metastases will be generated with two different optimization techniques to tackle range changes in moving targets. Comparison to SBRT will be made regarding target coverage and OAR doses.
 
 The structure of this dissertation is as follows. Chapter 1 will present an overview of physical and biological fundamentals of radiotherapy. Photon and particle radiotherapy will be presented, with an emphasis on the treatment of moving targets.
-Additionally, lung cancer, epidemiology and staging used will be presented. Chapter 2 will present tools to handle DIR and DIRQA with their verification. In chapter 3, comparison between SBRT and carbon-ions will be investigated on lung cancer patient.
+Additionally, a description of lung cancer will be given. Chapter 2 will present tools to handle DIR and DIRQA and verification of these tools. In chapter 3, comparison between SBRT and carbon-ions will be investigated on lung cancer patients.
 Treatment for patients with multiple metastases in lung will be investigated in chapter 4. Overall results will be discussed in chapter 5 and the thesis will be concluded in chapter 6.
 
 
