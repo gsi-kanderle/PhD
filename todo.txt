@@ -57,6 +57,12 @@ Legend
   
  7c Zracunat:
  
+ Lung003 L racuna z LungL treba pol se 4D
+ Lung003 R caka na trp, da bo lahko CTV4 z 23 Gy
+ 
+ Lung021 mITV 4D test, treba pol se vse zracunat
+ 
+ 
   Results:
 
 Napis, target prescription could not be meet 3, 5, 6 and 8 times for sfud, indITV and 4DITD and sBRT, respectively.

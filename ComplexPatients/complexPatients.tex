@@ -93,7 +93,7 @@ Patients were treated with SBRT at Chamaplimaud Center for the Unknown, Lisbon (
 		  \multirow{2}{*}{4} & a & 139 & 0.6 & \multirow{2}{*}{1 x 24 Gy} & 3 \\
 		 & b & 9.2 & 2.0  &  & 2 \\
 		 \hline
-		 \multirow{2}{*}{5} & a & 4 & 9  & 3 x 9 Gy  & 5 & SA, esoph. \\
+		 \multirow{2}{*}{5} & a & 4 & 9  & 3 x 9 Gy  & 5 & SA, esoph., heart \\
 		 & b & 0.8 & 7.8  & 1 x 24 Gy & 2 \\
 		 \hline
 		 \multirow{4}{*}{6} & a & 3.4   & 5    & \multirow{4}{*}{1 x 24 Gy} & 3  \\
@@ -220,7 +220,7 @@ Example of different treatment plans for patient 8 is shown in Fig.~\ref{Fig:mul
 
 Results for CTV $D_{99\%}$ for all patients are shown in Table~\ref{tab:resultsComplex}. All SBRT plans were approved by a physician, 
 even though the prescription dose for patients 5 - 7 was not met due to an OAR proximity. Excluding patients 5 - 7, there were \textbf{?} cases (out of 20) of too low CTV dose across different
-motion types for indITV and 4Dopt, respectively. The lowest CTV $D_{99\%}$ was 98.8\%.
+motion types for indITV and 4Dopt, respectively. The lowest CTV $D_{99\%}$ was 86.5\%.
 For patients 6 - 8 treatment plans with SFUD were clinically unacceptable, due to violation of OAR constraints. Both indITV and 4Dopt had higher CTV $D_{99\%}$ than SBRT, except for target 7c.
 There was no significant difference in target coverage between indITV and 4Dopt. \textbf{SBRT?}
 
@@ -256,7 +256,7 @@ For patients 5 - 8, PT maintained or even improved target coverage, while reduci
 There was no significant difference between indITV and 4Dopt in target coverage or in dose to OAR. However, in patients 5 - 8 the 4Dopt was able to have higher target coverage, while respecting the OAR dose limits.
 
 Even though PT deposit less dose to OAR with the same or even better target coverage, there is still room for improvement in PT 4D treatment planning. 
-An implementation of multi-criteria objective planning should bring even better dose distribution and bring possibility to choose between trade-offs \cite{Breedveld2007, Chen2010}.
+An implementation of multi-criteria objective planning should bring even better dose distribution and bring possibility to choose between trade-offs \cite{Breedveld2007, Chen2010}. 
 Additionally, multiple target optimization in PT would benefit from a shell around PT where dose would be minimized. Therefore excessive dose
 in healthy tissue would be further reduced. An introduction of a shell, however, would further enlarge the optimization problem, which is big already for complex geometry (patient 5 - 8). 
 A solution for minimizing voxel number in optimization is currently being implemented by Prall et al \textbf{Citat, mogoce mal vec napisat.} 
@@ -266,8 +266,15 @@ Because we did not use field specific PTVs it was not possible to include range 
 Instead of creating field specific PTVs to include range uncertainties, a solution was proposed to include uncertainties in optimization process itself \cite{Pflugfelder2008, Unkelbach2009, Fredriksson2011, Chen2012}.
 Chen et al. have shown it is possible to implement robust optimization in multi-criteria optimization as well \cite{Chen2012}. Furthermore, in a recent treatment planning study by Liu et al. \cite{Liu2016}
 a 4D robust optimization was demonstrated, with better results over 3D robust optimization for NSCLC patients. However, only breathing starting phase was used as an uncertainty,
-whereas different motion types should be considered. Patient 6 $D_{Max}$ heart dose ranged over 2 Gy across different motion types in 4Dopt, showing the necessity of making treatment plans robust against motion uncertainty, 
-especially in the hypo-fractionated regiment. The disadvantage of 3D and 4D robust optimization is the enlargement of the optimization problem.
+whereas different motion types should be considered. The disadvantage of 3D and 4D robust optimization is the enlargement of the optimization problem.
+
+Patient 6 $D_{Max}$ heart dose ranged over 2 Gy across different motion types in 4Dopt, showing the necessity of making treatment plans robust against motion uncertainty, 
+especially in the hypo-fractionated regiment. Furthermore, the doses to OARs that are under the limits after optimization, may exceed them after calculating 4D dose. 
+The indITV and 4Dopt approaches take into account range changes in different motion states, however they do not guarantee 4D doses. This could be achieved with beam tracking, 
+when each motion state has designated treatment plan. Clinical application of beam tracking is not yet feasible due to several reasons, such as the 
+inverse interplay, the ion-beam tracking system complexity, precision and speed of the motion monitoring.
+Another solution would be jet-ventilation, however, it brings additional complications to treatment.
+
 
 Apart from 4D robust optimization, the effect of motion could be minimized by using other motion mitigation techniques, such as gating. Furthermore, gating could improve the target coverage, where the planned dose was
 not met. Gating, together with rescanning, has already been successfully implemented clinically for active beam scanning \cite{Rossi2016, Mori2016} and it might be essential to use it in hypo-fractionated 
