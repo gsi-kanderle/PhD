@@ -65,11 +65,9 @@ Legend
  
   Results:
 
-Napis, target prescription could not be meet 3, 5, 6 and 8 times for sfud, indITV and 4DITD and sBRT, respectively.
- 
-Legendo k sliki
-Prever, kje so OAR blizi kot 1mm, pa jih pol uredi po vrsti.
-V20 lung
+
+Lung021 - mITV je en zracunan, zj mors pa 4D pogledat. SA ma zelo mejhno dozo ze v 3D
+Lung003 - 4DITV L je koncal, treba je 4D pogledat. 4D se tut za R racuna. mITV se racuna 4D komplet.
  
 Sliko - pat3?
 Between three methods: how many cases below target?

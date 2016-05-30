@@ -99,8 +99,17 @@ The trial started in 2014 and we can not expect results before 2020.
 
 \subsection{Motion mitigation}
 
-While tumor motion influences photon treatment, the effects are not strong \cite{Zou2014}. However, effects can be substantial when treating moving targets with scanned particle therapy \cite{Bert2008}.
-It was shown in this thesis that rescanning is an adequate motion mitigation technique. \textbf{Citat protoni iz predavanja}. 
+While tumor motion influences photon treatment, the effects are not strong \cite{Zou2014}. On the other hand, effects can be substantial when treating moving targets with scanned particle therapy \cite{Bert2008}.
+It was shown in this thesis that rescanning is an adequate motion mitigation technique. \textbf{Citat protoni iz predavanja}. However, rescanning has a level of uncertanity, especially regarding maximum allowed point dose to OAR.
+In hypofractionated treatment this limits are strict and exact dose to OAR must be known. A possible solution would be to simulate rescanning and 4D delivery in optimization process itself. 
+However such solution is not yet feasible due to the complexity of the problem.
+
+Comonnly used motion mitigation technique in photon and particle treatment is gating. While it provides less motion-induced changes, it prolonges treatment time. A recent study by Zhang et al \cite{Zhang2015} included 
+different breathing patterns, obtained from a MRI, to on a 4DCT and calculated 4D doses for a liver cancer patients. They have shown that a gating window of 3 mm can result in a 10\% efficiency of a duty-cycle, 
+substantially prolonging treatment. Additionally, they have shown that neither volumetric or slice-by-slice rescanning could achieve good target coverage. However, good target coverage was obtained with combination
+of gating and rescanning. Their results suggest that a combination of gating and rescanning would probably be the best solution for treating NSCLC patients with PT. 
+Gating
+Tracking
 
 
 
@@ -109,7 +118,7 @@ It was shown in this thesis that rescanning is an adequate motion mitigation tec
 
 4pi
 adaptive
-tracking
+
 
 
 
@@ -120,13 +129,12 @@ RBE
 Hypo-fractionation of liver cancer %http://ro-journal.biomedcentral.com/articles/10.1186/1748-717X-8-59  http://jco.ascopubs.org/content/early/2015/12/11/JCO.2015.64.2710.short
 
 Future SBRT - 4pi %https://www.aapm.org/meetings/2014SS/documents/FUTUREOFSBRT2014Kupelian.pdf
-SBRT in lung cancer will become standard 
+
 
 Overview of lung cancer %http://www.tandfonline.com/doi/pdf/10.3109/0284186X.2011.590148
 
 Reoccurent lung cancer %http://www.ncbi.nlm.nih.gov/pubmed/24016675
 
-Heart and esophagus dose good predictors of mortality RTOG 0917 median survival 19.5 months vs 29.4 months with protons (http://www.ncbi.nlm.nih.gov/pubmed/24864278) for 74 Gy, but was 29 for 60 Gy with photons as well.
 
 Photons vs Protons for stage III NSCLC RTOG 1308
 
