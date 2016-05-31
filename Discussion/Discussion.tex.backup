@@ -107,53 +107,66 @@ However such solution is not yet feasible due to the complexity of the problem.
 Comonnly used motion mitigation technique in photon and particle treatment is gating. While it provides less motion-induced changes, it prolonges treatment time. A recent study by Zhang et al \cite{Zhang2015} included 
 different breathing patterns, obtained from a MRI, to on a 4DCT and calculated 4D doses for a liver cancer patients. They have shown that a gating window of 3 mm can result in a 10\% efficiency of a duty-cycle, 
 substantially prolonging treatment. Additionally, they have shown that neither volumetric or slice-by-slice rescanning could achieve good target coverage. However, good target coverage was obtained with combination
-of gating and rescanning. Their results suggest that a combination of gating and rescanning would probably be the best solution for treating NSCLC patients with PT. 
-Gating
-Tracking
+of gating and rescanning. Their results suggest that a combination of gating and rescanning would currently be the best solution for treating NSCLC patients with PT.
 
+Between rescanning, gating and beam tracking is beam tracking the most precise technique, since it requires no internal margins for target \cite{Bert2011}. Current clinical implementations
+of tracking in photon radiotherapy \cite{Kilby2010, Keall2014} can not be directly used in particle therapy, since they only provide position of single internal points. Fassi et al 
+\cite{Fassi2015} were able to account for inter- and intra-fractional variability of patient's anatomical configuration with a designated modeling technique \cite{Fassi2014}.
+The measured median of water-equivalent path length in target was within 2 mm of a simulated one. For actual clinical impementation it will be necesarry to test the model
+on a wider number of patients.
 
 
 \subsection{Outlook}
 
+Recent advances in photon radiotherapy allow the usage of noncoplanar beams, a so-called 4$\Pi$ optimization \cite{Dong2013}. In a recent study, Dong et al \cite{Dong2013b} showed that
+4$\Pi$ yielded better target coverage and OAR sparring than SBRT. They have reported reduction of $D_{Max}$ in heart, esophagus and spinal cord by 32\%, 72\% and 53\%, respectively, showing
+the potential of a 4$\Pi$ optimization. According to this thesis, PT is able to reduce the $D_{Max}$ even further, with a reduction of 57\%, 87\% and 83\% for heart, esophagus and spinal cord,
+respectively. The numbers, however, should be compared with caution, since they were obtained from a different set of patients. 
+A future study, directly comparing SBRT, $4\Pi$ and PT for NSCLC is thus warranted.
 
-4pi
-adaptive
+Robust optimization seems to be gaining on popularity for PT. Standard margin defenition to account for uncertainties fails short in PT, while the inclusion of uncertainties in 
+optimization process can substantially improve treatment plans \cite{Chen2012}. The robstuness optimization is now possible even for a 4D optimization \cite{Liu2016}, opening a wide
+field of new possibilities. 
 
+\chapter{Conslusion}
 
+In this work, designated tools were developed to handle deformable image registrations on different image sets. Furthermore, several test were 
+integrated to ensure quality assurance of the deformable image registration. The tools developed underwent an extensive testing on a large patient dataset
+and were able to produce deformable image registrations as well as find errors in it.
 
-
-RBE
-
-24Gy(RBE) %http://www.sciencedirect.com/science/article/pii/S0360301615005179
-
-Hypo-fractionation of liver cancer %http://ro-journal.biomedcentral.com/articles/10.1186/1748-717X-8-59  http://jco.ascopubs.org/content/early/2015/12/11/JCO.2015.64.2710.short
-
-Future SBRT - 4pi %https://www.aapm.org/meetings/2014SS/documents/FUTUREOFSBRT2014Kupelian.pdf
-
-
-Overview of lung cancer %http://www.tandfonline.com/doi/pdf/10.3109/0284186X.2011.590148
-
-Reoccurent lung cancer %http://www.ncbi.nlm.nih.gov/pubmed/24016675
-
-
-Photons vs Protons for stage III NSCLC RTOG 1308
-
-Stephen Bowen - deliever more dose to damaged lung instead of functionated one
-
-bio-adaptive particle therapy
-
-SBRT is the lowest for cost per quality of life for early stage, but Protons beams scanning for advanced %http://www.ncbi.nlm.nih.gov/pubmed/26828647
-SBRT limited: large tumors (>5 cm, more tumors, patients with poor lung funtction)
-
-Proton SBRT %http://www.ncbi.nlm.nih.gov/pubmed/22551902
-
-Seattle treated NSCLC with PBS
-
-ABS vs passive?
-
-Small tumor are bad %http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4399385/\
-
-dosimetric study of protons vs sbrt %http://www.ncbi.nlm.nih.gov/pubmed/18405986/
+The deformable image registration was than used for 4D dose calculations of scanne in lung cancer patients. 
+% RBE
+% 
+% 24Gy(RBE) %http://www.sciencedirect.com/science/article/pii/S0360301615005179
+% 
+% Hypo-fractionation of liver cancer %http://ro-journal.biomedcentral.com/articles/10.1186/1748-717X-8-59  http://jco.ascopubs.org/content/early/2015/12/11/JCO.2015.64.2710.short
+% 
+% Future SBRT - 4pi %https://www.aapm.org/meetings/2014SS/documents/FUTUREOFSBRT2014Kupelian.pdf
+% 
+% 
+% Overview of lung cancer %http://www.tandfonline.com/doi/pdf/10.3109/0284186X.2011.590148
+% 
+% Reoccurent lung cancer %http://www.ncbi.nlm.nih.gov/pubmed/24016675
+% 
+% 
+% Photons vs Protons for stage III NSCLC RTOG 1308
+% 
+% Stephen Bowen - deliever more dose to damaged lung instead of functionated one
+% 
+% bio-adaptive particle therapy
+% 
+% SBRT is the lowest for cost per quality of life for early stage, but Protons beams scanning for advanced %http://www.ncbi.nlm.nih.gov/pubmed/26828647
+% SBRT limited: large tumors (>5 cm, more tumors, patients with poor lung funtction)
+% 
+% Proton SBRT %http://www.ncbi.nlm.nih.gov/pubmed/22551902
+% 
+% Seattle treated NSCLC with PBS
+% 
+% ABS vs passive?
+% 
+% Small tumor are bad %http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4399385/\
+% 
+% dosimetric study of protons vs sbrt %http://www.ncbi.nlm.nih.gov/pubmed/18405986/
 
 \bibliographystyle{apalike}
 \bibliography{../ref.bib}{}
