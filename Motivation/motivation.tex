@@ -1,5 +1,32 @@
- 
+ \documentclass[type=dr, dr=rernat, accentcolor=tud7b,colorbacktitle, bigchapter, openright, twoside, 12pt ]{tudthesis}
+%\documentclass[11pt,twoside,a4paper]{article}
+\usepackage[english]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{pstricks}
+\usepackage{psfrag}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{epsfig}
+\usepackage{geometry}
+\usepackage{subfigure}
+\usepackage{rotating}
+\usepackage{minitoc}
+% \usepackage{dominitoc}
+\usepackage{multirow}
+\usepackage{listings}
+%\usepackage{appendix}
+%\usepackage[breaklinks=true]{hyperref}
+%\usepackage{breakcites}
 
+%%%% 1 1/2 facher Zeilenabstand:	
+\usepackage{setspace}
+\onehalfspacing
+
+
+
+
+\begin{document}
 
 
 \section*{Motivation}
@@ -43,4 +70,7 @@ Additionally, a description of lung cancer will be given. Chapter 2 will present
 Treatment for patients with multiple metastases in lung will be investigated in chapter 4. Overall results will be discussed in chapter 5 and the thesis will be concluded in chapter 6.
 
 
+\bibliographystyle{apalike}
+\bibliography{../ref.bib}{}
 
+\end{document}
