@@ -29,104 +29,145 @@
 \begin{document}
 \chapter{Discussion}
 
-This is a first in silico study directly comparing clinical stereotactic body radiation therapy (SBRT) with scanned carbon-ions (PT) treatment plans for non-small cell lung cancer (NSCLC). 
-Our results show, that carbon-ions could be considered an alternative to SBRT, with the same tumor coverage and less dose to OAR.
-
-Since PT offers a precise dose shaping, it can be more prone to uncertainties and a special consideration must be paid to them. Calculation of time-resolved (4D) doses can be significantly
-affected by errors in deformable image registration (DIR) \cite{Heath2006}. Special tools were developed in the scope of this thesis to ensure DIR quality assurance (DIRQA). Additionally, DIRQA
-was tested on a large dataset for a tool verification. Treatment of NSCLC with PT is also influenced by interplay between tumor motion and beam scanning. It was shown that rescanning offers an
+This is a first in silico study directly comparing clinical stereotactic body radiation therapy (SBRT) with scanned carbon-ions (PT) for non-small cell lung cancer (NSCLC). 
+Our results show that PT could be considered an alternative to SBRT, with the same tumor coverage and less dose to OAR. Treatment of NSCLC with PT is influenced by 
+interplay between tumor motion and beam scanning. It was shown that rescanning offers an
 adequate motion mitigation. Additionally, a prospect for treating patients with multiple lung metastases was displayed.
+
+PT offers a precise dose shaping and it can be thus more prone to uncertainties. Calculation of time-resolved (4D) doses can be significantly
+affected by errors in deformable image registration (DIR) \cite{Heath2006}. Special tools were developed in the scope of this thesis to ensure DIR quality assurance (DIRQA).
+Tools were tested on a large dataset to ensure their validity.
+
 
 \section{Deformable image registration}
 
-
-With features such as adaptive treatment planning \cite{Yan1997}, 4D optimization \cite{Trofimov2005}, 4D dose calculation \cite{Flampouri2006}, contour propagation \cite{Lu2006b} and
-combining different imaging modalities \cite{Leibfarth2013} DIR is slowly entering everyday clinical work-flow. There are various different registration algorithms available \cite{Varadhan2013}
+With features such as adaptive treatment planning \cite{Yan1997}, 4D optimization \cite{Trofimov2005}, 4D dose calculation \cite{Flampouri2006}, 
+contour propagation \cite{Lu2006b} and combining different imaging modalities \cite{Leibfarth2013} DIR is slowly entering everyday clinical work-flow. 
+There are various different registration algorithms available \cite{Varadhan2013}
 along with different optimization metrics, such as mean square error, cross-correlation, or normalized mutual information \cite{Glocker2011}.
 
-The advantage of using open-source software for DIR, as explained in Section~\ref{RegistrationImplement}, is that different DIR algorithms, optimization metrics and image types can be used. Either with using
-existing libraries, such as ITK \cite{Yoo2002}, or by writing designated software \cite{Fedorov2015}. A B-Spline algorithm was used for DIR in this thesis. There are large deformations present in lung and cardiac
+The advantage of using open-source software for DIR, as explained in Section~\ref{RegistrationImplement}, is that different DIR algorithms, 
+optimization metrics and image types can be used. They can be accessed either with using
+existing libraries, such as ITK \cite{Yoo2002}, or by writing designated software \cite{Fedorov2015}. A B-Spline algorithm and mean square error metric was used for DIR in this thesis. 
+There are large deformations present in lung and cardiac
 4D-CT, which B-Spline should handle well \cite{Tang2013}. The mean square error metric also gives better results for images of the same modality and same contrast \cite{Varadhan2013}. 
-The comparison between different algorithms and optimization metrics is beyond the scope of this thesis.
+However, a comparison between different algorithms and optimization metrics and their effect on DIRQA is warranted.
 
 \subsection{Deformable image registration validation}
 
-Any DIR algorithm must undergo thorough evaluation before it can be used clinically. The most common practice for DIRQA is visual validation \cite{Stanley2013}. Our DIRQA module offers false color, checkerboard and landmarks distance as
-visual validation methods. Contour validation is currently lacking in our DIRQA module. In literature many different attempts have been done to asses DIRQA with landmarks or contours. A study by Hardcastle et al \cite{Hardcastle2012} 
+Any DIR algorithm must undergo thorough evaluation before it can be used clinically. The most common practice for DIRQA is visual validation \cite{Stanley2013}. 
+Our DIRQA module offers false color, checkerboard and landmarks distance as
+visual validation methods. Contour validation is currently lacking in our DIRQA module. In literature many different attempts have been done to asses DIRQA with landmarks or contours. 
+A study by Hardcastle et al \cite{Hardcastle2012} 
 compared demons and Salient-Feature-Based registration with dice coefficient between propagated and physician drawn contours.
-A multi-institutional study by Brock et al \cite{Brock2010} compared differences in propagated and oncologist drawn landmarks. A method has been developed by Castillo et al \cite{Castillo2009} to automatically identify landmark points
-in lung patients images. However, visual based evaluations are limited in regions of uniform image intensity and by the number of the objects being tracked \cite{Kashani2008, Liu2012}. An example of visual validation disadvantage could be seen in
+A multi-institutional study by Brock et al \cite{Brock2010} compared differences in propagated and oncologist drawn landmarks. 
+A method has been developed by Castillo et al \cite{Castillo2009} to automatically identify landmark points
+in lung patients images. However, visual based evaluations are limited in regions of uniform image intensity and by the number of the objects being tracked \cite{Kashani2008, Liu2012}. 
+An example of visual validation disadvantage could be seen in
 pig cardiac 4D-CT, where visual evaluation did not show any errors in DIR, but errors were observed in vector fields resulting from DIR.
 
-An alternative to visual validation is to evaluate mathematical properties of vector fields. The two most common DIR vector fields evaluation metrics are Jacobian determinant (Jacobian) and inverse consistency error (ICE) \cite{Leow2007, Christensen2001},
-which we also implemented. We have shown that bigger deformations yield more deviations in Jacobian and ICE, which was also found by Stanley et al \cite{Stanley2013}. Furthermore, we have confirmed
-that Jacobian should always be positive for a successful DIR \cite{Rey2002}. Additionally, our results show that ICE should be smaller than maximum vector field magnitudes. Any deviation from this checks should be thoroughly examined.
+An alternative to visual validation is evaluation of vector field's mathematical properties. The two most common DIR vector fields evaluation metrics are 
+Jacobian determinant (Jacobian) and inverse consistency error (ICE) \cite{Leow2007, Christensen2001}, which were implemented in the scope of this thesis. 
+We have shown that bigger deformations yield more deviations in Jacobian and ICE, which was also found by Stanley et al \cite{Stanley2013}. 
+Furthermore, we have confirmed that Jacobian should always be positive for a successful DIR \cite{Rey2002}. Additionally, our results show that ICE should 
+be smaller than maximum vector field magnitudes. Any deviations from mentioned trends should be thoroughly examined.
 
-There are additional vector fields validation methods beside Jacobian and ICE, such as vector field curl \cite{Schreibmann2012}, unbalanced energy \cite{Zhong2007}, permutation and analysis of variance (ANOVA) tests \cite{Klein2009}.
-It was demonstrated in a study by Salguero et al that DIR errors greater than 1 mm can lead to large dose errors in high-dose gradient regions. Therefore the DIR accuracy has to be quantified at each image voxel in the high-dose 
-gradient regions. A solution to evaluate at each specific voxel and for patient-specific registration was given by Stanley at al \cite{Stanley2013}. They proposed a computational phantoms and their deformations with a finite element module framework. 
+There are additional vector fields validation methods beside Jacobian and ICE, such as vector field curl \cite{Schreibmann2012}, unbalanced energy \cite{Zhong2007}, 
+permutation and analysis of variance (ANOVA) tests \cite{Klein2009}.
+It was demonstrated in a study by Salguero et al \cite{Salguero2011} that DIR errors greater than 1 mm can lead to large dose errors in high-dose gradient regions. 
+Therefore the DIR accuracy has to be quantified at each image voxel in the high-dose 
+gradient regions. A solution to evaluate at each specific voxel and for patient-specific registration was given by Stanley at al \cite{Stanley2013}. 
+They proposed a computational phantoms and their deformations with a finite element module framework. 
+In our study a focus was given on a complete registration to find potential erros. However, in future studies the regions of interest used
+should be around the target and the effect of image downsampling on DIRQA should be assessed.
+
+
 
 \newpage
 \section{Radiation treatment for non-small cell lung cancer}
 
-\subsection{Non-small cell lung cancer early stage}
+\subsection{Non-small cell lung cancer in early stages}
 
-Surgery is the gold standard in treating NSCLC in the early stages \cite{Roesch2014}. In recent years, however, SBRT showed similar results as surgery and SBRT is recommended for all high-risk surgical patients. In a recent comparison study by Yu et al \cite{Yu2015},
-SBRT had lower intermediate mortality and toxicity, compared to surgery. However, patients with long life expectancies were found to benefit more from surgery. 
+Surgery is the gold standard for treating NSCLC in the early stages \cite{Roesch2014}. 
+In recent years, however, SBRT showed similar results as surgery and SBRT is recommended for all high-risk surgical patients. A recent comparison study by Yu et al \cite{Yu2015} showed that
+SBRT compared to surgery had lower intermediate mortality and toxicity. However, patients with long life expectancies were found to benefit more from surgery. 
 
-There are several clinical scenarios where use of SBRT might be limited. This include treatment of centrally located tumors, tumors close to chest wall, large tumors (radius > 5 cm) and multiple primary tumors \cite{Timmerman2006, Georg2008, Westover2012}.
-The limitation of SBRT could open possibilities to other treatment modalities, such as particle therapy. Interestingly, two of the mentioned scenarios, large tumors and multiple tumors, would benefit the most from particle therapy, according to the results shown
-in this thesis and to the results published by Kadoya et al \cite{Kadoya2010}. In a study done at Francis H. Burr Proton Therapy Center patients who could not be treated with SBRT, due to the scenarios mentioned, were treated with passive proton beam in 3 - 5 fractions, 
-delivering 42 - 50 Gy \cite{Westover2012}. They observed similar tumor local control rates as in SBRT (100\% in a two year follow-up) with limited toxicities. It should be noted, that the patients treated were rejected from SBRT treatment.
+There are several clinical scenarios where the use of SBRT might be limited. 
+This includes treatment of centrally located tumors, tumors close to the chest wall, large tumors (radius > 5 cm) and 
+multiple primary tumors \cite{Timmerman2006, Georg2008, Westover2012}.
+The limitation of SBRT could open possibilities to other treatment modalities, such as particle therapy. 
+Two of the mentioned scenarios, large tumors and multiple tumors, would benefit the most from particle therapy, according to the results shown
+in this thesis and to the results published by Kadoya et al \cite{Kadoya2010}. In a study done at Francis H. Burr Proton Therapy Center 
+patients who could not be treated with SBRT, due to the scenarios mentioned, were treated with passive proton beam in 3 - 5 fractions, 
+delivering 42 - 50 Gy \cite{Westover2012}. They observed similar tumor local control rates as in SBRT (100\% in a two year follow-up) with limited toxicities. 
+It should be stressed, that this were patients were rejected from SBRT treatment due to complexity and regardless proton therapy achieved similar results
+to SBRT.
 
 
-\subsection{Non-small cell lung cancer advanced stage}
+\subsection{Non-small cell lung cancer in advanced stages}
 
-While treatment for early stage NSCLC is well established, more than 75\% NSCLC cases present themselves in an advance stage \cite{Jemal2009}, usually due to the lack of detection in the early stages. The standard of care for advanced NSCLC is concurrent chemotherapy \cite{Oshiro2014}.
-Dose escalation studies showed favorable prognosis for doses higher than 70 Gy \cite{Hayman2001, Rosenman2002, Socinski2008}. The results of recent phase 3 randomized trial by Bradley et al \cite{Bradley2010}, however, showed better survival rates for patients delivered 60 Gy,
-instead of 74 Gy. It was speculated that higher doses to heart and esophagus might have contributed to higher mortality rates for patients who were administered higher doses \cite{Cox2012}. Results presented in this thesis show that mean dose to heart and esophagus would be on average 1 Gy
-smaller with PT than with SBRT. Similar results were observed when comparing protons to SBRT \cite{Georg2008}. 
+Treatment for early stage NSCLC is well established, however, more than 75\% NSCLC cases present themselves in an advance stage \cite{Jemal2009}, 
+usually due to the lack of detection in the early stages. The standard of care for advanced NSCLC is concurrent chemotherapy \cite{Oshiro2014}.
+Dose escalation studies showed favorable prognosis for doses higher than 70 Gy \cite{Hayman2001, Rosenman2002, Socinski2008}. 
+The results of a recent phase 3 randomized trial by Bradley et al \cite{Bradley2010}, however, showed better survival rates for patients administered 60 Gy,
+instead of 74 Gy. It was speculated that higher doses to heart and esophagus might have contributed to higher mortality rates \cite{Cox2012}. 
+Results presented in this thesis show that mean dose to heart and esophagus would be on average 1 Gy
+smaller with PT than with SBRT. For patients with multiple disease sites the the average mean heart and esophagus dose would be 4 and 3 Gy smaller.
+Similar results were observed when comparing protons to SBRT \cite{Georg2008}. 
 
-In recent phase II study by Iyengar et al \cite{Iyengar2014} they treated stage IV NSCLC with SBRT and chemotherapy. They have irradiated 52 targets in 24 patients, 16 of them had more than one target. The results were promising, with 20 months median overall survival, 
-compared to 9 months when treating with chemotherapy only \cite{Tsao2008}. Results in this thesis show, that patients with multiple sites would especially benefit from PT. Based on the poor prognosis that stage IV NSCLC patients have and on the results published by Iyengar et at,
-stage IV NSCLC patients could be eligible candidates for PT treatment. Additionally, such patients usually exhibit chronic obstructive pulmonary disease and less dose to lung is warranted \cite{Westover2012}. This further supports our claim, since our study showed substantial differences in 
-doses to ipsilateral lung ($V_{20\%}$ was on average 5\% smaller for PT) and contralateral lung as well - 70\% of patients did not receive any dose to contralateral lung, whereas SBRT deposited dose in contralateral lung in all patients.
-The PT treatment planning for patients with complex geometry has to include 4D optimization and dose calculation as shown within this thesis. The treatment plan after optimization can respect the
-OAR dose limits, while 4D dose can exceed them. Beam tracking \cite{Bert2007} or jet-ventilation \cite{Santiago2013} would be possible solutions, however, they significantly complicate treatment.
+In a recent phase II study by Iyengar et al \cite{Iyengar2014} they treated stage IV NSCLC with SBRT and chemotherapy. 
+They have irradiated 52 targets in 24 patients, 16 of them had more than one target. The results were promising, with 20 months median overall survival, 
+compared to 9 months when treating with chemotherapy only \cite{Tsao2008}. Results in this thesis show, that patients with multiple disease sites 
+would especially benefit from PT. Based on the poor prognosis that stage IV NSCLC patients have and on the results published by Iyengar et at,
+stage IV NSCLC patients could be eligible candidates for PT treatment. Additionally, such patients usually exhibit chronic obstructive pulmonary disease and 
+less dose to the lung is warranted \cite{Westover2012}. This further supports our claim, since our study showed substantial differences in 
+doses to ipsilateral lung ($V_{20\%}$ was on average 15\% smaller in PT for patients with multiple disease sites) and 
+contralateral lung as well - 70\% of patients did not receive any dose to contralateral lung, whereas SBRT deposited dose in contralateral lung in all patients.
+The PT treatment planning for patients with complex geometry has to include 4D optimization and dose calculation as shown within this thesis. 
+A special consideration has to be taken in dose to OAR limits, since they can be breached under different motion patterens.
+Beam tracking \cite{Bert2007} or jet-ventilation \cite{Santiago2013} would be possible solutions, however, the former is not yet clinically avaliable and the latter 
+significantly complicates treatment.
 
-The results of multi-institutional randomized trial, comparing photons and particle therapy in treating NSCLC, will have an important impact on treating NSCLC \cite{RTOG1308}. 
-The trial started in 2014 and we can not expect results before 2020.
+The results of a multi-institutional randomized trial, RTOG1308 \cite{RTOG1308}, comparing photons and particle therapy in treating NSCLC,
+will have an important impact on treating NSCLC. The trial started in 2014.
 
 \subsection{Motion mitigation}
 
-While tumor motion influences photon treatment, the effects are not strong \cite{Zou2014}. On the other hand, effects can be substantial when treating moving targets with scanned particle therapy \cite{Bert2008}.
-It was shown in this thesis that rescanning is an adequate motion mitigation technique. However, rescanning has a level of uncertanity, especially regarding maximum allowed point dose to OAR.
-In hypofractionated treatment this limits are strict and exact dose to OAR must be known. A possible solution would be to simulate rescanning and 4D delivery in optimization process itself. 
+While tumor motion influences photon treatment, it can be mittigated with proper margins \cite{Zou2014}. 
+On the other hand, effects can be substantial when treating moving targets with scanned particle therapy \cite{Bert2008}.
+It was shown in this thesis that rescanning is an adequate motion mitigation technique. However, rescanning has a degree of uncertanity, 
+especially regarding maximum allowed point dose to OAR.
+In hypofractionated treatment this limits are strict and exact dose to OAR must be known. 
+A possible solution would be to simulate rescanning and 4D delivery in optimization process itself. 
 However such solution is not yet feasible due to the complexity of the problem.
 
-Comonnly used motion mitigation technique in photon and particle treatment is gating. While it provides less motion-induced changes, it prolonges treatment time. A recent study by Zhang et al \cite{Zhang2015} included 
-different breathing patterns, obtained from a MRI, to on a 4DCT and calculated 4D doses for a liver cancer patients. They have shown that a gating window of 3 mm can result in a 10\% efficiency of a duty-cycle, 
-substantially prolonging treatment. Additionally, they have shown that neither volumetric or slice-by-slice rescanning could achieve good target coverage. However, good target coverage was obtained with combination
+Comonnly used motion mitigation technique in photon and particle treatment is gating. While it provides less motion-induced dose errors, it prolonges treatment time.
+A recent study by Zhang et al \cite{Zhang2015} included 
+different breathing patterns, obtained from a MRI, on a 4D-CT and calculated 4D doses for liver cancer patients. They have shown that a gating window of 3 mm can result
+in a 10\% efficiency of a duty-cycle, 
+substantially prolonging treatment. Additionally, they have shown that neither volumetric or slice-by-slice rescanning could achieve good target coverage.
+However, good target coverage was obtained with combination
 of gating and rescanning. Their results suggest that a combination of gating and rescanning would currently be the best solution for treating NSCLC patients with PT.
 
-Between rescanning, gating and beam tracking is beam tracking the most precise technique, since it requires no internal margins for target \cite{Bert2011}. Current clinical implementations
-of tracking in photon radiotherapy \cite{Kilby2010, Keall2014} can not be directly used in particle therapy, since they only provide position of single internal points. Fassi et al 
+Between rescanning, gating and beam tracking is beam tracking the most precise technique, since it requires no internal margins for target \cite{Bert2011}. 
+Current clinical implementations of tracking in photon radiotherapy \cite{Kilby2010, Keall2014} can not be directly used in particle therapy, 
+since they only provide position of single internal points. Fassi et al 
 \cite{Fassi2015} were able to account for inter- and intra-fractional variability of patient's anatomical configuration with a designated modeling technique \cite{Fassi2014}.
 The measured median of water-equivalent path length in target was within 2 mm of a simulated one. For actual clinical impementation it will be necesarry to test the model
-on a wider number of patients.
+on a large patient dataset.
 
 
 \subsection{Outlook}
 
 Recent advances in photon radiotherapy allow the usage of noncoplanar beams, a so-called 4$\pi$ optimization \cite{Dong2013}. In a recent study, Dong et al \cite{Dong2013b} showed that
-4$\pi$ yielded better target coverage and OAR sparring than SBRT. They have reported reduction of $D_{Max}$ in heart, esophagus and spinal cord by 32\%, 72\% and 53\%, respectively, showing
+4$\pi$ yielded better target coverage and OAR sparring than SBRT for NSCLC patients. 
+They have reported reduction of $D_{Max}$ in heart, esophagus and spinal cord by 32\%, 72\% and 53\%, respectively, showing
 the potential of a 4$\pi$ optimization. According to this thesis, PT is able to reduce the $D_{Max}$ even further, with a reduction of 57\%, 87\% and 83\% for heart, esophagus and spinal cord,
 respectively. The numbers, however, should be compared with caution, since they were obtained from a different set of patients. 
 A future study, directly comparing SBRT, $4\pi$ and PT for NSCLC is thus warranted.
 
 Robust optimization seems to be gaining on popularity for PT. Standard margin defenition to account for uncertainties fails short in PT, while the inclusion of uncertainties in 
 optimization process can substantially improve treatment plans \cite{Chen2012}. The robstuness optimization is now possible even for a 4D optimization \cite{Liu2016}, opening a wide
-
 field of new possibilities. 
 \newpage
 
