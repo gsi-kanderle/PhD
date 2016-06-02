@@ -15,6 +15,7 @@
 \usepackage{graphics}
 \usepackage{amsmath}
 \usepackage{multirow}
+\usepackage{listings}
 \usepackage[abs]{overpic}
 
 
@@ -26,18 +27,27 @@
 \setcounter{minitocdepth}{2}
 \setcounter{tocdepth}{2}
 
-
-\thesistitle{Planning studies for a non-invasive treatment of atrial fibrillation with scanned ion beams}{Planungsstudien zur 
-nicht invasiven Behandlung von Vorhofflimmern mit gescannten Ionenstrahlen}
-\author{MSc Kristjan Anderle}
+% 
+\thesistitle{In Silico Comparison of Photons versus Carbon Ions in Single Fraction Therapy of Lung Cancer}{Titlel auf Deutsch}
+\author{Kristjan Anderle}
 \birthplace{Jesenice, Slowenien}
 \date{\today}
-\referee{Prof. Dr. Marco Durante}{Prof. Dr. Christoph Bert}
+\referee{Prof. Dr. Marco Durante}{Prof. Dr. Thomas Aumann}
 \department{Fachbereich Physik}
 \setinstitutionlogo{GSI_Logo_cmyk}
 \group{Prof. Durante\newline Institut f\"ur Festk\"orperphysik}
 \dateofexam{4. Juli 2016}{}
 
+% \thesistitle{Planning studies for a non-invasive treatment of atrial fibrillation with scanned ion beams}{Planungsstudien zur 
+% nicht invasiven Behandlung von Vorhofflimmern mit gescannten Ionenstrahlen}
+% \author{MSc Anna Maria Constantinescu}
+% \birthplace{Bukarest, Rum\"anien}
+% \date{\today}
+% \referee{Prof. Dr. Marco Durante}{Prof. Dr. Christoph Bert}
+% \department{Fachbereich Physik}
+% \setinstitutionlogo{GSI_Logo_cmyk}
+% \group{Prof. Durante\newline Institut f\"ur Festk\"orperphysik}
+% \dateofexam{18. Juni 2014}{}
 
 \begin{document}
 
@@ -46,7 +56,7 @@ nicht invasiven Behandlung von Vorhofflimmern mit gescannten Ionenstrahlen}
 \dominitoc
 % \setcounter{tocdepth}{1}
 
-%  \include{Abstract/abstract}
+  \include{Abstract/Abstract}
   
   \include{Publications/publications}
 
@@ -60,7 +70,7 @@ nicht invasiven Behandlung von Vorhofflimmern mit gescannten Ionenstrahlen}
   \include{Fundamentals/Fundamentals_main}
   
   \setcounter{mtc}{2}
-  \include{VisualMotionManagment/vmm_main}
+  \include{Vmm/vmm_main}
   
   \setcounter{mtc}{3}
   \include{PatientStudy/PatientStudy_main}
@@ -83,9 +93,9 @@ nicht invasiven Behandlung von Vorhofflimmern mit gescannten Ionenstrahlen}
  \bibliographystyle{apalike}
 \bibliography{ref.bib}{}
  
- %  \include{lebenslauf/lebenslauf_forMain}
+ \include{lebenslauf/lebenslauf_forMain}
    
-  \include{Acknowgledments/ack}
+%  \include{Acknowgledments/ack}
  
    \affidavit[15. Juni 2016]{Kristjan Anderle}
 

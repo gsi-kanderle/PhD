@@ -1,0 +1,77 @@
+\documentclass[type=dr, dr=rernat, accentcolor=tud7b,colorbacktitle, bigchapter, openright, twoside, 12pt ]{tudthesis}
+%\documentclass[11pt,twoside,a4paper]{article}
+\usepackage[english]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{pstricks}
+\usepackage{psfrag}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{epsfig}
+\usepackage{geometry}
+\usepackage{subfigure}
+\usepackage{rotating}
+\usepackage{minitoc}
+\usepackage{multirow}
+\usepackage{listings}
+%\usepackage{appendix}
+
+%%%% 1 1/2 facher Zeilenabstand:	
+\usepackage{setspace}
+\onehalfspacing
+
+
+
+
+\begin{document}
+\chapter{Appendix of chapter 2}
+\label{Appendix2}
+\minitoc
+
+\section{Patient hierarchy}
+\label{PatHierarchy}
+
+Patient hierarchy follows a subject hierarchy principle in Slicer. It was designed for a clear overview of the registration process, DIRQA and all resulting files. Another reason is to track DIR
+and DIRQA in case if they are interrupted by Slicer crash. DIR and DIRQA files can be quite large and can cause Slicer to run out of memory. With patient hierarchy Slicer is able to continue work
+from where it was interrupted rather than starting anew.
+
+There are several levels in patient hierarchy. Each level also has different attributes, where details regarding each level can be written.
+
+\begin{itemize}
+	\item Level 1: \textbf{Patient name} - separates different patients.
+	\item Level 2: \textbf{Registration node} - separates between different registrations, e.g. between different imaging modalities or between 4D-CT phases. 
+	\subitem \textit{Attributes:}
+	\subitem - The file directory of images, vector fields and registration quality files.
+	\subitem - Number of phases to be registered.
+	\subitem - Reference phase
+	\item Level 3: \textbf{Registration set} - specific registration phase. Registration is done between all phases and the reference one. There have to be at least two phases
+	\item Level 4: \textbf{Node} - can be either an image, a vector field, an inverse vector field or any of DIRQA nodes (see Section~\ref{DIRQA}).
+	\subitem \textit{Attributes:}
+	\subitem - Exact file paths for specific node.
+	\subitem - Statistical analysis if node is absolute difference, Jacobian or inverse consistency (see Section~\ref{DIRQA}).
+\end{itemize}
+
+The patient hierarchy can be constructed in two ways. The first option is to manually create the whole patient hierarchy, from top to bottom level, with necessary attributes. Second option is to use an automatic script to look 
+for files on hard drive and create corresponding levels. The second option is possible only by using proper naming conventions for file names and locations.
+
+\newpage
+
+
+\begin{table}[H]
+  \centering
+%   \footnotesize
+  \caption{Data for vector magnitudes. Values are presented as mean (range).}
+  \begin{tabular}{c|c|c|c|c|c|c}
+Phase & \multicolumn{3}{|c|}{Absolute difference} & \multicolumn{2}{|c|}{Jacobian} & \multirow{2}{*}{ICE (mm)} \\
+number & Default & True & Inverse & True & inverse & \\
+1 & 52$\pm$10 & 52$\pm$10 & 52$\pm$10 & 1$\pm$0.05(0.4-1.2) & 1$\pm$0.05(0.4-1.2)& 3$\pm$0.2(0-1.2) \\
+
+ \end{tabular}
+  \label{tab:vectordata_pig}
+\end{table}
+
+\bibliographystyle{apalike}
+\bibliography{../ref.bib}{}
+% \bibliographystyle{plain}
+
+\end{document}

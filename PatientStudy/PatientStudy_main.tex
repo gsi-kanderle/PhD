@@ -14,7 +14,7 @@ They found similar 5-year survival rates for SBRT, protons and carbon-ions (arou
 particle therapy was low and they advise caution when interpreting the data. Also different fractionation schemes were used in the
 comparison. A more recent review was published by  Kamada et al. \cite{Kamada2016} where they reported a high 3-year survival rate for
 single-fraction carbon-ions (76.9\%), with no late treatment-related adverse effects. In comparison, SBRT had 55.8\% 3-year survival rate,
-with 10 – 27\% of patients exhibiting grade 3 treatment-related adverse effects \cite{Timmerman2010}. It is important to note that all
+with 10 - 27\% of patients exhibiting grade 3 treatment-related adverse effects \cite{Timmerman2010}. It is important to note that all
 of these studies used passive beam scattering, avoiding the problem of interplay between organ motion and scanning beam motion.
 On the other hand, active beam scanning can provide even better dose shaping which becomes essential in high dose single fractionation
 regimes. The effects of motion and motion mitigation techniques on scanned carbon ion dose distribution therefore need to be considered 
@@ -29,7 +29,7 @@ SBRT plans actually delivered was conducted. Target coverage and a wide range of
 
 \subsection{Patient data}
 
-The study included 19 patients with in total 26 lesions that were actually treated with SBRT at the Champalimaud Centre for the Unknown, Lisbon (Portugal). The lesion size was 2.9 cm$^3$ (median, 25-75\% 1.4 – 9.7) and peak-to-peak motion was 3.1 mm (1.6 – 5.6). Three patients had two targets, one had five and the rest one. 13 lesions were right-sided, 12 were left-sided and one was located in right cardiophrenic space. An overview of tumor characteristics can be found in Table~\ref{tab:patdata}.
+The study included 19 patients with in total 26 lesions that were actually treated with SBRT at the Champalimaud Centre for the Unknown, Lisbon (Portugal). The lesion size was 2.9 cm$^3$ (median, 25-75\% 1.4 - 9.7) and peak-to-peak motion was 3.1 mm (1.6 - 5.6). Three patients had two targets, one had five and the rest one. 13 lesions were right-sided, 12 were left-sided and one was located in right cardiophrenic space. An overview of tumor characteristics can be found in Table~\ref{tab:patdata}.
 Two CTs were available for all patients. A planning CT was used for OAR delineation and SBRT planning. Target motion was estimated on a 4D-CT, consisting of 10 phases (0\% - 90\%). Clinical target volumes (CTV) were delineated using a registered positron emission tomography (PET) scan.
 
 The planning objectives were that 99\% of planning target volume (PTV) must receive at least 24 Gy ($D_{99\%}$ $\geq$ 24 Gy) in a single fraction, while all OAR constraints as defined in the AAPM task group 101 report on stereotactic radiotherapy had to be respected \cite{Benedict2010}.
@@ -107,7 +107,7 @@ The clinical plans were calculated with the Eclipse v10 planning system (Varian 
 
 
 \subsection{Carbon-ions treatment planning}
-\label{CiTTP}
+\label{PTTP}
 
 For PT, state of the art 4D treatment planning software TRiP98 was used \cite{Richter2013}. A single field uniform dose plan (SFUD) 
 was optimized on the PTV$_{PT}$ in the end-inhale reference phase of the 4D-CT. Most targets ($n=20$) were planned with two fields. 
@@ -137,7 +137,7 @@ satisfactory target coverage ($n=2$; lesions 3 and 18 in Table~\ref{tab:patdata}
 
 \subsection{Dose metrics and analysis}
 
-For comparison between SBRT and PT the following dose metrics were used – for the target the minimum dose in 99\% of the volume ($D_{99\%}$), which should be higher than 24 Gy; for OARs, the maximum point dose ($D_{Max}$) and the mean dose ($D_{Mean}$). Additionally, the volume receiving 20\% of the planned dose ($V_{20\%}$) was used to assess differences in lung doses. In all cases, absorbed dose in Gy for SBRT was compared to biologically-equivalent dose in Gy(RBE) for PT.
+For comparison between SBRT and PT the following dose metrics were used - for the target the minimum dose in 99\% of the volume ($D_{99\%}$), which should be higher than 24 Gy; for OARs, the maximum point dose ($D_{Max}$) and the mean dose ($D_{Mean}$). Additionally, the volume receiving 20\% of the planned dose ($V_{20\%}$) was used to assess differences in lung doses. In all cases, absorbed dose in Gy for SBRT was compared to biologically-equivalent dose in Gy(RBE) for PT.
 
 Paired t-tests were performed to compare the dose metrics and for post-hoc exploratory analysis between groups a two-sided t-test with Welch correction for different variances was carried out. A p-value < 0.05 was considered significant. Dose differences are always reported such that higher dose levels for SBRT result in positive values.
 
@@ -158,7 +158,7 @@ Examples of two SBRT and 4D-Dose$_{rescan}$ PT treatment plans are shown in Fig.
 
 \subsection{Target Coverage}
 
-Difference in PTV definition resulted in 1.5 (1.3 – 2.1) times bigger PTV$_{PT}$ than PTV$_{SBRT}$. All SBRT plans were clinically acceptable, though in one case the $D_{99\%}$ was reduced to 16.8 Gy due to proximity of an OAR. 3D-Dose$_{0\%}$ and 3D-Dose$_{50\%}$plans provided sufficient target coverage in all patients. For 4D-Dose$_{interplay}$ and 4D-Dose$_{rescan}$ there was 63\% and 2\% cases of insufficient target coverage, respectively, across all targets and different breathing patterns. Details are shown in Fig.~\ref{Fig:InterplayDiff}. For the patient with reduced dose in SBRT, PT could increase the $D_{99\%}$ from 16.8 Gy in SBRT to 20.3 Gy while adhering to OAR constraints. 
+Difference in PTV definition resulted in 1.5 (1.3 - 2.1) times bigger PTV$_{PT}$ than PTV$_{SBRT}$. All SBRT plans were clinically acceptable, though in one case the $D_{99\%}$ was reduced to 16.8 Gy due to proximity of an OAR. 3D-Dose$_{0\%}$ and 3D-Dose$_{50\%}$plans provided sufficient target coverage in all patients. For 4D-Dose$_{interplay}$ and 4D-Dose$_{rescan}$ there was 63\% and 2\% cases of insufficient target coverage, respectively, across all targets and different breathing patterns. Details are shown in Fig.~\ref{Fig:InterplayDiff}. For the patient with reduced dose in SBRT, PT could increase the $D_{99\%}$ from 16.8 Gy in SBRT to 20.3 Gy while adhering to OAR constraints. 
 
 
 \begin{figure}[H]
@@ -172,7 +172,12 @@ Difference in PTV definition resulted in 1.5 (1.3 – 2.1) times bigger PTV$_{PT
 \subsection{Dose in OARs}
 
 
-There was no significant difference in dose to OAR between the different PT dose calculations. The $D_{Max}$ and $D_{Mean}$ for SBRT and 4D-Dose$_{rescan}$ for OARs heart, spinal cord, smaller airway esophagus, trachea, aorta, ipsi- and contralateral lung are presented in Table~\ref{tab:results}.There was a significant difference in both $D_{Max}$ and $D_{Mean}$ for all OARs between SBRT and PT, with PT delivering less dose to OARs. Significant difference was also observed for $V_{20\%}$ for ipsilateral lung, which was 15.3\% (9.6 – 23.5) and 10.3\% (7.9 – 13.7) for SBRT and PT, respectively. The $V_{20\%}$ for contralateral lung was zero for almost all patients in SBRT and PT. The overall OAR difference for patients between SBRT and PT was significant, 2.8 Gy (1.6– 3.7)  for $D_{Max}$ and 0.7 Gy (0.3– 1.6) for $D_{Mean}$. 
+There was no significant difference in dose to OAR between the different PT dose calculations. 
+The $D_{Max}$ and $D_{Mean}$ for SBRT and 4D-Dose$_{rescan}$ for OARs heart, spinal cord, smaller airway esophagus, trachea, aorta, ipsi- and contralateral lung are 
+presented in Table~\ref{tab:results}.There was a significant difference in both $D_{Max}$ and $D_{Mean}$ for all OARs between SBRT and PT, with 
+PT delivering less dose to OARs. Significant difference was also observed for $V_{20\%}$ for ipsilateral lung, which was 15.3\% (9.6 - 23.5) and 10.3\% (7.9 - 13.7) for SBRT and PT, 
+respectively. The $V_{20\%}$ for contralateral lung was zero for almost all patients in SBRT and PT. The overall OAR difference for patients between SBRT and PT 
+was significant, 2.8 Gy (1.6 - 3.7)  for $D_{Max}$ and 0.7 Gy (0.3 - 1.6) for $D_{Mean}$. 
 
 
 
@@ -186,14 +191,14 @@ There was no significant difference in dose to OAR between the different PT dose
      \hline
     \multicolumn{1}{|l|}{OAR} & Photon & Carbon & Photon & Carbon	\\
     \hline
-\multicolumn{1}{|l|}{Heart} & 6.0 (0.3 – 11.6) & 0 (0 – 8.8)	& 1.3 (0.1 – 2.2) & 	0 (0 – 0.5) \\
-\multicolumn{1}{|l|}{Spinal Cord} &	5.5 (3.3 – 8.5)	& 0 (0 – 0.5) &	0.7 (0.3 – 1.2) &	0 (0 – 0) \\
-\multicolumn{1}{|l|}{Smaller Airways} & 13.0 (9.8 – 17.1) &	10.3 (3.3 – 19.1) &	2.8 (1.5 – 5.8) &	0.5 (0 – 2.6) \\
-\multicolumn{1}{|l|}{Esophagus} & 5.8 (3.9 – 8.4) &	0 (0 – 0.3) &	1.1 (0.6 – 1.5) &	0 (0 – 0)\\
-\multicolumn{1}{|l|}{Trachea} &3.9 (1.8 – 5.4) &	0 (0 – 0) &	1 (0.3 – 1.3) &	0 (0 – 0)\\
-\multicolumn{1}{|l|}{Aorta} & 8.0 (5.1 – 21.9) &	3.9 (0 – 18.1) &	1.4 (0.7 – 1.6) &	0.1 (0 – 0.4)\\
-\multicolumn{1}{|l|}{Ipsilateral Lung} & 26.3 (26.0 – 26.5) &	26.3 (25.8 – 26.5) &	1.9 (1.5 – 3.0) &	1.9 (1.4 – 2.5)\\
-\multicolumn{1}{|l|}{Contralateral Lung} & 5.0 (3.5 – 9.6) &	0 (0 – 0.9) &	0.4 (0.2 – 0.6) &	0 (0 – 0) \\
+\multicolumn{1}{|l|}{Heart} & 6.0 (0.3 - 11.6) & 0 (0 - 8.8)	& 1.3 (0.1 - 2.2) & 	0 (0 - 0.5) \\
+\multicolumn{1}{|l|}{Spinal Cord} &	5.5 (3.3 - 8.5)	& 0 (0 - 0.5) &	0.7 (0.3 - 1.2) &	0 (0 - 0) \\
+\multicolumn{1}{|l|}{Smaller Airways} & 13.0 (9.8 - 17.1) &	10.3 (3.3 - 19.1) &	2.8 (1.5 - 5.8) &	0.5 (0 - 2.6) \\
+\multicolumn{1}{|l|}{Esophagus} & 5.8 (3.9 - 8.4) &	0 (0 - 0.3) &	1.1 (0.6 - 1.5) &	0 (0 - 0)\\
+\multicolumn{1}{|l|}{Trachea} &3.9 (1.8 - 5.4) &	0 (0 - 0) &	1 (0.3 - 1.3) &	0 (0 - 0)\\
+\multicolumn{1}{|l|}{Aorta} & 8.0 (5.1 - 21.9) &	3.9 (0 - 18.1) &	1.4 (0.7 - 1.6) &	0.1 (0 - 0.4)\\
+\multicolumn{1}{|l|}{Ipsilateral Lung} & 26.3 (26.0 - 26.5) &	26.3 (25.8 - 26.5) &	1.9 (1.5 - 3.0) &	1.9 (1.4 - 2.5)\\
+\multicolumn{1}{|l|}{Contralateral Lung} & 5.0 (3.5 - 9.6) &	0 (0 - 0.9) &	0.4 (0.2 - 0.6) &	0 (0 - 0) \\
     \hline\hline
   \end{tabular}
   \label{tab:results}
@@ -204,7 +209,7 @@ There was no significant difference in dose to OAR between the different PT dose
 
 \subsection{Dependence on CTV Size}
 
-Significant differences were observed between patients with a single CTV smaller ($n=8$) or larger ($n=7$) than 2.5 cm$^{3}$ for $D_{Max}$ and $D_{Mean}$, see Fig.~\ref{Fig:OAR_boxplots}. For patients with a smaller CTV, the dosimetric advantage over SBRT was on average 0.9 Gy and 0.5 Gy lower for $D_{Max}$ and $D_{Mean}$, respectively. This was associated with PTV$_{PT}$ definition - the average volume ratio between PTV$_{PT}$ and PTV$_{SBRT}$ was 2.9 (1.6 – 4.0) and 1.5 (1.3 – 1.8), for patients with CTV < 2.5 cm$^{3}$ and CTV > 2.5 cm$^{3}$, respectively.
+Significant differences were observed between patients with a single CTV smaller ($n=8$) or larger ($n=7$) than 2.5 cm$^{3}$ for $D_{Max}$ and $D_{Mean}$, see Fig.~\ref{Fig:OAR_boxplots}. For patients with a smaller CTV, the dosimetric advantage over SBRT was on average 0.9 Gy and 0.5 Gy lower for $D_{Max}$ and $D_{Mean}$, respectively. This was associated with PTV$_{PT}$ definition - the average volume ratio between PTV$_{PT}$ and PTV$_{SBRT}$ was 2.9 (1.6 - 4.0) and 1.5 (1.3 - 1.8), for patients with CTV < 2.5 cm$^{3}$ and CTV > 2.5 cm$^{3}$, respectively.
 
 The 4 patients with multiple lesions were excluded from this comparison. The $D_{Max}$ and $D_{Mean}$ difference were on average higher in these patients, but the number of patients was too low for statistical analysis. 
 
