@@ -3,29 +3,13 @@ TODO:
 P
 2. Izpolnit: http://www.physik.tu-darmstadt.de/media/fachbereich_physik/formulare_3/promotionen/Antrag_auf_Eroeffnung_Formular.pdf
 
-3. Vse okrog - motivation, abstract, summary, acknowledment
 
-4. Fundametals:
- Cite rescanning NIRS?
- 
-5. VMM:
+Marco Read: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4064605/
 
-1. Discussion Lung:
-Lung011 si ponovil registration. Ce najdes, zakaj, si car.
- What happenes with contours, 4Ddose in areas with poor DIR?
- How many cases were above dashed line, what happened in each of them?
- How about Jacobian values in fit? Were any used for investigation?
- There were some 0 in abs diff. Why?
- Number of voxels povezat z abs diff. nima veze
- true into original
- 
-Patient 2 je bil zmuten brez resampled zracunan tazadn inverse abs diff.
-DIRQA
- 
-Najmanjsa value za absdiff je 7. Kako to lohk z noise razlozis?
+Ali dat povsod kr 20 rescanov?
+Appendix?
 
-A fuknemo DIRQA med pig irradiation ven?
-Investigate abs diff pig.
+A vrzemo 4Dopt ven, pa samo mITV, pa zracunamo prvic primerjalno, drugic pa dose escalation?
 
  
 6. Patient Study:
