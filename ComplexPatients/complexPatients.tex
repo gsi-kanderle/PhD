@@ -107,30 +107,32 @@ all TRiP98 4D functionalities could be used, as explained in next sections.
 		\multirow{2}{*}{1} & a & 10.2 & 3.4  & 1 x 24 Gy & 2 & SA \\
 		 & b & 14.4 & 2.8 & 1 x 24 Gy  & 2 & SA  \\
 
+		 
 		 \hline
-		 \multirow{2}{*}{2} & a & 2.3 & 12  & 1 x 24 Gy & 2 &\\
-		 & \multirow{2}{*}{b} & \multirow{2}{*}{0.4} & \multirow{2}{*}{11.8}  & \multirow{2}{*}{5 x 7 Gy} & \multirow{2}{*}{4} & Heart, esoph., \\
-		 & & & & & & stomach \\
-		 \hline
-		 \multirow{5}{*}{3} & a & 3.8 & 5.8  & 1 x 24 Gy & 2 &\\
+		 \multirow{5}{*}{2} & a & 3.8 & 5.8  & 1 x 24 Gy & 2 &\\
 		  & b & 4.3 & 0.8  & 1 x 24 Gy& 2 &\\
 		  & c & 2.7 & 3.4  & 1 x 24 Gy & 2&\\
 		  & d & 3.1 & 2.1  & 1 x 24 Gy & 2&\\
 		  & e & 0.5 & 0.5  & 1 x 24 Gy & 2&\\
 		  \hline
-		  \multirow{2}{*}{4} & a & 139 & 0.6 & 1 x 24 Gy & 3 \\
+		  \multirow{2}{*}{3} & a & 139 & 0.6 & 1 x 24 Gy & 3 \\
 		 & b & 9.2 & 2.0  & 1 x 24 Gy & 2 \\
 		 \hline
-		 \multirow{2}{*}{5} & a & 4 & 9  & 3 x 9 Gy  & 5 & SA, esoph., heart \\
+		 \multirow{2}{*}{4} & a & 4 & 9  & 3 x 9 Gy  & 5 & SA, esoph., heart \\
 		 & b & 0.8 & 7.8  & 1 x 24 Gy & 2 \\
 		 \hline
-		 \multirow{4}{*}{6} & a & 3.4   & 5  & 1 x 24 Gy & 3 &  \\
+		 \multirow{4}{*}{5} & a & 3.4   & 5  & 1 x 24 Gy & 3 &  \\
 				    & b & 2.4 & 4.4  & 1 x 24 Gy & 2 &\\
 				    & c & 2.0 & 6.3  & 1 x 24 Gy& 2& Heart\\
 				    & d & 2.4 & 6.4  & 1 x 24 Gy & 2 & Heart\\
 		\hline	    
-		\multirow{2}{*}{7} & a & 20.6 & 7.4 & 1 x 24 Gy & 4 & SA  \\
+		\multirow{2}{*}{6} & a & 20.6 & 7.4 & 1 x 24 Gy & 4 & SA  \\
 		 & b & 27.1 & 6.0  & 1 x 24 Gy &4 & SA  \\
+		 
+		 \hline
+		 \multirow{2}{*}{7} & a & 2.3 & 12  & 1 x 24 Gy & 2 &\\
+		 & \multirow{2}{*}{b} & \multirow{2}{*}{0.4} & \multirow{2}{*}{11.8}  & \multirow{2}{*}{5 x 7 Gy} & \multirow{2}{*}{4} & Heart, esoph., \\
+		 & & & & & & stomach \\
 		 \hline
 		 \multirow{5}{*}{8} & a & 136 & 12  & 3 x 9 Gy & 2 & Heart\\
 		  & b & 12.4 & 2.5  & 1 x 20 Gy & 2 &\\
@@ -202,24 +204,32 @@ or for raster setup (4Dopt). Due to large memory demands, targets in each lung w
   
 The objective for target was 99\% of each target volume should receive at least 100\% of the planned dose (D$_{99}$\% $\geq$ 100\%). Furthermore, the doses to the OARs should be under the limits given by the AAPM task group \cite{Benedict2010}. 
  
-After the optimization 4D-dose was calculated for two motion periods (3.6 sec and 5.0 sec) and two starting phases (0$^\circ$ and 90$^\circ$) as explained in Section~\ref{PTTP}. Motion was mitigated with five 
-slice-by-slice rescans that were applied to each plan.
+After the optimization 4D-dose was calculated for two motion periods (3.6 sec and 5.0 sec) and two starting phases (0$^\circ$ and 90$^\circ$) as explained in Section~\ref{PTTP}. The relative biological
+effectivness (RBE) was calculated with local effect model, LEM IV \cite{Elsaesser2010}. Alpha beta ratio of 6 and 2 was used in target and normal tissue, respectively.
+
+Motion was mitigated by applying slice-by-slice rescanning to each plan. The number of rescans was limited by the number of particles in a single raster point, which should not be lower than 8000, due to the
+monitoring precision. The maximum number of rescanns was limited to 20.
 
 Detailed explanation of SBRT treatment planning is given is Section~\ref{SBRTTP}.
 
-For patients 5 - 7 OAR dose could not be sufficiently reduced in optimization. It was necessary to add margins to the OAR and then 
+For patients 4 - 7 OAR dose could not be sufficiently reduced in optimization. It was necessary to add margins to the OAR and then 
 subtract the OAR plus margins from the target. For SBRT the OAR plus margins was subtracted from PTV, while in PT it was subtracted from CTV plus 3 mm margin in all 9 motion states.
 
-Single fraction of 24 Gy was used for all targets, except for targets 2b, 5a and 8a-e. For this targets two different fractionation schemes were tested for PT. First, the same as used in SBRT and next a single fraction was tested for these targets as well.
+
+\subsection{Fractionation escalation}
+
+A single fraction of 24 Gy could not be used in SBRT treatment for targets 4a, 7b and 8a-e due to the OAR dose constraints. For these targets additional PT plans were generated with 1 x 24 Gy fractionation scheme, in order
+to estimate if PT could respect OAR constraints for these targets. 
+
 
 \section{Results}
 
-Example of different treatment plans for patient 8 is shown in Fig.~\ref{Fig:multiExample}.
+Example of different treatment plans for patient 2 is shown in Fig.~\ref{Fig:multiExample}.
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{./Images/multiExample.png}
-		\caption{Treatment plans for ITV (left), 4Dopt (middle) and SBRT (right) for SBRT (solid lines) for patient 8. CTV contours are outlined in white.}
+		\caption{Treatment plans for ITV (left), 4Dopt (middle) and SBRT (right) for SBRT (solid lines) for patient 2. CTV contours are outlined in white.}
 		\label{Fig:multiExample}
 	\end{center}
 \end{figure}
@@ -369,6 +379,11 @@ Ipsilateral lung & 2.2(0.0 - 9.1) & 2.3(0.0 - 8.6) & 4.1(0.8 - 10.5)\\
 \newpage
 
 
+\subsection{Fractination escalation}
+
+With PT the 1 x 24 Gy fractionation scheme could be used for targets 8a-e, violating only $D_{Max}$ for smaller airways. SBRT limitation was $D_{Threshold}$ which was 100\% of the allowed dose, whereas for PT it was 45\%.
+For targets 4a and 7b the CTV $D_{99\%}$ was 70\% and 81\% and esophagus $D_{Max}$ 125\% and 143\% respectively. The esophagus $D_{Max}$ was the only violation of OAR constraints.
+
 \section{Summary and Discussion}
 
 Clinically valid SBRT plans have been compared to PT treatment plans for NSCLC patients with multiple metastases. 
@@ -377,13 +392,17 @@ with the state of the are 4D PT treatment planning. Furthermore, 4D PT doses wer
 
 PT on average delivered less dose to OAR, while still having comparable target coverage.
 The most apparent difference is in lung $V_{20\%}$, which was on average half the value with PT compared to SBRT.
-For patients with complex geometry (5 - 8) PT maintained or even improved target coverage in most cases, while reducing doses to OARs.
-The exception were smaller airways in patients 5, which receive more dose, but the CTV $D_{99\%}$ patient 5 was improved. 
+For patients with complex geometry (4 - 8) PT maintained or even improved target coverage in most cases, while reducing doses to OARs.
+The exception were smaller airways in patients 4, which receive more dose, but the CTV $D_{99\%}$ was improved. 
 Additionally, margins used for OAR subtraction were smaller in PT, resulting in better CTV coverage.
 
 There was no significant difference between ITV and 4Dopt in target coverage or in dose to OAR. 
 However, in patients 5 and 7 the 4Dopt was able to achieve better target coverage. With ITV, patient 5 had extreme inhomogeneous target coverage, resulting in lung $D_{Max} = 32.5$ Gy,
 compared to 29.3 Gy and 29.8 Gy with 4Dopt and SBRT, respectively. For patient 7, 4Dopt deposited less dose to smaller airways in addition to better target coverage.
+
+For patient 8 the fractionation scheme could be changed to 1 x 24 Gy , which had the largest total target volume. SBRT had to change the fractionation scheme due to large heart dose, which PT could reduce with narrow entry
+channel. For targets 4a and 7b the fractionation scheme could not be changed, due too high esophagus $D_{Max}$. Furthermore, the $D_{Max}$ esophagus constraint was violated even in 5 x 7 Gy fractionation scheme with PT - 
+it was 105\% adn 104\% for ITV and 4Dopt, respectively. The reason lies in target location (see Fig~\textbf{Do it}), large target motion (11.8 mm) and small target volume (0.4 cm$^3$).
 
 Even though PT deposits less dose to OAR with the same or even better target coverage, there is still room for improvement in PT 4D treatment planning. 
 An implementation of multi-criteria objective planning should bring even better dose distribution and bring possibility to choose between trade-offs \cite{Breedveld2007, Chen2010}. 
