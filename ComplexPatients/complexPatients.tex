@@ -104,36 +104,37 @@ all TRiP98 4D functionalities could be used, as explained in next sections.
 		\multirow{2}{*}{Patient} & \multirow{2}{*}{Target} & \multirow{2}{*}{Volume (cm$^3$)} & Peak-to-peak & Fractination & Number & OAR in \\
 		 & & & motion [mm] & scheme & of fields & proximity \\
 		\hline
-		\multirow{2}{*}{1} & a & 10.2 & 3.4  & \multirow{2}{*}{1 x 24 Gy} & \multirow{2}{*}{2} & \multirow{2}{*}{SA} \\
-		 & b & 14.4 & 2.8 &  &  &  \\
+		\multirow{2}{*}{1} & a & 10.2 & 3.4  & 1 x 24 Gy & 2 & SA \\
+		 & b & 14.4 & 2.8 & 1 x 24 Gy  & 2 & SA  \\
 
 		 \hline
-		 \multirow{2}{*}{2} & a & 2.3 & 12  & 1 x 24 Gy & \multirow{2}{*}{2} \\
-		 & b & 0.4 & 11.8  & 5 x 7 Gy &  \\
+		 \multirow{2}{*}{2} & a & 2.3 & 12  & 1 x 24 Gy & 2 &\\
+		 & \multirow{2}{*}{b} & \multirow{2}{*}{0.4} & \multirow{2}{*}{11.8}  & \multirow{2}{*}{5 x 7 Gy} & \multirow{2}{*}{4} & Heart, esoph., \\
+		 & & & & & & stomach \\
 		 \hline
-		 \multirow{5}{*}{3} & a & 3.8 & 5.8  & \multirow{5}{*}{1 x 24 Gy} & \multirow{5}{*}{2} \\
-		  & b & 4.3 & 0.8  &  & \\
-		  & c & 2.7 & 3.4  &  & \\
-		  & d & 3.1 & 2.1  &  & \\
-		  & e & 0.5 & 0.5  &  & \\
+		 \multirow{5}{*}{3} & a & 3.8 & 5.8  & 1 x 24 Gy & 2 &\\
+		  & b & 4.3 & 0.8  & 1 x 24 Gy& 2 &\\
+		  & c & 2.7 & 3.4  & 1 x 24 Gy & 2&\\
+		  & d & 3.1 & 2.1  & 1 x 24 Gy & 2&\\
+		  & e & 0.5 & 0.5  & 1 x 24 Gy & 2&\\
 		  \hline
-		  \multirow{2}{*}{4} & a & 139 & 0.6 & \multirow{2}{*}{1 x 24 Gy} & 3 \\
-		 & b & 9.2 & 2.0  &  & 2 \\
+		  \multirow{2}{*}{4} & a & 139 & 0.6 & 1 x 24 Gy & 3 \\
+		 & b & 9.2 & 2.0  & 1 x 24 Gy & 2 \\
 		 \hline
 		 \multirow{2}{*}{5} & a & 4 & 9  & 3 x 9 Gy  & 5 & SA, esoph., heart \\
 		 & b & 0.8 & 7.8  & 1 x 24 Gy & 2 \\
 		 \hline
-		 \multirow{4}{*}{6} & a & 3.4   & 5    & \multirow{4}{*}{1 x 24 Gy} & 3  \\
-				    & b & 2.4 & 4.4  & & \multirow{3}{*}{2} \\
-				    & c & 2.0 & 6.3  & & & \multirow{2}{*}{Heart}\\
-				    & d & 2.4 & 6.4  & & \\
+		 \multirow{4}{*}{6} & a & 3.4   & 5  & 1 x 24 Gy & 3 &  \\
+				    & b & 2.4 & 4.4  & 1 x 24 Gy & 2 &\\
+				    & c & 2.0 & 6.3  & 1 x 24 Gy& 2& Heart\\
+				    & d & 2.4 & 6.4  & 1 x 24 Gy & 2 & Heart\\
 		\hline	    
-		\multirow{2}{*}{7} & a & 20.6 & 7.4 & \multirow{2}{*}{1 x 24 Gy} & \multirow{2}{*}{4} & \multirow{2}{*}{SA}  \\
-		 & b & 27.1 & 6.0  &  &   \\
+		\multirow{2}{*}{7} & a & 20.6 & 7.4 & 1 x 24 Gy & 4 & SA  \\
+		 & b & 27.1 & 6.0  & 1 x 24 Gy &4 & SA  \\
 		 \hline
-		 \multirow{5}{*}{8} & a & 136 & 12  & 3 x 9 Gy & \multirow{3}{*}{2} & Heart\\
-		  & b & 12.4 & 2.5  & 1 x 20 Gy &  &\\
-		  & c & 123 & 14  & 3 x 9 Gy &  &Heart \\
+		 \multirow{5}{*}{8} & a & 136 & 12  & 3 x 9 Gy & 2 & Heart\\
+		  & b & 12.4 & 2.5  & 1 x 20 Gy & 2 &\\
+		  & c & 123 & 14  & 3 x 9 Gy & 2  &Heart \\
 		 & d & 80.7 & 17  & 1 x 22 Gy & 3  &\\
 		 & e & 86.7 & 6.6  & 1 x 20 Gy & 3 & SA \\
 		\hline\hline
@@ -147,8 +148,10 @@ all TRiP98 4D functionalities could be used, as explained in next sections.
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.7\textwidth]{./Images/multiTarget.png}
-		\caption{Multiple targets irradiation. Fields 1 and 2 are designated to target a and fields 3 and 4 to target b. Optimization takes into account all target voxels and contributions from all fields.}
+		\includegraphics[width=1\textwidth]{./Images/multiTarget.png}
+		\caption{Optimization of multiple targets. (a) Fields 1 and 2 are designated to target T1 and fields 3 and 4 to target T2. 
+		Optimization takes into account all target voxels and contributions from all fields. An example is shown in (b) and (c), where targets
+		were optimized individually (b) and together (b). The dose in (b) reaches almost 200\%.}
 		\label{Fig:multiTargets}
 	\end{center}
 \end{figure}
@@ -157,14 +160,14 @@ all TRiP98 4D functionalities could be used, as explained in next sections.
 
 \subsection{Optimization techniques}
 
-Investigation of two different optimization techniques to handle range changes in moving tumors was made. For each patient, two sets of plans were created: field-independent ITV (indITV) and 4D optimization (4Dopt). 
+Investigation of two different optimization techniques to handle range changes in moving tumors was made. For each patient, two sets of plans were created: field-independent ITV (ITV) and 4D optimization (4Dopt). 
 
 \begin{itemize}
 \item \textbf{Field-independet ITV:} A water-equivalent path length ITV (WEPL-ITV) is different for each field, creating unnecessary margins when combining WEPL-ITV from different fields (see Fig.~\ref{Fig:weplITV}a). 
 Graeff et. al \cite{Graeff2012} proposed a solution to include range margin into the field description itself, instead of creating a bigger PTV. 
-Thus, no unnecessary margins are created. Treatment plans were made for all targets with intensity IMPT on a indITV in reference phase.
+Thus, no unnecessary margins are created. Treatment plans were made for all targets with intensity IMPT on a ITV in reference phase.
 
-\item \textbf{4D Optimization:} IMPT with indITV can produce inhomogeneous fields that yield homogeneous dose but only in reference phase. The WEPL can change in different motion phases, leading to inhomogeneous dose.
+\item \textbf{4D Optimization:} IMPT with ITV can produce inhomogeneous fields that yield homogeneous dose but only in reference phase. The WEPL can change in different motion phases, leading to inhomogeneous dose.
 4Dopt uses WEPL-ITV for raster setup, however the actual optimization is performed on each target voxel in each motion state $k$. The optimization function thus changes to \cite{Graeff2012}:
 
 \begin{equation}
@@ -183,7 +186,7 @@ The same number of fields and the same field angles were used in both techniques
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=0.7\textwidth]{./Images/weplITV.png}
-		\caption{Schematic presentation of the indITV. (a) Dark gray ellipses show margins needed for specific fields to account for range changes in different motion states.
+		\caption{Schematic presentation of the ITV. (a) Dark gray ellipses show margins needed for specific fields to account for range changes in different motion states.
 		When common target volume for two perpendicular fields is generated (this black contour) it creates unnecessary lateral extension of both fields, as shown by the dark gray
 		entry channels. A solution is shown in (b). Rather than using standard, geometric, margins, both fields use the same geometry, however the conversion of geometry to WEPL
 		is altered for each field. The plot in (b) shows the standard (solid line) and an altered conversion (dashed-doted line) for a beam passing a homogeneous CTV. The altered conversion
@@ -216,7 +219,7 @@ Example of different treatment plans for patient 8 is shown in Fig.~\ref{Fig:mul
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{./Images/multiExample.png}
-		\caption{Treatment plans for indITV (left), 4Dopt (middle) and SBRT (right) for SBRT (solid lines) for patient 8. CTV contours are outlined in white.}
+		\caption{Treatment plans for ITV (left), 4Dopt (middle) and SBRT (right) for SBRT (solid lines) for patient 8. CTV contours are outlined in white.}
 		\label{Fig:multiExample}
 	\end{center}
 \end{figure}
@@ -225,18 +228,18 @@ Example of different treatment plans for patient 8 is shown in Fig.~\ref{Fig:mul
 
 Results for CTV $D_{99\%}$ for all patients are shown in Table~\ref{tab:resultsComplex}. All SBRT plans were approved by a physician, 
 even though the prescription dose for patients 5 - 7 was not met due to an OAR proximity. Excluding patients 5 - 7, there were 8 cases (out of 20) of too low CTV dose across different
-motion types for indITV and 4Dopt, respectively. The lowest CTV $D_{99\%}$ was 86.5\%.
-For patients 6 - 8 indITV and 4Dopt had higher CTV $D_{99\%}$ than SBRT, except for target 7c.
-There was no significant difference in CTV $D_{99\%}$ between SBRT, indITV and 4Dopt.
+motion types for ITV and 4Dopt, respectively. The lowest CTV $D_{99\%}$ was 86.5\%.
+For patients 6 - 8 ITV and 4Dopt had higher CTV $D_{99\%}$ than SBRT, except for target 7c.
+There was no significant difference in CTV $D_{99\%}$ between SBRT, ITV and 4Dopt.
 
 \begin{table}[H]
 	\centering
 	%   \footnotesize
-	\caption{CTV $D_{99\%}$ for indITV, 4Dopt and SBRT for 8 patients. Results for indITV and 4Dopt are shown as median (range) across different motion types.}
+	\caption{CTV $D_{99\%}$ for ITV, 4Dopt and SBRT for 8 patients. Results for ITV and 4Dopt are shown as median (range) across different motion types.}
 	\begin{tabular}{c|c|c|c|c}
 		\hline\hline
 		\multirow{2}{*}{Patient} & \multirow{2}{*}{Target} & \multicolumn{3}{|c}{CTV $D_{99\%}$ (\%)}  \\
-		 &  & indITV & 4Dopt & SBRT \\
+		 &  & ITV & 4Dopt & SBRT \\
 		 \hline
 		 
 \multirow{2}{*}{1} & a & 101.6(100.0 - 102.1) & 101.0(101.0 - 101.0) & 100.0\\ 
@@ -279,10 +282,10 @@ There was no significant difference in CTV $D_{99\%}$ between SBRT, indITV and 4
 
 $D_{Max}$ and $D_{Mean}$ for 8 OARs are shown in Table~\ref{tab:OARComplex}. There was a significant difference between PT and SBRT in $D_{Max}$ and $D_{Mean}$ for heart, spinal cord, esophagus and aorta and in $D_{Mean}$ for smaller airways and
 ipsilateral lung.
-No significant difference was observed in dose to OAR between different motion types or between indITV and 4Dopt.
+No significant difference was observed in dose to OAR between different motion types or between ITV and 4Dopt.
 The overall OAR difference for patients between SBRT and mITV
 was significant, 3.1 Gy (0.5 - 7.9)  for $D_{Max}$ and 1.7 Gy (0.7 - 3.0) for $D_{Mean}$. There was no significant difference between mITV and 4DITV to overall dose to OAR.
-The ipsilateral lung $V_{20\%}$ was 14.4 (0.0 - 43.0), 14.6 (0.0 - 41.4) and 29.8 (5.8 - 89.2)\% for mITV, indITV and SBRT, respectively. Both, mITV and 4DITV ipsilateral lung $V_{20\%}$ was
+The ipsilateral lung $V_{20\%}$ was 14.4 (0.0 - 43.0), 14.6 (0.0 - 41.4) and 29.8 (5.8 - 89.2)\% for mITV, ITV and SBRT, respectively. Both, mITV and 4DITV ipsilateral lung $V_{20\%}$ was
 significantely different from SBRT, while no significant difference was observed between mITV and 4DITV.
 
 Dose volume histograms (DVH) for patients 5 - 8 are shown in Fig.~\ref{Fig:dvh}. The margins used for OAR subtraction for PT and SBRT, respectively, were:
@@ -297,12 +300,12 @@ Additionally, SBRT Esophagus and Heart $D_{Max}$ limits were exceeded in patient
 \begin{table}[H]
 	\centering
 	%   \footnotesize
-	\caption{OAR $D_{Max}$ and $D_{Mean}$ of all patients for indITV, 4Dopt and SBRT. There was significant difference between PT and SBRT for all OARs, except
+	\caption{OAR $D_{Max}$ and $D_{Mean}$ of all patients for ITV, 4Dopt and SBRT. There was significant difference between PT and SBRT for all OARs, except
 	smaller airways' $D_{Max}$. Data is displayed as median (range).}
 	\begin{tabular}{c|c|c|c}
 		\hline\hline
 		 
-		OAR &  indITV & 4Dopt & SBRT \\
+		OAR &  ITV & 4Dopt & SBRT \\
 		\hline
 		& \multicolumn{3}{c}{$D_{Max}$ (Gy)}  \\
 		\hline
@@ -331,7 +334,7 @@ Ipsilateral lung & 2.2(0.0 - 9.1) & 2.3(0.0 - 8.6) & 4.1(0.8 - 10.5)\\
 % \begin{table}[H]
 % 	\centering
 % 	%   \footnotesize
-% 	\caption{$D_{Max}$ and $D_{Threshold}$ for OAR in CTV vicinity for indITV, 4Dopt and SBRT. The rightmost column shown allowed doses,
+% 	\caption{$D_{Max}$ and $D_{Threshold}$ for OAR in CTV vicinity for ITV, 4Dopt and SBRT. The rightmost column shown allowed doses,
 % 	as defined in \cite{Benedict2010}.}
 % 	\begin{tabular}{c|c|c|c|c}
 % 		\hline\hline
@@ -378,8 +381,8 @@ For patients with complex geometry (5 - 8) PT maintained or even improved target
 The exception were smaller airways in patients 5, which receive more dose, but the CTV $D_{99\%}$ patient 5 was improved. 
 Additionally, margins used for OAR subtraction were smaller in PT, resulting in better CTV coverage.
 
-There was no significant difference between indITV and 4Dopt in target coverage or in dose to OAR. 
-However, in patients 5 and 7 the 4Dopt was able to achieve better target coverage. With indITV, patient 5 had extreme inhomogeneous target coverage, resulting in lung $D_{Max} = 32.5$ Gy,
+There was no significant difference between ITV and 4Dopt in target coverage or in dose to OAR. 
+However, in patients 5 and 7 the 4Dopt was able to achieve better target coverage. With ITV, patient 5 had extreme inhomogeneous target coverage, resulting in lung $D_{Max} = 32.5$ Gy,
 compared to 29.3 Gy and 29.8 Gy with 4Dopt and SBRT, respectively. For patient 7, 4Dopt deposited less dose to smaller airways in addition to better target coverage.
 
 Even though PT deposits less dose to OAR with the same or even better target coverage, there is still room for improvement in PT 4D treatment planning. 
@@ -397,7 +400,7 @@ whereas different motion types should be considered. The disadvantage of 3D and 
 
 Patient 6 $D_{Max}$ heart dose ranged over 2 Gy across different motion types in 4Dopt, showing the necessity of making treatment plans robust against motion uncertainty, 
 especially in the hypo-fractionated regiment. Furthermore, the doses to OARs that are under the limits after optimization, may exceed them after calculating 4D dose. 
-The indITV and 4Dopt approaches take into account range changes in different motion states, however they do not guarantee 4D doses. This could be achieved with beam tracking \cite{Bert2007}, 
+The ITV and 4Dopt approaches take into account range changes in different motion states, however they do not guarantee 4D doses. This could be achieved with beam tracking \cite{Bert2007}, 
 when each motion state has designated treatment plan. Clinical application of beam tracking is not yet feasible due to several reasons, such as the 
 inverse interplay, the ion-beam tracking system complexity, precision and speed of the motion monitoring.
 Another solution would be jet-ventilation \cite{Santiago2013}, however, it brings additional complications to treatment.
