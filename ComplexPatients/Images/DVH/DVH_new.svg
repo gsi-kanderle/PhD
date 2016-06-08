@@ -39,16 +39,16 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1015"
+     inkscape:window-width="745"
+     inkscape:window-height="421"
      id="namedview3701"
      showgrid="false"
-     inkscape:zoom="0.19991529"
-     inkscape:cx="396.72193"
-     inkscape:cy="878.15093"
-     inkscape:window-x="-2"
-     inkscape:window-y="-3"
-     inkscape:window-maximized="1"
+     inkscape:zoom="0.28272291"
+     inkscape:cx="854.39461"
+     inkscape:cy="1114.2516"
+     inkscape:window-x="1171"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
      inkscape:current-layer="svg3699" />
   <image
      width="2056.2871"
@@ -65,7 +65,7 @@
      xml:space="preserve"
      id="flowRoot3709"
      style="font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-     transform="matrix(9.3973758,0,0,9.3973758,-15094.016,-3254.871)"
+     transform="matrix(7.1875401,0,0,7.1875401,-11099.567,-2400.1876)"
      inkscape:export-filename="/u/kanderle/PhD/ComplexPatients/Images/DVH_legend.png"
      inkscape:export-xdpi="300"
      inkscape:export-ydpi="300"><flowRegion
@@ -80,7 +80,7 @@
      xml:space="preserve"
      id="flowRoot3709-1"
      style="font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-     transform="matrix(9.3973758,0,0,9.3973758,-15099.391,-2619.8654)"
+     transform="matrix(6.4976352,0,0,6.4976352,-9849.3819,-1482.7467)"
      inkscape:export-filename="/u/kanderle/PhD/ComplexPatients/Images/DVH_legend.png"
      inkscape:export-xdpi="300"
      inkscape:export-ydpi="300"><flowRegion
@@ -96,7 +96,7 @@
      xml:space="preserve"
      id="flowRoot3709-4"
      style="font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-     transform="matrix(9.3973758,0,0,9.3973758,-15085.242,-1979.6626)"
+     transform="matrix(6.4976352,0,0,6.4976352,-9849.7309,-834.94288)"
      inkscape:export-filename="/u/kanderle/PhD/ComplexPatients/Images/DVH_legend.png"
      inkscape:export-xdpi="300"
      inkscape:export-ydpi="300"><flowRegion
@@ -109,7 +109,7 @@
          style="fill:#000000;fill-opacity:1" /></flowRegion><flowPara
        id="flowPara3715-8">7b</flowPara></flowRoot>  <path
      style="fill:#008000;fill-opacity:1;stroke:#ff0000;stroke-width:8;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-     d="m 454.27881,184.40747 127.33315,0"
+     d="m 383.53817,187.9445 127.33315,0"
      id="path3759"
      inkscape:connector-curvature="0"
      inkscape:export-filename="/u/kanderle/PhD/ComplexPatients/Images/DVH_legend.png"
@@ -126,11 +126,11 @@
          x="622.76379"
          y="162.56885"
          style="fill:#008000;fill-opacity:1" /></flowRegion><flowPara
-       id="flowPara4535"></flowPara></flowRoot>  <flowRoot
+       id="flowPara4535" /></flowRoot>  <flowRoot
      xml:space="preserve"
      id="flowRoot3709-16"
      style="font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-     transform="matrix(6.9427012,0,0,6.9427012,-11934.631,-2528.5557)"
+     transform="matrix(6.9427012,0,0,6.9427012,-12005.372,-2525.0187)"
      inkscape:export-filename="/u/kanderle/PhD/ComplexPatients/Images/DVH_legend.png"
      inkscape:export-xdpi="300"
      inkscape:export-ydpi="300"><flowRegion
@@ -145,7 +145,7 @@
      xml:space="preserve"
      id="flowRoot3709-16-5"
      style="font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-     transform="matrix(6.9427012,0,0,6.9427012,-11934.556,-2447.9362)"
+     transform="matrix(6.9427012,0,0,6.9427012,-12005.297,-2444.3992)"
      inkscape:export-filename="/u/kanderle/PhD/ComplexPatients/Images/DVH_legend.png"
      inkscape:export-xdpi="300"
      inkscape:export-ydpi="300"><flowRegion
@@ -160,7 +160,7 @@
      xml:space="preserve"
      id="flowRoot3709-16-8"
      style="font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-     transform="matrix(6.9427012,0,0,6.9427012,-11379.197,-2535.678)"
+     transform="matrix(6.9427012,0,0,6.9427012,-11449.938,-2532.141)"
      inkscape:export-filename="/u/kanderle/PhD/ComplexPatients/Images/DVH_legend.png"
      inkscape:export-xdpi="300"
      inkscape:export-ydpi="300"><flowRegion
@@ -175,7 +175,7 @@
      xml:space="preserve"
      id="flowRoot3709-16-0"
      style="font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-     transform="matrix(6.9427012,0,0,6.9427012,-10756.433,-2528.1082)"
+     transform="matrix(6.9427012,0,0,6.9427012,-10827.174,-2524.5712)"
      inkscape:export-filename="/u/kanderle/PhD/ComplexPatients/Images/DVH_legend.png"
      inkscape:export-xdpi="300"
      inkscape:export-ydpi="300"><flowRegion
@@ -190,7 +190,7 @@
      xml:space="preserve"
      id="flowRoot3709-16-8-5"
      style="font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-     transform="matrix(6.9427012,0,0,6.9427012,-11379.197,-2447.47)"
+     transform="matrix(6.9427012,0,0,6.9427012,-11449.938,-2443.933)"
      inkscape:export-filename="/u/kanderle/PhD/ComplexPatients/Images/DVH_legend.png"
      inkscape:export-xdpi="300"
      inkscape:export-ydpi="300"><flowRegion
@@ -203,7 +203,7 @@
          style="fill:#000000;fill-opacity:1" /></flowRegion><flowPara
        id="flowPara3715-6-2-3">SA right lung</flowPara></flowRoot>  <path
      style="fill:#008000;fill-opacity:1;stroke:#0000ff;stroke-width:8;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-     d="m 454.05271,272.61546 127.33315,0"
+     d="m 383.31207,276.15249 127.33315,0"
      id="path3759-1"
      inkscape:connector-curvature="0"
      inkscape:export-filename="/u/kanderle/PhD/ComplexPatients/Images/DVH_legend.png"
@@ -211,7 +211,7 @@
      inkscape:export-ydpi="300" />
   <path
      style="fill:#008000;fill-opacity:1;stroke:#339999;stroke-width:8;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-     d="m 1023.2879,184.40747 127.3332,0"
+     d="m 952.54726,187.9445 127.33324,0"
      id="path3759-9"
      inkscape:connector-curvature="0"
      inkscape:export-filename="/u/kanderle/PhD/ComplexPatients/Images/DVH_legend.png"
@@ -219,15 +219,15 @@
      inkscape:export-ydpi="300" />
   <path
      style="fill:#008000;fill-opacity:1;stroke:#008000;stroke-width:8;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-     d="m 1023.2879,272.61546 127.3332,0"
+     d="m 952.54726,276.15249 127.33324,0"
      id="path3759-4"
      inkscape:connector-curvature="0"
      inkscape:export-filename="/u/kanderle/PhD/ComplexPatients/Images/DVH_legend.png"
      inkscape:export-xdpi="300"
      inkscape:export-ydpi="300" />
   <path
-     style="fill:#ffff00;fill-opacity:1;stroke:#ffff00;stroke-width:9.16561413;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-     d="m 1626.0431,184.40747 127.3332,0"
+     style="fill:#000000;fill-opacity:0;stroke:#ff8000;stroke-width:9.16561413;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     d="m 1555.3025,187.9445 127.3332,0"
      id="path3759-6"
      inkscape:connector-curvature="0"
      inkscape:export-filename="/u/kanderle/PhD/ComplexPatients/Images/DVH_legend.png"
