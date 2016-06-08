@@ -30,9 +30,12 @@
 \chapter{Discussion}
 
 This is a first in silico study directly comparing clinical stereotactic body radiation therapy (SBRT) with scanned carbon-ions (PT) for non-small cell lung cancer (NSCLC). 
-Our results show that PT could be considered an alternative to SBRT, with the same tumor coverage and less dose to OAR. Treatment of NSCLC with PT is influenced by 
-interplay between tumor motion and beam scanning. It was shown that rescanning offers an
-adequate motion mitigation. Additionally, a prospect for treating patients with multiple lung metastases was displayed.
+Our results show that PT could be considered an alternative to SBRT, with the same tumor coverage and less dose to OARs. Furthermore, the study was expanded to patients with multiple
+NSCLC disease sites. With state of the art 4D optimization, intensity modulated particle therapy (IMPT) was able to generate treatment plans with less OAR dose and comparable target coverage
+to SBRT. It was possible to generate a single fraction plan with IMPT for a specific patient, where SBRT was limited due to high OAR dose.
+
+Treatment of NSCLC with PT is influenced by interplay between tumor motion and beam scanning. It was shown that rescanning offers an
+adequate motion mitigation. 
 
 PT offers a precise dose shaping and it can be thus more prone to uncertainties. Calculation of time-resolved (4D) doses can be significantly
 affected by errors in deformable image registration (DIR) \cite{Heath2006}. Special tools were developed in the scope of this thesis to ensure DIR quality assurance (DIRQA).
@@ -40,6 +43,16 @@ Tools were tested on a large dataset to ensure their validity.
 
 
 \section{Deformable image registration}
+
+
+In the scope of our study, the DIR was included in the contour propagation, 4D optimization and 4D dose calculation.
+
+A single registration algorithm, B-Spine, was used in lung and cardiac 4D-CT DIR, becaue it is better suited for large deformations present in lung and cardiac 4D-CT \cite{Tang2013}. 
+In contrast, Demons algorithm is usually used for small deformations. Additionally, it was shown on a  that B-Spline preforms better than on a lung patient CT
+The B-Spline
+algorithm handles large deformation, whereas Demons 
+B-Spline algorithm should handle large deformations well, which
+
 
 With features such as adaptive treatment planning \cite{Yan1997}, 4D optimization \cite{Trofimov2005}, 4D dose calculation \cite{Flampouri2006}, 
 contour propagation \cite{Lu2006b} and combining different imaging modalities \cite{Leibfarth2013} DIR is slowly entering everyday clinical work-flow. 
@@ -49,7 +62,7 @@ along with different optimization metrics, such as mean square error, cross-corr
 The advantage of using open-source software for DIR, as explained in Section~\ref{RegistrationImplement}, is that different DIR algorithms, 
 optimization metrics and image types can be used. They can be accessed either with using
 existing libraries, such as ITK \cite{Yoo2002}, or by writing designated software \cite{Fedorov2015}. A B-Spline algorithm and mean square error metric was used for DIR in this thesis. 
-There are large deformations present in lung and cardiac
+There are large deformations present in 
 4D-CT, which B-Spline should handle well \cite{Tang2013}. The mean square error metric also gives better results for images of the same modality and same contrast \cite{Varadhan2013}. 
 However, a comparison between different algorithms and optimization metrics and their effect on DIRQA is warranted.
 
@@ -109,7 +122,7 @@ to SBRT.
 Treatment for early stage NSCLC is well established, however, more than 75\% NSCLC cases present themselves in an advance stage \cite{Jemal2009}, 
 usually due to the lack of detection in the early stages. The standard of care for advanced NSCLC is concurrent chemotherapy \cite{Oshiro2014}.
 Dose escalation studies showed favorable prognosis for doses higher than 70 Gy \cite{Hayman2001, Rosenman2002, Socinski2008}. 
-The results of a recent phase 3 randomized trial by Bradley et al \cite{Bradley2010}, however, showed better survival rates for patients administered 60 Gy,
+The results of a recent phase 3 randomized trial by Bradley et al \cite{Bradley2015}, however, showed better survival rates for patients administered 60 Gy,
 instead of 74 Gy. It was speculated that higher doses to heart and esophagus might have contributed to higher mortality rates \cite{Cox2012}. 
 Results presented in this thesis show that mean dose to heart and esophagus would be on average 1 Gy
 smaller with PT than with SBRT. For patients with multiple disease sites the the average mean heart and esophagus dose would be 4 and 3 Gy smaller.
@@ -160,14 +173,14 @@ on a large patient dataset.
 \subsection{Outlook}
 
 Recent advances in photon radiotherapy allow the usage of noncoplanar beams, a so-called 4$\pi$ optimization \cite{Dong2013}. In a recent study, Dong et al \cite{Dong2013b} showed that
-4$\pi$ yielded better target coverage and OAR sparring than SBRT. They have reported reduction of $D_{Max}$ in heart, esophagus and spinal cord by 32\%, 72\% and 53\%, respectively, showing
+4$\pi$ yielded better target coverage and OAR sparring than SBRT for NSCLC patients. 
+They have reported reduction of $D_{Max}$ in heart, esophagus and spinal cord by 32\%, 72\% and 53\%, respectively, showing
 the potential of a 4$\pi$ optimization. According to this thesis, PT is able to reduce the $D_{Max}$ even further, with a reduction of 57\%, 87\% and 83\% for heart, esophagus and spinal cord,
 respectively. The numbers, however, should be compared with caution, since they were obtained from a different set of patients. 
 A future study, directly comparing SBRT, $4\pi$ and PT for NSCLC is thus warranted.
 
 Robust optimization seems to be gaining on popularity for PT. Standard margin defenition to account for uncertainties fails short in PT, while the inclusion of uncertainties in 
 optimization process can substantially improve treatment plans \cite{Chen2012}. The robstuness optimization is now possible even for a 4D optimization \cite{Liu2016}, opening a wide
-
 field of new possibilities. 
 \newpage
 
