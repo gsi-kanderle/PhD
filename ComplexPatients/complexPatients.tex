@@ -40,16 +40,17 @@ Prognosis for stage IV NSCLC is poor, with only 12 months median survival after 
 Stereotactic body radiation treatment (SBRT) shows good results for treating NSCLC \cite{Baumann2009, Fakiris2009, Grutters2010, Greco2011}. 
 Furthermore, several studies have shown that SBRT can be used in the setting of limited metastatic 
 disease \cite{Rusthoven2009, Villaruz2012, Salama2012, Iyengar2014}. 
-Passive scattering particle therapy has also prooved as an effective treatment for NSCLC \cite{Grutters2010, Tsujii2012} and it could be considered an alternative
+Passive scattering particle therapy has also proved as an effective treatment for NSCLC \cite{Grutters2010, Tsujii2012} and it could be considered an alternative
 to photon treatment.
 
 It was shown in Chapter~\ref{PatStudy} that scanned carbon ions (PT) could also be used as a treatment modality for NSCLC. One of the conclusions of the study shown in Chapter~\ref{PatStudy} 
 was that patients with multiple disease sites would especially benefit from PT compared to SBRT. However, limitations of this study were the small number of patients (4) and
-a single-field uniform optimization (SFUD) used in treatment planning. Multiple disease sites usually occupy a large volume of the lung and hence present themselves in a complex geometry. 
+a single-field uniform optimization (SFUD) used in treatment planning. Several vital organs need to be considered In treatment planning for NSCLC patients, besides lungs, such as heart, spinal cord, esophagus and large vessels.
+Due to overlapping entry channels SFUD is limited in treating NSCLC, especially in patients with tumor in close vicinity to an vital organ.
 It is not possible to create clinically acceptable treatment plans with SFUD for such complex geometry.
 
-We hypothesise that intensity modulated particle therapy (IMPT), should result in an adequate treatment plans. Furthermore, IMPT 
-should provide single fraction scheme in patients, where SBRT due to the OAR dose limitations could not. 
+We hypothesize that intensity modulated particle therapy (IMPT), permits to calculate adequate treatment plans. Furthermore, IMPT 
+should provide single fraction scheme in patients, where SBRT was limited by OAR constraints. 
 
 Treatment of lung cancer patients  with multiple disease sites was investigated with state of the art 4D IMPT optimization. 
 Treatment plans were generated with two different 4D optimization techniques and compared with SBRT plans, which were actually used for treating patients.
@@ -85,7 +86,7 @@ Number of fractions and doses delivered are given in Table~\ref{tab:patdata2}.
 	shows an OAR in target vicinity (closer than 10 mm), if present. SA stands for smaller airways and esoph. for esophagus.}
 	\begin{tabular}{c|c|c|c|c|c|c}
 		\hline\hline
-		\multirow{2}{*}{Patient} & \multirow{2}{*}{Target} & \multirow{2}{*}{Volume (cm$^3$)} & Peak-to-peak & Fractination & Number & OAR in \\
+		\multirow{2}{*}{Patient} & \multirow{2}{*}{Target} & \multirow{2}{*}{Volume (cm$^3$)} & Peak-to-peak & Fractionation & Number & OAR in \\
 		 & & & motion [mm] & scheme & of fields & proximity \\
 		\hline
 		\multirow{2}{*}{1} & a & 10.2 & 3.4  & 1 x 24 Gy & 2 & \\
@@ -144,17 +145,17 @@ Heaviside step function and $w_{OAR}$ is an OAR specific weight.
 
 The $D_{act}(\vec{N})$ is calculated as
 \begin{equation}
- D_{act}(\vec{N}) = \sum_{k=1}^n c_{ik}N
+ D_{act}(\vec{N}) = \sum_{k=1}^n c_{ik}N RBE(N)
 \end{equation}
 
 The coefficient $c_{ik}$ gives the dose deposition at voxel $i$ of a pencil beam $k$, 
-with $n$ being the number of pencil beams. 
+with $n$ being the number of pencil beams and RBE is relative biological effectiveness, calculated with the local effect model or LEM \cite{Elsaesser2010} . 
 
 There is no restriction for the number of targets or fields in the minimizing function, so the first part of Eq.~\ref{eq-costFunc} can be expanded to:
 
 \begin{equation}
 \label{eq-multiCost}
- E(\vec{N}) = \sum_{T} \sum_{i\in T} \left( D_{plan}^{i} -\sum_{k=1}^n c_{ik}N\right)
+ E(\vec{N}) = \sum_{T} \sum_{i\in T} \left( D_{plan}^{i,T} -\sum_{k=1}^n c_{ik}N\right)
 \end{equation}
 
 However, the setup of raster points in TRiP98 allowed only one target. It was therefore expanded in a way that a field was designated to a specific target, as displayed in Fig~\ref{Fig:multiTargets}. 
@@ -193,23 +194,23 @@ Thus, all fields have the same target in optimization, permiting simultaneous op
 Treatment plans were made for all targets with IMPT on a ITV in reference phase. Additionally target in motion state 5 (end-exhale) was included in optimization
 to make plan more robust against range changes in different motion states.
 
-\item \textbf{4D Optimization:} To include WEPL change specific to each motion states a 4D optimization was used. 4Dopt uses a WEPL-ITV for raster setup, 
+\item \textbf{4D Optimization:} To include WEPL change specific to each motion state, a 4D optimization was used. 4Dopt uses a WEPL-ITV for raster setup, 
 however the actual optimization is performed on each target voxel in each motion state $m$. The optimization function thus changes to \cite{Graeff2012}:
 
 \begin{equation}
 E(\vec{N}) = \sum_{m=1}^{M}\sum_{T_m} \sum_{i\in T_m} \left( D_{plan}^{i} -\sum_{k=1}^n c_{ikm}N\right)
 \end{equation}
 
-All targets were treated with IMPT and 4D optimization. Due to the large optimization problem for targets 3a - b, 5a - d, 6b, 8a and 8c, where targets had big volume or 
+All targets were treated with IMPT and 4D optimization. Due to the large optimization problem for targets 3a - b, 5a - d, 6b, 8a and 8c, where targets had a big volume or 
 OARs were included besides targets in optimization a subset of motion states was used \cite{Graeff2012}. 
-To cover most of the different tumor positions, two extreme motion states (0 and 5) and an intermidate position (7) were chosen.
+To cover most of the different tumor positions, two extreme motion states (0 and 5) and an intermediate position (7) were chosen.
 
 \end{itemize}
 
 The same number of fields and the same field angles were used in both techniques.
 
 To reduce optimization problem, only portion of large OARs, such as heart or esophagus, were used. Large OARs were manually cropped to the region close to the 
-target. Dose, however, was calculated on a whole OAR to ensure the validty of results.
+target. Dose, however, was calculated on a whole OAR to ensure the validity of results.
 
 For targets with different fractionation scheme (targets 8a-e), TRiP98 was modified to include option of specific dose fractions for specific target.
 
@@ -233,11 +234,11 @@ A WEPL-ITV was constructed on the CTV with margins for each individual field, wh
 or for raster setup (4Dopt). Due to large memory demands, targets in each lung were optimized separately. 
   
 The planning objective was 99\% of each target volume should receive at least 100\% of the planned dose (D$_{99}$\% $\geq$ 100\%). Two dose limitation were used for OARs, as defined in 
-the AAPM task group \cite{Benedict2010}. First limitation was a maximum dose to single voxel $D_{Max}$ and second a maximum dose deposited to a 
-specific OAR volume $D_{Threshold}$. All limits are summerized in Table~\textbf{appendix}.
+the AAPM task group \cite{Benedict2010}. The first limitation was a maximum dose to single voxel $D_{Max}$ and the second a maximum dose deposited to a 
+specific OAR volume $D_{Threshold}$. All limits are summarized in Table~\textbf{appendix}.
  
 After the optimization the 4D-dose was calculated for two motion periods (3.6 sec and 5.0 sec) and two starting phases (0$^\circ$ and 90$^\circ$) as explained in Section~\ref{PTTP}. 
-The relative biological effectivness (RBE) was calculated with local effect model, LEM IV \cite{Elsaesser2010}. 
+The relative biological effectiveness (RBE) was calculated with LEM IV \cite{Elsaesser2010}. 
 Alpha beta ratio of 6 and 2 was used in target and normal tissue, respectively.
 
 Motion was mitigated by applying slice-by-slice rescanning to each plan. 
@@ -247,29 +248,30 @@ monitoring precision. The maximum number of rescanns was limited to 20.
 Detailed explanation of SBRT treatment planning is given in Section~\ref{SBRTTP}.
 
 For patients 4 - 7 OAR dose could not be sufficiently reduced in optimization. It was necessary to add margins to the OAR and then 
-subtract the OAR plus margins from the target. For SBRT the OAR plus margins was subtracted from PTV, which included 3 mm isotropic margins on geometrical ITV. 
-In PT geometrical ITV was not used, so in each of 10 motion states OAR plus margins was subtracted from CTV plus 3 mm. 
+subtract the OAR plus margins from the target. For SBRT the OAR plus margins was subtracted from PTV, which included 3 mm isotropic margins on a geometrical ITV. 
+In PT geometrical ITV was not used, so in each of 10 motion states, OAR plus margins was subtracted from CTV plus 3 mm. 
 
-Appropriate margins for OAR were found by trial and error. In the first try the OAR was included in optimization with different weights ($w_{OAR}$ in Eq~\ref{eq-costFunc}) and without any substraction from target. 
+In the first try the OAR was included in optimization with different weights ($w_{OAR}$ in Eq~\ref{eq-costFunc}) and without any subtraction from target. 
 If any 3D treatment plan after the optimization was acceptable, a 4D dose was calculated, 
-where OAR and target dose were inspected. If the plan was rejected, the optimization was repeated but with OAR substraction from target. 
-Firstly with no OAR margins and afterwards increasing by 1 mm. 
+where OAR and target dose were inspected. If the plan was rejected, the optimization was repeated but with OAR subtraction from target. 
+
 
 
 \subsection{Fraction escalation}
 
-A single fraction of 24 Gy could not be used in SBRT treatment for targets 4a, 7b and 8a-e due to the OAR dose constraints. For these targets additional PT plans were generated with 1 x 24 Gy fractionation scheme, in order
+A single fraction of 24 Gy could not be used in SBRT treatment for targets 4a, 7b and 8a-e due to OAR dose constraints. For these targets additional PT plans were generated with 1 x 24 Gy fractionation scheme, in order
 to estimate if PT could respect OAR constraints for these targets, while delivering 1 x 24 Gy. 
 
+\subsection{Data evaluation}
+
+For target coverage comparison, the minimum dose in 99\% of the target volume ($D_{99\%}$) was evaluated. $D_{Max}$ and $D_{Threshold}$ were used in OAR dose comparison. $D_{Max}$ and $D_{Threshold}$ were normalized to the respective limits
+in the fractionation scheme used, see Table~\ref{appendix}. Additionally, the volume receiving 20\% of the planned dose ($V_{20\%}$) was used to assess ipsilateral lung dose.
+
+Paired t-tests were performed to compare the dose metrics mentioned between SBRT, ITV and 4Dopt. A p-value < 0.05 was considered significant. 
 
 \section{Results}
 
-Example of different treatment plans for three patients are shown in Fig.~\ref{Fig:multiExample}. Patient 2 had a 1 x 24 Gy fractionation scheme for 5 targets, without any OARs in CTV vicinity.
-Target 7b was in close proximity to the heart, esophagus and stomach and a 5 x 7 Gy fractionation scheme was used to satisfy OAR dose constraints. 
-Patient 8 had 5 targets with large total target
-volume and target 8a was close to the heart. The heart dose was the limiting factor and hence a complex fractionation scheme was used (see Table~\ref{tab:patdata2}). 
-PT was able to deliver 1 x 24 Gy to all targets with only
-violating smaller airways and heart $D_{Max}$ by 83\% and 10\%, respectively.
+An example of different treatment plans for three patients are shown in Fig.~\ref{Fig:multiExample}. 
 
 \newpage
 \begin{figure}[H]
@@ -351,11 +353,7 @@ was significant, 17 (4 - 50)\% and 27 (8 - 56)\% of OAR limits for $D_{Max}$ $D_
 The ipsilateral lung $V_{20\%}$ was 14.4 (0.0 - 43.0), 14.6 (0.0 - 41.4) and 29.8 (5.8 - 89.2)\% for ITV, 4Dopt and SBRT, respectively. Both, ITV and 4DITV ipsilateral lung $V_{20\%}$ was
 significantely different from SBRT, while no significant difference was observed between ITV and 4DITV.
 
-The margins used for OAR subtraction for PT and SBRT, respectively, were:
-2 and 5 mm for smaller airways, 0 and 1 mm for esophagus in patient 4; 
-0 and 2 mm for heart in patient 5; 
-2 and 11 mm for smaller airways in left lung, 0 and 9 mm for smaller airways in right lung in patient 6;
-2 and 0 mm for esophagus and 0 and 1 mm for stomach in patient 7.
+The margins used for OAR subtraction for PT and SBRT can be found in Table~\ref{appendix2}.
 
 All treatment plans exceeded the $D_{Max}$ limit for smaller airways in patients 4, 6 and 8 and for heart in patient 6. 
 Additionally, SBRT Esophagus and Heart $D_{Max}$ limits were exceeded in patients 4 and 8, respectively.
@@ -439,46 +437,46 @@ ipsilateral lung & 14.4(0.0 - 43.0) & 14.6(0.0 - 41.4) & 29.2(0.0 - 89.2)\\
 With PT the 1 x 24 Gy fractionation scheme could be used for targets 8a-e, violating only $D_{Max}$ for smaller airways (180\%) and heart (110\%). 
 SBRT for patient 8 was limited by heart $D_{Threshold}$ which was 100\% of the allowed dose - for PT it was 45\% in the same fractionation scheme.
 
-For targets 4a and 7b the 1 x 24 Gy frascionation scheme could not be generated with PT. Either the target coverage was low (CTV $D_{99\% < 50\%}$) or 
+For targets 4a and 7b the 1 x 24 Gy frascionation scheme could not be generated with PT. Either the target coverage was low (CTV $D_{99\%} < 50\%$) or 
 esophagus $D_{Max}$ and additionally stomach $D_{Max}$ for target 7b were exceeded.
 
 \section{Summary and Discussion}
 
 Clinically valid SBRT plans have been compared to PT treatment plans for NSCLC patients with multiple metastases. 
-To the best of our knowledge, this is the first study of treating multiple NSCLC metastases with IMPT. A novel approach was used to handle multiple targets and combined
-with state of the are 4D IMPT treatment planning. Furthermore, 4D PT doses were calculated for different motion types. 
+To the best of our knowledge, this is the first study treating multiple NSCLC metastases with IMPT. A novel approach was used to handle multiple targets and combined
+with state of the art 4D IMPT treatment planning. Furthermore, 4D PT doses were calculated for different motion types. 
 
 PT on average delivered less dose to OARs, while still having comparable target coverage to SBRT.
-The most important difference is in heart dose, with $D_{Threshold}$ being on average 6 times lower in PT compared to SBRT. Recent trial has shown,
-that a higher heart dose could be attributed to higher mortality rates for NSCLC patients \cite{Bradley2015}.
+The most important difference was in heart dose, with $D_{Threshold}$ being on average 6 times lower in PT compared to SBRT. A recent trial, RTOG 0617, has shown,
+that a higher mortality rates could be attributed to higher heart dose for NSCLC patients \cite{Bradley2015}.
 
 For patients with complex geometry (4 - 8) PT maintained or even improved target coverage in most cases, while reducing doses to OARs.
-The exception was target 7b, where CTV $D_{99\%}$ was low (84\% and 75\% for ITV and 4Dopt, respectivelly), due to the $D_{Max}$ constraints of esophagus and stomach.
-The large motion of target 7b (11.8 mm) and small target volume (0.4 cm$^3$) contributed to a poor PT plan, whereas SBRT was able to deliever full dose to the target
-and adhearing to OAR constraints. This supports our claim in Chapter~\ref{PatStudy} that targets with larger volume would benefit most from PT. Furthermore, for small targets
-with large motion in a OAR vicinity, PT generates worse plan than SBRT. It should be noted, however, that integral doses for all OARs are still lower for PT as seen in Fig~\ref{Fig:dvh}.
+The exception was target 7b, where CTV $D_{99\%}$ was low (84\% and 75\% for ITV and 4Dopt, respectively), due to the $D_{Max}$ constraints of esophagus and stomach.
+The large motion of target 7b (11.8 mm) and small target volume (0.4 cm$^3$) contributed to a poor PT plan, whereas SBRT was able to deliver full dose to the target
+and adhering to OAR constraints. This supports our claim in Chapter~\ref{PatStudy} that targets with larger volume would benefit most from PT. Furthermore, for small targets
+with large motion in OAR vicinity, PT generates worse plan than SBRT. It should be noted, however, that integral doses for all OARs are still lower for PT as seen in Fig~\ref{Fig:dvh}.
 The only limitation for PT are usually the OAR's $D_{Max}$.
 
 Due to the OAR constraints of targets 4a and 7b, no fractionation escalation was possible with PT. 
-For patient 8, however, the fractionation scheme could be changed to 1 x 24 Gy. Large total target volume could be irradiated with less
-overall dose to the patient and hence significantely reducing the heart dose. Again, this confirms our claim of PT benefit for large targets.
+For patient 8, however, the fractionation scheme could be changed to 1 x 24 Gy. The large total target volume could be irradiated with less
+overall dose to the patient and hence significantly reduced heart dose. Again, this confirms our claim of PT benefit for large targets.
 
 
 There was no significant difference between ITV and 4Dopt in target coverage or in dose to OAR. 
-However, in patients 4 and 6 the 4Dopt was able to achieve better target coverage. With ITV, target 4a had worse coverage than 4Dopt and delievered more high dose to 
-smaller airways (see Fig~\ref{Fig:dvh}. For patient 6, 4Dopt deposited less dose to smaller airways in addition to better target coverage.
+However, in patients 4 and 6, 4Dopt was able to achieve better target coverage. With ITV, target 4a had worse coverage than 4Dopt and delivered higher dose to 
+smaller airways (see Fig~\ref{Fig:dvh}). For patient 6, 4Dopt deposited less dose to smaller airways in addition to better target coverage.
 
 
 Even though PT deposits less dose to OARs with the same or even better target coverage, there is still room for improvement in PT 4D treatment planning. 
 An implementation of multi-criteria objective planning should bring even better dose distribution and bring possibility to choose between trade-offs \cite{Breedveld2007, Chen2010}. 
 Additionally, multiple target optimization in PT would benefit from a shell around PT where dose would be minimized. Therefore excessive dose
-in healthy tissue would be further reduced. An introduction of a shell, however, would further enlarge the optimization problem, which is big already for complex geomteries (patient 4 - 8). 
+in healthy tissue would be further reduced. An introduction of a shell, however, would further enlarge the optimization problem, which is big already for complex geometries (patient 4 - 8). 
 A possible solution to minimize the voxel number in optimization would be an adaptive dose grid \cite{Prall2016a}.
 
 In Chapter~\ref{PatStudy} additional range margins to account for range uncertainties could be used in treatment planning, due to SFUD. 
-Because we did not use field specific PTVs it was not possible to include range uncertainties in our study.
-Instead of creating field specific PTVs to include range uncertainties, a solution was proposed to include uncertainties in optimization process itself \cite{Pflugfelder2008, Unkelbach2009, Fredriksson2011, Chen2012}.
-Chen et al. have shown it is possible to implement robust optimization in multi-criteria optimization as well \cite{Chen2012}. Furthermore, in a recent treatment planning study by Liu et al. \cite{Liu2016}
+Because we did not use field specific PTVs, it was not possible to include range uncertainties in our study.
+Instead of creating field specific PTVs to include range uncertainties, a solution was proposed to include uncertainties in the optimization process itself \cite{Pflugfelder2008, Unkelbach2009, Fredriksson2011, Chen2012}.
+Chen et al. have implemented robust optimization in multi-criteria optimization as well \cite{Chen2012}. Furthermore, in a recent treatment planning study by Liu et al. \cite{Liu2016}
 a 4D robust optimization was demonstrated, with better results over 3D robust optimization for NSCLC patients. However, only breathing starting phase was used as an uncertainty,
 whereas different motion types should be considered. The disadvantage of 3D and 4D robust optimization is the enlargement of the optimization problem.
 
@@ -496,9 +494,9 @@ Apart from 4D robust optimization, the effect of motion could be minimized by us
 not met. Gating, together with rescanning, has already been successfully implemented clinically for active beam scanning \cite{Rossi2016, Mori2016} and it might be essential to use it in hypo-fractionated 
 treatment of moving tumors \cite{Richter2014}.
 
-A recent review showed good local control rates between 66 - 92\% for patients treated with SBRT for in-rield recurrent tumors \cite{Amini2014}. 
-However, there were grade 4 and 5 complications present, i.e. study by Trovo et al showed grade 5 pneumonia in
-6\% of patient treated \cite{Trovo2014}. As shown in our study, PT delivers less dose to the OAR, ipsilateral lung in particular, and could hence reduce the number of treatment-related
+A recent review showed good local control rates between 66 - 92\% for patients treated with SBRT for in-field recurrent tumors \cite{Amini2014}. 
+However, there were grade 4 and 5 complications present, i.e. a study by Trovo et al showed grade 5 pneumonia in
+6\% of patients treated \cite{Trovo2014}. As shown in our study, PT delivers less dose to the OARs, ipsilateral lung in particular, and could hence reduce the number of treatment-related
 complications.
 
 \section{Conclusions}
@@ -506,7 +504,7 @@ complications.
 PT delivers less dose to OAR compared to SBRT in NSCLC patients with multiple disease sites, while maintaining target coverage. Patient with large total target volume 
 could be irradiated with 1 x 24 Gy, whereas it could not with SBRT. For a small target with large motion and OARs in vicinity, 
 SBRT generated better treatment plan. 
-No significant difference was found between two 4D optimization techniques. However, 4D optimization showed better results for some patients with OAR in CTV vicinity.
+No significant difference was found between two 4D treatment planning techniques. However, 4D optimization showed better results for some patients with OAR in CTV vicinity.
 
 
 \bibliographystyle{apalike}
