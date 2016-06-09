@@ -356,6 +356,9 @@ A p-value < 0.05 was considered significant.
 
 For each patient it took around 20 min for all 18 DIR and around 30 min for complete DIRQA on the 18 DIR. A Linux computer with 8 CPU and 32 GB RAM was used for DIR and DIRQA.
 
+DIR was used in treatment planning, specifically in contour propagation and 4D dose calculation. The areas with poor DIR were investigated and distance between DIR errors 
+and target contour was measured. If target was more than 5 cm away from DIR errors, DIR was not repeated.
+
 
 \subsubsection{Results}
 
@@ -385,8 +388,10 @@ Distribution of true and inverse Jacobian and ICE data are displayed in Fig. \re
 
 True and inverse maximum and minimum Jacobian and maximum ICE values were plotted against maximum vector magnitudes and fitted with linear function. Results are shown in Fig.~\ref{maxvf}.
 
-All linear fits used in Fig.~\ref{absDiff_lung} and ~\ref{maxvf} were statistically significant (p < 0.05).
 
+Linear fits used in Fig.~\ref{absDiff_lung} and ~\ref{maxvf} were statistically significant (p < 0.05).
+
+All areas with poor DIR were further than 5 cm away from the target and no repetition of DIR was necessary.
 
 \begin{figure}[H]
 	\begin{center}		
@@ -438,7 +443,7 @@ All linear fits used in Fig.~\ref{absDiff_lung} and ~\ref{maxvf} were statistica
 		\includegraphics[width=0.9\textwidth]{./Images/maxVf_lung.png}
 		\caption{Values of maximum Jacobian (a), minimum Jacobian (b) and maximum ICE (c) plotted against maximum vector magnitudes. A linear fit is displayed with a solid line and parameters are written below the plots. Dashed line in (c) shows $y(x)= x$ plot.
 			The ICE on image (d) is taken from patient highlighted with blue squares in (a)-(c).
-			The ICE is displayed using color table as displayed in legend.}
+			The ICE is displayed using color table as displayed in legend.}of
 		\label{maxvf}
 	\end{center}
 \end{figure}
