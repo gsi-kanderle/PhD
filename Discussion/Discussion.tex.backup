@@ -89,67 +89,32 @@ in lung patients images. However, visual based evaluations are limited in region
 
 
 \newpage
-\section{Radiation treatment for non-small cell lung cancer}
+\section{Treating non-small cell lung cancer with particle therapy}
 
 The results in this thesis suggest, that PT could be used as a treatment modality for NSCLC. It delivers comparable target dose to SBRT, while significantly reducing 
-dose to OARs. Compared to SBRT there is less overall dose deposited to the patient due to the narrow channel of PT. 
+dose to OARs. The lower mean heart could be crucial in improving patient survival based on a recent trial from RTOG 0617 \cite{Bradley2015}. 
+The mean dose to heart would be on average 1 Gy smaller with PT than with SBRT. 
+For patients with multiple disease sites it would be 4 Gy smaller. Similar results were observed when comparing protons to SBRT \cite{Georg2008}. 
+
+Compared to SBRT there is less overall dose deposited to the patient due to the narrow channel of PT, which can be seen on dose baths in 
+Fig.~\ref{Fig:TreatmentPlans} and \ref{Fig:multiExample}.
 Hence the benefit of PT is most profond for patients with large total target volume, wheter a large single taret or multiple targets. Studies suggest, that SBRT is limited for large
 tumors (radius > 5 cm) and multiple primary tumors \cite{Timmerman2006, Georg2008, Westover2012}, making PT a promising alternative.
 
-The PT 
-
-
-%In total treatment plans for 23 NSCLC patients were generated, with three different optimization strategies - a single-field uniform optimization (SFUD), IMPT with field-independent ITV 
-%and 4D IMPT optimization. All three techniques delivered sufficient target dose over a set of 4 different breathing motions.
-
-
-
-\subsection{Non-small cell lung cancer in early stages}
-
-Surgery is the gold standard for treating NSCLC in the early stages \cite{Roesch2014}. 
-In recent years, however, SBRT showed similar results as surgery and SBRT is recommended for all high-risk surgical patients. A recent comparison study by Yu et al \cite{Yu2015} showed that
-SBRT compared to surgery had lower intermediate mortality and toxicity. However, patients with long life expectancies were found to benefit more from surgery. 
-
-There are several clinical scenarios where the use of SBRT might be limited. 
-This includes treatment of centrally located tumors, tumors close to the chest wall, large tumors (radius > 5 cm) and 
-multiple primary tumors \cite{Timmerman2006, Georg2008, Westover2012}.
-The limitation of SBRT could open possibilities to other treatment modalities, such as particle therapy. 
-Two of the mentioned scenarios, large tumors and multiple tumors, would benefit the most from particle therapy, according to the results shown
-in this thesis and to the results published by Kadoya et al \cite{Kadoya2010}. In a study done at Francis H. Burr Proton Therapy Center 
+Besides large tumor volumes and multiple primary tumors, SBRT is also limited in treating centrally located tumors and tumors close to the chest wall.
+In a study done at Francis H. Burr Proton Therapy Center 
 patients who could not be treated with SBRT, due to the scenarios mentioned, were treated with passive proton beam in 3 - 5 fractions, 
 delivering 42 - 50 Gy \cite{Westover2012}. They observed similar tumor local control rates as in SBRT (100\% in a two year follow-up) with limited toxicities. 
-It should be stressed, that this were patients were rejected from SBRT treatment due to complexity and regardless proton therapy achieved similar results
+It should be stressed that these patients were rejected from SBRT treatment due to complexity and regardless proton therapy achieved similar results
 to SBRT.
 
+Beside narrow entry channel, PT has sharper dose gradients and can conform the dose better to the target. Fig~\ref{Fig:InterplayDiff} shows that 80\% of the targets have $D_{99\%}$
+between 100 - 107\% and 100 and 102\% for SBRT and PT, respectively. Sharper dose gradients also enable less dose to the surrounding tissue.
 
-\subsection{Non-small cell lung cancer in advanced stages}
-
-Treatment for early stage NSCLC is well established, however, more than 75\% NSCLC cases present themselves in an advance stage \cite{Jemal2009}, 
-usually due to the lack of detection in the early stages. The standard of care for advanced NSCLC is concurrent chemotherapy \cite{Oshiro2014}.
-Dose escalation studies showed favorable prognosis for doses higher than 70 Gy \cite{Hayman2001, Rosenman2002, Socinski2008}. 
-The results of a recent phase 3 randomized trial by Bradley et al \cite{Bradley2015}, however, showed better survival rates for patients administered 60 Gy,
-instead of 74 Gy. It was speculated that higher doses to heart and esophagus might have contributed to higher mortality rates \cite{Cox2012}. 
-Results presented in this thesis show that mean dose to heart and esophagus would be on average 1 Gy
-smaller with PT than with SBRT. For patients with multiple disease sites the the average mean heart and esophagus dose would be 4 and 3 Gy smaller.
-Similar results were observed when comparing protons to SBRT \cite{Georg2008}. 
-
-In a recent phase II study by Iyengar et al \cite{Iyengar2014} they treated stage IV NSCLC with SBRT and chemotherapy. 
-They have irradiated 52 targets in 24 patients, 16 of them had more than one target. The results were promising, with 20 months median overall survival, 
-compared to 9 months when treating with chemotherapy only \cite{Tsao2008}. Results in this thesis show, that patients with multiple disease sites 
-would especially benefit from PT. Based on the poor prognosis that stage IV NSCLC patients have and on the results published by Iyengar et at,
-stage IV NSCLC patients could be eligible candidates for PT treatment. Additionally, such patients usually exhibit chronic obstructive pulmonary disease and 
-less dose to the lung is warranted \cite{Westover2012}. This further supports our claim, since our study showed substantial differences in 
-doses to ipsilateral lung ($V_{20\%}$ was on average 15\% smaller in PT for patients with multiple disease sites) and 
-contralateral lung as well - 70\% of patients did not receive any dose to contralateral lung, whereas SBRT deposited dose in contralateral lung in all patients.
-The PT treatment planning for patients with complex geometry has to include 4D optimization and dose calculation as shown within this thesis. 
-A special consideration has to be taken in dose to OAR limits, since they can be breached under different motion patterens.
-Beam tracking \cite{Bert2007} or jet-ventilation \cite{Santiago2013} would be possible solutions, however, the former is not yet clinically avaliable and the latter 
-significantly complicates treatment.
-
-The results of a multi-institutional randomized trial, RTOG1308 \cite{RTOG1308}, comparing photons and particle therapy in treating NSCLC,
-will have an important impact on treating NSCLC. The trial started in 2014.
-
-\subsection{Motion mitigation}
+PT has to take into account particle range uncertanity, which can come from the conversion of HU units to stopping power \cite{Schneider1996}
+or from anatomical changes in the patient \cite{Unkelbach2009}. We included range uncertainties with expansion of taret in beam's eye view, which resulted on average in 1.5 times bigger
+target volume for PT compared to SBRT. Another way to include range and other uncertainties is robust optimization, which makes IMPT plans more resiliant to uncertainties \cite{Unkelbach2009, Chen2012}.
+We are planning to include robust optimization in a future study, where SFUD, IMPT and robust IMPT plans will be compared for a NSCLC patients.
 
 While tumor motion influences photon treatment, it can be mittigated with proper margins \cite{Zou2014}. 
 On the other hand, effects can be substantial when treating moving targets with scanned particle therapy \cite{Bert2008}.
@@ -157,9 +122,15 @@ It was shown in this thesis that rescanning is an adequate motion mitigation tec
 especially regarding maximum allowed point dose to OAR.
 In hypofractionated treatment this limits are strict and exact dose to OAR must be known. 
 A possible solution would be to simulate rescanning and 4D delivery in optimization process itself. 
-However such solution is not yet feasible due to the complexity of the problem.
+However such solution is not yet feasible due to the complexity of the problem. Another solution could also be phase-controled resanning \cite{Mori2013,Takahashi2014}. However,
+it requires motion monitoring and complicates treatment delivery.
 
-Comonnly used motion mitigation technique in photon and particle treatment is gating. While it provides less motion-induced dose errors, it prolonges treatment time.
+% The PT treatment planning for patients with complex geometry has to include 4D optimization and dose calculation as shown within this thesis. 
+% A special consideration has to be taken in dose to OAR limits, since they can be breached under different motion patterens.
+% Beam tracking \cite{Bert2007} or jet-ventilation \cite{Santiago2013} would be possible solutions, however, the former is not yet clinically avaliable and the latter 
+% significantly complicates treatment.
+
+Gating is a comonnly used motion mitigation technique in photon and particle treatment. While it provides less motion-induced dose errors, it prolongs treatment time.
 A recent study by Zhang et al \cite{Zhang2015} included 
 different breathing patterns, obtained from a MRI, on a 4D-CT and calculated 4D doses for liver cancer patients. They have shown that a gating window of 3 mm can result
 in a 10\% efficiency of a duty-cycle, 
@@ -167,12 +138,43 @@ substantially prolonging treatment. Additionally, they have shown that neither v
 However, good target coverage was obtained with combination
 of gating and rescanning. Their results suggest that a combination of gating and rescanning would currently be the best solution for treating NSCLC patients with PT.
 
-Between rescanning, gating and beam tracking is beam tracking the most precise technique, since it requires no internal margins for target \cite{Bert2011}. 
+Between rescanning, gating and beam tracking beam tracking is the most precise technique, since it requires no internal target margins \cite{Bert2011}. 
 Current clinical implementations of tracking in photon radiotherapy \cite{Kilby2010, Keall2014} can not be directly used in particle therapy, 
-since they only provide position of single internal points. Fassi et al 
+since they only provide the position of single internal points. Fassi et al 
 \cite{Fassi2015} were able to account for inter- and intra-fractional variability of patient's anatomical configuration with a designated modeling technique \cite{Fassi2014}.
 The measured median of water-equivalent path length in target was within 2 mm of a simulated one. For actual clinical impementation it will be necesarry to test the model
 on a large patient dataset.
+
+All three techniques, rescanning, gating and beam tracking, essentially adapt 3D treatment plan to a 4D situation and thus have limitations. Full 4D-optimization, on the other hand,
+creates a 4D treatment plan, with each motion state in 4D-CT having designated treatment plan. A full 4D-optimization has been successfully implemented and verified experimentally at
+GSI \cite{Graef2013}.
+
+% Surgery is the gold standard for treating NSCLC in the early stages \cite{Roesch2014}. 
+% In recent years, however, SBRT showed similar results as surgery and SBRT is recommended for all high-risk surgical patients. 
+% A recent comparison study by Yu et al \cite{Yu2015} showed that
+% SBRT compared to surgery had lower intermediate mortality and toxicity. However, patients with long life expectancies were found to benefit more from surgery. 
+
+
+
+% Treatment for early stage NSCLC is well established, however, more than 75\% NSCLC cases present themselves in an advanced stage \cite{Jemal2009}, 
+% usually due to the lack of detection in the early stages. The standard of care for advanced NSCLC is concurrent chemotherapy \cite{Oshiro2014}.
+% Dose escalation studies showed favorable prognosis for doses higher than 70 Gy \cite{Hayman2001, Rosenman2002, Socinski2008}. 
+% The results of a recent phase 3 randomized trial by Bradley et al \cite{Bradley2015}, however, showed better survival rates for patients administered 60 Gy,
+% instead of 74 Gy. It was speculated that higher doses to heart and esophagus might have contributed to higher mortality rates \cite{Cox2012}. 
+% Results presented in this thesis show that mean dose to heart and esophagus would be on average 1 Gy
+% smaller with PT than with SBRT. For patients with multiple disease sites the the average mean heart and esophagus dose would be 4 and 3 Gy smaller.
+
+In a recent phase II study by Iyengar et al \cite{Iyengar2014} patiens with stage IV NSCLC with SBRT and chemotherapy. 
+They have irradiated 52 targets in 24 patients, 16 of them had more than one target. The results were promising, with 20 months median overall survival, 
+compared to 9 months when treating with chemotherapy only \cite{Tsao2008}. Results in this thesis show, that patients with multiple disease sites 
+would especially benefit from PT. Based on the poor prognosis of stage IV NSCLC patients and on the results published by Iyengar et al,
+stage IV NSCLC patients could be eligible candidates for PT treatment. Additionally, such patients usually exhibit chronic obstructive pulmonary disease and 
+less dose to the lung is warranted \cite{Westover2012}. This further supports our claim, since our study showed substantial differences in 
+doses to ipsilateral lung ($V_{20\%}$ was on average 15\% smaller in PT for patients with multiple disease sites) and 
+contralateral lung as well - 70\% of patients did not receive any dose to the contralateral lung, whereas SBRT deposited dose in contralateral lung in all patients.
+
+The results of a multi-institutional randomized trial, RTOG1308 \cite{RTOG1308}, comparing photons and particle therapy in treating NSCLC,
+will have an important impact on treating NSCLC. The trial started in 2014.
 
 
 \subsection{Outlook}
