@@ -28,29 +28,27 @@
 
 \section{Radiotherapy}
 
-An ionizing radiation was used for treating tumors since the discovery of X-rays in 1895. In the beginning only superficial diseases would be treated, but as time and technology progressed X-ray tubes gained on voltage, allowing treatment of deeper seated tumors.
+An ionizing radiation has been used for treating tumors since the discovery of X-rays in 1895. In the beginning only superficial diseases were treated, but as time and technology progressed X-ray tubes gained on voltage, allowing treatment of deeper seated tumors.
 
-The radiation from linear accelerator was first used in medicine in 1953. Because the beam is more collimated and energies are
-higher compared to X-ray tubes, the cure rates improved tremendously. The next big milestone was introduction of computers in the field
+The radiation from a linear accelerator was first used in medicine in 1953. The cure rates increased tremendously due to the collimated beam and higher energies compared to X-ray tubes. The next big milestone was introduction of computers in the field
 of radiotherapy. This led to better diagnostic tools, such as computed tomography scans (CT), magnetic resonance imaging (MRI) and
-positron emission tomography (PET). With these tools the location of the tumor could be better estimated and hence the physicians
-could prescribe better treatment. The potential of computers was afterwards exploited also in the treatment planning process, resulting in intensity modulated
+positron emission tomography (PET). The location of the tumor could be better estimated with these tools and hence the treatment was improved. The potential of computers was afterwards exploited also in the treatment planning process, resulting in intensity modulated
 radiation therapy (IMRT) which, together with diagnostic tools, provides an exact dose shaping in accordance to patient specific tumors.
 
-In 1946, a paper from R. Wilson first described the application of protons for cancer treatment \cite{Wilson1946}. It was shown that protons have preferable depth dose profile compared to photons. First patient treatment soon followed in the early 1950's at Lawrence Berkeley Laboratory, USA. Heavier ions, such as 
-$^{2}$He, $^{20}$Ne and $^6$C were later also used for treatment. In the beginning only passive beam delivery (see Section \ref{Sec::Passive}) was used for treatment and in the 1990's active beam solutions (see Section \ref{Sec::Active}) were developed at Paul Scherrer Institute (PSI), Villigen (Switzerland) for protons and at GSI, Darmstadt (Germany) for carbon ions.
+In 1946, a paper from R. Wilson first described the application of protons for cancer treatment \cite{Wilson1946}. It was shown that protons have a preferable depth dose profile compared to photons. First patient treatment followed in the early 1950's at Lawrence Berkeley Laboratory, USA. Heavier ions, such as 
+$^{2}$He, $^{20}$Ne and $^6$C were later also used for treatment. In the beginning only passive beam delivery (see Section \ref{Sec::Passive}) was used for treatment and a active beam solution (see Section \ref{Sec::Active}) was developed in the 1990's at Paul Scherrer Institute (PSI), Villigen (Switzerland) for protons and at GSI, Darmstadt (Germany) for carbon ions.
 
 
 \section{Physical and biological basics of radiotherapy}
 
 The aim of radiotherapy is to kill tumor cells and prevent further growth, while sparing healthy tissue. Both radiotherapy modalities (photons and ions) use the same principle to eliminate cancer cells - 
-they aim to damage the cell genetic material through ionization. The actual physical and biological mechanism behind both modalities will be explained in detail in the following section.
+they aim to damage the deoxyribonucleic acid (DNA) through ionization. The actual physical and biological mechanism behind both modalities will be explained in detail in the following section.
 
 \subsection{Interaction of radiation with matter}
 
 The interactions between photons with matter and ions with matter are quite different, as can be seen from depth dose distributions in Fig.~\ref{ddp}. Photons deposit the highest local dose shortly after entering the matter 
 (at the energies used in radiotherapy). Ions, on the other hand, deposit most of their dose right before they stop in the so-called Bragg Peak region. The position of the Bragg Peak depends on the energy of the ions, which is exploited in the treatment
-of deep suited tumors.
+of deep seated tumors.
 
 \subsubsection{Dose definition}
 
@@ -60,7 +58,7 @@ An important quantity in radiotherapy is dose, $D$, defined as the ratio of the 
  D = \frac{dE}{dm} \quad \left[ Gy = \frac{J}{kg} \right]
 \end{equation}
 
-Usually we can describe energy loss of a beam in a thin layer of material, $dE/dx$. Dose can be then rewritten as:
+Energy loss in a thin layer of material is described as $dE/dx$. Dose can be then rewritten as:
 
 \begin{equation}
  D = \frac{dE}{dx} \times \frac{1}{F} \times \frac{1}{\rho}
@@ -101,9 +99,9 @@ the mean electron range. After this build up the dose deposition decreases expon
 \subsubsection{Interaction of ions with matter}
 \label{iion}
 Ions can interact with matter either with elastic Coloumb scattering from target nuclei (nuclear stopping) or with inelastic collision with target electrons (electronic stopping).
-At the ion energies used in radiotherapy, which are less then 500$\mathrm{MeV}/\mathrm{u}$, the electronic stopping is the dominating interaction. The result is ionization and excitation of the target atoms.
+At the ion energies used in radiotherapy, which are less then 500 $\mathrm{MeV}/\mathrm{u}$, the electronic stopping is the dominating interaction. The result is ionization and excitation of the target atoms.
 
-The mean rate of the ions energy loss in matter is described by the Bethe-Bloch formula \cite{Bethe1930, Bloch1933}. Since we are interested in low ion energies, a non-relativistic approximation ca be made:
+The mean rate of the ions energy loss in matter is described by the Bethe-Bloch formula \cite{Bethe1930, Bloch1933}. Since we are interested in low ion energies, a non-relativistic approximation can be made:
 
 \begin{equation}
 - \left \langle \frac{dE}{dx} \right \rangle = \frac{ 4 \pi N_{e} z_{eff}^{2} }{ m_{e} v^{2} } \left( \frac{e^{2}}{4\pi \epsilon_{0}} \right) ^{2} \left[ln \left( \frac{2m_{e}v^{2}}{I} \right)+correction \right]
@@ -155,15 +153,15 @@ The resulting positron is annihilated with electrons in matter, creating two pho
 \begin{center}
 \includegraphics[width=0.7\textwidth]{./Images/iondepthdosesum.png}
 \caption{Impact of fragmentation on a depth dose distribution of carbon ions. Main contribution to the overall deposited dose (black line) comes from the primary ions (red line). The produced fragments 
-(blue line) have a smaller impact, but non-negligible. The most profound effect is seen in the dose tail behind the Bragg peak, where dose comes only from fragments. Figure taken from \cite{Groezinger2004}}
+(blue line) have a smaller, but non-negligible, impact. The most profound effect is seen in the dose tail behind the Bragg peak, where the dose comes only from fragments. Figure taken from \cite{Groezinger2004}}
 \label{iondd}
 \end{center}
 \end{figure}
 
 \subsubsection{Secondary electrons and track structure}
 
-Ions used in radiotherapy loose most of their energy via inelastic Coulomb scattering on target electrons. Electrons liberated from target by ions are called secondary electrons or $\delta$-electrons. 
-$\delta$-electrons travel through matter, scatter further and may produce secondary ionization of the target atoms. When $\delta$-electrons energies are larger than $>$50 eV,
+Ions used in radiotherapy loose most of their energy via inelastic Coulomb scattering with target electrons. Electrons liberated from the target by ions are called secondary electrons or $\delta$-electrons. 
+$\delta$-electrons travel through matter, scatter further and may produce secondary ionizations of the target atoms. When $\delta$-electrons energies are larger than $>$50 eV,
 ionization becomes the dominant process, which produces a large number of additional electrons \cite{Kraft2000,Schardt2010}.
 
 The radial dose profile and track diameter is defined by the energy spectrum of the $\delta$-electrons. Most of the $\delta$-electrons are concentrated around the projectile ions path, since they receive small energy transfers 
@@ -174,16 +172,16 @@ this experimentally \cite{Varma1977}. The maximum radial distance $r_{max}$ is d
  r_{max} = E^{1.7}
 \end{equation}
 
-Following equation \ref{bethe}, $E$ is correlated to $Z^2$ and $1/\beta^2$, meaning that track structure is highly dependent on the projectile ion species and energy as demonstrated in Fig.~\ref{track}:
-Carbon ions have much more dense ionization structure compared to protons \cite{Kraemer2010}. $\delta$-electrons have low energies, and thus the $r$ is on nanometer scale. As the energy of projectile ions decreases, their
-stopping power increases and causes significantly larger number of $\delta$-electrons. The energy deposited by $\delta$-electrons in medium is described using the Linear Energy Transfer (LET), which is closely related to 
-$dE/dx$. Fast ions, with little ionization, have thus small LET, while slow ions, with large ionization, have a high LET.
+Following equation \ref{bethe}, $E$ is correlated to $Z^2$ and $1/\beta^2$, meaning that track structure is highly dependent on the projectile ion species and the energy as demonstrated in Fig.~\ref{track}:
+Carbon ions have a denser ionization structure compared to protons \cite{Kraemer2010}. $\delta$-electrons have low energies, and thus the $r$ is on nanometer scale. As the energy of projectile ions decreases, their
+stopping power increases and causes significantly larger number of $\delta$-electrons. The energy deposited by $\delta$-electrons in medium is described using the linear energy transfer (LET), which is closely related to 
+$dE/dx$. Fast ions with low ionization have a small LET, while slow ions with a large ionization have a high LET.
 
 
 \subsection{Radiobiology}
 
 Ionizing radiation (photons and ions) causes damage throughout the cell. However the most susceptible part to radiation is the
-carrier of genetic information, the deoxyribonucleic acid (DNA), located in the cell nucleus \cite{Munro1970}. Radiation can damage DNA directly or indirectly.
+carrier of genetic information, the DNA, located in the cell nucleus \cite{Munro1970}. Radiation can damage DNA directly or indirectly.
 
 Ionization and consequent destruction of DNA molecular bonds via radiation is a direct effect (see Fig.~\ref{ida}b) and is typical for high-LET radiation. On the other hand, an indirect effect is when radiation hydrolysis water around DNA and produce highly reactive hydroxyl-radicals, OH 
 (see Fig.~\ref{ida}a). Even though OH radicals decay fast, they are still able to cause severe damage to DNA. The formation of OH is typical for low-LET radiation like photons. The two processes, direct and indirect, are not exclusive and can damage DNA in parallel.
@@ -213,17 +211,17 @@ Figure taken from \cite{Richter2012}}
 
 
 Damage to DNA can result in either single strand breaks (SSB) or double strand breaks (DSB) as shown in Fig.~\ref{ida}b). When one of the double strands in the DNA helix is destroyed (SSB), it can usually be easily repaired by cell 
-repair-mechanisms, since the complementary base is intact. If the bases on both stands are destroyed (DSB) the DNA damage is much more complex and can lead to the breakage of the chromatin. The cell repair-mechanisms can handle DSB as well, 
+repair-mechanisms, since the complementary base is intact. If both strands are destroyed (DSB) the DNA damage is much more complex and leads to the breakage of the chromatin. The cell repair-mechanisms can handle DSB as well, 
 albeit not as efficient as SSB. However if there are clustered DSBs, the damage is usually too severe for repair-mechanisms to undo it. The changes in damaged DNA can lead to carcinogenesis or cell death. The aim of radiotherapy is to 
-cause an apoptosis - a controlled self-inactivation of the cell due to the DNA damage. Beside apoptosis, cell can also undergo necrosis, an uncontrolled cell death. Cell necrosis often causes response from the immune system, leading to inflammation, which
+cause an apoptosis - a controlled self-inactivation of the cell triggered by the DNA damage. Beside apoptosis, cell can also undergo necrosis, an uncontrolled cell death. Cell necrosis often causes response from the immune system, leading to inflammation, which
 radiotherapy strives to avoid. DNA can also be damaged to such extent, that cell cannot proliferate indefinitely - a effect known as clonogenic cell death.
 
 
 \subsubsection{Relative Biological Effectiveness}
 \label{RBE}
 
-Fig.~\ref{track} shows the size of DNA molecule in comparison with proton and carbon ion distribution of $\delta$-electrons around their track. 
-A clustered DSB occurs preferably around Bragg peak due to large ionization densities. Less cells will survive a clustered DSB, compared to DSB or SSB. Ions have large ionization density and is one of the main advantages over photons in the radiotherapeutic sense. Since most of the clinical experience about
+Fig.~\ref{track} shows the size of a DNA molecule in comparison with proton and carbon ion distribution of $\delta$-electrons around their track. 
+A clustered DSB occurs preferably around the Bragg peak due to large ionization densities. Less cells will survive a clustered DSB, compared to DSB or SSB. Ions have large ionization density which is one of the main advantages over photons in radiotherapy. Since most of the clinical experience about
 cell response to radiation comes from photons, the biological effect of ions is usually described relative to a reference photon response. Relative biological effectiveness (RBE) is therefore defined as the ratio of the reference 
 photon dose to the dose level of a specific ion radiation at the same biological effect (isoeffect):
 
@@ -232,7 +230,7 @@ photon dose to the dose level of a specific ion radiation at the same biological
 \end{equation}
 
 It is important to note at this point that RBE values are valid only for the same effect - the same biological endpoint and the same reference radiation. The most interesting biological endpoints in radiotherapy are cell survival and
-side effects. RBE values are usually obtained from cell survival curves (see Fig.~\ref{dosedep}). Cell survival curves, S, are commonly modeled by an exponential linear-quadratic (LQ) model \cite{Fowler1989}:
+side effects. RBE values are usually obtained from cell survival curves (see Fig.~\ref{dosedep}). Cell survival, S, is commonly modeled by an exponential linear-quadratic (LQ) model \cite{Fowler1989}:
 
 \begin{equation}
  S(D) = e^{-\alpha D - \beta D^2}
@@ -240,11 +238,11 @@ side effects. RBE values are usually obtained from cell survival curves (see Fig
 \end{equation}
 
 $\alpha$ is a coefficient related to a single event cell killing and $\beta$ coefficient related to a double event cell killing. The ratio of $\alpha / \beta$ is a characteristic of the cell type, namely the tissue 
-capacity to repair radiation damage. A small $\alpha / \beta$ ratio means cell is radioresistive (high repair capacity) and vice versa.
+capacity to repair radiation damage. A small $\alpha / \beta$ ratio means a cell is radioresistive (high repair capacity) and vice versa.
 As seen in Fig.~\ref{dosedep} and Eq. \ref{lq}, RBE values are dependent on the dose level. Hence in ion radiotherapy, beside the physical absorbed dose, a photo-equivalent or biological dose incorporating the RBE also plays an important role. 
 The unit for biological dose is Gy (RBE) \cite{ICRU2007}. 
 
-Besides a dose level, RBE also depends on the LET, the particle species and the tissue type \cite{Kraft2000}. Therefore RBE modeling is a complex topic.
+Besides the dose level, RBE also depends on the LET, the particle species and the tissue type \cite{Kraft2000}. Therefore RBE modeling is a complex topic.
 At GSI, RBE is calculated using the \textit{local effect model} (LEM) developed by Scholz et al. \cite{Scholz1994}. There are two main assumptions in the LEM model. First is that localized biological 
 effects are independent on the radiation type. Second assumption is that the photon response is the same for all dose levels (high and low).
 The difference between different radiation types comes from the dose deposition in a small volume in the cell nucleus.
@@ -255,20 +253,20 @@ At the same total dose, many photons create a homogeneous dose distribution over
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{./Images/dose_dependence.pdf}
-\caption{Typical cell survival curve for photons (black solid line) and heavy ions (red dashed line). Photon line shows typical shouldered form, described by linear-quadratic model.
-Heavy ions show a much steeper decrease with dose. The RBE value can be calculated by looking at the points at the same survival value - same biological effect. Figure taken from \cite{Schardt2010}}
+\caption{Typical cell survival curve for photons (black solid line) and heavy ions (red dashed line). Photon line shows a typical shouldered form, described by the linear-quadratic model.
+Heavy ions show a much steeper decrease with dose. The RBE value can be calculated by looking at the dose values at the same survival value - corresponding to the same biological effect. Figure taken from \cite{Schardt2010}}
 \label{dosedep}
 \end{center}
 \end{figure}
 
  
 LEM can thus predict dose response, by comparing
-photon response at the high local dose level. LEM was used clinically as well in GSI pilot project from 1998 - 2007 \cite{Kraemer2000, Kraemer2000a} as in HIT since 2009. LEM has received several revisions \cite{Elsaesser2006, Elsaesser2007, Elsaesser2009} and experimental verifications
+photon response at the high local dose level. LEM was used in the GSI pilot project from 1998 - 2007 \cite{Kraemer2000, Kraemer2000a} as well as clinically in HIT since 2009. LEM has received several revisions \cite{Elsaesser2006, Elsaesser2007, Elsaesser2009} and experimental verifications
 \cite{Mitaroff1998, Kraemer2000a, Kraemer2003}. 
 
-RBE for carbon ions ranges from 1 in the entrance channel, to a value around 5 at 
-the Bragg peak \cite{Kraft2000}. The highest RBE for carbon ions is right around Bragg peak, which gives carbon ions a great advantage, since there is an increased 
-biological effectiveness at target tissue compared to the normal tissue in the entrance channel. In proton therapy a constant RBE value of 1.1 across the treatment field
+RBE for carbon ions ranges from 1 in the entrance channel, to valus around 5 at 
+the Bragg peak \cite{Kraft2000}. The highest RBE for carbon ions is right around the Bragg peak, which gives carbon ions a great advantage, since there is an increased 
+biological effectiveness at the target tissue compared to the normal tissue in the entrance channel. In proton therapy a constant RBE value of 1.1 across the treatment field
 is used \cite{Paganetti2002}.
 
 \subsubsection{Fractionation}
@@ -276,19 +274,19 @@ is used \cite{Paganetti2002}.
 Radiotherapy applies a basic principle of radiobiology that dose fractionation spares all cell types. For a given total dose
 more cells will survive with dose delivered across multiple fractions, compared to a single dose, because cells will have time to repair
 radiation induced sub-lethal damage between fractions.
-With dose $d$ delivered over $n$ fractions, equation~\ref{lq} can be rewritten as \cite{Shrieve2011}
+With a dose $d$ delivered over $n$ fractions, equation~\ref{lq} can be rewritten as \cite{Shrieve2011}
 
 \begin{equation}
  S = (e^{-\alpha d - \beta d^2})^n
 \end{equation}
 
-The biologically effective dose (BED) is defined as:
+The biological effective dose (BED) is defined as:
 
 \begin{equation}
  BED(Gy_{\alpha/\beta})=nd\left[1 + \frac{d}{\alpha/\beta} \right]
 \end{equation}
 
-with the total dose $D$ equal to $n \times d$, we can define fractionation factor $F$ as
+with the total dose $D$ equal to $n \times d$, we can define the fractionation factor $F$ as
 
 \begin{equation}
  F = \left[1 + \frac{d}{\alpha / \beta} \right]
@@ -300,9 +298,9 @@ means higher $F$ and a higher $\alpha / \beta$ (early responding tissue) moves $
 
 \subsubsection{Hypo-fractionation}
 
-In recent years hypo-fractionation has showed promising results over wide range of tumors \cite{Yamada2008, Greco2011, Halasz2013}. 
-Hypo-fractionation consists of 1-3 fractions of very high doses, up to 24 Gy in a single fraction (single-dose). The theory behind hypo-fractionation is still under research
-and no consensus has yet been reached. On one hand, LQ model predicts higher BED for hypo-fractionation. On the other hand, Garcia-Barros et al. proposed additional mechanism at work \cite{Garcia2003}.
+In recent years hypo-fractionation has shown promising results over a wide range of tumors \cite{Yamada2008, Greco2011, Halasz2013}. 
+Hypo-fractionation consists of 1-3 fractions of very high doses, up to 24 Gy in a single fraction (single-dose). The theory behind hypo-fractionation is still a research topic
+and no consensus has yet been reached. On the one hand, the LQ model predicts higher BED for hypo-fractionation. On the other hand, Garcia-Barros et al. proposed additional mechanism at work \cite{Garcia2003}.
 They presented a two target model, which suggest that tumor response to irradiation is defined not only by tumor cell type (as in LQ model) but also by micro-vascular
 sensitivity. With excluding targeted enzymes from knock-out mice, they showed that tumors with reduced micro-vascular endothelial apoptosis grew 200-400 \% faster than a control group. The study, however, was challenged on several grounds and is controversal.
   
@@ -318,14 +316,14 @@ In photon therapy high energy x-rays (MV) are used for tumor irradiation. X-rays
 x-rays are produced via bremsstrahlung. The beam is then directed to the patient and conformed to the tumor shape. The beam is shaped either by blocks at the head of the machine or by a multileaf collimator. A multileaf collimator is made of
 individual leaves, that can be moved to represent the tumor's shape in the beam's eye view, see Fig.~\ref{MLC}.
 
-Linear accelerators are usually placed on a gantry, which can be rotated around the patient. This allows beams to enter the patient from any angle. 
-The arbitrary choice of beam angle is used in a 3-dimensional conformal radiotherapy, where a variable number of beams is used. 
-Each beam is then shaped with a multileaf collimator. Even more precise technique is intensity-modulated radiotherapy (IMRT). IMRT allows treating complex tumor shapes, e.g. when the tumor is in proximity of a critical structure.
+Linear accelerators are usually placed on a gantry, which can be rotated around the patient allowing irradiation from any angle. 
+The arbitrary choice of the beam angle is used in a 3-dimensional conformal radiotherapy, where a variable number of beams is used. 
+Each beam is then shaped with a multileaf collimator. An even more precise technique is intensity-modulated radiotherapy (IMRT). IMRT allows treating complex tumor shapes, e.g. when the tumor is in proximity of a critical structure.
 Volumetric modulatec arc therapy (VMAT) uses continuous irradiation together with continous gantry rotation and multileaf collimator shaping. VMAT is able to produce even more conformal dose shapes than IMRT.
 
 \subsubsection{Ion therapy}
 
-In order for ion therapy be successful, ions must be accelerated to appropriate energies (several hundred MeV/u), the beam must be transported to target area and guided
+In order for ion therapy be successful, ions must be accelerated to appropriate energies (several hundred MeV/u), the beam must be transported to the target area and guided
 onto the target with the required accuracy.
 
 \newpage
@@ -333,7 +331,7 @@ onto the target with the required accuracy.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{./Images/MLC.png}
-\caption{A schematic picture of a multileaf collimator. Individual leaves (marked with numbers) are positioned so that exit beam from linear accelerator conforms to the patient tumor in a beam's eye view. Picture taken from \cite{MLC}.}
+\caption{A schematic picture of a multileaf collimator. Individual leaves (marked with numbers) are positioned so that a exit beam from a linear accelerator conforms to the patient tumor in a beam's eye view. Picture taken from \cite{MLC}.}
 \label{MLC}
 \end{center}
 \end{figure}
@@ -349,12 +347,12 @@ onto the target with the required accuracy.
 
 
 
-Ion are accelerated either with cyclotrons or synchrotrons accelerators. \textbf{Cyclotrons} can be built in a compact design and offer a continuous beam with
-stable intensities. Cyclotrons and only be used for protons and particle energies can not be regulated and therefore passive energy degraders are needed. Active energy variation is possible with \textbf{synchrotrons}, where a linear
+Ions are accelerated either with cyclotron or synchrotron accelerators. \textbf{Cyclotrons} can be built in a compact design and offer a continuous beam with
+stable intensities. Cyclotrons are only used for protons. Particle energies can not be modulated and therefore passive energy degraders are needed. Active energy variation is possible with \textbf{synchrotrons}, where a linear
 accelerator is used to inject ions into the synchrotron and then the beam is regulated with ion optics. Synchrotrons are used in all heavy ion therapy centers, while cyclotrons are most
 commonly used for proton therapy.
 
-Each tumor has a unique shape, size and position in patient. Therefore a single Bragg peak would not provide adequate dose and a beam has to be properly shaped. Two beam shaping systems
+Each tumor has a unique shape, size and position in the patient. Therefore a single Bragg peak would not provide adequate dose and a beam has to be properly shaped. Two beam shaping systems
 are in use - passive and active beam shaping. In the next two sections both will be explained.
 
 
@@ -362,10 +360,10 @@ are in use - passive and active beam shaping. In the next two sections both will
 \label{Sec::Passive}
 
 The general idea of passive beam shaping is to transform a beam of a fixed single energy into the shape of the tumor. This is done in several steps as schematically shown in Fig. \ref{passive}. Firstly, the beam is broadened using a scattering device (passive double scattering systems or magnetic wobbler)
-in order to obtain a broad, flat profile. In the next step, the beam is spread out over the required energy range with a range modulator. Usually a range modulator consist of rotating wheels of various thickness or a ridge filter \cite{Chu1993}. A beam of fixed energy is thus expanded into so-called \textit{spread-out Bragg peak (SOBP)}, which is moved to the required depth using a range shifter. The final two devices in beam's path are built for each patient individually. Collimator shapes beam in a lateral direction, while compensator adjusts SOBP to the distal edge of the tumor. However, compensator cannot adjust dose in the proxima ledge of the tumor, resulting in an access dose to the healthy tissue (hatched area in Fig. \ref{passive}).
+in order to obtain a broad, flat profile. In the next step, the beam is spread out over the required energy range with a range modulator. Usually a range modulator consist of rotating wheels of various thicknesses or a ridge filter \cite{Chu1993}. A beam of fixed energy is thus expanded into a so-called \textit{spread-out Bragg peak (SOBP)}, which is moved to the required depth using a range shifter. The final two devices in the beam's path are built for each patient individually. A collimator shapes the beam in a lateral direction, while a compensator adjusts the SOBP to the distal edge of the tumor. However, a compensator cannot adjust the dose in the proximal ledge of the tumor, resulting in an access dose to the healthy tissue (hatched area in Fig. \ref{passive}).
  
-Passive beam shaping offers more robust and faster treatment delivery in contrast to active beam shaping. However, it lacks tumor conformity, the dose cannot be modulated and each patient needs individually tailored devices for each beam used in the treatment.
- Furthermore, the beam travels through some material, exposing patient to additional dose due to fragmentation.
+Passive beam shaping offers a more robust and faster treatment delivery in contrast to active beam shaping. However, it lacks tumor conformity, the dose cannot be modulated and each patient needs individually tailored devices for each beam used in the treatment.
+ Furthermore, the beam travels through some material, exposing the patient to additional dose due to fragmentation.
 
  \newpage
  
@@ -373,8 +371,8 @@ Passive beam shaping offers more robust and faster treatment delivery in contras
 \begin{center}
 \includegraphics[width=0.7\textwidth]{./Images/deliverypassive.png}
 \caption{Schematic presentation of a passive beam shaping. A scattering system is used to broaden the beam. Afterwards a range modulator spreads out Bragg Peak to the required energy range.
-The spread out Bragg peak is then shifted to a specific energy with a range modulator. Finally, patient specific collimator and conformator serve for lateral and longitudinal conformity, respectively.
-The proximal edge of the tumor cannot be shaped, as shown with hatched area. Figure taken from \cite{Schardt2010}.}
+The spread out the Bragg peak is then shifted to a specific energy with a range modulator. Finally, a patient specific collimator and conformator serve for lateral and longitudinal conformity, respectively.
+The proximal edge of the tumor cannot be shaped, as shown with the hatched area. Figure taken from \cite{Schardt2010}.}
 \label{passive}
 \end{center}
 \end{figure}
@@ -382,13 +380,13 @@ The proximal edge of the tumor cannot be shaped, as shown with hatched area. Fig
 \subsubsection{Active beam shaping}
 \label{Sec::Active}
 
-In contrast to passive beam shaping, active beam shaping works by dividing tumor into small points, which are then irradiated using a thin pencil beam. Tumor is first segmented into iso-energy slices (IES) and each of IES
+In contrast to passive beam shaping, active beam shaping works by dividing the tumor into small points, which are then irradiated using a thin pencil beam. The tumor is first segmented into iso-energy slices (IES) and each of IES
 is covered with a 2 dimensional grid (raster points). A thin pencil beam is deflected from raster to raster point, irradiating each one with designated dose. The technique allows irradiation of arbitrary shape, without introducing any additional patient specific 
-hardware. The lack of additional material in front of the patient also means less dose due to lesser neutron flux. Furthermore with the option to modulate dose in each point, dose in tumor is very conformal with less dose to healthy tissue.
+hardware. The lack of additional material in front of the patient also means less dose due to lesser neutron flux. Furthermore, the dose modulation in each point allows a highly conformal dose distribution with less dose deposited to the healthy tissue.
 
-There are differences in specifics of active beam shaping and the GSI system of three-dimensional scanning system will be given here \cite{Haberer1993,Kraft2000,Schardt2010} and a schematic presentation is shown in Fig.~\ref{scanning} and Fig.~\ref{active}.
-A synchrotron provides a thin pencil beam of $^{12}$C ions with a variable energy in the range of 30 - 400 MeV/u. The energy defines the position of the Bragg peak in depth. Fig. \ref{active}b shows how the Bragg peaks are stacked in depth to cover longitudinal extension of the tumor.
-The thin pencil is guided by two magnetic deflection units to irradiate each raster point. The specific dose in each raster point is calculated in the treatment planing.
+There are differences in specifics of active beam shaping. The GSI system of the three-dimensional scanning system will be given here \cite{Haberer1993,Kraft2000,Schardt2010} and a schematic presentation is shown in Fig.~\ref{scanning} and Fig.~\ref{active}.
+A synchrotron provides a thin pencil beam of $^{12}$C ions with a variable energy in the range of 30 - 400 MeV/u. The energy defines the position of the Bragg peak in depth. Fig. \ref{active}b shows how the Bragg peaks are stacked in depth to cover the longitudinal extension of the tumor.
+The thin pencil beam is guided by two magnetic deflection units to irradiate each raster point. The specific dose in each raster point is calculated in the treatment planing.
 During treatment the beam stays on each raster point until intensity monitoring system measures the designated dose. Then it is moved to the next raster point. When the whole IES is irradiated, the treatment waits for the next IES comes from accelerator.
 
 Fig.~\ref{active}a displays how dose homogeneity in the target is achieved. To achieve flat dose distribution with Gaussian beam profile, beam's full width half maximum is three times the lateral raster spacing. Such configuration offers robustness for uncertainties of the beam spots.

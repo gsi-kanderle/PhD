@@ -1,74 +1,51 @@
 TODO:
 
-P
-2. Izpolnit: http://www.physik.tu-darmstadt.de/media/fachbereich_physik/formulare_3/promotionen/Antrag_auf_Eroeffnung_Formular.pdf
+
+Izpolnit & Sprintat + potrdilo: http://www.physik.tu-darmstadt.de/media/fachbereich_physik/formulare_3/promotionen/Antrag_auf_Eroeffnung_Formular.pdf
+
+
 
 
 Marco Read: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4064605/
 
-Ali dat povsod kr 20 rescanov?
-Appendix?
+Publication - under review, yes/no?
 
-A vrzemo 4Dopt ven, pa samo mITV, pa zracunamo prvic primerjalno, drugic pa dose escalation?
+Fundamentals:
 
- 
-6. Patient Study:
+Marco Single
 
- 6a Patient 11 CTV2 missing from table characteristic
- 6b Image of alpha beta ratio distribution in patient.
- 6c Perhaps comparison between alpha beta 10 and 6?
- 6d Zdruzt s paper
- 
- Poslat Christianu
- 
-7. Patient with complex geometry
+VMM:
 
-Legend
+Fig 2.3 legend 0
 
- 7a Napisat uvodu
- 7b Materials and methods
- 1 - Fertig
- 3  
- 11 -
- 21 - racuna 4D
- 22 - 4DITV Heart ne jebe kot OAR. Mogoce se enkrat z oar80?
- 23 - racuna nohup 4DITV_L. Pol pa se 4D dat racunat.
- 
-  - Multiple targets
-  - 4D optimize
-  - OAR removal
-  - OAR creation for multiple targets
-  
- 7c Zracunat:
- 
- Lung003 L racuna z LungL treba pol se 4D
- Lung003 R caka na trp, da bo lahko CTV4 z 23 Gy
- 
- Lung021 mITV 4D test, treba pol se vse zracunat
- 
- 
-  Results:
+Artifact in image lung + font premejhn
+Figure 2.9 b je dol
+Povej, kaj pomen linear fit v absdiff in kaj so outliersi
+range of dates
+
+Complex:
+
+OAR limits look all ref.
+
+Christian - dose escalation vs fraction escalation. Fraction fractionation? 
+
+high vs big volume
+
+Fig Treatment plans zrihtat
+
+Rezultate not prlimat
+
+Margins tabela
+
+Bam conclusion
 
 
-Lung021 - mITV je en zracunan, zj mors pa 4D pogledat. SA ma zelo mejhno dozo ze v 3D
-Lung003 - 4DITV L je koncal, treba je 4D pogledat. 4D se tut za R racuna. mITV se racuna 4D komplet.
- 
-Sliko - pat3?
-Between three methods: how many cases below target?
-Do OAR doses differ between three?
-Comparision to sbrt? - oar and ctv
-Special cases? Do different motion patterns worsen plan?
 
+Appendix:
 
- 7d Primerjat pol te dva med sabo in z SBRT
- 
- 7e Zapisat vse v results in se pokomentirat v discusion (discusion lahko omenis se field optimization, pa tripfly)
- 
- Poslat Christianu
- 
- 
-8. Poslat se ostalim
-9. Poslat Marcotu
+OAR limits
 
-10. Oddat (konec maja) - 40 dni.
-
+2 and 5 mm for smaller airways, 0 and 1 mm for esophagus in patient 4; 
+0 and 2 mm for heart in patient 5; 
+2 and 11 mm for smaller airways in left lung, 0 and 9 mm for smaller airways in right lung in patient 6;
+2 and 0 mm for esophagus and 0 and 1 mm for stomach in patient 7.
