@@ -42,54 +42,28 @@ affected by errors in deformable image registration (DIR) \cite{Heath2006}. Spec
 Tools were tested on a large dataset to ensure their validity.
 
 
-\section{Deformable image registration}
+\section{Deformable image registration and validation}
 
+A single DIR algorithm was used in this study, B-Spline. In contrast to Demons algorithm, B-Spline should handle large deformations present in lung and cardiac 4D-CT well \cite{Tang2013}.
+The DIR for lung 4D-CT had only a few inconsistencies and can be considered successful. On the other hand, the results suggest that B-Spline is inadequate for pig cardiac 4D-CT. The parameters used
+in B-Spline DIR were similar in both cases of DIR. This could be improved by investigating the effect of parameters on DIR quality. 
 
-In the scope of our study, the DIR was included in the contour propagation, 4D optimization and 4D dose calculation. Contour propagation was done from a planning CT to a 4D-CT 
-reference phase and from the 4D-CT reference phase to all other phases. 
-from 
-
-
-For calculation of DIR,  
-
-% Furthermore, pig cardiac 4D-CTs had to be registered under time pressure,
-% which had
-The advantage of using open-source software for DIR, as explained in Section~\ref{RegistrationImplement}
-
-a single registration algorithm, B-Spine, was used in lung and cardiac 4D-CT DIR, becaue it is better suited for large deformations present in lung and cardiac 4D-CT \cite{Tang2013}. 
-In contrast, Demons algorithm is usually used for small deformations. Additionally, it was shown on a  that B-Spline preforms better than on a lung patient CT
-The B-Spline
-algorithm handles large deformation, whereas Demons 
-B-Spline algorithm should handle large deformations well, which
-
-
-With features such as adaptive treatment planning \cite{Yan1997}, 4D optimization \cite{Trofimov2005}, 4D dose calculation \cite{Flampouri2006}, 
-contour propagation \cite{Lu2006b} and combining different imaging modalities \cite{Leibfarth2013} DIR is slowly entering everyday clinical work-flow. 
-There are various different registration algorithms available \cite{Varadhan2013}
-along with different optimization metrics, such as mean square error, cross-correlation, or normalized mutual information \cite{Glocker2011}.
-
-The , is that different DIR algorithms, 
+The advantage of using open-source software for DIR, as explained in Section~\ref{RegistrationImplement} is that different DIR algorithms, 
 optimization metrics and image types can be used. They can be accessed either with using
-existing libraries, such as ITK \cite{Yoo2002}, or by writing designated software \cite{Fedorov2015}. A B-Spline algorithm and mean square error metric was used for DIR in this thesis. 
-There are large deformations present in 
-4D-CT, which B-Spline should handle well \cite{Tang2013}. The mean square error metric also gives better results for images of the same modality and same contrast \cite{Varadhan2013}. 
-However, a comparison between different algorithms and optimization metrics and their effect on DIRQA is warranted.
+existing libraries, such as ITK \cite{Yoo2002}, or by writing designated software \cite{Fedorov2015}. 
 
-\subsection{Deformable image registration validation}
 
-Any DIR algorithm must undergo thorough evaluation before it can be used clinically. The most common practice for DIRQA is visual validation \cite{Stanley2013}. 
-Our DIRQA module offers false color, checkerboard and landmarks distance as
-visual validation methods. Contour validation is currently lacking in our DIRQA module. In literature many different attempts have been done to asses DIRQA with landmarks or contours. 
-A study by Hardcastle et al \cite{Hardcastle2012} 
-compared demons and Salient-Feature-Based registration with dice coefficient between propagated and physician drawn contours.
-A multi-institutional study by Brock et al \cite{Brock2010} compared differences in propagated and oncologist drawn landmarks. 
-A method has been developed by Castillo et al \cite{Castillo2009} to automatically identify landmark points
-in lung patients images. However, visual based evaluations are limited in regions of uniform image intensity and by the number of the objects being tracked \cite{Kashani2008, Liu2012}. 
-An example of visual validation disadvantage could be seen in
-pig cardiac 4D-CT, where visual evaluation did not show any errors in DIR, but errors were observed in vector fields resulting from DIR.
+In this study, DIR was used in contour propagation, 4D optimization and 4D dose calculation. The 4D optimization and 4D dose calculation require 
+accurate DIR in each voxel. We ensured this by calculating DIRQA voxel-wise. DIR could also be tested with designated 4D dose calculation. Without 4D optimization, 
+the treatment plan is optimized on a single phase 4D-CT. The DIR is then used in a 4D dose calculation by propagating dose from all voxels in each phase to the reference phase.
+\textbf{?} 4D dose can also be calculated by applying separate plans to each 4D-CT phase and the results should be comparable.
 
-An alternative to visual validation is evaluation of vector field's mathematical properties. The two most common DIR vector fields evaluation metrics are 
-Jacobian determinant (Jacobian) and inverse consistency error (ICE) \cite{Leow2007, Christensen2001}, which were implemented in the scope of this thesis. 
+Tests in DIRQA module can be divided into two groups - qualitative and quantitative. Qualitative tests are false color and checkerboard. They provide clear overview of the DIR result.
+However they do not give any about the vector field quality. An example of the disadvantage of the qualitative test could be seen in pig cardiac 4D-CT, where qualitative test did not show
+any errors in DIR, but errors were observed in vector fields. 
+
+The quantitative tests used in DIRQA module are landmark distance, absolute difference, Jacobian and inverse consistency error (ICE). Absolute difference, Jacobian and ICE have undergone an extensive testing. The results suggest
+that absolute difference gives us the least information about DIRQA, apart that it has to be lower after the DIR. 
 We have shown that bigger deformations yield more deviations in Jacobian and ICE, which was also found by Stanley et al \cite{Stanley2013}. 
 Furthermore, we have confirmed that Jacobian should always be positive for a successful DIR \cite{Rey2002}. Additionally, our results show that ICE should 
 be smaller than maximum vector field magnitudes. Any deviations from mentioned trends should be thoroughly examined.
@@ -98,10 +72,19 @@ There are additional vector fields validation methods beside Jacobian and ICE, s
 permutation and analysis of variance (ANOVA) tests \cite{Klein2009}.
 It was demonstrated in a study by Salguero et al \cite{Salguero2011} that DIR errors greater than 1 mm can lead to large dose errors in high-dose gradient regions. 
 Therefore the DIR accuracy has to be quantified at each image voxel in the high-dose 
-gradient regions. A solution to evaluate at each specific voxel and for patient-specific registration was given by Stanley at al \cite{Stanley2013}. 
-They proposed a computational phantoms and their deformations with a finite element module framework. 
-In our study a focus was given on a complete registration to find potential erros. However, in future studies the regions of interest used
-should be around the target and the effect of image downsampling on DIRQA should be assessed.
+gradient regions. In our study a focus was given on a complete registration to find potential errors. However, in future studies the regions of interest used
+should be around the target, where high-dose gradients can occur. Furthermore the effect of image and vector field downsampling on DIRQA should be assessed.
+
+%A solution to evaluate at each specific voxel and for patient-specific registration was given by Stanley at al \cite{Stanley2013}. 
+%They proposed a computational phantoms and their deformations with a finite element module framework. 
+
+Due to the lack of landmarks in all 4D-CTs landmark distance was not included in verification. Two contour based validation, dice similarity coefficient \cite{Varadhan2013} and Hausdorff distance \cite{Huttenlocher1993}
+are planned to be implemented in DIRQA module. In literature many different attempts have been done to asses DIRQA with landmarks or contours. 
+A study by Hardcastle et al \cite{Hardcastle2012} 
+compared demons and Salient-Feature-Based registration with dice coefficient between propagated and physician drawn contours.
+A multi-institutional study by Brock et al \cite{Brock2010} compared differences in propagated and oncologist drawn landmarks. 
+A method has been developed by Castillo et al \cite{Castillo2009} to automatically identify landmark points
+in lung patients images. However, visual based evaluations are limited in regions of uniform image intensity and by the number of the objects being tracked \cite{Kashani2008, Liu2012}.
 
 
 
