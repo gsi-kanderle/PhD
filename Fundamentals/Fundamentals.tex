@@ -387,17 +387,18 @@ hardware. The lack of additional material in front of the patient also means les
 There are differences in specifics of active beam shaping. The GSI system of the three-dimensional scanning system will be given here \cite{Haberer1993,Kraft2000,Schardt2010} and a schematic presentation is shown in Fig.~\ref{scanning} and Fig.~\ref{active}.
 A synchrotron provides a thin pencil beam of $^{12}$C ions with a variable energy in the range of 30 - 400 MeV/u. The energy defines the position of the Bragg peak in depth. Fig. \ref{active}b shows how the Bragg peaks are stacked in depth to cover the longitudinal extension of the tumor.
 The thin pencil beam is guided by two magnetic deflection units to irradiate each raster point. The specific dose in each raster point is calculated in the treatment planing.
-During treatment the beam stays on each raster point until intensity monitoring system measures the designated dose. Then it is moved to the next raster point. When the whole IES is irradiated, the treatment waits for the next IES comes from accelerator.
+During treatment the beam stays on each raster point until the intensity monitoring system measures the designated dose. Then it is moved to the next raster point. When the whole IES is irradiated the beam extraction is aborted and the accelerator delivers
+the next energy for the following IES.
 
-Fig.~\ref{active}a displays how dose homogeneity in the target is achieved. To achieve flat dose distribution with Gaussian beam profile, beam's full width half maximum is three times the lateral raster spacing. Such configuration offers robustness for uncertainties of the beam spots.
+Fig.~\ref{active}a displays how the dose homogeneity in the target is achieved. To achieve flat dose distribution with a Gaussian beam profile, the beam's full width half maximum is three times the lateral raster spacing. Such configuration offers robustness for uncertainties of the beam spots.
 The spacing between individual IES is usually 3 mm, providing enough overlap between individual Bragg peaks. However, the number of IES should be kept low, since the changing of the beam energy takes most of the time and hence prolongs the treatment. Instead of using high number of
  IES, Bragg peaks are broadened in longitudinal direction by a using ripple filter (RiFi) - a device similar to ridge filters used in passive beam shaping. 
 
 \subsection{Motion in radiotherapy}
 \label{sec:motion}
 
-Patient motion can have a profound effect on the radiotherapy. It can cause large deviations from the planned dose, resulting in under- or over-dosage in target and excess dose in OAR. Motion types, its extent and origin is therefore a vast topic of research. 
-A brief introduction will be given here, for an in-depth explanation reader is pointed to review by Langen and Jones \cite{Langen2001}.
+The patient motion can have a profound effect on the radiotherapy. It can cause large deviations from the planned dose, resulting in under- or over-dosage in target and excess dose in OAR. The motion type, its extent and origin is therefore a vast topic of research. 
+A brief introduction will be given here, for an in-depth explanation the reader is pointed to the review by Langen and Jones \cite{Langen2001}.
 
 \newpage
 
@@ -406,8 +407,8 @@ A brief introduction will be given here, for an in-depth explanation reader is p
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.9\textwidth]{./Images/therapy.png}
-\caption{Schematics of GSI's active beam shaping. Tumor is divided into isoenergy slices, which are further overlayed with a 2 dimensional grid. 
-Longitudinal direction (in beam's eye view) is varied with particle energy from accelerator, while lateral is via a magnetic scanning system. Figure taken from \cite{Kraemer2009}}
+\caption{Schematics of GSI's active beam shaping. The tumor is divided into isoenergy slices, which are further overlayed with a 2 dimensional grid. 
+Longitudinal direction (in beam's eye view) is varied with the particle energy from the accelerator, while the lateral is changed via a magnetic scanning system. Figure taken from \cite{Kraemer2009}.}
 \label{scanning}
 \end{center}
 \end{figure}
@@ -416,9 +417,9 @@ Longitudinal direction (in beam's eye view) is varied with particle energy from 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.9\textwidth]{./Images/active.png}
-\caption{Schematic presentation of how target dose homogeneity is achieved in active beam shaping. a) To provide sufficient homogeneity in lateral direction (in beam's eye view) full width
-half maximum of beam is three times the spacing between raster points. b) Bragg peaks are broadened in depth with a ripple filter and then stack to provide longitudinal dose homogeneity. 
-Figure taken from \cite{Richter2012}}
+\caption{Schematic presentation of how the target dose homogeneity is achieved in active beam shaping. a) To provide sufficient homogeneity in lateral direction (in beam's eye view) the full width
+half maximum of beam is three times the spacing between the raster points. b) the Bragg peaks are broadened in depth with a ripple filter and then stacked to provide longitudinal dose homogeneity. 
+Figure taken from \cite{Richter2012}.}
 \label{active}
 \end{center}
 \end{figure}
