@@ -45,8 +45,8 @@ several experimental verifications \cite{Vinogradskiy2009, Perrin2016, Bert2012a
 4D dose calculation requires DIR for deformation of dose distributions in each motion state
 to the reference state, where the dose from all motion states is accumulated. 4D dose calculation requires accurate DIR at every voxel, since errors in DIR can significantly alter the 4D dose \cite{Heath2006}. Special consideration has to be paid to calculation of biological 4D doses \cite{Gemmel2011}. 
 
-Contours can be propagated with DIR \cite{Lu2006a, Rietzel2005a} or
-with deformable model driven techniques \cite{McInerney1996, Montagnat2005}, which uses a physical model to iteratively match the contour to image features. In contrast to 4D dose calculation, contour propagation requires accurate DIR at contour boundaries.
+Contours can be propagated in two ways - either with DIR \cite{Lu2006a, Rietzel2005a} or
+with deformable model driven techniques \cite{McInerney1996}, which uses a physical model to iteratively match the contour to image features. In contrast to 4D dose calculation, contour propagation requires accurate DIR at contour boundaries.
 
 Besides radiotherapy, DIR is used also in other medical fields \cite{Cleary2010, Herrell2012, Nithiananthan2011, Naini2010}.
 Several different DIR algorithms are available, such as B-spline \cite{Rueckert1999}, Demons \cite{Thirion1998}, linear elastic finite element \cite{Venugopal2005}, optical flow \cite{Zhong2007} or viscous fluid \cite{Christensen1996}.
@@ -114,9 +114,15 @@ The Python class is shown in Appendix~\ref{RegHierarchy}.
 \subsection{Registration Quality Checks}
 \label{DIRQA}
 
-In order to provide visual and quantitative assessment of the registration quality a \textbf{Deformable Image Registration Quality Assurance} or DIRQA module was created. It provides different image checks (inverse color, checkerboard, absolute difference, flicker, movie and landmark positions) and vector checks (Jacobian and inverse consistency error). Reference and warped image, true and inverse vector are used as inputs for the DIRQA module. Additionally, landmarks and region of interest (ROI) can also be used as an input.
+In order to provide visual and quantitative assessment of the registration quality a \textbf{Deformable Image Registration Quality Assurance} or DIRQA module was created. 
+It provides different image checks (inverse color, checkerboard, absolute difference, flicker, movie and landmark distances) 
+and vector checks (Jacobian and inverse consistency error). 
+Reference and warped image, true and inverse vector are used as inputs for the DIRQA module. 
+Additionally, landmarks and region of interest (ROI) can also be used as an input.
 
-Absolute difference, Jacobian and inverse consistency error were build using tools from the ITK library \cite{Yoo2002}.
+Tests can be divided into two groups: qualitative (inverse color, checkerboard, flicker, movie) and quantitative 
+(absolute difference, landmark distances, Jacobian and inverse consistency error) tests, Absolute difference, Jacobian and inverse consistency error tests
+were build using tools from the ITK library \cite{Yoo2002}.
 
 \subsubsection{Qualitative tests}
 
@@ -302,11 +308,10 @@ As in Jacobian, ICE image is calculated and displayed, along with statistical va
 \section{Verification}
 \label{Verification}
 
-Several extensions for Slicer were created to perform DIR and DIRQA. All extensions have to undergo testing to prove their functionalities. Furthermore it is necessary to verify if extensions could be used in a typical clinical work flow under
-time pressure.
-%Especially DIRQA, which could facilitate the transition of DIR in everyday clinical work flow.
-
-DIR and DIRQA were done on lung 4D-CT patient data and on a pig cardiac 4D-CT as part of an animal study \cite{Lehmann2015}. Absolute difference, Jacobian and ICE were calculated for all DIR as part of DIRQA.
+Several tools to perform DIR and DIRQA were created. 
+To prove their functionalities, we have tested them on an actual clinical data. Lung 4D-CT patient data and pig cardiac 4D-CT, that were part of an animal study \cite{Lehmann2015},
+were included in a verification. All 4D-CTs were registered to the 4D-CT's reference stata. Absolute difference, Jacobian and ICE were calculated for resulting 
+DIR as part of a DIRQA.
 
 \subsection{Registration of lung 4D-CT patient data}
 \label{lungDIR}
@@ -456,9 +461,13 @@ Nine states of 4D-CTs were registered to a 4D-CT reference state for 23 lung can
 Vector field magnitudes confirm previously published data that the biggest motion for lungs is in superior-inferior direction \cite{Seppenwoolde2002, Britton2007, Liu2007}. The mean vector field magnitude is small (in submilimiter range), 
 because the ROI included the whole patient body, not just the lungs where most of the motion occurs. Vectors and inverse vectors are similar, which was expected.
 
-There was a good correlation (Pearson's r = 0.87) between absolute difference before and after DIR. The slope of linear fit suggests that B-Spline DIR on average halves the absolute difference. However, there are several outliers from the
-linear fit for default absolute difference bigger than 50 HU. All absolute differences after the DIR are smaller then before, which is a necessary condition in order for DIR to be considered successful. The absolute difference is limited by the
-image noise, which will always be present in a CT scan \cite{Polacin1992}. It would be interesting to study the correlation between image noise, absolute difference and DIR quality.
+There was a good correlation (Pearson's r = 0.87) between absolute difference before and after DIR. 
+The slope of linear fit suggests that B-Spline DIR on average halves the absolute difference. There are several outliers from the
+linear fit for default absolute difference bigger than 50 HU, however no DIR errors could be found upon visual inspection for this outliers.
+All absolute differences after the DIR are smaller then before, which is a necessary condition in order for DIR to be considered successful. Apart from smaller absolute difference after DIR,
+nothing could be deducted about the DIR quality from the absolute difference. The absolute difference is limited by the
+image noise, which will always be present in a CT scan \cite{Polacin1992}. It would be interesting to study the 
+correlation between image noise, absolute difference and consequential DIR quality.
 
 
 Due to small mean vector field magnitudes, average values for true and inverse Jacobian were $1\pm0.05$, which indicates that most of the patient body does not change during the 4D-CT
@@ -765,39 +774,6 @@ data analyzed, the parameters in DIRQA checks should get more precise, so outlie
 Based on the results several new features could improve DIRQA module. Instead of mean, STD, maximum and minimum values, histograms could be displayed for quantitative tests.
 Furthermore, histograms could be displayed for a specific contour, such as target. Additionally, the module should automatically show the location of maximum absolute difference error, Jacobian, ICE and minimum Jacobian.
 The worst part of a DIR would be hence immediately recognized and appropriate response could be formed.  
-
-\newpage
-
-
-\section{Appendix}
-\label{RegHierarchy}
-% \lstinputlisting[language=Python, firstline=1602, lastline=1803]{./RegistrationHierarchy.py}
-
-\subsubsection{Patient hierarchy} 
-\label{PatHierarchy}
-
-Patient hierarchy follows a subject hierarchy principle in Slicer. It was designed for a clear overview of the registration process, DIRQA and all resulting files. Another reason is to track DIR
-and DIRQA in case if they are interrupted by Slicer crash. DIR and DIRQA files can be quite large and can cause Slicer to run out of memory. With patient hierarchy Slicer is able to continue work
-from where it was interrupted rather than starting anew.
-
-There are several levels in patient hierarchy. Each level also has different attributes, where details regarding each level can be written.
-
-\begin{itemize}
-	\item Level 1: \textbf{Patient name} - separates different patients.
-	\item Level 2: \textbf{Registration node} - separates between different registrations, e.g. between different imaging modalities or between 4D-CT states. 
-	\subitem \textit{Attributes:}
-	\subitem - The file directory of images, vector fields and registration quality files.
-	\subitem - Number of phases to be registered.
-	\subitem - Reference phase
-	\item Level 3: \textbf{Registration set} - specific registration phase. Registration is done between all phases and the reference one. There have to be at least two phases
-	\item Level 4: \textbf{Node} - can be either an image, a vector field, an inverse vector field or any of DIRQA nodes (see Section~\ref{DIRQA}).
-	\subitem \textit{Attributes:}
-	\subitem - Exact file paths for specific node.
-	\subitem - Statistical analysis if node is absolute difference, Jacobian or inverse consistency (see Section~\ref{DIRQA}).
-\end{itemize}
-
-The patient hierarchy can be constructed in two ways. The first option is to manually create the whole patient hierarchy, from top to bottom level, with necessary attributes. Second option is to use an automatic script to look 
-for files on hard drive and create corresponding levels. The second option is possible only by using proper naming conventions for file names and locations.
 
 \bibliographystyle{apalike}
 \bibliography{../ref.bib}{}
