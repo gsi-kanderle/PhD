@@ -98,7 +98,7 @@ the mean electron range. After this build up the dose deposition decreases expon
 
 \subsubsection{Interaction of ions with matter}
 \label{iion}
-Ions can interact with matter either with elastic Coloumb scattering from target nuclei (nuclear stopping) or with inelastic collision with target electrons (electronic stopping).
+Ions can interact with matter either with elastic Coulomb scattering from target nuclei (nuclear stopping) or with inelastic collision with target electrons (electronic stopping).
 At the ion energies used in radiotherapy, which are less then 500 $\mathrm{MeV}/\mathrm{u}$, the electronic stopping is the dominating interaction. The result is ionization and excitation of the target atoms.
 
 The mean rate of the ions energy loss in matter is described by the Bethe-Bloch formula \cite{Bethe1930, Bloch1933}. Since we are interested in low ion energies, a non-relativistic approximation can be made:
@@ -264,7 +264,7 @@ LEM can thus predict dose response, by comparing
 photon response at the high local dose level. LEM was used in the GSI pilot project from 1998 - 2007 \cite{Kraemer2000, Kraemer2000a} as well as clinically in HIT since 2009. LEM has received several revisions \cite{Elsaesser2006, Elsaesser2007, Elsaesser2009} and experimental verifications
 \cite{Mitaroff1998, Kraemer2000a, Kraemer2003}. 
 
-RBE for carbon ions ranges from 1 in the entrance channel, to valus around 5 at 
+RBE for carbon ions ranges from 1 in the entrance channel, to values around 5 at 
 the Bragg peak \cite{Kraft2000}. The highest RBE for carbon ions is right around the Bragg peak, which gives carbon ions a great advantage, since there is an increased 
 biological effectiveness at the target tissue compared to the normal tissue in the entrance channel. In proton therapy a constant RBE value of 1.1 across the treatment field
 is used \cite{Paganetti2002}.
@@ -296,15 +296,38 @@ so that BED = $D \times F$. $F$ increases with $d$, but decreases with $\alpha /
 means higher $F$ and a higher $\alpha / \beta$ (early responding tissue) moves $F$ towards 1.
 
 
-\subsubsection{Hypo-fractionation}
+\subsubsection{Hypofractionation}
 
-In recent years hypo-fractionation has shown promising results over a wide range of tumors \cite{Yamada2008, Greco2011, Halasz2013}. 
-Hypo-fractionation consists of 1-3 fractions of very high doses, up to 24 Gy in a single fraction (single-dose). The theory behind hypo-fractionation is still a research topic
-and no consensus has yet been reached. On the one hand, the LQ model predicts higher BED for hypo-fractionation. On the other hand, Garcia-Barros et al. proposed additional mechanism at work \cite{Garcia2003}.
-They presented a two target model, which suggest that tumor response to irradiation is defined not only by tumor cell type (as in LQ model) but also by micro-vascular
-sensitivity. With excluding targeted enzymes from knock-out mice, they showed that tumors with reduced micro-vascular endothelial apoptosis grew 200-400 \% faster than a control group. The study, however, was challenged on several grounds and is controversal.
+Due to the improvement in radiotherapy, there is a trend to increase the dose per fraction and reduce the number of fractions - hypofractionation \cite{Lo2010}.
+Hypofractionation consists of 1-3 fractions of very high doses, up to 24 Gy in a single fraction (single-dose). It has shown promising results over a wide range of tumors \cite{Yamada2008, Greco2011, Halasz2013}.
+The high dose damage to vascular system, which supplies cancer tissue with oxygen and nutrients, may be a dominant process in tumor suppression \cite{Fuks2005}. This was originally showed in genetically modified mice, where vascular damage
+was shown for doses higher than 10 Gy per fraction \cite{Garcia2003}. Effect of high doses on vascular system and consequential tumor control was later confirmed in spinal SBRT for doses between 18-24 Gy \cite{Yamada2008}.
+
+While the effect of high doses on the vascular component is apparent, a strong effect of hypofractionation can also be explained with a high BED resulting from the LQ model, as shown in Table~\ref{Tab:BED}.
+The radiation to normal tissue limited the use of hypofractionation in the past. SBRT can significantly reduce the normal tissue radiation and hence increase the dose per fraction.
+The scientific community has not yet reached consensus on which mechanism lies behind hypofractionation \cite{Park2012a}.
+
+In addition to high tumor control rates, hypofractionation is also beneficial from economical point of view. If the number of fractions is reduced from 30 to 1-3, 
+the treatment time and hence the cost is tremendously reduced, which is especially important in PT.
+
+\begin{table}[H]
+  \centering
+%   \footnotesize
+  \caption{BED for different fractionation schemes for two $\alpha / \beta$ ratios. Single fraction (1 x 24 Gy) has more than two times higher BED compared to conventional
+  fractionation scheme (30 x 2 Gy) or 3 x 9 Gy for $\alpha / \beta = 2$.}
+  \begin{tabular}{c|c|c|c|c}
+  & \multicolumn{4}{c}{Fractionation scheme} \\
+		    & 1 x 24 Gy & 3 x 9 Gy & 5 x 7 Gy & 30 x 2 Gy \\
+		    \hline
+	    BED (Gy$_{\alpha / \beta=6}$)&120  & 68 & 76   &	80\\
+	    BED (Gy$_{\alpha / \beta=2}$)&312	&149	&158&120\\
+    \hline\hline
+  \end{tabular}
+  \label{Tab:BED}
+\end{table}
   
 
+  
 \subsection{Application technique}
 
 The use of X-rays for treating patients has more than a century long history. There is a lot of research and practical knowledge regarding the clinical usage of X-rays. Particle therapy, on the other hand, is a more novel technique, with
@@ -319,7 +342,7 @@ individual leaves, that can be moved to represent the tumor's shape in the beam'
 Linear accelerators are usually placed on a gantry, which can be rotated around the patient allowing irradiation from any angle. 
 The arbitrary choice of the beam angle is used in a 3-dimensional conformal radiotherapy, where a variable number of beams is used. 
 Each beam is then shaped with a multileaf collimator. An even more precise technique is intensity-modulated radiotherapy (IMRT). IMRT allows treating complex tumor shapes, e.g. when the tumor is in proximity of a critical structure.
-Volumetric modulatec arc therapy (VMAT) uses continuous irradiation together with continous gantry rotation and multileaf collimator shaping. VMAT is able to produce even more conformal dose shapes than IMRT.
+Volumetric modulated arc therapy (VMAT) uses continuous irradiation together with continuous gantry rotation and multileaf collimator shaping. VMAT is able to produce even more conformal dose shapes than IMRT.
 
 \subsubsection{Ion therapy}
 
@@ -418,7 +441,7 @@ Longitudinal direction (in beam's eye view) is varied with the particle energy f
 \begin{center}
 \includegraphics[width=0.9\textwidth]{./Images/active.png}
 \caption{Schematic presentation of how the target dose homogeneity is achieved in active beam shaping. a) To provide sufficient homogeneity in lateral direction (in beam's eye view) the full width
-half maximum of beam is three times the spacing between the raster points. b) the Bragg peaks are broadened in depth with a ripple filter and then stacked to provide longitudinal dose homogeneity. 
+half maximum of beam is three times the spacing between the raster points. b) The Bragg peaks are broadened in depth with a ripple filter and then stacked to provide longitudinal dose homogeneity. 
 Figure taken from \cite{Richter2012}.}
 \label{active}
 \end{center}
@@ -434,14 +457,15 @@ Figure taken from \cite{Richter2012}.}
 
 There are three main types of motion: patient positioning, inter- and intra-fractional motion. All three motion types are shown in Fig. \ref{motion}.
 \newline
-\textbf{Patient motion} is difference in patient position between image acquisition (e.g. CT) used for treatment planning and actual delivery. Patient motion introduces changes in tumor shape and tumor position. To overcome patient 
+\textbf{Patient position} varies between image acquisition (e.g. CT) used for treatment planning and actual delivery. The patient motion introduces changes in tumor shape and tumor position. To overcome patient 
 position uncertainties, patient immobilization and dedicated protocols are used.
 \newline
-\textbf{Interfractional motion} happens between two treatment sessions (fractions) and results in anatomical changes in a patient. It occurs on a time scale of hours and days. For lung cancer patients, tumor shrinks and lung density can change between fractions \cite{Mori2009}. 
+\textbf{Interfractional motion} happens between two treatment sessions (fractions) and results in anatomical changes in a patient. It occurs on a time scale of hours and days. For lung cancer patients, the 
+tumor shrinks and the lung density can change between fractions \cite{Mori2009}. 
 Also changes in breathing pattern can impact treatment delivery. Additionally, the tumor baseline drifts significantly \cite{Sonke2008}. Repeated imaging and replanning reduces the impact of the interfractional motion, but requires additional time.
 \newline
-\textbf{Intrafractional motion} is mainly caused by respiration and heart beat, but also peristalsis. The time scale ranges from seconds to minutes. In this thesis we investigated treatment of lung cancer, so focus lies on respiratory motion. Respiratory motion varies from patient to patient and 
-it is responsible for tumor motion from a mm range to a couple of cm \cite{Shirato2004a}. Tumor size and T-staging are also correlated to tumor motion \cite{Liu2007}. The respiratory-induced motion is largest in superior-inferior (SI) direction rather than 
+\textbf{Intrafractional motion} is mainly caused by respiration and heart beat, but also peristalsis. The time scale ranges from seconds to minutes. In this thesis we investigated the treatment of lung cancer, focusing on respiratory motion. Respiratory motion varies from patient to patient and 
+is responsible for tumor motion from a mm range to a couple of cm \cite{Shirato2004a}. The tumor size and T-staging are also correlated to tumor motion \cite{Liu2007}. The respiratory-induced motion is largest in superior-inferior (SI) direction rather than 
 in the anterior-posterior (AP) or left-right (LR) directions \cite{Seppenwoolde2002, Britton2007, Liu2007}.
 
 \newpage
@@ -460,20 +484,20 @@ prostate patient are compared. Density variations between two CT scans are shown
 
 While all three motion types have to be addressed in treatment planning, special focus will be given on intrafractional motion mitigation. Photon radiotherapy or particle radiotherapy with passive beam shaping 
 use larger safety margins to encompass the whole tumor motion as explained in Section~\ref{treatmentPlanning}. However, larger safety margins are not enough to mitigate motion when active beam shaping is used. The beam delivery 
-sequence and target motion interfere with one another, resulting in over- and underdosages in patients. This effect is called interplay and it has been thoroughly reviewed elsewhere \cite{Phillips1992,Bert2008}. The effect of interplay depends
+sequence and the target motion interfere with one another, resulting in over- and underdosages in patients. This effect is called interplay and it has been thoroughly reviewed elsewhere \cite{Phillips1992,Bert2008}. The effect of interplay depends
 on many factors, such as motion amplitude, beam direction, starting breathing phase etc. Three main techniques are currently established to counteract interplay: rescanning, gating and beam tracking. Several others techniques exist
 to reduce the effect of tumor motion, such as abdominal compression, jet ventilation, apneic oxygenation etc., but will not be described here, since the scope of this thesis is on free-breathing patients.
 
 
 \textbf{Rescanning} is a technique that uses statistical averaging of different interplay patterns \cite{Phillips1992}. Instead of applying the whole dose $D$ at once, the target is scanned $N$ times, each
 time irradiated with $\mathrm{D}/\mathrm{N}$. The result is a Gaussian dose distribution around $D$ with no interplay (static case), as shown in Fig. \ref{rescanning}. With more rescans (larger $N$), better dose homogeneity is achieved, because the variance is proportional
-to $\mathrm{1}/\mathrm{N}$. Technically the method is the easiest to implement of the three mentioned, since no real-time motion monitoring is necessary. The treated volume must be enlarged to at least encompass target in all motions states (in
-contrast to gating), which introduces additional dosage to normal tissue. Rescanning is currently used at NIRS, Tokyo (Japan) and at \textit{some proton centers}.
+to $\mathrm{1}/\mathrm{N}$. Technically the method is the easiest to implement of the three mentioned, since no real-time motion monitoring is necessary. The treated volume must be enlarged to at least encompass the target in all motions states (in
+contrast to gating), which introduces additional dosage to normal tissue. Rescanning is currently used at NIRS, Tokyo (Japan) and at some proton centers.
 \newline
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{./Images/rescanning.png}
-\caption{Film irradiation with rescanning. With statistical averaging of multiple interplay patterns dose in the target (solid red square) becomes homogeneous. Figure taken from \cite{Bert2009}.}
+\caption{Film irradiation with rescanning. With statistical averaging of multiple interplay patterns the dose in the target (solid red square) becomes homogeneous. Figure taken from \cite{Bert2009}.}
 \label{rescanning}
 \end{center}
 \end{figure}
@@ -483,12 +507,12 @@ A motion monitoring signal is used to control beam extraction. While there is li
 Conventional radiotherapy and passive beam shaping also employ gating to reduce the effects of motion on treatment delivery.
 \newline
 \textbf{Beam tracking} is a method where the tumor is followed by the beam throughout different motion phases in real time. Similar to gating, beam tracking is not limited to active beam shaping. It was even proposed originally 
-for photons \cite{Keall2001} and later implemented clinically in x-ray radiosurgery in the robotic Cyberknife Synchrony system (Accuray Inc., Sunnyvale, Ca., USA) \cite{Brown2007a,Kilby2010}. Regardless of radiation type, a
+for photons \cite{Keall2001} and later implemented clinically in x-ray radiosurgery in the robotic Cyberknife Synchrony system (Accuray Inc., Sunnyvale, Ca., USA) \cite{Brown2007a,Kilby2010}. Regardless of a radiation type, a
 fast beam delivery system is required for beam tracking. In contrast to photon radiotherapy, beam tracking with particles need to pay special consideration to range changes. At GSI beam tracking system has been implemented.
-The solution for fast longitudinal range changes was carried out by two polymethyl methacrylate (PMMA) wedges close to the target, that are operated via linear stepmotor \cite{Saito2009}, as shown in Fig.~\ref{tracking}. The stepmotor can
-change the relative distance between the wedges and therefore introduces more or less material the beam travels through and consequently changes the effective beam energy (range). The beam position is corrected acording to the motion monitoring
-signal and pre-calculated look-up tables for the required compenstation parameters. The beam tracking system at GSI is able to achieve high precision \cite{Bert2007, Bert2009, Saito2009}.
-Clinical implementation, however, is not yet feasible due to several reasons, such as the precision and speed of the motion monitoring, the ion-beam tracking system complexity and inverse interplay.
+The solution for fast longitudinal range changes was carried out by two polymethyl methacrylate (PMMA) wedges close to the target, that are operated via a linear step-motor \cite{Saito2009}, as shown in Fig.~\ref{tracking}. The step-motor can
+change the relative distance between the wedges and therefore introduces more or less material the beam travels through and consequently changes the effective beam energy (range). The beam position is corrected according to the motion monitoring
+signal and pre-calculated look-up tables for the required compensation parameters. The beam tracking system at GSI is able to achieve high precision \cite{Bert2007, Bert2009, Saito2009}.
+A clinical implementation, however, is not yet feasible due to several reasons, such as the precision and speed of the motion monitoring, the ion-beam tracking system complexity and inverse interplay.
 
 
 The three motion mitigation techniques mentioned are not exclusive and can be used in parallel. Furukawa et al. made a study on a combination between rescanning and gating \cite{Furukawa2007} and Water et al. presented a combination
@@ -506,8 +530,9 @@ between rescanning and tracking \cite{Water2009}.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.9\textwidth]{./Images/tracking.png}
-\caption{Schematic presentation of GSI's beam tracking system. Two PMMA wedges, mounted on linear stepmotor, can change the energy of the beam traveling through. The changes in lateral direction are achieved via dipole scanner magnets. For the longitudinal adaptation two 
-PMMA wedges are mounted on step motors, enabling to change the depth the particle beam has to traverse. Figure taken from \cite{Groezinger2004}}
+\caption{Schematic presentation of GSI's beam tracking system. Two PMMA wedges, mounted on a linear step-motor, can change the energy of the beam traveling through. The changes in the 
+lateral direction are achieved via dipole scanner magnets. For the longitudinal adaptation two 
+PMMA wedges are mounted on a step motors. The thickness of the two PMMA wedges that particle beam travels through is regulated and hence changing its range. Figure taken from \cite{Groezinger2004}.}
 \label{tracking}
 \end{center}
 \end{figure}
@@ -515,8 +540,8 @@ PMMA wedges are mounted on step motors, enabling to change the depth the particl
 \subsection{Treatment planning}
 \label{treatmentPlanning}
 
-The task of treatment planning is to determine machine parameters in order to deliver prescribed dose to the target, while not violating maximum allowed dose to critical organs, also known as organs at risk (OARs) \cite{Richter2012}.
-Treatment planning thus revolves around dose optimization process and it is highly dependent on delivery type used for treatment. The optimization problem for tumors can be written as:
+The task of treatment planning is to determine machine parameters in order to deliver prescribed dose to the target, while not violating the maximum allowed dose to critical organs, also known as organs at risk (OARs) \cite{Richter2012}.
+Treatment planning thus revolves around the dose optimization process and it is highly dependent on the delivery type used for treatment. The optimization problem for tumors can be written as:
 
 \begin{equation}
   \min_{x} \sum_{i} \left( f(x,A_i) - D_{pre} \right)^2 
@@ -524,12 +549,13 @@ Treatment planning thus revolves around dose optimization process and it is high
 
 Here $i$ is a CT voxel, function $f$ is a dose deposition model, $x$ intensity of the radiation beams, $A$ patient geometry and beam parameters and $D_{pre}$ is the prescribed dose.
 
-The basis of treatment planning is a computed tomography (CT), where target volume and OARs are delineated
-done by physician. Additional imaging, such as magnetic resonance (MRI) or positron emission tomography (PET), is often used as a supplement to CT for enhanced contrast of it. In the following sections, the target definition will be explained and the basics of scanned ion beam treatment planning. Afterwards an explanation on dose calculation for moving targets will be given.
+The basis of treatment planning is a computed tomography (CT) image, where the target volume and OARs are delineated by a physician. 
+Additional imaging, such as magnetic resonance (MRI) or positron emission tomography (PET), is often used as a supplement to CT for enhanced contrast of the anatomical structures. 
+
 
 \subsubsection{Target definition}
 The definition of the target volume is crucial, since it has to cover the whole tumor, prevent further tumor spreading, while at the same time it should not be too big to spare normal tissue. 
-The International Commission on Radiation Units (ICRU) recommends the following definitions for volumes used in treatment planning, which will also be used in this work, see Fig.~\ref{targets} \cite{ICRU50, ICRU62}.
+The International Commission on Radiation Units (ICRU) recommends the following definitions for volumes used in treatment planning, which will be used in this work, see Fig.~\ref{targets} \cite{ICRU50, ICRU62}.
 \begin{description}
 \item[Gross Tumor volume:] \emph{The GTV is the gross
     palpable or visible/demonstrable extent and location of malignant
@@ -566,35 +592,35 @@ Further recommendations of the ICRU state that 100\% of the PTV volume should re
 
 \subsubsection{Treatment planning for scanned ion beams}
 
-A treatment planning system (TPS) for active shaping ion beams has to model the active beam delivery system and the beam interactions with the tissue. Furthermore, for ions heavier than protons
-the biological effectiveness and fragmentation must also be considered, which add additional complexity to the TPS. A TPS for beam scanning was developed at GSI, called TRiP98. The basic concepts of TRiP98 will be
+A treatment planning system (TPS) for active ion beams shaping has to model the active beam delivery system and the beam interactions with the tissue. Furthermore, for ions heavier than protons
+the biological effectiveness and fragmentation must be considered, which add additional complexity to the TPS. A TPS for beam scanning was developed at GSI, called TRiP98. The basic concepts of TRiP98 will be
 presented here, further reading can be found elsewhere \cite{Kraemer2000,Kraemer2000a, Richter2013}.
 
-TRiP98 divides PTV into energy slices, which are further divided into raster points in a defined order that the beam will follow. In the optimization step, a gradient-decent algorithm iteratively optimizes particle number
-for each raster point, so that the optimal target dose is achieved. Dose can either be physical or biological, using LEM biological effectiveness (see Section~\ref{RBE}).
+TRiP98 divides the PTV into iso-energy slices, which are further divided into raster points in a defined order that the beam will follow. In the optimization step, a gradient-decent algorithm iteratively optimizes particle number
+for each raster point, so that the optimal target dose is achieved.The dose can either be physical or biological, using the LEM biological effectiveness (see Section~\ref{RBE}).
 Physical characteristic of the beam include lateral scattering as proposed by Moli\`ere \cite{Moliere1948} and nuclear fragmentation that yield secondary particles. The patient specific
 geometry and tissue inhomogeneities are accounted for using a transformation from CT HU to water-equivalent path length (WEPL) \cite{Geiss1999,Jaekel2001,Rietzel2007}.
 
 
 \subsubsection{GSI's 4D treatment planning system}
 
-As mentioned in section \ref{sec:motion} tumor motion can cause severe dosimetric errors. To asses dose deficiencies and to overcome them, TRiP98 was expanded to be able to calculate time-resolved (4D) treatment plans. The new software was named TRiP4D and a detailed description is given by Richter et al \cite{Richter2013}.
+As mentioned in section \ref{sec:motion} tumor motion can cause severe dosimetric errors. To asses dose deficiencies and to overcome them, TRiP98 was expanded to be able to calculate time-resolved (4D) treatment plans. The new software was named TRiP4D and a detailed description is given by Richter et al. \cite{Richter2013}.
 
 A static CT is not sufficient for 4D treatment planning. Time-resolved CT scans (4D-CT) therefore have to be used. 4D-CT consist of several quasi-stationary sections, called motion phases. Data is
-recorded in each slice throughout the whole motion and is then sorted to appropriate motion phases, according to motion signal \cite{Rietzel2005}.
+recorded in each slice throughout the whole motion and is then sorted to the appropriate motion phases, according to motion signal \cite{Rietzel2005}.
 
 Besides a 4D-CT, a vital part of 4D treatment planning is \textbf{image registration}. It provides quantification of motion with deformation maps between different 4D-CT motion states. Image registration principles are described in Section~\ref{sec:registration}. The image registration is not included in TRiP4D, so an external software must provide the necessary
 deformation maps.
 
-The calculation of 4D dose starts with the division of the treatment plan into sub-plans, according to the motion phase it will irradiate. The number of sub-plans is the same as number of motion phases (or number of motion phases
-in gating window, if gating is used). Afterwards the number of particles is calculated in each voxel of all of the motion phases used. Finally, the particle number in each voxel is transformed with the deformation maps
-obtained from registration, to the reference phase, where the accumulated dose from summed particle numbers is calculated (see Fig.~\ref{TRiP4Ddose}). If biological dose is calculated, then instead beside particle numbers, energy spectra is also accumulated, 
+The calculation of a 4D dose starts with the division of the treatment plan into sub-plans, according to the motion phase it will irradiate. The number of sub-plans is the same as the number of motion phases (or the number of motion phases
+in a gating window, if gating is used). Afterwards the number of particles is calculated in each voxel of all of the motion phases used. Finally, the particle number in each voxel is transformed with the deformation map
+obtained from registration, to the reference phase, where the accumulated dose from summed particle numbers is calculated (see Fig.~\ref{TRiP4Ddose}). If a biological dose is calculated, then besides particle numbers, the energy spectra is also accumulated, 
 so that the RBE can be calculated according to LEM for the total dose to each CT voxel.
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.35]{./Images/4DtreatmentPlanning.png}
-\caption{Experimental validation of TRiP4D dose calculation on film response. On images a)-e) the individual dose deposition for the five motion states is showed.
+\caption{Experimental validation of a TRiP4D dose calculation on film response. On images a)-e) the individual dose deposition for the five motion states is showed.
 Image f) shows accumulated 4D dose and image g) a homogeneous dose on a stationary film. Figure taken from \cite{Richter2012}}
 \label{TRiP4Ddose}
 \end{center}
@@ -604,8 +630,8 @@ Image f) shows accumulated 4D dose and image g) a homogeneous dose on a stationa
 \label{sec:registration}
 
 
-Temporal changes in patient anatomy are assessed with image registration. Registration can be made between different imaging modalities (CT, MRI, PET), between scans from different days or between
-different phases in 4D-CT. It requires two images: a fixed and a moving one. The result of the registration is a deformation map originating from the moving and pointing to the fixed image. Registration can be written as:
+Temporal changes in the patient anatomy are assessed with image registration. The registration can be made between different imaging modalities (CT, MRI, PET), between scans from different days or between
+different phases in a 4D scan (4D-CT, 4D-MRI, 4D ultra sound). It requires two images: a fixed and a moving one. The result of the registration is a deformation map originating from the moving and pointing to the fixed image. Registration can be written as:
 
 
 \begin{equation}
@@ -613,24 +639,24 @@ different phases in 4D-CT. It requires two images: a fixed and a moving one. The
 x' = x + u_{ri}(x)
 \end{equation} 
 
-Here, $x$ and $x'$ are points in states $r$ and $i$, respectively and $u_{ri}$ is a vector field representation of the transformation map. $u_{ri}$ can be used to assess motion amplitude, propagate contours and calculate 4D dose.
-It is important to note that certain steps in 4D treatment planning require also inverse registration, from state $i$ to $r$ \cite{Richter2012}. If deformation map is applied to the moving image, 
+Here, $x$ and $x'$ are points in states $r$ and $i$, respectively and $u_{ri}$ is a vector field representation of the transformation map. $u_{ri}$ can be used to assess the motion amplitude, propagate contours and calculate the 4D dose.
+It is important to note that certain steps in 4D treatment planning require also inverse registration, from state $i$ to $r$ \cite{Richter2012}. If a deformation map is applied to the moving image, 
 the new image is called warped image and it should be as close to the fixed image as possible. Fixed, moving and warped image are shown in Fig.~\ref{RegistrationCompare}. 
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.9\textwidth]{./Images/RegistrationCompare.png}
-\caption{Overlap of fixed and moving image CT scan (a) and fixed and warped image after registration (b). Inverse colors are used in both CTs so that the overlayed image should be gray
+\caption{Overlap of a fixed and a moving image CT scan (a) and fixed and warped image after registration (b). Inverse colors are used in both CTs so that the overlayed image should be gray
 where the images overlap perfectly.}
 \label{RegistrationCompare}
 \end{center}
 \end{figure}
 
-There are different possible types of registration and can be placed in two groups. First group consist of linear registrations: translation, rotation and scaling. In medical imaging the most commonly used linear transformation 
+There are different possible types of registration and they can be placed in two groups. The first group consist of linear registrations: translation, rotation and scaling. In medical imaging the most commonly used linear transformation 
 is translation or rigid registration. The other group of registrations are elastic or deformable registrations. The actual algorithms for performing registration are complex and the reader can
-find detailed review elsewhere \cite{Hill2001,Brock2006,Rietzel2006a}. A multi-institutional study has shown that the accuracy for the majority of the algorithms is in the order of image voxel
+find a detailed review elsewhere \cite{Hill2001,Brock2006,Rietzel2006a}. A multi-institutional study has shown that the accuracy for the majority of the algorithms is in the order of the image voxel
 size, i.e. millimeters \cite{Brock2010}. The study further states that the registration quality depends on image contrast. The quality of image registration is actually hard to quantitatively
-asses and usually the registration results are checked visually. To improve image registration quality assurance a dedicated software was developed and is described in detail in chapter \textbf{REF}.
+asses and usually the registration results are checked visually. To improve image registration quality assurance a dedicated software was developed and is described in detail in chapter \ref{chapter:vmm}.
 
 \newpage
 
@@ -647,7 +673,7 @@ are surgery and radiotherapy. An example of cancerous lung tissue is shown in Fi
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{./Images/LungCancer.png}
-\caption{Cross section of a human lung. The white area in the upper lobe is cancer, the black areas indicate the patient was a smoker. Figure taken from \cite{LungCancer}}
+\caption{Cross section of a human lung. The white area in the upper lobe is cancerous tissue, while the black areas indicate the patient was a smoker. Figure taken from \cite{LungCancer}}
 \label{Fig:Cancer}
 \end{center}
 \end{figure}
@@ -665,7 +691,7 @@ The other 15\% of lung cancer cases is attributed to a combination of genetic fa
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=0.7\textwidth]{./Images/Smoking.png}
-		\caption{Correlation between sales of tobacco products and the rate of the lung cancer in the USA between 1900 - 1970. Data released from National Cancer Institute.}
+		\caption{Correlation between sales of tobacco products and the rate of lung cancer in the USA between 1900 - 1970. Data released from National Cancer Institute.}
 		\label{Fig:Smoking}
 	\end{center}
 \end{figure}
@@ -676,7 +702,7 @@ The other 15\% of lung cancer cases is attributed to a combination of genetic fa
 The NSCLC is divided into three main groups: adenocarcinoma, squamous-cell carcinoma and large-cell (undifferentiated) carcinoma \cite{Kasper2015}.
 Between 25-35\% of all lung cancer cases are adenocarcinoma, squamous-cell carcinoma contributes to around 30\% of lung cases and 10-15\% are large-cell carcinoma. The SCLC contributes the rest. 
 
-Lung cancer staging is used to refers to the extent to which the lung cancer has to spread from it's original source. Additionally, staging is used to establish treatment and prognosis \cite{Chheang2013}. For NSCLC, the TNM classification is used, which depends on
+Lung cancer staging refers to the extent to which the lung cancer has spread from its original source. Additionally, staging is used to establish treatment and prognosis \cite{Chheang2013}. For NSCLC, the TNM classification is used, which depends on
 size of the primary tumor (T), involvement of the lymph node (N) and distant metastasis (M) \cite{Kasper2015}. According to the TNM class a group is assigned, from stage 0, IA, IB, IIA, IIB, IIIA, IIIB to IV. 
 A schematic presentation of some stages is shown on Fig.~\ref{Fig:Stages}. Prognosis is highly dependent on stage, as shown in Table~\ref{tab:prognosis}.
 
@@ -720,7 +746,7 @@ For unresectable stage III lung cancer the treatment consist of either chemother
 For all treated stage IIIB disease the median survival is 7-15 months \cite{Srisam2005}.
 
 Rather than treating stage IV disease, palliation of symptoms is the goal. With chemotherapy, targeted drugs and radiation therapy the tumor burden can be lessened and the quality of life can be improved. The prognosis is poor, with
-median survival only 9 months and less then 25\% survive the first year after the disease is diagnosed \cite{Tsao2008}. Recent phase II trial combined chemotherapy with stereotactic body radiation therapy and 
+a median survival of only 9 months and less then 25\% of the patients survive the first year after the disease is diagnosed \cite{Tsao2008}. A recent phase II trial combined chemotherapy with stereotactic body radiation therapy and 
 showed promising results with 20 months overall survival \cite{Iyengar2014}.
 
 
