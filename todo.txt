@@ -19,9 +19,8 @@ VMM:
 
 Fig 2.3 legend 0
 
-Artifact in image lung + font premejhn
+Appendix za python class
 Figure 2.9 b je dol
-Povej, kaj pomen linear fit v absdiff in kaj so outliersi
 range of dates
 
 Complex:
@@ -40,7 +39,9 @@ Margins tabela
 
 Bam conclusion
 
+Discusion:
 
+Early stage?
 
 Appendix:
 
