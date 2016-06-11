@@ -64,7 +64,7 @@ However, automation is needed for a large number of registrations. For a complet
 Typical 4D-CTs consist of 10 phases, therefore automated registration of a 4D-CT is necessary.
 
 The automated DIR was achieved with a Python class to handle image locations, store DIR parameters, perform DIR in the Plastimatch module, use correct naming conventions and store all output files (vector fields and warped images). 
-The Python class is shown in Appendix~\ref{RegHierarchy}.
+Details can be found in Appendix~\ref{AppendixA}.
 
 
 
@@ -181,17 +181,18 @@ be at the same position as in the reference image. The module measures the Eucli
 
 The user has to manually select landmarks in reference and moving or also in the warped image. For landmarks based on the patient anatomy, a selection from physician is required. 
 Landmarks from the moving image can then be automatically transformed to the warped image using the registration vector field. An example is shown in Fig.~\ref{landmark}.
+\newpage
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.9\textwidth]{./Vmm/Images/landmark.png}
+\includegraphics[width=0.7\textwidth]{./Vmm/Images/landmark.png}
 \caption{A display of landmarks in three phases - reference, moving and warped phase. The distance before registration (between reference and moving landmark) is 22 mm and after registration
 (between reference and warped landmark) is 2 mm.}
 \label{landmark}
 \end{center}
 \end{figure}
 
-\newpage
+
 \subsubsection{Jacobian determinant}
 \label{Jacobian}
 
@@ -214,7 +215,7 @@ Expansions and contractions around a point are indicated by Jacobian values grea
 
 The DIRQA module calculates and displays the Jacobian of the vector field, as shown in Fig.~\ref{JacobianImage}.
 Statistical values of the Jacobian are also calculated. Similar to the absolute difference, the Jacobian can be calculated inside a ROI rather than on the whole image.
-
+\newpage
 \begin{figure}[H]
 	\begin{center}		
 		\includegraphics[width=0.8\textwidth]{./Vmm/Images/jacobian.png}
@@ -303,7 +304,7 @@ The second set of data were pig cardiac 4D-CTs. They were also used in treatment
 
 The DIRs were calculated as explained in Section~\ref{RegistrationImplement}. Afterwards absolute difference, Jacobian and ICE were calculated on resulting DIR as part of the the DIRQA. 
 
-\subsection{Registration of lung 4D-CT patient data}
+\subsection{Lung 4D-CT patient data}
 \label{lungDIR}
 
 The effects of interplay between tumor motion and active beam scanning can drastically change the dose distribution for PT. It is therefore necessary to estimate tumor motion and employ designated motion mitigation techniques.
@@ -339,12 +340,6 @@ The B-Spline Plastimatch module in Slicer was used for DIR (see Section~\ref{Reg
   \label{tab:stages}
 \end{table}
 
-\begin{figure}[H]
-	\begin{center}		
-		\includegAn inverse color overlay of two states before (a) and after (b) DIR. Vector field is displayed on image (a) as arrows.}
-		\label{exampleReg_lung}
-	\end{center}
-\end{figure}
 
 A box-shaped ROI around the patient body was created with a Slicer build-in function. The ROI was employed in calculation of absolute difference, Jacobian and ICE.
 
@@ -358,6 +353,16 @@ For each patient it took around 20 min for all 18 DIRs and around 30 min for com
 
 DIR was used in treatment planning, specifically in contour propagation and 4D dose calculation. The areas with poor DIR were investigated and distance between DIR errors 
 and target contour was measured. If the target and the beam path was more than 5 cm away from DIR errors, DIR was not repeated.
+
+\newpage
+
+\begin{figure}[H]
+	\begin{center}		
+		\includegraphics[width=0.6\textwidth]{./Vmm/Images/exampleReg.png}
+		\caption{Inverse color overlay of two states before (a) and after (b) DIR. Vector field is displayed on image (a) as arrows.}
+		\label{exampleReg_lung}
+	\end{center}
+\end{figure}
 
 
 \subsubsection{Results}
@@ -502,7 +507,7 @@ Therefore all DIRs were considered as successful.
 
 
 \newpage
-\subsection{Registration of pig heart 4D-CT data}
+\subsection{Pig heart 4D-CT data}
 
 Atrial fibrillation is the most common type of cardiac arrhythmia, causing a quivering motion of the atrial small heart chamber. 
 Although atrial fibrillation directly is not a life threatening condition, it worsens the patient's quality of life and increases the risk of a stroke \cite{Benjamin1998}. 

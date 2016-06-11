@@ -19,4 +19,9 @@ PatientStudy/PatientStudy.tex.backup
 *.*~
 ref.bib.backup
 todo.txt.backup
+*.mtc*
+*.aux
+*backup*
+*.bbl
+*.maf
 

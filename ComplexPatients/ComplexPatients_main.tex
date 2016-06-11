@@ -206,7 +206,7 @@ or for raster setup (4Dopt). Due to large memory demands, targets in each lung w
   
 The planning objective was 99\% of each target volume should receive at least 100\% of the planned dose (D$_{99}$\% $\geq$ 100\%). Two dose limitation were used for OARs, as defined in 
 the AAPM task group \cite{Benedict2010}. The first limitation was a maximum dose to single voxel $D_{Max}$ and the second a maximum dose deposited to a 
-specific OAR volume $D_{Threshold}$. All limits are summarized in Table~appendix.
+specific OAR volume $D_{Threshold}$. All limits are summarized in Table~\ref{tab:oarlimits}.
  
 After the optimization the 4D-dose was calculated for two motion periods (3.6 sec and 5.0 sec) and two starting phases (0$^\circ$ and 90$^\circ$) as explained in Section~\ref{PTTP}. 
 The relative biological effectiveness (RBE) was calculated with LEM IV \cite{Elsaesser2010}. 
@@ -237,7 +237,7 @@ to estimate if PT could respect OAR constraints for these targets, while deliver
 \subsection{Data evaluation}
 
 For target coverage comparison, the minimum dose in 99\% of the target volume ($D_{99\%}$) was evaluated. $D_{Max}$ and $D_{Threshold}$ were used in OAR dose comparison. $D_{Max}$ and $D_{Threshold}$ were normalized to the respective limits
-in the fractionation scheme used, see Table~appendix. Additionally, the volume receiving 20\% of the planned dose ($V_{20\%}$) was used to assess ipsilateral lung dose.
+in the fractionation scheme used, see Table~\ref{tab:oarlimits}. Additionally, the volume receiving 20\% of the planned dose ($V_{20\%}$) was used to assess ipsilateral lung dose.
 
 Paired t-tests were performed to compare the dose metrics mentioned between SBRT, ITV and 4Dopt. A p-value < 0.05 was considered significant. 
 
@@ -316,7 +316,7 @@ Average CTV $D_{99\%}$ was 97, 95 and 98\% for ITV, 4Dopt and SBRT, respectivell
 	\end{tabular}
 	\label{tab:resultsComplex}
 \end{table}
-
+\newpage
 \subsection{Dose in OARs}
 
 $D_{Max}$ and $D_{Threshold}$ for 8 OARs are shown in Table~\ref{tab:OARComplex}. Dose volume histograms (DVH) for patients 4, 6 and 7 are shown in Fig.~\ref{Fig:dvh}.
@@ -328,7 +328,7 @@ was significant, 17 (4 - 52)\% and 27 (8 - 55)\% of OAR limits for $D_{Max}$ $D_
 The ipsilateral lung $V_{20\%}$ was 14.5(0.0 - 48.7), 14.4(0.0 - 43.7) and 29.8 (5.8 - 89.2)\% for ITV, 4Dopt and SBRT, respectively. Both, ITV and 4DITV ipsilateral lung $V_{20\%}$ was
 significantely different from SBRT.
 
-The margins used for OAR subtraction for PT and SBRT can be found in Tableappendix.
+The margins used for OAR subtraction for PT and SBRT can be found in Table~\ref{tab:oarmargins}.
 
 All treatment plans exceeded the $D_{Max}$ limit for smaller airways in patients 4, 6 and 8 and for heart in patient 6. 
 Additionally, SBRT esophagus and Heart $D_{Max}$ limits were exceeded in patients 4 and 8, respectively.

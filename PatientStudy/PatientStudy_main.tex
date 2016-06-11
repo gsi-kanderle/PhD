@@ -32,7 +32,8 @@ SBRT plans actually delivered was conducted. Target coverage and a wide range of
 The study included 19 patients with in total 26 lesions that were actually treated with SBRT at the Champalimaud Centre for the Unknown, Lisbon (Portugal). The lesion size was 2.9 cm$^3$ (median, 25-75\% 1.4 - 9.7) and peak-to-peak motion was 3.1 mm (1.6 - 5.6). Three patients had two targets, one had five and the rest one. 13 lesions were right-sided, 12 were left-sided and one was located in right cardiophrenic space. An overview of tumor characteristics can be found in Table~\ref{tab:patdata}.
 Two CTs were available for all patients. A planning CT was used for OAR delineation and SBRT planning. Target motion was estimated on a 4D-CT, consisting of 10 phases (0\% - 90\%). Clinical target volumes (CTV) were delineated using a registered positron emission tomography (PET) scan.
 
-The planning objectives were that 99\% of planning target volume (PTV) must receive at least 24 Gy ($D_{99\%}$ $\geq$ 24 Gy) in a single fraction, while all OAR constraints as defined in the AAPM task group 101 report on stereotactic radiotherapy had to be respected \cite{Benedict2010}.
+The planning objectives were that 99\% of planning target volume (PTV) must receive at least 24 Gy ($D_{99\%}$ $\geq$ 24 Gy) in a single fraction, 
+while all OAR constraints as defined in the AAPM task group 101 report on stereotactic radiotherapy had to be respected \cite{Benedict2010}. Details on OAR constraints can be found in Table~\ref{tab:oarlimits}.
 
 \newpage
 \begin{table}[H]
@@ -78,7 +79,7 @@ The planning objectives were that 99\% of planning target volume (PTV) must rece
   \end{tabular}
   \label{tab:patdata}
 \end{table}
-
+\newpage
 \subsection{Planning target volume definition}
 
 To account for range changes relevant for particles only, different PTV definitions were used for SBRT and PT, as shown in Fig.~\ref{Fig:PTV_def}. Within this chapter they will be named PTV$_{SBRT}$ and PTV$_{PT}$ for SBRT and PT, respectively.
@@ -90,7 +91,7 @@ If the target overlapped with an OAR (e.g. small airways) then OAR plus a margin
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.8\textwidth]{./PatientStudy/Images/Figure1.png}
+\includegraphics[width=0.5\textwidth]{./PatientStudy/Images/Figure1.png}
 \caption{Different PTV definitions for SDRT (PTV$_{SBRT}$) and CiT (PTV$_{PT}$). For PTV$_{SBRT}$ isotropic margins of 3 mm plus maximum tumor displacement due to 
 breathing were used on the CTV; For PTV$_{PT}$ margins of 3 mm laterally and 1 mm in beam’s eye view were used and then range-ITV was constructed with
 2 mm + 2\% range margins added for PTV$_{PT}$ in end-inhale phase.}
@@ -150,7 +151,7 @@ Examples of two SBRT and 4D-Dose$_{rescan}$ PT treatment plans are shown in Fig.
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.9\textwidth]{./PatientStudy/Images/Figure2.png}
+\includegraphics[width=0.7\textwidth]{./PatientStudy/Images/Figure2.png}
 \caption{Treatment plans for SBRT (left), PT (middle) and dose volume histogram (right) for SBRT (solid lines) and PT (dashed lines) for two patients. PT curves for OARs without any dose are not shown. Patient 9 (top row) might be better suited for PT and patient 2 (lower row) for SBRT. Patient 2 has a small lesion (1.6 cm$^{3}$) in a central lung region, resulting in large PTV$_{PT}$ - up to 32 cm$^{3}$, compared to PTV$_{SBRT}$ 7.7 cm$^{3}$. The CTV contour is outlined in white.}
 \label{Fig:TreatmentPlans}
 \end{center}

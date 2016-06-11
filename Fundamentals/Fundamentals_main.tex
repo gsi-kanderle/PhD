@@ -364,6 +364,13 @@ in order to obtain a broad, flat profile. In the next step, the beam is spread o
 Passive beam shaping offers a more robust and faster treatment delivery in contrast to active beam shaping. However, it lacks tumor conformity, the dose cannot be modulated and each patient needs individually tailored devices for each beam used in the treatment.
  Furthermore, the beam travels through some material, exposing the patient to additional dose due to fragmentation.
 
+\subsubsection{Active beam shaping}
+\label{Sec::Active}
+
+In contrast to passive beam shaping, active beam shaping works by dividing the tumor into small points, which are then irradiated using a thin pencil beam. The tumor is first segmented into iso-energy slices (IES) and each of IES
+is covered with a 2 dimensional grid (raster points). A thin pencil beam is deflected from raster to raster point, irradiating each one with designated dose. The technique allows irradiation of arbitrary shape, without introducing any additional patient specific 
+hardware. The lack of additional material in front of the patient also means less dose due to lesser neutron flux. Furthermore, the dose modulation in each point allows a highly conformal dose distribution with less dose deposited to the healthy tissue.
+
  \newpage
  
 \begin{figure}[H]
@@ -376,13 +383,6 @@ The proximal edge of the tumor cannot be shaped, as shown with the hatched area.
 \end{center}
 \end{figure}
 
-\subsubsection{Active beam shaping}
-\label{Sec::Active}
-
-In contrast to passive beam shaping, active beam shaping works by dividing the tumor into small points, which are then irradiated using a thin pencil beam. The tumor is first segmented into iso-energy slices (IES) and each of IES
-is covered with a 2 dimensional grid (raster points). A thin pencil beam is deflected from raster to raster point, irradiating each one with designated dose. The technique allows irradiation of arbitrary shape, without introducing any additional patient specific 
-hardware. The lack of additional material in front of the patient also means less dose due to lesser neutron flux. Furthermore, the dose modulation in each point allows a highly conformal dose distribution with less dose deposited to the healthy tissue.
-
 There are differences in specifics of active beam shaping. The GSI system of the three-dimensional scanning system will be given here \cite{Haberer1993,Kraft2000,Schardt2010} and a schematic presentation is shown in Fig.~\ref{scanning} and Fig.~\ref{active}.
 A synchrotron provides a thin pencil beam of $^{12}$C ions with a variable energy in the range of 30 - 400 MeV/u. The energy defines the position of the Bragg peak in depth. Fig. \ref{active}b shows how the Bragg peaks are stacked in depth to cover the longitudinal extension of the tumor.
 The thin pencil beam is guided by two magnetic deflection units to irradiate each raster point. The specific dose in each raster point is calculated in the treatment planing.
@@ -393,15 +393,7 @@ Fig.~\ref{active}a displays how the dose homogeneity in the target is achieved. 
 The spacing between individual IES is usually 3 mm, providing enough overlap between individual Bragg peaks. However, the number of IES should be kept low, since the changing of the beam energy takes most of the time and hence prolongs the treatment. Instead of using high number of
  IES, Bragg peaks are broadened in longitudinal direction by a using ripple filter (RiFi) - a device similar to ridge filters used in passive beam shaping. 
 
-\subsection{Motion in radiotherapy}
-\label{sec:motion}
 
-The patient motion can have a profound effect on the radiotherapy. It can cause large deviations from the planned dose, resulting in under- or over-dosage in target and excess dose in OAR. The motion type, its extent and origin is therefore a vast topic of research. 
-A brief introduction will be given here, for an in-depth explanation the reader is pointed to the review by Langen and Jones \cite{Langen2001}.
-
-\newpage
-
-\vspace*{0.6cm}
 
 \begin{figure}[H]
 \begin{center}
@@ -426,7 +418,11 @@ Figure taken from \cite{Richter2012}.}
 
 \newpage
 
+\subsection{Motion in radiotherapy}
+\label{sec:motion}
 
+The patient motion can have a profound effect on the radiotherapy. It can cause large deviations from the planned dose, resulting in under- or over-dosage in target and excess dose in OAR. The motion type, its extent and origin is therefore a vast topic of research. 
+A brief introduction will be given here, for an in-depth explanation the reader is pointed to the review by Langen and Jones \cite{Langen2001}.
 
 
 \subsubsection{Motion types}
@@ -593,6 +589,7 @@ in a gating window, if gating is used). Afterwards the number of particles is ca
 obtained from registration, to the reference phase, where the accumulated dose from summed particle numbers is calculated (see Fig.~\ref{TRiP4Ddose}). If a biological dose is calculated, then besides particle numbers, the energy spectra is also accumulated, 
 so that the RBE can be calculated according to LEM for the total dose to each CT voxel.
 
+\newpage
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.35]{./Fundamentals/Images/4DtreatmentPlanning.png}
@@ -619,6 +616,7 @@ Here, $x$ and $x'$ are points in states $r$ and $i$, respectively and $u_{ri}$ i
 It is important to note that certain steps in 4D treatment planning require also inverse registration, from state $i$ to $r$ \cite{Richter2012}. If a deformation map is applied to the moving image, 
 the new image is called warped image and it should be as close to the fixed image as possible. Fixed, moving and warped image are shown in Fig.~\ref{RegistrationCompare}. 
 
+\newpage
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.9\textwidth]{./Fundamentals/Images/RegistrationCompare.png}

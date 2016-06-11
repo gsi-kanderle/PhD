@@ -1,35 +1,9 @@
-\documentclass[type=dr, dr=rernat, accentcolor=tud7b,colorbacktitle, bigchapter, openright, twoside, 12pt ]{tudthesis}
-%\documentclass[11pt,twoside,a4paper]{article}
-\usepackage[english]{babel} 
-\usepackage[utf8]{inputenc}
-\usepackage{graphicx}
-\usepackage{pstricks}
-\usepackage{psfrag}
-\usepackage{enumerate}
-\usepackage{float}
-\usepackage{epsfig}
-\usepackage{geometry}
-\usepackage{subfigure}
-\usepackage{rotating}
-\usepackage{minitoc}
-\usepackage{multirow}
-\usepackage{listings}
-%\usepackage{appendix}
-
-%%%% 1 1/2 facher Zeilenabstand:	
-\usepackage{setspace}
-\onehalfspacing
-
-
-
-
-\begin{document}
 \chapter{Appendix of Chapter 2}
 \label{AppendixA}
 \minitoc
 
 \section{Patient hierarchy}
-\label{PatHierarchy}
+\label{RegHierarchy}
 
 Patient hierarchy follows a subject hierarchy principle in Slicer. It was designed for a clear overview of the registration process, DIRQA and all resulting files. Another reason is to track DIR
 and DIRQA in case if they are interrupted by Slicer crash. DIR and DIRQA files can be quite large and can cause Slicer to run out of memory. With patient hierarchy Slicer is able to continue work
@@ -54,7 +28,7 @@ There are several levels in patient hierarchy. Each level also has different att
 The patient hierarchy can be constructed in two ways. The first option is to manually create the whole patient hierarchy, from top to bottom level, with necessary attributes. Second option is to use an automatic script to look 
 for files on hard drive and create corresponding levels. The second option is possible only by using proper naming conventions for file names and locations.
 
-\begin{table}[H]
+% \begin{table}[H]
 %   \centering
 % %   \footnotesize
 %   \caption{Data for vector magnitudes. Values are presented as mean (range).}
@@ -67,15 +41,3 @@ for files on hard drive and create corresponding levels. The second option is po
 %   \label{tab:vectordata_pig}
 % \end{table}
 
-
-
-
-
-
-
-
-\bibliographystyle{apalike}
-\bibliography{../ref.bib}{}
-% \bibliographystyle{plain}
-
-\end{document}
