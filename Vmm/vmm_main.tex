@@ -6,29 +6,29 @@
 
 %As explained in Section \textbf{ref!}, effects of motion can have a significant impact on a radiation treatment. There are several motion mitigation techniques available that can operate on beam delivery, patient immobilization or treatment planning level.
 
-Most modern clinics today regularly use different imaging techniques including CT, 4D-CT, cone-beam CT, MRI and PET. Registration is needed to overlay different image acquisitions, such as images taken at different days,
-between imaging modalities or to quantify anatomical changes in a time-resolved image acquisition, such as 4D-CT, 4D-MRI or 4D ultra sound. While most commercial treatment planning software provide rigid registration between different images, deformable image registration (DIR) is currently rarely used. 
+Today most modern clinics regularly use different imaging techniques including CT, 4D-CT, cone-beam CT, MRI and PET. A registration is needed to overlay different image acquisitions, such as images taken at different days,
+between different imaging modalities or to quantify anatomical changes in a time-resolved image acquisition, such as 4D-CT, 4D-MRI or 4D ultra sound. While most commercial treatment planning software provide rigid registration between different images, deformable image registration (DIR) is currently rarely used. 
 DIR can quantify anatomical and biological variations better compared to rigid registration \cite{Sarrut2006}. It opens exciting new options in radiotherapy, such as 4D optimization \cite{Trofimov2005}, 
 4D dose calculation \cite{Flampouri2006} or contour propagation \cite{Lu2006b}. 4D dose calculation has been well established for photons \cite{Ong2016}, protons \cite{Paganetti2005} and carbon-ions \cite{Gemmel2011} and has received
 several experimental verifications \cite{Vinogradskiy2009, Perrin2016, Bert2012a}. 
 
-4D dose calculation requires DIR for deformation of dose distributions in each motion state
+A 4D dose calculation requires DIR for the deformation of the dose distributions in each motion state
 to the reference state, where the dose from all motion states is accumulated. 4D dose calculation requires accurate DIR at every voxel, since errors in DIR can significantly alter the 4D dose \cite{Heath2006}. Special consideration has to be paid to calculation of biological 4D doses \cite{Gemmel2011}. 
 
 Contours can be propagated in two ways - either with DIR \cite{Lu2006a, Rietzel2005a} or
-with deformable model driven techniques \cite{McInerney1996}, which uses a physical model to iteratively match the contour to image features. In contrast to 4D dose calculation, contour propagation requires accurate DIR at contour boundaries.
+with deformable model driven techniques \cite{McInerney1996}, which uses a physical model to iteratively match the contour to image features. In contrast to a 4D dose calculation, contour propagation requires accurate DIR at the contour boundaries.
 
 Besides radiotherapy, DIR is used also in other medical fields \cite{Cleary2010, Herrell2012, Nithiananthan2011, Naini2010}.
 Several different DIR algorithms are available, such as B-spline \cite{Rueckert1999}, Demons \cite{Thirion1998}, linear elastic finite element \cite{Venugopal2005}, optical flow \cite{Zhong2007} or viscous fluid \cite{Christensen1996}.
 	
 The DIR has a large degrees of freedom and as such is an ill-posed problem and hence prone to errors. The errors can result in image misalignments or in physically impossible vector fields. 
-One of the reasons why DIR is not commonly used in commercial software is the lack of proper DIR quality assurance (DIRQA), which is essential for implementation of DIR in clinical work-flow. While several different DIRQA methods exist, none of them are definitive and most of them are time consuming. 
+One of the reasons why DIR is not commonly used in commercial softwares is the lack of proper DIR quality assurance (DIRQA), which is essential for implementation of DIR in the clinical work-flow. While several different DIRQA methods exist, none of them are definitive and most of them are time consuming. 
 It is possible to evaluate DIR with deformable phantoms, where the type and size of deformation is known \cite{Kashani2007, Kirby2011}. However this effort is prohibitive 
-in everyday clinical work flow. DIR validation can also be based on landmark positions, specifically their location before and after registration. In absence of externally planted markers, locating landmarks in patient 
-anatomy can be time-consuming and it can be difficult to identify landmarks in low-contrast regions \cite{Varadhan2013}. Another option is to compare delineated contours with the propagated ones with the dice similarity coefficient \cite{Varadhan2013} or Hausdorff distance \cite{Huttenlocher1993}. 
+in the everyday clinical work flow. DIR validation can also be based on landmark positions, specifically their location before and after registration. In absence of externally planted markers, locating landmarks in the patient 
+anatomy can be time-consuming and it can be difficult to identify landmarks in low-contrast regions \cite{Varadhan2013}. Another option is to compare delineated contours with the propagated ones using the dice similarity coefficient \cite{Varadhan2013} or Hausdorff distance \cite{Huttenlocher1993}. 
 While more efficient than landmark checks, these techniques require additional delineation and do not address the region within the contour.
 
-A set of tools were created to systematically handle DIR and DIRQA in the open-source software 3D Slicer. Tools were then tested on a large data set to verify their validity.
+A set of tools was created to systematically handle DIR and DIRQA in the open-source software 3D Slicer. Tools were tested on a large data set to verify their validity.
 
 \section{Implementation}
 \label{Implementation}
@@ -48,37 +48,39 @@ It comes with a vast variety of tools, such as:
 	\item Device tracking for image-guided procedures
 \end{itemize}
 
-The source code of Slicer is written in C++ and with a Python wrapper to provide rapid, iterative development. The graphical user interface is based on Qt. Visualization is based on VTK \cite{Vtk}, a graphical library commonly
+The source code of Slicer is written in C++ and with a Python wrapper to provide rapid, iterative development. The graphical user interface is based on Qt. The visualization is based on VTK \cite{Vtk}, a graphical library commonly
 used in scientific research.
 
 Slicer is a research tool and as such allows implementation of new functionalities in the form of extensions (modules). They can either be as external command-line programs, 
 as scripts to automate Slicer processes or as unique modules with new features. 
+
+\subsection{Registration}
+\label{RegistrationImplement}
+
+Plastimatch \cite{Shackleford2010} is a commonly used software for registration in medical research. It is a free and open-source tool, available as a command-line executable program. 
+Plastimatch B-spline registration is also available in Slicer as part of the extension SlicerRT \cite{Pinter2012}.
+The integration of Plastimatch in Slicer brings the advantage of a graphical user interface, offering a quick modification of parameters and visualization of the results. 
+However, automation is needed for a large number of registrations. For a complete 4D-CT registration there are $2(N-1)$ registrations required - from the reference phase to each of $N$ motion states of 4D-CT and vice versa, except for the reference phase itself. 
+Typical 4D-CTs consist of 10 phases, therefore automated registration of a 4D-CT is necessary.
+
+The automated DIR was achieved with a Python class to handle image locations, store DIR parameters, perform DIR in the Plastimatch module, use correct naming conventions and store all output files (vector fields and warped images). 
+The Python class is shown in Appendix~\ref{RegHierarchy}.
+
+
 
 \subsubsection{Registration nomenclature}
 
 To provide a clear and consistent description of methods used, an overview of the expressions is given here.
 
 \begin{itemize}
- \item \textbf{Reference image} - image that serves as a reference position in registration (image that is registered to).
- \item \textbf{Moving image} - image that is matched to the reference image (image that is registered from).
- \item \textbf{Warped image} - result of applying a transformation map from registration to the moving image. It should be as close to the reference image as possible.
- \item \textbf{True registration} - registration from moving to reference image. Similar, everything connected to true registration will use ``true'' (true vector field, true warped image, true absolute difference, true Jacobian, etc.).
- \item \textbf{Inverse registration} - registration from reference to moving image (opposite or inverse of true registration). As in true registration, the term inverse can be used for everything connected to it (inverse vector field, inverse warped image, inverse absolute difference, inverse Jacobian, etc.).
+ \item \textbf{Reference image} - the image that serves as a reference position in registration (image that is being registered to).
+ \item \textbf{Moving image} - the image that is matched to the reference image (image that is being registered from).
+ \item \textbf{Warped image} - the result of applying a transformation map from registration to the moving image. It should be as close to the reference image as possible.
+ \item \textbf{True registration} - the registration from the moving to the reference image. Similar, everything connected to the true registration will use ``true'' (true vector field, true warped image, true absolute difference, true Jacobian, etc.).
+ \item \textbf{Inverse registration} - the registration from the reference to the moving image (opposite or inverse of the true registration). As in the true registration, the term inverse can be used for everything connected to it (inverse vector field, inverse warped image, inverse absolute difference, inverse Jacobian, etc.).
 \end{itemize}
 
-In radiotherapy true registration is used for dose propagation and consequential 4D Dose calculation, whereas with inverse registration contours can be propagated from reference to moving phase.
-
-\subsection{Registration}
-\label{RegistrationImplement}
-
-Plastimatch \cite{Shackleford2010} is a commonly used software for registration in medical research. It is a free and open-source, available as a command-line executable program. 
-Plastimatch B-spline registration is also available in Slicer as part of an extension SlicerRT \cite{Pinter2012}.
-The integration of Plastimatch in Slicer brings the advantage of a graphical user interface and hence a quick modification of parameters and display of results. 
-However, automation is needed for a large number of registrations. For a complete 4D-CT registration there are $2(N-1)$ registrations required - from reference phase to each of $N$ phases of 4D-CT and vice versa, except for the reference phase itself. 
-Typical 4D-CTs consist of 10 phases, therefore automated registration of a 4D-CT is a necessity.
-
-The automated DIR was achieved with a Python class to handle image locations, store DIR parameters, to perform DIR in the Plastimatch module, to use correct naming conventions and to store all output files (vector fields and warped images). 
-The Python class is shown in Appendix~\ref{RegHierarchy}.
+In radiotherapy the true registration is used for dose propagation and consequential the 4D Dose calculation, whereas with the inverse registration contours can be propagated from the reference to the moving phase.
 
 
 \subsection{Registration Quality Checks}
@@ -87,11 +89,12 @@ The Python class is shown in Appendix~\ref{RegHierarchy}.
 In order to provide visual and quantitative assessment of the registration quality a \textbf{Deformable Image Registration Quality Assurance} or DIRQA module was created. 
 It provides image checks (inverse color, checkerboard, absolute difference, flicker, movie and landmark distances) 
 and vector checks (Jacobian and inverse consistency error). 
-Reference and warped image, true and inverse vector are used as inputs for the DIRQA module. 
-Additionally, landmarks and region of interest (ROI) can also be used as an input.
+The reference and warped image, true and inverse vector are used as inputs for the DIRQA module. 
+Additionally, landmarks and a region of interest (ROI) can also be used as an input.
 
 Tests can be divided into two groups: qualitative (inverse color, checkerboard, flicker, movie) and quantitative 
-(absolute difference, landmark distances, Jacobian and inverse consistency error) tests, Absolute difference, Jacobian and inverse consistency error tests
+(absolute difference, landmark distances, Jacobian and inverse consistency error) tests.
+Absolute difference, Jacobian and inverse consistency error tests
 were build using tools from the ITK library \cite{Yoo2002}.
 
 \subsubsection{Qualitative tests}
@@ -102,39 +105,46 @@ A DIR quality can be assessed with visual inspection of DIR results. Several tes
 \subsubsection{Inverse color}
 
 
-Overlaying two different images will highlight the difference between them. However, since CT scans are usually displayed in grayscale color code, the differences can be indistinguishable. Especially if the images are quite similar, as reference and warped image should be. With applying opposite color codes to overlaying images two things are achieved. First, regions were the registration was successful will be in grayscale. And second, the differences between images will be in the color of the image they originate from. In the module we used red and cyan color code for reference and warped image, respectively. See Fig.~\ref{falseColor} for details.
+Overlaying two different images will highlight the difference between them. However, since CT scans are usually displayed in grayscale color code, the differences can be indistinguishable. 
+Especially if the images are quite similar, as the reference and the warped image should be. With applying opposite color codes to overlaying images two things are achieved. 
+First, regions where the registration was successful will be in grayscale. Second, the differences between images will be highlighted in the color of the image they originate from. 
+In the module we used red and cyan color code for reference and warped image, respectively. See Fig.~\ref{falseColor} for details.
 
 \begin{figure}[H]
 	\begin{center}		
 		\includegraphics[width=0.9\textwidth]{./Vmm/Images/falseColor.png}
-		\caption{Example of a inverse color overlay. Images (a) and (b) show red and cyan color code, respectively, for a CT scan. (c) displays overlayed inverse colored images before and (d) after registration.}
+		\caption{An example of a inverse color overlay. Images (a) and (b) show red and cyan color code, respectively, for a CT scan. (c) displays overlayed inverse colored images before and (d) after registration.}
 		\label{falseColor}
 	\end{center}
 \end{figure}
 
 \subsubsection{Checkerboard}
 
-As the name suggests, checkerboard creates an image of tiles. Each tile alternates between reference and warped image, as shown in Fig.~\ref{checkerboard}. The differences between two images become apparent if there is no smooth transition from one tile to the next. 
+As the name suggests, checkerboard creates an image of tiles. Each tile alternates between the reference and the warped image, as shown in Fig.~\ref{checkerboard}. The differences between two images become apparent if there is no smooth transition from one tile to the next. 
 The number of tiles can be manually selected.
 \newpage
 \begin{figure}[H]
 	\begin{center}		
 		\includegraphics[width=0.9\textwidth]{./Vmm/Images/checkerboard.png}
-		\caption{Example of a checkerboard image. It consists of tiles alternating between two images. Tiles in image (a) alternate between scans before registration and in image (b) after registration.}
+		\caption{An example of a checkerboard image. It consists of tiles alternating between two images. Tiles in image (a) alternate between scans before registration and in image (b) after registration.}
 		\label{checkerboard}
 	\end{center}
 \end{figure}
 
 \subsubsection{Movie}
 
-Medical images are usually quite large - typical CT image consist of $512 \times 512 \times 100$ pixels, which makes inspecting image checks (inverse color, checkerboard, absolute difference) a time-consuming task. The movie feature allows for smoother display of different image slices. 
-The user selects which view to inspect (axial, sagital or coronal) and presses start. Selected views then start scrolling from one limit to the other. It allows user to focus on registration details, rather than scrolling through slices.
+Medical images are usually quite large - a typical CT image consist of $512 \times 512 \times 100$ pixels, which makes inspecting image checks (inverse color, checkerboard, absolute difference) a time-consuming task. 
+The movie feature allows a smoother display of different image slices. 
+The user selects which view to inspect (axial, sagital or coronal) and presses start. Selected views then start scrolling from the first to the last slice of selected view. It allows user to focus on registration details, rather than scrolling through slices.
 
-Movie and flicker (explained in the next section) do not offer any specific registration checks, but improve the process of DIRQA.
+
 
 \subsubsection{Flicker}
 
-While it is possible to display two images side by side in Slicer, it can sometimes be hard to see fine differences between the two images. Flicker alternates between reference and warped image on a single display at a 0.5 s rate.
+While it is possible to display two images side by side in Slicer, it can sometimes be hard to see fine differences between the two images. Flicker alternates between reference and warped image on a single display at a 0.5 s rate. It allows
+a quick inspection of differences between two images in their original form.
+
+Movie and flicker (explained in the next section) do not offer any specific registration checks, but improve the process of DIRQA.
 
 \subsubsection{Quantitative tests}
 
@@ -145,19 +155,19 @@ It can be hard to visually inspect all the DIR results, especially in a 4D-CT re
 To stress the difference between reference and warped image an absolute difference between voxel values is calculated and displayed. 
 A new image is generated with voxels populated as the absolute difference between reference and warped image voxel values, as shown in Fig.~\ref{absDiff}.
 Furthermore, statistical values of absolute differences are calculated (mean, standard deviation, minimum and maximum) 
-for quantitative assessment of registration quality (in the ideal case all values would be 0).
+for a quantitative assessment of the registration quality (in the ideal case all values would be 0).
 
 Three absolute differences can be calculated: between reference and moving image, called default absolute difference; between true warped and reference image, called true absolute difference; between inverse and moving image, called
-inverse absolute difference. Usually, registration works on minimizing absolute difference (mean square error metric), so it is a direct indicator
+inverse absolute difference. Usually, registration works on minimizing the absolute difference (mean square error metric), so it is a direct indicator
 of registration success.
 
-To save computational time or to focus on a specific region, absolute difference can also be calculated just on a specific ROI (if used as an input). Usually the patient body is selected as ROI, without air and couch.
+To save computational time or to focus on a specific region, the absolute difference can also be calculated just on a specific ROI (if used as an input). Usually the patient body is selected as ROI, without air and couch.
 
 
 \begin{figure}[H]
 	\begin{center}		
 		\includegraphics[width=0.9\textwidth]{./Vmm/Images/abs.png}
-		\caption{Absolute difference image before (a) and after registration (b). The mean absolute difference before registration (default absolute difference) is 62 HU and 31 HU after registration (true absolute difference).}
+		\caption{An absolute difference image before (a) and after registration (b). The mean absolute difference before registration (default absolute difference) is 62 HU and 31 HU after registration (true absolute difference).}
 		\label{absDiff}
 	\end{center}
 \end{figure}
@@ -165,17 +175,17 @@ To save computational time or to focus on a specific region, absolute difference
 
 \subsubsection{Landmark distances}
 
-Distances between landmark before and after registration are often used to determine spatial accuracy of registration \cite{Castillo2009}. 
-Landmarks can either be a specific feature in patient anatomy or an external marker. The position of landmarks in the warped image would ideally 
-be at the same position as in reference image. The module measures the Euclidean norm between the landmark positions in reference and warped image.
+Distances between landmarks before and after registration are often used to determine the spatial accuracy of registration \cite{Castillo2009}. 
+Landmarks can either be a specific feature in the patient anatomy or an external marker. The position of landmarks in the warped image would ideally 
+be at the same position as in the reference image. The module measures the Euclidean norm between the landmark positions in reference and warped image.
 
-The user has to manually select landmarks in reference and moving or also in warped image. For landmarks based on patient anatomy, a selection from physician is required. 
+The user has to manually select landmarks in reference and moving or also in the warped image. For landmarks based on the patient anatomy, a selection from physician is required. 
 Landmarks from the moving image can then be automatically transformed to the warped image using the registration vector field. An example is shown in Fig.~\ref{landmark}.
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.9\textwidth]{./Vmm/Images/landmark.png}
-\caption{Display of landmarks in three phases - reference, moving and warped phase. Distance before registration (between reference and moving landmark) is 22 mm and after registration
+\caption{A display of landmarks in three phases - reference, moving and warped phase. The distance before registration (between reference and moving landmark) is 22 mm and after registration
 (between reference and warped landmark) is 2 mm.}
 \label{landmark}
 \end{center}
@@ -197,17 +207,18 @@ J = \begin{vmatrix}
 \end{vmatrix}
 \end{equation}
 
-The Jacobian is used to validate physical behavior of the registration \cite{Leow2007}. 
+The Jacobian is used to validate the physical behavior of the registration \cite{Leow2007}. 
 The Jacobian of a vector field should be positive, since negative Jacobian values correspond to organ folding, 
 which is physically unrealistic for patient anatomy \cite{ Rey2002, Chen2008}. 
-Expansions and contractions around a point are indicated by Jacobian values of greater and less than 1, respectively.
+Expansions and contractions around a point are indicated by Jacobian values greater or lower than 1, respectively.
 
-The DIRQA module calculates and displays the Jacobian of the vector field, as shown in Fig.~\ref{JacobianImage}. Statistical values of the Jacobian are also calculated. Similar to absolute difference, the Jacobian can be calculated inside a ROI rather than on a whole image.
+The DIRQA module calculates and displays the Jacobian of the vector field, as shown in Fig.~\ref{JacobianImage}.
+Statistical values of the Jacobian are also calculated. Similar to the absolute difference, the Jacobian can be calculated inside a ROI rather than on the whole image.
 
 \begin{figure}[H]
 	\begin{center}		
 		\includegraphics[width=0.8\textwidth]{./Vmm/Images/jacobian.png}
-		\caption{Image of Jacobian overlayed on a CT scan. The average value of the displayed Jacobian is 0.98 with 0.09 standard deviation.}
+		\caption{An image of the Jacobian values overlayed on a CT scan. The average value of the displayed Jacobian is 0.98 with 0.09 standard deviation.}
 		\label{JacobianImage}
 	\end{center}
 \end{figure}
@@ -215,8 +226,9 @@ The DIRQA module calculates and displays the Jacobian of the vector field, as sh
 \subsubsection{Inverse Consistency Error}
 \label{ICE}
 
-Inverse consistency error (ICE) is consistently used in literature as one of the main vector field checks \cite{Christensen2001, Bender2009}. The principle is as follows. Suppose we have two vector fields: $u_{AB}$ obtained from registration of image $A$ to $B$ and $u_{BA}$ from registration of image $B$ to $A$. The two registrations
-should be performed separately. In an ideal scenario, $u_{AB}$ would be a direct inverse of $u_{BA}$. However, DIR algorithms do not yield perfectly inverse consistent vector fields. Therefore, the differences between true and inverse vector fields have to be examined.
+The inverse consistency error (ICE) is consistently used in literature as one of the main vector field checks \cite{Christensen2001, Bender2009}. The principle is as follows. 
+Suppose we have two vector fields: $u_{AB}$ obtained from registration of image $A$ to $B$ and $u_{BA}$ from registration of image $B$ to $A$. The two registrations
+are performed separately. In an ideal scenario, $u_{AB}$ would be a direct inverse of $u_{BA}$. However, DIR algorithms do not yield perfectly inverse consistent vector fields. Therefore, the differences between true and inverse vector fields have to be examined.
 
 
 To check for ICE, an algorithm was created that first transforms a point $x$ in image $A$, using $u_{AB}$. The newly obtained point $x'$ is then transformed with the inverse vector
@@ -229,7 +241,7 @@ ICE = |x - x''| = |x - u_{BA}(x')| = |x - u_{BA}(u_{AB}(x))|
 
 Points $x'$ and $x''$ can have an arbitrary position in space, while vector fields $u_{AB}$ and $u_{BA}$ are positioned on a grid. To apply the transformation $u_{BA}(x')$, $x'$ is interpolated on a $u_{BA}$ grid. A tri-linear interpolation is used in this module.
 
-As in Jacobian, ICE image is calculated and displayed, along with statistical values and ROI feature. An example is shown in Fig.~\ref{inv}.
+As for the Jacobian, ICE image is calculated and displayed, along with statistical values and ROI feature. An example is shown in Fig.~\ref{inv}.
 
 
 
@@ -237,7 +249,7 @@ As in Jacobian, ICE image is calculated and displayed, along with statistical va
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.8\textwidth]{./Vmm/Images/inv.png}
-\caption{Image of the inverse consistency error (ICE) overlayed on a CT scan. The average value of displayed ICE is 1.0 mm with 0.8 mm standard deviation.}
+\caption{An image of the inverse consistency error (ICE) overlayed with CT scan. The average value of displayed ICE is 1.0 mm with 0.8 mm standard deviation.}
 \label{inv}
 \end{center}
 \end{figure}
@@ -282,8 +294,13 @@ As in Jacobian, ICE image is calculated and displayed, along with statistical va
 \section{Verification}
 \label{Verification}
 
-Several tools to perform DIR and DIRQA were created. 
-To prove their functionalities, we have tested them on an actual clinical data. Lung 4D-CT patient data and pig cardiac 4D-CT, that were part of an animal study \cite{Lehmann2015},
+Several tools to perform DIR and DIRQA were created. To prove their functionalities, we have tested them on two sets of an actual clinical data. 
+First were the lung 4D-CT patient data from the Champalimaud Center for the Unknown, Lisbon (Portugal). The 4D-CTs were used in the treatment planning study, presented in Chapters~\ref{PatStudy} and \ref{chapter:complex}. 
+DIR resulting from 4D-CTs play an essential  will be used in contour propagation in order to estimate tumor motion. Additionally, DIR will be also used in 4D dose calculation.
+
+The second set of data 
+It is therefore necessary
+and pig cardiac 4D-CT, that were part of an animal study \cite{Lehmann2015},
 were included in a verification. All 4D-CTs were registered to the 4D-CT's reference data. Absolute difference, Jacobian and ICE were calculated for resulting 
 DIR as part of a DIRQA.
 
