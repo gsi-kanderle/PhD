@@ -1,0 +1,259 @@
+\documentclass[type=dr, dr=rernat, accentcolor=tud7b,colorbacktitle, bigchapter, openright, twoside, 12pt ]{tudthesis}
+%\documentclass[11pt,twoside,a4paper]{article}
+\usepackage[english]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{pstricks}
+\usepackage{psfrag}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{epsfig}
+\usepackage{geometry}
+\usepackage{subfigure}
+\usepackage{rotating}
+\usepackage{minitoc}
+\usepackage{multirow}
+\usepackage{listings}
+%\usepackage{appendix}
+
+%%%% 1 1/2 facher Zeilenabstand:	
+\usepackage{setspace}
+\onehalfspacing
+
+\begin{document}
+ 
+\chapter{Appendix of Chapter 3}
+
+\section{Organ at risk dose limits}
+
+OAR dose limits used in SBRT and PT treatment planning for different fractionation schemes are shown in Table~\ref{tab:oarlimits}. Two limits were used. The first limitation was a maximum dose to single voxel $D_{Max}$ and the second a maximum dose deposited to a 
+specific OAR volume $D_{Threshold}$.
+
+\begin{table}[H]
+  \centering
+%   \footnotesize
+  \caption{Dose constraints for various OARs for 1, 2 and 3 fractions, denoted as respective numbers. Limits were used in SBRT and PT treatment planning. Data taken from \cite{Benedict2010}}
+  \begin{tabular}{c|c|c|c|c|c|c|c}
+   & Critical  & \multicolumn{3}{c}{Threshold dose (Gy)} & \multicolumn{3}{|c}{Maximum point dose(Gy)}  \\
+  Organ & volume (cc) & 1 & 2 & 3 & 1 & 2 & 3 \\
+   \hline
+   heart & 15 & 16 & 22 & 24 & 30 & 32 & 38\\
+spinal cord & 0.35 & 10 & 14 & 18 & 21.9 & 23 & 30\\
+smaller airways & 0.5 & 12.4 & 13.3 & 18.9 & 23.1 & 21 & 33\\
+esophagus & 5 & 11.9 & 15.4 & 17.7 & 25.2 & 19.5 & 35\\
+trachea & 4 & 10.5 & 20.2 & 15 & 30 & 16.5 & 40\\
+aorta & 10 & 31 & 37 & 39 & 45 & 47 & 53\\
+stomach & 10 & 11.2 & 12.4 & 16.5 & 22.2 & 18 & 32\\
+\hline\hline
+  
+  \end{tabular}
+  \label{tab:oarlimits}
+\end{table}
+
+\section{Target coverage}
+
+\newpage
+\section{Dose to organs at risk}
+
+Dose to OARs for SBRT and PT will be given here. $D_{Max}$, $D_{Threshold}$ and $D_{Mean}$ will be given for several OAR in each specific patient.
+
+\begin{table}[H]
+  \centering
+%   \footnotesize
+  \caption{SBRT $D_{Max}$ for various OARs. Values are in Gy.}
+  \begin{tabular}{c|c|c|c|c|c|c|c|c}
+   Patient & \multirow{2}{*}{Heart} & Spinal  & Smaller  & \multirow{2}{*}{Esophagus} & \multirow{2}{*}{Trachea} & \multirow{2}{*}{Aorta} & Left  & Right \\
+   Nr & & cord & airways & & & & lung & lung \\
+ \hline\hline 
+1 & 17.0 & 4.25 & 16.0 & 4.75 & 0.5 & 6.25 & 26.75 & 4.5\\
+2 & 0 & 2.75 & 16.75 & 3.5 & 2.75 & 5.5 & 26.75 & 2.5\\
+3 & 7.5 & 8.5 & 17.5 & 7.0 & 0.25 & 7.75 & 10.0 & 26.5\\
+4 & 0.25 & 5.5 & 10.25 & 5.5 & 0 & 5.0 & 26.25 & 3.5\\
+5 & 8.25 & 10.25 & 12.75 & 9.75 & 0 & 26.25 & 26.25 & 9.25\\
+6 & 6.0 & 2.5 & 23.75 & 3.5 & 0 & 4.5 & 26.25 & 3.5\\
+7 & 0.25 & 7.0 & 19.25 & 6.0 & 9.75 & 8.25 & 4.75 & 25.75\\
+8 & 12.5 & 8.75 & 13.75 & 14.0 & 3.5 & 24.75 & 26.75 & 11.5\\
+9 & 11.25 & 9.75 & 22.75 & 11.0 & 0.25 & 19.25 & 25.75 & 26.0\\
+10 & 15.0 & 9.25 & 13.0 & 10.75 & 0 & 27.25 & 27.75 & 27.5\\
+11 & 12.0 & 2.75 & 0.25 & 2.25 & 0 & 4.25 & 26.25 & 1.75\\
+12 & 0.0 & 4.75 & 0.0 & 7.0 & 7.75 & 9.75 & 25.75 & 5.25\\
+13 & 3.25 & 6.25 & 11.0 & 4.5 & 0 & 3.5 & 4.25 & 26.5\\
+14 & 0.0 & 3.75 & 9.25 & 4.0 & 4.75 & 5.5 & 2.25 & 26.0\\
+15 & 0 & 3.75 & 0 & 5.75 & 0 & 0 & 26.0 & 5.0\\
+16 & 2.5 & 2.0 & 0 & 3.75 & 4.75 & 18.0 & 10.0 & 26.25\\
+17 & 0.25 & 8.25 & 0 & 11.5 & 7.25 & 26.25 & 26.25 & 6.75\\
+18 & 0 & 2.5 & 0 & 3.5 & 2.25 & 0.0 & 2.25 & 26.0\\
+19 & 0 & 8.5 & 0.75 & 6.0 & 4.25 & 22.75 & 26.0 & 5.0\\
+\hline\hline
+  \end{tabular}
+  \label{tab:oarlimits}
+\end{table}
+\newpage
+\begin{table}[H]
+  \centering
+%   \footnotesize
+  \caption{SBRT $D_{Threshold}$ for various OARs. Values are in Gy.}
+  \begin{tabular}{c|c|c|c|c|c|c|c|c}
+   Patient & \multirow{2}{*}{Heart} & Spinal  & Smaller  & \multirow{2}{*}{Esophagus} & \multirow{2}{*}{Trachea} & \multirow{2}{*}{Aorta} & Left  & Right \\
+   Nr & & cord & airways & & & & lung & lung \\
+ \hline\hline 
+1 & 9.75 & 3.5 & 7.87 & 3.75 & 0.0 & 4.75 & 0.75 & 0.25\\
+2 & 0 & 2.0 & 10.0 & 1.5 & 1.67 & 3.25 & 0.0 & 0.0\\
+3 & 6.0 & 7.5 & 5.25 & 3.25 & 0.0 & 5.67 & 0.0 & 0.0\\
+4 & 0.0 & 4.75 & 3.75 & 2.75 & 0 & 3.5 & 0.0 & 0.0\\
+5 & 6.0 & 8.25 & 0.96 & 1.0 & 0 & 11.75 & 0.0 & 0.0\\
+6 & 4.0 & 2.25 & 5.0 & 1.11 & 0 & 1.75 & 0.0 & 0.0\\
+7 & 0.0 & 6.5 & 11.5 & 3.25 & 5.5 & 6.0 & 0.0 & 0.0\\
+8 & 9.75 & 7.25 & 10.75 & 11.0 & 2.62 & 18.25 & 1.75 & 1.69\\
+9 & 8.5 & 8.5 & 12.25 & 6.75 & 0.0 & 12.5 & 0.0 & 0.0\\
+10 & 10.25 & 8.5 & 7.25 & 6.25 & 0 & 10.5 & 0.0 & 0.25\\
+11 & 5.75 & 2.5 & 0.33 & 0.25 & 0 & 1.5 & 0.0 & 0.0\\
+12 & 0.0 & 4.0 & 0.0 & 0.5 & 5.5 & 4.5 & 0.0 & 0.0\\
+13 & 1.75 & 5.5 & 4.25 & 3.25 & 0 & 2.25 & 0.0 & 0.0\\
+14 & 0.0 & 3.5 & 0.42 & 2.0 & 2.25 & 2.75 & 0.0 & 0.0\\
+15 & 0 & 3.25 & 0 & 1.25 & 0 & 0 & 0.0 & 0.0\\
+16 & 0.0 & 1.5 & 0 & 0.25 & 2.82 & 5.25 & 0.0 & 0.0\\
+17 & 0.0 & 7.0 & 0 & 3.5 & 4.9 & 6.25 & 0.0 & 0.0\\
+18 & 0 & 2.25 & 0 & 1.87 & 1.44 & 0.0 & 0.0 & 0.0\\
+19 & 0 & 7.5 & 0.0 & 1.75 & 2.25 & 5.0 & 0.0 & 0.0\\
+\hline\hline
+  \end{tabular}
+  \label{tab:oarlimits}
+\end{table}
+\newpage
+\begin{table}[H]
+  \centering
+%   \footnotesize
+  \caption{SBRT $D_{Mean}$ for various OARs. Values are in Gy.}
+  \begin{tabular}{c|c|c|c|c|c|c|c|c}
+   Patient & \multirow{2}{*}{Heart} & Spinal  & Smaller  & \multirow{2}{*}{Esophagus} & \multirow{2}{*}{Trachea} & \multirow{2}{*}{Aorta} & Left  & Right \\
+   Nr & & cord & airways & & & & lung & lung \\
+ \hline\hline 
+1 & 1.96 & 0.52 & 6.5 & 0.92 & 0.11 & 1.31 & 3.88 & 0.7\\
+2 & 0 & 0.28 & 5.53 & 0.43 & 0.41 & 0.97 & 1.46 & 0.23\\
+3 & 2.48 & 2.27 & 2.83 & 4.08 & 0.06 & 2.43 & 0.9 & 2.9\\
+4 & 0.06 & 0.81 & 3.02 & 0.77 & 0 & 1.08 & 1.88 & 0.49\\
+5 & 1.49 & 0.66 & 3.8 & 1.18 & 0 & 2.38 & 1.79 & 0.61\\
+6 & 1.34 & 0.19 & 6.1 & 1.22 & 0 & 1.57 & 1.3 & 0.2\\
+7 & 0.07 & 0.7 & 6.08 & 1.07 & 1.81 & 1.65 & 0.69 & 2.88\\
+8 & 6.4 & 2.02 & 6.33 & 4.65 & 0.92 & 5.75 & 8.82 & 2.24\\
+9 & 3.57 & 1.66 & 2.57 & 1.8 & 0.1 & 1.68 & 3.05 & 2.95\\
+10 & 4.72 & 1.2 & 2.65 & 2.97 & 0 & 3.45 & 5.4 & 5.15\\
+11 & 1.52 & 0.38 & 0.17 & 0.26 & 0 & 0.3 & 1.65 & 0.2\\
+12 & 0.02 & 0.26 & 0.03 & 0.7 & 1.85 & 0.4 & 1.44 & 0.3\\
+13 & 0.77 & 1.18 & 2.16 & 1.68 & 0 & 0.48 & 0.6 & 3.62\\
+14 & 0.03 & 0.27 & 0.78 & 0.55 & 1.01 & 0.76 & 0.22 & 1.52\\
+15 & 0 & 0.49 & 0 & 1.12 & 0 & 0 & 0.7 & 0.09\\
+16 & 0.06 & 0.25 & 0 & 0.49 & 1.14 & 1.49 & 0.37 & 2.29\\
+17 & 0.08 & 1.69 & 0 & 1.15 & 1.94 & 1.51 & 2.39 & 0.4\\
+18 & 0 & 0.27 & 0 & 0.58 & 0.51 & 0.04 & 0.06 & 0.38\\
+19 & 0 & 0.75 & 0.13 & 0.62 & 1.0 & 0.73 & 1.4 & 0.28\\
+\hline\hline
+  \end{tabular}
+  \label{tab:oarlimits}
+\end{table}
+\newpage
+ 
+ 
+\begin{table}[H]
+  \centering
+%   \footnotesize
+  \caption{PT $D_{Max}$ for various OARs. Values are in Gy.}
+  \begin{tabular}{c|c|c|c|c|c|c|c|c}
+   Patient & \multirow{2}{*}{Heart} & Spinal  & Smaller  & \multirow{2}{*}{Esophagus} & \multirow{2}{*}{Trachea} & \multirow{2}{*}{Aorta} & Left  & Right \\
+   Nr & & cord & airways & & & & lung & lung \\
+ \hline\hline 
+1 & 11.75 & 0.0 & 24.0 & 0.25 & 0.0 & 3.75 & 26.0 & 0.75\\
+2 & 0 & 0.0 & 25.25 & 0.0 & 0.0 & 0.25 & 26.5 & 0.0\\
+3 & 7.5 & 0.25 & 9.75 & 7.25 & 0.0 & 7.75 & 7.5 & 27.25\\
+4 & 0.0 & 3.25 & 13.5 & 0.25 & 0 & 4.0 & 25.5 & 1.0\\
+5 & 10.0 & 6.0 & 10.25 & 3.75 & 0 & 26.75 & 26.75 & 0.25\\
+6 & 0.0 & 0.0 & 25.25 & 0.0 & 0 & 0.0 & 26.5 & 0.0\\
+7 & 0.0 & 7.0 & 22.25 & 0.0 & 0.0 & 0.0 & 0.0 & 26.25\\
+8 & 6.5 & 7.75 & 15.5 & 1.0 & 1.0 & 20.75 & 31.5 & 8.25\\
+9 & 0.0 & 0.5 & 6.25 & 0.0 & 0.0 & 4.25 & 25.75 & 25.5\\
+10 & 13.5 & 0.0 & 16.0 & 0.25 & 0 & 25.25 & 26.75 & 26.0\\
+11 & 14.5 & 0.0 & 0.0 & 0.0 & 0 & 0.0 & 26.25 & 0.0\\
+12 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 & 26.25 & 0.0\\
+13 & 0.0 & 0.0 & 0.0 & 0.0 & 0 & 0.0 & 0.0 & 26.5\\
+14 & 0.0 & 0.0 & 8.0 & 0.0 & 0.0 & 0.0 & 0.0 & 25.5\\
+15 & 0 & 0.0 & 0 & 0.0 & 0 & 0 & 25.75 & 0.0\\
+16 & 0.25 & 0.0 & 0 & 0.0 & 0.0 & 18.25 & 0.75 & 26.0\\
+17 & 0.0 & 0.5 & 0 & 9.0 & 0.5 & 25.75 & 26.0 & 0.0\\
+18 & 0 & 0.0 & 0 & 0.0 & 0.0 & 0.0 & 0.0 & 25.75\\
+19 & 0 & 0.25 & 0.25 & 0.0 & 0.0 & 17.75 & 26.5 & 0.0\\
+\hline\hline
+  \end{tabular}
+  \label{tab:oarlimits}
+\end{table}
+\newpage
+\begin{table}[H]
+  \centering
+%   \footnotesize
+  \caption{PT $D_{Threshold}$ for various OARs. Values are in Gy.}
+  \begin{tabular}{c|c|c|c|c|c|c|c|c}
+   Patient & \multirow{2}{*}{Heart} & Spinal  & Smaller  & \multirow{2}{*}{Esophagus} & \multirow{2}{*}{Trachea} & \multirow{2}{*}{Aorta} & Left  & Right \\
+   Nr & & cord & airways & & & & lung & lung \\
+ \hline\hline 
+1 & 8.25 & 0.0 & 7.75 & 0.0 & 0.0 & 0.75 & 0.0 & 0.0\\
+2 & 0 & 0.0 & 13.75 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\
+3 & 3.5 & 0.0 & 1.0 & 0.0 & 0.0 & 0.42 & 0.0 & 0.0\\
+4 & 0.0 & 2.0 & 5.25 & 0.0 & 0 & 0.75 & 0.0 & 0.0\\
+5 & 2.5 & 1.75 & 0.0 & 0.0 & 0 & 14.0 & 0.0 & 0.0\\
+6 & 0.0 & 0.0 & 0.0 & 0.0 & 0 & 0.0 & 0.0 & 0.0\\
+7 & 0.0 & 3.0 & 10.25 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\
+8 & 1.91 & 5.5 & 11.0 & 0.25 & 0.0 & 7.25 & 0.0 & 0.0\\
+9 & 0.0 & 32.0 & 0.11 & 0.0 & 0.0 & 0.25 & 0.0 & 0.0\\
+10 & 10.25 & 0.0 & 0.5 & 0.0 & 0 & 3.75 & 0.0 & 0.0\\
+11 & 0.25 & 0.0 & 0.0 & 0.0 & 0 & 0.0 & 0.0 & 0.0\\
+12 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\
+13 & 0.0 & 0.0 & 0.0 & 0.0 & 0 & 0.0 & 0.0 & 0.0\\
+14 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\
+15 & 0 & 0.0 & 0 & 0.0 & 0 & 0 & 0.0 & 0.0\\
+16 & 0.0 & 0.0 & 0 & 0.0 & 0.0 & 0.25 & 0.0 & 0.0\\
+17 & 0.0 & 0.25 & 0 & 0.0 & 0.0 & 5.5 & 0.0 & 0.0\\
+18 & 0 & 0.0 & 0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\
+19 & 0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.25 & 0.0 & 0.0\\
+\hline\hline
+  \end{tabular}
+  \label{tab:oarlimits}
+\end{table}
+\newpage
+\begin{table}[H]
+  \centering
+%   \footnotesize
+  \caption{PT $D_{Mean}$ for various OARs. Values are in Gy.}
+  \begin{tabular}{c|c|c|c|c|c|c|c|c}
+   Patient & \multirow{2}{*}{Heart} & Spinal  & Smaller  & \multirow{2}{*}{Esophagus} & \multirow{2}{*}{Trachea} & \multirow{2}{*}{Aorta} & Left  & Right \\
+   Nr & & cord & airways & & & & lung & lung \\
+ \hline\hline 
+1 & 0.53 & 0.0 & 3.67 & 0.01 & 0.0 & 0.08 & 3.46 & 0.03\\
+2 & 0 & 0.0 & 4.32 & 0.0 & 0.0 & 0.01 & 1.7 & 0.0\\
+3 & 0.49 & 0.02 & 0.56 & 0.91 & 0.0 & 0.51 & 0.12 & 2.5\\
+4 & 0.0 & 0.17 & 3.58 & 0.0 & 0 & 0.09 & 1.35 & 0.06\\
+5 & 0.45 & 0.03 & 0.47 & 0.22 & 0 & 2.24 & 0.61 & 0.0\\
+6 & 0.0 & 0.0 & 2.96 & 0.0 & 0 & 0.0 & 1.58 & 0.0\\
+7 & 0.0 & 0.11 & 2.11 & 0.0 & 0.0 & 0.0 & 0.0 & 2.97\\
+8 & 0.6 & 0.68 & 2.25 & 0.06 & 0.06 & 1.08 & 6.0 & 0.36\\
+9 & 0.0 & 0.05 & 0.06 & 0.01 & 0.0 & 0.03 & 1.71 & 1.24\\
+10 & 1.16 & 0.0 & 0.5 & 0.01 & 0 & 0.68 & 3.45 & 3.55\\
+11 & 0.06 & 0.0 & 0.0 & 0.0 & 0 & 0.0 & 2.26 & 0.0\\
+12 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 1.03 & 0.0\\
+13 & 0.0 & 0.01 & 0.01 & 0.0 & 0 & 0.0 & 0.0 & 2.14\\
+14 & 0.0 & 0.0 & 0.28 & 0.0 & 0.0 & 0.0 & 0.0 & 1.88\\
+15 & 0 & 0.01 & 0 & 0.01 & 0 & 0 & 0.9 & 0.0\\
+16 & 0.0 & 0.0 & 0 & 0.0 & 0.0 & 0.16 & 0.0 & 1.88\\
+17 & 0.0 & 0.03 & 0 & 0.15 & 0.03 & 1.29 & 2.55 & 0.0\\
+18 & 0 & 0.0 & 0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.4\\
+19 & 0 & 0.01 & 0.01 & 0.0 & 0.0 & 0.07 & 1.49 & 0.0\\
+\hline\hline
+  \end{tabular}
+  \label{tab:oarlimits}
+\end{table}
+\newpage
+
+\bibliographystyle{apalike}
+\bibliography{../ref.bib}{}
+% \bibliographystyle{plain}
+
+\end{document}
