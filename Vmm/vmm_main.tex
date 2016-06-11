@@ -295,21 +295,19 @@ As for the Jacobian, ICE image is calculated and displayed, along with statistic
 \label{Verification}
 
 Several tools to perform DIR and DIRQA were created. To prove their functionalities, we have tested them on two sets of an actual clinical data. 
-First were the lung 4D-CT patient data from the Champalimaud Center for the Unknown, Lisbon (Portugal). The 4D-CTs were used in the treatment planning study, presented in Chapters~\ref{PatStudy} and \ref{chapter:complex}. 
-DIR resulting from 4D-CTs play an essential  will be used in contour propagation in order to estimate tumor motion. Additionally, DIR will be also used in 4D dose calculation.
+First were the lung 4D-CT patient data from the Champalimaud Center for the Unknown, Lisbon (Portugal). The 4D-CTs were used in the treatment planning studies, presented in Chapters~\ref{PatStudy} and \ref{chapter:complex}. 
+DIR resulting from 4D-CTs play an essential in these studies. It was used in contour propagation to estimate and mitigate tumor motion. In addition DIR was also used in 4D dose calculation.
 
-The second set of data 
-It is therefore necessary
-and pig cardiac 4D-CT, that were part of an animal study \cite{Lehmann2015},
-were included in a verification. All 4D-CTs were registered to the 4D-CT's reference data. Absolute difference, Jacobian and ICE were calculated for resulting 
-DIR as part of a DIRQA.
+The second set of data were pig cardiac 4D-CTs. They were also used in treatment planning as a part of an animal study, conducted at GSI. 4D-CT DIR was also used for contour propagation and 4D dose calulation. However, the treatment plans were than actual used for animal irradiation. It was therefore necesarry not only to obtain DIR, but also to ensure its quality.
+
+The DIR were calculated as explained in Section . Afterwards absolute difference, Jacobian and ICE were calculated as part of the DIR.
 
 \subsection{Registration of lung 4D-CT patient data}
 \label{lungDIR}
 
-Chapters \ref{PatStudy} and \ref{chapter:complex} present studies on simulating active scanning carbon ion treatment PT for non-small cell lung cancer patients. 
-The effects of interplay can drastically change the dose distribution for PT and it is necessary to quantify the effects of motion with DIR and transfer results into a treatment 
-planning software. We used a GSI's in-house treatment planning software, TRiP98 \cite{Kraemer2000a, Richter2013}. An automated procedure was required to perform DIR and DIRQA on a large number of patients. This was achieved with Slicer modules described in Section~\ref{Implementation}.
+The effects of interplay between tumor motion and active beam scanning can drastically change the dose distribution for PT. It is therefore neccessary to estimate tumor motion and employ designated motion mitigation techniques.
+
+Chapters \ref{PatStudy} and \ref{chapter:complex} present studies on simulating active scanning carbon ion treatment for non-small cell lung cancer patients. The studies included patient data of 23 lung cancer patients. In order to calculate realistic treatment plans, 4D-CT data were used. All 4D-CT were registered to estimate tumor motion and to calculate 4D dose. To ensure the DIR quality, DIRQA was performed on all DIR.
 
 \subsubsection{Materials and Methods}
 
@@ -499,15 +497,14 @@ Therefore all DIRs were considered successful. It should be stressed, however, t
 \subsection{Registration of pig heart 4D-CT data}
 
 Atrial fibrillation is the most common type of cardiac arrhythmia, causing a quivering motion of the atrial small heart chamber. 
-In itself it is not a life threatening, however it worsens the patients quality of life and increases the risk of a stroke \cite{Benjamin1998}. 
-A common method for treating atrial fibrillation is catheter ablation \cite{January2014}. The success rate of catheter ablation is still limited and 
+In itself it is not a life threatening, however it worsens the patient's quality of life and increases the risk of a stroke \cite{Benjamin1998}. 
+A common method for treating atrial fibrillation is catheter ablation \cite{January2014}. The success rate of a catheter ablation is still limited and 
 can lead to major complications or even death of a patient \cite{Cappato2005,Cappato2010}.
 
 As an alternative treatment, a carbon-ion therapy was proposed \cite{Bert2012} and later feasibility on a beating heart was shown experimentally \cite{Lehmann2015b}. In 2014 a pilot experiment was performed at GSI using large animal model (pigs) and
 scanned carbon-ion to verify the treatment in vivo \cite{Lehmann2015}.
 
-To estimate and compensate motion of the heart during irradiation DIR of 4D-CT data was required. Furthermore, because of the actual irradiation of live pigs a DIRQA had to be made, to ensure the validity of DIR. Description of the procedure will be given here,
-alongside with the results.
+To estimate and compensate motion of the heart during irradiation DIR of 4D-CT data was required. Furthermore, because of the actual irradiation of live pigs a DIR quality had to be estimated.
 
 
 \subsubsection{Materials and Methods}
