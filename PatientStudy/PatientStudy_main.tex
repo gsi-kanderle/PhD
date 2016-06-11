@@ -6,7 +6,7 @@
 
 Lung cancer is one of the leading medical problems worldwide with approximately 1.4 million deaths per year \cite{Siegel2014}. Surgery is usually the first choice in treating localized non-small cell lung cancer (NSCLC). However, in recent years stereotactic body-radiation therapy with photons (SBRT) showed very promising results, with high local control-rates of NSCLC \cite{Baumann2009, Fakiris2009, Grutters2010, Ricardi2010, Timmerman2010, Greco2011}.
 
-Scanned particle therapy can produce sharp dose gradients with a finite range of the beam and can thus provide higher healthy tissue sparing. This reduces both side effects as well as the risk of secondary cancer \cite{Newhauser2011}. Treatment of lung tumors with particles is still challenging due to interplay and radiological path length changes \cite{Bert2011}.
+Scanned particle therapy can produce sharp dose gradients with a finite range of the beam and can thus provide higher normal tissue sparing. This reduces both side effects as well as the risk of secondary cancer \cite{Newhauser2011}. Treatment of lung tumors with particles is still challenging due to interplay and radiological path length changes \cite{Bert2011}.
 The latter can be substantial when dense tissue (e.g. the solid tumor mass) is replaced with low-density tissue (lung) due to motion.
 
 Grutters et al. have performed a meta-analysis on comparison between photon, proton and carbon ions in treating NSCLC \cite{Grutters2010}.
@@ -84,7 +84,7 @@ The planning objectives were that 99\% of planning target volume (PTV) must rece
 To account for range changes relevant for particles only, different PTV definitions were used for SBRT and PT, as shown in Fig.~\ref{Fig:PTV_def}. Within this chapter they will be named PTV$_{SBRT}$ and PTV$_{PT}$ for SBRT and PT, respectively.
 In SBRT, the responsible clinician determined the maximum breathing motion of the CTV from the 4D-CT, hence creating an ITV. This ITV plus an additional 3 mm for setup uncertainty yielded the PTV$_{SBRT}$.
 
-PTV$_{PT}$ was constructed following principles from Graeff et al \cite{Graeff2012}. Each beam has a unique PTV$_{PT}$. For setup uncertainty margins of 3 mm laterally and 1 mm in beam’s eyes view (BEV) were used on the CTV. Afterwards a water-equivalent path length ITV (WEPL-ITV) was build, using transformation maps from the B-Spline deformable registration of the 4D-CT data \cite{Shackleford2010}. Additional 2 mm + 2\% proximal and distal margins were added in BEV to account for uncertainty from Hounsfield units to water equivalent path length conversion.
+PTV$_{PT}$ was constructed following principles from Graeff et al \cite{Graeff2012}. Each beam has a unique PTV$_{PT}$. For setup uncertainty margins of 3 mm laterally and 1 mm in beam’s eye view (BEV) were used on the CTV. Afterwards a water-equivalent path length ITV (WEPL-ITV) was build, using transformation maps from the B-Spline deformable registration of the 4D-CT data \cite{Shackleford2010}. Additional 2 mm + 2\% proximal and distal margins were added in BEV to account for uncertainty from Hounsfield units to water equivalent path length conversion.
 If the target overlapped with an OAR (e.g. small airways) then OAR plus a margin of 2-5 mm was subtracted from PTV$_{SBRT}$ or PTV$_{PT}$.
 
 
@@ -103,10 +103,10 @@ breathing were used on the CTV; For PTV$_{PT}$ margins of 3 mm laterally and 1 m
 \subsection{SDRT treatment planning}
 \label{SBRTTP}
 
-The clinical plans were calculated with the Eclipse v10 planning system (Varian Medical Systems, Palo Alto, USA) using the AAA beam model. They were all VMAT plans generally consisting of 4 overlapping partial arcs, 2 in clockwise and 2 anticlockwise direction, with a gantry range of typically 200°. For tumor sizes > 2.5 cm a calculation grid of 2.5 mm was used, otherwise this was 1 mm. During optimization, a first iteration included the PTV$_{SBRT}$ only, after which the OARs were added. In order to lower OAR dose and improve the PTV$_{SBRT}$ homogeneity, we created an artificial shell of 2 cm around the PTV$_{SBRT}$ and minimized the dose there as well. During optimization the fast Multi Resolution Dose Calculation (MRDC) model was used, with one intermediate step using the slower but more accurate AAA model to get an adequate PTV$_{SBRT}$ coverage after optimization.
+The clinical SBRT plans were calculated with the Eclipse v10 planning system (Varian Medical Systems, Palo Alto, USA) using the AAA beam model. They were all VMAT plans generally consisting of 4 overlapping partial arcs, 2 in clockwise and 2 anticlockwise direction, with a gantry range of typically 200°. For tumor sizes > 2.5 cm a calculation grid of 2.5 mm was used, otherwise this was 1 mm. During optimization, a first iteration included the PTV$_{SBRT}$ only, after which the OARs were added. In order to lower OAR dose and improve the PTV$_{SBRT}$ homogeneity, we created an artificial shell of 2 cm around the PTV$_{SBRT}$ and minimized the dose there as well. During optimization the fast Multi Resolution Dose Calculation (MRDC) model was used, with one intermediate step using the slower but more accurate AAA model to get an adequate PTV$_{SBRT}$ coverage after optimization.
 
 
-\subsection{Carbon-ions treatment planning}
+\subsection{Carbon-ion treatment planning}
 \label{PTTP}
 
 For PT, state of the art 4D treatment planning software TRiP98 was used \cite{Richter2013}. A single field uniform dose plan (SFUD) 
@@ -158,7 +158,7 @@ Examples of two SBRT and 4D-Dose$_{rescan}$ PT treatment plans are shown in Fig.
 
 \subsection{Target Coverage}
 
-Difference in PTV definition resulted in 1.5 (1.3 - 2.1) times bigger PTV$_{PT}$ than PTV$_{SBRT}$. All SBRT plans were clinically acceptable, though in one case the $D_{99\%}$ was reduced to 16.8 Gy due to proximity of an OAR. 3D-Dose$_{0\%}$ and 3D-Dose$_{50\%}$plans provided sufficient target coverage in all patients. For 4D-Dose$_{interplay}$ and 4D-Dose$_{rescan}$ there was 63\% and 2\% cases of insufficient target coverage, respectively, across all targets and different breathing patterns. Details are shown in Fig.~\ref{Fig:InterplayDiff}. For the patient with reduced dose in SBRT, PT could increase the $D_{99\%}$ from 16.8 Gy in SBRT to 20.3 Gy while adhering to OAR constraints. 
+The difference in PTV definition resulted in 1.5 (1.3 - 2.1) times bigger PTV$_{PT}$ than PTV$_{SBRT}$. All SBRT plans were clinically acceptable, though in one case the $D_{99\%}$ was reduced to 16.8 Gy due to proximity of an OAR. 3D-Dose$_{0\%}$ and 3D-Dose$_{50\%}$plans provided sufficient target coverage in all patients. For 4D-Dose$_{interplay}$ and 4D-Dose$_{rescan}$ there was 63\% and 2\% cases of insufficient target coverage, respectively, across all targets and different breathing patterns. Details are shown in Fig.~\ref{Fig:InterplayDiff}. For the patient with reduced dose in SBRT, PT could increase the $D_{99\%}$ from 16.8 Gy in SBRT to 20.3 Gy while adhering to OAR constraints. 
 
 
 \begin{figure}[H]
@@ -250,13 +250,13 @@ range changes \cite{Roelofs2012}. As shown in our study, inclusion of range chan
 Furthermore, the difference between PTVs is bigger for smaller tumor sizes. Patients with bigger tumor volumes (CTV > 2.5 cm$^{3}$) are therefore better suited for treatment with PT. 
 
 Our results confirm previously published results that interplay can lead to a dose degradation in treating moving targets with active scanned beam \cite{Bert2008}. 
-Figure 3 shows the importance of using 4D dose calculation and motion mitigation techniques in treating moving targets with particles. 
+Fig.~\ref{Fig:InterplayDiff} shows the importance of using 4D dose calculation and motion mitigation techniques in treating moving targets with particles. 
 Even small motion amplitude can lead to underdosage in CTV without proper motion mitigation. Considering the average over the 4 simulated motion patterns, 15 patients showed a $D_{99\%}$ < 24 Gy under interplay 
 conditions, as opposed to none when using rescanning (excluding the one patient with reduced target dose). Rescanning proved to be a strong mitigation technique, with robust results across all targets and different breathing patterns.
 
 Recent studies suggest that some patients require phase-controlled layer or volumetric rescanning for sufficiently robust target coverage \cite{Mori2013,Takahashi2014}. 
 The advantage of simple slice-by-slice rescanning is that no motion monitoring or assumptions on the breathing frequency are necessary \cite{Bert2011}, but the higher required number of rescans 
-might increase treatment times due to reduced beam intensities. Another possibility is to combine rescanning with gating, which was already sucm$^{3}$essfully implemented in clinic \cite{Rossi2016}.
+might increase treatment times due to reduced beam intensities. Another possibility is to combine rescanning with gating, which was already successfully implemented in clinic \cite{Rossi2016}.
 
 
 
@@ -297,7 +297,7 @@ validation \cite{Perrin2014} and finally also clinical trials. First patients ar
 
 Scanned carbon ion therapy is available only in a limited number of clinics, mainly due to the considerably higher cost in comparison to photon linacs.
 Therefore a careful patient selection appears sensible. Patients with larger and multiple lesions where SDRT might be limited due to OAR constraints 
-could be referred to carbon centers. In this study, already lesions larger than 2.5 cm$^3$ were found to benefit significantly stronger from CiT.
+could be referred to carbon centers. In this study, already lesions larger than 2.5 cm$^3$ were found to benefit significantly stronger from PT.
 
 \section{Conclusion}
 SBRT and PT both achieved satisfactory target dose. In most patients PT deposited less dose in all OARs (including heart, spinal cord, esophagus, trachea and aorta). Patients with multiple lesions and/or with large target volumes might be preferentially selected for particle therapy.
