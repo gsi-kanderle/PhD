@@ -28,7 +28,7 @@ Treatment plans were generated with two different 4D optimization techniques and
 
 
 %A simple geometrical union of target contour in different CT states, geo-ITV, leads to poor 4D dose distribution, when treating moving tumors with particle therapy \cite{Rietzel2010}.
-\newpage
+
 \section{Materials and Methods}
 
 The 4D extension of GSI's treatment planning system TRiP98 \cite{Kraemer2000a, Richter2013} was used and modified to create the needed treatment plans. A description of the modifications and tools used will be given here, 
@@ -47,15 +47,12 @@ Patients 1 - 3 had no OAR in CTV vicinity (closer than 10 mm), while patients 4 
 All patients were treated with SBRT at the Chamaplimaud Center for the Unknown, Lisbon (Portugal), with different fraction schemes. 
 The number of fractions and doses delivered are given in Table~\ref{tab:patdata2}.
 
-\newpage
-
-
 \begin{table}[H]
 	\centering
 	%   \footnotesize
 	\caption{Target characteristics, with CTV volumes, peak-to-peak motions, fractionation schemes and number of fields used for PT treatment planning. Last column 
 	shows which OARs were present in the target vicinity (closer than 10 mm). SA stands for smaller airways and esoph. for esophagus.}
-	\begin{tabular}{c|c|c|c|c|c|c}
+	\begin{tabular}{|c|c|c|c|c|c|c|}
 		\hline\hline
 		\multirow{2}{*}{Patient} & \multirow{2}{*}{Target} & \multirow{2}{*}{Volume (cm$^3$)} & Peak-to-peak & Fractionation & Number & OAR in \\
 		 & & & motion [mm] & scheme & of fields & proximity \\
@@ -226,7 +223,7 @@ In the first try the OAR was included in the optimization with different weights
 For any 3D treatment plan with an acceptable dose distribution after the optimization, a 4D dose was calculated and OAR and target dose were inspected. If the plan was rejected, the optimization was repeated, adding the OAR subtraction from the target volume. 
 
 
-
+\newpage
 \subsection{Dose escalation}
 
 A single fraction of 24 Gy could not be used in SBRT treatment for targets 4a, 7b and 8a-e due to OAR dose constraints. For these targets additional 
@@ -240,9 +237,6 @@ in the fractionation scheme used, see Table~\ref{tab:oarlimits}. Additionally, t
 
 Paired t-tests were performed to compare the dose metrics mentioned between SBRT, ITV and 4Dopt. A p-value < 0.05 was considered as significant. 
 
-\section{Results}
-
-An example of different treatment plans for three patients are shown in Fig.~\ref{Fig:multiExample}. 
 
 \newpage
 \begin{figure}[H]
@@ -257,6 +251,12 @@ An example of different treatment plans for three patients are shown in Fig.~\re
 	\end{center}
 \end{figure}
 \newpage
+
+
+\section{Results}
+
+An example of different treatment plans for three patients are shown in Fig.~\ref{Fig:multiExample}. 
+
 \subsection{Target Coverage}
 
 The results for CTV $D_{99\%}$ for all patients are shown in Table~\ref{tab:resultsComplex}. All SBRT plans were approved by a physician, 
@@ -272,7 +272,7 @@ Average CTV $D_{99\%}$ was 97, 95 and 98\% for ITV, 4Dopt and SBRT, respectivell
 	\centering
 	%   \footnotesize
 	\caption{CTV $D_{99\%}$ for tITV, 4Dopt and SBRT for 8 patients. The results for ITV and 4Dopt are shown as median (range) across the different motion types.}
-	\begin{tabular}{c|c|c|c|c}
+	\begin{tabular}{|c|c|c|c|c|}
 		\hline\hline
 		\multirow{2}{*}{Patient} & \multirow{2}{*}{Target} & \multicolumn{3}{|c}{CTV $D_{99\%}$ (\%)}  \\
 		 &  & ITV & 4Dopt & SBRT \\
@@ -339,12 +339,12 @@ Additionally, the SBRT esophagus and heart $D_{Max}$ limits were exceeded in pat
 	\caption{OAR $D_{Max}$, $D_{Threshold}$ and ipsilateral lung $V_{20\%}$ of all patients for ITV, 4Dopt and SBRT. There was a significant difference between PT and SBRT for all OARs, except
 	smaller airways' $D_{Max}$. $D_{Max}$ and $D_{Threshold}$ doses are normalized to the corresponding OAR limits in the fractionation scheme used (see \cite{Benedict2010}). 
 	The data is displayed as median (range).}
-	\begin{tabular}{c|c|c|c}
+	\begin{tabular}{|c|c|c|c|}
 		\hline\hline
 		 
 		OAR &  ITV & 4Dopt & SBRT \\
 		\hline
-		& \multicolumn{3}{c}{$D_{Max}$ (\%)}  \\
+		& \multicolumn{3}{c|}{$D_{Max}$ (\%)}  \\
 		\hline
 heart        & 62.0(0.0 - 100.0) & 59.5(0.0 - 97.0) & 82.5(20.0 - 103.0)\\ 
 spinalcord    & 13.0(0.0 - 48.0) & 12.0(0.0 - 55.0) & 60.0(21.0 - 79.0)\\ 

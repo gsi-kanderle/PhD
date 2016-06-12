@@ -1,26 +1,26 @@
-\documentclass[type=dr, dr=rernat, accentcolor=tud7b,colorbacktitle, bigchapter, openright, twoside, 12pt ]{tudthesis}
-%\documentclass[11pt,twoside,a4paper]{article}
-\usepackage[english]{babel} 
-\usepackage[utf8]{inputenc}
-\usepackage{graphicx}
-\usepackage{pstricks}
-\usepackage{psfrag}
-\usepackage{enumerate}
-\usepackage{float}
-\usepackage{epsfig}
-\usepackage{geometry}
-\usepackage{subfigure}
-\usepackage{rotating}
-\usepackage{minitoc}
-\usepackage{multirow}
-\usepackage{listings}
-%\usepackage{appendix}
-
-%%%% 1 1/2 facher Zeilenabstand:	
-\usepackage{setspace}
-\onehalfspacing
-
-\begin{document}
+% \documentclass[type=dr, dr=rernat, accentcolor=tud7b,colorbacktitle, bigchapter, openright, twoside, 12pt ]{tudthesis}
+% %\documentclass[11pt,twoside,a4paper]{article}
+% \usepackage[english]{babel} 
+% \usepackage[utf8]{inputenc}
+% \usepackage{graphicx}
+% \usepackage{pstricks}
+% \usepackage{psfrag}
+% \usepackage{enumerate}
+% \usepackage{float}
+% \usepackage{epsfig}
+% \usepackage{geometry}
+% \usepackage{subfigure}
+% \usepackage{rotating}
+% \usepackage{minitoc}
+% \usepackage{multirow}
+% \usepackage{listings}
+% %\usepackage{appendix}
+% 
+% %%%% 1 1/2 facher Zeilenabstand:	
+% \usepackage{setspace}
+% \onehalfspacing
+% 
+% \begin{document}
 
 \chapter{Appendix of Chapter 3}
 
@@ -33,8 +33,9 @@ specific OAR volume $D_{Threshold}$.
   \centering
 %   \footnotesize
   \caption{Dose constraints for various OARs for 1, 2 and 3 fractions, denoted as respective numbers. Limits were used in SBRT and PT treatment planning. Data taken from \cite{Benedict2010}}
-  \begin{tabular}{c|c|c|c|c|c|c|c}
-   & Critical  & \multicolumn{3}{c}{Threshold dose (Gy)} & \multicolumn{3}{|c}{Maximum point dose(Gy)}  \\
+  \begin{tabular}{|c|c|c|c|c|c|c|c|}
+  \hline
+   & Critical  & \multicolumn{3}{c}{Threshold dose (Gy)} & \multicolumn{3}{|c|}{Maximum point dose(Gy)}  \\
   Organ & volume (cc) & 1 & 2 & 3 & 1 & 2 & 3 \\
    \hline
    heart & 15 & 16 & 22 & 24 & 30 & 32 & 38\\
@@ -50,6 +51,7 @@ stomach & 10 & 11.2 & 12.4 & 16.5 & 22.2 & 18 & 32\\
   \label{tab:oarlimits}
 \end{table}
 
+\newpage
 \section{Target coverage}
 
 Target coverage for SBRT and PT. For PT target coverage was calculated in 3D case on state 0 and 5; 4D doses were calculated for two different breathing periods (3.6 s and 5s)
@@ -58,39 +60,41 @@ and for two starting phases (0$^\circ$ and 90$^\circ$). 4D doses were calculated
 \begin{table}[H]
   \centering
   \footnotesize
-  \caption{Target coverage for ITV, 4DOpt and SBRT as CTV $D_{99\%}$. ITV and 4Dopt used two breathing periods: 3.6 and 5 s (Per 3s and Per 5s) and
-  two starting phases: 0$^\circ$ and 90$^\circ$ (Ph0 and Ph90). All values are displayed as percentage of the planned dose.}
+  \caption{Target coverage for PT and SBRT as CTV $D_{99\%}$. PT was calculated two static cases (3D, state 0 and 5) and 8 4D cases - two breathing periods: 3.6 and 5 s (Per 3s and Per 5s),
+  two starting phases: 0$^\circ$ and 90$^\circ$ (Ph0 and Ph90) and no rescanning (interplay) and rescanning. All values are displayed as percentage of the planned dose.}
   \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
- \multirow{3}{*}{Target} & \multicolumn{2}{|c|}{3D} & \multicolumn{4}{|c|}{4D interplay} & \multicolumn{4}{|c|}{4D rescan} & \multirow{3}{*}{SBRT}\\ \hline
-  & 0 & 5 & \multicolumn{2}{|c|}{Per 3.6s} & \multicolumn{2}{|c|}{Per 5s} & \multicolumn{2}{|c|}{Per 3600s} & \multicolumn{2}{|c|}{Per 5000s} & \\ \hline
-  &   &   & Ph = 0 & Ph = 90 & Ph0 & Ph90 & Ph0 & Ph90 & Ph0 & Ph90 & \\
+  \hline
+ Tar- & \multicolumn{2}{|c|}{3D} & \multicolumn{4}{|c|}{4D interplay} & \multicolumn{4}{|c|}{4D rescan} & \multirow{3}{*}{SBRT} \\ 
+  get & State & State & \multicolumn{2}{|c|}{Period 3.6s} & \multicolumn{2}{|c|}{Period 5s} & \multicolumn{2}{|c|}{Period 3.6 s} & \multicolumn{2}{|c|}{Period 5s} & \\
+  &   0 &  5   & Ph0 & Ph90 & Ph0 & Ph90 & Ph0 & Ph90 & Ph0 & Ph90 & \\
  \hline \hline 
 1 & 101.04 & 101.04 & 98.96 & 98.96 & 98.96 & 100.0 & 101.04 & 101.04 & 101.04 & 101.04 & 103.13\\
 2 & 102.08 & 102.08 & 101.04 & 98.96 & 100.0 & 97.92 & 101.04 & 102.08 & 102.08 & 101.04 & 101.04\\
-3 & 104.17 & 105.21 & 101.04 & 97.92 & 95.83 & 97.92 & 104.17 & 106.25 & 103.13 & 107.29 & 0.0\\
-4 & 29.17 & 29.17 & 27.08 & 29.17 & 27.08 & 27.08 & 28.13 & 30.21 & 29.17 & 30.21 & 0.0\\
+3 & 104.17 & 105.21 & 101.04 & 97.92 & 95.83 & 97.92 & 104.17 & 106.25 & 103.13 & 107.29 & 101.04\\
+4 & 100.0 & 100.0 & 92.86 & 100.0 & 92.86 & 92.86 & 96.43 & 103.57 & 100.0 & 103.57 & 100.0\\
 5 & 101.04 & 101.04 & 101.04 & 101.04 & 101.04 & 101.04 & 101.04 & 101.04 & 101.04 & 101.04 & 101.04\\
 6 & 102.08 & 103.13 & 100.0 & 100.0 & 98.96 & 100.0 & 100.0 & 100.0 & 101.04 & 102.08 & 101.04\\
 7 & 102.08 & 102.08 & 97.92 & 95.83 & 92.71 & 94.79 & 101.04 & 100.0 & 101.04 & 102.08 & 100.0\\
 8 & 102.08 & 102.08 & 100.0 & 100.0 & 98.96 & 97.92 & 102.08 & 101.04 & 102.08 & 102.08 & 101.04\\
-9 & 98.96 & 98.96 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\
-10 & 100.0 & 100.0 & 98.96 & 100.0 & 98.96 & 100.0 & 27.08 & 100.0 & 101.04 & 100.0 & 0.0\\
-11 & 102.08 & 102.08 & 98.96 & 98.96 & 98.96 & 97.92 & 101.04 & 101.04 & 101.04 & 101.04 & 0.0\\
-12 & 102.08 & 102.08 & 98.96 & 100.0 & 98.96 & 97.92 & 101.04 & 102.08 & 101.04 & 101.04 & 0.0\\
-13 & 102.08 & 102.08 & 97.92 & 97.92 & 96.88 & 96.88 & 102.08 & 100.0 & 101.04 & 101.04 & 0.0\\
-14 & 101.04 & 101.04 & 100.0 & 100.0 & 98.96 & 98.96 & 101.04 & 101.04 & 101.04 & 101.04 & 0.0\\
-15 & 101.04 & 102.08 & 100.0 & 97.92 & 98.96 & 95.83 & 101.04 & 100.0 & 101.04 & 101.04 & 0.0\\
-16 & 101.04 & 100.0 & 95.83 & 96.88 & 97.92 & 96.88 & 100.0 & 98.96 & 101.04 & 100.0 & 0.0\\
-17 & 102.08 & 102.08 & 100.0 & 100.0 & 98.96 & 96.88 & 101.04 & 102.08 & 102.08 & 101.04 & 0.0\\
+9 & 101.04 & 102.08 & 98.96 & 98.96 & 96.88 & 97.92 & 101.04 & 100.0 & 101.04 & 101.04 & 101.04\\
+10 & 100.0 & 100.0 & 98.96 & 100.0 & 98.96 & 100.0 & 101.04 & 100.0 & 101.04 & 100.0 & 102.08\\
+11 & 102.08 & 102.08 & 98.96 & 98.96 & 98.96 & 97.92 & 101.04 & 101.04 & 101.04 & 101.04 & 100.0\\
+12 & 102.08 & 102.08 & 98.96 & 100.0 & 98.96 & 97.92 & 101.04 & 102.08 & 101.04 & 101.04 & 100.0\\
+13 & 102.08 & 102.08 & 97.92 & 97.92 & 96.88 & 96.88 & 102.08 & 100.0 & 101.04 & 101.04 & 106.25\\
+14 & 101.04 & 101.04 & 100.0 & 100.0 & 98.96 & 98.96 & 101.04 & 101.04 & 101.04 & 101.04 & 103.13\\
+15 & 101.04 & 102.08 & 100.0 & 97.92 & 98.96 & 95.83 & 101.04 & 100.0 & 101.04 & 101.04 & 104.17\\
+16 & 101.04 & 100.0 & 95.83 & 96.88 & 97.92 & 96.88 & 100.0 & 98.96 & 101.04 & 100.0 & 107.29\\
+17 & 102.08 & 102.08 & 100.0 & 100.0 & 98.96 & 96.88 & 101.04 & 102.08 & 102.08 & 101.04 & 108.33\\
 18 & 101.04 & 101.04 & 95.83 & 100.0 & 96.88 & 94.79 & 101.04 & 101.04 & 101.04 & 101.04 & 101.04\\
 19 & 101.04 & 98.96 & 98.96 & 96.88 & 97.92 & 97.92 & 98.96 & 98.96 & 100.0 & 98.96 & 104.17\\
 20 & 82.29 & 81.25 & 85.42 & 85.42 & 83.33 & 87.5 & 85.42 & 86.46 & 86.46 & 85.42 & 70.83\\
 21 & 101.04 & 101.04 & 97.92 & 96.88 & 94.79 & 96.88 & 98.96 & 102.08 & 100.0 & 101.04 & 102.08\\
 22 & 101.04 & 101.04 & 101.04 & 101.04 & 101.04 & 100.0 & 101.04 & 101.04 & 101.04 & 101.04 & 101.04\\
-23 & 100.0 & 100.0 & 95.83 & 97.92 & 96.88 & 96.88 & 0.0 & 98.96 & 100.0 & 100.0 & 0.0\\
-24 & 101.04 & 102.08 & 98.96 & 98.96 & 96.88 & 97.92 & 101.04 & 100.0 & 101.04 & 101.04 & 101.04\\
-25 & 101.04 & 102.08 & 100.0 & 100.0 & 98.96 & 98.96 & 100.0 & 101.04 & 101.04 & 101.04 & 101.04\\
-26 & 103.13 & 103.13 & 102.08 & 100.0 & 101.04 & 101.04 & 102.08 & 101.04 & 103.13 & 102.08 & 101.04\\
+23 & 102.08 & 102.08 & 98.96 & 98.96 & 98.96 & 98.96 & 102.08 & 101.04 & 101.04 & 101.04 & 101.04\\
+24 & 100.0 & 100.0 & 95.83 & 97.92 & 96.88 & 96.88 & 100.0 & 98.96 & 100.0 & 100.0 & 0.0\\
+25 & 101.04 & 102.08 & 98.96 & 98.96 & 96.88 & 97.92 & 101.04 & 100.0 & 101.04 & 101.04 & 101.04\\
+26 & 101.04 & 102.08 & 100.0 & 100.0 & 98.96 & 98.96 & 100.0 & 101.04 & 101.04 & 101.04 & 101.04\\
+27 & 103.13 & 103.13 & 102.08 & 100.0 & 101.04 & 101.04 & 102.08 & 101.04 & 103.13 & 102.08 & 101.04\\
 \hline\hline
   \end{tabular}
   \label{tab:oarlimits3}
@@ -99,13 +103,13 @@ and for two starting phases (0$^\circ$ and 90$^\circ$). 4D doses were calculated
 \newpage
 \section{Dose to organs at risk}
 
-Details on the dose to OARs for PT and SBRT will be given here. Various OAR's $D_{Max}$, $D_{Threshold}$ and $D_{Mean}$ will be for all patients used in the study.
+Details on the dose to OARs for PT and SBRT will be given here. Various OAR's $D_{Max}$, $D_{Threshold}$ and $D_{Mean}$ will be given here for all patients used in the study.
 
 \begin{table}[H]
   \centering
 %   \footnotesize
   \caption{SBRT $D_{Max}$ for various OARs. Values are in Gy.}
-  \begin{tabular}{c|c|c|c|c|c|c|c|c}
+  \begin{tabular}{|c|c|c|c|c|c|c|c|c|} \hline
    Patient & \multirow{2}{*}{Heart} & Spinal  & Smaller  & \multirow{2}{*}{Esophagus} & \multirow{2}{*}{Trachea} & \multirow{2}{*}{Aorta} & Left  & Right \\
    Nr & & cord & airways & & & & lung & lung \\
  \hline\hline 
@@ -137,7 +141,7 @@ Details on the dose to OARs for PT and SBRT will be given here. Various OAR's $D
   \centering
 %   \footnotesize
   \caption{SBRT $D_{Threshold}$ for various OARs. Values are in Gy.}
-  \begin{tabular}{c|c|c|c|c|c|c|c|c}
+  \begin{tabular}{|c|c|c|c|c|c|c|c|c|} \hline
    Patient & \multirow{2}{*}{Heart} & Spinal  & Smaller  & \multirow{2}{*}{Esophagus} & \multirow{2}{*}{Trachea} & \multirow{2}{*}{Aorta} & Left  & Right \\
    Nr & & cord & airways & & & & lung & lung \\
  \hline\hline 
@@ -169,7 +173,7 @@ Details on the dose to OARs for PT and SBRT will be given here. Various OAR's $D
   \centering
 %   \footnotesize
   \caption{SBRT $D_{Mean}$ for various OARs. Values are in Gy.}
-  \begin{tabular}{c|c|c|c|c|c|c|c|c}
+  \begin{tabular}{|c|c|c|c|c|c|c|c|c|} \hline
    Patient & \multirow{2}{*}{Heart} & Spinal  & Smaller  & \multirow{2}{*}{Esophagus} & \multirow{2}{*}{Trachea} & \multirow{2}{*}{Aorta} & Left  & Right \\
    Nr & & cord & airways & & & & lung & lung \\
  \hline\hline 
@@ -203,7 +207,7 @@ Details on the dose to OARs for PT and SBRT will be given here. Various OAR's $D
   \centering
 %   \footnotesize
   \caption{PT $D_{Max}$ for various OARs. Values are in Gy.}
-  \begin{tabular}{c|c|c|c|c|c|c|c|c}
+  \begin{tabular}{|c|c|c|c|c|c|c|c|c|} \hline
    Patient & \multirow{2}{*}{Heart} & Spinal  & Smaller  & \multirow{2}{*}{Esophagus} & \multirow{2}{*}{Trachea} & \multirow{2}{*}{Aorta} & Left  & Right \\
    Nr & & cord & airways & & & & lung & lung \\
  \hline\hline 
@@ -235,7 +239,7 @@ Details on the dose to OARs for PT and SBRT will be given here. Various OAR's $D
   \centering
 %   \footnotesize
   \caption{PT $D_{Threshold}$ for various OARs. Values are in Gy.}
-  \begin{tabular}{c|c|c|c|c|c|c|c|c}
+  \begin{tabular}{|c|c|c|c|c|c|c|c|c|} \hline
    Patient & \multirow{2}{*}{Heart} & Spinal  & Smaller  & \multirow{2}{*}{Esophagus} & \multirow{2}{*}{Trachea} & \multirow{2}{*}{Aorta} & Left  & Right \\
    Nr & & cord & airways & & & & lung & lung \\
  \hline\hline 
@@ -267,7 +271,7 @@ Details on the dose to OARs for PT and SBRT will be given here. Various OAR's $D
   \centering
 %   \footnotesize
   \caption{PT $D_{Mean}$ for various OARs. Values are in Gy.}
-  \begin{tabular}{c|c|c|c|c|c|c|c|c}
+  \begin{tabular}{|c|c|c|c|c|c|c|c|c|} \hline
    Patient & \multirow{2}{*}{Heart} & Spinal  & Smaller  & \multirow{2}{*}{Esophagus} & \multirow{2}{*}{Trachea} & \multirow{2}{*}{Aorta} & Left  & Right \\
    Nr & & cord & airways & & & & lung & lung \\
  \hline\hline 
@@ -299,4 +303,4 @@ Details on the dose to OARs for PT and SBRT will be given here. Various OAR's $D
 % \bibliography{../ref.bib}{}
 % % \bibliographystyle{plain}
 % 
-\end{document}
+% \end{document}

@@ -33,7 +33,7 @@ Target coverage is displayed as CTV $D_{99\%}$ in Table~\ref{tab:ctvcomplex}. It
 %   \footnotesize
   \caption{Target coverage for ITV, 4DOpt and SBRT as CTV $D_{99\%}$. ITV and 4Dopt used two breathing periods: 3.6 and 5 s (Per 3s and Per 5s) and
   two starting phases: 0$^\circ$ and 90$^\circ$ (Ph0 and Ph90). All values are displayed as percentage of the planned dose.}
-  \begin{tabular}{c|c|c|c|c|c|c|c|c|c}
+  \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|} \hline
  \multirow{3}{*}{Target} & \multicolumn{4}{|c|}{ITV} & \multicolumn{4}{|c|}{4Dopt} & \multirow{3}{*}{SBRT}\\
   & \multicolumn{2}{|c|}{Per 3.6s} & \multicolumn{2}{|c|}{Per 5s} & \multicolumn{2}{|c|}{Per 3600s} & \multicolumn{2}{|c|}{Per 5000s} & \\
   & Ph = 0 & Ph = 90 & Ph0 & Ph90 & Ph0 & Ph90 & Ph0 & Ph90 & \\
@@ -275,6 +275,7 @@ Details on the dose to OARs for ITV, 4Dopt and SBRT will be given here. Various 
   \label{tab:oarlimits1}
 \end{table}
 
+\newpage
 \section{Organs at risk margins}
 
 Table~\ref{tab:oarmargins} shows the margins that were applied to OAR, before subtracting OAR plus margins from CTV in patients with complex geometry.
@@ -283,8 +284,8 @@ Table~\ref{tab:oarmargins} shows the margins that were applied to OAR, before su
   \centering
 %   \footnotesize
   \caption{OAR margins used for subtraction from CTV for ITV, 4Dopt and SBRT.}
-  \begin{tabular}{c|c|c|c|c}
-\multirow{2}{*}{Patient} & \multirow{2}{*}{OAR} & \multicolumn{3}{|c}{Margin (mm)} \\
+  \begin{tabular}{|c|c|c|c|c|} \hline
+\multirow{2}{*}{Patient} & \multirow{2}{*}{OAR} & \multicolumn{3}{|c|}{Margin (mm)} \\
 & &  ITV & 4Dopt & SBRT\\
    \hline\hline
 
@@ -301,3 +302,4 @@ Table~\ref{tab:oarmargins} shows the margins that were applied to OAR, before su
   \end{tabular}
   \label{tab:oarmargins}
 \end{table}
+% \end{document}

@@ -15,7 +15,7 @@ several experimental verifications \cite{Vinogradskiy2009, Perrin2016, Bert2012a
 A 4D dose calculation requires DIR for the deformation of the dose distributions in each motion state
 to the reference state, where the dose from all motion states is accumulated. 4D dose calculation requires accurate DIR at every voxel, since errors in DIR can significantly alter the 4D dose \cite{Heath2006}. Special consideration has to be paid to calculation of biological 4D doses \cite{Gemmel2011}. 
 
-Contours can be propagated in two ways - either with DIR \cite{Lu2006a, Rietzel2005a} or
+Contours can be propagated either with DIR \cite{Lu2006a, Rietzel2005a} or
 with deformable model driven techniques \cite{McInerney1996}, which uses a physical model to iteratively match the contour to image features. In contrast to a 4D dose calculation, contour propagation requires accurate DIR at the contour boundaries.
 
 Besides radiotherapy, DIR is used also in other medical fields \cite{Cleary2010, Herrell2012, Nithiananthan2011, Naini2010}.
@@ -648,7 +648,7 @@ All linear fits in Fig.~\ref{absDiff_pigs} and ~\ref{maxvf_pigs} were statistica
 
 \begin{figure}[H]
 	\begin{center}		
-		\includegraphics[width=0.75\textwidth]{./Vmm/Images/Jacobian_data_pigs.png}
+		\includegraphics[width=0.95\textwidth]{./Vmm/Images/Jacobian_data_pigs.png}
 		\caption{Statistical data for true (top) and inverse (middle) Jacobian and ICE (bottom) for 9 cardiac 4D-CT states (reference state 0 is excluded) for 15 pigs. Mean, STD, maximum and minimum are represented as (a), (b), (c) and (d), respectively.
 		Minimum ICE is 0 throughout all states and pigs. Boxes represent 25-75\%, whiskers 10-90\%
 		of data. The median is shown with a solid line, the mean is represented with squares and outliers with crosses.}
