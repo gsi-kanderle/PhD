@@ -14,6 +14,11 @@ CiT in conclusion
 
 VMM:
 
+Figure font v VMM
+Patient number v Pat Study
+Tabele vse pogledat
+ICE legenda
+
 Fig 2.3 legend 0
 
 Appendix za python class

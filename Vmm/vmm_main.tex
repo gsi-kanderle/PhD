@@ -30,6 +30,7 @@ While more efficient than landmark checks, these techniques require additional d
 
 A set of tools was created to systematically handle DIR and DIRQA in the open-source software 3D Slicer. Tools were tested on a large data set to verify their validity.
 
+\newpage
 \section{Implementation}
 \label{Implementation}
 
@@ -101,7 +102,7 @@ were build using tools from the ITK library \cite{Yoo2002}.
 
 A DIR quality can be assessed with visual inspection of DIR results. Several tests were developed to make the visual inspection easier.
 
-\newpage
+
 \subsubsection{Inverse color}
 
 
@@ -146,6 +147,7 @@ a quick inspection of differences between two images in their original form.
 
 Movie and flicker (explained in the next section) do not offer any specific registration checks, but improve the process of DIRQA.
 
+\newpage
 \subsubsection{Quantitative tests}
 
 It can be hard to visually inspect all the DIR results, especially in a 4D-CT registration. Therefore a series of tests were developed that give a quantitative assessment of DIR quality.
@@ -172,7 +174,7 @@ To save computational time or to focus on a specific region, the absolute differ
 	\end{center}
 \end{figure}
 
-
+\newpage
 \subsubsection{Landmark distances}
 
 Distances between landmarks before and after registration are often used to determine the spatial accuracy of registration \cite{Castillo2009}. 
@@ -181,7 +183,8 @@ be at the same position as in the reference image. The module measures the Eucli
 
 The user has to manually select landmarks in reference and moving or also in the warped image. For landmarks based on the patient anatomy, a selection from physician is required. 
 Landmarks from the moving image can then be automatically transformed to the warped image using the registration vector field. An example is shown in Fig.~\ref{landmark}.
-\newpage
+
+\vspace{10mm}
 
 \begin{figure}[H]
 \begin{center}
@@ -192,6 +195,7 @@ Landmarks from the moving image can then be automatically transformed to the war
 \end{center}
 \end{figure}
 
+\newpage
 
 \subsubsection{Jacobian determinant}
 \label{Jacobian}
@@ -215,7 +219,9 @@ Expansions and contractions around a point are indicated by Jacobian values grea
 
 The DIRQA module calculates and displays the Jacobian of the vector field, as shown in Fig.~\ref{JacobianImage}.
 Statistical values of the Jacobian are also calculated. Similar to the absolute difference, the Jacobian can be calculated inside a ROI rather than on the whole image.
-\newpage
+
+\vspace{10mm}
+
 \begin{figure}[H]
 	\begin{center}		
 		\includegraphics[width=0.8\textwidth]{./Vmm/Images/jacobian.png}
@@ -223,6 +229,7 @@ Statistical values of the Jacobian are also calculated. Similar to the absolute 
 		\label{JacobianImage}
 	\end{center}
 \end{figure}
+\newpage
 
 \subsubsection{Inverse Consistency Error}
 \label{ICE}
@@ -328,7 +335,8 @@ The B-Spline Plastimatch module in Slicer was used for DIR (see Section~\ref{Reg
   \centering
 %   \footnotesize
   \caption{Parameters used for B-Spline Plastimatch DIR. A mean squared error metric was used. Details for each parameter can be found in \cite{Plastimatch}.}
-  \begin{tabular}{c|c|c}
+  \begin{tabular}{|c|c|c|}
+  \hline \hline
       Parameter & Stage 1 & Stage 2 \\
       \hline
       Resolution & 4,4,2 & 1,1,1 \\
@@ -358,7 +366,7 @@ and target contour was measured. If the target and the beam path was more than 5
 
 \begin{figure}[H]
 	\begin{center}		
-		\includegraphics[width=0.6\textwidth]{./Vmm/Images/exampleReg.png}
+		\includegraphics[width=0.5\textwidth]{./Vmm/Images/exampleReg.png}
 		\caption{Inverse color overlay of two states before (a) and after (b) DIR. Vector field is displayed on image (a) as arrows.}
 		\label{exampleReg_lung}
 	\end{center}
@@ -375,8 +383,8 @@ by left-right direction (around 20\%).
   \centering
 %   \footnotesize
   \caption{Data of vector magnitudes. Values are presented as mean (range).}
-  \begin{tabular}{c|c|c}
-  
+  \begin{tabular}{|c|c|c|}
+  \hline\hline
        & True vector field (mm) & Inverse vector field (mm) \\
        \hline
        Mean & 0.38 (0.01 - 1.28) & 0.38 (0.01 - 1.3) \\ 
@@ -407,6 +415,17 @@ All areas with poor DIR were further than 5 cm away from the target and no repet
 		\label{absDiff_lung}
 	\end{center}
 \end{figure}
+
+\begin{figure}[H]
+	\begin{center}		
+		\includegraphics[width=0.8\textwidth]{./Vmm/Images/maxVf_lung.png}
+		\caption{Values of maximum Jacobian (a), minimum Jacobian (b) and maximum ICE (c) plotted against the maximum vector magnitudes. A linear fit is displayed with a solid line and parameters are written below the plots. 
+		The dashed line in (c) shows $y(x)= x$ plot.
+			The points highlighted with blue squares come from the same DIR error that is shown in Fig.~\ref{contourPropagation}}
+		\label{maxvf}
+	\end{center}
+\end{figure}
+
 
 \newpage
 
@@ -442,17 +461,9 @@ All areas with poor DIR were further than 5 cm away from the target and no repet
 % 	\end{center}
 % \end{figure}
 
-\newpage
+% \newpage
 
-\begin{figure}[H]
-	\begin{center}		
-		\includegraphics[width=0.9\textwidth]{./Vmm/Images/maxVf_lung.png}
-		\caption{Values of maximum Jacobian (a), minimum Jacobian (b) and maximum ICE (c) plotted against the maximum vector magnitudes. A linear fit is displayed with a solid line and parameters are written below the plots. 
-		The dashed line in (c) shows $y(x)= x$ plot.
-			The points highlighted with blue squares come from the same DIR error that is shown in Fig.~\ref{contourPropagation}}
-		\label{maxvf}
-	\end{center}
-\end{figure}
+
 
 \newpage
 \subsubsection{Discussion}
@@ -549,7 +560,8 @@ Around 20 minutes were needed for each pig DIR and additional 20 minutes for pig
   \centering
 %   \footnotesize
   \caption{Parameters used for Plastimatch registration.  A mean squared error metric was used. Details for each parameter can be found here \cite{Plastimatch}.}
-  \begin{tabular}{c|c|c}
+  \begin{tabular}{|c|c|c|}
+  \hline\hline
       Parameter & Stage 1 & Stage 2 \\
       \hline
       Resolution & 4,4,2 & 2,2,1 \\
@@ -600,8 +612,9 @@ observed between the true and the inverse vector fields. However, significant di
   \centering
 %   \footnotesize
   \caption{Data for vector magnitudes. Values are presented as mean (range).}
-  \begin{tabular}{c|c|c|c|c}
-	    & \multicolumn{2}{|c|}{PM} & \multicolumn{2}{|c}{noPM} \\
+  \begin{tabular}{|c|c|c|c|c|}
+  \hline\hline
+	    & \multicolumn{2}{|c|}{PM} & \multicolumn{2}{|c|}{noPM} \\ \hline
   
             & True vector field   & Inverse vector field   & True vector field  & Inverse vector field \\
        \hline
@@ -615,7 +628,7 @@ observed between the true and the inverse vector fields. However, significant di
 
 \begin{figure}[H]
 	\begin{center}		
-		\includegraphics[width=0.9\textwidth]{./Vmm/Images/exampleReg_pigs.png}
+		\includegraphics[width=0.95\textwidth]{./Vmm/Images/exampleReg_pigs.png}
 		\caption{An inverse color overlay of two states before (a) and after (b) DIR. The vector field is displayed on image (a) as arrows.}
 		\label{exampleReg_pigs}
 	\end{center}

@@ -293,8 +293,10 @@ the treatment time and hence the cost is tremendously reduced, which is especial
 %   \footnotesize
   \caption{BED for different fractionation schemes for two $\alpha / \beta$ ratios. Single fraction (1 x 24 Gy) has more than two times higher BED compared to conventional
   (30 x 2 Gy) or 3 x 9 Gy fractionation scheme for $\alpha / \beta = 2$.}
-  \begin{tabular}{c|c|c|c|c}
-  & \multicolumn{4}{c}{Fractionation scheme} \\
+  \begin{tabular}{|c|c|c|c|c|}
+  \hline\hline
+  & \multicolumn{4}{|c|}{Fractionation scheme} \\
+  \hline
 		    & 1 x 24 Gy & 3 x 9 Gy & 5 x 7 Gy & 30 x 2 Gy \\
 		    \hline
 	    BED (Gy$_{\alpha / \beta=6}$)&120  & 68 & 76   &	80\\
@@ -631,7 +633,7 @@ There are different possible types of registration and they can be placed in two
 is translation or rigid registration. The other group of registrations are elastic or deformable registrations. The actual algorithms for performing registration are complex and the reader can
 find a detailed review elsewhere \cite{Hill2001,Brock2006,Rietzel2006a}. A multi-institutional study has shown that the accuracy for the majority of the algorithms is in the order of the image voxel
 size, i.e. millimeters \cite{Brock2010}. The study further states that the registration quality depends on image contrast. The quality of image registration is actually hard to quantitatively
-asses and usually the registration results are checked visually. To improve image registration quality assurance a dedicated software was developed and is described in detail in chapter \ref{chapter:vmm}.
+asses and usually the registration results are checked visually. To improve image registration quality assurance a dedicated software was developed and is described in detail in Chapter \ref{chapter:vmm}.
 
 \newpage
 
@@ -688,7 +690,7 @@ A schematic presentation of some stages is shown on Fig.~\ref{Fig:Stages}. Progn
   \begin{tabular}{|c|c|}
    \hline
    \hline
-Clinical stage & Five-year survival (\%) \\
+Clinical stage & Five-year survival (\%) \\ \hline
 IA & 50 \\
 IB & 47 \\
 IIA & 36 \\
@@ -704,11 +706,13 @@ IV & 2 \\
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.9\textwidth]{./Fundamentals/Images/Stages.png}
+\includegraphics[width=0.95\textwidth]{./Fundamentals/Images/Stages.png}
 \caption{Schematic presentation of three NSCLC stages. (a) Stages IA and IB; (b) Stage IV. Figure taken from \cite{CancerStage}}
 \label{Fig:Stages}
 \end{center}
 \end{figure}
+
+\newpage
 
 \subsubsection{Treatment}
 

@@ -35,6 +35,14 @@ Two CTs were available for all patients. A planning CT was used for OAR delineat
 The planning objectives were that 99\% of planning target volume (PTV) must receive at least 24 Gy ($D_{99\%}$ $\geq$ 24 Gy) in a single fraction, 
 while all OAR constraints as defined in the AAPM task group 101 report on stereotactic radiotherapy had to be respected \cite{Benedict2010}. Details on OAR constraints can be found in Table~\ref{tab:oarlimits}.
 
+\subsection{Planning target volume definition}
+
+To account for range changes relevant for particles only, different PTV definitions were used for SBRT and PT, as shown in Fig.~\ref{Fig:PTV_def}. Within this chapter they will be named PTV$_{SBRT}$ and PTV$_{PT}$ for SBRT and PT, respectively.
+In SBRT, the responsible clinician determined the maximum breathing motion of the CTV from the 4D-CT, hence creating an ITV. This ITV plus an additional 3 mm for setup uncertainty yielded the PTV$_{SBRT}$.
+
+PTV$_{PT}$ was constructed following principles from Graeff et al \cite{Graeff2012}. Each beam has a unique PTV$_{PT}$. For setup uncertainty margins of 3 mm laterally and 1 mm in beam’s eye view (BEV) were used on the CTV. Afterwards a water-equivalent path length ITV (WEPL-ITV) was build, using transformation maps from the B-Spline deformable registration of the 4D-CT data \cite{Shackleford2010}. Additional 2 mm + 2\% proximal and distal margins were added in BEV to account for uncertainty from Hounsfield units to water equivalent path length conversion.
+If the target overlapped with an OAR (e.g. small airways) then OAR plus a margin of 2-5 mm was subtracted from PTV$_{SBRT}$ or PTV$_{PT}$.
+
 \newpage
 \begin{table}[H]
   \centering
@@ -80,26 +88,17 @@ while all OAR constraints as defined in the AAPM task group 101 report on stereo
   \label{tab:patdata}
 \end{table}
 \newpage
-\subsection{Planning target volume definition}
-
-To account for range changes relevant for particles only, different PTV definitions were used for SBRT and PT, as shown in Fig.~\ref{Fig:PTV_def}. Within this chapter they will be named PTV$_{SBRT}$ and PTV$_{PT}$ for SBRT and PT, respectively.
-In SBRT, the responsible clinician determined the maximum breathing motion of the CTV from the 4D-CT, hence creating an ITV. This ITV plus an additional 3 mm for setup uncertainty yielded the PTV$_{SBRT}$.
-
-PTV$_{PT}$ was constructed following principles from Graeff et al \cite{Graeff2012}. Each beam has a unique PTV$_{PT}$. For setup uncertainty margins of 3 mm laterally and 1 mm in beam’s eye view (BEV) were used on the CTV. Afterwards a water-equivalent path length ITV (WEPL-ITV) was build, using transformation maps from the B-Spline deformable registration of the 4D-CT data \cite{Shackleford2010}. Additional 2 mm + 2\% proximal and distal margins were added in BEV to account for uncertainty from Hounsfield units to water equivalent path length conversion.
-If the target overlapped with an OAR (e.g. small airways) then OAR plus a margin of 2-5 mm was subtracted from PTV$_{SBRT}$ or PTV$_{PT}$.
 
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.5\textwidth]{./PatientStudy/Images/Figure1.png}
+\includegraphics[width=0.6\textwidth]{./PatientStudy/Images/Figure1.png}
 \caption{Different PTV definitions for SDRT (PTV$_{SBRT}$) and CiT (PTV$_{PT}$). For PTV$_{SBRT}$ isotropic margins of 3 mm plus maximum tumor displacement due to 
 breathing were used on the CTV; For PTV$_{PT}$ margins of 3 mm laterally and 1 mm in beam’s eye view were used and then range-ITV was constructed with
 2 mm + 2\% range margins added for PTV$_{PT}$ in end-inhale phase.}
 \label{Fig:PTV_def}
 \end{center}
 \end{figure}
-
-\newpage
 
 \subsection{SDRT treatment planning}
 \label{SBRTTP}
@@ -142,7 +141,7 @@ For comparison between SBRT and PT the following dose metrics were used - for th
 
 Paired t-tests were performed to compare the dose metrics and for post-hoc exploratory analysis between groups a two-sided t-test with Welch correction for different variances was carried out. A p-value < 0.05 was considered significant. Dose differences are always reported such that higher dose levels for SBRT result in positive values.
 
-
+\newpage
 
 \section{Results}
 
@@ -151,7 +150,7 @@ Examples of two SBRT and 4D-Dose$_{rescan}$ PT treatment plans are shown in Fig.
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.7\textwidth]{./PatientStudy/Images/Figure2.png}
+\includegraphics[width=0.95\textwidth]{./PatientStudy/Images/Figure2.png}
 \caption{Treatment plans for SBRT (left), PT (middle) and dose volume histogram (right) for SBRT (solid lines) and PT (dashed lines) for two patients. PT curves for OARs without any dose are not shown. Patient 9 (top row) might be better suited for PT and patient 2 (lower row) for SBRT. Patient 2 has a small lesion (1.6 cm$^{3}$) in a central lung region, resulting in large PTV$_{PT}$ - up to 32 cm$^{3}$, compared to PTV$_{SBRT}$ 7.7 cm$^{3}$. The CTV contour is outlined in white.}
 \label{Fig:TreatmentPlans}
 \end{center}
@@ -161,7 +160,7 @@ Examples of two SBRT and 4D-Dose$_{rescan}$ PT treatment plans are shown in Fig.
 
 The difference in PTV definition resulted in 1.5 (1.3 - 2.1) times bigger PTV$_{PT}$ than PTV$_{SBRT}$. All SBRT plans were clinically acceptable, though in one case the $D_{99\%}$ was reduced to 16.8 Gy due to proximity of an OAR. 3D-Dose$_{0\%}$ and 3D-Dose$_{50\%}$plans provided sufficient target coverage in all patients. For 4D-Dose$_{interplay}$ and 4D-Dose$_{rescan}$ there was 63\% and 2\% cases of insufficient target coverage, respectively, across all targets and different breathing patterns. Details are shown in Fig.~\ref{Fig:InterplayDiff}. For the patient with reduced dose in SBRT, PT could increase the $D_{99\%}$ from 16.8 Gy in SBRT to 20.3 Gy while adhering to OAR constraints. 
 
-
+\newpage
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.9\textwidth]{./PatientStudy/Images/Figure3.png}
@@ -169,7 +168,7 @@ The difference in PTV definition resulted in 1.5 (1.3 - 2.1) times bigger PTV$_{
 \label{Fig:InterplayDiff}
 \end{center}
 \end{figure}
-\newpage
+
 \subsection{Dose in OARs}
 
 
@@ -180,7 +179,7 @@ PT delivering less dose to OARs. Significant difference was also observed for $V
 respectively. The $V_{20\%}$ for contralateral lung was zero for almost all patients in SBRT and PT. The overall OAR difference for patients between SBRT and PT 
 was significant, 2.8 Gy (1.6 - 3.7)  for $D_{Max}$ and 0.7 Gy (0.3 - 1.6) for $D_{Mean}$. 
 
-
+\newpage
 
 \begin{table}[H]
   \centering
@@ -214,10 +213,10 @@ Significant differences were observed between patients with a single CTV smaller
 
 The 4 patients with multiple lesions were excluded from this comparison. The $D_{Max}$ and $D_{Mean}$ difference were on average higher in these patients, but the number of patients was too low for statistical analysis. 
 
-
+\newpage
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.9\textwidth]{./PatientStudy/Images/Figure4.png}
+\includegraphics[width=0.8\textwidth]{./PatientStudy/Images/Figure4.png}
 \caption{Box plots of average OARs max point dose ($D_{Max}$) and mean dose difference between SBRT and PT for patients with single CTV smaller ($n = 9$) or bigger ($n = 6$) than 2.5 cm$^{3}$. Boxes represent 25\% - 75\%, outliers are shown as whiskers and median is shown with solid lines. Values for patients with multiple lesions are shown with circle symbols.}
 \label{Fig:OAR_boxplots}
 \end{center}
