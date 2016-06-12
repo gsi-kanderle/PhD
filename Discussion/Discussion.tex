@@ -128,7 +128,7 @@ While tumor motion influences photon treatment, it can be mitigated with proper 
 On the other hand, effects can be substantial when treating moving targets with scanned particle therapy \cite{Bert2008}.
 It was shown in this thesis that rescanning is an adequate motion mitigation technique. However, rescanning has a degree of uncertainty, 
 especially regarding OAR $D_{Max}$.
-In hypofractionated treatment these limits are strict and exact dose to the OAR must be known. 
+In a hypofractionated treatment these limits are strict and exact dose to the OAR must be known. 
 A possible solution would be to simulate rescanning and 4D delivery in the optimization process itself. 
 Such a solution is not yet feasible due to the complexity of the problem. Another solution could also be phase-controlled rescanning with greatly reduced
 uncertainty in the mitigation outcome \cite{Mori2013,Takahashi2014}. However,
@@ -158,6 +158,14 @@ All three techniques, rescanning, gating and beam tracking, essentially adapt 3D
 creates a 4D treatment plan, with each motion state in the 4D-CT having a designated treatment plan. A full 4D-optimization has been successfully implemented and verified experimentally at
 GSI \cite{Graeff2013}.
 
+Recent advances in photon radiotherapy allow the use of non-coplanar beams, a so-called 4$\pi$ optimization \cite{Dong2013}. A study by Dong et al. \cite{Dong2013b} showed that
+4$\pi$ yielded better target coverage and OAR sparing than SBRT for NSCLC patients. 
+They have reported reduction of $D_{Max}$ in heart, esophagus and spinal cord by 32\%, 72\% and 53\%, respectively, showing
+the potential of a 4$\pi$ optimization. According to this thesis, PT is able to reduce the $D_{Max}$ even further, with a reduction of 57\%, 87\% and 83\% for heart, esophagus and spinal cord,
+respectively. The numbers, however, should be compared with caution, since they were obtained from a different set of patients. 
+A future study, directly comparing SBRT, $4\pi$ and PT for NSCLC is thus warranted.
+
+
 % Surgery is the gold standard for treating NSCLC in the early stages \cite{Roesch2014}. 
 % In recent years, however, SBRT showed similar results as surgery and SBRT is recommended for all high-risk surgical patients. 
 % A recent comparison study by Yu et al. \cite{Yu2015} showed that
@@ -186,33 +194,35 @@ The results of a multi-institutional randomized trial, RTOG1308 \cite{RTOG1308},
 will have an important impact on treating NSCLC. The trial started in 2014.
 
 
-\subsection{Outlook}
-
-Recent advances in photon radiotherapy allow the use of non-coplanar beams, a so-called 4$\pi$ optimization \cite{Dong2013}. A study by Dong et al. \cite{Dong2013b} showed that
-4$\pi$ yielded better target coverage and OAR sparing than SBRT for NSCLC patients. 
-They have reported reduction of $D_{Max}$ in heart, esophagus and spinal cord by 32\%, 72\% and 53\%, respectively, showing
-the potential of a 4$\pi$ optimization. According to this thesis, PT is able to reduce the $D_{Max}$ even further, with a reduction of 57\%, 87\% and 83\% for heart, esophagus and spinal cord,
-respectively. The numbers, however, should be compared with caution, since they were obtained from a different set of patients. 
-A future study, directly comparing SBRT, $4\pi$ and PT for NSCLC is thus warranted.
-
-Robust optimization seems to be gaining on popularity for PT. Standard margin definition to account for uncertainties fails in PT, while the inclusion of uncertainties in 
-optimization process can substantially improve treatment plans \cite{Chen2012}. The robustness optimization is now computationally possible even for a 4D optimization \cite{Liu2016}, opening a wide
-field of new possibilities. 
-\newpage
-
-\chapter{Conclusion}
+\chapter{Conclusion and Outlook}
 
 Scanned carbon-ions (PT) should be considered as a treatment modality for non-small cell lung cancer. Beside delivering 
 the same dose to tumors as the state of the art photon therapy (SBRT), PT tremendously reduces normal tissue irradiation.
 
-PT would be especially beneficial for patients with large tumors or with multiple disease sites, because the dose bath is much
-smaller than with SBRT. This could be exploited even further and for some patients PT could deliver dose in a single fraction, whereas SBRT could not due to over irradiating
-normal tissue.
 
-To ensure tumor will receive the planned dose and the dose to the normal tissue will not exceed prescribed limits, it is imperative
+PT would be especially beneficial for patients with large tumors or with multiple disease sites, because the dose bath is much
+smaller than with SBRT. This could play a crucial role in some patients, for which PT could deliver dose in a single fraction, where SBRT is limited due to over 
+irradiating normal tissue.
+
+
+
+To ensure tumor will receive the planned dose and the dose to the normal tissue will not exceed the prescribed limits, it is imperative
 to include a time-resolved (4D) dose calculation in a PT treatment planning. A 4D dose calculation is based on the deformable image registration (DIR).
 A DIR is a complex problem and hence prone to errors. Since any errors in DIR may significantly affect the 4D dose calculation, a DIR
 quality assurance must be conducted before using DIR in the PT treatment planning for lung cancer.
+
+
+
+To make PT treatment plans more robust against uncertainties, there is an emerging trend of including uncertainties in the optimization process itself, the so-called robust optimization.
+Standard geometrical margin definition may be inadequate in PT, while the robust optimization can substantially improve treatment plans \cite{Chen2012}. 
+The robustness optimization is now computationally possible even for a 4D optimization \cite{Liu2016}, bringing treatment of lung cancer patient with PT closer to reality.
+
+
+The uncertainties in radiation treatment could be drastically reduced by employing real-time imaging at the moment of irradiation.
+This could be achieved by combining MRI and Linac and first patients will be treated in the near future \cite{Lagendijk2016}. This will have an important effect on radiotherapy.
+For PT the challange of combining it with MRI may be even greater than for photons, however studies have shown feasibility of a such combination \cite{Hartman2015}.
+In addition, it was shown that particles could be used for imaging purposes as well, opening a wide
+field of new possibilities \cite{Prall2016}.
 
 Patients with advanced staged lung cancer have an extremely poor prognosis, with a median survival of only nine months. 
 Currently the best treatment is a combination of chemotherapy and SBRT. However, more than 10\% of the patients will die due to 
@@ -262,6 +272,7 @@ treatment-related side effects and hence tremendously improve the survival for l
 % Small tumor are bad %http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4399385/\
 % 
 % dosimetric study of protons vs sbrt %http://www.ncbi.nlm.nih.gov/pubmed/18405986/
+
 
 \bibliographystyle{apalike}
 \bibliography{./ref.bib}{}

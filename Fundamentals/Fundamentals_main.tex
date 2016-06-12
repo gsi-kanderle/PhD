@@ -4,11 +4,11 @@
 
 \section{Radiotherapy}
 
-An ionizing radiation has been used for treating tumors since the discovery of X-rays in 1895. In the beginning only superficial diseases were treated, but as time and technology progressed X-ray tubes gained on voltage, allowing treatment of deeper seated tumors.
+Ionizing radiation has been used for treating tumors since the discovery of X-rays in 1895. In the beginning, only superficial diseases were treated, but as time and technology progressed X-ray tubes gained on voltage, allowing treatment of deeper seated tumors.
 
-The radiation from a linear accelerator was first used in medicine in 1953. The cure rates increased tremendously due to the collimated beam and higher energies compared to X-ray tubes. The next big milestone was introduction of computers in the field
+The radiation from a linear accelerators was first used in medicine in 1953. The cure rates increased tremendously due to the collimated beam and higher energies compared to X-ray tubes. The next big milestone was the introduction of computers in the field
 of radiotherapy. This led to better diagnostic tools, such as computed tomography scans (CT), magnetic resonance imaging (MRI) and
-positron emission tomography (PET). The location of the tumor could be better estimated with these tools and hence the treatment was improved. The potential of computers was afterwards exploited also in the treatment planning process, resulting in intensity modulated
+positron emission tomography (PET). The location of the tumor could be estimated better with these tools and hence the treatment was improved. The potential of computers was afterwards exploited also in the treatment planning process, resulting in intensity modulated
 radiation therapy (IMRT) which, together with diagnostic tools, provides an exact dose shaping in accordance to patient specific tumors.
 
 In 1946, a paper from R. Wilson first described the application of protons for cancer treatment \cite{Wilson1946}. It was shown that protons have a preferable depth dose profile compared to photons. First patient treatment followed in the early 1950's at Lawrence Berkeley Laboratory, USA. Heavier ions, such as 
@@ -197,7 +197,7 @@ radiotherapy strives to avoid. DNA can also be damaged to such extent, that cell
 \label{RBE}
 
 Fig.~\ref{track} shows the size of a DNA molecule in comparison with proton and carbon ion distribution of $\delta$-electrons around their track. 
-A clustered DSB occurs preferably around the Bragg peak due to large ionization densities. Less cells will survive a clustered DSB, compared to DSB or SSB. Ions have large ionization density which is one of the main advantages over photons in radiotherapy. Since most of the clinical experience about
+A clustered DSB occurs preferably around the Bragg peak due to large ionization densities. Less cells will survive a clustered DSB, compared to DSB or SSB. Ions have large ionization density, which is one of the main advantages over photons in radiotherapy. Since most of the clinical experience about
 cell response to radiation comes from photons, the biological effect of ions is usually described relative to a reference photon response. Relative biological effectiveness (RBE) is therefore defined as the ratio of the reference 
 photon dose to the dose level of a specific ion radiation at the same biological effect (isoeffect):
 
@@ -219,8 +219,8 @@ As seen in Fig.~\ref{dosedep} and Eq. \ref{lq}, RBE values are dependent on the 
 The unit for biological dose is Gy (RBE) \cite{ICRU2007}. 
 
 Besides the dose level, RBE also depends on the LET, the particle species and the tissue type \cite{Kraft2000}. Therefore RBE modeling is a complex topic.
-At GSI, RBE is calculated using the \textit{local effect model} (LEM) developed by Scholz et al. \cite{Scholz1994}. There are two main assumptions in the LEM model. First is that localized biological 
-effects are independent on the radiation type. Second assumption is that the photon response is the same for all dose levels (high and low).
+At GSI, RBE is calculated using the \textit{local effect model} (LEM) developed by Scholz et al. \cite{Scholz1994}. There are two main assumptions in the LEM model. The first is that localized biological 
+effects are independent on the radiation type. The second assumption is that the photon response is the same for all dose levels (high and low).
 The difference between different radiation types comes from the dose deposition in a small volume in the cell nucleus.
 At the same total dose, many photons create a homogeneous dose distribution over a cell nucleus, while few ions cause a highly localized dose distribution around their track.
 
@@ -269,7 +269,8 @@ with the total dose $D$ equal to $n \times d$, we can define the fractionation f
 \end{equation}
 
 so that BED = $D \times F$. $F$ increases with $d$, but decreases with $\alpha / \beta$. Lower $\alpha / \beta$ (late-responding tissue)
-means higher $F$ and a higher $\alpha / \beta$ (early responding tissue) moves $F$ towards 1.
+means higher $F$ and a higher $\alpha / \beta$ (early responding tissue) moves $F$ towards 1. 
+As normal tissue typically has a lower a/b (around 2) than tumor tissue (around 4-10), fractionation effectively increases the differential dose to the tumor, and thus increases the therapeutic window.
 
 
 \subsubsection{Hypofractionation}

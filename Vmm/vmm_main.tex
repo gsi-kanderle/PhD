@@ -478,7 +478,7 @@ scan. However, patients expansions and contractions can be seen on maximum and m
 % then it expands in inverse direction and vice versa. The correlation was confirmed in Fig.~\ref{calcJac_lung}a, with a high Pearson's r (0.90). Furthermore outliers from linear fit spot inconsistencies
 % in DIR as shown in Fig.~\ref{calcJac_lung}b and c, where a small artifact was found in one patient state solely from the deviation from linear fit in Fig.~\ref{calcJac_lung}. A scaled Jacobian could be used as a DIRQA check.
 
-ICE Mean and STD values are in submilimeter range, due to the correlation between vector field and ICE (see Eq.~\ref{eq:ice}). The maximum ICE (2.3 cm) was observed in a patient with 
+ICE Mean and STD values were in submilimeter range, due to the correlation between vector field and ICE (see Eq.~\ref{eq:ice}). The maximum ICE (2.3 cm) was observed in a patient with 
 an artifact present in state 2 of the 4D-CT, as shown in Fig.~\ref{maxvf}.
 % but still smaller as average maximum vector values. 
 
@@ -696,7 +696,7 @@ DIR is with a linear fit from maximum ICE PM, which lies above the function $y(x
 then just after true transformation. The linear fit for noPM maximum ICE showed better results in this terms, since it lied below the $y(x)=x$ function.
 
 
-During the animal study only one DIR was repeated because of DIRQA. It was shown in post-experiment analysis, that all DIR should be repeated, pointing out flaws in initial DIRQA procedure.
+During the animal study only one DIR was repeated because of DIRQA. It was shown in post-experiment analysis, that most of the DIRs should be repeated, pointing out flaws in initial DIRQA procedure.
 Mainly, DIRQA should be made on all DIR and not just on one state, since DIRQA from one DIR does not guarantee the quality of the other DIRs from the same 4D-CT. 
 Each DIR is performed individually and should be treated as such. Furthermore, instead of mean Jacobian and ICE, maximum and minimum should be investigated, 
 because it points to the worst part of the DIR.
