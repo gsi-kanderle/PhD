@@ -6,7 +6,7 @@ NSCLC disease sites. With a state of the art 4D optimization, intensity modulate
 to SBRT. It was possible to plan for a a single fraction ablative dose with IMPT for a specific patient with 5 lesions, where SBRT was limited due to excessive heart dose. The mean heart
 dose could be reduced by an order of magnitude.
 
-The treatment of NSCLC with PT is influenced by interplay between the tumor motion and the beam scanning. It was shown that rescanning offers
+The treatment of NSCLC with PT is influenced by interplay effects between the tumor motion and the beam scanning. It was shown that rescanning offers
 adequate motion mitigation. 
 
 PT offers precise dose shaping but it can thus also be more prone to uncertainties. Calculation of time-resolved (4D) doses can be significantly
@@ -27,7 +27,7 @@ existing libraries, such as ITK \cite{Yoo2002}, or by writing designated softwar
 and tested for various anatomical sites.
 
 In this study, DIR was used for contour propagation and 4D dose calculations. The 4D dose calculation requires 
-accurate DIR in each voxel, since the dose is propagated with vector field. This was ensured by calculating the vector field Jacobian and ICE voxel-wise. 
+accurate DIR in each voxel, since the dose is propagated with the resulting vector field. This was ensured by calculating the vector field Jacobian and ICE voxel-wise. 
 % An indirect conformation of DIR quality, or specifically small inverse consistency error (ICE) in target was flat target dose in 4D dose calculation. Target was propagated
 % in different 4D-CT states using inverse DIR. The propagated states were used to create ITV on which the 3D dose was optimized. The 4D dose calculation is based on propagating dose
 % from 4D-CT states to reference one with true DIR. If there were large inco

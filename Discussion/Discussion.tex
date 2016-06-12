@@ -63,8 +63,9 @@ accurate DIR in each voxel, since dose is propagated with vector field. This was
 % with inverse registration
 
 Tests in DIRQA module were divided into two groups - qualitative and quantitative. Qualitative tests are false color and checkerboard; they provide an overview of the DIR result.
-However they do not give any information of vector field quality and it is impossible to review the sheer amount of data. An example of the disadvantage of the qualitative test could be seen in pig cardiac 4D-CT, where qualitative test did not show
-any errors in DIR, but errors were observed in vector fields. 
+However they do not give any information of vector field quality and it is impossible to review the sheer amount of data. 
+An example of the disadvantage of the qualitative test could be seen in the pig cardiac 4D-CT, where DIR inconsistencies could not be clearly seen with qualitative tests but where
+apparent on quantitative tests. 
 
 The quantitative tests used in the DIRQA module are landmark distance, absolute difference, Jacobian and ICE. Absolute difference, Jacobian and ICE have undergone an extensive testing. The results suggest
 that absolute difference gives us the least information about DIRQA, apart that it has to be lower after the DIR. 
@@ -202,7 +203,7 @@ the same dose to tumors as the state of the art photon therapy (SBRT), PT tremen
 
 PT would be especially beneficial for patients with large tumors or with multiple disease sites, because the dose bath is much
 smaller than with SBRT. This could play a crucial role in some patients, for which PT could deliver dose in a single fraction, where SBRT is limited due to over 
-irradiating normal tissue.
+irradiating the normal tissue.
 
 
 

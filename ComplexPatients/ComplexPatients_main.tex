@@ -54,7 +54,7 @@ The number of fractions and doses delivered are given in Table~\ref{tab:patdata2
 	\centering
 	%   \footnotesize
 	\caption{Target characteristics, with CTV volumes, peak-to-peak motions, fractionation schemes and number of fields used for PT treatment planning. Last column 
-	shows an OAR in target vicinity (closer than 10 mm), if present. SA stands for smaller airways and esoph. for esophagus.}
+	shows which OARs were present in the target vicinity (closer than 10 mm). SA stands for smaller airways and esoph. for esophagus.}
 	\begin{tabular}{c|c|c|c|c|c|c}
 		\hline\hline
 		\multirow{2}{*}{Patient} & \multirow{2}{*}{Target} & \multirow{2}{*}{Volume (cm$^3$)} & Peak-to-peak & Fractionation & Number & OAR in \\
@@ -161,7 +161,7 @@ Investigation of two different optimization techniques to handle range changes i
 WEPL-ITV from different fields (see Fig.~\ref{Fig:weplITV}a). 
 Graeff et. al \cite{Graeff2012} proposed a solution to include range margins into the field description itself, instead of creating a bigger PTV. 
 
-Thus, all fields have the same target in the optimization, permiting simultaneous optimization. 
+Thus, all fields have the same target in the optimization, permitting simultaneous optimization. 
 Treatment plans were made for all targets with IMPT on a ITV in the reference phase. Additionally the target in motion state 5 (end-exhale) was included in the optimization
 to make the plan more robust against range changes in different motion states.
 
@@ -172,8 +172,8 @@ however the actual optimization is performed on each target voxel in each motion
 E(\vec{N}) = \sum_{m=1}^{M}\sum_{T_m} \sum_{i\in T_m} \left( D_{plan}^{i} -\sum_{k=1}^n c_{ikm}N\right)
 \end{equation}
 
-All targets were treated with IMPT and 4D optimization. Due to the large optimization problem for targets 3a - b, 5a - d, 6b, 8a and 8c, where targets had a big volume or 
-OARs were included besides targets in optimization a subset of motion states was used \cite{Graeff2012}. 
+All targets were treated with IMPT and 4D optimization. Due to the large optimization problem for targets 3a - b, 5a - d, 6b, 8a and 8c (targets had a big volume or 
+OARs were included besides targets in the optimization), a subset of motion states was used in optimization \cite{Graeff2012}. 
 To cover most of the different tumor positions, two extreme motion states (0 and 5) and an intermediate position (7) were chosen.
 
 \end{itemize}
@@ -252,7 +252,7 @@ An example of different treatment plans for three patients are shown in Fig.~\re
 		CTV, heart, esophagus and stomach contours are outlined in white, red, blue and orange,
 		respectively. The patient 7 image is magnified to the target 7b location. Patient 2 has 5 disease sites with no OARs in target vicinity. Patient 7 had poor target coverage
 		with PT due to a large target motion and OAR proximity. A 1 x 24 Gy plan could be generated for patient 8 with PT, 
-		while SBRT was limited with heart dose and 2 targets were treated with 3 x 9 Gy, 2 with 1 x 20 Gy and one with 1 x 22 Gy. }
+		while SBRT was limited by the dose deposited in the heart. Therefore the fractionation scheme was adapted and 2 targets were treated with 3 x 9 Gy, 2 with 1 x 20 Gy and one with 1 x 22 Gy. }
 		\label{Fig:multiExample}
 	\end{center}
 \end{figure}
@@ -466,7 +466,7 @@ Even though PT deposits less dose to OARs with the same or even better target co
 An implementation of multi-criteria objective planning should bring even better dose distribution and bring possibility to choose between trade-offs \cite{Breedveld2007, Chen2010}. 
 Additionally, the multiple target optimization in PT would benefit from a shell around PT where the dose would be minimized. Therefore the excessive dose
 in healthy tissue would be further reduced. An introduction of a shell, however, would further enlarge the optimization problem, which is big already for complex geometries 
-(patient 4 - 8). As mention, it might be possible to minimize the voxel number in optimization by an adaptive grid.
+(patient 4 - 8). An adaptive optimization grid could be a possible solution here as well \cite{Prall2016a}.
 
 In Chapter~\ref{PatStudy} additional range margins to account for range uncertainties could be used in the treatment planning, due to SFUD. 
 Because we did not use field specific PTVs, it was not possible to include range uncertainties in this study.
@@ -490,7 +490,7 @@ not met. Gating, together with rescanning, has already been successfully impleme
 treatment of moving tumors \cite{Richter2014}.
 
 A recent review showed good local control rates between 66 - 92\% for patients treated with SBRT for in-field recurrent tumors \cite{Amini2014}. 
-However, there were grade 4 and 5 complications present, i.e. a study by Trovo et al.showed grade 5 pneumonia in
+However, there were grade 4 and 5 complications present. A study by Trovo et al.showed grade 5 pneumonia in
 6\% of patients treated \cite{Trovo2014}. As shown in our study, PT delivers less dose to the OARs, ipsilateral lung in particular, and could hence reduce the number of treatment-related
 complications.
 
@@ -501,5 +501,5 @@ could be irradiated with 1 x 24 Gy, whereas it could not with SBRT.
 There was a small difference between the two 4D treatment planning techniques.
 
 Patients with multiple NSCLC disease site have a poor prognosis, with a median survival shorter than a year. 
-A treatment with SBRT can prolong the patients life, however there is a 10\% chance of death due to the severity of the treatment. PT could
+A treatment with SBRT can prolong the patient's life, however there is a 10\% chance of death due to the severity of the treatment. PT could
 maintain the SBRT survival rate, while tremendously reducing treatment related side effects.
