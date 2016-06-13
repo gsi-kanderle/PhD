@@ -51,7 +51,7 @@ If the target overlapped with an OAR (e.g. small airways) then OAR plus a margin
   RSL, right superior lung; IRL, inferior right lung; LSL, left superior lung; ILL, inferior left lung; RCS, right cardiophrenic space.}
   \begin{tabular}{|c|c|c|c|c|c|c|c|}
     \hline\hline
-     & & & & \multicolumn{3}{|c|}{Volume (cm$^3$)} \\ \cline{5-7}
+     & & & & & \multicolumn{3}{|c|}{Volume (cm$^3$)} \\ \cline{6-8}
     Patient & Lesion & \multirow{2}{*}{Location} & \multirow{2}{*}{Stage} &
     Peak-to-peak & \multirow{2}{*}{CTV} & \multirow{2}{*}{PTV$_{SBRT}$} & \multirow{2}{*}{PTV$_{PT}$}\\
     Number & Number &  & & motion [mm] & & & \\
@@ -151,6 +151,27 @@ Examples of two SBRT and 4D-Dose$_{rescan}$ PT treatment plans are shown in Fig.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.95\textwidth]{./PatientStudy/Images/Figure2.png}
+%   \include{Abstract/Abstract}
+%   
+%   \include{Publications/publications}
+% 
+%   \tableofcontents
+%   
+%   \include{Abbrevations/abbrevetions}
+% 
+%   \include{Motivation/motivation}
+%   
+%   \setcounter{mtc}{1}
+%   \include{Fundamentals/Fundamentals_main}
+%   
+%   \setcounter{mtc}{2}
+%   \include{Vmm/vmm_main}
+%   
+%   \setcounter{mtc}{3}
+%   \include{PatientStudy/PatientStudy_main}
+% %   
+%   \setcounter{mtc}{4}
+%   \include{ComplexPatients/ComplexPatients_main}
 \caption{Treatment plans for SBRT (left), PT (middle) and dose volume histogram (right) for SBRT (solid lines) and PT (dashed lines) for two patients. PT curves for OARs without any dose are not shown. Patient 9 (top row) might be better suited for PT and patient 2 (lower row) for SBRT. Patient 2 has a small lesion (1.6 cm$^{3}$) in a central lung region, resulting in large PTV$_{PT}$ - up to 32 cm$^{3}$, compared to PTV$_{SBRT}$ 7.7 cm$^{3}$. The CTV contour is outlined in white.}
 \label{Fig:TreatmentPlans}
 \end{center}
@@ -223,7 +244,7 @@ The 4 patients with multiple lesions were excluded from this comparison. The $D_
 \end{figure}
 
 
-\section{Discussion}
+\section{Summary and Discussion}
 
 This is the first in silico trial directly comparing clinically valid SBRT plans to scanned carbon ion plans using state of the art 
 4D dose calculation and motion mitigation methods for NSCLC patients. Our study found that PT deposited less dose to OARs compared 

@@ -54,14 +54,16 @@ stomach & 10 & 11.2 & 12.4 & 16.5 & 22.2 & 18 & 32\\
 \newpage
 \section{Target coverage}
 
-Target coverage for SBRT and PT. For PT target coverage was calculated in 3D case on state 0 and 5; 4D doses were calculated for two different breathing periods (3.6 s and 5s)
-and for two starting phases (0$^\circ$ and 90$^\circ$). 4D doses were calculated without motion compensation (interplay) and with rescanning as a motion mitigation technique (rescanning).
+Target coverage for SBRT and PT. For PT target coverage was calculated in 3D case on state 0 and 5 (3D-Dose${_0\%}$ 3D-Dose${_50\%}$;) 
+4D doses were calculated for two different breathing periods (3.6 s and 5s)
+and for two starting phases (0$^\circ$ and 90$^\circ$). 4D doses were calculated without motion compensation (4D-Dose$_{interplay}$) 
+and with rescanning as a motion mitigation technique (4D-Dose$_{rescanning}$).
 
 \begin{table}[H]
   \centering
   \footnotesize
   \caption{Target coverage for PT and SBRT as CTV $D_{99\%}$. PT was calculated two static cases (3D, state 0 and 5) and 8 4D cases - two breathing periods: 3.6 and 5 s (Per 3s and Per 5s),
-  two starting phases: 0$^\circ$ and 90$^\circ$ (Ph0 and Ph90) and no rescanning (interplay) and rescanning. All values are displayed as percentage of the planned dose.}
+  two starting phases: 0$^\circ$ and 90$^\circ$ (Ph0 and Ph90) and without rescanning (interplay) and with rescanning. All values are displayed as percentage of the planned dose.}
   \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
   \hline
  Tar- & \multicolumn{2}{|c|}{3D} & \multicolumn{4}{|c|}{4D interplay} & \multicolumn{4}{|c|}{4D rescan} & \multirow{3}{*}{SBRT} \\ 

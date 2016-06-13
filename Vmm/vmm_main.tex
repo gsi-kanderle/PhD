@@ -84,7 +84,7 @@ To provide a clear and consistent description of methods used, an overview of th
 In radiotherapy the true registration is used for dose propagation and consequential the 4D Dose calculation, whereas with the inverse registration contours can be propagated from the reference to the moving phase.
 
 
-\subsection{Registration Quality Checks}
+\subsection{Registration quality tests}
 \label{DIRQA}
 
 In order to provide visual and quantitative assessment of the registration quality a \textbf{Deformable Image Registration Quality Assurance} or DIRQA module was created. 
@@ -431,7 +431,7 @@ All areas with poor DIR were further than 5 cm away from the target and no repet
 
 \begin{figure}[H]
 	\begin{center}		
-		\includegraphics[width=0.9\textwidth]{./Vmm/Images/Jacobian_data.png}
+		\includegraphics[width=0.95\textwidth]{./Vmm/Images/Jacobian_data.png}
 		\caption{Data for the true (top) and inverse (middle) Jacobian and ICE (bottom) for 9 4D-CT states (reference state 0 is excluded) for 23 lung cancer patients. Mean, STD, maximum and minimum are represented as (a), (b), (c) and (d), respectively.
 		Minimum ICE is 0 throughout all states and patients. Boxes represent 25-75\%, whiskers 10-90\%
 		of data. The median is shown with a solid line, the mean is represented with squares and outliers with crosses.}
@@ -748,7 +748,8 @@ and treatment planning QA had to be done \cite{Graeff2014a}.
 There were already propositions for frameworks for DIRQA in clinical work flow \cite{Varadhan2013}, however none were tested in an actual clinical environment. An animal study can not be directly compared to an actual clinic,
 however the number of pigs studied was high (15) and the study was under time constraint, which simulate some of the pressures present in clinical environment.
 
-The techniques used in DIRQA were divided into visual qualitative (inverse color, checkerboard) and quantitative (absolute difference, Jacobian and ICE). While the quantitative can be used to pinpoint errors in DIR, the visual qualitative
+The techniques used in DIRQA were divided into qualitative (inverse color, checkerboard) and quantitative (absolute difference, Jacobian and ICE). 
+While the quantitative can be used to pinpoint errors in DIR, the qualitative
 can be used to actually locate the error as shown in Fig.~\ref{maxvf}d. The location and size of DIR error also determines if a repetition of DIR is necessary.
 All three quantitative checks have been used in literature as a possible DIRQA \cite{Varadhan2013, Leow2007, Christensen2001, Bender2009}.
 They all share the same flaw, however, that they are a necessary but not sufficient condition for a successful DIR. 

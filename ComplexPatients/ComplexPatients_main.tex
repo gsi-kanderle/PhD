@@ -68,8 +68,8 @@ The number of fractions and doses delivered are given in Table~\ref{tab:patdata2
 		  & d & 3.1 & 2.1  & 1 x 24 Gy & 2&\\
 		  & e & 0.5 & 0.5  & 1 x 24 Gy & 2&\\
 		  \hline
-		  \multirow{2}{*}{3} & a & 139 & 0.6 & 1 x 24 Gy & 3 \\
-		 & b & 9.2 & 2.0  & 1 x 24 Gy & 2 \\
+		  \multirow{2}{*}{3} & a & 139 & 0.6 & 1 x 24 Gy & 3 &\\
+				     & b & 9.2 & 2.0 & 1 x 24 Gy & 2 &\\
 		 \hline
 		 \multirow{2}{*}{4} & a & 4 & 9  & 3 x 9 Gy  & 5 & SA, esoph., heart \\
 		 & b & 0.8 & 7.8  & 1 x 24 Gy & 2 & \\
@@ -274,7 +274,7 @@ Average CTV $D_{99\%}$ was 97, 95 and 98\% for ITV, 4Dopt and SBRT, respectivell
 	\caption{CTV $D_{99\%}$ for tITV, 4Dopt and SBRT for 8 patients. The results for ITV and 4Dopt are shown as median (range) across the different motion types.}
 	\begin{tabular}{|c|c|c|c|c|}
 		\hline\hline
-		\multirow{2}{*}{Patient} & \multirow{2}{*}{Target} & \multicolumn{3}{|c|}{CTV $D_{99\%}$ (\%)}  \\
+		\multirow{2}{*}{Patient} & \multirow{2}{*}{Target} & \multicolumn{3}{|c|}{CTV $D_{99\%}$ (\%)}  \\ \cline{3-5}
 		 &  & ITV & 4Dopt & SBRT \\
 		 \hline
 		 
@@ -342,8 +342,8 @@ Additionally, the SBRT esophagus and heart $D_{Max}$ limits were exceeded in pat
 	\begin{tabular}{|c|c|c|c|}
 		\hline\hline
 		 
-		OAR &  ITV & 4Dopt & SBRT \\
-		\hline
+		\multirow{2}{*}{OAR} &  ITV & 4Dopt & SBRT \\ \cline{2-4}
+		
 		& \multicolumn{3}{c|}{$D_{Max}$ (\%)}  \\
 		\hline
 heart        & 62.0(0.0 - 100.0) & 59.5(0.0 - 97.0) & 82.5(20.0 - 103.0)\\ 
@@ -352,16 +352,16 @@ smaller airways & 72.5(0.0 - 130.0) & 71.0(0.0 - 117.0) & 72.5(0.0 - 171.0)\\
 esophagus      & 9.0(0.0 - 79.0) & 8.0(0.0 - 99.0) & 70.5(20.0 - 101.0)\\ 
 aorta         & 17.5(8.0 - 61.0) & 15.0(7.0 - 61.0) & 45.0(15.0 - 74.0)\\ 
 \hline\hline
-& \multicolumn{3}{c|}{$D_{Threshold}$ (\%)} \\
-\hline
+& \multicolumn{3}{c|}{$D_{Threshold}$ (\%)} \\ \cline{2-4}
+% \hline
 heart & 15.5(0.0 - 59.0) & 16.0(0.0 - 53.0) & 62.5(19.0 - 98.0)\\ 
 spinalcord & 11.0(0.0 - 45.0) & 10.0(0.0 - 53.0) & 66.5(28.0 - 95.0)\\ 
 smaller airways & 28.0(0.0 - 97.0) & 26.5(0.0 - 89.0) & 68.5(0.0 - 99.0)\\ 
 esophagus & 1.0(0.0 - 17.0) & 1.0(0.0 - 20.0) & 49.0(17.0 - 99.0)\\ 
 aorta & 5.5(0.0 - 30.0) & 5.5(0.0 - 28.0) & 34.5(12.0 - 59.0)\\ 
 \hline\hline
-& \multicolumn{3}{c|}{$V_{20\%}$ (\%)} \\
-\hline
+& \multicolumn{3}{c|}{$V_{20\%}$ (\%)} \\\cline{2-4}
+% \hline
 ipsilateral lung & 14.5(0.0 - 48.7) & 14.4(0.0 - 43.7) & 29.8(5.3 - 89.2)\\ 
 \hline\hline
 	\end{tabular}
@@ -494,7 +494,7 @@ However, there were grade 4 and 5 complications present. A study by Trovo et al.
 6\% of patients treated \cite{Trovo2014}. As shown in our study, PT delivers less dose to the OARs, ipsilateral lung in particular, and could hence reduce the number of treatment-related
 complications.
 
-\section{Conclusions}
+\section{Conclusion}
 
 PT delivers less dose to OARs compared to SBRT in NSCLC patients with multiple disease sites, while maintaining target coverage. One patient with a large total target volume 
 could be irradiated with 1 x 24 Gy, whereas it could not with SBRT. 
